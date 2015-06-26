@@ -1,0 +1,8 @@
+---
+01-getting-started:
+  boilerplate.html.markdown: /01-getting-started/boilerplate.html.markdown
+02-another-section:
+  sample-ruby-code.html.md: /02-another-section/sample-ruby-code.html.md
+03-and-another:
+  sample-php-code.html.md: /03-and-another/sample-php-code.html.md
+index.html.md: /index.html.md

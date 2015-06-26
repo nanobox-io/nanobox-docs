@@ -1,0 +1,35 @@
+// Upper and Lower Ends
+$sm-upper: "(max-width: 40em)";      /* 640px */
+$md-lower: "(min-width: 40.063em)";  /* 641px */
+$md-upper: "(max-width: 64em)";      /* 1024px */
+$lg-lower: "(min-width: 64.063em)";  /* 1025px */
+$lg-upper: "(max-width: 90em)";      /* 1440px */
+
+// Specifications
+$screen: only screen !default;
+
+$landscape: $screen and (orientation: landscape) !default;
+$portrait: $screen and (orientation: portrait) !default;
+
+// Ranges
+$small-up: $screen !default;
+$small-only: $screen and $sm-upper !default;
+
+$medium-up: $screen and $md-lower !default;
+$medium-only: $screen and $md-lower and $md-upper !default;
+
+$large-up: $screen and $lg-lower !default;
+$large-only: $screen and $lg-lower and $lg-upper !default;
+
+
+// Styles -------------------------------------------------
+
+
+@media #{$small-up} { }
+@media #{$small-only} { }
+
+@media #{$medium-up} { }
+@media #{$medium-only} { }
+
+@media #{$large-up} { }
+@media #{$large-only} { }

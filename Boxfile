@@ -1,0 +1,2 @@
+web1:
+  httpd_document_root: docs
