@@ -115,7 +115,7 @@
 /* Literal.String */
 /* line 24, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .na {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Name.Attribute */
 /* line 25, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
@@ -125,7 +125,7 @@
 /* Name.Builtin */
 /* line 26, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .nc {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Name.Class */
 /* line 27, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
@@ -135,7 +135,7 @@
 /* Name.Constant */
 /* line 28, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .nd {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Name.Decorator */
 /* line 29, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
@@ -145,12 +145,12 @@
 /* Name.Entity */
 /* line 30, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .ne {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Name.Exception */
 /* line 31, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .nf {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Name.Function */
 /* line 32, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
@@ -165,7 +165,7 @@
 /* Name.Namespace */
 /* line 34, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .nx {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Name.Other */
 /* line 35, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
@@ -306,6 +306,6 @@
 /* Generic.Deleted & Diff Deleted */
 /* line 64, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/syntaxhighlighter.scss */
 .gi {
-  color: #49c480; }
+  color: #4DE271; }
 
 /* Generic.Inserted & Diff Inserted */

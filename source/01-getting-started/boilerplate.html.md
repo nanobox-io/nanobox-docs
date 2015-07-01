@@ -1,5 +1,5 @@
 ---
-title: Markdown Boilerplate (This is an h1)
+title: Introduction (This is an h1)
 ---
 
 Lorem ipsum dolor sit amet, [inline link](http://nanobox.io) consectetur adipiscing elit. Duis eget ante eros. Praesent `inline code` eleifend viverra felis ut laoreet. Sed at tellus at ipsum tempor feugiat vel eget leo. Ut sollicitudin rutrum metus. Inline Link a tellus blandit vulputate. Curabitur vitae hendrerit turpis. Ut in aliquet nisl, in tincidunt tellus. Donec vitae ipsum consectetur, dictum tellus vel, vulputate lorem.

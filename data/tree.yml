@@ -1,8 +1,11 @@
 ---
+index.html.md: /index.html.md
 01-getting-started:
-  boilerplate.html.markdown: /01-getting-started/boilerplate.html.markdown
+  absolute-paths.html.md: /01-getting-started/absolute-paths.html.md
+  boilerplate.html.md: /01-getting-started/boilerplate.html.md
+  installing-nanobox.html.md: /01-getting-started/installing-nanobox.html.md
 02-another-section:
   sample-ruby-code.html.md: /02-another-section/sample-ruby-code.html.md
 03-and-another:
   sample-php-code.html.md: /03-and-another/sample-php-code.html.md
-index.html.md: /index.html.md
+04-Testing: {}

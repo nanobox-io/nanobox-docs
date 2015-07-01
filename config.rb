@@ -41,7 +41,9 @@ configure :development do
 end
 
 # Navigation Builder
-activate :navtree
+activate :navtree do |options|
+  options.promote_files = ['index.html.md']
+end
 
 # Syntax Highlighting
 activate :syntax

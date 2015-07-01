@@ -1,0 +1,13 @@
+@import 'variables-mixins'; 
+
+svg#nanobox-logo          { 
+  .st53                   { fill:#618EAD; @include transition(fill .15s); }
+  .st93                   { fill:#364E5E; @include transition(fill .15s); }
+  .st155                  { fill:#46677D; @include transition(fill .15s); }
+}
+
+a:hover svg#nanobox-logo  {
+  .st53                   { fill:#78B0D6; }
+  .st93                   { fill:#4E7087; }
+  .st155                  { fill:#5D89A6; }
+}

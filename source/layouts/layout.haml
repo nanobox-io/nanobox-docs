@@ -17,8 +17,24 @@
   
   %body
     #header
-      %a{ :href => '/' }
-        Nanobox Docs
+      %a#logo.left{ :href => '/' }
+        %svg#nanobox-logo{ :space => "preserve", :preserveaspectratio => "xMinYMin meet", :version => "1.1", :xmlns => "http://www.w3.org/2000/svg", :viewBox => "0 0 35 35"}
+          %g{:xmlns => "http://www.w3.org/2000/svg"}
+            %polygon.st155{:points => "16.823,31.026 29.647,24.417 29.647,26.343 16.823,32.954  "}
+            %polygon.st93{:points => "16.823,31.026 4,24.417 4,26.343 16.823,32.954   "}
+            %polygon.st155{:points => "16.823,26.425 29.647,19.814 29.647,21.741 16.823,28.353  "}
+            %polygon.st93{:points => "16.823,26.425 4,19.814 4,21.741 16.823,28.353   "}
+            %polygon.st155{:points => "16.823,21.822 29.647,15.213 29.647,17.14 16.823,23.751   "}
+            %polygon.st93{:points => "16.823,21.822 4,15.213 4,17.14 16.823,23.751  "}
+            %polygon.st53{:points => "29.647,10.61 16.823,17.22 4,10.61 16.823,4  "}
+            %polygon.st155{:points => "16.823,17.22 29.647,10.61 29.647,12.538 16.823,19.149  "}
+            %polygon.st93{:points => "16.823,17.22 4,10.61 4,12.538 16.823,19.149   "}
+        %span Nanobox Docs
+      %a.right{ :href => 'http://nanobox.io'}
+        %svg#home-icon{"enable-background" => "new 0 0 18 18", :space => "preserve", :version => "1.1", :viewbox => "0 0 18 18", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+          %polygon{:fill => "none", :points => "11,13 11,9 9,7 7,9 \r\n\t7,13 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+          %polyline{:fill => "none", :points => "14,11 14,16 4,16 \r\n\t4,11 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+          %polyline{:fill => "none", :points => "2,9.1 9.1,2 \r\n\t16.1,9.1 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
     #wrapper
       #navigation
         %ul
@@ -27,4 +43,6 @@
         %h1 #{ data.page.title }
         = find_and_preserve do
           = yield
+        = previous_link(data.tree)
+        = next_link(data.tree)
     #footer

@@ -1,5 +1,5 @@
 ---
-title: Some Samply Ruby Code
+title: Some Sample Ruby Code
 ---
 
 ```ruby

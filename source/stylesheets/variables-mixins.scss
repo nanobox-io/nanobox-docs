@@ -39,3 +39,8 @@ $red: #FC6269;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
   filter: alpha(opacity=$IEValue);
 }
+
+@mixin box-sizing($value:border-box) {
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}

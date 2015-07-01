@@ -1,5 +1,5 @@
 ---
-title: Some Samply PHP Code
+title: Some Sample PHP Code
 ---
 
 ```php

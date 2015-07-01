@@ -1,0 +1,34 @@
+/* line 4, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/logo-svg.scss */
+svg#nanobox-logo .st53 {
+  fill: #618EAD;
+  -moz-transition: fill 0.15s;
+  -o-transition: fill 0.15s;
+  -ms-transition: fill 0.15s;
+  -webkit-transition: fill 0.15s;
+  transition: fill 0.15s; }
+/* line 5, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/logo-svg.scss */
+svg#nanobox-logo .st93 {
+  fill: #364E5E;
+  -moz-transition: fill 0.15s;
+  -o-transition: fill 0.15s;
+  -ms-transition: fill 0.15s;
+  -webkit-transition: fill 0.15s;
+  transition: fill 0.15s; }
+/* line 6, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/logo-svg.scss */
+svg#nanobox-logo .st155 {
+  fill: #46677D;
+  -moz-transition: fill 0.15s;
+  -o-transition: fill 0.15s;
+  -ms-transition: fill 0.15s;
+  -webkit-transition: fill 0.15s;
+  transition: fill 0.15s; }
+
+/* line 10, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/logo-svg.scss */
+a:hover svg#nanobox-logo .st53 {
+  fill: #78B0D6; }
+/* line 11, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/logo-svg.scss */
+a:hover svg#nanobox-logo .st93 {
+  fill: #4E7087; }
+/* line 12, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/logo-svg.scss */
+a:hover svg#nanobox-logo .st155 {
+  fill: #5D89A6; }

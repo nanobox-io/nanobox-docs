@@ -26,10 +26,22 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 
 
 @media #{$small-up} { }
-@media #{$small-only} { }
+@media #{$small-only} {
+
+#navigation                   { width: 100%; padding: 1.2em; border: none; }
+
+#content                      { width: 100%; padding: 1.2em; }
+
+}
 
 @media #{$medium-up} { }
-@media #{$medium-only} { }
+@media #{$medium-only} { 
+
+#navigation                   { width: 100%; border: none; }
+
+#content                      { width: 100%; }
+
+}
 
 @media #{$large-up} { }
 @media #{$large-only} { }
