@@ -1,10 +1,8 @@
 ---
-title: Style Guide
+title: Log Output Style Guide
 ---
 
-## Nanobox Log output style guide
-
-General Items of note:
+## General Items of note:
 
 - Log output should be clear, conscise and helpful
 - Header/meta item line length is 70 columns (characters)
@@ -13,6 +11,7 @@ General Items of note:
 
 
 #### Main Section Header :
+
 ```
 ::::::::::::::::::::::::::: HEADLINE HERE :::::::::::::::::::::::::::
 ```
