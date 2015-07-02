@@ -257,7 +257,37 @@
       </div>
       <div id='content'>
         <h1>Style Guide</h1>
-        <h4>Coming Soon</h4>
+        <h2>Nanobox Log output style guide</h2>
+        
+        <p>General Items of note:</p>
+        
+        <ul>
+        <li>Log output should be clear, conscise and helpful</li>
+        <li>Header/meta item line length is 70 columns (characters)</li>
+        <li>avoid ambiguous / unhelpful logs</li>
+        <li>Include context when necessary</li>
+        </ul>
+        
+        <h4>Main Section Header :</h4>
+        <pre class="highlight plaintext"><code>::::::::::::::::::::::::::: HEADLINE HERE :::::::::::::::::::::::::::&#x000A;</code></pre>
+        
+        <h4>Main Section with child process output :</h4>
+        <pre class="highlight plaintext"><code>BUILD OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::: =&gt;&#x000A;&#x000A;Child process Initiated XYZ123&#x000A;begining database introspection..&#x000A;Complete, exiting..&#x000A;&#x000A;&lt;= ::::::::::::::::::::::::::::::::::::::::::::::::: END BUILD OUTPUT&#x000A;</code></pre>
+        
+        <h4>Config Settings :</h4>
+        <pre class="highlight plaintext"><code>NAME :: devo&#x000A;KIND :: Tinker App&#x000A;URL  :: devo.pagodabox.com&#x000A;</code></pre>
+        
+        <h4>Bullet Points :</h4>
+        <pre class="highlight plaintext"><code>+&gt; Language Detected : Ruby&#x000A;+&gt; Installing Ruby binary packages&#x000A;</code></pre>
+        
+        <h4>Sub Tasks with success/failure status :</h4>
+        <pre class="highlight plaintext"><code>::::::::: AFTER BUILD HOOK 1&#x000A;$ ruby /var/www/minify/minify.rb&#x000A;Warning:  Module 'hash' Unknown&#x000A;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; [√] SUCCESS&#x000A;&#x000A;::::::::: AFTER BUILD HOOK 2&#x000A;$ python /hooks/danger.py&#x000A;Attempting dangerous action&#x000A;python: cannot subtract a float from a string&#x000A;python: exiting..&#x000A;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; [!] FAILED / ABORTED!&#x000A;&#x000A;&#x000A;</code></pre>
+        
+        <h4>Warning :</h4>
+        <pre class="highlight plaintext"><code>-----------------------------  WARNING  -----------------------------&#x000A;We've detected you may be using sessions in a way that could cause&#x000A;unexpected behavior. Feel free to review the following guide for&#x000A;more information : bit.ly/2sA9b&#x000A;&#x000A;Next output comes after one hard return..&#x000A;</code></pre>
+        
+        <h4>Fatal Errors :</h4>
+        <pre class="highlight plaintext"><code>! DEPLOY STREAM DISCONNECTED !&#x000A;&#x000A;Oh snap the deploy stream just disconnected. No worries, you can&#x000A;visit the dashboard to view the complete output stream.&#x000A;&#x000A;</code></pre>
       </div>
     </div>
     <div id='footer'></div>

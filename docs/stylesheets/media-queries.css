@@ -4,22 +4,22 @@
 /* 1025px */
 /* 1440px */
 @media (max-width: 40em) {
-  /* line 31, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/media-queries.scss */
+  /* line 31, /Users/Mark/web/nanobox/nanodocs/source/stylesheets/media-queries.scss */
   #navigation {
     width: 100%;
     padding: 1.2em;
     border: none; }
 
-  /* line 33, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/media-queries.scss */
+  /* line 33, /Users/Mark/web/nanobox/nanodocs/source/stylesheets/media-queries.scss */
   #content {
     width: 100%;
     padding: 1.2em; } }
 @media (max-width: 64em) {
-  /* line 40, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/media-queries.scss */
+  /* line 40, /Users/Mark/web/nanobox/nanodocs/source/stylesheets/media-queries.scss */
   #navigation {
     width: 100%;
     border: none; }
 
-  /* line 42, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/media-queries.scss */
+  /* line 42, /Users/Mark/web/nanobox/nanodocs/source/stylesheets/media-queries.scss */
   #content {
     width: 100%; } }
