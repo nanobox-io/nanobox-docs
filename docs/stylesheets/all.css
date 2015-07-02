@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -794,28 +793,32 @@ a {
     #navigation a:hover {
       color: #D0DEE7; }
   /* line 33, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
-  #navigation li {
-    margin: .5em 0; }
-    /* line 34, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
-    #navigation li.active {
-      color: #F5DA81; }
-      /* line 35, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
-      #navigation li.active a {
-        color: #F5DA81; }
-      /* line 36, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
-      #navigation li.active:before {
-        content: "• ";
-        display: inline; }
-  /* line 39, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #navigation ul {
     margin: 0;
     padding: 0;
     list-style: none; }
-    /* line 41, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
-    #navigation ul li.parent ul li.child {
-      margin-left: 1em; }
+    /* line 34, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    #navigation ul li {
+      border-top: 1px solid #21414F; }
+      /* line 35, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+      #navigation ul li a {
+        display: block;
+        padding: .6em; }
+      /* line 37, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+      #navigation ul li.active > a {
+        color: #EFB543; }
+      /* line 39, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+      #navigation ul li:last-child {
+        border-bottom: 1px solid #21414F; }
+      /* line 40, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+      #navigation ul li:hover {
+        cursor: pointer; }
+    /* line 43, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    #navigation ul.sub li {
+      margin-left: 1em;
+      border: none; }
 
-/* line 46, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+/* line 48, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
 #content {
   float: left;
   width: 75%;
@@ -824,7 +827,7 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: #7796AA; }
-  /* line 47, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 49, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content h1 {
     margin: 20px 0 40px;
     padding-bottom: 30px;
@@ -832,44 +835,44 @@ a {
     font-size: 4em;
     color: #3ACFCF;
     font-weight: 300; }
-  /* line 48, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 50, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content h2 {
     margin-bottom: .25em;
     font-size: 2.4em;
     color: #F5DA81;
     font-weight: 300; }
-  /* line 49, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 51, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content h3 {
     margin-bottom: .25em;
     font-size: 1.7em;
     color: #3ACFCF;
     font-weight: 400;
     font-style: italic; }
-  /* line 50, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 52, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content h4 {
     margin-bottom: .25em;
     font-size: 1.3em;
     color: #D0DEE7;
     font-weight: 300;
     font-style: italic; }
-  /* line 51, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 53, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content h5 {
     margin-bottom: .25em;
     font-size: .95em;
     color: #3ACFCF;
     text-transform: uppercase; }
-  /* line 52, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 54, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content h6 {
     margin-bottom: .25em;
     font-size: .95em;
     color: #9CB7C5;
     text-transform: uppercase;
     font-style: italic; }
-  /* line 53, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 55, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content p {
     margin: 0 0 .83em;
     line-height: 1.8em; }
-    /* line 54, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 56, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content p code {
       padding: 5px 6px 6px;
       font-size: .85em;
@@ -877,66 +880,66 @@ a {
       background: #19242B;
       border: 1px solid #4C4C20;
       white-space: nowrap; }
-  /* line 56, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 58, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content a {
     color: #3ACFCF;
     text-decoration: none; }
-    /* line 57, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 59, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content a:hover {
       color: #D0DEE7; }
-  /* line 59, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 61, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content code, #content pre {
     font-family: Consolas,Monaco,'Andale Mono',monospace; }
-  /* line 60, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 62, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content pre {
     padding: 30px;
     background: #19242B;
     border: 1px solid #21414F;
     font-size: .9em;
     overflow: scroll; }
-  /* line 61, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 63, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content img {
     max-width: 100%; }
-  /* line 62, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 64, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content hr {
     margin: 2em 0;
     border: none;
     border-top: 1px solid #2C3A42; }
-  /* line 63, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 65, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content blockquote {
     margin: 3em 0;
     padding: .35em 2em .15em;
     border-left: 4px solid #21414F; }
-    /* line 64, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 66, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content blockquote p {
       font-size: 1.25em;
       font-style: italic;
       line-height: 1.5em; }
-  /* line 66, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+  /* line 68, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content table {
     width: 100%; }
-    /* line 67, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 69, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content table thead {
       background: #19242B; }
-    /* line 68, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 70, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content table th {
       padding: 10px;
       border: 1px solid #2C3A42;
       color: #3ACFCF; }
-    /* line 69, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 71, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content table td {
       padding: 10px;
       border: 1px solid #2C3A42; }
-    /* line 71, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 73, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content table tr:first-child td {
       border-top: none; }
-    /* line 72, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+    /* line 74, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
     #content table tr:nth-child(2n+2) {
       background: #2C3A42; }
-      /* line 73, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+      /* line 75, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
       #content table tr:nth-child(2n+2) td {
         border-right: 1px solid #212C33; }
-        /* line 74, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
+        /* line 76, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
         #content table tr:nth-child(2n+2) td:last-child {
           border-right: 1px solid #2C3A42; }
 

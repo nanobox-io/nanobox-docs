@@ -39,8 +39,223 @@
     </div>
     <div id='wrapper'>
       <div id='navigation'>
+        <div class='closed' id='contents'>Contents</div>
         <ul>
-          <li class='child active'><a href="/">Overview (This is an h1)</a></li><li class='parent'><span class='parent-label'>01 Getting Started</span><ul><li class='child '><a href="/01-getting-started/absolute-paths/">Absolute Paths</a></li><li class='child '><a href="/01-getting-started/boilerplate/">Introduction (This is an h1)</a></li><li class='child '><a href="/01-getting-started/installing-nanobox/">Installing Nanobox</a></li></ul></li><li class='parent'><span class='parent-label'>02 Another Section</span><ul><li class='child '><a href="/02-another-section/sample-ruby-code/">Some Sample Ruby Code</a></li></ul></li><li class='parent'><span class='parent-label'>03 and Another</span><ul><li class='child '><a href="/03-and-another/sample-php-code/">Some Sample PHP Code</a></li></ul></li><li class='parent'><span class='parent-label'>04 Testing</span><ul></ul></li>
+          <li class='active'>
+            <a href="/">Overview</a>
+          </li>
+          <li>
+            <a href="/why-nanobox/">Why Nanobox?</a>
+          </li>
+          <li>
+            <a href="/installation/installing-nanobox/">Installation</a>
+            <ul class='sub'>
+              <li>
+                <a href="/installation/upgrading/">Upgrading</a>
+              </li>
+              <li>
+                <a href="/installation/uninstalling/">Uninstalling</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/getting-started/intro/">Getting Started</a>
+            <ul class='sub'>
+              <li>
+                <a href="/getting-started/project-setup/">Project Setup</a>
+              </li>
+              <li>
+                <a href="/getting-started/boxfile/">Boxfile</a>
+              </li>
+              <li>
+                <a href="/getting-started/engines/">Engines</a>
+              </li>
+              <li>
+                <a href="/getting-started/services/">Services</a>
+              </li>
+              <li>
+                <a href="/getting-started/logs/">Logs</a>
+              </li>
+              <li>
+                <a href="/getting-started/deploys/">Deploys</a>
+              </li>
+              <li>
+                <a href="/getting-started/tunneling/">Tunneling</a>
+              </li>
+              <li>
+                <a href="/getting-started/shell-access/">Shell Access</a>
+              </li>
+              <li>
+                <a href="/getting-started/network-storage/">Network Storage</a>
+              </li>
+              <li>
+                <a href="/getting-started/workflow/">Workflow</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/cli/intro/">Command Line Interface</a>
+            <ul class='sub'>
+              <li>
+                <a href="/cli/create/">create</a>
+              </li>
+              <li>
+                <a href="/cli/domain/">domain</a>
+              </li>
+              <li>
+                <a href="/cli/deploy/">deploy</a>
+              </li>
+              <li>
+                <a href="/cli/destroy/">destroy</a>
+              </li>
+              <li>
+                <a href="/cli/fetch/">fetch</a>
+              </li>
+              <li>
+                <a href="/cli/halt/">halt</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/init/">init</a>
+              </li>
+              <li>
+                <a href="/cli/log/">log</a>
+              </li>
+              <li>
+                <a href="/cli/new/">new</a>
+              </li>
+              <li>
+                <a href="/cli/publish/">publish</a>
+              </li>
+              <li>
+                <a href="/cli/reload/">reload</a>
+              </li>
+              <li>
+                <a href="/cli/resume/">resume</a>
+              </li>
+              <li>
+                <a href="/cli/status/">status</a>
+              </li>
+              <li>
+                <a href="/cli/suspend/">suspend</a>
+              </li>
+              <li>
+                <a href="/cli/up/">up</a>
+              </li>
+              <li>
+                <a href="/cli/update/">update</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/boxfile/intro/">Boxfile</a>
+            <ul class='sub'>
+              <li>
+                <a href="/boxfile/nanobox/">nanobox</a>
+              </li>
+              <li>
+                <a href="/boxfile/global/">global</a>
+              </li>
+              <li>
+                <a href="/boxfile/build/">build</a>
+              </li>
+              <li>
+                <a href="/boxfile/web/">web</a>
+              </li>
+              <li>
+                <a href="/boxfile/worker/">worker</a>
+              </li>
+              <li>
+                <a href="/boxfile/services/">Services</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/engines/intro/">Engines</a>
+            <ul class='sub'>
+              <li>
+                <a href="/engines/how-engines-work/">How Engines Work</a>
+              </li>
+              <li>
+                <a href="/engines/boxfile-spec/">Boxfile Specification</a>
+              </li>
+              <li>
+                <a href="/engines/project-creation/">Project Creation</a>
+              </li>
+              <li>
+                <a href="/engines/enginefile/">Enginefile</a>
+              </li>
+              <li>
+                <a href="/engines/style-guide/">Style Guide</a>
+              </li>
+              <li>
+                <a href="/engines/scripts/intro/">Scripts</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/engines/scripts/sniff/">sniff</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/prepare/">prepare</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/boxfile/">boxfile</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/build/">build</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/cleanup/">cleanup</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/engines/common-tasks/intro/">Common Tasks</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/generating-output/">Generating Output</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/working-with-input/">Working with Input</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/validation/">Validation</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/caching/">Caching</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/environment-variables/">Environment Variables</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/template-generation/">Template Generation</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/application-config/">Application Configuration</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/engines/publish/">Publish</a>
+              </li>
+              <li>
+                <a href="/engines/dev-workflow/">development-workflow</a>
+              </li>
+              <li>
+                <a href="/engines/debugging/">Debugging</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/other/intro/">Other</a>
+          </li>
         </ul>
       </div>
       <div id='content'>
@@ -156,8 +371,6 @@
         <hr>
         
         <p>Above is a horiztonal rule</p>
-        
-        <a class="next" href="/01-getting-started/absolute-paths/">Next</a>
       </div>
     </div>
     <div id='footer'></div>

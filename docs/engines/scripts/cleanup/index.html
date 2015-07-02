@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>cleanup</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id='header'>
+      <a class='left' href='/' id='logo'>
+        <svg id='nanobox-logo' preserveaspectratio='xMinYMin meet' space='preserve' version='1.1' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'>
+          <g xmlns='http://www.w3.org/2000/svg'>
+            <polygon class='st155' points='16.823,31.026 29.647,24.417 29.647,26.343 16.823,32.954  '></polygon>
+            <polygon class='st93' points='16.823,31.026 4,24.417 4,26.343 16.823,32.954   '></polygon>
+            <polygon class='st155' points='16.823,26.425 29.647,19.814 29.647,21.741 16.823,28.353  '></polygon>
+            <polygon class='st93' points='16.823,26.425 4,19.814 4,21.741 16.823,28.353   '></polygon>
+            <polygon class='st155' points='16.823,21.822 29.647,15.213 29.647,17.14 16.823,23.751   '></polygon>
+            <polygon class='st93' points='16.823,21.822 4,15.213 4,17.14 16.823,23.751  '></polygon>
+            <polygon class='st53' points='29.647,10.61 16.823,17.22 4,10.61 16.823,4  '></polygon>
+            <polygon class='st155' points='16.823,17.22 29.647,10.61 29.647,12.538 16.823,19.149  '></polygon>
+            <polygon class='st93' points='16.823,17.22 4,10.61 4,12.538 16.823,19.149   '></polygon>
+          </g>
+        </svg>
+        <span>Nanobox Docs</span>
+      </a>
+      <a class='right' href='http://nanobox.io'>
+        <svg enable-background='new 0 0 18 18' id='home-icon' space='preserve' version='1.1' viewbox='0 0 18 18' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <polygon fill='none' points='11,13 11,9 9,7 7,9 &#x000A;	7,13 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polygon>
+          <polyline fill='none' points='14,11 14,16 4,16 &#x000A;	4,11 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polyline>
+          <polyline fill='none' points='2,9.1 9.1,2 &#x000A;	16.1,9.1 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polyline>
+        </svg>
+      </a>
+    </div>
+    <div id='wrapper'>
+      <div id='navigation'>
+        <div class='closed' id='contents'>Contents</div>
+        <ul>
+          <li>
+            <a href="/">Overview</a>
+          </li>
+          <li>
+            <a href="/why-nanobox/">Why Nanobox?</a>
+          </li>
+          <li>
+            <a href="/installation/installing-nanobox/">Installation</a>
+            <ul class='sub'>
+              <li>
+                <a href="/installation/upgrading/">Upgrading</a>
+              </li>
+              <li>
+                <a href="/installation/uninstalling/">Uninstalling</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/getting-started/intro/">Getting Started</a>
+            <ul class='sub'>
+              <li>
+                <a href="/getting-started/project-setup/">Project Setup</a>
+              </li>
+              <li>
+                <a href="/getting-started/boxfile/">Boxfile</a>
+              </li>
+              <li>
+                <a href="/getting-started/engines/">Engines</a>
+              </li>
+              <li>
+                <a href="/getting-started/services/">Services</a>
+              </li>
+              <li>
+                <a href="/getting-started/logs/">Logs</a>
+              </li>
+              <li>
+                <a href="/getting-started/deploys/">Deploys</a>
+              </li>
+              <li>
+                <a href="/getting-started/tunneling/">Tunneling</a>
+              </li>
+              <li>
+                <a href="/getting-started/shell-access/">Shell Access</a>
+              </li>
+              <li>
+                <a href="/getting-started/network-storage/">Network Storage</a>
+              </li>
+              <li>
+                <a href="/getting-started/workflow/">Workflow</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/cli/intro/">Command Line Interface</a>
+            <ul class='sub'>
+              <li>
+                <a href="/cli/create/">create</a>
+              </li>
+              <li>
+                <a href="/cli/domain/">domain</a>
+              </li>
+              <li>
+                <a href="/cli/deploy/">deploy</a>
+              </li>
+              <li>
+                <a href="/cli/destroy/">destroy</a>
+              </li>
+              <li>
+                <a href="/cli/fetch/">fetch</a>
+              </li>
+              <li>
+                <a href="/cli/halt/">halt</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/init/">init</a>
+              </li>
+              <li>
+                <a href="/cli/log/">log</a>
+              </li>
+              <li>
+                <a href="/cli/new/">new</a>
+              </li>
+              <li>
+                <a href="/cli/publish/">publish</a>
+              </li>
+              <li>
+                <a href="/cli/reload/">reload</a>
+              </li>
+              <li>
+                <a href="/cli/resume/">resume</a>
+              </li>
+              <li>
+                <a href="/cli/status/">status</a>
+              </li>
+              <li>
+                <a href="/cli/suspend/">suspend</a>
+              </li>
+              <li>
+                <a href="/cli/up/">up</a>
+              </li>
+              <li>
+                <a href="/cli/update/">update</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/boxfile/intro/">Boxfile</a>
+            <ul class='sub'>
+              <li>
+                <a href="/boxfile/nanobox/">nanobox</a>
+              </li>
+              <li>
+                <a href="/boxfile/global/">global</a>
+              </li>
+              <li>
+                <a href="/boxfile/build/">build</a>
+              </li>
+              <li>
+                <a href="/boxfile/web/">web</a>
+              </li>
+              <li>
+                <a href="/boxfile/worker/">worker</a>
+              </li>
+              <li>
+                <a href="/boxfile/services/">Services</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/engines/intro/">Engines</a>
+            <ul class='sub'>
+              <li>
+                <a href="/engines/how-engines-work/">How Engines Work</a>
+              </li>
+              <li>
+                <a href="/engines/boxfile-spec/">Boxfile Specification</a>
+              </li>
+              <li>
+                <a href="/engines/project-creation/">Project Creation</a>
+              </li>
+              <li>
+                <a href="/engines/enginefile/">Enginefile</a>
+              </li>
+              <li>
+                <a href="/engines/style-guide/">Style Guide</a>
+              </li>
+              <li>
+                <a href="/engines/scripts/intro/">Scripts</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/engines/scripts/sniff/">sniff</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/prepare/">prepare</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/boxfile/">boxfile</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/build/">build</a>
+                  </li>
+                  <li class='active'>
+                    <a href="/engines/scripts/cleanup/">cleanup</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/engines/common-tasks/intro/">Common Tasks</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/generating-output/">Generating Output</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/working-with-input/">Working with Input</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/validation/">Validation</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/caching/">Caching</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/environment-variables/">Environment Variables</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/template-generation/">Template Generation</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/application-config/">Application Configuration</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/engines/publish/">Publish</a>
+              </li>
+              <li>
+                <a href="/engines/dev-workflow/">development-workflow</a>
+              </li>
+              <li>
+                <a href="/engines/debugging/">Debugging</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/other/intro/">Other</a>
+          </li>
+        </ul>
+      </div>
+      <div id='content'>
+        <h1>cleanup</h1>
+        <h4>Coming Soon</h4>
+      </div>
+    </div>
+    <div id='footer'></div>
+  </body>
+</html>

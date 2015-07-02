@@ -30,15 +30,17 @@ a                       { @include transition(all .15s); }
   a                     { color: $blue; text-decoration: none;
     &:hover             { color: $gblue-8; }
   }
-  li                    { margin: .5em 0; 
-    &.active            { color: $yellow-2; 
-      a                 { color: $yellow-2; }
-      &:before          { content: "• "; display: inline; }
+  ul                    { margin: 0; padding: 0; list-style: none; 
+    li                  { border-top: 1px solid $gblue-3;
+      a                 { display: block; padding: .6em; }
+      &.active          {
+        & > a           { color: $yellow-1; }
+      }
+      &:last-child      { border-bottom: 1px solid $gblue-3; }
+      &:hover           { cursor: pointer; }
     }
-  }
-  ul                    { margin: 0; padding: 0; list-style: none;
-    li.parent ul        {
-      li.child          { margin-left: 1em; }
+    &.sub               {
+      li                { margin-left: 1em; border: none; }
     }
   }
 }

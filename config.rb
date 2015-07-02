@@ -41,9 +41,9 @@ configure :development do
 end
 
 # Navigation Builder
-activate :navtree do |options|
-  options.promote_files = ['index.html.md']
-end
+# activate :navtree do |options|
+#   options.promote_files = ['index.html.md']
+# end
 
 # Syntax Highlighting
 activate :syntax
@@ -52,11 +52,14 @@ activate :syntax
 activate :directory_indexes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def nav_doc_active(path)
+    current_page.url == path ? {:class => "active"} : {}
+  end
+  # def nav_category_active(path)
+  #   current_page.url h.values.include? path ? {:class => "active"} : {}
+  # end
+end
 
 set :css_dir, 'stylesheets'
 
