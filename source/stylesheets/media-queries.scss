@@ -1,3 +1,5 @@
+@import 'variables-mixins';
+
 // Upper and Lower Ends
 $sm-upper: "(max-width: 40em)";      /* 640px */
 $md-lower: "(min-width: 40.063em)";  /* 641px */
@@ -28,7 +30,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 @media #{$small-up} { }
 @media #{$small-only} {
 
-#navigation                   { width: 100%; padding: 1.2em; border: none; }
+#navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0; }
 
 #content                      { width: 100%; padding: 1.2em; }
 
@@ -37,11 +39,15 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 @media #{$medium-up} { }
 @media #{$medium-only} { 
 
-#navigation                   { width: 100%; border: none; }
+#navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0; }
 
 #content                      { width: 100%; }
 
 }
 
-@media #{$large-up} { }
+@media #{$large-up} { 
+
+#contents-btn               { display: none; }
+
+}
 @media #{$large-only} { }

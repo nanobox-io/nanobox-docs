@@ -53,12 +53,12 @@ activate :directory_indexes
 
 # Methods defined in the helpers block are available in templates
 helpers do
-  def nav_doc_active(path)
+  def nav_article_active(path)
     current_page.url == path ? {:class => "active"} : {}
   end
-  # def nav_category_active(path)
-  #   current_page.url h.values.include? path ? {:class => "active"} : {}
-  # end
+  def nav_category_active(path)
+    current_page.url =~ /"path"/ ? {:class => "active"} : {}
+  end
 end
 
 set :css_dir, 'stylesheets'

@@ -1,15 +1,14 @@
-#contents.closed Contents
-%ul
+%ul#contents.open
   - data.contents.categories.each do |category, path|
-    %li{ nav_doc_active( category.landing_path ) }
+    %li{ nav_article_active( category.landing_path ) }
       = link_to category.name, category.landing_path
       - if category.articles
         %ul.sub
           - category.articles.each do |article|
-            %li{ nav_doc_active( article.path ) }
+            %li{ nav_article_active( article.path ) }
               = link_to article.title, article.path
               - if article.sub_articles
                 %ul.sub
                   - article.sub_articles.each do |sub_article|
-                    %li{ nav_doc_active( sub_article.path ) }
+                    %li{ nav_article_active( sub_article.path ) }
                       = link_to sub_article.title, sub_article.path

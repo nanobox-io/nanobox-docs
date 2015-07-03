@@ -2,11 +2,11 @@
 
 body                    { background: $gblue-1; font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; }
 a                       { @include transition(all .15s); }
+.left                   { float: left; }
+.right                  { float: right; }
 
 
-#header                 { display: block; padding: 20px; position: fixed; top: 0; left: 0; background: $gblue-2; width: 100%; @include box-sizing; @include transition(all .15s);
-  .left                 { float: left; }
-  .right                { float: right; }
+#header                 { display: block; padding: 20px; position: fixed; top: 0; left: 0; background: $gblue-2; width: 100%; @include box-sizing; @include transition(all .15s); z-index: 100; 
   a                     { color: $gblue-4; text-decoration: none; text-transform: uppercase; font-size: 1.2em; letter-spacing: .06em;
     &:hover             { color: $gblue-6; }
     &#logo              { margin-top: -.05em;
@@ -24,9 +24,16 @@ a                       { @include transition(all .15s); }
   }
 }
 
-#wrapper                { margin: 50px auto; max-width: 1300px; }
+#wrapper                { margin: 60px auto; max-width: 1300px; }
 
-#navigation             { float: left; width: 25%; max-width: 400px; padding: 40px; border-right: 1px solid $gblue-3; @include box-sizing; color: $gblue-5;
+#contents-btn           { display: block; position: relative; padding: 1em; font-size: 1.25em; color: $gblue-7; background: $gblue-0; cursor: pointer;
+  &:after               { content: "+"; position: absolute; right: .6em; top: .4em; font-size: 1.5em; }
+  &.open:after          { content: "–"; }
+}
+#navigation             { float: left; width: 25%; max-width: 450px; padding: 2.7em; border-right: 1px solid $gblue-3; @include box-sizing; color: $gblue-5;
+  #contents             { @include transition(max-height .5s); max-height: 0px; overflow: hidden;
+    &.open              { max-height: 2800px; }
+  }
   a                     { color: $blue; text-decoration: none;
     &:hover             { color: $gblue-8; }
   }
@@ -34,18 +41,22 @@ a                       { @include transition(all .15s); }
     li                  { border-top: 1px solid $gblue-3;
       a                 { display: block; padding: .6em; }
       &.active          {
-        & > a           { color: $yellow-1; }
+        & > a           { color: $yellow-1; } 
+        ul.sub          { max-height: 2000px; }
+      }
+      &.open            {
+        ul.sub          { max-height: 2000px; }
       }
       &:last-child      { border-bottom: 1px solid $gblue-3; }
       &:hover           { cursor: pointer; }
     }
-    &.sub               {
+    &.sub               { max-height: 0px; overflow: hidden; 
       li                { margin-left: 1em; border: none; }
     }
   }
 }
 
-#content                { float: left; width: 75%; max-width: 800px; padding: 40px; @include box-sizing; color: $gblue-6;
+#content                { float: left; width: 75%; max-width: 800px; padding: 2.7em; @include box-sizing; color: $gblue-6;
   h1                    { margin: 20px 0 40px; padding-bottom: 30px; border-bottom: 1px solid $gblue-2; font-size: 4em; color: $bgreen-0; font-weight: 300; }
   h2                    { margin-bottom: .25em; font-size: 2.4em; color: $yellow-2; font-weight: 300; }
   h3                    { margin-bottom: .25em; font-size: 1.7em; color: $bgreen-0; font-weight: 400; font-style: italic; }
