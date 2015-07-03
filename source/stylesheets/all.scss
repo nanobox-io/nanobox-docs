@@ -30,28 +30,35 @@ a                       { @include transition(all .15s); }
   &:after               { content: "+"; position: absolute; right: .6em; top: .4em; font-size: 1.5em; }
   &.open:after          { content: "–"; }
 }
-#navigation             { float: left; width: 25%; max-width: 450px; padding: 2.7em; border-right: 1px solid $gblue-3; @include box-sizing; color: $gblue-5;
-  #contents             { @include transition(max-height .5s); max-height: 0px; overflow: hidden;
-    &.open              { max-height: 2800px; }
+#navigation             { float: left; width: 25%; max-width: 450px; padding: 2.7em 2.7em 2.7em 1em; border-right: 1px solid $gblue-3; @include box-sizing; color: $gblue-5;
+  #contents             { @include transition(max-height .5s); max-height: 2800px; overflow: hidden;
+    &.closed            { max-height: 0px; }
   }
   a                     { color: $blue; text-decoration: none;
     &:hover             { color: $gblue-8; }
   }
   ul                    { margin: 0; padding: 0; list-style: none; 
-    li                  { border-top: 1px solid $gblue-3;
+    li                  { border-top: 1px solid $gblue-3; font-size: 1.2em; font-style: italic;
       a                 { display: block; padding: .6em; }
+      &.more > a        {
+        &:after          { content: "•••"; margin-left: 1em; padding: 0 .3em .1em .4em; color: $gblue-6; font-size: .3em; letter-spacing: .1em; vertical-align: middle; background: $gblue-0; border: 1px solid $gblue-0; @include border-radius(5px); @include transition(border .15s) }
+        &:hover:after    { border-color: $gblue-4; }
+      }
       &.active          {
         & > a           { color: $yellow-1; } 
-        ul.sub          { max-height: 2000px; }
+        & > ul.sub      { max-height: 2000px; }
+        &.more > a:after{ display: none; }
       }
       &.open            {
-        ul.sub          { max-height: 2000px; }
+        & > a           { color: $gblue-8; }
+        & > ul.sub      { max-height: 2000px; }
+        &.more > a:after{ display: none; }
       }
       &:last-child      { border-bottom: 1px solid $gblue-3; }
       &:hover           { cursor: pointer; }
     }
     &.sub               { max-height: 0px; overflow: hidden; 
-      li                { margin-left: 1em; border: none; }
+      li                { margin-left: 1em; border: none; font-size: .9em; font-style: normal; }
     }
   }
 }

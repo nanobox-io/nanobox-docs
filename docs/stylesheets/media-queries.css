@@ -31,4 +31,8 @@
 @media (min-width: 64.063em) {
   /* line 50, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/media-queries.scss */
   #contents-btn {
-    display: none; } }
+    display: none; }
+
+  /* line 52, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/media-queries.scss */
+  #contents.closed {
+    max-height: 2800px !important; } }

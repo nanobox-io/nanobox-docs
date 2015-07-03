@@ -6,6 +6,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 
 
+
+////////////////// SHRINKING TOP NAV //////////////////
+
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
     if (scroll >= 50) {
@@ -15,37 +18,45 @@ $(window).scroll(function() {
     }
 });
 
+
+/////////// OPEN / CLOSE RESPONSIVE CONTENTS ///////////
+
 $(function() {
   $('#contents-btn').on('click', function(e) {
-    $('#contents').toggleClass('open');
+    $('#contents').toggleClass('closed');
     $('#contents-btn').toggleClass('open');
   })
 })
 
+
+/////////////// HIDE UNUSED NAV SECTIONS ///////////////
+
 $(function(){
     $('ul#contents li:has(ul li.active)').addClass('open');
+    $('ul#contents li ul.sub li:has(ul.sub)').addClass('more');
 });
 
 $(document).ready(function() {
   if (document.documentElement.clientWidth < 1024) {
-    if($('#contents').hasClass('open')) {
-      $('#contents').removeClass('open');
+    if($('#contents').hasClass('closed')) {
       $('#contents-btn').removeClass('open');
     };
   }
 })
 
+
+/////////// ADD/REMOVE CLASS ON CONTENTS BTN ///////////
+
 $(window).on('resize', function() {
   if (document.documentElement.clientWidth > 1024) {
-    if(!$('#contents').hasClass('open')) {
-      $('#contents').addClass('open');      
-      $('#contents-btn').addClass('open');
+    if(!$('#contents').hasClass('closed')) {
+      $('#contents').addClass('closed');      
+      $('#contents-btn').removeClass('open');
     };
   }
   if (document.documentElement.clientWidth < 1024) {
-    if($('#contents').hasClass('open')) {
+    if($('#contents').hasClass('closed')) {
       $('#contents-btn').removeClass('open');
-      $('#contents').removeClass('open');
     };
   }
 })

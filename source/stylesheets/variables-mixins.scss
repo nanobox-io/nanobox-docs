@@ -44,3 +44,9 @@ $red: #FC6269;
   -moz-box-sizing: $value;
   box-sizing: $value;
 }
+
+@mixin border-radius ($radius:50%){
+  -webkit-border-radius: $radius $radius $radius $radius;
+  -moz-border-radius: $radius $radius $radius $radius;
+  border-radius: $radius $radius $radius $radius;
+}

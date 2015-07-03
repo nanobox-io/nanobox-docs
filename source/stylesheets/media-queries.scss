@@ -48,6 +48,9 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 @media #{$large-up} { 
 
 #contents-btn               { display: none; }
+#contents                   {
+  &.closed                  { max-height: 2800px !important; }
+}
 
 }
 @media #{$large-only} { }

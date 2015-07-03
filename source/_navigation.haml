@@ -1,4 +1,4 @@
-%ul#contents.open
+%ul#contents.closed
   - data.contents.categories.each do |category, path|
     %li{ nav_article_active( category.landing_path ) }
       = link_to category.name, category.landing_path
