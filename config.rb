@@ -56,9 +56,7 @@ helpers do
   def nav_article_active(path)
     current_page.url == path ? {:class => "active"} : {}
   end
-  def nav_category_active(path)
-    current_page.url =~ /"path"/ ? {:class => "active"} : {}
-  end
+
 end
 
 set :css_dir, 'stylesheets'

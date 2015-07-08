@@ -1,5 +1,5 @@
 %ul#contents.closed
-  - data.contents.categories.each do |category, path|
+  - data.contents.categories.each do |category|
     %li{ nav_article_active( category.landing_path ) }
       = link_to category.name, category.landing_path
       - if category.articles
