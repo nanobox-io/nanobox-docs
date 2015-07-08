@@ -50,3 +50,11 @@ $red: #FC6269;
   -moz-border-radius: $radius $radius $radius $radius;
   border-radius: $radius $radius $radius $radius;
 }
+
+@mixin transform ($transforms){
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}

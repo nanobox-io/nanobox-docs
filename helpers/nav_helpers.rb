@@ -38,4 +38,4 @@ module NavHelpers
       articles[index + 1]
     end
   end
-  end
+end

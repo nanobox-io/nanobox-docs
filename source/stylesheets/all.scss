@@ -75,6 +75,18 @@ a                       { @include transition(all .15s); }
   }
   a                     { color: $bgreen-0; text-decoration: none;
     &:hover             { color: $gblue-8; }
+    &.prev              { position: relative; float: left; padding: .3em .8em .5em .6em; margin: .3em 0 .6em; color: $gblue-4; background: $gblue-0; @include transition(all .15s);
+      &:before          { content: ""; position: absolute; top: 0; left: -.55em; width: 0; height: 0; border-style: solid; border-width: 1em .6em 1em 0;; border-color: transparent $gblue-0 transparent transparent; @include transition(border-color .15s); }
+      &:hover           { color: $gblue-7; background: $gblue-3;
+        &:before        { border-color: transparent $gblue-3 transparent transparent; }
+      }
+    }
+    &.next              { position: relative; float: right; padding: .3em .6em .5em .8em; color: $gblue-1; background: $blue; @include transition(all .15s); font-size: 1.25em;
+      &:after           { content: ""; position: absolute; top: 0; right: -.6em; width: 0; height: 0; border-style: solid; border-width: 1em 0 1em .6em;; border-color: transparent transparent transparent $blue; @include transition(border-color .15s); }
+      &:hover           { color: $gblue-2; background: $gblue-8;
+        &:after         { border-color: transparent transparent transparent $gblue-8; }
+      }
+    }
   }
   code, pre             { font-family: Consolas,Monaco,'Andale Mono',monospace; white-space: pre; word-wrap: normal; }
   pre                   { padding: 30px; background: $gblue-0; border: 1px solid $gblue-3; font-size: .9em; overflow: scroll; }
@@ -96,6 +108,7 @@ a                       { @include transition(all .15s); }
        }
     }
   }
+  #pagination           { padding: 3.5em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $gblue-3; }
 }
 
 @import 'media-queries';
