@@ -1,21 +1,21 @@
 ---
 categories:
-  - name: "Overview"
-    landing_path: "/"
+  - title: "Overview"
+    path: "/"
 
-  - name: "Why Nanobox?"
-    landing_path: "/why-nanobox/"
+  - title: "Why Nanobox?"
+    path: "/why-nanobox/"
 
-  - name: "Installation"
-    landing_path: "/installation/installing-nanobox/"
+  - title: "Installation"
+    path: "/installation/installing-nanobox/"
     articles:
       - title: "Upgrading"
         path: "/installation/upgrading/"
       - title: "Uninstalling"
         path: "/installation/uninstalling/"
 
-  - name: "Getting Started"
-    landing_path: "/getting-started/intro/"
+  - title: "Getting Started"
+    path: "/getting-started/intro/"
     articles:
       - title: "Project Setup"
         path: "/getting-started/project-setup/"
@@ -38,8 +38,8 @@ categories:
       - title: "Workflow"
         path: "/getting-started/workflow/"
 
-  - name: "Command Line Interface"
-    landing_path: "/cli/intro/"
+  - title: "Command Line Interface"
+    path: "/cli/intro/"
     articles:
       - title: "create"
         path: "/cli/create/"
@@ -76,8 +76,8 @@ categories:
       - title: "update"
         path: "/cli/update/"
 
-  - name: "Boxfile"
-    landing_path: "/boxfile/intro/"
+  - title: "Boxfile"
+    path: "/boxfile/intro/"
     articles:
       - title: "nanobox"
         path: "/boxfile/nanobox/"
@@ -92,8 +92,8 @@ categories:
       - title: "Services"
         path: "/boxfile/services/"
 
-  - name: "Engines"
-    landing_path: "/engines/intro/"
+  - title: "Engines"
+    path: "/engines/intro/"
     articles:
       - title: "How Engines Work"
         path: "/engines/how-engines-work/"
@@ -143,9 +143,5 @@ categories:
         path: "/engines/dev-workflow/"
       - title: "Debugging"
         path: "/engines/debugging/" 
-  - name: "Other"
-    landing_path: "/other/intro/"
-
-  # sub_articles:
-  #         - title: "Sub Article"
-  #           path: "/category/sub/article/"
+  - title: "Other"
+    path: "/other/intro/"

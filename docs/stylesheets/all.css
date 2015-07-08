@@ -970,7 +970,9 @@ a {
       color: #D0DEE7; }
   /* line 79, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content code, #content pre {
-    font-family: Consolas,Monaco,'Andale Mono',monospace; }
+    font-family: Consolas,Monaco,'Andale Mono',monospace;
+    white-space: pre;
+    word-wrap: normal; }
   /* line 80, /Users/Delorum13/Projects/nanobox-docs/source/stylesheets/all.scss */
   #content pre {
     padding: 30px;
