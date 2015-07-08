@@ -12,3 +12,11 @@
                   - article.sub_articles.each do |sub_article|
                     %li{ nav_article_active( sub_article.path ) }
                       = link_to sub_article.title, sub_article.path
+
+- prev_article = get_prev_article(current_page.url)
+- if prev_article
+  %p= link_to prev_article[:title], prev_article[:path]
+
+- next_article = get_next_article(current_page.url)
+- if next_article
+  %p= link_to next_article[:title], next_article[:path]
