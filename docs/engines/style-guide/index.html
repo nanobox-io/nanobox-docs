@@ -6,7 +6,9 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>Log Output Style Guide - Nanobox Documentation</title>
+    <title>
+      Log Output Style Guide - Nanobox Documentation
+    </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all.js" type="text/javascript"></script>
@@ -262,14 +264,14 @@
         <ul>
         <li>Log output should be clear, conscise and helpful</li>
         <li>Header/meta item line length is 70 columns (characters)</li>
-        <li>avoid ambiguous / unhelpful logs</li>
+        <li>Avoid ambiguous / unhelpful logs</li>
         <li>Include context when necessary</li>
         </ul>
         
         <h4>Main Section Header :</h4>
         <pre class="highlight plaintext"><code>::::::::::::::::::::::::::: HEADLINE HERE :::::::::::::::::::::::::::&#x000A;</code></pre>
         
-        <h4>Main Section with child process output :</h4>
+        <h4>Main Section with Child Process Output :</h4>
         <pre class="highlight plaintext"><code>BUILD OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::: =&gt;&#x000A;&#x000A;Child process Initiated XYZ123&#x000A;begining database introspection..&#x000A;Complete, exiting..&#x000A;&#x000A;&lt;= ::::::::::::::::::::::::::::::::::::::::::::::::: END BUILD OUTPUT&#x000A;</code></pre>
         
         <h4>Config Settings :</h4>
@@ -278,7 +280,7 @@
         <h4>Bullet Points :</h4>
         <pre class="highlight plaintext"><code>+&gt; Language Detected : Ruby&#x000A;+&gt; Installing Ruby binary packages&#x000A;</code></pre>
         
-        <h4>Sub Tasks with success/failure status :</h4>
+        <h4>Sub Tasks with Success/Failure Status :</h4>
         <pre class="highlight plaintext"><code>::::::::: AFTER BUILD HOOK 1&#x000A;$ ruby /var/www/minify/minify.rb&#x000A;Warning:  Module 'hash' Unknown&#x000A;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; [√] SUCCESS&#x000A;&#x000A;::::::::: AFTER BUILD HOOK 2&#x000A;$ python /hooks/danger.py&#x000A;Attempting dangerous action&#x000A;python: cannot subtract a float from a string&#x000A;python: exiting..&#x000A;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; [!] FAILED / ABORTED!&#x000A;&#x000A;&#x000A;</code></pre>
         
         <h4>Warning :</h4>

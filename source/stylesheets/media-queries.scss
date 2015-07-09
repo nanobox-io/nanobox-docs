@@ -34,7 +34,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
   ul#contents > li:last-child { margin-bottom: 1.3em; }
 }
 
-#content                      { width: 100%; padding: 1.2em;
+#content                      { width: 100%; padding: 1.2em; font-size: 16px;
   h1                          { font-size: 3.2em; }
   h2                          { font-size: 2.1em; }
   h3                          { font-size: 1.5em; }
@@ -43,7 +43,11 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 
 }
 
-@media #{$medium-up} { }
+@media #{$medium-up} { 
+
+#content                      { font-size: 17px; }
+
+}
 @media #{$medium-only} { 
 
 #navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0;

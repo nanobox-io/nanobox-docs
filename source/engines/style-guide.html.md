@@ -6,7 +6,7 @@ title: Log Output Style Guide
 
 - Log output should be clear, conscise and helpful
 - Header/meta item line length is 70 columns (characters)
-- avoid ambiguous / unhelpful logs
+- Avoid ambiguous / unhelpful logs
 - Include context when necessary
 
 
@@ -16,7 +16,7 @@ title: Log Output Style Guide
 ::::::::::::::::::::::::::: HEADLINE HERE :::::::::::::::::::::::::::
 ```
 
-#### Main Section with child process output :
+#### Main Section with Child Process Output :
 ```
 BUILD OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::: =>
 
@@ -41,7 +41,7 @@ URL  :: devo.pagodabox.com
 ```
 
 
-#### Sub Tasks with success/failure status :
+#### Sub Tasks with Success/Failure Status :
 ```
 ::::::::: AFTER BUILD HOOK 1
 $ ruby /var/www/minify/minify.rb
