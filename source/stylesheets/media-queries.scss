@@ -3,8 +3,8 @@
 // Upper and Lower Ends
 $sm-upper: "(max-width: 40em)";      /* 640px */
 $md-lower: "(min-width: 40.063em)";  /* 641px */
-$md-upper: "(max-width: 64em)";      /* 1024px */
-$lg-lower: "(min-width: 64.063em)";  /* 1025px */
+$md-upper: "(max-width: 54em)";      /* 864px */
+$lg-lower: "(min-width: 54.063em)";  /* 865px */
 $lg-upper: "(max-width: 90em)";      /* 1440px */
 
 // Specifications
@@ -30,16 +30,25 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 @media #{$small-up} { }
 @media #{$small-only} {
 
-#navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0; }
+#navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0;
+  ul#contents > li:last-child { margin-bottom: 1.3em; }
+}
 
-#content                      { width: 100%; padding: 1.2em; }
+#content                      { width: 100%; padding: 1.2em;
+  h1                          { font-size: 3.2em; }
+  h2                          { font-size: 2.1em; }
+  h3                          { font-size: 1.5em; }
+  h4                          { font-size: 1.2em; }
+}
 
 }
 
 @media #{$medium-up} { }
 @media #{$medium-only} { 
 
-#navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0; }
+#navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0;
+  ul#contents > li:last-child { margin-bottom: 1.3em; }
+}
 
 #content                      { width: 100%; }
 

@@ -32,7 +32,7 @@ $(function(){
 });
 
 $(document).ready(function() {
-  if (document.documentElement.clientWidth < 1024) {
+  if (document.documentElement.clientWidth < 864) {
     if($('#contents').hasClass('closed')) {
       $('#contents-btn').removeClass('open');
     };
@@ -43,13 +43,13 @@ $(document).ready(function() {
 /////////// ADD/REMOVE CLASS ON CONTENTS BTN ///////////
 
 $(window).on('resize', function() {
-  if (document.documentElement.clientWidth > 1024) {
+  if (document.documentElement.clientWidth > 864) {
     if(!$('#contents').hasClass('closed')) {
       $('#contents').addClass('closed');      
       $('#contents-btn').removeClass('open');
     };
   }
-  if (document.documentElement.clientWidth < 1024) {
+  if (document.documentElement.clientWidth < 864) {
     if($('#contents').hasClass('closed')) {
       $('#contents-btn').removeClass('open');
     };
