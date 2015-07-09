@@ -89,7 +89,7 @@ a                       { @include transition(all .15s); }
       }
     }
     &.next              { position: relative; float: right; padding: .3em .6em .5em .8em; color: $gblue-1; background: $blue; @include transition(all .15s); font-size: 1.25em;
-      &:after           { content: ""; position: absolute; top: 0; right: -.6em; width: 0; height: 0; border-style: solid; border-width: 1em 0 1em .6em;; border-color: transparent transparent transparent $blue; @include transition(border-color .15s); }
+      &:after           { content: ""; position: absolute; top: 0; right: -.57em; width: 0; height: 0; border-style: solid; border-width: 1em 0 1em .6em;; border-color: transparent transparent transparent $blue; @include transition(border-color .15s); }
       &:hover           { color: $gblue-2; background: $gblue-8;
         &:after         { border-color: transparent transparent transparent $gblue-8; }
       }
