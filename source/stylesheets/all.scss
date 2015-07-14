@@ -10,7 +10,9 @@ a                       { @include transition(all .15s); }
   a                     { color: $gblue-4; text-decoration: none; text-transform: uppercase; font-size: 1.2em; letter-spacing: .06em;
     &:hover             { color: $gblue-6; }
     &#logo              { margin-top: -.05em;
-      span              { margin-left: 1.8em; }
+      span              { margin-left: 1.8em;
+        &:after         { content: "{alpha}"; margin-left: .5em; position: relative; top: -.15em; font-size: .75em; color: $blue-0; text-transform: none; font-style: italic; letter-spacing: 0; font-weight: 700; }
+      }
     }
   }
   &.small               { padding: 8px 20px;
@@ -34,7 +36,7 @@ a                       { @include transition(all .15s); }
   #contents             { @include transition(max-height .5s); max-height: 2800px; overflow: hidden;
     &.closed            { max-height: 0px; }
   }
-  a                     { color: $blue; text-decoration: none;
+  a                     { color: $blue-1; text-decoration: none;
     &:hover             { color: $gblue-8; }
   }
   ul                    { margin: 0; padding: 0; list-style: none; 
@@ -77,19 +79,17 @@ a                       { @include transition(all .15s); }
   h4                    { margin: 0 0 .25em; padding-top: 1.2em; font-size: 1.15em; color: $gblue-8; font-weight: 300; font-style: italic; }
   h5                    { margin: 0 0 .25em; padding-top: 1.2em; font-size: .95em; color: $bgreen-0; text-transform: uppercase; }
   h6                    { margin: 0 0 .25em; padding-top: 1.2em; font-size: .95em; color: $gblue-7; text-transform: uppercase; font-style: italic; }
-  p                     { margin: 0 0 .83em; line-height: 2em;
-    code                { padding: 5px 6px 6px; font-size: .85em; color: $yellow-1; background: $gblue-0; border: 1px solid $yellow-0; white-space: nowrap; }
-  }
-  a                     { color: $bgreen-0; text-decoration: none;
+  p                     { margin: 0 0 1.5em; line-height: 2em; }
+  a                     { color: $blue-1; text-decoration: none; border-bottom: 1px dotted;
     &:hover             { color: $gblue-8; }
-    &.prev              { position: relative; float: left; padding: .3em .8em .5em .6em; margin: .3em 0 .6em; color: $gblue-4; background: $gblue-0; @include transition(all .15s);
+    &.prev              { position: relative; float: left; padding: .3em .8em .5em .6em; margin: .3em 0 .6em; border: none; color: $gblue-4; background: $gblue-0; @include transition(all .15s);
       &:before          { content: ""; position: absolute; top: 0; left: -.55em; width: 0; height: 0; border-style: solid; border-width: 1em .6em 1em 0;; border-color: transparent $gblue-0 transparent transparent; @include transition(border-color .15s); }
       &:hover           { color: $gblue-7; background: $gblue-3;
         &:before        { border-color: transparent $gblue-3 transparent transparent; }
       }
     }
-    &.next              { position: relative; float: right; padding: .3em .6em .5em .8em; color: $gblue-1; background: $blue; @include transition(all .15s); font-size: 1.25em;
-      &:after           { content: ""; position: absolute; top: 0; right: -.57em; width: 0; height: 0; border-style: solid; border-width: 1em 0 1em .6em;; border-color: transparent transparent transparent $blue; @include transition(border-color .15s); }
+    &.next              { position: relative; float: right; padding: .3em .6em .5em .8em; border: none; color: $gblue-1; background: $blue-1; @include transition(all .15s); font-size: 1.25em;
+      &:after           { content: ""; position: absolute; top: 0; right: -.57em; width: 0; height: 0; border-style: solid; border-width: 1em 0 1em .6em;; border-color: transparent transparent transparent $blue-1; @include transition(border-color .15s); }
       &:hover           { color: $gblue-2; background: $gblue-8;
         &:after         { border-color: transparent transparent transparent $gblue-8; }
       }
@@ -99,6 +99,9 @@ a                       { @include transition(all .15s); }
   pre                   { padding: 30px; background: $gblue-0; border: 1px solid $gblue-3; font-size: .9em; overflow: scroll; }
   ul, ol                { padding-left: 1.2em; 
     li                  { line-height: 1.8em; }
+  }
+  p, ul, li             {
+    code                { padding: 5px 6px 6px; font-size: .85em; color: $yellow-2; background: $gblue-0; border: 1px solid $gblue-3; white-space: nowrap; }
   }
   img                   { max-width: 100%; }
   hr                    { margin: 2em 0; border: none; border-top: 1px solid $gblue-2; }

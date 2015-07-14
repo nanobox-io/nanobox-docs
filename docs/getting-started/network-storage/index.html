@@ -259,35 +259,66 @@
       </div>
       <div id='content'>
         <h1>Network Storage</h1>
-        <p>Most web applications need to store files in the filesystem at some point. In a traditional hosting environment, your app consists of a single server running source code and all other auxiliary services. With Nanobox, your app consists &quot;micro-services&quot; - isolated virtual instances, each with their own resources and filesystems. In order for written files to be consistent across all services/instances in your app, they must be written to a single filesystem shared with other services. This is where network storage comes in.</p>
+        <p>In some cases, it may be necessary to store files in your app&#39;s filesystem. In a traditional hosting environment, apps run on a single server with both source code and all auxiliary services using the same server resources and filesystem. In Nanobox however, apps consist of &quot;micro-services&quot; - isolated virtual instances, each with their own resources and filesystems, networked together inside of a virtual machine. In order for written files to be consistent across all services/instances in your app, they must be written to a single filesystem shared with other services. This is where network storage comes in.</p>
         
-        <h2>Understanding Writable Permissions in a Distributed Environment</h2>
+        <h2>Understanding File Consistency in a Distributed Architecture</h2>
         
-        <p>Apps in Nanobox consist of multiple virtualized boxes or instances networked together, each with their own allotment of sysem resources (RAM, Disk, etc.). They are completely isolated from each other and do not share resources. This poses some interesting challenges as instances try to write to the filesystem, but the written files need to be accessed by other services.</p>
+        <p>In a distributed application architecture, there are multiple isolated filesystems. To ensure consistency across code services, code service filesystems are read-only. This prevents them from writing themselves out of sync, but it poses a problem in the case where an app does need to write to the filesystem.</p>
         
         <h3>The Problem</h3>
         
-        <p>If each individual instance were able to write to its own filesystem, anything written could not be access by other services. For example, if you were to upload an image through your web service, it would be written to the filesystem of that instance. No other service in the app would be able to access the filesystem of your web service.</p>
+        <p>Because each code service has its own isolated filsytem, anything written to the filesystem is not inaccessable to other code services.</p>
         
-        <p><img alt="Network Storage Problem" src="/images/network-storage-problem.svg" style="width: 430px; display: block; margin: 0 auto;"></p>
+        <p><strong>For example:</strong> An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1&#39;s filesystem is isolated, the worker would never be able to access the uploaded images.</p>
+        
+        <p><img alt="Network Storage Problem" src="/images/network-storage-problem.svg" width="430" style="display: block; margin: 0 auto;"></p>
         
         <h3>The Solution</h3>
         
-        <p>With Nanobox, code instances are read-only, but can be connected to a single, writable filesystem - network storage. This allows them to write when necessary, and share the written files with other services that need to access them.</p>
+        <p>Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as &quot;network directories&quot;. These directories are then replaced with <a href="#network-mounts">network mounts</a> on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. </p>
         
-        <p><img alt="Network Storage Problem" src="/images/network-storage-solution.svg" style="width: 620px; display: block; margin: 0 auto;"></p>
+        <p><img alt="Network Storage Solution" src="/images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;"></p>
         
         <h2>How Network Storage Works</h2>
         
-        <p>Network storage services are writable filesystems available to your app&#39;s services. The filesystem is accessed across the network through network mounts.</p>
+        <p>Network storage services provide centralized writable filesystems sharable between multiple code services. For each code service, <code>network_dirs</code> can be specified in the <a href="/getting-started/boxfile">Boxfile</a>. On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across the app&#39;s private network to the correpsonding path inside of the storage service. This allows code services to access files stored in network storage using the same filepaths as if in local filesystem.</p>
+        
+        <h3 id="network-mounts">Network Mounts</h3>
+        
+        <p>Network mounts essentially replace those directories in your repo (and their contents) specified as network directories in your Boxfile. Anything inside of a network directory within your repo will not be accessible to your app until uploaded to the matching filepath inside of your storage service.</p>
+        
+        <h2>Configuring Network Storage</h2>
+        
+        <p>Network storage services don&#39;t require much configuration. Really the only configurable option is the <code>name</code> of the service. Storage services use the <a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">&quot;nfs&quot; file system protocol</a> and can be created/configured using the service ID <code>nfs1</code> (incremented up when using mulitple storage services). </p>
+        
+        <h4>Network Storage Service in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">file-storage</span>&#x000A;</code></pre>
         
         <h3>Network Directories</h3>
         
-        <p>Any directory in your application needing write-access can be specified as a network directory in your Boxfile. These directories are stored on your storage service and accessible to application instances. On deploy, network mounts are created over each specified directory, allowing all instances to connect and write to a single writable filesystem.</p>
+        <p>In order for a code service to be able to store files in a storage service, network directories must be added to the code service&#39;s configuration. Network directories are configured per code service using the <code>network_dirs</code> config.</p>
         
-        <h4>Network Directories Use the Same Filepath</h4>
+        <h4>Network Directories in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">public/uploads</span>&#x000A;&#x000A;<span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">public/uploads</span>&#x000A;&#x000A;<span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">file-storage</span>&#x000A;</code></pre>
         
-        <p>Even though network directories are accessed across the network, you&#39;re app will still use the same filepath it would use if the directories were on the local filesystem.</p>
+        <h6>Things to Note:</h6>
+        
+        <ul>
+        <li>Filepaths of <code>network_dirs</code> are relative to the root of your app&#39;s repo.</li>
+        <li>If you have multiple code services that need to share network directories, the <code>network_dirs</code> config must be added to all the code services.</li>
+        <li>If a code service includes <code>network_dirs</code> in the Boxfile, but no storage service is include, one will automatically be created using the service ID <code>nfs1</code>.</li>
+        </ul>
+        
+        <h3>Network Directories with Multiple Storage Services</h3>
+        
+        <p>It&#39;s possible to have multilple storage services in an app, with specific network directories stored on each. When using multiple storage services, you can specify which should be used be used by nesting the ID of the desired storage service under <code>network_dirs</code> config, then specifying the directory paths.</p>
+        
+        <h4>Network Directories for Mutliple Storage Services</h4>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">nfs1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/uploads</span>&#x000A;    <span class="s">nfs2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/processed</span>&#x000A;&#x000A;<span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">nfs1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/uploads</span>&#x000A;    <span class="s">nfs2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/processed</span>&#x000A;&#x000A;<span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">queued_images</span>&#x000A;&#x000A;<span class="s">nfs2</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">processed_images</span>&#x000A;</code></pre>
+        
+        <h2>Managing Network Storage</h2>
+        
+        <p>Network directories and their contents can be managed through an SSH connection into your storage service. More information is availble in the <a href="/getting-started/shell-access">Shell Access doc</a>.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/shell-access/">Shell Access</a>
           <a class="next" href="/getting-started/workflow/">Workflow</a>
