@@ -18,14 +18,15 @@ title: Log Output Style Guide
 
 #### Main Section with Child Process Output :
 ```
-BUILD OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::: =>
 
-Child process Initiated XYZ123
-begining database introspection..
-Complete, exiting..
+INSTALLING RUBY-2.2 ------------------------------------------------>
+  Child process Initiated XYZ123
+  begining database introspection..
+  Complete, exiting..
 
-<= ::::::::::::::::::::::::::::::::::::::::::::::::: END BUILD OUTPUT
 ```
+- Headline should be in the active present tense when possible. ie : "Installing ruby" vs "Install ruby"
+- Hard return before and after
 
 #### Config Settings :
 ```
@@ -43,19 +44,17 @@ URL  :: devo.pagodabox.com
 
 #### Sub Tasks with Success/Failure Status :
 ```
-::::::::: AFTER BUILD HOOK 1
-$ ruby /var/www/minify/minify.rb
-Warning:  Module 'hash' Unknown
-<<<<<<<<< [√] SUCCESS
+AFTER BUILD HOOK 1 ------------------>
+   $ ruby /var/www/minify/minify.rb
+   Warning:  Module 'hash' Unknown
+   [√] SUCCESS
 
-::::::::: AFTER BUILD HOOK 2
-$ python /hooks/danger.py
-Attempting dangerous action
-python: cannot subtract a float from a string
-python: exiting..
-<<<<<<<<< [!] FAILED / ABORTED!
-
-
+AFTER BUILD HOOK 2 ------------------>
+   $ python /hooks/danger.py
+   Attempting dangerous action
+   python: cannot subtract a float from a string
+   python: exiting..
+   [!] FAILED / ABORTED!
 ```
 
 #### Warning :
