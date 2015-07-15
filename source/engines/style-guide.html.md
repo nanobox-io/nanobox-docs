@@ -37,10 +37,19 @@ URL  :: devo.pagodabox.com
 
 #### Bullet Points :
 ```
-+> Language Detected : Ruby
++> Doing some tasks
++> Doing another task
++> Detecting Language...
+   Language Detected : Ruby
 +> Installing Ruby binary packages
+   - verifying packages
+   - preparing install
+   - Installing
++> Doing some other task
++> Verifying checksum
 ```
-
+- Basic sub information should be prefixed with three spaces
+- Sub bullet points should be prefixed with a dash
 
 #### Sub Tasks with Success/Failure Status :
 ```
