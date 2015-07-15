@@ -259,7 +259,23 @@
       </div>
       <div id='content'>
         <h1>Why Nanobox?</h1>
-        <h4>Coming Soon</h4>
+        <p>A fundamental problem faced in application development is environment consistency. How does one make their local dev environment perfectly match their production environment? And this opens up an eve tougher question - how do I make the environment setup process consistent, repeatable, fast, and most importantly, easy?</p>
+        
+        <p><strong>Enter Nanobox</strong>.</p>
+        
+        <h3>Isolated Virtual Environment on Your Local Machine</h3>
+        
+        <p>Nanobox uses Vagrant and Docker to create an isolated virtual environment on your local machine. This environment is completely self-contained and has no connection to or interaction with your local operating system, mitigating any potential issues stemming from OS nuances. All environment and service configuration is completely isolated inside of the virtualized environment.</p>
+        
+        <h3>Automated Environment Provisioning &amp; Deploys</h3>
+        
+        <p>Nanobox provisions and builds both the virtual environment and application-level code &amp; data services automatically and quickly. Nanobox Engines will auto-detect what services are needed, then automatically create them within the app&#39;s virtual network.</p>
+        
+        <h3>Reusable &amp; Customizable</h3>
+        
+        <p><a href="/getting-started/engines">Engines</a> are the beating heart of Nanobox. They provide the runtimes for your app&#39;s services, include auto-detection scripts (&quot;<a href="/engines/scripts/sniff">sniff</a>&quot;), and make available configuration options. Engines can be built, published, and used by anyone.</p>
+        
+        <p>Provisioning identical local environments across your entire dev team&#39;s machines is as simple as installing Nanobox, including a Boxfile in your repo (optional), and running <code>nanobox up</code>.</p>
         <div id='pagination'>
           <a class="prev" href="/">Overview</a>
           <a class="next" href="/installation/installing-nanobox/">Installation</a>

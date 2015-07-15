@@ -9,14 +9,14 @@ In some cases, it may be necessary to store files in your app's filesystem. In a
 In a distributed application architecture, there are multiple isolated filesystems. To ensure consistency across code services, code service filesystems are read-only. This prevents them from writing themselves out of sync, but it poses a problem in the case where an app does need to write to the filesystem.
 
 ### The Problem
-Because each code service has its own isolated filsytem, anything written to the filesystem is not inaccessable to other code services.
+Because each code service has its own isolated filsytem, anything written to the filesystem is inaccessable to other code services.
 
 **For example:** An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1's filesystem is isolated, the worker would never be able to access the uploaded images.
 
 <img alt="Network Storage Problem" src="/images/network-storage-problem.svg" width="430" style="display: block; margin: 0 auto;">
 
 ### The Solution
-Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as "network directories". These directories are then replaced with [network mounts](#network-mounts) on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. 
+Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as "network directories". These directories are replaced with [network mounts](#network-mounts) on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. 
 
 <img alt="Network Storage Solution" src="/images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;">
 
@@ -54,8 +54,8 @@ nfs1:
 
 ###### Things to Note:
 - Filepaths of `network_dirs` are relative to the root of your app's repo.
-- If you have multiple code services that need to share network directories, the `network_dirs` config must be added to all the code services.
-- If a code service includes `network_dirs` in the Boxfile, but no storage service is include, one will automatically be created using the service ID `nfs1`.
+- If multiple code services need to share network directories, the `network_dirs` config must be included in all the code services.
+- If a code service includes `network_dirs` but no storage service is included in the Boxfile, a `nfs1` service will automatically be created.
 
 ### Network Directories with Multiple Storage Services
 It's possible to have multilple storage services in an app, with specific network directories stored on each. When using multiple storage services, you can specify which should be used be used by nesting the ID of the desired storage service under `network_dirs` config, then specifying the directory paths.

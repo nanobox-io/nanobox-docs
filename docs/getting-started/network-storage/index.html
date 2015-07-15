@@ -267,7 +267,7 @@
         
         <h3>The Problem</h3>
         
-        <p>Because each code service has its own isolated filsytem, anything written to the filesystem is not inaccessable to other code services.</p>
+        <p>Because each code service has its own isolated filsytem, anything written to the filesystem is inaccessable to other code services.</p>
         
         <p><strong>For example:</strong> An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1&#39;s filesystem is isolated, the worker would never be able to access the uploaded images.</p>
         
@@ -275,7 +275,7 @@
         
         <h3>The Solution</h3>
         
-        <p>Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as &quot;network directories&quot;. These directories are then replaced with <a href="#network-mounts">network mounts</a> on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. </p>
+        <p>Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as &quot;network directories&quot;. These directories are replaced with <a href="#network-mounts">network mounts</a> on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. </p>
         
         <p><img alt="Network Storage Solution" src="/images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;"></p>
         
@@ -305,8 +305,8 @@
         
         <ul>
         <li>Filepaths of <code>network_dirs</code> are relative to the root of your app&#39;s repo.</li>
-        <li>If you have multiple code services that need to share network directories, the <code>network_dirs</code> config must be added to all the code services.</li>
-        <li>If a code service includes <code>network_dirs</code> in the Boxfile, but no storage service is include, one will automatically be created using the service ID <code>nfs1</code>.</li>
+        <li>If multiple code services need to share network directories, the <code>network_dirs</code> config must be included in all the code services.</li>
+        <li>If a code service includes <code>network_dirs</code> but no storage service is included in the Boxfile, a <code>nfs1</code> service will automatically be created.</li>
         </ul>
         
         <h3>Network Directories with Multiple Storage Services</h3>
