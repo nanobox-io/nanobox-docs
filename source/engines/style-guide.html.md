@@ -35,7 +35,7 @@ KIND :: Tinker App
 URL  :: devo.pagodabox.com
 ```
 
-#### Bullet Points :
+#### Tasks :
 ```
 +> Doing some tasks
 +> Doing another task
@@ -48,8 +48,9 @@ URL  :: devo.pagodabox.com
 +> Doing some other task
 +> Verifying checksum
 ```
-- Basic sub information should be prefixed with three spaces
-- Sub bullet points should be prefixed with a dash
+- Description should be active present tense when possible
+- Sub information should be prefixed with three spaces
+- Sub bullet points should be prefixed with three spaces and a dash
 
 #### Sub Tasks with Success/Failure Status :
 ```
