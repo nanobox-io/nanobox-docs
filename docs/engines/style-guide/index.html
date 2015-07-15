@@ -272,7 +272,12 @@
         <pre class="highlight plaintext"><code>::::::::::::::::::::::::::: HEADLINE HERE :::::::::::::::::::::::::::&#x000A;</code></pre>
         
         <h4>Main Section with Child Process Output :</h4>
-        <pre class="highlight plaintext"><code>BUILD OUTPUT ::::::::::::::::::::::::::::::::::::::::::::::::::::: =&gt;&#x000A;&#x000A;Child process Initiated XYZ123&#x000A;begining database introspection..&#x000A;Complete, exiting..&#x000A;&#x000A;&lt;= ::::::::::::::::::::::::::::::::::::::::::::::::: END BUILD OUTPUT&#x000A;</code></pre>
+        <pre class="highlight plaintext"><code>&#x000A;INSTALLING RUBY-2.2 ------------------------------------------------&gt;&#x000A;  Child process Initiated XYZ123&#x000A;  begining database introspection..&#x000A;  Complete, exiting..&#x000A;&#x000A;</code></pre>
+        
+        <ul>
+        <li>Headline should be in the active present tense when possible. ie : &quot;Installing ruby&quot; vs &quot;Install ruby&quot;</li>
+        <li>Hard return before and after</li>
+        </ul>
         
         <h4>Config Settings :</h4>
         <pre class="highlight plaintext"><code>NAME :: devo&#x000A;KIND :: Tinker App&#x000A;URL  :: devo.pagodabox.com&#x000A;</code></pre>
@@ -281,7 +286,7 @@
         <pre class="highlight plaintext"><code>+&gt; Language Detected : Ruby&#x000A;+&gt; Installing Ruby binary packages&#x000A;</code></pre>
         
         <h4>Sub Tasks with Success/Failure Status :</h4>
-        <pre class="highlight plaintext"><code>::::::::: AFTER BUILD HOOK 1&#x000A;$ ruby /var/www/minify/minify.rb&#x000A;Warning:  Module 'hash' Unknown&#x000A;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; [√] SUCCESS&#x000A;&#x000A;::::::::: AFTER BUILD HOOK 2&#x000A;$ python /hooks/danger.py&#x000A;Attempting dangerous action&#x000A;python: cannot subtract a float from a string&#x000A;python: exiting..&#x000A;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; [!] FAILED / ABORTED!&#x000A;&#x000A;&#x000A;</code></pre>
+        <pre class="highlight plaintext"><code>AFTER BUILD HOOK 1 ------------------&gt;&#x000A;   $ ruby /var/www/minify/minify.rb&#x000A;   Warning:  Module 'hash' Unknown&#x000A;   [√] SUCCESS&#x000A;&#x000A;AFTER BUILD HOOK 2 ------------------&gt;&#x000A;   $ python /hooks/danger.py&#x000A;   Attempting dangerous action&#x000A;   python: cannot subtract a float from a string&#x000A;   python: exiting..&#x000A;   [!] FAILED / ABORTED!&#x000A;</code></pre>
         
         <h4>Warning :</h4>
         <pre class="highlight plaintext"><code>-----------------------------  WARNING  -----------------------------&#x000A;We've detected you may be using sessions in a way that could cause&#x000A;unexpected behavior. Feel free to review the following guide for&#x000A;more information : bit.ly/2sA9b&#x000A;&#x000A;Next output comes after one hard return..&#x000A;</code></pre>
