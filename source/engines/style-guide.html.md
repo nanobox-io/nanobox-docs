@@ -35,12 +35,22 @@ KIND :: Tinker App
 URL  :: devo.pagodabox.com
 ```
 
-#### Bullet Points :
+#### Tasks :
 ```
-+> Language Detected : Ruby
++> Doing some tasks
++> Doing another task
++> Detecting Language...
+   Language Detected : Ruby
 +> Installing Ruby binary packages
+   - verifying packages
+   - preparing install
+   - Installing
++> Doing some other task
++> Verifying checksum
 ```
-
+- Description should be active present tense when possible
+- Sub information should be prefixed with three spaces
+- Sub bullet points should be prefixed with three spaces and a dash
 
 #### Sub Tasks with Success/Failure Status :
 ```
