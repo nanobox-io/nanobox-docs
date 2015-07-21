@@ -79,8 +79,8 @@ categories:
   - title: "Boxfile"
     path: "/boxfile/intro/"
     articles:
-      - title: "nanobox"
-        path: "/boxfile/nanobox/"
+      # - title: "nanobox"
+      #   path: "/boxfile/nanobox/"
       - title: "global"
         path: "/boxfile/global/"
       - title: "build"
