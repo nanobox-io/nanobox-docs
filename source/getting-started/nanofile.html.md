@@ -1,5 +1,5 @@
 ---
-title: nanobox
+title: .nanofile
 ---
 
 #### Coming Soon
