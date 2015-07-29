@@ -12,7 +12,7 @@ cpu_cap: 50
 domain: "appname.nano.dev"
 ```
 #### RAM
-`ram` defines the amount of RAM (in megabyes) allocated to your virtual environment.
+`ram` defines the amount of RAM (in megabytes) allocated to your virtual environment.
 
 #### CPUs
 `cpus` defines the number of CPU cores allocated to your virtual environment.

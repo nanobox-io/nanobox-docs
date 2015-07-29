@@ -2,4 +2,11 @@
 title: Project Setup
 ---
 
-#### Coming Soon
+One great thing about nanobox is that very little project setup is required. There's two config files you can include ([.nanofile](/getting-started/nanofile/) & [Boxfile](/getting-started/boxfile/)), but they aren't required. You also of the option so specifying an [engine](/getting-started/engines/), but that too is optional.
+
+```shell
+$ cd app-dir
+$ nanobox up
+```
+
+Simply by running `nanobox up` inside of your application directory, nanobox will provision your virtual environment, auto-detect engines and services required by your app, then deploy your code into virtualized instances. It's that simple.

@@ -13,7 +13,7 @@ global:
     ENVIRONMENT: production
 
 build:
-  engine: "ruby"
+  engine: 'ruby'
   lib_dir: vendor
   reuse_libs: true
   
