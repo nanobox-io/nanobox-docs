@@ -19,10 +19,10 @@ categories:
     articles:
       - title: "Project Setup"
         path: "/getting-started/project-setup/"
-      - title: "Boxfile"
-        path: "/getting-started/boxfile/"
       - title: ".nanofile"
         path: "/getting-started/nanofile/"
+      - title: "Boxfile"
+        path: "/getting-started/boxfile/"
       - title: "Engines"
         path: "/getting-started/engines/"
       - title: "Services"

@@ -11,7 +11,7 @@ a                       { @include transition(all .15s); }
     &:hover             { color: $gblue-6; }
     &#logo              { margin-top: -.05em;
       span              { margin-left: 1.8em;
-        &:after         { content: "{alpha}"; margin-left: .5em; position: relative; top: -.15em; font-size: .75em; color: $blue-0; text-transform: none; font-style: italic; letter-spacing: 0; font-weight: 700; }
+        &:after         { content: "alpha"; margin-left: .5em; position: relative; top: -.15em; font-size: .75em; color: $blue-0; text-transform: none; font-style: italic; letter-spacing: 0; font-weight: 700; }
       }
     }
   }
