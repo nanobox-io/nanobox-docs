@@ -261,26 +261,26 @@
         <h1>.nanofile</h1>
         <p>The <code>.nanofile</code> is a yaml config file used to define what resources are allocated from your local machine to your nanobox virtual environment. A <code>.nanofile</code> is only necessary when you need/want to deviate from the defaults.</p>
         
-        <h4>.nanofile Defaults</h4>
+        <h4 id="nanofile-defaults">.nanofile Defaults</h4>
         <pre class="highlight yaml"><code><span class="s">ram</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;<span class="s">cpus</span><span class="pi">:</span> <span class="s">2</span>&#x000A;<span class="s">cpu_cap</span><span class="pi">:</span> <span class="s">50</span>&#x000A;<span class="s">domain</span><span class="pi">:</span> <span class="s2">"</span><span class="s">appname.nano.dev"</span>&#x000A;</code></pre>
         
-        <h4>RAM</h4>
+        <h4 id="ram">RAM</h4>
         
         <p><code>ram</code> defines the amount of RAM (in megabytes) allocated to your virtual environment.</p>
         
-        <h4>CPUs</h4>
+        <h4 id="cpus">CPUs</h4>
         
         <p><code>cpus</code> defines the number of CPU cores allocated to your virtual environment.</p>
         
-        <h4>CPU Cap</h4>
+        <h4 id="cpu-cap">CPU Cap</h4>
         
         <p><code>cpu_cap</code> defines the maximun percentage (out of 100) of the CPU allocated to your virtual environment that can be used.</p>
         
-        <h4>Domain</h4>
+        <h4 id="domain">Domain</h4>
         
         <p><code>domain</code> specifies the domain where your locally running app is accessed. During the provisioning process, nanobox writes an entry into your local hosts file using a provided IP (172.16.x.x) and assigns it the domain of <em>appname</em>.nano.dev, or whatever domain is specied.</p>
         
-        <h3>.nanofile Handling</h3>
+        <h3 id="nanofile-handling">.nanofile Handling</h3>
         
         <p>All users&#39; machines are different and the settings defined in the .nanofile may not work on others&#39; machines. As a general practice, we recommend ignoring the .nanofile in whatever version control tool you use. However, if you have a minimum requirement for your project and/or you&#39;re confident all machines used by your team will be able to support the settings defined in your .nanofile, feel free to commit it.</p>
         <div id='pagination'>

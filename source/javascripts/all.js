@@ -14,6 +14,13 @@ $(window).scroll(function() {
 });
 
 
+/////////////////// CONTENT FADE-IN ///////////////////
+
+$(document).ready(function() {    
+    $('#content').addClass('loaded');
+});
+
+
 /////////// OPEN / CLOSE RESPONSIVE CONTENTS ///////////
 
 $(function() {
