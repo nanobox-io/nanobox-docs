@@ -2,4 +2,11 @@
 title: Upgrading
 ---
 
-#### Coming Soon
+Upgrading Nanobox is done through the nanobox CLI's `update` and `upgrade` commands.
+
+[`pagoda update`](/cli/update/) : Updates the nanobox CLI.
+
+[`pagoda upgrade`](/cli/upgrade/) : Updates the nanobox Docker images.
+
+#### Vagrant & Virtual Box
+Vagrant & Virtual Box are used by Nanobox, but are external programs. The upgrade processes for these are documented in their documentation.

@@ -10,8 +10,8 @@
       Network Storage - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all.js" type="text/javascript"></script>
+    <link href="/stylesheets/all-c909cd3e.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-09ebb8ac.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -271,13 +271,13 @@
         
         <p><strong>For example:</strong> An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1&#39;s filesystem is isolated, the worker would never be able to access the uploaded images.</p>
         
-        <p><img alt="Network Storage Problem" src="/images/network-storage-problem.svg" width="430" style="display: block; margin: 0 auto;"></p>
+        <p><img alt="Network Storage Problem" src="/images/network-storage-problem-d4c20109.svg" width="430" style="display: block; margin: 0 auto;"></p>
         
         <h3 id="the-solution">The Solution</h3>
         
         <p>Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as &quot;network directories&quot;. These directories are replaced with <a href="#network-mounts">network mounts</a> on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. </p>
         
-        <p><img alt="Network Storage Solution" src="/images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;"></p>
+        <p><img alt="Network Storage Solution" src="/images/network-storage-solution-8dfccb37.svg" width="620" style="display: block; margin: 0 auto;"></p>
         
         <h2 id="how-network-storage-works">How Network Storage Works</h2>
         

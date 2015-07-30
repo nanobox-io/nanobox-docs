@@ -3,7 +3,7 @@ title: Engines
 ---
 
 ### What Exactly is an Engine?
-Engines are the what truly add simplicity and power to nanobox. An engine is essentially a collection of scripts that detect, build, and configure a runtime environment specific to your app.
+Engines are what truly add simplicity and power to nanobox. An engine is essentially a collection of scripts that detect, build, and configure a runtime environment specific to your app.
 
 As nanobox starts up, it uses the list of *official* engines to "sniff" your codebase for criteria that match it to a specific engine. The matching engine is used to download and install the necessary binaries and packages for your runtime environment, configure the environment, and apply any [Boxfile](/getting-started/boxfile/) configuration options specific to the engine. You also have the option to specify a specific engine in your Boxfile.
 
