@@ -6,8 +6,8 @@ All interaction with Nanobox happens through the `nanobox` CLI. This section of 
 
 | Command                        | Summary                                                          |
 | :----------------------------- | :--------------------------------------------------------------- |
-| [`build`](/cli/build/)         | Rebuilds/Compiles your project                                   |
 | [`bootstrap`](/cli/bootstrap/) | Runs an engine's bootstrap script - downloads code & launches VM |
+| [`build`](/cli/build/)         | Rebuilds/Compiles your project                                   |
 | [`console`](/cli/console/)     | Opens an interactive terminal inside your app's context          |
 | [`create`](/cli/create/)       | Runs 'nanobox init' then boots the nanobox VM                    |
 | [`deploy`](/cli/deploy/)       | Deploys to the nanobox VM                                        |

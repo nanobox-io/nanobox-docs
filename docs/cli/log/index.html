@@ -11,7 +11,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-2923a515.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-365a94a9.js" type="text/javascript"></script>
+    <script src="/javascripts/all-e3f637d0.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -274,7 +274,26 @@
       </div>
       <div id='content'>
         <h1>log</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The <code>log</code> command provides log output for an application.</p>
+        
+        <h3 id="usage">Usage</h3>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>pagoda log <span class="o">[</span>-c count] <span class="o">[</span>-l]&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>nanobox log -c 100&#x000A;<span class="gp">$ </span>nanobox log -l&#x000A;</code></pre>
+        
+        <h3 id="options">Options</h3>
+        
+        <h4 id="c-count-count">-c, --count [count]</h4>
+        
+        <p>The number of lines of the log you wish to view.</p>
+        
+        <h4 id="l-live">-l, --live</h4>
+        
+        <p>Enable live stream</p>
+        
+        <h4 id="level">--level</h4>
+        
+        <p>Specify the log level - emergency, alert, critical, error, warning, notice, informational, debug, log</p>
+        
+        <p><strong>Note:</strong> If count or live flags are not passed, it will output the last 100 lines of the log.</p>
         <div id='pagination'>
           <a class="prev" href="/cli/init/">init</a>
           <a class="next" href="/cli/new/">new</a>

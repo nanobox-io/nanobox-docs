@@ -2,4 +2,9 @@
 title: upgrade
 ---
 
-#### Coming Soon
+The `upgrade` command updates the nanobox Docker images.
+
+### Usage
+```shell
+$ nanobox upgrade
+```

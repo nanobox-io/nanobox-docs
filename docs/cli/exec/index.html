@@ -11,7 +11,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-2923a515.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-365a94a9.js" type="text/javascript"></script>
+    <script src="/javascripts/all-e3f637d0.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -274,7 +274,16 @@
       </div>
       <div id='content'>
         <h1>exec</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The <code>exec</code> command runs a command on an application&#39;s service.</p>
+        
+        <h3 id="usage">Usage</h3>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> &lt;COMMAND&gt;&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> -t <span class="nb">local</span>-port:remote-port,local-port:remote-port &lt;COMMAND&gt;&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec </span>ls -la&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> -t 6379:4237 redis-cli flushall&#x000A;</code></pre>
+        
+        <h3 id="options">Options</h3>
+        
+        <h4 id="t-tunnel">-t --tunnel</h4>
+        
+        <p>Establishes a port forward for each comma delimited local:remote port combo</p>
         <div id='pagination'>
           <a class="prev" href="/cli/destroy/">destroy</a>
           <a class="next" href="/cli/fetch/">fetch</a>

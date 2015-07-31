@@ -2,4 +2,9 @@
 title: publish
 ---
 
-#### Coming Soon
+The `publish` command publishes your engine to nanobox.io.
+
+### Usage
+```shell
+$ nanobox publish
+```

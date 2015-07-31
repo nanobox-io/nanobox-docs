@@ -2,4 +2,9 @@
 title: update
 ---
 
-#### Coming Soon
+The `update` command checks for and udpates the nanobox CLI.
+
+### Usage
+```shell
+$ nanobox update
+```

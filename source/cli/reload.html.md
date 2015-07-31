@@ -2,4 +2,9 @@
 title: reload
 ---
 
-#### Coming Soon
+The `reload` command reloads the Nanobox virtual machine.
+
+### Usage
+```shell
+$ nanobox reload
+```

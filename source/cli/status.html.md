@@ -2,4 +2,9 @@
 title: status
 ---
 
-#### Coming Soon
+The `status` command displays all current nanobox VMs.
+
+### Usage
+```shell
+$ nanobox status
+```
