@@ -16,8 +16,10 @@ $(window).scroll(function() {
 
 /////////////////// CONTENT FADE-IN ///////////////////
 
-$(document).ready(function() {    
-    $('#content').addClass('loaded');
+$(document).ready(function() {
+    setTimeout(function() {
+      $('#content').addClass('loaded');
+    }, 100);    
 });
 
 

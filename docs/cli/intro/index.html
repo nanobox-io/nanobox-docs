@@ -10,8 +10,8 @@
       Command Line Interface - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-c909cd3e.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-09ebb8ac.js" type="text/javascript"></script>
+    <link href="/stylesheets/all-2923a515.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-365a94a9.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -102,16 +102,25 @@
             <a href="/cli/intro/">Command Line Interface</a>
             <ul class='sub'>
               <li>
-                <a href="/cli/create/">create</a>
+                <a href="/cli/bootstrap/">bootstrap</a>
               </li>
               <li>
-                <a href="/cli/domain/">domain</a>
+                <a href="/cli/build/">build</a>
+              </li>
+              <li>
+                <a href="/cli/console/">console</a>
+              </li>
+              <li>
+                <a href="/cli/create/">create</a>
               </li>
               <li>
                 <a href="/cli/deploy/">deploy</a>
               </li>
               <li>
                 <a href="/cli/destroy/">destroy</a>
+              </li>
+              <li>
+                <a href="/cli/exec/">exec</a>
               </li>
               <li>
                 <a href="/cli/fetch/">fetch</a>
@@ -151,6 +160,12 @@
               </li>
               <li>
                 <a href="/cli/update/">update</a>
+              </li>
+              <li>
+                <a href="/cli/upgrade/">upgrade</a>
+              </li>
+              <li>
+                <a href="/cli/watch/">watch</a>
               </li>
             </ul>
           </li>
@@ -259,10 +274,110 @@
       </div>
       <div id='content'>
         <h1>Command Line Interface</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>All interaction with Nanobox happens through the <code>nanobox</code> CLI. This section of docs walks through each of the CLI commands, their functionality, and options associated with each. Below is a list with a quick summary of each command:</p>
+        
+        <table><thead>
+        <tr>
+        <th style="text-align: left">Command</th>
+        <th style="text-align: left">Summary</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td style="text-align: left"><a href="/cli/build/"><code>build</code></a></td>
+        <td style="text-align: left">Rebuilds/Compiles your project</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/bootstrap/"><code>bootstrap</code></a></td>
+        <td style="text-align: left">Runs an engine&#39;s bootstrap script - downloads code &amp; launches VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/console/"><code>console</code></a></td>
+        <td style="text-align: left">Opens an interactive terminal inside your app&#39;s context</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/create/"><code>create</code></a></td>
+        <td style="text-align: left">Runs &#39;nanobox init&#39; then boots the nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/deploy/"><code>deploy</code></a></td>
+        <td style="text-align: left">Deploys to the nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/destroy/"><code>destroy</code></a></td>
+        <td style="text-align: left">Destroys the nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/exec/"><code>exec</code></a></td>
+        <td style="text-align: left">Runs a command in your apps context</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/fetch/"><code>fetch</code></a></td>
+        <td style="text-align: left">Fetches an engine from nanobox.io</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/halt/"><code>halt</code></a></td>
+        <td style="text-align: left">Halts the nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/help/"><code>help</code></a></td>
+        <td style="text-align: left">Displays CLI help</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/init/"><code>init</code></a></td>
+        <td style="text-align: left">Creates a nanobox flavored Vagrantfile</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/log/"><code>log</code></a></td>
+        <td style="text-align: left">Shows/Streams nanobox logs</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/new/"><code>new</code></a></td>
+        <td style="text-align: left">Generates a new engine</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/publish/"><code>publish</code></a></td>
+        <td style="text-align: left">Publishes an engine to nanobox.io</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/reload/"><code>reload</code></a></td>
+        <td style="text-align: left">Reloads the nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/resume/"><code>resume</code></a></td>
+        <td style="text-align: left">Resumes the halted/suspended nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/status/"><code>status</code></a></td>
+        <td style="text-align: left">Displays all current nanobox VM&#39;s</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/suspend/"><code>suspend</code></a></td>
+        <td style="text-align: left">Suspends the nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/tunnel/"><code>tunnel</code></a></td>
+        <td style="text-align: left">Displays port forward information for your apps running services</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/up/"><code>up</code></a></td>
+        <td style="text-align: left">Runs &#39;nanobox create&#39; and then &#39;nanobox deploy&#39;</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/update/"><code>update</code></a></td>
+        <td style="text-align: left">Updates the CLI to the newest available version</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/upgrade/"><code>upgrade</code></a></td>
+        <td style="text-align: left">Updates the nanobox docker images</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/watch/"><code>watch</code></a></td>
+        <td style="text-align: left">Watches your app for file changes</td>
+        </tr>
+        </tbody></table>
         <div id='pagination'>
           <a class="prev" href="/getting-started/workflow/">Workflow</a>
-          <a class="next" href="/cli/create/">create</a>
+          <a class="next" href="/cli/bootstrap/">bootstrap</a>
         </div>
       </div>
     </div>
