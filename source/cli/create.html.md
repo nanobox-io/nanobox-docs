@@ -2,7 +2,7 @@
 title: create
 ---
 
-The `create` command runs an [*init*](/cli/init/) and starts a nanobox VM.
+The `create` command runs a [*nanobox init*](/cli/init/), then boots the nanobox VM by issuing a "vagrant up"
 
 ### Usage
 ```

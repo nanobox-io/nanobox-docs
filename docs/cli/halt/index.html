@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,7 +277,9 @@
       </div>
       <div id='content'>
         <h1>halt</h1>
-        <p>The <code>halt</code> command halts the currently running nanobox VM.</p>
+        <p>The <code>halt</code> command shuts down the currently running nanobox VM.</p>
+        
+        <p>Nanobox/Vagrant will first attempt to gracefully shut down the machine by running the guest OS shutdown mechanism. If this fails, it will effectively just shut off power to the virtualized machine.</p>
         
         <h3 id="usage">Usage</h3>
         <pre class="highlight shell"><code><span class="gp">$ </span>nanobox halt&#x000A;<span class="gp">$ </span>nanobox halt -f&#x000A;</code></pre>
@@ -283,7 +288,7 @@
         
         <h4 id="f-force">-f, --force</h4>
         
-        <p>Halts the VM without confirmation</p>
+        <p>Halts the VM without confirmation.</p>
         <div id='pagination'>
           <a class="prev" href="/cli/fetch/">fetch</a>
           <a class="next" href="/cli/help/">help</a>

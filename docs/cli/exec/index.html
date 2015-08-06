@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,16 +277,16 @@
       </div>
       <div id='content'>
         <h1>exec</h1>
-        <p>The <code>exec</code> command runs a command on an application&#39;s service.</p>
+        <p>The <code>exec</code> command Runs a command from inside your app on the nanobox VM.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> &lt;COMMAND&gt;&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> -t <span class="nb">local</span>-port:remote-port,local-port:remote-port &lt;COMMAND&gt;&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec </span>ls -la&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> -t 6379:4237 redis-cli flushall&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec </span>nanobox <span class="nb">exec</span> <span class="o">[</span>-t 80:8080] &lt;<span class="nb">command</span>&gt;&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec </span>ls -la&#x000A;<span class="gp">$ </span>nanobox <span class="nb">exec</span> -t 6379:4237 redis-cli flushall&#x000A;</code></pre>
         
         <h3 id="options">Options</h3>
         
         <h4 id="t-tunnel">-t --tunnel</h4>
         
-        <p>Establishes a port forward for each comma delimited local:remote port combo</p>
+        <p>Creates port forwards for all comma delimeted port:port combos</p>
         <div id='pagination'>
           <a class="prev" href="/cli/destroy/">destroy</a>
           <a class="next" href="/cli/fetch/">fetch</a>

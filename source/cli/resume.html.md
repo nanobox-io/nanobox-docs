@@ -2,7 +2,7 @@
 title: resume
 ---
 
-The `resume` command resumes a halted/suspened nanobox VM.
+Resumes the halted/suspended nanobox VM by issuing a "vagrant resume"
 
 ### Usage
 ```shell

@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,7 +277,23 @@
       </div>
       <div id='content'>
         <h1>Services</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Apps consists of multiple services, virtualized machines each devoted to a specific process/function. Services can be split into to main categories - code services and data services.</p>
+        
+        <h3 id="code-services">Code Services</h3>
+        
+        <p>Codes services run application code. All code services are connected to data services within the app&#39;s virtualized network. Their runtime configuration is handled by the <a href="/getting-started/engines/">engines</a>, which expose config options through the <a href="/getting-started/boxfile/">Boxfile</a>. Code services come in two forms - webs and workers.</p>
+        
+        <h4 id="webs">Webs</h4>
+        
+        <p>Web services come packaged with a web server of some kind which handles incoming traffic through external network connections (port 8080).</p>
+        
+        <h4 id="workers">Workers</h4>
+        
+        <p>Worker services are meant for running background processes and do not connect with the external network.</p>
+        
+        <h3 id="data-services">Data Services</h3>
+        
+        <p>Data services house application data. They include services such as PostgreSQL, MySQL, MongoDB, Redis, Memcached, NFS (network storage), etc. These are <a href="/boxfile/services/">configured from the Boxfile</a> as well.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/engines/">Engines</a>
           <a class="next" href="/getting-started/logs/">Logs</a>

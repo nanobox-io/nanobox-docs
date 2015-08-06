@@ -2,7 +2,7 @@
 title: watch
 ---
 
-The `watch` command "watches" for application filesystem changes and auto-updates/reloads the app.
+Watches your app for file changes. When a file is changed a 'nanobox build' is automatically issued. If a Boxfile is modified a 'nanobox deploy' is issued.
 
 ### Usage
 ```shell

@@ -79,6 +79,8 @@ categories:
         path: "/cli/status/"
       - title: "suspend"
         path: "/cli/suspend/"
+      - title: "tunnel"
+        path: "/cli/tunnel/"
       - title: "up"
         path: "/cli/up/"
       - title: "update"

@@ -2,7 +2,7 @@
 title: destroy
 ---
 
-The `destroy` command destroys the current nanobox VM.
+The `destroy` command destroys the currently running nanobox VM by issuing a "vagrant destroy".
 
 ### Usage:
 ```shell
@@ -12,4 +12,4 @@ $ nanobox destroy -f
 
 ### Options
 #### -f, --force
-A force destroy skips confirmation. **Use responsibly!**
+Skips confirmation and forces the destroy. **Use responsibly!**

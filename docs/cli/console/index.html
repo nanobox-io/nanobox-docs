@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,10 +277,16 @@
       </div>
       <div id='content'>
         <h1>console</h1>
-        <p>The <code>console</code> command drops you into bash prompt inside of the nanobox docker VM. </p>
+        <p>The <code>console</code> opens an interactive terminal from inside your app on the nanobox virtual machine.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox console&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox console <span class="o">[</span>-t 80:8080]&#x000A;&#x000A;<span class="c">#Examples</span>&#x000A;<span class="gp">$ </span>nanobox console&#x000A;<span class="gp">$ </span>nanobox console -t 80:8080,3306:1234&#x000A;</code></pre>
+        
+        <h3 id="options">Options</h3>
+        
+        <h4 id="t-tunnel">-t, --tunnel</h4>
+        
+        <p>Creates port forwards for all comma delimeted port:port combos</p>
         <div id='pagination'>
           <a class="prev" href="/cli/build/">build</a>
           <a class="next" href="/cli/create/">create</a>

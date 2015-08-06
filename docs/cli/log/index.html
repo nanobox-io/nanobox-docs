@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,26 +277,25 @@
       </div>
       <div id='content'>
         <h1>log</h1>
-        <p>The <code>log</code> command provides log output for an application.</p>
+        <p>The <code>log</code> command provides log output for an application. By default, it will show the last 100 lines of the logs.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>pagoda log <span class="o">[</span>-c count] <span class="o">[</span>-l]&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>nanobox log -c 100&#x000A;<span class="gp">$ </span>nanobox log -l&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>pagoda log <span class="o">[</span>-c] <span class="o">[</span>-s] <span class="o">[</span>-l]&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>nanobox log -c 100&#x000A;<span class="gp">$ </span>nanobox log -s -l warn&#x000A;</code></pre>
         
         <h3 id="options">Options</h3>
         
         <h4 id="c-count-count">-c, --count [count]</h4>
         
-        <p>The number of lines of the log you wish to view.</p>
+        <p>Specifies the number of lines to output from the historical log.</p>
         
-        <h4 id="l-live">-l, --live</h4>
+        <h4 id="s-stream">-s, --stream</h4>
         
-        <p>Enable live stream</p>
+        <p>Streams logs live</p>
         
-        <h4 id="level">--level</h4>
+        <h4 id="l-level">-l, --level</h4>
         
-        <p>Specify the log level - emergency, alert, critical, error, warning, notice, informational, debug, log</p>
-        
-        <p><strong>Note:</strong> If count or live flags are not passed, it will output the last 100 lines of the log.</p>
+        <p>Specify the log level - debug, info, warn, error, fatal.<br>
+        <strong>Note:</strong> that each level will display logs from all levels below it</p>
         <div id='pagination'>
           <a class="prev" href="/cli/init/">init</a>
           <a class="next" href="/cli/new/">new</a>

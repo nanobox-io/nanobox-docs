@@ -155,6 +155,9 @@
               <li>
                 <a href="/cli/suspend/">suspend</a>
               </li>
+              <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
               <li class='active'>
                 <a href="/cli/up/">up</a>
               </li>
@@ -277,9 +280,15 @@
         <p>The <code>up</code> command runs a <a href="/cli/create/"><em>create</em></a> and a <a href="/cli/deploy/"><em>deploy</em></a>.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox up&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox up <span class="o">[</span>-w]&#x000A;</code></pre>
+        
+        <h3 id="options">Options</h3>
+        
+        <h4 id="w-watch">-w, --watch</h4>
+        
+        <p>Watches your app for file changes.</p>
         <div id='pagination'>
-          <a class="prev" href="/cli/suspend/">suspend</a>
+          <a class="prev" href="/cli/tunnel/">tunnel</a>
           <a class="next" href="/cli/update/">update</a>
         </div>
       </div>

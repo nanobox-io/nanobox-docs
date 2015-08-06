@@ -2,7 +2,7 @@
 title: reload
 ---
 
-The `reload` command reloads the Nanobox virtual machine.
+Reloads the nanobox VM by issuing a "vagrant reload --provision"
 
 ### Usage
 ```shell

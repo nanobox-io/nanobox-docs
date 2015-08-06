@@ -2,27 +2,26 @@
 title: log
 ---
 
-The `log` command provides log output for an application.
+The `log` command provides log output for an application. By default, it will show the last 100 lines of the logs.
 
 ### Usage
 ```shell
 # Pattern
-$ pagoda log [-c count] [-l]
+$ pagoda log [-c] [-s] [-l]
 
 # Example
 $ nanobox log -c 100
-$ nanobox log -l
+$ nanobox log -s -l warn
 ```
 
 ### Options
 
 #### -c, --count [count]
-The number of lines of the log you wish to view.
+Specifies the number of lines to output from the historical log.
 
-#### -l, --live
-Enable live stream
+#### -s, --stream
+Streams logs live
 
-#### --level
-Specify the log level - emergency, alert, critical, error, warning, notice, informational, debug, log
-
-**Note:** If count or live flags are not passed, it will output the last 100 lines of the log.
+#### -l, --level
+Specify the log level - debug, info, warn, error, fatal.  
+**Note:** that each level will display logs from all levels below it

@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -277,7 +280,7 @@
         <p>The <code>deploy</code> command issues a deploy to your nanobox.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox deploy&#x000A;<span class="gp">$ </span>nanobox deploy -v&#x000A;<span class="gp">$ </span>nanobox deploy -r&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;nanobox deploy <span class="o">[</span>-v] <span class="o">[</span>-r] <span class="o">[</span>-s]&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox deploy&#x000A;<span class="gp">$ </span>nanobox deploy -v&#x000A;<span class="gp">$ </span>nanobox deploy -r&#x000A;<span class="gp">$ </span>nanobox deploy --sandbox&#x000A;</code></pre>
         
         <h3 id="options">Options:</h3>
         
@@ -288,6 +291,10 @@
         <h4 id="r-reset">-r, --reset</h4>
         
         <p>Clears cached libraries the project might use</p>
+        
+        <h4 id="s-sandbox">-s, --sandbox</h4>
+        
+        <p>Deploys your app&#39;s data services, but not webs or workers. This is helpful when all you need is a console in a VM.</p>
         <div id='pagination'>
           <a class="prev" href="/cli/create/">create</a>
           <a class="next" href="/cli/destroy/">destroy</a>

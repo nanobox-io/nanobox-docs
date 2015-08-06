@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,7 +277,40 @@
       </div>
       <div id='content'>
         <h1>Logs</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Nanobox pipes all service logs into a unified log stream viewable through the <a href="/cli/log/">nanobox CLI&#39;s &quot;log&quot; command</a>.</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox log&#x000A;</code></pre>
+        
+        <h3 id="including-custom-logs-in-the-unified-log-stream">Including Custom Logs in the Unified Log Stream</h3>
+        
+        <p>If using a framework or CMS that logs to a specific file, you can include that file in the unified log stream by adding it as a <code>log_watch</code> in your Boxfile.</p>
+        
+        <p>A <code>log_watch</code> consists of two things:</p>
+        
+        <ol>
+        <li><strong>A Key</strong> - This is prepended to log entries originating from the log_watch&#39;d file.</li>
+        <li><strong>A Path</strong> - The path to the log file relative to the root of your project.<br></li>
+        </ol>
+        
+        <h4 id="log-watches-in-the-boxfile">Log Watches in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="c1"># Pattern</span>&#x000A;<span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/log.file"</span>&#x000A;&#x000A;<span class="c1"># Example</span>&#x000A;<span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">app/logs/error.log"</span>&#x000A;</code></pre>
+        
+        <h4 id="things-to-know-about-custom-logs">Things to Know About Custom Logs</h4>
+        
+        <h6 id="you-can-only-log_watch-individual-files">You Can Only log_watch Individual Files</h6>
+        
+        <p>Log watches only work on individual files. You cannot log_watch a directory.</p>
+        
+        <h6 id="key-naming-restrictions">Key Naming Restrictions</h6>
+        
+        <p>Log_watch &quot;keys&quot; can not contain special characters other than brackets <code>[ ]</code>. For logs captured by the unified logger, we suggest using the following pattern: <code>abc123[abc123]</code>.</p>
+        
+        <h6 id="keys-must-be-unique">Keys Must Be Unique</h6>
+        
+        <p>Log_watch keys must be unique. If you have identical keys, only one will be watched and there&#39;s no guarantee which one it will be.</p>
+        
+        <h6 id="log_watch-39-d-files-are-writable">Log_watch&#39;d Files Are Writable</h6>
+        
+        <p>Any files specified as a log_watch will be given writable permissions. These files do not need to be stored in a <a href="/getting-started/network-storage/">network directory</a>.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/services/">Services</a>
           <a class="next" href="/getting-started/deploys/">Deploys</a>

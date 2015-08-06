@@ -156,6 +156,9 @@
                 <a href="/cli/suspend/">suspend</a>
               </li>
               <li>
+                <a href="/cli/tunnel/">tunnel</a>
+              </li>
+              <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
@@ -274,13 +277,17 @@
       </div>
       <div id='content'>
         <h1>suspend</h1>
-        <p>The <code>suspend</code> command suspends the current nanobox VM.</p>
+        <p>The <code>suspend</code> command suspends the currently running nanobox virtualized machine (VM) rather than <a href="/cli/halt/">halting</a> it or <a href="/cli/destroy/">destroying</a> it.</p>
+        
+        <p>A suspend essentially saves the exact point-in-time state of the VM, so that when <a href="cli/resume/">resumed</a>, it begins running immediately from that point, rather than doing a full boot.</p>
+        
+        <p>This generally requires extra disk space to store all the contents of the RAM within your VM, but the machine no longer consumes the RAM of your local machine or CPU cycles while it is suspended.</p>
         
         <h3 id="usage">Usage</h3>
         <pre class="highlight shell"><code><span class="gp">$ </span>nanobox <span class="nb">suspend</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/cli/status/">status</a>
-          <a class="next" href="/cli/up/">up</a>
+          <a class="next" href="/cli/tunnel/">tunnel</a>
         </div>
       </div>
     </div>
