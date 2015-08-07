@@ -277,7 +277,29 @@
       </div>
       <div id='content'>
         <h1>Deploys</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Deploys with nanobox allow you to apply changes to both code and your app&#39;s environment on the fly. When deploying to your nanobox VM, the following happens.</p>
+        
+        <h3 id="sniff-amp-prepare">Sniff &amp; Prepare</h3>
+        
+        <p>Nanobox &quot;sniffs&quot; your apps code to check if an <a href="/getting-started/engines/">engine</a> has been specified in your <a href="/getting-started/boxfile/">Boxfile</a>. It one hasn&#39;t, it will run through the standard libraries of engines to find the best match (which all happens very quickly). Once the engine is loaded, it will generate a Boxfile by merging the Boxfile included in the project with an engine-generated Boxfile. Nanobox then begins to prepare the environment.</p>
+        
+        <h3 id="build">Build</h3>
+        
+        <p>In the build phase of the deploy process, nanobox loads your code&#39;s runtime environment based on settings specified in the generated Boxfile, then prepares your code for deploy. This includes loading project dependenecies, code modifaction specified by the engine, etc. The build is where engines really apply their magic.</p>
+        
+        <h3 id="cleanup-amp-package">Cleanup &amp; Package</h3>
+        
+        <p>Once build is complete, nanobox will remove anything from the build runtime not necessary in live runtime (defined by the engine), then package your code into a read-only deployable package.</p>
+        
+        <h3 id="provision-services">Provision Services</h3>
+        
+        <p>Nanobox then provisions all services included in the generated Boxfile with their specified configuration options. On the first deploy, all code and data services are provisioned. On susequent deploys, only data services (databases, caches, storage, etc.) that are new in the Boxfile are provisioned. All existing data services are unnaffected by deploys once provisioned, unless a configuration change for the data service is detected in the Boxfile. In this case, a new data service is provisioned with the updated configuration and replaces the existing service.</p>
+        
+        <p><strong>Note:</strong> When a new data service is provisioned, all data is wiped, so you&#39;ll either need to re-seed or re-import the data.</p>
+        
+        <h3 id="deploy-packaged-code-to-code-services">Deploy Packaged Code to Code Services</h3>
+        
+        <p>Once all services have been provisioned, the packaged code is deployed to code services and any updates to the runtime configuration are applied to the running app.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/logs/">Logs</a>
           <a class="next" href="/getting-started/tunneling/">Tunneling</a>

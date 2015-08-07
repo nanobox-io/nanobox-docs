@@ -277,7 +277,22 @@
       </div>
       <div id='content'>
         <h1>Uninstalling</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>An uninstaller is included with each nanobox installer. The unstinstaller can be used to uninstall nanobox or the entire nanobox bundle (nanobox, Virtual Box, and Vagrant).</p>
+        
+        <h4 id="mac-osx">Mac OSX</h4>
+        
+        <p>When running the uninstaller on OSX, you&#39;ll be given a prompt to specify what to uninstall - &quot;nanobox&quot; or &quot;bundle&quot;. Typing <code>nanobox</code> will uninstall nanobox only. Typing <code>bundle</code> will uninstall nanobox, Virtual Box, and Vagrant.</p>
+        
+        <h4 id="linux">Linux</h4>
+        
+        <p>Uninstalling nanobox on Linux is done just as you would any other packaged software. You can either double click the installer file and select the uninstall option or, run the <code>dpkg</code> command in your console:</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>sudo dpkg -i nanobox.deb&#x000A;</code></pre>
+        
+        <p>What gets uninstalled depends on the installer you use to uninstall. The <code>nanobox.deb</code> installer will uninstall nanobox only. The <code>nanobox-bundle.deb</code> installer will uninstall nanobox, Virtual Box, and Vagrant.</p>
+        
+        <h4 id="windows">Windows</h4>
+        
+        <p>Nanobox can be unistalled in Windows by launching the nanobox installer. It will detect if nanobox is already installed and, if so, will provide an uninstall option. What gets uninstalled depends on which installer you use. The <code>nanobox.msi</code> installer will uninstall nanobox only. The <code>nanobox-bundle.exe</code> installer will uninstall nanobox, Virtual Box, and Vagrant.</p>
         <div id='pagination'>
           <a class="prev" href="/installation/upgrading/">Upgrading</a>
           <a class="next" href="/getting-started/intro/">Getting Started</a>
