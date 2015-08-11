@@ -10,7 +10,7 @@
       global - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-2923a515.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-09a6dc97.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-e3f637d0.js" type="text/javascript"></script>
   </head>
   <body>
@@ -86,9 +86,6 @@
               </li>
               <li>
                 <a href="/getting-started/tunneling/">Tunneling</a>
-              </li>
-              <li>
-                <a href="/getting-started/shell-access/">Shell Access</a>
               </li>
               <li>
                 <a href="/getting-started/network-storage/">Network Storage</a>
@@ -277,7 +274,14 @@
       </div>
       <div id='content'>
         <h1>global</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The <code>global</code> node of the Boxfile contains global configs for your application such as environment variables.</p>
+        
+        <h3 id="environment-variables">Environment Variables</h3>
+        
+        <p>Environment variables can be used for obscuring sensitive information, simplifying multi-environment management, or any other way you can think of to use Environment Variables in your app. They can be generated from your Boxfile by including them in the <code>global</code> configuration node.</p>
+        
+        <h4 id="environment-variables-in-the-boxfile">Environment Variables in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="c1"># Pattern</span>&#x000A;<span class="s">global</span><span class="pi">:</span>&#x000A;  <span class="s">env</span><span class="pi">:</span>&#x000A;    <span class="s">KEY</span><span class="pi">:</span> <span class="s">value</span>&#x000A;&#x000A;<span class="c1"># Example</span>&#x000A;<span class="s">global</span><span class="pi">:</span>&#x000A;  <span class="s">env</span><span class="pi">:</span>&#x000A;    <span class="s">ENVIRONMENT</span><span class="pi">:</span> <span class="s">production</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/boxfile/intro/">Boxfile</a>
           <a class="next" href="/boxfile/build/">build</a>
