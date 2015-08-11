@@ -2,7 +2,7 @@
 title: Project Setup
 ---
 
-One great thing about nanobox is that very little project setup is required. There's two config files you can include ([.nanofile](/getting-started/nanofile/) & [Boxfile](/getting-started/boxfile/)), but they aren't required. You also of the option so specifying an [engine](/getting-started/engines/), but that too is optional.
+One great thing about nanobox is that very little project setup is required. There's two config files you can include ([.nanofile](/getting-started/nanofile/) & [Boxfile](/getting-started/boxfile/)), but they aren't required. You also have the option of specifying an [engine](/getting-started/engines/), but that too is optional.
 
 ```shell
 $ cd app-dir

@@ -173,19 +173,16 @@
             <a href="/boxfile/intro/">Boxfile</a>
             <ul class='sub'>
               <li>
-                <a href="/boxfile/global/">global</a>
+                <a href="/boxfile/env/">env</a>
               </li>
               <li>
                 <a href="/boxfile/build/">build</a>
               </li>
               <li>
-                <a href="/boxfile/web/">web</a>
+                <a href="/boxfile/code-services/">Code Services</a>
               </li>
               <li>
-                <a href="/boxfile/worker/">worker</a>
-              </li>
-              <li>
-                <a href="/boxfile/services/">Services</a>
+                <a href="/boxfile/data-services/">Data Services</a>
               </li>
             </ul>
           </li>
@@ -274,7 +271,9 @@
       </div>
       <div id='content'>
         <h1>deploy</h1>
-        <p>The <code>deploy</code> command issues a deploy to your nanobox.</p>
+        <p>The <code>deploy</code> command issues a deploy to your nanobox. Deploys provision an apps infrastructure and apply changes made to your Boxfile.</p>
+        
+        <p><em>If simply making changes to application code, you don&#39;t need to issue a full deploy. A</em> <a href="/cli/build/"><code>build</code></a> <em>will apply your code changes.</em></p>
         
         <h3 id="usage">Usage</h3>
         <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;nanobox deploy <span class="o">[</span>-v] <span class="o">[</span>-r] <span class="o">[</span>-s]&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox deploy&#x000A;<span class="gp">$ </span>nanobox deploy -v&#x000A;<span class="gp">$ </span>nanobox deploy -r&#x000A;<span class="gp">$ </span>nanobox deploy --sandbox&#x000A;</code></pre>

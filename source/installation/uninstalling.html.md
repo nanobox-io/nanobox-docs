@@ -2,7 +2,7 @@
 title: Uninstalling
 ---
 
-An uninstaller is included with each nanobox installer. The unstinstaller can be used to uninstall nanobox or the entire nanobox bundle (nanobox, Virtual Box, and Vagrant).
+An uninstaller is included with each nanobox installer. The uninstaller can be used to uninstall nanobox or the entire nanobox bundle (nanobox, Virtual Box, and Vagrant).
 
 #### Mac OSX
 When running the uninstaller on OSX, you'll be given a prompt to specify what to uninstall - "nanobox" or "bundle". Typing `nanobox` will uninstall nanobox only. Typing `bundle` will uninstall nanobox, Virtual Box, and Vagrant.

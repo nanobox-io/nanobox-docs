@@ -2,7 +2,7 @@
 title: build
 ---
 
-The `build` command issues a build to your nanobox.
+The `build` command rebuilds/compiles your application code.
 
 ### Usage
 ```shell

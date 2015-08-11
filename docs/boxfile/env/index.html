@@ -7,7 +7,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      global - Nanobox Documentation
+      env - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-09a6dc97.css" rel="stylesheet" type="text/css" />
@@ -173,19 +173,16 @@
             <a href="/boxfile/intro/">Boxfile</a>
             <ul class='sub'>
               <li class='active'>
-                <a href="/boxfile/global/">global</a>
+                <a href="/boxfile/env/">env</a>
               </li>
               <li>
                 <a href="/boxfile/build/">build</a>
               </li>
               <li>
-                <a href="/boxfile/web/">web</a>
+                <a href="/boxfile/code-services/">Code Services</a>
               </li>
               <li>
-                <a href="/boxfile/worker/">worker</a>
-              </li>
-              <li>
-                <a href="/boxfile/services/">Services</a>
+                <a href="/boxfile/data-services/">Data Services</a>
               </li>
             </ul>
           </li>
@@ -273,15 +270,11 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>global</h1>
-        <p>The <code>global</code> node of the Boxfile contains global configs for your application such as environment variables.</p>
-        
-        <h3 id="environment-variables">Environment Variables</h3>
-        
-        <p>Environment variables can be used for obscuring sensitive information, simplifying multi-environment management, or any other way you can think of to use Environment Variables in your app. They can be generated from your Boxfile by including them in the <code>global</code> configuration node.</p>
+        <h1>env</h1>
+        <p>The <code>env</code> node of the Boxfile allows you to define environment variables for your application. Environment variables can be used for obscuring sensitive information, simplifying multi-environment management, or any other way you can think of to use Environment Variables in your app. </p>
         
         <h4 id="environment-variables-in-the-boxfile">Environment Variables in the Boxfile</h4>
-        <pre class="highlight yaml"><code><span class="c1"># Pattern</span>&#x000A;<span class="s">global</span><span class="pi">:</span>&#x000A;  <span class="s">env</span><span class="pi">:</span>&#x000A;    <span class="s">KEY</span><span class="pi">:</span> <span class="s">value</span>&#x000A;&#x000A;<span class="c1"># Example</span>&#x000A;<span class="s">global</span><span class="pi">:</span>&#x000A;  <span class="s">env</span><span class="pi">:</span>&#x000A;    <span class="s">ENVIRONMENT</span><span class="pi">:</span> <span class="s">production</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="c1"># Pattern</span>&#x000A;<span class="s">env</span><span class="pi">:</span>&#x000A;  <span class="s">KEY</span><span class="pi">:</span> <span class="s">value</span>&#x000A;&#x000A;<span class="c1"># Example</span>&#x000A;<span class="s">env</span><span class="pi">:</span>&#x000A;  <span class="s">ENVIRONMENT</span><span class="pi">:</span> <span class="s">production</span>&#x000A;  <span class="s">AUTH_SALT</span><span class="pi">:</span> <span class="s">SStp8fP7qTpqqjUIfGbOym8MLiE7ds</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/boxfile/intro/">Boxfile</a>
           <a class="next" href="/boxfile/build/">build</a>

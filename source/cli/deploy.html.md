@@ -2,7 +2,9 @@
 title: deploy
 ---
 
-The `deploy` command issues a deploy to your nanobox.
+The `deploy` command issues a deploy to your nanobox. Deploys provision an apps infrastructure and apply changes made to your Boxfile.
+
+*If simply making changes to application code, you don't need to issue a full deploy. A* [`build`](/cli/build/) *will apply your code changes.*
 
 ### Usage
 ```shell

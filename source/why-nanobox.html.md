@@ -9,7 +9,7 @@ A fundamental problem faced in application development is environment consistenc
 ### Isolated Virtual Environment on Your Local Machine
 Nanobox uses Vagrant and Docker to create an isolated virtual environment on your local machine. This environment is completely self-contained and has no connection to or interaction with your local operating system, mitigating any potential issues stemming from OS nuances. All environment and service configuration is completely isolated inside of the virtualized environment.
 
-Nanobox mounts your code directory on your local machine into the virtual environment. Any changes to your code are reflected in your running Nanobox app.
+Nanobox mounts your code directory from your local machine into the virtual environment. Any changes to your code are reflected in your running Nanobox app.
 
 ### Automated Environment Provisioning & Deploys
 Nanobox provisions and builds both the virtual environment and application-level code & data services automatically and quickly. Nanobox Engines will auto-detect what services are needed, then automatically create them within the app's virtual network.

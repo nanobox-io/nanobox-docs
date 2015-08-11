@@ -2,7 +2,7 @@
 title: Tunneling
 ---
 
-When a data services are provisioned inside of a nanobox VM, SSH port-forwards (tunnels) are established for each service. These allow you to connect to your nanobox data services from oustide of your running VM and provide a way for you to manage them with your local client of choice.
+When data services are provisioned inside of a nanobox VM, port-forwards (tunnels) are established for each service. These allow you to connect to your nanobox data services from oustide of your running VM and provide a way for you to manage them with your local client of choice.
 
 To view all of the tunnels available for your running VM as well as the necessary connection credentials, use the nanobox CLI's `tunnel` command:
 

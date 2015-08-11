@@ -173,19 +173,16 @@
             <a href="/boxfile/intro/">Boxfile</a>
             <ul class='sub'>
               <li>
-                <a href="/boxfile/global/">global</a>
+                <a href="/boxfile/env/">env</a>
               </li>
               <li>
                 <a href="/boxfile/build/">build</a>
               </li>
               <li>
-                <a href="/boxfile/web/">web</a>
+                <a href="/boxfile/code-services/">Code Services</a>
               </li>
               <li>
-                <a href="/boxfile/worker/">worker</a>
-              </li>
-              <li>
-                <a href="/boxfile/services/">Services</a>
+                <a href="/boxfile/data-services/">Data Services</a>
               </li>
             </ul>
           </li>
@@ -283,22 +280,22 @@
         <li>The Boxfile must be placed at the root of your project&#39;s repo.</li>
         <li>The Boxfile must be valid yaml markup. You can brush up on your yaml at <a href="http://yaml.org/start.html">yaml.org</a> or check your syntax at <a href="http://www.yamllint.com/">yamllint.com</a>.</li>
         <li>Boxfiles are not required. If not included in your project, Nanobox will attempt to auto-detect the needs of your app.</li>
-        <li>Config options available in the Boxfile are defined by the <a href="/engines/intro/">engine</a> you&#39;re using.</li>
+        <li>Build config options available in the Boxfile are defined by the <a href="/engines/intro/">engine</a> you&#39;re using.</li>
         </ul>
         
         <h4 id="sample-boxfile">Sample Boxfile</h4>
-        <pre class="highlight yaml"><code><span class="s">global</span><span class="pi">:</span>&#x000A;  <span class="s">env</span><span class="pi">:</span>&#x000A;    <span class="s">ENVIRONMENT</span><span class="pi">:</span> <span class="s">production</span>&#x000A;&#x000A;<span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby"</span>&#x000A;  <span class="s">lib_dir</span><span class="pi">:</span> <span class="s">vendor</span>&#x000A;  <span class="s">reuse_libs</span><span class="pi">:</span> <span class="s">true</span>&#x000A;&#x000A;<span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">site</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">storage1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">usr/uploads</span>&#x000A;&#x000A;<span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">image_processor</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ruby</span><span class="nv"> </span><span class="s">workers/image_processor.rb'</span>&#x000A;&#x000A;<span class="s">postgresql1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">app-db</span>&#x000A;&#x000A;<span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">app-storage</span>&#x000A;&#x000A;<span class="s">redis1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">queue-and-sessions</span>  &#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">env</span><span class="pi">:</span>&#x000A;  <span class="s">ENVIRONMENT</span><span class="pi">:</span> <span class="s">production</span>&#x000A;&#x000A;<span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby"</span>&#x000A;  <span class="s">lib_dir</span><span class="pi">:</span> <span class="s">vendor</span>&#x000A;  <span class="s">reuse_libs</span><span class="pi">:</span> <span class="s">true</span>&#x000A;&#x000A;<span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">site</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">storage1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">usr/uploads</span>&#x000A;&#x000A;<span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">image_processor</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ruby</span><span class="nv"> </span><span class="s">workers/image_processor.rb'</span>&#x000A;&#x000A;<span class="s">postgresql1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">app-db</span>&#x000A;&#x000A;<span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">app-storage</span>&#x000A;&#x000A;<span class="s">redis1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">queue-and-sessions</span>  &#x000A;</code></pre>
         
         <h2 id="the-boxfile-structure">The Boxfile Structure</h2>
         
-        <p>Your app is made up of services. Simply put, a service is a piece of your app&#39;s infrastructure tasked with a specific function. Each service is configured seperately in the Boxfile.</p>
+        <p>Your app is made up of services. Simply put, a service is a piece of your app&#39;s infrastructure tasked with a specific function. Each service is configured separately in the Boxfile.</p>
         
         <p>Every service in your app has a service id. For example: web1, web2, mysql1, postgresql1, nfs1, redis1, worker1, etc. Service IDs consist of the service type and a number (web1, web2, postgresql1, mongodb2, ect.). <strong>Service IDs are not arbitrary</strong>. They define the type of the service and tie service-specific configs to actual running instances.</p>
         
         <p>All configuration is unique to a service ID. Anything specified under a service ID will only apply to that specific service. For example, configs defined in web1 will not apply to web2. </p>
         
         <h4 id="boxfile-structure">Boxfile Structure</h4>
-        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span> <span class="c1">#&lt;---------------------- Service ID</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">site</span>              <span class="c1">#|</span>&#x000A;  <span class="s">document_root</span><span class="pi">:</span> <span class="s">/public</span>  <span class="c1">#|-- Service Settings</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>   <span class="c1">#|</span>&#x000A;&#x000A;&#x000A;<span class="s">postgresql1</span><span class="pi">:</span> <span class="c1">#&lt;--------------- Service ID</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">site-db</span>           <span class="c1">#|</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">9.4</span>            <span class="c1">#|-- Service Settings</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>   <span class="c1">#|</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span> <span class="c1">#&lt;---------------------- Service ID</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">site</span>              <span class="c1">#|</span>&#x000A;  <span class="s">network-dirs</span><span class="pi">:</span>           <span class="c1">#|-- Service Settings</span>&#x000A;    <span class="pi">-</span> <span class="s">usr/uploads</span>         <span class="c1">#|</span>&#x000A;&#x000A;&#x000A;<span class="s">postgresql1</span><span class="pi">:</span> <span class="c1">#&lt;--------------- Service ID</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">site-db</span>           <span class="c1">#|</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">9.4</span>            <span class="c1">#|-- Service Settings</span>&#x000A;                          <span class="c1">#|</span>&#x000A;</code></pre>
         
         <h4 id="things-to-note-about-yaml">Things to Note About yaml</h4>
         
@@ -313,20 +310,18 @@
         
         <h2 id="sections-of-the-boxfile">Sections of the Boxfile</h2>
         
-        <p>Boxfiles consist of a handful of sections or &quot;nodes&quot;: global, build, code services (webs &amp; workers), and data services (mysql, postgresql, redis, etc). These are covered in detail in the next few docs, but here are some quick descriptions:</p>
+        <p>Boxfiles consist of a handful of sections or &quot;nodes&quot;: env, build, code services (webs &amp; workers), and data services (mysql, postgresql, redis, etc). These are covered in detail in the next few docs, but here are some quick descriptions:</p>
         
-        <p><a href="/boxfile/global/"><code>global</code></a> - Defines global settings for your application such as environment variables.  </p>
+        <p><a href="/boxfile/env/"><code>env</code></a> - Defines environment variables for your application.  </p>
         
         <p><a href="/boxfile/build/"><code>build</code></a> - Defines the build environment for the app and what commands should run to prep the code for deploy.  </p>
         
-        <p><a href="/boxfile/web/"><code>web#</code></a> - Defines settings unique to a specific web server.  </p>
+        <p><a href="/boxfile/code-services/"><code>web#, worker#</code></a> - Defines settings unique to each code service.  </p>
         
-        <p><a href="/boxfile/worker/"><code>worker#</code></a> - Defines settings unique to a specific background worker process.  </p>
-        
-        <p><a href="/boxfile/services/"><code>postgresql#</code>, <code>redis#</code>, etc.</a> - Defines settings unique to a specific data service.  </p>
+        <p><a href="/boxfile/data-services/"><code>postgresql#</code>, <code>redis#</code>, etc.</a> - Defines settings unique to a specific data service.  </p>
         <div id='pagination'>
           <a class="prev" href="/cli/watch/">watch</a>
-          <a class="next" href="/boxfile/global/">global</a>
+          <a class="next" href="/boxfile/env/">env</a>
         </div>
       </div>
     </div>

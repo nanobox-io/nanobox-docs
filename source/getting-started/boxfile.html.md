@@ -8,9 +8,8 @@ In many ways, the Boxfile acts as a "seed" file for your infrastructure. It give
 
 ####Sample Boxfile
 ```yaml
-global:
-  env:
-    ENVIRONMENT: production
+env:
+  ENVIRONMENT: production
 
 build:
   engine: 'ruby'
