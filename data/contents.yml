@@ -33,8 +33,6 @@ categories:
         path: "/getting-started/deploys/"
       - title: "Tunneling"
         path: "/getting-started/tunneling/"
-      - title: "Shell Access"
-        path: "/getting-started/shell-access/"
       - title: "Network Storage"
         path: "/getting-started/network-storage/"
       - title: "Workflow"

@@ -67,8 +67,8 @@ set :images_dir, 'images'
 set :build_dir, 'docs'
 
 # Using Github Flavored Markdown
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :strikethrough => true, :with_toc_data => true
 set :markdown_engine, :redcarpet
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :strikethrough => true, :with_toc_data => true
 
 # Build-specific configuration
 configure :build do
