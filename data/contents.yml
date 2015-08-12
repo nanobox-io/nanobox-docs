@@ -35,8 +35,8 @@ categories:
         path: "/getting-started/tunneling/"
       - title: "Network Storage"
         path: "/getting-started/network-storage/"
-      - title: "Workflow"
-        path: "/getting-started/workflow/"
+      - title: "Nonpersistent Writable Directories"
+        path: "/getting-started/nonpersistent-writable-dirs/"
 
   - title: "Command Line Interface"
     path: "/cli/intro/"

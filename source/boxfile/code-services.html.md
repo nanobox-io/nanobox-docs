@@ -21,8 +21,12 @@ web1:
   deploy_hook_timeout: 600
   before_deploy:
     - "scripts/migrate_db.rb"
+  before_deploy_all:
+    - "scripts/cache_prime.rb"
   after_deploy:
-    - "scripts/clear_cache.sh"
+    - "scripts/clear_cache.rb"
+  after_deploy_all:
+    - "scripts/local_cache_prime.rb"
   
   # Network Storage
   network_dirs:
@@ -55,8 +59,12 @@ worker1:
   deploy_hook_timeout: 600
   before_deploy:
     - "scripts/migrate_db.rb"
+  before_deploy_all:
+    - "scripts/cache_prime.rb"
   after_deploy:
-    - "scripts/clear_cache.sh"
+    - "scripts/clear_cache.rb"
+  after_deploy_all:
+    - "scripts/local_cache_prime.rb"
   
   # Network Storage
   network_dirs:
@@ -153,8 +161,14 @@ Deploy Hooks allow you to "hook" into thedeploy process and execute scripts or c
 ### before_deploy
 `before_deploy` hooks run after code has been deployed to new instances, but before traffic is routed to the new instances. These are ideal for things such as migrations.
 
+### before\_deploy\_all
+`before_deploy_all` run at the same time as `before_deploy` hooks, but run on all instances inside of a multi-instance service, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/getting-started/nonpersistent-writable-dirs/) on deploy.
+
 ### after_deploy
 `after_deploy` hooks run after the newly deployed instances have begun handling traffic and the old instances have been decommissioned.
+
+### after\_deploy\_all
+`after_deploy_all` run at the same time as `after_deploy` hooks, but run on all instances inside of a multi-instance service, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/getting-started/nonpersistent-writable-dirs/) on deploy.
 
 ### deploy\_hook\_timeout
 `deploy_hook_timeout` defines a timeout for deploy hooks in seconds.
@@ -164,8 +178,12 @@ Deploy Hooks allow you to "hook" into thedeploy process and execute scripts or c
 web1:
   deploy_hook_timeout: 600
   before_deploy:
-    - "scripts/migrate_db.php"
+    - "scripts/migrate_db.rb"
+  before_deploy_all:
+    - "scripts/cache_prime.rb"
   after_deploy:
-    - "scripts/clear_cache.sh"
+    - "scripts/clear_cache.rb"
+  after_deploy_all:
+    - "scripts/local_cache_prime.rb"
 ```
 
