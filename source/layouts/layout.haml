@@ -33,16 +33,39 @@
             %polygon.st53{:points => "29.647,10.61 16.823,17.22 4,10.61 16.823,4  "}
             %polygon.st155{:points => "16.823,17.22 29.647,10.61 29.647,12.538 16.823,19.149  "}
             %polygon.st93{:points => "16.823,17.22 4,10.61 4,12.538 16.823,19.149   "}
-        %span Nanobox Docs
-      %a.right{ :href => 'http://nanobox.io'}
-        %svg#home-icon{"enable-background" => "new 0 0 18 18", :space => "preserve", :version => "1.1", :viewbox => "0 0 18 18", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
-          %polygon{:fill => "none", :points => "11,13 11,9 9,7 7,9 \r\n\t7,13 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
-          %polyline{:fill => "none", :points => "14,11 14,16 4,16 \r\n\t4,11 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
-          %polyline{:fill => "none", :points => "2,9.1 9.1,2 \r\n\t16.1,9.1 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+        %span#nb-title
+          %span.drop Nanobox
+          Docs
+      %ul.links
+        %li.text
+          %a.active{ :href => "/" }
+            Local
+        %li.text 
+          %a{ :href => "/production/" }
+            Production
+        %li 
+          %a{ :href => 'http://nanobox.io'}
+            %svg#home-icon{"enable-background" => "new 0 0 18 18", :space => "preserve", :version => "1.1", :viewbox => "0 0 18 18", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+              %polygon{:fill => "none", :points => "11,13 11,9 9,7 7,9 \r\n\t7,13 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+              %polyline{:fill => "none", :points => "14,11 14,16 4,16 \r\n\t4,11 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+              %polyline{:fill => "none", :points => "2,9.1 9.1,2 \r\n\t16.1,9.1 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
     #wrapper
       #contents-btn.open Contents
       #navigation
-        = partial "navigation"
+        %ul#contents.closed
+          - data.contents.categories.each do |category|
+            %li{ nav_article_active( category.path ) }
+              = link_to category.title, category.path
+              - if category.articles
+                %ul.sub
+                  - category.articles.each do |article|
+                    %li{ nav_article_active( article.path ) }
+                      = link_to article.title, article.path
+                      - if article.sub_articles
+                        %ul.sub
+                          - article.sub_articles.each do |sub_article|
+                            %li{ nav_article_active( sub_article.path ) }
+                              = link_to sub_article.title, sub_article.path
       #content
         - if data.page.title
           %h1 #{ data.page.title }
