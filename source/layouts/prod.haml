@@ -1,0 +1,83 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+
+    / Always force latest IE rendering engine or request Chrome Frame
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+
+    / Use title if it's in the page YAML frontmatter
+    %title
+      - if current_page.data.title
+        = current_page.data.title + " - Nanobox Documentation"
+      - else
+        = "Nanobox Documentation"
+
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}
+
+    = stylesheet_link_tag "all"
+    = javascript_include_tag  "all"
+
+  %body
+    #header
+      %a#logo.left{ :href => '/' }
+        %svg#nanobox-logo{ :space => "preserve", :preserveaspectratio => "xMinYMin meet", :version => "1.1", :xmlns => "http://www.w3.org/2000/svg", :viewBox => "0 0 35 35"}
+          %g{:xmlns => "http://www.w3.org/2000/svg"}
+            %polygon.st155{:points => "16.823,31.026 29.647,24.417 29.647,26.343 16.823,32.954  "}
+            %polygon.st93{:points => "16.823,31.026 4,24.417 4,26.343 16.823,32.954   "}
+            %polygon.st155{:points => "16.823,26.425 29.647,19.814 29.647,21.741 16.823,28.353  "}
+            %polygon.st93{:points => "16.823,26.425 4,19.814 4,21.741 16.823,28.353   "}
+            %polygon.st155{:points => "16.823,21.822 29.647,15.213 29.647,17.14 16.823,23.751   "}
+            %polygon.st93{:points => "16.823,21.822 4,15.213 4,17.14 16.823,23.751  "}
+            %polygon.st53{:points => "29.647,10.61 16.823,17.22 4,10.61 16.823,4  "}
+            %polygon.st155{:points => "16.823,17.22 29.647,10.61 29.647,12.538 16.823,19.149  "}
+            %polygon.st93{:points => "16.823,17.22 4,10.61 4,12.538 16.823,19.149   "}
+        %span#nb-title
+          %span.drop Nanobox
+          Docs
+      %ul.links
+        %li.text
+          %a{ :href => "/" }
+            Local
+        %li.text 
+          %a.active{ :href => "/production/" }
+            Production
+        %li 
+          %a{ :href => 'http://nanobox.io'}
+            %svg#home-icon{"enable-background" => "new 0 0 18 18", :space => "preserve", :version => "1.1", :viewbox => "0 0 18 18", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+              %polygon{:fill => "none", :points => "11,13 11,9 9,7 7,9 \r\n\t7,13 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+              %polyline{:fill => "none", :points => "14,11 14,16 4,16 \r\n\t4,11 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+              %polyline{:fill => "none", :points => "2,9.1 9.1,2 \r\n\t16.1,9.1 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+    #wrapper
+      #contents-btn.open Contents
+      #navigation
+        %ul#contents.closed
+          - data.prod_contents.categories.each do |category|
+            %li{ nav_article_active( category.path ) }
+              = link_to category.title, category.path
+              - if category.articles
+                %ul.sub
+                  - category.articles.each do |article|
+                    %li{ nav_article_active( article.path ) }
+                      = link_to article.title, article.path
+                      - if article.sub_articles
+                        %ul.sub
+                          - article.sub_articles.each do |sub_article|
+                            %li{ nav_article_active( sub_article.path ) }
+                              = link_to sub_article.title, sub_article.path
+      #content
+        - if data.page.title
+          %h1 #{ data.page.title }
+        = find_and_preserve do
+          = yield
+        #pagination
+          - prev_article = prod_get_prev_article(current_page.url)
+          - if prev_article
+            = link_to prev_article[:title], prev_article[:path], class: "prev"
+
+          - next_article = prod_get_next_article(current_page.url)
+          - if next_article
+            = link_to next_article[:title], next_article[:path], class: "next"
+
+    #footer
