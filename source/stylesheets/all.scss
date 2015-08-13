@@ -1,4 +1,4 @@
-@import 'variables-mixins', 'normalize', 'syntaxhighlighter', 'logo-svg';
+@import 'variables-mixins', 'normalize', 'syntaxhighlighter';
 
 body                    { background: $gblue-1; font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; }
 a                       { @include transition(all .15s); }
