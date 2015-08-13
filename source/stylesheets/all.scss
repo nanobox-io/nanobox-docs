@@ -31,7 +31,7 @@ a                       { @include transition(all .15s); }
     }
   }
   svg                   {
-    &#nanobox-logo      { height: 1.3em; width: 1.3em; position: absolute}
+    &#nanobox-logo      { height: 1.5em; width: 1.3em; position: absolute}
     &#home-icon         { margin-left: .65em; height: 1em; width: 1em; stroke: $gblue-4; @include transition(stroke .15s);
       &:hover           { stroke: $gblue-6; }
     }
