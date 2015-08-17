@@ -105,7 +105,7 @@ categories:
     articles:
       - title: "How Engines Work"
         path: "/engines/how-engines-work/"
-      - title: "Boxfile Specification"
+      - title: "Generating a Boxfile"
         path: "/engines/boxfile-spec/"
       - title: "Project Creation"
         path: "/engines/project-creation/"
@@ -150,6 +150,6 @@ categories:
       - title: "Development Workflow"
         path: "/engines/dev-workflow/"
       - title: "Debugging"
-        path: "/engines/debugging/" 
+        path: "/engines/debugging/"
   - title: "Other"
     path: "/other/intro/"

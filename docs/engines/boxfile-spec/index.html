@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Boxfile Specification - Nanobox Documentation
+      Generating a Boxfile - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-3f3c7979.css" rel="stylesheet" type="text/css" />
@@ -226,7 +226,7 @@
                 <a href="/engines/how-engines-work/">How Engines Work</a>
               </li>
               <li class='active'>
-                <a href="/engines/boxfile-spec/">Boxfile Specification</a>
+                <a href="/engines/boxfile-spec/">Generating a Boxfile</a>
               </li>
               <li>
                 <a href="/engines/project-creation/">Project Creation</a>
@@ -303,8 +303,36 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>Boxfile Specification</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <h1>Generating a Boxfile</h1>
+        <p>Each engine has the ability to generate a Boxfile for the codebase. If leveraged to it&#39;s full extent, this feature can empower an engine to auto-generate an entire infrastructure to satisfy all of the app&#39;s dependencies without any custom configuration.</p>
+        
+        <h4 id="warning">Warning!</h4>
+        
+        <p>If you are unfamiliar with the role of a Boxfile, you need to read <a href="boxfile/intro/">the Boxfile guide</a> first.</p>
+        
+        <h2 id="the-vision">The Vision</h2>
+        
+        <p>This feature gives the engine complete control to automate the entire infrastructure for the app. The engine <a href="/engines/scripts/boxfile">boxfile script</a> is run before the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts. Nanobox will then generate the specified services and configuration before calling the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts. The order is important here, because each newly created service will also generate environment variables like <code>REDIS1_HOST</code>, <code>REDIS1_PORT</code>, <code>POSTGRES1_USER</code>, and <code>POSTGRES1_PASS</code> which will be available in both the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts. Ultimately, an engine can tell Nanobox that this app needs a database, and by the time the <a href="/engines/scripts/build">build</a> script is called, the environment variables exist which can be used to generate application-specific connection configuration.</p>
+        
+        <p>The extent of the engine-derived Boxfile can be simple and static, or it can be advanced and dynamic. Consider for example an engine for a popular blogging framework like Wordpress. The requirements are simple and predictable. A database will always be required, and likely only a database will be required. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script can simply echo a static Boxfile containing a mysql database. On the other hand, consider a more general-purpose framework like rails or django. The requirements will change depending on the functionality of the specific application. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script may inspect the Gemfile or requirements.txt for a postgres or redis adapter. If such an adapter is required by the app, then it&#39;s a safe assumption that the application will also need a service for the adapter to connect to. In this manner can a Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks. Finally, within the <a href="/engines/scripts/build">build</a> script, the application can be configured to connect to the dynamically-generated services.</p>
+        
+        <h2 id="developer-overrides">Developer Overrides</h2>
+        
+        <p>While this is certainly empowering to the engine developer, the application developer has the final say in the infrastructure definition. If a Boxfile is provided within the codebase, the two Boxfiles will be merged together, with the application Boxfile values used in the event of a conflict. Basically, if the application developer wants to change a particular configuration that is set by the engine, the same setting in the application&#39;s Boxfile will be used instead of the engine&#39;s generated Boxfile.</p>
+        
+        <p>For example, the following engine-generated Boxfile:</p>
+        <pre class="highlight yaml"><code><span class="s">mysql1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">silly-salad</span>&#x000A;  <span class="s">max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;</code></pre>
+        
+        <p>And the following application Boxfile:</p>
+        <pre class="highlight yaml"><code><span class="s">mysql1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">catalog</span>&#x000A;</code></pre>
+        
+        <p>Would generate:</p>
+        <pre class="highlight yaml"><code><span class="s">mysql1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">catalog</span>&#x000A;  <span class="s">max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;</code></pre>
+        
+        <p>In addition, the application developer ultimately has the option to disable an engine-defined Boxfile. The following setting within the application Boxfile:</p>
+        <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">disable_engine_boxfile</span><span class="pi">:</span> <span class="s">true</span>&#x000A;</code></pre>
+        
+        <p>will disable the engine&#39;s ability to generate a Boxfile. This is important to consider when writing the <a href="/engines/scripts/build">build</a> script. The logic here should conditionally activate depending on the existence of the auto-generated environment variables. If they don&#39;t exist, then likely the application developer disabled the engine-defined Boxfile generation, and the app should not be configured to connect to non-existent services.</p>
         <div id='pagination'>
           <a class="prev" href="/engines/how-engines-work/">How Engines Work</a>
           <a class="next" href="/engines/project-creation/">Project Creation</a>
