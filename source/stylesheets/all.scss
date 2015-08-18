@@ -136,6 +136,14 @@ a                       { @include transition(all .15s); }
     }
   }
   #pagination           { padding: 3.5em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $gblue-2; }
+  ul#os-tabs            { margin: 2.5em 0; padding: 0; list-style: none; font-style: italic;
+    li                  { display: inline-block; margin: 0 .15em; padding: .4em 1em; border-width: 2px 2px 2px 2px; border-color: $gblue-0; border-style: solid; background-color: $gblue-0; cursor: pointer; @include border-radius(1.5em); @include transition(all .15s);
+      &:hover           { border-color: $red; color: $red; }
+      &.active          { border-color: $red; background: $red; color: $gblue-1;
+        &:hover         { color: $gblue-1; }
+      }
+    }
+  }
 }
 
 @import 'media-queries';
