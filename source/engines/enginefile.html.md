@@ -27,7 +27,7 @@ A detailed, possibly multi-line description of the engine.
 
 #### stability
 
-The current stability of the engine. Values can be one of: alpha/beta/stable.
+The current stability of the engine. The value can be either **alpha, beta, or stable**.
 
 #### license
 
@@ -35,7 +35,7 @@ License applied to this software. Value can be a title, link, or the actual lice
 
 #### readme
 
-Path to to the readme file. A readme is required to publish engines, as it contains the necessary documentation to consume the engine.
+Path to to the README.md file. A readme is required to publish engines, as it contains the necessary documentation to consume the engine.
 
 #### authors
 
@@ -47,10 +47,9 @@ When a release is generated, the files to pack within the release need to be exp
 
 Files and paths are declared in the `project_files` node.
 
-## Example
+## Example Enginefile
 
 ```yaml
-
 name: 'magento'
 version: '0.1.0'
 summary: 'Nanobox engine for Magento deployments'
@@ -66,5 +65,4 @@ release_content:
   - bin/*
   - templates/*
   - files/*
-
 ```

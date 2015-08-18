@@ -2,39 +2,39 @@
 title: Scripts
 ---
 
-A Nanobox engine is literally the sum of the bin scripts. When an app is deployed, Nanobox attempts to determine an engine. Once the engine has been selected, the deploy process is executed across 4 phases. A script must exist within the engine to properly determine if the engine applies to the app, and to handle each phase. For more details on the overview of the deploy process, refer to the [How Engines Work](/engines/how-engines-work) guide.
+A Nanobox engine is literally a collection of scripts. When an app is deployed, Nanobox attempts to determine the most appropriate engine to use. Once the engine has been selected, the deploy process is executed across 4 phases. A script must exist within the engine to properly determine if the engine applies to the app, and to handle each phase. For more details on the overview of the deploy process, refer to the [How Engines Work doc](/engines/how-engines-work).
 
 ## General Guidelines
 
 #### bash
 
-It is **highly** recommended that the scripts be written in bash. Here are a few reasons to consider:
+It is **highly** recommended that engine scripts be written in bash. Here are a few reasons to consider:
 
 1. Bash is available in every Nanobox image.
 2. The [nos](/engines/common-tasks) framework is available to bash, and will greatly simplify engine development.
 3. Bash is a common language for server scripting, and assistance across engines can be aided with a unified language.
 
-While it is possible to write scripts in an alternative language, it is highly discouraged. In addition, an alternative language or runtime will need to be installed prior to executing the scripts. This is possible, but since we don't recommend it, the processes will not be documented. If you really need to use a different language, hop in the #nanobox irc to find out how.
+While it is possible to write scripts in an alternative language, it is highly discouraged. In addition, an alternative language or runtime will need to be installed prior to executing the scripts. This is possible, but since we don't recommend it, the processes will not be documented. If you really need to use a different language, hop in the [#nanobox irc](http://webchat.freenode.net/?channels=nanobox&uio=d4) to find out how.
 
 #### executable
 
-Don't forget to chmod the scripts to be executable. The scripts are run directly, so the scripts will fail if they aren't executable. This can be done easily with the following command, executed from the engine root:
+**Don't forget to chmod the scripts to be executable.** The scripts are run directly, so the scripts will fail if they aren't executable. This can be done easily with the following command, executed from the engine root:
 
 ```bash
-chmod +x bin/*
+$ chmod +x bin/*
 ```
 
 #### no extension
 
-The scripts are executed from Nanobox directly, without an extension. Adding an extension will cause Nanobox to fail to find the script.
+The scripts are executed from Nanobox directly, without an extension. Adding an extension will prevent Nanobox from finding the script.
 
 ## Payload
 
-With the exception of the [sniff](/engines/scripts/sniff) script, all of the scripts will be called with a single argument, a JSON payload. A single argument containing a payload is used instead of multiple arguments or even environment variables mostly due to the potential for nested data structures and the dynamic nature of the attributes. JSON is used as it is a simple data structure that most languages can natively encode and decode.
+With the exception of the [sniff](/engines/scripts/sniff) script, all engine scripts will be called with a single argument – a JSON payload. A single argument containing a payload is used instead of multiple arguments or even environment variables mostly due to the potential for nested data structures and the dynamic nature of the attributes. JSON is used as it is a simple data structure that most languages can natively encode and decode.
 
 #### JSON in bash?
 
-Right, bash doesn't actually handle JSON. In fact, bash doesn't handle any common structured object notation. The Nanobox team created [SHON](https://github.com/pagodabox/shon) "SHell Object Notation", a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you're interested. Though, it's unlikely that you'll need to work with SHON, as the [nos](/engines/common-tasks) framework performs the translation and exposes helpers that access the data vicariously on your behalf.
+Right, bash doesn't actually handle JSON. In fact, bash doesn't handle any common structured object notation. The Nanobox team created [SHON](https://github.com/pagodabox/shon) ("SHell Object Notation"), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you're interested. Though, it's unlikely that you'll need to work with SHON, as the [nos](/engines/common-tasks) framework performs the translation and exposes helpers that access the data for you.
 
 #### Payload Data
 
