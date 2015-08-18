@@ -304,7 +304,36 @@
       </div>
       <div id='content'>
         <h1>sniff</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The sniff script is executed when Nanobox is attempting to determine which engine to use for the app. This script is not executed if the engine is explicitly specified in the application Boxfile.</p>
+        
+        <h2 id="purpose">Purpose</h2>
+        
+        <p>This script looks for something within the application code that it can uniquely identify. If found, the script should return a 0 (success) exit code. Otherwise, the script should return a 1 (error).</p>
+        
+        <p>The logic should be simple, short, and quick.</p>
+        
+        <h4 id="caution">Caution</h4>
+        
+        <p>Simply looking for the existence of a file may not be unique. For example, a ruby framework should not just look for a Gemfile, as all ruby frameworks will likely require a Gemfile. After a preliminary check for the existence of a Gemfile, it should then look for content within the Gemfile to ensure a unique match.</p>
+        
+        <h2 id="usage">Usage</h2>
+        
+        <h4 id="script">script</h4>
+        
+        <p>The sniff script is executed at <code>$ENGINE_ROOT/bin/sniff</code>. The sniff script must exist in this location.</p>
+        
+        <h4 id="args">args</h4>
+        
+        <p>A single argument <code>$1</code> is provided, and is the path to the codebase.</p>
+        
+        <h4 id="working-directory">working directory</h4>
+        
+        <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
+        
+        <h2 id="example">Example</h2>
+        
+        <p>The following example shows how to properly detect a middleman codebase, a ruby static site generator:</p>
+        <pre class="highlight shell"><code><span class="c">#!/usr/bin/env bash</span>&#x000A;&#x000A;<span class="c"># $1 = code_dir</span>&#x000A;&#x000A;<span class="c"># check for the existence of a Gemfile</span>&#x000A;<span class="k">if</span> <span class="o">[</span> -f <span class="k">${</span><span class="nv">1</span><span class="k">}</span>/Gemfile <span class="o">]</span>; <span class="k">then</span>&#x000A;  <span class="c"># found a Gemfile, now let's look for the middleman gem</span>&#x000A;  cat <span class="k">${</span><span class="nv">1</span><span class="k">}</span>/Gemfile | grep <span class="s1">'middleman'</span> <span class="o">||</span> <span class="nb">exit </span>1&#x000A;<span class="k">else&#x000A;  </span><span class="nb">exit </span>1&#x000A;<span class="k">fi</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/intro/">Scripts</a>
           <a class="next" href="/engines/scripts/boxfile/">boxfile</a>
