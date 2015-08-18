@@ -12,8 +12,8 @@
       Project Creation - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-3f3c7979.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-e3f637d0.js" type="text/javascript"></script>
+    <link href="/stylesheets/all-46aa5565.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-517aa736.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -304,11 +304,11 @@
       </div>
       <div id='content'>
         <h1>Project Creation</h1>
-        <p>Creating an engine project is trivial. Assume there will be an engine project generator at some point in the future.</p>
+        <p>Creating an engine project is really simple. Assume there will be an engine project generator at some point in the future.</p>
         
         <h2 id="naming-convention">Naming Convention</h2>
         
-        <p>The Nanobox naming convention standard is established to ensure clarity where context is not available. For instance, when a Nanobox engine repo is forked, the name of the repo should provide sufficient context about what the project contains. Thus, the established naming convention is as follows:</p>
+        <p>The Nanobox naming convention is established to ensure clarity where context is not available. For instance, when a Nanobox engine repo is forked, the name of the repo should provide sufficient context about what the project contains. Thus, the established naming convention is as follows:</p>
         <pre class="highlight plaintext"><code>nanobox-engine-ENGINE_NAME&#x000A;</code></pre>
         
         <p>So if I were creating a drupal engine, the project name might be:</p>
@@ -316,29 +316,32 @@
         
         <h2 id="project-layout">Project Layout</h2>
         
+        <h4 id="example-engine-file-structure">Example Engine File Structure</h4>
+        <pre class="highlight plaintext"><code>nanobox-engine-my_engine/&#x000A;  bin/&#x000A;    boxfile&#x000A;    build&#x000A;    cleanup&#x000A;    prepare&#x000A;    sniff&#x000A;  lib/&#x000A;  templates/&#x000A;  files/&#x000A;  Enginefile&#x000A;  README.md&#x000A;</code></pre>
+        
         <h4 id="bin">bin</h4>
         
-        <p>Location for all scripts which are executed at different phases of a deploy. Specific information can be found <a href="/engines/scripts/intro">here</a>.</p>
+        <p>The <em>bin</em> directory houses scripts executed at different phases of a deploy. Specific information can be found in the <a href="/engines/scripts/intro">scripts docs</a>.</p>
         
         <h4 id="lib">lib</h4>
         
-        <p>Optional location for shared resources or helpers which may be sourced within the bin scripts.</p>
+        <p>The <em>lib</em> houses shared resources or helpers which may be sourced within the <em>bin</em> scripts. <em>This directory is optional.</em></p>
         
         <h4 id="templates">templates</h4>
         
-        <p>Optional location for templates that are used within the render process. More information can be found <a href="/engines/common-tasks/template-generation">here</a></p>
+        <p>The <em>templates</em> houses templates that are used within the render process. More information can be found in the <a href="/engines/common-tasks/template-generation">Template Generation doc</a>. <em>This directory is optional.</em></p>
         
         <h4 id="files">files</h4>
         
-        <p>Optional location for files that are copied within the render process. More information can be found <a href="/engines/common-tasks/template-generation">here</a></p>
+        <p>The <em>files</em> directory houses files that are copied within the render process. More information can be found in the <a href="/engines/common-tasks/template-generation">Template Generation doc</a>. <em>This directory is optional</em>.</p>
         
         <h4 id="enginefile">Enginefile</h4>
         
-        <p>The engine definition. This is a yaml file which defines the engine. More information can be found <a href="/engines/enginefile">here</a></p>
+        <p>The Engine file is a yaml file which defines the engine. More information can be found in the <a href="/engines/enginefile">Enginefile doc</a>.</p>
         
         <h4 id="readme-md">README.md</h4>
         
-        <p>Required to publish an engine. This becomes the content for the engine show page at nanobox.io</p>
+        <p>A markdown file that contains the content that will utlimately appear on the engine&#39;s page at nanobox.io. It should contain documentation on what the engine does, configuration options, etc. <strong>Required to publish an engine.</strong></p>
         <div id='pagination'>
           <a class="prev" href="/engines/boxfile-spec/">Generating a Boxfile</a>
           <a class="next" href="/engines/enginefile/">Enginefile</a>

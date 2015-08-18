@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <!-- favicon -->
+    <link href='/images/favicon.ico' rel='icon' type='image/png'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+      Generating SSH Keys - Nanobox Documentation
+    </title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="/stylesheets/all-46aa5565.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-517aa736.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id='header'>
+      <a class='left' href='/' id='logo'>
+        <svg enable-background='new 0 0 19 33' id='nanobox-logo' space='preserve' version='1.1' viewbox='0 0 19 33' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <g>
+            <g>
+              <polygon fill='#405C70' points='19,26 9.6,30.9 0,26 9.4,21.1'></polygon>
+              <polygon fill='#2F4352' points='15,24 9.5,26.9 3.9,24 9.4,21.1'></polygon>
+              <polygon fill='#1C2830' points='9.6,30.9 19,26.1 19,27.4 9.6,32.3 '></polygon>
+              <polygon fill='#19242B' points='9.6,30.9 0,26 0,27.3 9.6,32.3 '></polygon>
+            </g>
+            <g>
+              <polygon fill='#1E77A3' points='9.5,23.1 17.2,19.1 17.2,20.3 9.5,24.2 '></polygon>
+              <polygon fill='#175D80' points='9.5,23.1 1.8,19.1 1.8,20.3 9.5,24.2 '></polygon>
+              <polygon fill='#62B1DD' points='17.2,19.1 9.5,23.1 1.8,19.1 9.5,15.2'></polygon>
+              <polygon enable-background='new' fill='#0B194F' opacity='0.42' points='15.1,18.1 9.5,21 3.9,18.1 9.5,15.2 '></polygon>
+            </g>
+            <g>
+              <polygon fill='#43C494' points='9.5,16.9 18.8,12.2 18.8,13.5 9.5,18.3 '></polygon>
+              <polygon fill='#4AAA88' points='9.5,16.9 0.2,12.2 0.2,13.5 9.5,18.3 '></polygon>
+              <polygon fill='#7FE0BF' points='18.8,12.2 9.5,16.9 0.2,12.2 9.5,7.4 '></polygon>
+              <polygon enable-background='new' fill='#43C4A6' opacity='0.76' points='16.3,10.9 9.5,14.4 2.7,10.9 9.5,7.4'></polygon>
+            </g>
+            <g>
+              <polygon fill='#FDE5A6' points='18.8,4.8 9.5,9.6 0.2,4.8 9.5,0'></polygon>
+              <polygon fill='#E9D399' points='9.5,9.6 18.8,4.8 18.8,6.2 9.5,11'></polygon>
+              <polygon fill='#D9BB6F' points='9.5,9.6 0.2,4.8 0.2,6.2 9.5,11'></polygon>
+            </g>
+          </g>
+        </svg>
+        <span id='nb-title'>
+          <span class='drop'>Nanobox</span>
+          Docs
+        </span>
+      </a>
+      <ul class='links'>
+        <li class='text'>
+          <a href='/'>
+            Local
+          </a>
+        </li>
+        <li class='text'>
+          <a class='active' href='/production/intro/'>
+            Production
+          </a>
+        </li>
+        <li>
+          <a href='http://nanobox.io'>
+            <svg enable-background='new 0 0 18 18' id='home-icon' space='preserve' version='1.1' viewbox='0 0 18 18' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+              <polygon fill='none' points='11,13 11,9 9,7 7,9 &#x000A;	7,13 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polygon>
+              <polyline fill='none' points='14,11 14,16 4,16 &#x000A;	4,11 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polyline>
+              <polyline fill='none' points='2,9.1 9.1,2 &#x000A;	16.1,9.1 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polyline>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id='wrapper'>
+      <div class='open' id='contents-btn'>Contents</div>
+      <div id='navigation'>
+        <ul class='closed' id='contents'>
+          <li>
+            <a href="/production/intro/">Nanobox Production</a>
+          </li>
+          <li>
+            <a href="/production/getting-started/intro/">Getting Started</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/getting-started/local-to-production/">Going from Local to Production</a>
+              </li>
+              <li>
+                <a href="/production/getting-started/environment/">The Environment</a>
+              </li>
+              <li>
+                <a href="/production/getting-started/providers/">Available Providers</a>
+              </li>
+              <li>
+                <a href="/production/getting-started/nanoagent/">NanoAgent</a>
+              </li>
+              <li>
+                <a href="/production/getting-started/launching-an-app/">Launching an App</a>
+              </li>
+              <li>
+                <a href="/production/getting-started/deploy-process/">The Deploy Process</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/git-ssh/intro/">Git & SSH</a>
+            <ul class='sub'>
+              <li class='active'>
+                <a href="/production/git-ssh/generating-ssh-keys/">Generating SSH Keys</a>
+              </li>
+              <li>
+                <a href="/production/git-ssh/adding-ssh-keys/">Adding SSH Keys to Nanobox</a>
+              </li>
+              <li>
+                <a href="/production/git-ssh/git-ssh-troubleshooting/">Git & SSH Troubleshooting</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/app-management/intro/">App Management</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/app-management/service-stats/">Service Stats</a>
+              </li>
+              <li>
+                <a href="/production/app-management/cron-jobs/">Cron Jobs</a>
+              </li>
+              <li>
+                <a href="/production/app-management/log-management/">Log Management</a>
+              </li>
+              <li>
+                <a href="/production/app-management/deploy-history/">Deploy History</a>
+              </li>
+              <li>
+                <a href="/production/app-management/dashboard-service-controls/">Dashboard Service Controls</a>
+              </li>
+              <li>
+                <a href="/production/app-management/deployment-options/">Deployment Options</a>
+              </li>
+              <li>
+                <a href="/production/app-management/app-public-ssh-key/">App Public SSH Key</a>
+              </li>
+              <li>
+                <a href="/production/app-management/mail/">Mail</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/data-management/intro/">Data Management</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/data-management/remotely-managing-data/">Remotely Managing Data</a>
+              </li>
+              <li>
+                <a href="/production/data-management/snapshots-backups/">Snapshots & Backups</a>
+              </li>
+              <li>
+                <a href="/production/data-management/data-migrations-scaling/">Data Migrations During Scaling & Repairs</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/scaling/intro/">Scaling</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/scaling/single-vs-multi-node/">Single-Node & Multi-Node Apps</a>
+              </li>
+              <li>
+                <a href="/production/scaling/how-when-to-scale/">How & When to Scale</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/networking/intro/">Networking</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/networking/custom-domains/">Using Custom Domains</a>
+              </li>
+              <li>
+                <a href="/production/networking/adding-ssl/">Adding SSL</a>
+              </li>
+              <li>
+                <a href="/production/networking/inbound-ips/">Inbound IPs</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/cli/intro/">Command Line Interface</a>
+          </li>
+          <li>
+            <a href="/production/team/intro/">Team Management</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/team/managing-collaborators/">Managing Collaborators</a>
+              </li>
+              <li>
+                <a href="/production/team/collaborator-permissions/">Collaborator Permissions</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/production/account/intro/">Account Management & Billing</a>
+            <ul class='sub'>
+              <li>
+                <a href="/production/account/creating-an-account/">Creating an Account</a>
+              </li>
+              <li>
+                <a href="/production/account/removing-an-account/">Removing an Account</a>
+              </li>
+              <li>
+                <a href="/production/account/card-management/">Credit Card Management</a>
+              </li>
+              <li>
+                <a href="/production/account/invoicing/">Invoicing</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id='content'>
+        <h1>Generating SSH Keys</h1>
+        <ul id='os-tabs'>
+          <li id='osx-tab'>OSX &amp; Linux</li>
+          <li id='win-tab'>Windows</li>
+        </ul>
+        <div id='osx-content'>
+          <p>Generating SSH keys in OSX and Linux is done in Terminal. First, cd into your .ssh directory and check for existing keys.</p>
+          
+          <h4 id="check-for-existing-ssh-keys">Check for Existing SSH Keys</h4>
+          <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> ~/.ssh&#x000A;  <span class="gp">$ </span>ls&#x000A;  </code></pre>
+          
+          <p>If you already have an SSH key pair (most likely id_rsa and id_rsa.pub), you can skip to adding your SSH key to your Nanobox account. If one does not already exist, you will need to generate a new ssh key:</p>
+          
+          <h4 id="generate-a-new-ssh-key-pair">Generate a New SSH Key Pair</h4>
+          <pre class="highlight shell"><code><span class="gp">$ </span>ssh-keygen -t rsa -C <span class="s2">"your_email@youremail.com"</span>&#x000A;  Generating public/private rsa key pair.&#x000A;  Enter file <span class="k">in </span>which to save the key&#x000A;  <span class="o">(</span>/Users/your_user_directory/.ssh/id_rsa<span class="o">)</span>:&#x000A;  </code></pre>
+          
+          <p>Enter a passphrase if you&#39;d like one. If you do use a passphrase, you will have to enter it each time you push using the ssh key. Most go without a passphrase.</p>
+          
+          <h4 id="enter-a-passphrase">Enter a Passphrase</h4>
+          <pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:&#x000A;  Enter same passphrase again:&#x000A;  </code></pre>
+          
+          <p>Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:</p>
+          
+          <h4 id="key-randomart">Key Randomart</h4>
+          <pre class="highlight shell"><code>----------&#x000A;  Your identification has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.&#x000A;  Your public key has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.pub.&#x000A;  The key fingerprint is:&#x000A;  0b:77:6e:9c:5f:77:e7:fa:14:ac:03:d7:aa:8d:0c:af demo@youremail.com&#x000A;  The keys randomart image is:&#x000A;  +--[ RSA 2048]----+&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |              o  |&#x000A;  |      . S .. . + |&#x000A;  |       o <span class="o">=</span> .o o .|&#x000A;  |        ..<span class="o">=</span>  +. <span class="o">=</span>|&#x000A;  |         .+.+..+o|&#x000A;  |         E.<span class="o">=</span>...oo|&#x000A;  +-----------------+&#x000A;  </code></pre>
+          
+          <p>Congratulations! You&#39;ve generated an SSH key! Now you just need to <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        </div>
+        <div id='win-content'>
+          <p>Generating SSH keys in Windows can be done using either the Git GUI or Git Bash, both of which should&#39;ve been included in your Git install.</p>
+          
+          <h2 id="using-the-git-gui">Using the Git GUI</h2>
+          
+          <p>First, open the Git GUI.</p>
+          
+          <p><img alt="Windows Start Menu - Git GUI" src="/images/ssh-keys-win-start-menu-git-gui-62262285.png" /></p>
+          
+          <p>Go to Help &gt; Show SSH Key.</p>
+          
+          <p><img alt="Git GUI - Show Key" src="/images/ssh-keys-win-git-gui-show-key-5c0e0d4b.png" /></p>
+          
+          <p>Click Generate Key.</p>
+          
+          <p><img alt="Git GUI - Generate Key" src="/images/ssh-keys-win-git-gui-generate-key-a88ca783.png" /></p>
+          
+          <p>Passwords aren&#39;t required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you&#39;d like one.</p>
+          
+          <p><img alt="Git GUI - Enter Passphrase" src="/images/ssh-keys-win-git-gui-passphrase-578bfa49.png" /></p>
+          
+          <p>Congratulations! You&#39;ve generated an SSH key!</p>
+          
+          <p><img alt="Git GUI - Key" src="/images/ssh-keys-win-git-gui-key-a27dd1f3.png" /></p>
+          
+          <p>Once your SSH key is generated, go ahead and copy it and <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+          
+          <h2 id="using-git-bash">Using Git Bash</h2>
+          
+          <p>Cd into your .ssh directory and check for existing keys.</p>
+          
+          <h4 id="check-for-existing-keys">Check for Existing Keys</h4>
+          <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> ~/.ssh&#x000A;  <span class="gp">$ </span>ls&#x000A;  </code></pre>
+          
+          <p>If you already have an SSH key pair (most likely id_rsa and id_rsa.pub), you can go ahead and <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+          
+          <p>Generate a new SSH key.</p>
+          
+          <h4 id="generate-a-new-ssh-key-pair">Generate a New SSH Key Pair</h4>
+          <pre class="highlight shell"><code><span class="gp">$ </span>ssh-keygen -t rsa -C <span class="s2">"your_email@youremail.com"</span>&#x000A;  Generating public/private rsa key pair.&#x000A;  Enter file <span class="k">in </span>which to save the key&#x000A;  <span class="o">(</span>/Users/your_user_directory/.ssh/id_rsa<span class="o">)</span>:&#x000A;  </code></pre>
+          
+          <p>Passwords aren&#39;t required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you&#39;d like one.</p>
+          
+          <h4 id="enter-a-passphrase">Enter a Passphrase</h4>
+          <pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:&#x000A;  Enter same passphrase again:&#x000A;  </code></pre>
+          
+          <p>Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:</p>
+          
+          <h4 id="key-randomart">Key Randomart</h4>
+          <pre class="highlight shell"><code>Your identification has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.&#x000A;  Your public key has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.pub.&#x000A;  The key fingerprint is:&#x000A;  0b:77:6e:9c:5f:77:e7:fa:14:ac:03:d7:aa:8d:0c:af demo@youremail.com&#x000A;  The keys randomart image is:&#x000A;  +--[ RSA 2048]----+&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |              o  |&#x000A;  |      . S .. . + |&#x000A;  |       o <span class="o">=</span> .o o .|&#x000A;  |        ..<span class="o">=</span>  +. <span class="o">=</span>|&#x000A;  |         .+.+..+o|&#x000A;  |         E.<span class="o">=</span>...oo|&#x000A;  +-----------------+&#x000A;  </code></pre>
+          
+          <p>Congratulations! You&#39;ve generated an SSH key! Now you just need to <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        </div>
+        <div id='pagination'>
+          <a class="prev" href="/production/git-ssh/intro/">Git & SSH</a>
+          <a class="next" href="/production/git-ssh/adding-ssh-keys/">Adding SSH Keys to Nanobox</a>
+        </div>
+      </div>
+    </div>
+    <div id='footer'></div>
+  </body>
+</html>
