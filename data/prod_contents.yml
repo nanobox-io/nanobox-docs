@@ -21,8 +21,10 @@ categories:
   - title: "Git & SSH"
     path: "/production/git-ssh/intro/"
     articles:
-      - title: "Setting Up SSH"
-        path: "/production/git-ssh/setting-up-ssh/"
+      - title: "Generating SSH Keys"
+        path: "/production/git-ssh/generating-ssh-keys/"
+      - title: "Adding SSH Keys to Nanobox"
+        path: "/production/git-ssh/adding-ssh-keys/"
       - title: "Git & SSH Troubleshooting"
         path: "/production/git-ssh/git-ssh-troubleshooting/"
 
