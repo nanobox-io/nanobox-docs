@@ -304,7 +304,41 @@
       </div>
       <div id='content'>
         <h1>Project Creation</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Creating an engine project is trivial. Assume there will be an engine project generator at some point in the future.</p>
+        
+        <h2 id="naming-convention">Naming Convention</h2>
+        
+        <p>The Nanobox naming convention standard is established to ensure clarity where context is not available. For instance, when a Nanobox engine repo is forked, the name of the repo should provide sufficient context about what the project contains. Thus, the established naming convention is as follows:</p>
+        <pre class="highlight plaintext"><code>nanobox-engine-ENGINE_NAME&#x000A;</code></pre>
+        
+        <p>So if I were creating a drupal engine, the project name might be:</p>
+        <pre class="highlight plaintext"><code>nanobox-engine-drupal&#x000A;</code></pre>
+        
+        <h2 id="project-layout">Project Layout</h2>
+        
+        <h4 id="bin">bin</h4>
+        
+        <p>Location for all scripts which are executed at different phases of a deploy. Specific information can be found <a href="/engines/scripts/intro">here</a>.</p>
+        
+        <h4 id="lib">lib</h4>
+        
+        <p>Optional location for shared resources or helpers which may be sourced within the bin scripts.</p>
+        
+        <h4 id="templates">templates</h4>
+        
+        <p>Optional location for templates that are used within the render process. More information can be found <a href="/engines/common-tasks/template-generation">here</a></p>
+        
+        <h4 id="files">files</h4>
+        
+        <p>Optional location for files that are copied within the render process. More information can be found <a href="/engines/common-tasks/template-generation">here</a></p>
+        
+        <h4 id="enginefile">Enginefile</h4>
+        
+        <p>The engine definition. This is a yaml file which defines the engine. More information can be found <a href="/engines/enginefile">here</a></p>
+        
+        <h4 id="readme-md">README.md</h4>
+        
+        <p>Required to publish an engine. This becomes the content for the engine show page at nanobox.io</p>
         <div id='pagination'>
           <a class="prev" href="/engines/boxfile-spec/">Generating a Boxfile</a>
           <a class="next" href="/engines/enginefile/">Enginefile</a>

@@ -322,6 +322,17 @@
         
         <p>A Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks.</p>
         
+        <h2 id="requirements">Requirements</h2>
+        
+        <p>At a bare minimum, the <a href="/engines/scripts/boxfile">boxfile</a> script must generate a Boxfile that will inform Nanobox how to run the app. For example:</p>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s">bundle exec unicorn -C /path/to/unicorn.conf</span>&#x000A;</code></pre>
+        
+        <p>This Boxfile would inform Nanobox to create a web service running the compiled codebase and how to run the webserver. Without a &quot;web&quot; or &quot;code&quot; declaration, Nanobox wouldn&#39;t know how to run the app.</p>
+        
+        <h4 id="warning">Warning!</h4>
+        
+        <p>While the vision of what can be accomplished with the Boxfile is optional, the <a href="/engines/scripts/boxfile">boxfile</a> script MUST inform Nanobox how to run the app.</p>
+        
         <h2 id="developer-overrides">Developer Overrides</h2>
         
         <p>While this is certainly empowering to the engine developer, the application developer has the final say in the infrastructure definition. If a Boxfile is provided within the codebase, the two Boxfiles will be merged together, with the application Boxfile values used in the event of a conflict. Basically, if the application developer wants to change a particular configuration that is set by the engine, the same setting in the application&#39;s Boxfile will be used instead of the engine&#39;s generated Boxfile.</p>
