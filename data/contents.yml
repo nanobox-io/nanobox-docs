@@ -118,10 +118,10 @@ categories:
         sub_articles:
           - title: "sniff"
             path: "/engines/scripts/sniff/"
-          - title: "prepare"
-            path: "/engines/scripts/prepare/"
           - title: "boxfile"
             path: "/engines/scripts/boxfile/"
+          - title: "prepare"
+            path: "/engines/scripts/prepare/"
           - title: "build"
             path: "/engines/scripts/build/"
           - title: "cleanup"

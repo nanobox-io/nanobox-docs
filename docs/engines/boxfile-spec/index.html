@@ -244,10 +244,10 @@
                     <a href="/engines/scripts/sniff/">sniff</a>
                   </li>
                   <li>
-                    <a href="/engines/scripts/prepare/">prepare</a>
+                    <a href="/engines/scripts/boxfile/">boxfile</a>
                   </li>
                   <li>
-                    <a href="/engines/scripts/boxfile/">boxfile</a>
+                    <a href="/engines/scripts/prepare/">prepare</a>
                   </li>
                   <li>
                     <a href="/engines/scripts/build/">build</a>
@@ -321,6 +321,17 @@
         <p>On the other hand, consider a more general-purpose framework like rails or django. The requirements change depending on the functionality of the specific application. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script may inspect the Gemfile or requirements.txt for a postgres or redis adapter. If such an adapter is required, it&#39;s safe to assume the application needs that type of service. Within the <a href="/engines/scripts/build">build</a> script, the application can be configured to connect to the dynamically-generated services.</p>
         
         <p>A Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks.</p>
+        
+        <h2 id="requirements">Requirements</h2>
+        
+        <p>At a bare minimum, the <a href="/engines/scripts/boxfile">boxfile</a> script must generate a Boxfile that will inform Nanobox how to run the app. For example:</p>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s">bundle exec unicorn -C /path/to/unicorn.conf</span>&#x000A;</code></pre>
+        
+        <p>This Boxfile would inform Nanobox to create a web service running the compiled codebase and how to run the webserver. Without a &quot;web&quot; or &quot;code&quot; declaration, Nanobox wouldn&#39;t know how to run the app.</p>
+        
+        <h4 id="warning">Warning!</h4>
+        
+        <p>While the vision of what can be accomplished with the Boxfile is optional, the <a href="/engines/scripts/boxfile">boxfile</a> script MUST inform Nanobox how to run the app.</p>
         
         <h2 id="developer-overrides">Developer Overrides</h2>
         
