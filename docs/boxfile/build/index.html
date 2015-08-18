@@ -320,9 +320,23 @@
         <h4 id="engine">engine</h4>
         <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s1">'</span><span class="s">username/engine-name'</span>&#x000A;</code></pre>
         
+        <h2 id="disable-engine-boxfile-generation">Disable Engine Boxfile Generation</h2>
+        
+        <p>The <code>disable_engine_boxfile</code> config prevents an engine from generating a Boxfile for the app. This can be handy if you want to be able to specify everything your app needs in your Boxfile without any &quot;suprises&quot; genereated by your engine.</p>
+        
+        <h4 id="disable_engine_boxfile">disable_engine_boxfile</h4>
+        <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">disable_engine_boxfile</span><span class="pi">:</span> <span class="s">true</span>&#x000A;</code></pre>
+        
         <h2 id="dependency-management">Dependency Management</h2>
         
         <p>The following option allow you to control how dependencies are loaded/preserved during the build process.</p>
+        
+        <h3 id="library-directories">Library Directories</h3>
+        
+        <p>The <code>lib_dirs</code> config tells Pagoda Box where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are packaged into a “library archive”, which is used on subsequent deploys.</p>
+        
+        <h4 id="lib_dir">lib_dir</h4>
+        <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">lib_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">vendor</span>&#x000A;    <span class="pi">-</span> <span class="s">packages</span>&#x000A;</code></pre>
         
         <h3 id="reuse-libs">Reuse Libs</h3>
         

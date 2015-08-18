@@ -304,17 +304,23 @@
       </div>
       <div id='content'>
         <h1>Generating a Boxfile</h1>
-        <p>Each engine has the ability to generate a Boxfile for the codebase. If leveraged to it&#39;s full extent, this feature can empower an engine to auto-generate an entire infrastructure to satisfy all of the app&#39;s dependencies without any custom configuration.</p>
+        <p>Each engine has the ability to generate a <a href="/getting-started/boxfile/">Boxfile</a> for the codebase. If leveraged to it&#39;s full extent, this feature can empower an engine to auto-generate an entire infrastructure to satisfy all of the app&#39;s dependencies without any custom configuration.</p>
         
-        <h4 id="warning">Warning!</h4>
+        <h4 id="warning"><strong>Warning!</strong></h4>
         
-        <p>If you are unfamiliar with the role of a Boxfile, you need to read <a href="boxfile/intro/">the Boxfile guide</a> first.</p>
+        <p>If you are unfamiliar with the role of a Boxfile, you need to read <a href="/boxfile/intro/">the Boxfile doc</a> first.</p>
         
         <h2 id="the-vision">The Vision</h2>
         
-        <p>This feature gives the engine complete control to automate the entire infrastructure for the app. The engine <a href="/engines/scripts/boxfile">boxfile script</a> is run before the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts. Nanobox will then generate the specified services and configuration before calling the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts. The order is important here, because each newly created service will also generate environment variables like <code>REDIS1_HOST</code>, <code>REDIS1_PORT</code>, <code>POSTGRES1_USER</code>, and <code>POSTGRES1_PASS</code> which will be available in both the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts. Ultimately, an engine can tell Nanobox that this app needs a database, and by the time the <a href="/engines/scripts/build">build</a> script is called, the environment variables exist which can be used to generate application-specific connection configuration.</p>
+        <p>The Boxfile allows an engine to automate the entire infrastructure for an app. An engine&#39;s <a href="/engines/scripts/boxfile/">boxfile script</a> runs before the <a href="/engines/scripts/prepare/">prepare</a> and <a href="/engines/scripts/build/">build</a> scripts, allowing Nanobox to generates the specified services and configuration on which the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts may depend.</p>
         
-        <p>The extent of the engine-derived Boxfile can be simple and static, or it can be advanced and dynamic. Consider for example an engine for a popular blogging framework like Wordpress. The requirements are simple and predictable. A database will always be required, and likely only a database will be required. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script can simply echo a static Boxfile containing a mysql database. On the other hand, consider a more general-purpose framework like rails or django. The requirements will change depending on the functionality of the specific application. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script may inspect the Gemfile or requirements.txt for a postgres or redis adapter. If such an adapter is required by the app, then it&#39;s a safe assumption that the application will also need a service for the adapter to connect to. In this manner can a Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks. Finally, within the <a href="/engines/scripts/build">build</a> script, the application can be configured to connect to the dynamically-generated services.</p>
+        <p>The order is important here. Each newly created service also generates environment variables such as <code>REDIS1_HOST</code>, <code>REDIS1_PORT</code>, <code>POSTGRES1_USER</code>, and <code>POSTGRES1_PASS</code> which are available in both the <a href="/engines/scripts/prepare/">prepare</a> and <a href="/engines/scripts/build/">build</a> scripts. Ultimately, an engine can tell Nanobox that this app needs a database, and by the time the <a href="/engines/scripts/build/">build</a> script is called, the environment variables exist which can be used to generate application-specific connection configuration.</p>
+        
+        <p>The extent of the engine-derived Boxfile can be simple and static or advanced and dynamic. Consider an engine for a popular blogging framework such as Wordpress. The requirements are simple and predictable. A database will always be required. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script can simply echo a static Boxfile containing a mysql database.</p>
+        
+        <p>On the other hand, consider a more general-purpose framework like rails or django. The requirements change depending on the functionality of the specific application. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script may inspect the Gemfile or requirements.txt for a postgres or redis adapter. If such an adapter is required, it&#39;s safe to assume the application needs that type of service. Within the <a href="/engines/scripts/build">build</a> script, the application can be configured to connect to the dynamically-generated services.</p>
+        
+        <p>A Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks.</p>
         
         <h2 id="developer-overrides">Developer Overrides</h2>
         

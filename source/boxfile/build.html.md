@@ -26,8 +26,28 @@ build:
   engine: 'username/engine-name'
 ```
 
+## Disable Engine Boxfile Generation
+The `disable_engine_boxfile` config prevents an engine from generating a Boxfile for the app. This can be handy if you want to be able to specify everything your app needs in your Boxfile without any "suprises" genereated by your engine.
+
+#### disable\_engine\_boxfile
+```yaml
+build:
+  disable_engine_boxfile: true
+```
+
 ## Dependency Management
 The following option allow you to control how dependencies are loaded/preserved during the build process.
+
+### Library Directories
+The `lib_dirs` config tells Pagoda Box where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are packaged into a “library archive”, which is used on subsequent deploys.
+
+#### lib_dir
+```yaml
+build:
+  lib_dirs:
+    - vendor
+    - packages
+```
 
 ### Reuse Libs
 During the build process, dependecies are downloaded then stored in a "library archive". The `reuse_libs` config allows you to specify whether or not you want to use the library archive from the previous deploy. If set to 'false', libraries and packages will be downloaded on all deploys, increasing build/deploy times.
