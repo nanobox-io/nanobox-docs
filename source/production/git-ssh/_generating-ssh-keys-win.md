@@ -27,7 +27,7 @@ Once your SSH key is generated, go ahead and copy it and [add it to your Nanobox
 Cd into your .ssh directory and check for existing keys.
 
 #### Check for Existing Keys
-```bash
+```shell
 $ cd ~/.ssh
 $ ls
 ```
@@ -37,7 +37,7 @@ If you already have an SSH key pair (most likely id\_rsa and id\_rsa.pub), you c
 Generate a new SSH key.
 
 #### Generate a New SSH Key Pair
-```bash
+```shell
 $ ssh-keygen -t rsa -C "your_email@youremail.com"
 Generating public/private rsa key pair.
 Enter file in which to save the key
@@ -47,7 +47,7 @@ Enter file in which to save the key
 Passwords aren't required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you'd like one.
 
 #### Enter a Passphrase
-```bash
+```shell
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
@@ -55,7 +55,7 @@ Enter same passphrase again:
 Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:
 
 #### Key Randomart
-```bash
+```shell
 Your identification has been saved in /Users/your_user/.ssh/id_rsa.
 Your public key has been saved in /Users/your_user/.ssh/id_rsa.pub.
 The key fingerprint is:
