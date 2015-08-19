@@ -77,17 +77,11 @@ $(document).ready(function() {
           tag = pretag
       };
       if (navigator.appVersion.indexOf("Win") != -1) {
-          $("#win-content, #win-tab").addClass("active");
-          $("#osx-content").css("display", "none");
-      } else if (navigator.appVersion.indexOf("Mac") != -1) {
-          $("#osx-content, #osx-tab").addClass("active");
-          $("#win-content").css("display", "none");
-      } else if (navigator.appVersion.indexOf("Linux") != -1) {
-          $("#osx-content, #osx-tab").addClass("active");
-          $("#win-content").css("display", "none");
-      } else if (navigator.appVersion.indexOf("X11") != -1) {
-          $("#osx-content, #osx-tab").addClass("active");
-          $("#win-content").css("display", "none");
+        $("#win-tab").addClass("active");
+        $("#osx-content").css("display", "none");
+      } else {
+        $("#osx-tab").addClass("active");
+        $("#win-content").css("display", "none");
       }
     }
   })
