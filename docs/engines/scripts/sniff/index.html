@@ -13,7 +13,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-46aa5565.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-517aa736.js" type="text/javascript"></script>
+    <script src="/javascripts/all-2eb6cf05.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -332,7 +332,7 @@
         
         <h2 id="example">Example</h2>
         
-        <p>The following example shows how to properly detect a middleman codebase, a ruby static site generator:</p>
+        <p>The following example shows how to properly detect a <a href="https://middlemanapp.com/">Middleman</a> codebase, a ruby static site generator:</p>
         <pre class="highlight shell"><code><span class="c">#!/usr/bin/env bash</span>&#x000A;&#x000A;<span class="c"># $1 = code_dir</span>&#x000A;&#x000A;<span class="c"># check for the existence of a Gemfile</span>&#x000A;<span class="k">if</span> <span class="o">[</span> -f <span class="k">${</span><span class="nv">1</span><span class="k">}</span>/Gemfile <span class="o">]</span>; <span class="k">then</span>&#x000A;  <span class="c"># found a Gemfile, now let's look for the middleman gem</span>&#x000A;  cat <span class="k">${</span><span class="nv">1</span><span class="k">}</span>/Gemfile | grep <span class="s1">'middleman'</span> <span class="o">||</span> <span class="nb">exit </span>1&#x000A;<span class="k">else&#x000A;  </span><span class="nb">exit </span>1&#x000A;<span class="k">fi</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/intro/">Scripts</a>

@@ -13,7 +13,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-46aa5565.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-517aa736.js" type="text/javascript"></script>
+    <script src="/javascripts/all-2eb6cf05.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -219,7 +219,68 @@
       </div>
       <div id='content'>
         <h1>Adding SSH Keys to Nanobox</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Adding SSH keys to your Nanobox account allows you securely connect to Nanobox apps for things such as Git pushes and pulls as well as remote access to services.</p>
+        
+        <p>To add your SSH key to your Nanobox account, go to your user account page by clicking on your username in the upper right hand corner of your Dashboard. Then click &quot;SSH Keys&quot;. Once in the SSH Keys section of your Account Admin, click &quot;New SSH Key&quot;.</p>
+        
+        <p><img alt="Add New SSH Key" src="/images/ssh-keys-add-key-213fd674.png" /></p>
+        
+        <p>Go ahead and name your key. The name is abitrary and is meant to help you identify keys in a list of multiple keys.</p>
+        
+        <p><img alt="Paste in Key" src="/images/ssh-keys-add-key-paste-f4494b9c.png" /></p>
+        
+        <p><a href="#copying-public-keys">Copy the contents of your Public Key</a>, paste it in, then save.</p>
+        
+        <h2 id="things-to-know-about-ssh-keys">Things to Know About SSH Keys</h2>
+        
+        <h3 id="ssh-keys-are-unique-to-each-user-account">SSH Keys Are Unique to Each User Account</h3>
+        
+        <p>An SSH key can only be associated with one Nanobox account. The same SSH key cannot be used across multiple accounts. Sharing access to apps should and can not be done by sharing SSH keys. Access to apps should be granted using the <a href="/production/team/intro/">Nanobox collaboration system</a>.</p>
+        
+        <h3 id="you-can-have-multiple-nanobox-accounts-each-with-unique-ssh-keys">You Can Have Multiple Nanobox Accounts, Each with Unique SSH Keys</h3>
+        
+        <p>If you have multiple Nanobox accounts and you want to use them from the same machine, you&#39;ll need to generate a unique SSH Key for each user. Telling your local SSH agent which key to use when pushing to certain repos does require modification to your local SSH config, which is not documented here.</p>
+        
+        <h3 id="you-can-have-multiple-ssh-keys-tied-to-your-account">You Can Have Multiple SSH Keys Tied to Your Account</h3>
+        
+        <p>SSH keys are unique to your user on your machine. If you use your Nanobox account from multiple computers, you&#39;ll need to add an SSH key for each.</p>
+        
+        <h2 id="copying-public-keys">Copying Public Keys</h2>
+        
+        <p>There are some really simple ways to copy public SSH keys. The ways described below will help to avoid any encoding errors that may be caused to opening keys in text editors and copying them that way.</p>
+        
+        <h3 id="osx">OSX</h3>
+        
+        <p>Open up terminal and run the following command to copy the contents of your public key to your clipboard.</p>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>pbcopy &lt; path/to/public-key&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>pbcopy &lt; ~/.ssh/id_rsa.pub&#x000A;</code></pre>
+        
+        <h3 id="linux">Linux</h3>
+        
+        <p>Any Linux distro with Xwindows has xclip, a tool similar to OSX&#39;s pbcopy. To make things really easy, make the following alias I like to make this alias(es):</p>
+        <pre class="highlight shell"><code><span class="nb">alias </span><span class="nv">pbcopy</span><span class="o">=</span><span class="s1">'xclip -selection clipboard'</span>&#x000A;</code></pre>
+        
+        <p>Or if you&#39;d rather use xsel:</p>
+        <pre class="highlight shell"><code><span class="nb">alias </span><span class="nv">pbcopy</span><span class="o">=</span><span class="s1">'xsel --clipboard --input'</span>&#x000A;</code></pre>
+        
+        <p>Now you can pipe any text to pbcopy.</p>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>cat path/to/public-key | pbcopy&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>cat ~/.ssh/id_dsa.pub | pbcopy&#x000A;</code></pre>
+        
+        <p>This will copy your public key into your clipboard.</p>
+        
+        <h3 id="windows">Windows</h3>
+        
+        <p>In Windows, you can copy your key using either Git GUI or Git Bash.</p>
+        
+        <h4 id="git-gui">Git GUI</h4>
+        
+        <p>In Git GUI, go to Help &gt; Show SSH Key and click &quot;Copy to Clipboard&quot;.</p>
+        
+        <p><img alt="Git GUI - Copy to Clipboard" src="/images/ssh-keys-win-git-gui-key-a27dd1f3.png" /></p>
+        
+        <h4 id="git-bash">Git Bash</h4>
+        
+        <p>In Git Bash, run the following command to copy your public key to your clipboard:</p>
+        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>clip &lt; path/to/public-key&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>clip &lt; ~/.ssh/id_rsa.pub&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/production/git-ssh/generating-ssh-keys/">Generating SSH Keys</a>
           <a class="next" href="/production/git-ssh/git-ssh-troubleshooting/">Git & SSH Troubleshooting</a>

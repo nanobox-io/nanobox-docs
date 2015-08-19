@@ -30,7 +30,7 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 
 ## Example
 
-The following example shows how to properly detect a middleman codebase, a ruby static site generator:
+The following example shows how to properly detect a [Middleman](https://middlemanapp.com/) codebase, a ruby static site generator:
 
 ```bash
 #!/usr/bin/env bash

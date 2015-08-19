@@ -13,7 +13,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-46aa5565.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-517aa736.js" type="text/javascript"></script>
+    <script src="/javascripts/all-2eb6cf05.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -219,85 +219,87 @@
       </div>
       <div id='content'>
         <h1>Generating SSH Keys</h1>
-        <ul id='os-tabs'>
-          <li id='osx-tab'>OSX &amp; Linux</li>
-          <li id='win-tab'>Windows</li>
+        <ul id="os-tabs">
+          <li id="osx-tab">OSX &amp; Linux</li>
+          <li id="win-tab">Windows</li>
         </ul>
-        <div id='osx-content'>
+        <div id="osx-content">
           <p>Generating SSH keys in OSX and Linux is done in Terminal. First, cd into your .ssh directory and check for existing keys.</p>
-          
-          <h4 id="check-for-existing-ssh-keys">Check for Existing SSH Keys</h4>
-          <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> ~/.ssh&#x000A;  <span class="gp">$ </span>ls&#x000A;  </code></pre>
-          
-          <p>If you already have an SSH key pair (most likely id_rsa and id_rsa.pub), you can skip to adding your SSH key to your Nanobox account. If one does not already exist, you will need to generate a new ssh key:</p>
-          
-          <h4 id="generate-a-new-ssh-key-pair">Generate a New SSH Key Pair</h4>
-          <pre class="highlight shell"><code><span class="gp">$ </span>ssh-keygen -t rsa -C <span class="s2">"your_email@youremail.com"</span>&#x000A;  Generating public/private rsa key pair.&#x000A;  Enter file <span class="k">in </span>which to save the key&#x000A;  <span class="o">(</span>/Users/your_user_directory/.ssh/id_rsa<span class="o">)</span>:&#x000A;  </code></pre>
-          
-          <p>Enter a passphrase if you&#39;d like one. If you do use a passphrase, you will have to enter it each time you push using the ssh key. Most go without a passphrase.</p>
-          
-          <h4 id="enter-a-passphrase">Enter a Passphrase</h4>
-          <pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:&#x000A;  Enter same passphrase again:&#x000A;  </code></pre>
-          
-          <p>Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:</p>
-          
-          <h4 id="key-randomart">Key Randomart</h4>
-          <pre class="highlight shell"><code>----------&#x000A;  Your identification has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.&#x000A;  Your public key has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.pub.&#x000A;  The key fingerprint is:&#x000A;  0b:77:6e:9c:5f:77:e7:fa:14:ac:03:d7:aa:8d:0c:af demo@youremail.com&#x000A;  The keys randomart image is:&#x000A;  +--[ RSA 2048]----+&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |              o  |&#x000A;  |      . S .. . + |&#x000A;  |       o <span class="o">=</span> .o o .|&#x000A;  |        ..<span class="o">=</span>  +. <span class="o">=</span>|&#x000A;  |         .+.+..+o|&#x000A;  |         E.<span class="o">=</span>...oo|&#x000A;  +-----------------+&#x000A;  </code></pre>
-          
-          <p>Congratulations! You&#39;ve generated an SSH key! Now you just need to <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        
+        <h4 id="check-for-existing-ssh-keys">Check for Existing SSH Keys</h4>
+        <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> ~/.ssh&#x000A;<span class="gp">$ </span>ls&#x000A;</code></pre>
+        
+        <p>If you already have an SSH key pair (most likely id_rsa and id_rsa.pub), you can skip to adding your SSH key to your Nanobox account. If one does not already exist, you will need to generate a new ssh key:</p>
+        
+        <h4 id="generate-a-new-ssh-key-pair">Generate a New SSH Key Pair</h4>
+        <pre class="highlight plaintext"><code>$ ssh-keygen -t rsa -C "your_email@youremail.com"&#x000A;Generating public/private rsa key pair.&#x000A;Enter file in which to save the key&#x000A;(/Users/your_user_directory/.ssh/id_rsa):&#x000A;</code></pre>
+        
+        <p>Enter a passphrase if you&#39;d like one. If you do use a passphrase, you will have to enter it each time you push using the ssh key. Most go without a passphrase.</p>
+        
+        <h4 id="enter-a-passphrase">Enter a Passphrase</h4>
+        <pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:&#x000A;Enter same passphrase again:&#x000A;</code></pre>
+        
+        <p>Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:</p>
+        
+        <h4 id="key-randomart">Key Randomart</h4>
+        <pre class="highlight shell"><code>----------&#x000A;Your identification has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.&#x000A;Your public key has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.pub.&#x000A;The key fingerprint is:&#x000A;0b:77:6e:9c:5f:77:e7:fa:14:ac:03:d7:aa:8d:0c:af demo@youremail.com&#x000A;The keys randomart image is:&#x000A;+--[ RSA 2048]----+&#x000A;|                 |&#x000A;|                 |&#x000A;|                 |&#x000A;|              o  |&#x000A;|      . S .. . + |&#x000A;|       o <span class="o">=</span> .o o .|&#x000A;|        ..<span class="o">=</span>  +. <span class="o">=</span>|&#x000A;|         .+.+..+o|&#x000A;|         E.<span class="o">=</span>...oo|&#x000A;+-----------------+&#x000A;</code></pre>
+        
+        <p>Congratulations! You&#39;ve generated an SSH key! Now you just need to <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        
         </div>
-        <div id='win-content'>
+        <div id="win-content">
           <p>Generating SSH keys in Windows can be done using either the Git GUI or Git Bash, both of which should&#39;ve been included in your Git install.</p>
-          
-          <h2 id="using-the-git-gui">Using the Git GUI</h2>
-          
-          <p>First, open the Git GUI.</p>
-          
-          <p><img alt="Windows Start Menu - Git GUI" src="/images/ssh-keys-win-start-menu-git-gui-62262285.png" /></p>
-          
-          <p>Go to Help &gt; Show SSH Key.</p>
-          
-          <p><img alt="Git GUI - Show Key" src="/images/ssh-keys-win-git-gui-show-key-5c0e0d4b.png" /></p>
-          
-          <p>Click Generate Key.</p>
-          
-          <p><img alt="Git GUI - Generate Key" src="/images/ssh-keys-win-git-gui-generate-key-a88ca783.png" /></p>
-          
-          <p>Passwords aren&#39;t required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you&#39;d like one.</p>
-          
-          <p><img alt="Git GUI - Enter Passphrase" src="/images/ssh-keys-win-git-gui-passphrase-578bfa49.png" /></p>
-          
-          <p>Congratulations! You&#39;ve generated an SSH key!</p>
-          
-          <p><img alt="Git GUI - Key" src="/images/ssh-keys-win-git-gui-key-a27dd1f3.png" /></p>
-          
-          <p>Once your SSH key is generated, go ahead and copy it and <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
-          
-          <h2 id="using-git-bash">Using Git Bash</h2>
-          
-          <p>Cd into your .ssh directory and check for existing keys.</p>
-          
-          <h4 id="check-for-existing-keys">Check for Existing Keys</h4>
-          <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> ~/.ssh&#x000A;  <span class="gp">$ </span>ls&#x000A;  </code></pre>
-          
-          <p>If you already have an SSH key pair (most likely id_rsa and id_rsa.pub), you can go ahead and <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
-          
-          <p>Generate a new SSH key.</p>
-          
-          <h4 id="generate-a-new-ssh-key-pair">Generate a New SSH Key Pair</h4>
-          <pre class="highlight shell"><code><span class="gp">$ </span>ssh-keygen -t rsa -C <span class="s2">"your_email@youremail.com"</span>&#x000A;  Generating public/private rsa key pair.&#x000A;  Enter file <span class="k">in </span>which to save the key&#x000A;  <span class="o">(</span>/Users/your_user_directory/.ssh/id_rsa<span class="o">)</span>:&#x000A;  </code></pre>
-          
-          <p>Passwords aren&#39;t required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you&#39;d like one.</p>
-          
-          <h4 id="enter-a-passphrase">Enter a Passphrase</h4>
-          <pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:&#x000A;  Enter same passphrase again:&#x000A;  </code></pre>
-          
-          <p>Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:</p>
-          
-          <h4 id="key-randomart">Key Randomart</h4>
-          <pre class="highlight shell"><code>Your identification has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.&#x000A;  Your public key has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.pub.&#x000A;  The key fingerprint is:&#x000A;  0b:77:6e:9c:5f:77:e7:fa:14:ac:03:d7:aa:8d:0c:af demo@youremail.com&#x000A;  The keys randomart image is:&#x000A;  +--[ RSA 2048]----+&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |                 |&#x000A;  |              o  |&#x000A;  |      . S .. . + |&#x000A;  |       o <span class="o">=</span> .o o .|&#x000A;  |        ..<span class="o">=</span>  +. <span class="o">=</span>|&#x000A;  |         .+.+..+o|&#x000A;  |         E.<span class="o">=</span>...oo|&#x000A;  +-----------------+&#x000A;  </code></pre>
-          
-          <p>Congratulations! You&#39;ve generated an SSH key! Now you just need to <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        
+        <h2 id="using-the-git-gui">Using the Git GUI</h2>
+        
+        <p>First, open the Git GUI.</p>
+        
+        <p><img alt="Windows Start Menu - Git GUI" src="/images/ssh-keys-win-start-menu-git-gui-62262285.png" /></p>
+        
+        <p>Go to Help &gt; Show SSH Key.</p>
+        
+        <p><img alt="Git GUI - Show Key" src="/images/ssh-keys-win-git-gui-show-key-5c0e0d4b.png" /></p>
+        
+        <p>Click Generate Key.</p>
+        
+        <p><img alt="Git GUI - Generate Key" src="/images/ssh-keys-win-git-gui-generate-key-a88ca783.png" /></p>
+        
+        <p>Passwords aren&#39;t required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you&#39;d like one.</p>
+        
+        <p><img alt="Git GUI - Enter Passphrase" src="/images/ssh-keys-win-git-gui-passphrase-578bfa49.png" /></p>
+        
+        <p>Congratulations! You&#39;ve generated an SSH key!</p>
+        
+        <p><img alt="Git GUI - Key" src="/images/ssh-keys-win-git-gui-key-a27dd1f3.png" /></p>
+        
+        <p>Once your SSH key is generated, go ahead and copy it and <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        
+        <h2 id="using-git-bash">Using Git Bash</h2>
+        
+        <p>Cd into your .ssh directory and check for existing keys.</p>
+        
+        <h4 id="check-for-existing-keys">Check for Existing Keys</h4>
+        <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd</span> ~/.ssh&#x000A;<span class="gp">$ </span>ls&#x000A;</code></pre>
+        
+        <p>If you already have an SSH key pair (most likely id_rsa and id_rsa.pub), you can go ahead and <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        
+        <p>Generate a new SSH key.</p>
+        
+        <h4 id="generate-a-new-ssh-key-pair">Generate a New SSH Key Pair</h4>
+        <pre class="highlight shell"><code><span class="gp">$ </span>ssh-keygen -t rsa -C <span class="s2">"your_email@youremail.com"</span>&#x000A;Generating public/private rsa key pair.&#x000A;Enter file <span class="k">in </span>which to save the key&#x000A;<span class="o">(</span>/Users/your_user_directory/.ssh/id_rsa<span class="o">)</span>:&#x000A;</code></pre>
+        
+        <p>Passwords aren&#39;t required but can be added to your SSH key. If used, you will be required to enter your passphrase each time you push using the ssh key. Enter a passphrase if you&#39;d like one.</p>
+        
+        <h4 id="enter-a-passphrase">Enter a Passphrase</h4>
+        <pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:&#x000A;Enter same passphrase again:&#x000A;</code></pre>
+        
+        <p>Enjoy the key randomart. After entering (or not entering) a passphrase, you should get output like the following:</p>
+        
+        <h4 id="key-randomart">Key Randomart</h4>
+        <pre class="highlight shell"><code>Your identification has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.&#x000A;Your public key has been saved <span class="k">in</span> /Users/your_user/.ssh/id_rsa.pub.&#x000A;The key fingerprint is:&#x000A;0b:77:6e:9c:5f:77:e7:fa:14:ac:03:d7:aa:8d:0c:af demo@youremail.com&#x000A;The keys randomart image is:&#x000A;+--[ RSA 2048]----+&#x000A;|                 |&#x000A;|                 |&#x000A;|                 |&#x000A;|              o  |&#x000A;|      . S .. . + |&#x000A;|       o <span class="o">=</span> .o o .|&#x000A;|        ..<span class="o">=</span>  +. <span class="o">=</span>|&#x000A;|         .+.+..+o|&#x000A;|         E.<span class="o">=</span>...oo|&#x000A;+-----------------+&#x000A;</code></pre>
+        
+        <p>Congratulations! You&#39;ve generated an SSH key! Now you just need to <a href="/production/git-ssh/adding-ssh-keys/">add it to your Nanobox account</a>.</p>
+        
         </div>
         <div id='pagination'>
           <a class="prev" href="/production/git-ssh/intro/">Git & SSH</a>
