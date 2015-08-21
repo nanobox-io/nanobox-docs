@@ -31,11 +31,28 @@ a                       { @include transition(all .15s); }
     }
   }
   svg                   {
-    &#nanobox-logo      { height: 1.5em; width: 1.3em; position: absolute}
+    &#nanobox-logo      { height: 1.5em; width: 1.3em; position: absolute; }
     &#home-icon         { margin-left: .65em; height: 1em; width: 1em; stroke: $gblue-4; @include transition(stroke .15s);
       &:hover           { stroke: $gblue-6; }
     }
   }
+}
+
+#footer                 { width: 100%; background: $gblue-0; display: inline-block; padding: 4em 2em; font-size: .9em; color: $gblue-4; @include box-sizing; 
+  a                     { color: $gblue-5; text-decoration: none;
+    &:hover             { color: $gblue-7; }
+    &#production        {
+      #logo             { height: 6em; display: block; margin: 0 auto .75em; @include opacity(.7); @include transition(opacity .2s); }
+      &:hover #logo     { @include opacity(1); }
+    }
+  }
+  p                     { display: inline-block; }
+  ul                    { display: inline-block; padding: 0; margin: 0 2em 1em 0; list-style: none; }
+  li                    { line-height: 1.6em; }
+  #wrapper              { margin: 0 auto; position: relative; }
+  .title                { font-weight: bold; color: $gblue-7; }
+  .left                 { max-width: 500px; }
+  .right                { position: absolute; right: 0; }
 }
 
 #wrapper                { margin: 60px auto; max-width: 1300px; }
@@ -110,12 +127,12 @@ a                       { @include transition(all .15s); }
   }
   strong                { color: $gblue-7; }
   code, pre             { font-family: Consolas,Monaco,'Andale Mono',monospace; white-space: pre; word-wrap: normal; }
-  pre                   { padding: 30px; background: $gblue-0; border: 1px solid $gblue-3; font-size: .9em; overflow: scroll; }
+  pre                   { padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; }
   ul, ol                { padding-left: 1.2em; 
     li                  { line-height: 1.8em; }
   }
   p, ul, li             {
-    code                { padding: 5px 6px 6px; font-size: .85em; color: $yellow-2; background: $gblue-0; border: 1px solid $gblue-3; white-space: nowrap; }
+    code                { padding: 5px 6px 6px; font-size: .85em; color: $yellow-2; background: $gblue-0; white-space: nowrap; }
   }
   img                   { max-width: 100%; }
   hr                    { margin: 2em 0; border: none; border-top: 1px solid $gblue-2; }

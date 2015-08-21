@@ -36,6 +36,10 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
   svg#home-icon               { margin-left: .25em; }          
 }
 
+#footer                       {
+  .right                      { width: 100%; position: relative; margin-top: 2em; padding-top: 3em; border-top: 1px solid $gblue-2; text-align: center; }
+}
+
 #navigation                   { width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0;
   ul#contents > li:last-child { margin-bottom: 1.3em; }
 }
@@ -45,6 +49,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
   h2                          { font-size: 2.1em; }
   h3                          { font-size: 1.5em; }
   h4                          { font-size: 1.2em; }
+  #pagination                 { margin-bottom: 2em; }
 }
 
 }
