@@ -33,7 +33,7 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 The following example shows how to properly detect a [Middleman](https://middlemanapp.com/) codebase, a ruby static site generator:
 
 ```bash
-#!/usr/bin/env bash
+#!/bin/bash
 
 # $1 = code_dir
 
