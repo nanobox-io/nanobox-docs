@@ -4,8 +4,6 @@ title: sniff
 
 The sniff script is executed when Nanobox is attempting to determine which engine to use for the app. This script is not executed if the engine is explicitly specified in the application Boxfile.
 
-## Purpose
-
 This script looks for something within the application code that it can uniquely identify. If found, the script should return a 0 (success) exit code. Otherwise, the script should return a 1 (error).
 
 The logic should be simple, short, and quick.

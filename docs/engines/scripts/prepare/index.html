@@ -304,7 +304,37 @@
       </div>
       <div id='content'>
         <h1>prepare</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The prepare script fulfills the <a href="/engines/how-engines-work#environment-preparation">Environment Preparation</a> phase of the deploy process. The prepare script is responsible for &quot;preparing&quot; the environment that the built codebase will run in. Anything that will be required to build or run the provided codebase needs to be installed and configured within this script.</p>
+        
+        <h2 id="usage">Usage</h2>
+        
+        <h4 id="script">script</h4>
+        
+        <p>The prepare script is executed at <code>$ENGINE_ROOT/bin/prepare</code>. The prepare script must exist in this location.</p>
+        
+        <h4 id="args">args</h4>
+        
+        <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/intro#payload">here</a> for a description of the payload.</p>
+        
+        <h4 id="working-directory">working directory</h4>
+        
+        <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
+        
+        <h2 id="objectives">Objectives</h2>
+        
+        <h4 id="install-build-runtimes-and-binaries">Install build runtimes and binaries</h4>
+        
+        <h4 id="install-production-runtimes-and-binaries">Install production runtimes and binaries</h4>
+        
+        <h4 id="generate-configuration-files">Generate configuration files</h4>
+        
+        <h4 id="fetch-and-build-libraries-and-dependencies">Fetch and build libraries and dependencies</h4>
+        
+        <h4 id="update-path">Update $PATH</h4>
+        
+        <h4 id="persist-environment-variables">Persist environment variables</h4>
+        
+        <h2 id="example">Example</h2>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/boxfile/">boxfile</a>
           <a class="next" href="/engines/scripts/build/">build</a>

@@ -304,7 +304,37 @@
       </div>
       <div id='content'>
         <h1>build</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The build script fulfills the <a href="/engines/how-engines-work#application-build">Application Build</a> phase of the deploy process. The purpose of the build script is to &quot;build&quot; your codebase to be run in an isolated container. Generally, this means compiling the code if necessary, and generating configuration files to allow the application to connect to services.</p>
+        
+        <h4 id="caution">Caution</h4>
+        
+        <p>The build script can be run independent of a full deploy. As such, it is important that the build script not be used to prepare the environment or re-install dependencies. Otherwise, an iterative build may take much longer than necessary.</p>
+        
+        <h2 id="usage">Usage</h2>
+        
+        <h4 id="script">script</h4>
+        
+        <p>The build script is executed at <code>$ENGINE_ROOT/bin/build</code>. The build script must exist in this location.</p>
+        
+        <h4 id="args">args</h4>
+        
+        <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/intro#payload">here</a> for a description of the payload.</p>
+        
+        <h4 id="working-directory">working directory</h4>
+        
+        <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
+        
+        <h2 id="objectives">Objectives</h2>
+        
+        <h4 id="apply-patches">Apply patches</h4>
+        
+        <h4 id="compile-or-build-the-codebase">Compile or build the codebase</h4>
+        
+        <h4 id="generate-application-configuration">Generate application configuration</h4>
+        
+        <h4 id="move-the-final-build-into-place">Move the final build into place</h4>
+        
+        <h2 id="example">Example</h2>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/prepare/">prepare</a>
           <a class="next" href="/engines/scripts/cleanup/">cleanup</a>

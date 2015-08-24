@@ -304,7 +304,53 @@
       </div>
       <div id='content'>
         <h1>boxfile</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The boxfile script fulfills the <a href="/engines/how-engines-work#infrastructure-definition">Infrastructure Definition</a> phase of the deploy process. The boxfile script should print a valid <a href="/boxfile/intro">Boxfile</a> to stdout. The purpose of boxfile script is to inform Nanobox of how to run the app. This includes instructions for how to start the webs, workers, and even data services.</p>
+        
+        <h4 id="caution">Caution</h4>
+        
+        <p>Without the boxfile script, or with an empty Boxfile printed to stdout, Nanobox will not know how to run the app.</p>
+        
+        <h2 id="usage">Usage</h2>
+        
+        <h4 id="script">script</h4>
+        
+        <p>The boxfile script is executed at <code>$ENGINE_ROOT/bin/boxfile</code>. The boxfile script must exist in this location.</p>
+        
+        <h4 id="args">args</h4>
+        
+        <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/intro#payload">here</a> for a description of the payload.</p>
+        
+        <h4 id="working-directory">working directory</h4>
+        
+        <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
+        
+        <h2 id="objectives">Objectives</h2>
+        
+        <h4 id="cached-libraries">Cached libraries</h4>
+        
+        <p>Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you <strong>can</strong> manage this yourself in the <a href="/engines/scripts/prepare">prepare</a> script, Nanobox provides a shortcut for this common scenario: the lib_dirs property within the build section. More detailed information can be found <a href="/boxfile/build#dependency-management">here</a>.</p>
+        
+        <h4 id="start-the-app">Start the app</h4>
+        
+        <p>Though we haven&#39;t <a href="/engines/how-engines-work#environment-preparation">prepared the environment</a> or <a href="/engines/how-engines-work#application-build">built the code yet</a>, we need to tell Nanobox how to run this app after the deploy is complete. This is done by defining the required web and worker services. Detailed information about how to define the app services can be found <a href="/boxfile/code-services">here</a>.</p>
+        
+        <h4 id="declare-dependencies">Declare dependencies</h4>
+        
+        <p>Often an app will need to connect to services such as a database. The boxfile script can be used to declare those dependencies. This can be as simple or complex as necessary. If the framework will always require a certain set of services, the declaration can be static. Otherwise, a more complex approach may be used which would likely search the codebase for configurations of services. The complete documentation for service configuration can be found <a href="/boxfile/data-services/">here</a>.</p>
+        
+        <h2 id="examples">Examples</h2>
+        
+        <h4 id="simple-static-site">Simple, static site</h4>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web1:&#x000A;  exec: nginx&#x000A;&#x000A;END&#x000A;</span></code></pre>
+        
+        <h4 id="simple-predictable-framework-with-known-dependencies">Simple, predictable framework with known dependencies</h4>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web1:&#x000A;  exec: apache&#x000A;&#x000A;mysql1:&#x000A;  name: catalog&#x000A;&#x000A;END&#x000A;</span></code></pre>
+        
+        <h4 id="simple-app-with-cached-libraries">Simple app with cached libraries</h4>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;build:&#x000A;  lib_dirs:&#x000A;    - vendor&#x000A;    - .bundle&#x000A;&#x000A;web1:&#x000A;  exec: bundle exec ruby app.rb&#x000A;&#x000A;END&#x000A;</span></code></pre>
+        
+        <h4 id="general-purpose-framework-with-unknown-requirements">General purpose framework with unknown requirements</h4>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="c"># todo: wait for nos render to stdout</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/sniff/">sniff</a>
           <a class="next" href="/engines/scripts/prepare/">prepare</a>
