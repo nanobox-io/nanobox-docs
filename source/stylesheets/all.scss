@@ -111,7 +111,9 @@ a                       { @include transition(all .15s); }
   h6                    { margin: 0 0 .25em; padding-top: 1.2em; font-size: .95em; color: $gblue-7; text-transform: uppercase; font-style: italic; }
   p                     { margin: 0 0 1.5em; line-height: 2em; }
   a                     { color: $blue-1; text-decoration: none; border-bottom: 1px dotted;
-    &:hover             { color: $gblue-8; }
+    &:hover             { color: $gblue-8;
+      code              { border: 1px dotted $blue-0; }
+    }
     &.prev              { position: relative; float: left; padding: .3em .8em .5em .6em; margin: .3em 0 .6em; border: none; color: $gblue-4; background: $gblue-0; @include transition(all .15s);
       &:before          { content: ""; position: absolute; top: 0; left: -.55em; width: 0; height: 0; border-style: solid; border-width: 1em .6em 1em 0;; border-color: transparent $gblue-0 transparent transparent; @include transition(border-color .15s); }
       &:hover           { color: $gblue-7; background: $gblue-3;
@@ -126,8 +128,8 @@ a                       { @include transition(all .15s); }
     }
   }
   strong                { color: $gblue-7; }
-  code, pre             { font-family: Consolas,Monaco,'Andale Mono',monospace; white-space: pre; word-wrap: normal; }
-  pre                   { padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; }
+  code, pre             { font-family: Consolas,Monaco,'Andale Mono',monospace; white-space: pre; word-wrap: normal; border: 1px dotted $gblue-0; @include transition(border .15s) }
+  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; }
   ul, ol                { padding-left: 1.2em; 
     li                  { line-height: 1.8em; }
   }
