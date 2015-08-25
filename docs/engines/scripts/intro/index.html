@@ -12,7 +12,7 @@
       Scripts - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-0e39a629.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-e5c63ea3.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-46b1694d.js" type="text/javascript"></script>
   </head>
   <body>
@@ -304,61 +304,61 @@
       </div>
       <div id='content'>
         <h1>Scripts</h1>
-        <p>A Nanobox engine is literally a collection of scripts. When an app is deployed, Nanobox attempts to determine the most appropriate engine to use. Once the engine has been selected, the deploy process is executed across 4 phases. A script must exist within the engine to properly determine if the engine applies to the app, and to handle each phase. For more details on the overview of the deploy process, refer to the <a href="/engines/how-engines-work">How Engines Work doc</a>.</p>
+        <p>A Nanobox engine is literally a collection of scripts. When an app is deployed, Nanobox attempts to determine the most appropriate engine to use. Once the engine has been selected, the deploy process is executed across 4 phases. A script must exist within the engine to properly determine if the engine applies to the app and to handle each phase. For more details on the overview of the deploy process, refer to the <a href="/engines/how-engines-work/">How Engines Work doc</a>.</p>
         
         <h2 id="general-guidelines">General Guidelines</h2>
         
-        <h4 id="bash">bash</h4>
+        <h4 id="bash">Bash</h4>
         
-        <p>It is <strong>highly</strong> recommended that engine scripts be written in bash. Here are a few reasons to consider:</p>
+        <p>It is <strong><em>highly</em></strong> recommended that engine scripts be written in bash. Here are a few reasons to consider:</p>
         
         <ol>
         <li>Bash is available in every Nanobox image.</li>
-        <li>The <a href="/engines/common-tasks">nos</a> framework is available to bash, and will greatly simplify engine development.</li>
+        <li>The <a href="/engines/common-tasks/intro/">nos</a> framework is available to bash, and will greatly simplify engine development.</li>
         <li>Bash is a common language for server scripting, and assistance across engines can be aided with a unified language.</li>
         </ol>
         
         <p>While it is possible to write scripts in an alternative language, it is highly discouraged. In addition, an alternative language or runtime will need to be installed prior to executing the scripts. This is possible, but since we don&#39;t recommend it, the processes will not be documented. If you really need to use a different language, hop in the <a href="http://webchat.freenode.net/?channels=nanobox&amp;uio=d4">#nanobox irc</a> to find out how.</p>
         
-        <h4 id="executable">executable</h4>
+        <h4 id="executable">Executable</h4>
         
         <p><strong>Don&#39;t forget to chmod the scripts to be executable.</strong> The scripts are run directly, so the scripts will fail if they aren&#39;t executable. This can be done easily with the following command, executed from the engine root:</p>
         <pre class="highlight shell"><code><span class="gp">$ </span>chmod +x bin/<span class="k">*</span>&#x000A;</code></pre>
         
-        <h4 id="no-extension">no extension</h4>
+        <h4 id="no-extension">No Extension</h4>
         
         <p>The scripts are executed from Nanobox directly, without an extension. Adding an extension will prevent Nanobox from finding the script.</p>
         
         <h2 id="payload">Payload</h2>
         
-        <p>With the exception of the <a href="/engines/scripts/sniff">sniff</a> script, all engine scripts will be called with a single argument – a JSON payload. A single argument containing a payload is used instead of multiple arguments or even environment variables mostly due to the potential for nested data structures and the dynamic nature of the attributes. JSON is used as it is a simple data structure that most languages can natively encode and decode.</p>
+        <p>With the exception of the <a href="/engines/scripts/sniff">sniff</a> script, all engine scripts are called with a single argument – a JSON payload. This is done because of the potential for nested data structures and the dynamic nature of attributes. JSON is used because of its simple data structure which most languages can natively encode and decode.</p>
         
         <h4 id="json-in-bash">JSON in bash?</h4>
         
-        <p>Right, bash doesn&#39;t actually handle JSON. In fact, bash doesn&#39;t handle any common structured object notation. The Nanobox team created <a href="https://github.com/pagodabox/shon">SHON</a> (&quot;SHell Object Notation&quot;), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you&#39;re interested. Though, it&#39;s unlikely that you&#39;ll need to work with SHON, as the <a href="/engines/common-tasks">nos</a> framework performs the translation and exposes helpers that access the data for you.</p>
+        <p>Right, bash doesn&#39;t actually handle JSON. In fact, bash doesn&#39;t handle any common structured object notation. The Nanobox team created <a href="https://github.com/pagodabox/shon">SHON</a> (&quot;SHell Object Notation&quot;), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you&#39;re interested. Though, it&#39;s unlikely that you&#39;ll need to work with SHON, as the <a href="/engines/common-tasks/intro/">nos</a> framework performs the translation and exposes helpers that access the data for you.</p>
         
         <h4 id="payload-data">Payload Data</h4>
         
         <p>The JSON payload provided as the first argument to the script contains the following keys:</p>
         
         <ul>
-        <li><strong>code_dir</strong> : Path to the code staging directory. This is a copy of the code, where the transformation, build or compile should happen.</li>
-        <li><strong>build_dir</strong> : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.</li>
-        <li><strong>live_dir</strong> : This is the directory where the final build should be copied into. This directory is also available in the production environment.</li>
-        <li><strong>cache_dir</strong> : A cache store that is persistent between deploys.</li>
-        <li><strong>etc_dir</strong> : A sub-directory within the build_dir. This is where runtime configurations should live. (ie: apache.conf, nginx.conf, unicorn.rb etc).</li>
-        <li><strong>env_dir</strong> : Path to the directory where environment variables to be made available to the production environment live. For more information, see <a href="/engines/common-tasks/environment-variables">here</a>.</li>
-        <li><strong>app</strong> : The name of the app.</li>
-        <li><strong>env</strong> : A list of key/value pairs representing environment variables that can be made available to the build or production environment. For more information, see <a href="/engines/common-tasks/environment-variables">here</a>.</li>
-        <li><strong>dns</strong> : A list of dns aliases that are associated with this app. May be used to generate webserver configurations.</li>
-        <li><strong>port</strong> : The tcp port that this app should bind to, for the app to recieve traffic from the load balancer.</li>
-        <li><strong>boxfile</strong> : The build section of the Boxfile provided by the application.</li>
-        <li><strong>platform</strong> : &quot;local&quot; or &quot;production&quot;. Can be used to conditionally tailor the deploy for the specified platform.</li>
+        <li><p><strong>code_dir</strong> : Path to the code staging directory. This is a copy of the code, where the transformation, build or compile should happen.</p></li>
+        <li><p><strong>build_dir</strong> : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.</p></li>
+        <li><p><strong>live_dir</strong> : This is the directory into which the final build will be copied. This directory is also available in the production environment.</p></li>
+        <li><p><strong>cache_dir</strong> : A cache store that is persistent between deploys.</p></li>
+        <li><p><strong>etc_dir</strong> : A sub-directory within the build_dir. This is where runtime configurations should live. (ie: apache.conf, nginx.conf, unicorn.rb etc).</p></li>
+        <li><p><strong>env_dir</strong> : Path to the directory where environment variables available to the production environment are stored. For more information, see <a href="/engines/common-tasks/environment-variables/">here</a>.</p></li>
+        <li><p><strong>app</strong> : The name of the app.</p></li>
+        <li><p><strong>env</strong> : A list of key/value pairs representing environment variables available to the build or production environment. For more information, see <a href="/engines/common-tasks/environment-variables/">here</a>.</p></li>
+        <li><p><strong>dns</strong> : A list of dns aliases associated with the app. May be used to generate webserver configurations.</p></li>
+        <li><p><strong>port</strong> : The tcp port to which the app should bind in order to recieve traffic from the load balancer.</p></li>
+        <li><p><strong>boxfile</strong> : The build section of the Boxfile provided by the application.</p></li>
+        <li><p><strong>platform</strong> : &quot;local&quot; or &quot;production&quot;. Can be used to conditionally tailor the deploy for the specified platform.</p></li>
         </ul>
         
         <h2 id="common-tasks-and-workflow">Common Tasks and Workflow</h2>
         
-        <p>How to use the data from the payload above, as well as common scenarios and workflows are addressed in full in the <a href="/engines/common-tasks/intro">Common Tasks</a> doc.</p>
+        <p>How to use the data from the payload above, as well as common scenarios and workflows are addressed in full in the <a href="/engines/common-tasks/intro/">Common Tasks</a> docs.</p>
         <div id='pagination'>
           <a class="prev" href="/engines/style-guide/">Style Guide</a>
           <a class="next" href="/engines/scripts/sniff/">sniff</a>
@@ -386,7 +386,7 @@
               <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
             </li>
           </ul>
-          <p>Nanobox  © Copyright 2015 - <em>A <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
+          <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
         </div>
         <div class='right'>
           <a href='#' id='production'>

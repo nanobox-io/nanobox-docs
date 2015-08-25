@@ -2,9 +2,9 @@
 title: sniff
 ---
 
-The sniff script is executed when Nanobox is attempting to determine which engine to use for the app. This script is not executed if the engine is explicitly specified in the application Boxfile.
+The sniff script is executed when Nanobox attempts to determine the most appropriate engine for an app. This script is not executed if the engine is [explicitly specified](/boxfile/build/#engine) in the app's' Boxfile.
 
-This script looks for something within the application code that it can uniquely identify. If found, the script should return a 0 (success) exit code. Otherwise, the script should return a 1 (error).
+This script looks for uniquely identifiable traits or configs within the application code. If found, the script should return a 0 (success) exit code. Otherwise, the script should return a 1 (error).
 
 The logic should be simple, short, and quick.
 
@@ -14,15 +14,15 @@ Simply looking for the existence of a file may not be unique. For example, a rub
 
 ## Usage
 
-#### script
+#### Script
 
 The sniff script is executed at `$ENGINE_ROOT/bin/sniff`. The sniff script must exist in this location.
 
-#### args
+#### Args
 
 A single argument `$1` is provided, and is the path to the codebase.
 
-#### working directory
+#### Working Directory
 
 The working directory is set to `$ENGINE_ROOT/bin`.
 

@@ -2,34 +2,34 @@
 title: prepare
 ---
 
-The prepare script fulfills the [Environment Preparation](/engines/how-engines-work#environment-preparation) phase of the deploy process. The prepare script is responsible for "preparing" the environment that the built codebase will run in. Anything that will be required to build or run the provided codebase needs to be installed and configured within this script.
+The prepare script fulfills the [Environment Preparation](/engines/how-engines-work#environment-preparation) phase of the deploy process. It is responsible for "preparing" the environment in which the built codebase will run. Anything required to build or run the provided codebase needs to be installed and configured within this script.
 
 ## Usage
 
-#### script
+#### Script
 
 The prepare script is executed at `$ENGINE_ROOT/bin/prepare`. The prepare script must exist in this location.
 
-#### args
+#### Args
 
 A single argument `$1` is provided, and is a JSON payload. Check [here](/engines/scripts/intro#payload) for a description of the payload.
 
-#### working directory
+#### Working Directory
 
 The working directory is set to `$ENGINE_ROOT/bin`.
 
 ## Objectives
 
-#### Install build runtimes and binaries
+#### Install Build Runtimes & Binaries
 
-#### Install production runtimes and binaries
+#### Install Production Runtimes & Binaries
 
-#### Generate configuration files
+#### Generate Configuration Files
 
-#### Fetch and build libraries and dependencies
+#### Fetch & Build Libraries & Dependencies
 
 #### Update $PATH
 
-#### Persist environment variables
+#### Persist Environment Variables
 
 ## Example

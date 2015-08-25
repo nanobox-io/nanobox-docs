@@ -12,7 +12,7 @@
       sniff - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-0e39a629.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-e5c63ea3.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-46b1694d.js" type="text/javascript"></script>
   </head>
   <body>
@@ -304,9 +304,9 @@
       </div>
       <div id='content'>
         <h1>sniff</h1>
-        <p>The sniff script is executed when Nanobox is attempting to determine which engine to use for the app. This script is not executed if the engine is explicitly specified in the application Boxfile.</p>
+        <p>The sniff script is executed when Nanobox attempts to determine the most appropriate engine for an app. This script is not executed if the engine is <a href="/boxfile/build/#engine">explicitly specified</a> in the app&#39;s&#39; Boxfile.</p>
         
-        <p>This script looks for something within the application code that it can uniquely identify. If found, the script should return a 0 (success) exit code. Otherwise, the script should return a 1 (error).</p>
+        <p>This script looks for uniquely identifiable traits or configs within the application code. If found, the script should return a 0 (success) exit code. Otherwise, the script should return a 1 (error).</p>
         
         <p>The logic should be simple, short, and quick.</p>
         
@@ -316,15 +316,15 @@
         
         <h2 id="usage">Usage</h2>
         
-        <h4 id="script">script</h4>
+        <h4 id="script">Script</h4>
         
         <p>The sniff script is executed at <code>$ENGINE_ROOT/bin/sniff</code>. The sniff script must exist in this location.</p>
         
-        <h4 id="args">args</h4>
+        <h4 id="args">Args</h4>
         
         <p>A single argument <code>$1</code> is provided, and is the path to the codebase.</p>
         
-        <h4 id="working-directory">working directory</h4>
+        <h4 id="working-directory">Working Directory</h4>
         
         <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
         
@@ -359,7 +359,7 @@
               <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
             </li>
           </ul>
-          <p>Nanobox  © Copyright 2015 - <em>A <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
+          <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
         </div>
         <div class='right'>
           <a href='#' id='production'>

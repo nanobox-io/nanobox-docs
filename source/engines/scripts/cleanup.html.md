@@ -10,22 +10,22 @@ This script is not run in the local environment. The local environment can run t
 
 ## Usage
 
-#### script
+#### Script
 
 The cleanup script is executed at `$ENGINE_ROOT/bin/cleanup`. The cleanup script must exist in this location.
 
-#### args
+#### Args
 
 A single argument `$1` is provided, and is a JSON payload. Check [here](/engines/scripts/intro#payload) for a description of the payload.
 
-#### working directory
+#### Working Directory
 
 The working directory is set to `$ENGINE_ROOT/bin`.
 
 ## Objectives
 
-#### Remove unecessary binaries
+#### Remove Unecessary Binaries
 
-#### Remove cruft
+#### Remove Cruft
 
 ## Example

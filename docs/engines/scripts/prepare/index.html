@@ -12,7 +12,7 @@
       prepare - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-0e39a629.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-e5c63ea3.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-46b1694d.js" type="text/javascript"></script>
   </head>
   <body>
@@ -304,35 +304,35 @@
       </div>
       <div id='content'>
         <h1>prepare</h1>
-        <p>The prepare script fulfills the <a href="/engines/how-engines-work#environment-preparation">Environment Preparation</a> phase of the deploy process. The prepare script is responsible for &quot;preparing&quot; the environment that the built codebase will run in. Anything that will be required to build or run the provided codebase needs to be installed and configured within this script.</p>
+        <p>The prepare script fulfills the <a href="/engines/how-engines-work#environment-preparation">Environment Preparation</a> phase of the deploy process. It is responsible for &quot;preparing&quot; the environment in which the built codebase will run. Anything required to build or run the provided codebase needs to be installed and configured within this script.</p>
         
         <h2 id="usage">Usage</h2>
         
-        <h4 id="script">script</h4>
+        <h4 id="script">Script</h4>
         
         <p>The prepare script is executed at <code>$ENGINE_ROOT/bin/prepare</code>. The prepare script must exist in this location.</p>
         
-        <h4 id="args">args</h4>
+        <h4 id="args">Args</h4>
         
         <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/intro#payload">here</a> for a description of the payload.</p>
         
-        <h4 id="working-directory">working directory</h4>
+        <h4 id="working-directory">Working Directory</h4>
         
         <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
         
         <h2 id="objectives">Objectives</h2>
         
-        <h4 id="install-build-runtimes-and-binaries">Install build runtimes and binaries</h4>
+        <h4 id="install-build-runtimes-amp-binaries">Install Build Runtimes &amp; Binaries</h4>
         
-        <h4 id="install-production-runtimes-and-binaries">Install production runtimes and binaries</h4>
+        <h4 id="install-production-runtimes-amp-binaries">Install Production Runtimes &amp; Binaries</h4>
         
-        <h4 id="generate-configuration-files">Generate configuration files</h4>
+        <h4 id="generate-configuration-files">Generate Configuration Files</h4>
         
-        <h4 id="fetch-and-build-libraries-and-dependencies">Fetch and build libraries and dependencies</h4>
+        <h4 id="fetch-amp-build-libraries-amp-dependencies">Fetch &amp; Build Libraries &amp; Dependencies</h4>
         
         <h4 id="update-path">Update $PATH</h4>
         
-        <h4 id="persist-environment-variables">Persist environment variables</h4>
+        <h4 id="persist-environment-variables">Persist Environment Variables</h4>
         
         <h2 id="example">Example</h2>
         <div id='pagination'>
@@ -362,7 +362,7 @@
               <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
             </li>
           </ul>
-          <p>Nanobox  © Copyright 2015 - <em>A <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
+          <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
         </div>
         <div class='right'>
           <a href='#' id='production'>

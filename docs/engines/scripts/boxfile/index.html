@@ -12,7 +12,7 @@
       boxfile - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-0e39a629.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-e5c63ea3.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-46b1694d.js" type="text/javascript"></script>
   </head>
   <body>
@@ -304,7 +304,7 @@
       </div>
       <div id='content'>
         <h1>boxfile</h1>
-        <p>The boxfile script fulfills the <a href="/engines/how-engines-work#infrastructure-definition">Infrastructure Definition</a> phase of the deploy process. The boxfile script should print a valid <a href="/boxfile/intro">Boxfile</a> to stdout. The purpose of boxfile script is to inform Nanobox of how to run the app. This includes instructions for how to start the webs, workers, and even data services.</p>
+        <p>The boxfile script fulfills the <a href="/engines/how-engines-work#infrastructure-definition">Infrastructure Definition</a> phase of the deploy process. The boxfile script should print a valid <a href="/boxfile/intro">Boxfile</a> to stdout. The purpose of this script is to inform Nanobox of how to run the app. This includes instructions for how to start webs, workers, and even data services.</p>
         
         <h4 id="caution">Caution</h4>
         
@@ -312,29 +312,29 @@
         
         <h2 id="usage">Usage</h2>
         
-        <h4 id="script">script</h4>
+        <h4 id="script">Script</h4>
         
         <p>The boxfile script is executed at <code>$ENGINE_ROOT/bin/boxfile</code>. The boxfile script must exist in this location.</p>
         
-        <h4 id="args">args</h4>
+        <h4 id="args">Args</h4>
         
         <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/intro#payload">here</a> for a description of the payload.</p>
         
-        <h4 id="working-directory">working directory</h4>
+        <h4 id="working-directory">Working Directory</h4>
         
         <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
         
         <h2 id="objectives">Objectives</h2>
         
-        <h4 id="cached-libraries">Cached libraries</h4>
+        <h4 id="cached-libraries">Cached Libraries</h4>
         
         <p>Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you <strong>can</strong> manage this yourself in the <a href="/engines/scripts/prepare">prepare</a> script, Nanobox provides a shortcut for this common scenario: the lib_dirs property within the build section. More detailed information can be found <a href="/boxfile/build#dependency-management">here</a>.</p>
         
-        <h4 id="start-the-app">Start the app</h4>
+        <h4 id="start-the-app">Start the App</h4>
         
         <p>Though we haven&#39;t <a href="/engines/how-engines-work#environment-preparation">prepared the environment</a> or <a href="/engines/how-engines-work#application-build">built the code yet</a>, we need to tell Nanobox how to run this app after the deploy is complete. This is done by defining the required web and worker services. Detailed information about how to define the app services can be found <a href="/boxfile/code-services">here</a>.</p>
         
-        <h4 id="declare-dependencies">Declare dependencies</h4>
+        <h4 id="declare-dependencies">Declare Dependencies</h4>
         
         <p>Often an app will need to connect to services such as a database. The boxfile script can be used to declare those dependencies. This can be as simple or complex as necessary. If the framework will always require a certain set of services, the declaration can be static. Otherwise, a more complex approach may be used which would likely search the codebase for configurations of services. The complete documentation for service configuration can be found <a href="/boxfile/data-services/">here</a>.</p>
         
@@ -378,7 +378,7 @@
               <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
             </li>
           </ul>
-          <p>Nanobox  © Copyright 2015 - <em>A <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
+          <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
         </div>
         <div class='right'>
           <a href='#' id='production'>

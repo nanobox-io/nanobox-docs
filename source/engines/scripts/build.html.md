@@ -10,26 +10,26 @@ The build script can be run independent of a full deploy. As such, it is importa
 
 ## Usage
 
-#### script
+#### Script
 
 The build script is executed at `$ENGINE_ROOT/bin/build`. The build script must exist in this location.
 
-#### args
+#### Args
 
 A single argument `$1` is provided, and is a JSON payload. Check [here](/engines/scripts/intro#payload) for a description of the payload.
 
-#### working directory
+#### Working Directory
 
 The working directory is set to `$ENGINE_ROOT/bin`.
 
 ## Objectives
 
-#### Apply patches
+#### Apply Patches
 
-#### Compile or build the codebase
+#### Compile or Build the Codebase
 
-#### Generate application configuration
+#### Generate Application Configuration
 
-#### Move the final build into place
+#### Move the Final Build into Place
 
 ## Example
