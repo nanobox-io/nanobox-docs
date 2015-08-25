@@ -304,7 +304,33 @@
       </div>
       <div id='content'>
         <h1>cleanup</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>The cleanup script fulfills the <a href="/engines/how-engines-work#cleanup">Cleanup</a> phase of the deploy process. Essentially, the cleanup script allows the engine to remove any particles or cruft that are unnecessary in the final environment. This may consist of build particles, binaries, or anything that will cause a production build to be larger than necessary.</p>
+        
+        <h4 id="note">Note</h4>
+        
+        <p>This script is not run in the local environment. The local environment can run the <a href="/engines/scripts/build">build</a> script independent of a full deploy, thus a &quot;clean&quot; build environment would likely cause an isolated build to fail. This script is relevant to a production deploy.</p>
+        
+        <h2 id="usage">Usage</h2>
+        
+        <h4 id="script">script</h4>
+        
+        <p>The cleanup script is executed at <code>$ENGINE_ROOT/bin/cleanup</code>. The cleanup script must exist in this location.</p>
+        
+        <h4 id="args">args</h4>
+        
+        <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/intro#payload">here</a> for a description of the payload.</p>
+        
+        <h4 id="working-directory">working directory</h4>
+        
+        <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
+        
+        <h2 id="objectives">Objectives</h2>
+        
+        <h4 id="remove-unecessary-binaries">Remove unecessary binaries</h4>
+        
+        <h4 id="remove-cruft">Remove cruft</h4>
+        
+        <h2 id="example">Example</h2>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/build/">build</a>
           <a class="next" href="/engines/common-tasks/intro/">Common Tasks</a>
