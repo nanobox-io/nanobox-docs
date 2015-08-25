@@ -9,7 +9,7 @@ The Boxfile is yaml config file housed in the root of your project's repo that d
 - The Boxfile must be placed at the root of your project's repo.
 - The Boxfile must be valid yaml markup. You can brush up on your yaml at [yaml.org](http://yaml.org/start.html) or check your syntax at [yamllint.com](http://www.yamllint.com/).
 - Boxfiles are not required. If not included in your project, Nanobox will attempt to auto-detect the needs of your app.
-- Build config options available in the Boxfile are defined by the [engine](/engines/intro/) you're using.
+- Build config options available in the Boxfile are defined by the [engine](/engines/) you're using.
 
 ####Sample Boxfile
 ```yaml

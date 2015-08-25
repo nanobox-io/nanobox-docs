@@ -18,7 +18,7 @@ Go ahead and name your key. The name is abitrary and is meant to help you identi
 ## Things to Know About SSH Keys
 
 ### SSH Keys Are Unique to Each User Account
-An SSH key can only be associated with one Nanobox account. The same SSH key cannot be used across multiple accounts. Sharing access to apps should and can not be done by sharing SSH keys. Access to apps should be granted using the [Nanobox collaboration system](/production/team/intro/).
+An SSH key can only be associated with one Nanobox account. The same SSH key cannot be used across multiple accounts. Sharing access to apps should and can not be done by sharing SSH keys. Access to apps should be granted using the [Nanobox collaboration system](/production/team/).
 
 ### You Can Have Multiple Nanobox Accounts, Each with Unique SSH Keys
 If you have multiple Nanobox accounts and you want to use them from the same machine, you'll need to generate a unique SSH Key for each user. Telling your local SSH agent which key to use when pushing to certain repos does require modification to your local SSH config, which is not documented here.

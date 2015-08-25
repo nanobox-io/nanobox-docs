@@ -7,7 +7,7 @@ categories:
     path: "/why-nanobox/"
 
   - title: "Installation"
-    path: "/installation/installing-nanobox/"
+    path: "/installation/"
     articles:
       - title: "Upgrading"
         path: "/installation/upgrading/"
@@ -15,7 +15,7 @@ categories:
         path: "/installation/uninstalling/"
 
   - title: "Getting Started"
-    path: "/getting-started/intro/"
+    path: "/getting-started/"
     articles:
       - title: "Project Setup"
         path: "/getting-started/project-setup/"
@@ -39,7 +39,7 @@ categories:
         path: "/getting-started/nonpersistent-writable-dirs/"
 
   - title: "Command Line Interface"
-    path: "/cli/intro/"
+    path: "/cli/"
     articles:
       - title: "bootstrap"
         path: "/cli/bootstrap/"
@@ -89,7 +89,7 @@ categories:
         path: "/cli/watch/"
 
   - title: "Boxfile"
-    path: "/boxfile/intro/"
+    path: "/boxfile/"
     articles:
       - title: "env"
         path: "/boxfile/env/"
@@ -101,7 +101,7 @@ categories:
         path: "/boxfile/data-services/"
 
   - title: "Engines"
-    path: "/engines/intro/"
+    path: "/engines/"
     articles:
       - title: "How Engines Work"
         path: "/engines/how-engines-work/"
@@ -114,7 +114,7 @@ categories:
       - title: "Style Guide"
         path: "/engines/style-guide/"
       - title: "Scripts"
-        path: "/engines/scripts/intro/"
+        path: "/engines/scripts/"
         sub_articles:
           - title: "sniff"
             path: "/engines/scripts/sniff/"
@@ -127,7 +127,7 @@ categories:
           - title: "cleanup"
             path: "/engines/scripts/cleanup/"
       - title: "Common Tasks"
-        path: "/engines/common-tasks/intro/"
+        path: "/engines/common-tasks/"
         sub_articles:
           - title: "Installing Binaries"
             path: "/engines/common-tasks/installing-binaries/"
@@ -152,4 +152,4 @@ categories:
       - title: "Debugging"
         path: "/engines/debugging/"
   - title: "Other"
-    path: "/other/intro/"
+    path: "/other/"

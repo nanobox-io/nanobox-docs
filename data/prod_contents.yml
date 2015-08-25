@@ -1,9 +1,9 @@
 ---
 categories:
   - title: "Nanobox Production"
-    path: "/production/intro/"
+    path: "/production/"
   - title: "Getting Started"
-    path: "/production/getting-started/intro/"
+    path: "/production/getting-started/"
     articles:
       - title: "Going from Local to Production"
         path: "/production/getting-started/local-to-production/"
@@ -19,7 +19,7 @@ categories:
         path: "/production/getting-started/deploy-process/"
 
   - title: "Git & SSH"
-    path: "/production/git-ssh/intro/"
+    path: "/production/git-ssh/"
     articles:
       - title: "Generating SSH Keys"
         path: "/production/git-ssh/generating-ssh-keys/"
@@ -29,7 +29,7 @@ categories:
         path: "/production/git-ssh/git-ssh-troubleshooting/"
 
   - title: "App Management"
-    path: "/production/app-management/intro/"
+    path: "/production/app-management/"
     articles:
       - title: "Service Stats"
         path: "/production/app-management/service-stats/"
@@ -49,7 +49,7 @@ categories:
         path: "/production/app-management/mail/"
 
   - title: "Data Management"
-    path: "/production/data-management/intro/"
+    path: "/production/data-management/"
     articles:
       - title: "Remotely Managing Data"
         path: "/production/data-management/remotely-managing-data/"
@@ -59,7 +59,7 @@ categories:
         path: "/production/data-management/data-migrations-scaling/"
 
   - title: "Scaling"
-    path: "/production/scaling/intro/"
+    path: "/production/scaling/"
     articles:
       - title: "Single-Node & Multi-Node Apps"
         path: "/production/scaling/single-vs-multi-node/"
@@ -67,7 +67,7 @@ categories:
         path: "/production/scaling/how-when-to-scale/"
 
   - title: "Networking"
-    path: "/production/networking/intro/"
+    path: "/production/networking/"
     articles:
       - title: "Using Custom Domains"
         path: "/production/networking/custom-domains/"
@@ -77,10 +77,10 @@ categories:
         path: "/production/networking/inbound-ips/"
 
   - title: "Command Line Interface"
-    path: "/production/cli/intro/"
+    path: "/production/cli/"
 
   - title: "Team Management"
-    path: "/production/team/intro/"
+    path: "/production/team/"
     articles:
       - title: "Managing Collaborators"
         path: "/production/team/managing-collaborators/"
@@ -88,7 +88,7 @@ categories:
         path: "/production/team/collaborator-permissions/"
 
   - title: "Account Management & Billing"
-    path: "/production/account/intro/"
+    path: "/production/account/"
     articles:
       - title: "Creating an Account"
         path: "/production/account/creating-an-account/"

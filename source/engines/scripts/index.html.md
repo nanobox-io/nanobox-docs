@@ -11,7 +11,7 @@ A Nanobox engine is literally a collection of scripts. When an app is deployed, 
 It is ***highly*** recommended that engine scripts be written in bash. Here are a few reasons to consider:
 
 1. Bash is available in every Nanobox image.
-2. The [nos](/engines/common-tasks/intro/) framework is available to bash, and will greatly simplify engine development.
+2. The [nos](/engines/common-tasks/) framework is available to bash, and will greatly simplify engine development.
 3. Bash is a common language for server scripting, and assistance across engines can be aided with a unified language.
 
 While it is possible to write scripts in an alternative language, it is highly discouraged. In addition, an alternative language or runtime will need to be installed prior to executing the scripts. This is possible, but since we don't recommend it, the processes will not be documented. If you really need to use a different language, hop in the [#nanobox irc](http://webchat.freenode.net/?channels=nanobox&uio=d4) to find out how.
@@ -34,7 +34,7 @@ With the exception of the [sniff](/engines/scripts/sniff) script, all engine scr
 
 #### JSON in bash?
 
-Right, bash doesn't actually handle JSON. In fact, bash doesn't handle any common structured object notation. The Nanobox team created [SHON](https://github.com/pagodabox/shon) ("SHell Object Notation"), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you're interested. Though, it's unlikely that you'll need to work with SHON, as the [nos](/engines/common-tasks/intro/) framework performs the translation and exposes helpers that access the data for you.
+Right, bash doesn't actually handle JSON. In fact, bash doesn't handle any common structured object notation. The Nanobox team created [SHON](https://github.com/pagodabox/shon) ("SHell Object Notation"), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you're interested. Though, it's unlikely that you'll need to work with SHON, as the [nos](/engines/common-tasks/) framework performs the translation and exposes helpers that access the data for you.
 
 #### Payload Data
 
@@ -66,4 +66,4 @@ The JSON payload provided as the first argument to the script contains the follo
 
 ## Common Tasks and Workflow
 
-How to use the data from the payload above, as well as common scenarios and workflows are addressed in full in the [Common Tasks](/engines/common-tasks/intro/) docs.
+How to use the data from the payload above, as well as common scenarios and workflows are addressed in full in the [Common Tasks](/engines/common-tasks/) docs.

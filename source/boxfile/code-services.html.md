@@ -12,21 +12,15 @@ Worker services are meant for running background processes and do not connect wi
 
 #### Overview of Code Service Settings in the Boxfile
 ```yaml
-######### WEB SETTINGS #########
+# The service ID defines whether the code service
+# is a web or a worker. 'web1' will create a web
+# service. 'worker 1' will create a worker service.
 
 web1:
-  name: public-site
+  name: app-server
 
-  # Deploy Hooks
-  deploy_hook_timeout: 600
-  before_deploy:
-    - "scripts/migrate_db.rb"
-  before_deploy_all:
-    - "scripts/cache_prime.rb"
-  after_deploy:
-    - "scripts/clear_cache.rb"
-  after_deploy_all:
-    - "scripts/local_cache_prime.rb"
+  # Exec
+  exec: "ruby app.rb"
   
   # Network Storage
   network_dirs:
@@ -40,20 +34,15 @@ web1:
   nonpersistent_writable_dirs:
     - path/to/dirA
     - path/to/dirB
+
+  # Custom Logs
+  log_watch:
+    app[error]: "path/to/error.log"
   
   # Cron
   cron:
     - "0 0 * * *": "rm -rf app/cache/*"
     - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
-
-
-######## WORKER SETTINGS ########
-
-worker1:
-  name: backend-worker
-
-  # Worker Exec
-  exec: "ruby worker.rb"
 
   # Deploy Hooks
   deploy_hook_timeout: 600
@@ -65,24 +54,6 @@ worker1:
     - "scripts/clear_cache.rb"
   after_deploy_all:
     - "scripts/local_cache_prime.rb"
-  
-  # Network Storage
-  network_dirs:
-    storage1:
-      - path/to/directoryA
-      - path/to/directoryB
-    storage2:
-      - path/to/directoryC
-
-  # Nonpersistent Writable Dirs
-  nonpersistent_writable_dirs:
-    - path/to/dirA
-    - path/to/dirB
-  
-  # Cron
-  cron:
-    - "0 0 * * *": "rm -rf app/cache/*"
-    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
 ```
 
 ## Name
@@ -98,7 +69,7 @@ worker1:
 ```
 
 ## Exec
-**\* Workers Only \*** - The `exec` allows you to specify the command used to start your worker script.
+The `exec` is the command used to start your web or worker.
 
 #### exec
 ```yaml
@@ -136,6 +107,17 @@ web1:
   nonpersistent_writable_dirs:
     - path/to/dirA
     - path/to/dirB
+```
+
+## Custom Logs
+Many apss and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Logs doc](/getting-started/logs).
+
+#### log_watch
+```yaml
+web1:
+  log_watch:
+    key: "path/to/log.file"
+    app[error]: "app/logs/error.log"
 ```
 
 ## Cron Jobs

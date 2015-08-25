@@ -6,7 +6,7 @@ Each engine has the ability to generate a [Boxfile](/getting-started/boxfile/) f
 
 #### **Warning!**
 
-If you are unfamiliar with the role of a Boxfile, you need to read [the Boxfile doc](/boxfile/intro/) first.
+If you are unfamiliar with the role of a Boxfile, you need to read [the Boxfile doc](/boxfile/) first.
 
 ## The Vision
 

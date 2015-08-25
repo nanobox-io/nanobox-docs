@@ -10,7 +10,7 @@ As nanobox starts up, it uses the list of *official* engines to "sniff" your cod
 ### Build & Publish Engines
 Anybody can build & publish engines. You may be a framework developer who wants to make it simple for others to use your framework with nanobox. Or you may have an app with very specific needs. Either way, you can build a custom engine and publish it to the community.
 
-For more information on building and publishing engines, read through the detailed [Engine docs](/engines/intro/).
+For more information on building and publishing engines, read through the detailed [Engine docs](/engines/).
 
 ### View & Search Community Engines
 All published engines can be veiwed and searched on [nanobox.io](http://nanobox.io).

@@ -28,7 +28,7 @@ The fingerprints of each SSH key you've added to your account are shown in your 
 ![SSH Fingerprints in Dashboard](ssh-troubleshooting-fingerprints-lg.png)
 
 ### The Fingerprint Matches a Key Added to Your Account
-If the fingerprint shown in the connection error output does match a key added to your account, it means you're trying to connect to a service or push to an app that your user account does not have access to. You have not been [added as a team member](/production/team/intro/) on the app. It could also mean that the git clone url tied to the remote to which you're trying to push is wrong (more info [below](#check-your-git-remote-39-s-clone-url)).
+If the fingerprint shown in the connection error output does match a key added to your account, it means you're trying to connect to a service or push to an app that your user account does not have access to. You have not been [added as a team member](/production/team/) on the app. It could also mean that the git clone url tied to the remote to which you're trying to push is wrong (more info [below](#check-your-git-remote-39-s-clone-url)).
 
 ### The Fingerprint Does NOT Match a Key Added to Your Account
 If the fingerprint shown in the SSH connection error does not match any key added to your user account, it means your local machine is sending a key that Nanobox doesn't know about. To see exactly which key is being sent, you'll need to compare the fingerprint shown in the SSH authorization error output with the fingerprints of your local keys.
