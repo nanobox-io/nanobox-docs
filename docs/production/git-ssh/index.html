@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Data Management - Nanobox Documentation
+      Git & SSH - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-e5c63ea3.css" rel="stylesheet" type="text/css" />
@@ -57,7 +57,7 @@
           </a>
         </li>
         <li class='text'>
-          <a class='active' href='/production/intro/'>
+          <a class='active' href='/production/'>
             Production
           </a>
         </li>
@@ -77,10 +77,10 @@
       <div id='navigation'>
         <ul class='closed' id='contents'>
           <li>
-            <a href="/production/intro/">Nanobox Production</a>
+            <a href="/production/">Nanobox Production</a>
           </li>
           <li>
-            <a href="/production/getting-started/intro/">Getting Started</a>
+            <a href="/production/getting-started/">Getting Started</a>
             <ul class='sub'>
               <li>
                 <a href="/production/getting-started/local-to-production/">Going from Local to Production</a>
@@ -102,8 +102,8 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a href="/production/git-ssh/intro/">Git & SSH</a>
+          <li class='active'>
+            <a href="/production/git-ssh/">Git & SSH</a>
             <ul class='sub'>
               <li>
                 <a href="/production/git-ssh/generating-ssh-keys/">Generating SSH Keys</a>
@@ -117,7 +117,7 @@
             </ul>
           </li>
           <li>
-            <a href="/production/app-management/intro/">App Management</a>
+            <a href="/production/app-management/">App Management</a>
             <ul class='sub'>
               <li>
                 <a href="/production/app-management/service-stats/">Service Stats</a>
@@ -145,8 +145,8 @@
               </li>
             </ul>
           </li>
-          <li class='active'>
-            <a href="/production/data-management/intro/">Data Management</a>
+          <li>
+            <a href="/production/data-management/">Data Management</a>
             <ul class='sub'>
               <li>
                 <a href="/production/data-management/remotely-managing-data/">Remotely Managing Data</a>
@@ -160,7 +160,7 @@
             </ul>
           </li>
           <li>
-            <a href="/production/scaling/intro/">Scaling</a>
+            <a href="/production/scaling/">Scaling</a>
             <ul class='sub'>
               <li>
                 <a href="/production/scaling/single-vs-multi-node/">Single-Node & Multi-Node Apps</a>
@@ -171,7 +171,7 @@
             </ul>
           </li>
           <li>
-            <a href="/production/networking/intro/">Networking</a>
+            <a href="/production/networking/">Networking</a>
             <ul class='sub'>
               <li>
                 <a href="/production/networking/custom-domains/">Using Custom Domains</a>
@@ -185,10 +185,10 @@
             </ul>
           </li>
           <li>
-            <a href="/production/cli/intro/">Command Line Interface</a>
+            <a href="/production/cli/">Command Line Interface</a>
           </li>
           <li>
-            <a href="/production/team/intro/">Team Management</a>
+            <a href="/production/team/">Team Management</a>
             <ul class='sub'>
               <li>
                 <a href="/production/team/managing-collaborators/">Managing Collaborators</a>
@@ -199,7 +199,7 @@
             </ul>
           </li>
           <li>
-            <a href="/production/account/intro/">Account Management & Billing</a>
+            <a href="/production/account/">Account Management & Billing</a>
             <ul class='sub'>
               <li>
                 <a href="/production/account/creating-an-account/">Creating an Account</a>
@@ -218,11 +218,19 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>Data Management</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <h1>Git & SSH</h1>
+        <p>SSH keys are what allow you to securely connect to and manage your apps on Nanobox. Everything from pushing and pulling with Git to remotely accessing services requires an SSH Key. The following docs walk through generating SSH keys, adding them to your Nanobox account, and troubleshooting any issues you may run into.</p>
+        
+        <h3 id="how-do-ssh-keys-work">How Do SSH Keys Work?</h3>
+        
+        <p>SSH keys allow you to securely connect to a server without ever having to send a password over the network. They use <a href="http://en.wikipedia.org/wiki/Public-key_cryptography">public-key cryptography</a> and <a href="http://en.wikipedia.org/wiki/Challenge-response_authentication">challenge-response authentication</a>. SSH keys always come in pairs — a public key and a private key. Data is encrypted using your private key, sent over the network to the Nanobox servers and decrypted using the public key tied to your user account. Data sent from Nanobox is encrypted using your public key, sent over the network to your local desktop and decrypted using your Private key.</p></p>
+        
+        <h3 id="how-are-git-amp-ssh-related">How Are Git &amp; SSH Related?</h3>
+        
+        <p>Git uses SSH to establish secure connections to remote repositories. In order to push or pull code to or from Nanobox using Git, you must add your public SSH key to your Nanobox account.</p>
         <div id='pagination'>
-          <a class="prev" href="/production/app-management/mail/">Mail</a>
-          <a class="next" href="/production/data-management/remotely-managing-data/">Remotely Managing Data</a>
+          <a class="prev" href="/production/getting-started/deploy-process/">The Deploy Process</a>
+          <a class="next" href="/production/git-ssh/generating-ssh-keys/">Generating SSH Keys</a>
         </div>
       </div>
     </div>

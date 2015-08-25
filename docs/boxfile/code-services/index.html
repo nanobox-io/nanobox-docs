@@ -57,7 +57,7 @@
           </a>
         </li>
         <li class='text'>
-          <a href='/production/intro/'>
+          <a href='/production/'>
             Production
           </a>
         </li>
@@ -83,7 +83,7 @@
             <a href="/why-nanobox/">Why Nanobox?</a>
           </li>
           <li>
-            <a href="/installation/installing-nanobox/">Installation</a>
+            <a href="/installation/">Installation</a>
             <ul class='sub'>
               <li>
                 <a href="/installation/upgrading/">Upgrading</a>
@@ -94,7 +94,7 @@
             </ul>
           </li>
           <li>
-            <a href="/getting-started/intro/">Getting Started</a>
+            <a href="/getting-started/">Getting Started</a>
             <ul class='sub'>
               <li>
                 <a href="/getting-started/project-setup/">Project Setup</a>
@@ -129,7 +129,7 @@
             </ul>
           </li>
           <li>
-            <a href="/cli/intro/">Command Line Interface</a>
+            <a href="/cli/">Command Line Interface</a>
             <ul class='sub'>
               <li>
                 <a href="/cli/bootstrap/">bootstrap</a>
@@ -203,7 +203,7 @@
             </ul>
           </li>
           <li>
-            <a href="/boxfile/intro/">Boxfile</a>
+            <a href="/boxfile/">Boxfile</a>
             <ul class='sub'>
               <li>
                 <a href="/boxfile/env/">env</a>
@@ -220,7 +220,7 @@
             </ul>
           </li>
           <li>
-            <a href="/engines/intro/">Engines</a>
+            <a href="/engines/">Engines</a>
             <ul class='sub'>
               <li>
                 <a href="/engines/how-engines-work/">How Engines Work</a>
@@ -238,7 +238,7 @@
                 <a href="/engines/style-guide/">Style Guide</a>
               </li>
               <li>
-                <a href="/engines/scripts/intro/">Scripts</a>
+                <a href="/engines/scripts/">Scripts</a>
                 <ul class='sub'>
                   <li>
                     <a href="/engines/scripts/sniff/">sniff</a>
@@ -258,7 +258,7 @@
                 </ul>
               </li>
               <li>
-                <a href="/engines/common-tasks/intro/">Common Tasks</a>
+                <a href="/engines/common-tasks/">Common Tasks</a>
                 <ul class='sub'>
                   <li>
                     <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
@@ -298,7 +298,7 @@
             </ul>
           </li>
           <li>
-            <a href="/other/intro/">Other</a>
+            <a href="/other/">Other</a>
           </li>
         </ul>
       </div>
@@ -315,7 +315,7 @@
         <p>Worker services are meant for running background processes and do not connect with the external network.</p>
         
         <h4 id="overview-of-code-service-settings-in-the-boxfile">Overview of Code Service Settings in the Boxfile</h4>
-        <pre class="highlight yaml"><code><span class="c1">######### WEB SETTINGS #########</span>&#x000A;&#x000A;<span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">public-site</span>&#x000A;&#x000A;  <span class="c1"># Deploy Hooks</span>&#x000A;  <span class="s">deploy_hook_timeout</span><span class="pi">:</span> <span class="s">600</span>&#x000A;  <span class="s">before_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/migrate_db.rb"</span>&#x000A;  <span class="s">before_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/cache_prime.rb"</span>&#x000A;  <span class="s">after_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/clear_cache.rb"</span>&#x000A;  <span class="s">after_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/local_cache_prime.rb"</span>&#x000A;&#x000A;  <span class="c1"># Network Storage</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">storage1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">storage2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;&#x000A;  <span class="c1"># Nonpersistent Writable Dirs</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;&#x000A;  <span class="c1"># Cron</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*"</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;&#x000A;&#x000A;<span class="c1">######## WORKER SETTINGS ########</span>&#x000A;&#x000A;<span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">backend-worker</span>&#x000A;&#x000A;  <span class="c1"># Worker Exec</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">worker.rb"</span>&#x000A;&#x000A;  <span class="c1"># Deploy Hooks</span>&#x000A;  <span class="s">deploy_hook_timeout</span><span class="pi">:</span> <span class="s">600</span>&#x000A;  <span class="s">before_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/migrate_db.rb"</span>&#x000A;  <span class="s">before_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/cache_prime.rb"</span>&#x000A;  <span class="s">after_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/clear_cache.rb"</span>&#x000A;  <span class="s">after_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/local_cache_prime.rb"</span>&#x000A;&#x000A;  <span class="c1"># Network Storage</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">storage1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">storage2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;&#x000A;  <span class="c1"># Nonpersistent Writable Dirs</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;&#x000A;  <span class="c1"># Cron</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*"</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="c1"># The service ID defines whether the code service</span>&#x000A;<span class="c1"># is a web or a worker. 'web1' will create a web</span>&#x000A;<span class="c1"># service. 'worker 1' will create a worker service.</span>&#x000A;&#x000A;<span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">app-server</span>&#x000A;&#x000A;  <span class="c1"># Exec</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">app.rb"</span>&#x000A;&#x000A;  <span class="c1"># Network Storage</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">storage1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">storage2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;&#x000A;  <span class="c1"># Nonpersistent Writable Dirs</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;&#x000A;  <span class="c1"># Custom Logs</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/error.log"</span>&#x000A;&#x000A;  <span class="c1"># Cron</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*"</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;&#x000A;  <span class="c1"># Deploy Hooks</span>&#x000A;  <span class="s">deploy_hook_timeout</span><span class="pi">:</span> <span class="s">600</span>&#x000A;  <span class="s">before_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/migrate_db.rb"</span>&#x000A;  <span class="s">before_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/cache_prime.rb"</span>&#x000A;  <span class="s">after_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/clear_cache.rb"</span>&#x000A;  <span class="s">after_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/local_cache_prime.rb"</span>&#x000A;</code></pre>
         
         <h2 id="name">Name</h2>
         
@@ -326,7 +326,7 @@
         
         <h2 id="exec">Exec</h2>
         
-        <p><strong>* Workers Only *</strong> - The <code>exec</code> allows you to specify the command used to start your worker script.</p>
+        <p>The <code>exec</code> is the command used to start your web or worker.</p>
         
         <h4 id="exec">exec</h4>
         <pre class="highlight yaml"><code><span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">worker.rb"</span>&#x000A;</code></pre>
@@ -350,6 +350,13 @@
         
         <h4 id="nonpersistent_writable_dirs">nonpersistent_writable_dirs</h4>
         <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;</code></pre>
+        
+        <h2 id="custom-logs">Custom Logs</h2>
+        
+        <p>Many apss and frameworks log to files stored in the file system. <code>log_watch</code>&#39;s allow you to include any entries written to these log files in your unified log stream. More information is available in the <a href="/getting-started/logs">Logs doc</a>.</p>
+        
+        <h4 id="log_watch">log_watch</h4>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/log.file"</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">app/logs/error.log"</span>&#x000A;</code></pre>
         
         <h2 id="cron-jobs">Cron Jobs</h2>
         

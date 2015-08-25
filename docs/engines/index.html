@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Command Line Interface - Nanobox Documentation
+      Engines - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-e5c63ea3.css" rel="stylesheet" type="text/css" />
@@ -57,7 +57,7 @@
           </a>
         </li>
         <li class='text'>
-          <a href='/production/intro/'>
+          <a href='/production/'>
             Production
           </a>
         </li>
@@ -83,7 +83,7 @@
             <a href="/why-nanobox/">Why Nanobox?</a>
           </li>
           <li>
-            <a href="/installation/installing-nanobox/">Installation</a>
+            <a href="/installation/">Installation</a>
             <ul class='sub'>
               <li>
                 <a href="/installation/upgrading/">Upgrading</a>
@@ -94,7 +94,7 @@
             </ul>
           </li>
           <li>
-            <a href="/getting-started/intro/">Getting Started</a>
+            <a href="/getting-started/">Getting Started</a>
             <ul class='sub'>
               <li>
                 <a href="/getting-started/project-setup/">Project Setup</a>
@@ -128,8 +128,8 @@
               </li>
             </ul>
           </li>
-          <li class='active'>
-            <a href="/cli/intro/">Command Line Interface</a>
+          <li>
+            <a href="/cli/">Command Line Interface</a>
             <ul class='sub'>
               <li>
                 <a href="/cli/bootstrap/">bootstrap</a>
@@ -203,7 +203,7 @@
             </ul>
           </li>
           <li>
-            <a href="/boxfile/intro/">Boxfile</a>
+            <a href="/boxfile/">Boxfile</a>
             <ul class='sub'>
               <li>
                 <a href="/boxfile/env/">env</a>
@@ -219,8 +219,8 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a href="/engines/intro/">Engines</a>
+          <li class='active'>
+            <a href="/engines/">Engines</a>
             <ul class='sub'>
               <li>
                 <a href="/engines/how-engines-work/">How Engines Work</a>
@@ -238,7 +238,7 @@
                 <a href="/engines/style-guide/">Style Guide</a>
               </li>
               <li>
-                <a href="/engines/scripts/intro/">Scripts</a>
+                <a href="/engines/scripts/">Scripts</a>
                 <ul class='sub'>
                   <li>
                     <a href="/engines/scripts/sniff/">sniff</a>
@@ -258,7 +258,7 @@
                 </ul>
               </li>
               <li>
-                <a href="/engines/common-tasks/intro/">Common Tasks</a>
+                <a href="/engines/common-tasks/">Common Tasks</a>
                 <ul class='sub'>
                   <li>
                     <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
@@ -298,116 +298,22 @@
             </ul>
           </li>
           <li>
-            <a href="/other/intro/">Other</a>
+            <a href="/other/">Other</a>
           </li>
         </ul>
       </div>
       <div id='content'>
-        <h1>Command Line Interface</h1>
-        <p>All interaction with Nanobox happens through the <code>nanobox</code> CLI. This section of docs walks through each of the CLI commands, their functionality, and options associated with each. Below is a list with a quick summary of each command:</p>
+        <h1>Engines</h1>
+        <p>Engines are responsible for configuring the app&#39;s environment and compiling or building the app&#39;s codebase. Nanobox can run any app, assuming a compatible engine exists.</p>
         
-        <table><thead>
-        <tr>
-        <th style="text-align: left">Command</th>
-        <th style="text-align: left">Summary</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td style="text-align: left"><a href="/cli/bootstrap/"><code>bootstrap</code></a></td>
-        <td style="text-align: left">Runs an engine&#39;s bootstrap script - downloads code &amp; launches VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/build/"><code>build</code></a></td>
-        <td style="text-align: left">Rebuilds/Compiles your project</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/console/"><code>console</code></a></td>
-        <td style="text-align: left">Opens an interactive terminal inside your app&#39;s context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/create/"><code>create</code></a></td>
-        <td style="text-align: left">Runs &#39;nanobox init&#39; then boots the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/deploy/"><code>deploy</code></a></td>
-        <td style="text-align: left">Deploys to the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/destroy/"><code>destroy</code></a></td>
-        <td style="text-align: left">Destroys the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/exec/"><code>exec</code></a></td>
-        <td style="text-align: left">Runs a command in your apps context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/fetch/"><code>fetch</code></a></td>
-        <td style="text-align: left">Fetches an engine from nanobox.io</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/halt/"><code>halt</code></a></td>
-        <td style="text-align: left">Halts the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/help/"><code>help</code></a></td>
-        <td style="text-align: left">Displays CLI help</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/init/"><code>init</code></a></td>
-        <td style="text-align: left">Creates a nanobox flavored Vagrantfile</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/log/"><code>log</code></a></td>
-        <td style="text-align: left">Shows/Streams nanobox logs</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/new/"><code>new</code></a></td>
-        <td style="text-align: left">Generates a new engine</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/publish/"><code>publish</code></a></td>
-        <td style="text-align: left">Publishes an engine to nanobox.io</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/reload/"><code>reload</code></a></td>
-        <td style="text-align: left">Reloads the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/resume/"><code>resume</code></a></td>
-        <td style="text-align: left">Resumes the halted/suspended nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/status/"><code>status</code></a></td>
-        <td style="text-align: left">Displays all current nanobox VM&#39;s</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/suspend/"><code>suspend</code></a></td>
-        <td style="text-align: left">Suspends the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/tunnel/"><code>tunnel</code></a></td>
-        <td style="text-align: left">Displays port forward information for your apps running services</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/up/"><code>up</code></a></td>
-        <td style="text-align: left">Runs &#39;nanobox create&#39; and then &#39;nanobox deploy&#39;</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/update/"><code>update</code></a></td>
-        <td style="text-align: left">Updates the CLI to the newest available version</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/upgrade/"><code>upgrade</code></a></td>
-        <td style="text-align: left">Updates the nanobox docker images</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/watch/"><code>watch</code></a></td>
-        <td style="text-align: left">Watches your app for file changes</td>
-        </tr>
-        </tbody></table>
+        <p>Nanobox engines are not proprietary, and the source code is available for public consumption on <a href="https://github.com/pagodabox?utf8=%E2%9C%93&amp;query=nanobox-engine">Github</a>. In addition to the engines created by the Nanobox team, anybody can create a custom engine to be used on Nanobox.</p>
+        
+        <h3 id="what-is-an-engine-literally">What is an Engine, Literally?</h3>
+        
+        <p>An engine is just a handful of bash scripts and an Enginefile. The engine will need a corresponding script for each phase of the build process inside the engine&#39;s bin directory. Further specifics about each script can be found <a href="/engines/scripts/intro">here</a> and additional information regarding the Enginefile can be found in the <a href="/engines/enginefile">Enginefile doc</a>.</p>
         <div id='pagination'>
-          <a class="prev" href="/getting-started/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
-          <a class="next" href="/cli/bootstrap/">bootstrap</a>
+          <a class="prev" href="/boxfile/data-services/">Data Services</a>
+          <a class="next" href="/engines/how-engines-work/">How Engines Work</a>
         </div>
       </div>
     </div>
