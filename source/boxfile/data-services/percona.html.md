@@ -2,7 +2,7 @@
 title: Percona Boxfile Settings
 ---
 
-#### Overview of MySQL Boxfile Settings
+#### Overview of Percona Boxfile Settings
 ```yaml
 percona1:
   version: 5.5

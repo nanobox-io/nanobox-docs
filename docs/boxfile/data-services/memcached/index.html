@@ -12,7 +12,7 @@
       Memcached Boxfile Settings - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-61799a83.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-a7ac2ce3.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-46b1694d.js" type="text/javascript"></script>
   </head>
   <body>
@@ -243,6 +243,9 @@
                   </li>
                 </ul>
               </li>
+              <li>
+                <a href="/boxfile/quick-reference/">Quick Reference</a>
+              </li>
             </ul>
           </li>
           <li>
@@ -330,7 +333,114 @@
       </div>
       <div id='content'>
         <h1>Memcached Boxfile Settings</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <h4 id="overview-of-memcached-boxfile-settings">Overview of Memcached Boxfile Settings</h4>
+        <pre class="highlight yaml"><code><span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">1.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;  <span class="s">memcached_return_error_on_memory_exhausted</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">memcached_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">memcached_chunk_size_growth_factor</span><span class="pi">:</span> <span class="s">1.25</span>&#x000A;  <span class="s">memcached_minimum_allocated_space</span><span class="pi">:</span> <span class="s">48</span>&#x000A;  <span class="s">memcached_maximum_requests_per_event</span><span class="pi">:</span> <span class="s">20</span>&#x000A;  <span class="s">memcached_disable_cas</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">memcached_max_backlog</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">memcached_binding_protocol</span><span class="pi">:</span> <span class="s1">'</span><span class="s">auto'</span>&#x000A;</code></pre>
+        
+        <h2 id="version-amp-stability">Version &amp; Stability</h2>
+        
+        <h3 id="version">Version</h3>
+        
+        <p>When configuring a Memcached service in your Boxfile, you can specify which version to use. The following version(s) are available:</p>
+        
+        <ul>
+        <li>1.4</li>
+        </ul>
+        
+        <p>The specific patch level is determined by the &quot;stability&quot; config.</p>
+        
+        <p><strong>Note:</strong> Due to version compatibility constraints, memcached versions cannot be changed after the service is created. To use a different version, you&#39;ll have to create a new Memcached service.</p>
+        
+        <h3 id="stability">Stability</h3>
+        
+        <p>The <code>stability</code> config allows you to specify which patch level of your Memcached version you would like to use. There are three stability options:</p>
+        
+        <ul>
+        <li>alpha</li>
+        <li>beta</li>
+        <li>production</li>
+        </ul>
+        
+        <h6 id="alpha-amp-beta-versions">Alpha &amp; Beta Versions</h6>
+        
+        <p>Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
+        
+        <h4 id="version-amp-stability">version &amp; stability</h4>
+        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">type</span><span class="pi">:</span> <span class="s">memcached</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">1.4</span>&#x000A;</code></pre>
+        
+        <h2 id="memcached-configuration-options">Memcached Configuration Options</h2>
+        
+        <h6 id="quick-links">Quick Links</h6>
+        
+        <p><a href="#return-error-on-memory-exhausted">memcached_return_error_on_memory_exhausted</a><br>
+        <a href="#max-connections">memcached_max_connections</a><br>
+        <a href="#chunk-size-growth-factor">memcached_chunk_size_growth_factor</a><br>
+        <a href="#minimum-allocated-space">memcached_minimum_allocated_space</a><br>
+        <a href="#maximum-requests-per-event">memcached_maximum_requests_per_event</a><br>
+        <a href="#disable-cas">memcached_disable_cas</a><br>
+        <a href="#max-backlog">memcached_max_backlog</a><br>
+        <a href="#binding-protocol">memcached_binding_protocol</a>  </p>
+        
+        <h3 id="return-error-on-memory-exhausted">Return Error on Memory Exhausted</h3>
+        
+        <p>This allows you to have memcached return an error when memory is exhausted rather than removing items.</p>
+        
+        <h4 id="memcached_return_error_on_memory_exhausted">memcached_return_error_on_memory_exhausted</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_return_error_on_memory_exhausted</span><span class="pi">:</span> <span class="s">false</span>&#x000A;</code></pre>
+        
+        <h3 id="max-connections">Max Connections</h3>
+        
+        <p>Sets the limit for simultaneous connections.</p>
+        
+        <h4 id="memcached_max_connections">memcached_max_connections</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;</code></pre>
+        
+        <h3 id="chunk-size-growth-factor">Chunk Size Growth Factor</h3>
+        
+        <p>Specifies the chunk size growth factor.</p>
+        
+        <h4 id="memcached_chunk_size_growth_factor">memcached_chunk_size_growth_factor</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_chunk_size_growth_factor</span><span class="pi">:</span> <span class="s">1.25</span>&#x000A;</code></pre>
+        
+        <h3 id="minimum-allocated-space">Minimum Allocated Space</h3>
+        
+        <p>Sets the minimum space allocated for key+value+flags.</p>
+        
+        <h4 id="memcached_minimum_allocated_space">memcached_minimum_allocated_space</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_minimum_allocated_space</span><span class="pi">:</span> <span class="s">48</span>&#x000A;</code></pre>
+        
+        <h3 id="maximum-requests-per-event">Maximum Requests Per Event</h3>
+        
+        <p>Sets the maximum number of requests per event and limits the number of requests processed for a given connection to prevent starvation.</p>
+        
+        <h4 id="memcached_maximum_requests_per_event">memcached_maximum_requests_per_event</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_maximum_requests_per_event</span><span class="pi">:</span> <span class="s">20</span>&#x000A;</code></pre>
+        
+        <h3 id="disable-cas">Disable CAS</h3>
+        
+        <p>Allows you to disable the use of <a href="https://code.google.com/p/memcached/wiki/NewCommands#cas">CAS</a>.</p>
+        
+        <h4 id="memcached_disable_cas">memcached_disable_cas</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_disable_cas</span><span class="pi">:</span> <span class="s">false</span>&#x000A;</code></pre>
+        
+        <h3 id="max-backlog">Max Backlog</h3>
+        
+        <p>Sets the backlog queue limit.</p>
+        
+        <h4 id="memcached_max_backlog">memcached_max_backlog</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_max_backlog</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;</code></pre>
+        
+        <h3 id="binding-protocol">Binding Protocol</h3>
+        
+        <p>Allows you to set the binding protocol. The following are available:</p>
+        
+        <ul>
+        <li>auto</li>
+        <li>ascii</li>
+        <li>binary</li>
+        </ul>
+        
+        <h4 id="memcached_binding_protocol">memcached_binding_protocol</h4>
+        <pre class="highlight yaml"><code><span class="c1">#default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">memcached_binding_protocol</span><span class="pi">:</span> <span class="s1">'</span><span class="s">auto'</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/boxfile/data-services/redis/">Redis</a>
           <a class="next" href="/boxfile/data-services/nfs/">Network File System (NFS)</a>

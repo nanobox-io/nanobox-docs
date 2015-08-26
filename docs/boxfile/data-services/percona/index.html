@@ -12,7 +12,7 @@
       Percona Boxfile Settings - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-61799a83.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-a7ac2ce3.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-46b1694d.js" type="text/javascript"></script>
   </head>
   <body>
@@ -243,6 +243,9 @@
                   </li>
                 </ul>
               </li>
+              <li>
+                <a href="/boxfile/quick-reference/">Quick Reference</a>
+              </li>
             </ul>
           </li>
           <li>
@@ -330,7 +333,7 @@
       </div>
       <div id='content'>
         <h1>Percona Boxfile Settings</h1>
-        <h4 id="overview-of-mysql-boxfile-settings">Overview of MySQL Boxfile Settings</h4>
+        <h4 id="overview-of-percona-boxfile-settings">Overview of Percona Boxfile Settings</h4>
         <pre class="highlight yaml"><code><span class="s">percona1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">5.5</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;&#x000A;  <span class="c1"># All settings below apply to MySQL, Percona, &amp; MariaDB services</span>&#x000A;  <span class="s">mysql_plugins</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">federated</span>&#x000A;    <span class="pi">-</span> <span class="s">audit_log</span>&#x000A;  <span class="s">mysql_event_scheduler</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;  <span class="s">mysql_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">mysql_thread_stack</span><span class="pi">:</span> <span class="s1">'</span><span class="s">256K'</span>&#x000A;  <span class="s">mysql_myisam_recover</span><span class="pi">:</span> <span class="s1">'</span><span class="s">DEFAULT'</span>&#x000A;  <span class="s">mysql_max_allowed_packet</span><span class="pi">:</span>  <span class="s1">'</span><span class="s">16M'</span>&#x000A;  <span class="s">mysql_max_join_size</span><span class="pi">:</span> <span class="s">9223372036854775807</span>&#x000A;  <span class="s">mysql_table_open_cache</span><span class="pi">:</span> <span class="s">64</span>&#x000A;  <span class="s">mysql_query_cache_limit</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1M'</span>&#x000A;  <span class="s">mysql_allow_suspicious_udfs</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;  <span class="s">mysql_ansi</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;  <span class="s">mysql_audit_log</span><span class="pi">:</span> <span class="s1">'</span><span class="s">On'</span>&#x000A;  <span class="s">mysql_ft_max_word_len</span><span class="pi">:</span> <span class="s">84</span>&#x000A;  <span class="s">mysql_ft_min_word_len</span><span class="pi">:</span> <span class="s">4</span>&#x000A;  <span class="s">mysql_ft_query_expansion_limit</span><span class="pi">:</span> <span class="s">20</span>&#x000A;  <span class="s">mysql_ft_stopword_file</span><span class="pi">:</span> <span class="s1">'</span><span class="nv"> </span><span class="s">'</span>&#x000A;</code></pre>
         
         <h2 id="version-amp-stability">Version &amp; Stability</h2>

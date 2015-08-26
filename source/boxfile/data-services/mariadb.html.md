@@ -2,7 +2,7 @@
 title: MariaDB Boxfile Settings
 ---
 
-#### Overview of MySQL Boxfile Settings
+#### Overview of MariaDB Boxfile Settings
 ```yaml
 mariadb1:
   version: 5.5

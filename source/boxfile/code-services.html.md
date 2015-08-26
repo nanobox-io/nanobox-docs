@@ -24,10 +24,10 @@ web1:
   
   # Network Storage
   network_dirs:
-    storage1:
+    nfs1:
       - path/to/directoryA
       - path/to/directoryB
-    storage2:
+    nfs2:
       - path/to/directoryC
 
   # Nonpersistent Writable Dirs
@@ -81,7 +81,7 @@ worker1:
 ## Network Directories
 These directories are read/write accessible to all the code service's instances. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. Filepaths should be relative to the root of your repo.
 
-In order to use `network_dirs`, you must have one or more storage services in which to store them. In your Boxfile config, specify which storage service the directories should be stored on. If no storage service is specified, we assume storage1.
+In order to use `network_dirs`, you must have one or more Network Storage services (NFS) in which to store them. In your Boxfile config, specify which NFS service the directories should be stored on. If no service is specified, we assume nfs1.
 
 For more details, view the [Network Storage doc](/getting-started/network-storage/).
 
@@ -96,7 +96,7 @@ web1:
       - path/to/directoryC
 ```
 
-**Note:** On deploy, network directories are replaced with network mounts, which connect code instances to your storage service(s). These mounts obscure anything committed to your repo inside of those directories. If there are files inside network directories in your repo, your app will not be able to access them unless you manually upload them into your storage service.
+**Note:** On deploy, network directories are replaced with network mounts, which connect code instances to your NFS service(s). These mounts obscure anything committed to your repo inside of those directories. If there are files inside network directories in your repo, your app will not be able to access them unless you manually upload them into your NFS service.
 
 ## Nonpersistent Writable Directories
 These directories are read/write accessible and stored in each instance's local filesystem. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. **Filepaths should be relative to the root of your repo**.

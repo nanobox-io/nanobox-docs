@@ -116,6 +116,8 @@ categories:
             path: "/boxfile/data-services/memcached/"
           - title: "Network File System (NFS)"
             path: "/boxfile/data-services/nfs/"
+      - title: "Quick Reference"
+        path: "/boxfile/quick-reference/"
 
   - title: "Engines"
     path: "/engines/"
