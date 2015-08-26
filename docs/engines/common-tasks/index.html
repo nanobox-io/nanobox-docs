@@ -290,16 +290,19 @@
                 <a href="/engines/common-tasks/">Common Tasks</a>
                 <ul class='sub'>
                   <li>
-                    <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
-                  </li>
-                  <li>
-                    <a href="/engines/common-tasks/generating-output/">Generating Output</a>
+                    <a href="/engines/common-tasks/using-the-payload/">Using the Payload</a>
                   </li>
                   <li>
                     <a href="/engines/common-tasks/working-with-input/">Working with Input</a>
                   </li>
                   <li>
-                    <a href="/engines/common-tasks/validation/">Validation</a>
+                    <a href="/engines/common-tasks/generating-output/">Printing Output</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/running-commands/">Running Commands</a>
                   </li>
                   <li>
                     <a href="/engines/common-tasks/caching/">Caching</a>
@@ -308,10 +311,7 @@
                     <a href="/engines/common-tasks/environment-variables/">Environment Variables</a>
                   </li>
                   <li>
-                    <a href="/engines/common-tasks/template-generation/">Template Generation</a>
-                  </li>
-                  <li>
-                    <a href="/engines/common-tasks/application-config/">Application Configuration</a>
+                    <a href="/engines/common-tasks/template-generation/">Templates and Configuration</a>
                   </li>
                 </ul>
               </li>
@@ -333,10 +333,15 @@
       </div>
       <div id='content'>
         <h1>Common Tasks</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Regardless of the app or framework in question, there are many scenarios and tasks that will be mostly the same. Nanobox has created a bash framework simplify the most common tasks and scenarios: <a href="#">Nos</a>.</p>
+        
+        <h2 id="usage">Usage</h2>
+        
+        <p>Nos is already installed in the build container, so an installation will not be required. To use Nos, you must source the common.sh script, and then initialize the framework. For example:</p>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="c"># source the Nos framework</span>&#x000A;. /opt/nos/common.sh&#x000A;&#x000A;<span class="c"># initialize Nos with the original arguments</span>&#x000A;nos_init <span class="nv">$@</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/cleanup/">cleanup</a>
-          <a class="next" href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
+          <a class="next" href="/engines/common-tasks/using-the-payload/">Using the Payload</a>
         </div>
       </div>
     </div>

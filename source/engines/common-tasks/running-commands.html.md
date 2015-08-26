@@ -1,5 +1,5 @@
 ---
-title: Printing Output
+title: Running Commands
 ---
 
 #### Coming Soon

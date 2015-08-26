@@ -1,5 +1,0 @@
----
-title: Validation
----
-
-#### Coming Soon
