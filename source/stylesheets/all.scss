@@ -1,4 +1,4 @@
-@import 'variables-mixins', 'normalize', 'syntaxhighlighter';
+@import 'variables-mixins', 'normalize', 'heading-hash', 'syntaxhighlighter';
 
 body                    { background: $gblue-1; font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; }
 a                       { @include transition(all .15s); }
@@ -104,7 +104,7 @@ a                       { @include transition(all .15s); }
 #content                { float: left; width: 75%; max-width: 820px; padding: 2.7em; @include box-sizing; color: $gblue-6; @include opacity(0); @include transition (opacity .2s);
   &.loaded              { @include opacity(1); }
   h1                    { margin: 20px 0 40px; padding-bottom: 30px; border-bottom: 1px solid $gblue-2; font-size: 3.9em; color: $bgreen-0; font-weight: 300; }
-  h2                    { margin: 0 0 .25em; padding-top: 1.5em; font-size: 2.5em; color: $yellow-2; font-weight: 300; }
+  h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $yellow-2; font-weight: 300; }
   h3                    { margin: -1em 0 1em; padding: 2.5em 0 .5em; font-size: 1.55em; color: $bgreen-0; font-weight: 400; font-style: italic; border-bottom: 1px solid $gblue-2; }
   h4                    { margin: -2em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $gblue-8; font-weight: 300; font-style: italic; }
   h5                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $bgreen-0; text-transform: uppercase; }
