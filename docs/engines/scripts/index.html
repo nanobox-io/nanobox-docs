@@ -255,6 +255,9 @@
                 <a href="/engines/how-engines-work/">How Engines Work</a>
               </li>
               <li>
+                <a href="/engines/the-environment/">The Environment</a>
+              </li>
+              <li>
                 <a href="/engines/boxfile-spec/">Generating a Boxfile</a>
               </li>
               <li>
@@ -372,7 +375,7 @@
         
         <ul>
         <li><p><strong>code_dir</strong> : Path to the code staging directory. This is a copy of the code, where the transformation, build or compile should happen.</p></li>
-        <li><p><strong>build_dir</strong> : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.</p></li>
+        <li><p><strong>deploy_dir</strong> : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.</p></li>
         <li><p><strong>live_dir</strong> : This is the directory into which the final build will be copied. This directory is also available in the production environment.</p></li>
         <li><p><strong>cache_dir</strong> : A cache store that is persistent between deploys.</p></li>
         <li><p><strong>etc_dir</strong> : A sub-directory within the build_dir. This is where runtime configurations should live. (ie: apache.conf, nginx.conf, unicorn.rb etc).</p></li>
