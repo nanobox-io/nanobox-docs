@@ -42,7 +42,7 @@ The JSON payload provided as the first argument to the script contains the follo
 
 - **code_dir** : Path to the code staging directory. This is a copy of the code, where the transformation, build or compile should happen.
 
-- **build_dir** : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.
+- **deploy_dir** : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.
 
 - **live_dir** : This is the directory into which the final build will be copied. This directory is also available in the production environment.
 

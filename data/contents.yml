@@ -124,6 +124,8 @@ categories:
     articles:
       - title: "How Engines Work"
         path: "/engines/how-engines-work/"
+      - title: "The Environment"
+        path: "/engines/the-environment/"
       - title: "Generating a Boxfile"
         path: "/engines/boxfile-spec/"
       - title: "Project Creation"
