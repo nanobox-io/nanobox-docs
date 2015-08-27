@@ -109,3 +109,15 @@ $(function(){
     })
   }
 })
+
+
+
+////////////// ADD LINKS TO ALL HEADINGS //////////////
+
+$(document).ready(function() {
+  $("h2, h3, h4").each(function() {
+    var link = "<a href=\"#" + $(this).attr("id") + "\"></a>"
+    $(this).wrapInner( link );
+  })
+})
+
