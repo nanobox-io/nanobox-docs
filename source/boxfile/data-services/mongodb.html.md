@@ -16,16 +16,6 @@ mongodb1:
   mongodb_noscripting: false
 ```
 
-###### Quick Links
-[version & stability](#version-amp-stability)  
-[mongodb\_diaglog](#diaglog)  
-[mongodb\_objcheck](#objcheck)  
-[mongodb\_log\_verbosity](#log-verbosity)  
-[mongodb\_directoryperdb](#directoryperdb)  
-[mongodb\_logappend](#logappend)  
-[mongodb\_nojournal](#nojournal)  
-[mongodb\_noscripting](#noscripting)  
-
 ## Version & Stability
 ### Version
 When configuring a MongoDB service in your Boxfile, you can specify the version to use into your database service. The following version(s) are available:
@@ -56,6 +46,14 @@ mongodb1:
 ```
 
 ## MongoDB Configuration Options
+###### Quick Links
+[mongodb\_diaglog](#diaglog)  
+[mongodb\_objcheck](#objcheck)  
+[mongodb\_log\_verbosity](#log-verbosity)  
+[mongodb\_directoryperdb](#directoryperdb)  
+[mongodb\_logappend](#logappend)  
+[mongodb\_nojournal](#nojournal)  
+[mongodb\_noscripting](#noscripting)  
 
 ### Diaglog
 View the [MongoDB documentation](http://docs.mongodb.org/manual/reference/configuration-options/#diaglog) for details and configuration options.

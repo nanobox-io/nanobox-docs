@@ -27,25 +27,7 @@ mysql1:
   mysql_ft_min_word_len: 4
   mysql_ft_query_expansion_limit: 20
   mysql_ft_stopword_file: ' '
-```
-
-###### Quick Links 
-[mysql\_plugins](#mysql-plugins)  
-[mysql\_event\_scheduler](#mysql-event-scheduler)  
-[mysql\_max\_connections](#mysql-max-connections)  
-[mysql\_thread\_stack](#mysql-thread-stack)  
-[mysql\_myisam\_recover](#mysql-myisam-recover)  
-[mysql\_max\_allowed\_packet](#mysql-max-allowed-packet)  
-[mysql\_max\_join\_size](#mysql-max-join-size)  
-[mysql\_table\_open\_cache](#mysql-table-open-cache)  
-[mysql\_query\_cache\_limit](#mysql-query-cache-limit)  
-[mysql\_allow\_suspicious\_udfs](#mysql-allow-suspicious-udfs)  
-[mysql\_ansi](#mysql-ansi)  
-[mysql\_audit\_log](#mysql-audit-log)  
-[mysql\_ft\_max\_word\_len](#mysql-ft-max-word-len)  
-[mysql\_ft\_min\_word\_len](#mysql-ft-min-word-len)  
-[mysql\_ft\_query\_expansion\_limit](#mysql-ft-query-expansion-limit)  
-[mysql\_ft\_stopword\_file](#mysql-ft-stopword-file)  
+```  
 
 ## Version & Stability
 
