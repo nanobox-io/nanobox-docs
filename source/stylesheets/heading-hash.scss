@@ -5,7 +5,7 @@
 #content                { 
   h2, h3, h4, h5, h6    { position: relative;
     a                   { border: none; text-decoration: none; color: inherit;
-      &:before          { content: "#"; position: absolute; color: $gblue-2; font-size: 22px;  @include transition(color .15s) }
+      &:before          { content: "#"; position: absolute; color: $gblue-2; font-size: 22px;  @include transition(color .2s) }
       &:hover           { color: inherit;
         &:before        { color: $gblue-6; }
       }

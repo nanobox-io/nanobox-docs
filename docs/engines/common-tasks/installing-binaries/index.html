@@ -12,7 +12,7 @@
       Installing Binaries - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-565d0032.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-c99666d6.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fd15cdc8.js" type="text/javascript"></script>
   </head>
   <body>
@@ -336,32 +336,38 @@
       </div>
       <div id='content'>
         <h1>Installing Binaries</h1>
-        <p>Every engine will need to install binaries at some point. Nanobox provides a framework and a pattern for consuming binary packages within engines.</p>
+        <p>Every engine needs to install binaries at some point. Nanobox provides a framework and pattern for consuming binary packages within engines.</p>
         
         <h4 id="warning">Warning!</h4>
         
-        <p>You should be familiar with the <a href="/engines/the-environment">environment</a> before reading this guide.</p>
+        <p>You should be familiar with <a href="/engines/the-environment">the environment</a> before reading this guide.</p>
         
         <h2 id="pkgsrc">pkgsrc</h2>
         
-        <p>Nanobox uses <a href="https://www.pkgsrc.org/">pkgsrc</a> for providing installable binary packages. Pkgsrc is a build framework for building third party software on UNIX-like systems, including Linux. Pkgsrc is platform and distribution-agnostic, allowing Nanobox the freedom to switch between distributions as it makes sense. A sophisticated, time-tested build framework with the ability to build packages to be installed in a nested filesystem provide engines the flexibility to install full binary packages. Using pkgsrc, Nanobox packages do not need to be statically compiled or hacked in an unnatural way to work.</p>
+        <p>Nanobox uses <a href="https://www.pkgsrc.org/">pkgsrc</a> for providing installable binary packages. Pkgsrc is a build framework for building third-party software on UNIX-like systems, including Linux. It is platform and distribution-agnostic, allowing Nanobox the freedom to switch between distributions as needed. This sophisticated, time-tested framework&#39;s ability to build packages to be installed in a nested filesystem gives engines the flexibility to install full binary packages. By using pkgsrc, Nanobox packages do not need to be statically compiled or hacked in an unnatural way to work.</p>
         
-        <h2 id="finding-packages">Finding packages</h2>
+        <h2 id="finding-packages">Finding Packages</h2>
         
-        <p>A full list of packages provided by Nanobox can be found <a href="http://pkgsrc.nanobox.io/nanobox/base/Linux/">here</a>. Search this list until you find a package that your engine requires. Once you find a package, you&#39;ll need to copy the package name, and optionally the version. For example, from this python package: <code>python27-2.7.9nb1.tgz</code> would need to copy <code>python27-2.7.9</code>, or if the requirements aren&#39;t so strict on specific versions, you can copy less and less of the package down to the name, like this: <code>python27</code>.</p>
+        <p>A full list of packages provided by Nanobox can be found in the <a href="http://pkgsrc.nanobox.io/nanobox/base/Linux/">Nanobox pkgsrc repository</a>. Use this list to you find a package that your engine requires. Once found, copy the package name, and optionally the version.</p>
         
-        <p>If you cannot find a package that you need, please don&#39;t try to find it by some other means. While it is possible to download binaries from other sources, doing so will likely break your engine in the future as Nanobox shifts platforms or distributions. Instead, please submit a <a href="https://github.com/pagodabox/nanobox-pkgsrc-base/issues/new">github issue</a> including the requirement, and the location where the source can be downloaded. After submitting an issue, please ping a member of our team on the #nanobox irc. Most package requests can be fulfilled within 24 hours, depending on the queue and complexity of the compilation.</p>
+        <p>For example, from the <code>python27-2.7.9nb1.tgz</code> package, you would copy <code>python27-2.7.9</code>. If the version requirements aren&#39;t strict, you can copy less and less of the package down to the name, like this: <code>python27</code>.</p>
         
-        <h2 id="installing-a-package">Installing a package</h2>
+        <h3 id="requesting-a-package">Requesting a Package</h3>
         
-        <p>Nos provides an idiomatic helper function for installing packages: <code>install</code>. The install function takes a single argument, the package name. The install function will print a <a href="/engines/common-tasks/generating-output/#printing-the-start-of-a-sub-process">subtask header</a> indicating the start of the installation, and then proceed to install the package. All output will be indented to indicate association with the previous header.</p>
+        <p>If you cannot find a package you need, submit a <a href="https://github.com/pagodabox/nanobox-pkgsrc-base/issues/new">Github issue</a> including the requirement and the location where the source can be downloaded. After submitting an issue, please ping a member of our team on the <a href="http://webchat.freenode.net/?channels=nanobox">#nanobox IRC</a>. Most package requests can be fulfilled within 24 hours, depending on the queue and complexity of the compilation.</p>
+        
+        <p>Please don&#39;t try to find it by some other means. While it is possible to download binaries from other sources, doing so will likely break your engine if Nanobox shifts platforms or distributions in the future.</p>
+        
+        <h2 id="installing-a-package">Installing a Package</h2>
+        
+        <p><a href="#">Nos</a> provides an idiomatic helper function for installing packages: <code>install</code>. The install function takes a single argument: the package name. It will print a <a href="/engines/common-tasks/generating-output/#printing-the-start-of-a-sub-process">subtask header</a> indicating the start of the installation, then proceed to install the package. All output will be indented to indicate the association with the previous header.</p>
         
         <p>Example:</p>
         <pre class="highlight shell"><code>install <span class="s1">'python27'</span>&#x000A;<span class="c"># or</span>&#x000A;install <span class="s1">'python27-2.7'</span>&#x000A;<span class="c"># or</span>&#x000A;install <span class="s1">'python27-2.7.9nb1'</span>&#x000A;</code></pre>
         
-        <h2 id="installing-a-build-only-package">Installing a build-only package</h2>
+        <h2 id="installing-a-build-only-package">Installing a Build-Only Package</h2>
         
-        <p>If a package is only required for building the application, but not in the production environment, Nos provides a different function: <code>install_build</code>. The <code>install_build</code> is identical to the <code>install</code> function, except that Nos will add the package to a temporary list. During the <a href="/engines/scripts/cleanup">cleanup script</a>, Nos provides an <code>install_cleanup</code> function, which will purge any package from the system that was installed from the <code>install_build</code> function.</p>
+        <p>If a package is required for building the application, but not in the production environment, Nos provides a different function: <code>install_build</code>. The <code>install_build</code> is identical to the <code>install</code> function, except that Nos will add the package to a temporary list. During the <a href="/engines/scripts/cleanup">cleanup script</a>, Nos provides an <code>install_cleanup</code> function, which will purge any package from the system that was installed from the <code>install_build</code> function.</p>
         <div id='pagination'>
           <a class="prev" href="/engines/common-tasks/generating-output/">Printing Output</a>
           <a class="next" href="/engines/common-tasks/running-commands/">Running Commands</a>
