@@ -58,14 +58,14 @@ web1:
     - "scripts/local_cache_prime.rb"
 ```
 ###### Full Doc
-[Code Service Boxfile Settings](/boxfile/code-services) 
+[Code Service Boxfile Settings](/boxfile/code-services/) 
 
 --- 
 
 ### Worker Settings in the Boxfile
 ```yaml
 worker1:
-  name: app-server
+  name: background-worker
 
   # Exec
   exec: "ruby worker.rb"
@@ -104,7 +104,7 @@ worker1:
     - "scripts/local_cache_prime.rb"
 ```
 ###### Full Doc
-[Code Service Boxfile Settings](/boxfile/code-services)  
+[Code Service Boxfile Settings](/boxfile/code-services/)  
 
 ---
 

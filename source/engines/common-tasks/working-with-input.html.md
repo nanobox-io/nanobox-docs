@@ -2,7 +2,9 @@
 title: Working with Input
 ---
 
-A common concern when building an engine is how to provide configurable or tunable parameters from the application developer. One case for this is runtime versions. How might an engine allow an application developer to specify a specific version of ruby or python? Of course, the engine has access to the codebase such that the engine can define whatever standard it wants. Nanobox provides an idiomatic approach to this problem, which is encouraged to provide consistency across engines.
+A common concern when building an engine is how to provide configurable or tunable parameters from the application developer. One case for this is runtime versions. How might an engine allow an application developer to specify a specific version of ruby or python?
+
+The engine has access to the codebase and can define whatever standard it wants. Nanobox provides an idiomatic approach to this problem, which is encouraged to provide consistency across engines.
 
 #### Warning
 
@@ -13,13 +15,13 @@ Before continuing, you should be familiar with:
 
 ## Again With the Boxfile
 
-As mentioned before, the Boxfile is King. Nanobox provides and encourages engine developers to extract values from the Boxfile, specifically the `build` section of the Boxfile. Nanobox does not require the engine to read and parse the Boxfile for this. Instead, Nanobox provides a convenient payload property `boxfile` which contains the data from the `build` section of the application-provided Boxfile.
+As mentioned before, the Boxfile is King. Nanobox provides and encourages engine developers to extract values from the Boxfile; specifically the `build` section. Nanobox does not require the engine to read and parse the Boxfile for this. Instead, it provides a convenient payload property `boxfile` which contains the data from the `build` section of the application-provided Boxfile.
 
-As an additional convenience, upon initialization, Nos will unwrap the `boxfile` data which allows quick access via the [payload](/engines/common-tasks/payload) helper.
+As an additional convenience, upon initialization, Nos will unwrap the `boxfile` data, allowing quick access through the [payload](/engines/common-tasks/payload) helper.
 
 ## Example
 
-Let's say I'm building an engine that depends on the python runtime, and I want to allow application developers to specify the version of python. In addition, if they don't provide a version I would like to default to a version. This could be accomplished like this:
+Let's say I'm building an engine that depends on the python runtime and I want to allow developers to specify the version of python. In addition, I would like to default to a version if no version is specified. This could be accomplished using the following:
 
 ```bash
 # extract python version
