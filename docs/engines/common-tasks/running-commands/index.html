@@ -336,7 +336,28 @@
       </div>
       <div id='content'>
         <h1>Running Commands</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Technically, an engine can run whatever command it needs to, as the environment is just bash. However, we strongly discourage running commands without informing the user of what is happening. Nos helps the engine provide visibility to the application developer by exposing a handful of helpers:</p>
+        
+        <h4 id="run_process">run_process</h4>
+        
+        <p><code>run_process</code> is a Nos helper function that will run a command, and provide all of the styling according to <a href="/engines/style-guide/#main-section-with-child-process-output">main section</a> style guide. This function accepts two arguments: a title and a command. The title will be used to display the header, and the command will be run.</p>
+        
+        <p>Example:</p>
+        <pre class="highlight shell"><code>run_process <span class="s1">'bundle install'</span>, <span class="s1">'bundle install --deployment'</span>&#x000A;</code></pre>
+        
+        <h4 id="run_subprocess">run_subprocess</h4>
+        
+        <p><code>run_subprocess</code> is a Nos helper function that will run a command, and provide all of the styling according to the <a href="/engines/style-guide/#sub-tasks-with-success-failure-status">sub task</a> styleguide. This function accepts two arguments: a title and a command. The title will be used to display the header, and the command will be run. In addition, this function will display the command being run before the command output starts, and will also display a footer indicating a success or footer. This function is recommended as the preferred helper function for running commands, as it provides more visibility to the application developer.</p>
+        
+        <p>Example:</p>
+        <pre class="highlight shell"><code>run_subprocess <span class="s1">'bundle install'</span>, <span class="s1">'bundle install --deployment'</span>&#x000A;</code></pre>
+        
+        <h4 id="generic-mask">Generic mask</h4>
+        
+        <p>Often times the engine may need to run a series of commands, which would be confusing to the application developer. In such cases, it is recommended to simply print a header, and then run the commands directly.</p>
+        
+        <p>Example:</p>
+        <pre class="highlight shell"><code>&#x000A;print_process_start <span class="s2">"copying a bunch of stuff..."</span>&#x000A;&#x000A;rsync -a /here/ /there&#x000A;rsync -a /and/here /over/there&#x000A;&#x000A;print_process_end&#x000A;&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
           <a class="next" href="/engines/common-tasks/caching/">Caching</a>

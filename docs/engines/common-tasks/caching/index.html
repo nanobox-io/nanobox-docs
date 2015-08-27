@@ -336,7 +336,18 @@
       </div>
       <div id='content'>
         <h1>Caching</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Nanobox provides engines with the ability to cache certain content, which is then available between deploys.</p>
+        
+        <h2 id="libraries-and-dependencies">Libraries and dependencies</h2>
+        
+        <p>Because libraries and dependencies are so common among frameworks, Nanobox has a special way of handling them. Please refer to the <a href="/engines/scripts/boxfile/#cached-libraries">Boxfile generation</a> guide for specific details on how to do this. Using the built-in behavior is highly preferred over manual caching as it drastically reduces local build time.</p>
+        
+        <h2 id="custom-stuff">Custom stuff</h2>
+        
+        <p>If there is a need that does not fit within the aforementioned process, you can manually access the cache using the <code>cache_dir</code> payload attribute.</p>
+        
+        <p>Example:</p>
+        <pre class="highlight shell"><code>&#x000A;mkdir -p <span class="k">$(</span>payload <span class="s1">'cache_dir'</span><span class="k">)</span>/locker&#x000A;cp -a /some/random/stuff <span class="k">$(</span>payload <span class="s1">'cache_dir'</span><span class="k">)</span>/locker&#x000A;&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/common-tasks/running-commands/">Running Commands</a>
           <a class="next" href="/engines/common-tasks/environment-variables/">Environment Variables</a>
