@@ -27,8 +27,7 @@ Please don't try to find it by some other means. While it is possible to downloa
 
 [Nos](#) provides an idiomatic helper function for installing packages: `install`. The install function takes a single argument: the package name. It will print a [subtask header](/engines/common-tasks/generating-output/#printing-the-start-of-a-sub-process) indicating the start of the installation, then proceed to install the package. All output will be indented to indicate the association with the previous header.
 
-Example:
-
+#### Example:
 ```bash
 install 'python27'
 # or

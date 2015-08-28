@@ -5,6 +5,8 @@ title: Boxfile Quick Reference
 This doc is meant to act as a quick reference to all available base Boxfile Settings for code and data services. These settings are those made available by Pagoda Box, but [Engines](/getting-started/engines/) may make more available. Those config options made available by engines should be documented in the engine's documentation.
 
 ###### Quick Links
+[Env Settings](#env-settings-in-the-boxfile)  
+[Build Settings](#build-settings-in-the-boxfile)  
 [Web Settings](#web-settings-in-the-boxfile)  
 [Worker Settings](#worker-settings-in-the-boxfile)  
 [MySQL, Percona, & MariaDB Settings](#mysql-percona-amp-mariadb-boxfile-settings)  
@@ -13,6 +15,37 @@ This doc is meant to act as a quick reference to all available base Boxfile Sett
 [Redis Settings](#redis-settings-in-the-boxfile)  
 [Memcached Settings](#memcached-settings-in-the-boxfile)  
 [NFS Settings](#nfs-settings-in-the-boxfile)  
+
+---
+
+#### Env Settings in the Boxfile
+```yaml
+env:
+  ENVIRONMENT: production
+  AUTH_SALT: SStp8fP7qTpqqjUIfGbOym8MLiE7ds
+```
+
+###### Full Doc
+[Boxfile env](/boxfile/env/)
+
+---
+
+#### Build Settings in the Boxfile
+```yaml
+build:
+  # Engine
+  engine: 'my/engine'
+  disable_engine_boxfile: true
+
+  # Dependency Management
+  lib_dirs:
+    - vendor
+    - packages
+  reuse_libs: true
+```
+
+###### Full Doc
+[Boxfile build](/boxfile/build/)
 
 --- 
 

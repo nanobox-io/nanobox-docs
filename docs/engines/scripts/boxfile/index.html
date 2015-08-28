@@ -12,8 +12,8 @@
       boxfile - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-c99666d6.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-fd15cdc8.js" type="text/javascript"></script>
+    <link href="/stylesheets/all-f8ad495b.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-ed5924a1.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -362,7 +362,7 @@
         
         <p>Though we haven&#39;t <a href="/engines/how-engines-work#environment-preparation">prepared the environment</a> or <a href="/engines/how-engines-work#application-build">built the code yet</a>, we need to tell Nanobox how to run this app after the deploy is complete. This is done by defining the required web and worker services. Detailed information about how to define the app services can be found <a href="/boxfile/code-services">here</a>.</p>
         
-        <h4 id="declare-dependencies">Declare dependencies</h4>
+        <h4 id="declare-dependencies">Declare Dependencies</h4>
         
         <p>Often an app will need to connect to services such as a database. The boxfile script can be used to declare those dependencies. This can be as simple or complex as necessary. If the framework will always require a certain set of services, the declaration can be static. Otherwise, a more complex approach may be used which would likely search the codebase for configurations of services. The complete documentation for service configuration can be found <a href="/boxfile/data-services/">here</a>.</p>
         
@@ -372,20 +372,20 @@
         
         <h4 id="cached-libraries">Cached libraries</h4>
         
-        <p>Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you <strong>can</strong> manage this yourself in the <a href="/engines/scripts/prepare">prepare</a> script, Nanobox provides a shortcut for this common scenario: the lib_dirs property within the build section. More detailed information can be found <a href="/boxfile/build#dependency-management">here</a>.</p>
+        <p>Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you <strong>can</strong> manage this yourself in the <a href="/engines/scripts/prepare">prepare</a> script, Nanobox provides a shortcut for this common scenario: the <code>lib_dirs</code> property within the build section. More detailed information can be found in <a href="/boxfile/build#dependency-management">Dependency Managment Section of the Boxfile build</a> doc.</p>
         
         <h2 id="examples">Examples</h2>
         
-        <h4 id="simple-static-site">Simple, static site</h4>
+        <h4 id="simple-static-site">Simple Static Site</h4>
         <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web1:&#x000A;  exec: nginx&#x000A;&#x000A;END&#x000A;</span></code></pre>
         
-        <h4 id="simple-predictable-framework-with-known-dependencies">Simple, predictable framework with known dependencies</h4>
+        <h4 id="simple-predictable-framework-with-known-dependencies">Simple, Predictable Framework with Known Dependencies</h4>
         <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web1:&#x000A;  exec: apache&#x000A;&#x000A;mysql1:&#x000A;  name: catalog&#x000A;&#x000A;END&#x000A;</span></code></pre>
         
-        <h4 id="simple-app-with-cached-libraries">Simple app with cached libraries</h4>
+        <h4 id="simple-app-with-cached-libraries">Simple App with Cached Libraries</h4>
         <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;build:&#x000A;  lib_dirs:&#x000A;    - vendor&#x000A;    - .bundle&#x000A;&#x000A;web1:&#x000A;  exec: bundle exec ruby app.rb&#x000A;&#x000A;END&#x000A;</span></code></pre>
         
-        <h4 id="general-purpose-framework-with-unknown-requirements">General purpose framework with unknown requirements</h4>
+        <h4 id="general-purpose-framework-with-unknown-requirements">General Purpose Framework with Unknown Requirements</h4>
         <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="c"># todo: wait for nos render to stdout</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/sniff/">sniff</a>

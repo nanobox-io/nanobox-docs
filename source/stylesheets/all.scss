@@ -106,7 +106,7 @@ a                       { @include transition(all .15s); }
   h1                    { margin: 20px 0 40px; padding-bottom: 30px; border-bottom: 1px solid $gblue-2; font-size: 3.9em; color: $bgreen-0; font-weight: 300; }
   h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $yellow-2; font-weight: 300; }
   h3                    { margin: -1em 0 1em; padding: 2.5em 0 .5em; font-size: 1.55em; color: $bgreen-0; font-weight: 400; font-style: italic; border-bottom: 1px solid $gblue-2; }
-  h4                    { margin: -2em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $gblue-8; font-weight: 300; font-style: italic; }
+  h4                    { margin: -1.5em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $gblue-8; font-weight: 300; font-style: italic; }
   h5                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $bgreen-0; text-transform: uppercase; }
   h6                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $gblue-7; text-transform: uppercase; font-style: italic; }
   p                     { margin: 0 0 1.5em; line-height: 2em; }
@@ -137,7 +137,7 @@ a                       { @include transition(all .15s); }
     code                { padding: 5px 6px 6px; font-size: .85em; color: $yellow-2; background: $gblue-0; white-space: nowrap; }
   }
   img                   { max-width: 100%; }
-  hr                    { margin: 2em 0; border: none; border-top: 1px solid $gblue-2; }
+  hr                    { margin: 3em 0 2em; border: none; border-top: 1px solid $gblue-2; }
   blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-3;
     p                   { font-size: 1.25em; font-style: italic; line-height: 1.5em; }
   }

@@ -1,5 +1,4 @@
 ---
-title: Nanobox Production
 layout: prod
 ---
 

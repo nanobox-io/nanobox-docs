@@ -12,8 +12,8 @@
       Caching - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-c99666d6.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-fd15cdc8.js" type="text/javascript"></script>
+    <link href="/stylesheets/all-f8ad495b.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-ed5924a1.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -336,17 +336,17 @@
       </div>
       <div id='content'>
         <h1>Caching</h1>
-        <p>Nanobox provides engines with the ability to cache certain content, which is then available between deploys.</p>
+        <p>Nanobox provides engines with the ability to cache certain content, which is then available on subsequent deploys.</p>
         
-        <h2 id="libraries-and-dependencies">Libraries and dependencies</h2>
+        <h2 id="libraries-amp-dependencies">Libraries &amp; Dependencies</h2>
         
-        <p>Because libraries and dependencies are so common among frameworks, Nanobox has a special way of handling them. Please refer to the <a href="/engines/scripts/boxfile/#cached-libraries">Boxfile generation</a> guide for specific details on how to do this. Using the built-in behavior is highly preferred over manual caching as it drastically reduces local build time.</p>
+        <p>Because libraries and dependencies are so common among frameworks, Nanobox has a special way of handling them. Please refer to the <a href="/engines/scripts/boxfile/#cached-libraries">Boxfile generation</a> doc for specific details on how to do this. Using the built-in behavior is highly preferred over manual caching as it drastically reduces local build time.</p>
         
-        <h2 id="custom-stuff">Custom stuff</h2>
+        <h2 id="custom-stuff">Custom Stuff</h2>
         
         <p>If there is a need that does not fit within the aforementioned process, you can manually access the cache using the <code>cache_dir</code> payload attribute.</p>
         
-        <p>Example:</p>
+        <h4 id="example">Example:</h4>
         <pre class="highlight shell"><code>&#x000A;mkdir -p <span class="k">$(</span>payload <span class="s1">'cache_dir'</span><span class="k">)</span>/locker&#x000A;cp -a /some/random/stuff <span class="k">$(</span>payload <span class="s1">'cache_dir'</span><span class="k">)</span>/locker&#x000A;&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/common-tasks/running-commands/">Running Commands</a>

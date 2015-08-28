@@ -5,21 +5,12 @@
 ////////////////// SHRINKING TOP NAV //////////////////
 
 $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-    if (scroll >= 50) {
-        $("#header").addClass("small");
-    } else {
-        $("#header").removeClass("small");
-    }
-});
-
-
-/////////////////// CONTENT FADE-IN ///////////////////
-
-$(document).ready(function() {
-    setTimeout(function() {
-      $('#content').addClass('loaded');
-    }, 10);    
+  var scroll = $(window).scrollTop();
+  if (scroll >= 50) {
+    $("#header").addClass("small");
+  } else {
+    $("#header").removeClass("small");
+  }
 });
 
 
@@ -36,17 +27,9 @@ $(function() {
 /////////////// HIDE UNUSED NAV SECTIONS ///////////////
 
 $(function(){
-    $('ul#contents li:has(ul li.active)').addClass('open');
-    $('ul#contents li ul.sub li:has(ul.sub)').addClass('more');
+  $('ul#contents li:has(ul li.active)').addClass('open');
+  $('ul#contents li ul.sub li:has(ul.sub)').addClass('more');
 });
-
-$(document).ready(function() {
-  if (document.documentElement.clientWidth < 864) {
-    if($('#contents').hasClass('closed')) {
-      $('#contents-btn').removeClass('open');
-    };
-  }
-})
 
 
 /////////// ADD/REMOVE CLASS ON CONTENTS BTN ///////////
@@ -66,26 +49,7 @@ $(window).on('resize', function() {
 })
 
 
-////////////// TOGGLE CONTENT BASED ON OS //////////////
-
-$(document).ready(function() {
-  $(document).ready(function () {
-    if ($("#os-tabs")) {
-      var pretag = window.location.href.slice(window.location.href.indexOf('#'));
-      var tag = "";
-      if (pretag.length > 1) {
-          tag = pretag
-      };
-      if (navigator.appVersion.indexOf("Win") != -1) {
-        $("#win-tab").addClass("active");
-        $("#osx-content").css("display", "none");
-      } else {
-        $("#osx-tab").addClass("active");
-        $("#win-content").css("display", "none");
-      }
-    }
-  })
-})
+////////////////// TOGGLE OS CONTENT //////////////////
 
 $(function(){
   if (!$("#win-tab").hasClass("active")) {
@@ -111,13 +75,68 @@ $(function(){
 })
 
 
-
-////////////// ADD LINKS TO ALL HEADINGS //////////////
-
 $(document).ready(function() {
+
+  ////////////// ADD LINKS TO ALL HEADINGS //////////////
+
   $("h2, h3, h4").each(function() {
     var link = "<a href=\"#" + $(this).attr("id") + "\"></a>"
     $(this).wrapInner( link );
   })
+
+  
+  //////////////////// SMOOTH SCROLL ////////////////////
+
+  $('a[href^="#"]').on('click',function (e) {
+    e.preventDefault();
+
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+    }, 400, 'swing', function () {
+      window.location.hash = target;
+    });
+  });
+
+  
+  /////////////// HIDE UNUSED NAV SECTIONS ///////////////
+  // Works in conjuction with lines 
+
+  if (document.documentElement.clientWidth < 864) {
+    if($('#contents').hasClass('closed')) {
+      $('#contents-btn').removeClass('open');
+    };
+  }
+
+  
+  /////////////////// CONTENT FADE-IN ///////////////////
+
+  setTimeout(function() {
+    $('#content').addClass('loaded');
+  }, 10); 
+
+  
+  ////////////// TOGGLE OS CONTENT ON LOAD //////////////
+
+  $(document).ready(function() {
+    if ($("#os-tabs")) {
+      var pretag = window.location.href.slice(window.location.href.indexOf('#'));
+      var tag = "";
+      if (pretag.length > 1) {
+          tag = pretag
+      };
+      if (navigator.appVersion.indexOf("Win") != -1) {
+        $("#win-tab").addClass("active");
+        $("#osx-content").css("display", "none");
+      } else {
+        $("#osx-tab").addClass("active");
+        $("#win-content").css("display", "none");
+      }
+    }
+  })
+
 })
+
 

@@ -72,13 +72,13 @@ mysql1:
 [mysql\_max\_join\_size](#mysql-max-join-size)  
 [mysql\_table\_open\_cache](#mysql-table-open-cache)  
 [mysql\_query\_cache\_limit](#mysql-query-cache-limit)  
-[mysql\_allow\_suspicious\_udfs](#mysql-allow-suspicious-udfs)  
+[mysql\_allow\_suspicious\_udfs](#allow-suspicious-udfs)  
 [mysql\_ansi](#mysql-ansi)  
 [mysql\_audit\_log](#mysql-audit-log)  
-[mysql\_ft\_max\_word\_len](#mysql-ft-max-word-len)  
-[mysql\_ft\_min\_word\_len](#mysql-ft-min-word-len)  
-[mysql\_ft\_query\_expansion\_limit](#mysql-ft-query-expansion-limit)  
-[mysql\_ft\_stopword\_file](#mysql-ft-stopword-file) 
+[mysql\_ft\_max\_word\_len](#fulltext-maximum-word-length)  
+[mysql\_ft\_min\_word\_len](##fulltext-minimum-word-length)  
+[mysql\_ft\_query\_expansion\_limit](#fulltext-query-expansion-limit)  
+[mysql\_ft\_stopword\_file](#fulltext-stopword-file) 
 
 ### MySQL Plugins
 This allows you to specify what MySQL plugins to load into your database service. The following plugins are available:

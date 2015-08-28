@@ -28,7 +28,7 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 
 Though we haven't [prepared the environment](/engines/how-engines-work#environment-preparation) or [built the code yet](/engines/how-engines-work#application-build), we need to tell Nanobox how to run this app after the deploy is complete. This is done by defining the required web and worker services. Detailed information about how to define the app services can be found [here](/boxfile/code-services).
 
-#### Declare dependencies
+#### Declare Dependencies
 
 Often an app will need to connect to services such as a database. The boxfile script can be used to declare those dependencies. This can be as simple or complex as necessary. If the framework will always require a certain set of services, the declaration can be static. Otherwise, a more complex approach may be used which would likely search the codebase for configurations of services. The complete documentation for service configuration can be found [here](/boxfile/data-services/).
 
@@ -38,11 +38,11 @@ For each file that the application logs into, a log watch will need to be config
 
 #### Cached libraries
 
-Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you **can** manage this yourself in the [prepare](/engines/scripts/prepare) script, Nanobox provides a shortcut for this common scenario: the lib_dirs property within the build section. More detailed information can be found [here](/boxfile/build#dependency-management).
+Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you **can** manage this yourself in the [prepare](/engines/scripts/prepare) script, Nanobox provides a shortcut for this common scenario: the `lib_dirs` property within the build section. More detailed information can be found in [Dependency Managment Section of the Boxfile build](/boxfile/build#dependency-management) doc.
 
 ## Examples
 
-#### Simple, static site
+#### Simple Static Site
 
 ```bash
 #!/bin/bash
@@ -54,7 +54,7 @@ web1:
 END
 ```
 
-#### Simple, predictable framework with known dependencies
+#### Simple, Predictable Framework with Known Dependencies
 
 ```bash
 #!/bin/bash
@@ -69,7 +69,7 @@ mysql1:
 END
 ```
 
-#### Simple app with cached libraries
+#### Simple App with Cached Libraries
 
 ```bash
 #!/bin/bash
@@ -86,7 +86,7 @@ web1:
 END
 ```
 
-#### General purpose framework with unknown requirements
+#### General Purpose Framework with Unknown Requirements
 
 ```bash
 #!/bin/bash
