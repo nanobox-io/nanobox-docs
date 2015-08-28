@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Available Providers - Nanobox Production Documentation
+      Hosting Providers - Nanobox Production Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-3a0d8405.css" rel="stylesheet" type="text/css" />
@@ -89,7 +89,7 @@
                 <a href="/production/getting-started/environment/">The Environment</a>
               </li>
               <li class='active'>
-                <a href="/production/getting-started/providers/">Available Providers</a>
+                <a href="/production/getting-started/providers/">Hosting Providers</a>
               </li>
               <li>
                 <a href="/production/getting-started/nanoagent/">NanoAgent</a>
@@ -218,8 +218,8 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>Available Providers</h1>
-        <p>Nanobox apps can be deployed on the following cloud infrastructure(s). You will need to create an account on one of these providers and <a href="#linking-your-account-to-a-service-provider">link it to your Nanobox account</a> in order to deploy onto their service.</p>
+        <h1>Hosting Providers</h1>
+        <p>Nanobox Production allows you to easily deploy apps developed using Nanobox into a production environment. Apps can be deployed on the following cloud infrastructures:</p>
         
         <div id="providers">
           <a href="https://www.digitalocean.com/" target="_blank" id="digital-ocean">
@@ -458,7 +458,33 @@
           </a>
         </div>
         
+        <p>In order to deploy your app(s) to a hosting provider, you will need to <a href="#linking-your-account-to-a-provider">link your Nanobox account to their service</a>.</p>
+        
         <h2 id="linking-your-account-to-a-provider">Linking Your Account to a Provider</h2>
+        
+        <p>In order to link your Nanobox account to a hosting provider, you must first have an account on that provider. Once done, click on your user avatar in the upper right corner of your Nanobox dashboard and go to &quot;Account Admin&quot;. Then click on &quot;Hosting Accounts&quot; in the left navigation. Click &quot;Add&quot; under the hosting provider(s) to which you&#39;d like to connect your account. </p>
+        
+        <p><img alt="Add a Hosting Provider to Your Nanobox Account" src="/images/providers-add.png" /></p>
+        
+        <p>When linking to a provider, the following information is required:</p>
+        
+        <h4 id="account-name">Account Name</h4>
+        
+        <p>This is simply a name that will let you easily identify the account in a list of accounts. It can be whatever you&#39;d like it to be.</p>
+        
+        <h4 id="default-region">Default Region</h4>
+        
+        <p>This is the region that is assumed when a new app is created. You can still select other regions when creating an app, but by default, this region will be selected.</p>
+        
+        <h4 id="api-key-amp-secret-key">API Key &amp; Secret Key</h4>
+        
+        <p>Both of these keys are provided by your hosting provider and should be accessible through their dashboard.</p>
+        
+        <h4 id="allow-nanobox-to-create-images-on-your-behalf">Allow Nanobox to Create Images on Your Behalf</h4>
+        
+        <p>In order to provision servers on a hosting provider, Nanobox needs permission to generate a base Ubuntu image. Some hosting providers charge for storing base images, so you&#39;ll need to check with them regarding costs, but it is necessary in order for Nanobox to provisions servers. An image is required for each region in which you have apps.</p>
+        
+        <p>Once all the necessary information is filled in, click &quot;Save&quot;.</p>
         <div id='pagination'>
           <a class="prev" href="/production/getting-started/environment/">The Environment</a>
           <a class="next" href="/production/getting-started/nanoagent/">NanoAgent</a>

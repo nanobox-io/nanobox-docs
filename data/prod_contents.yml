@@ -9,7 +9,7 @@ categories:
         path: "/production/getting-started/local-to-production/"
       - title: "The Environment"
         path: "/production/getting-started/environment/"
-      - title: "Available Providers"
+      - title: "Hosting Providers"
         path: "/production/getting-started/providers/"
       - title: "NanoAgent"
         path: "/production/getting-started/nanoagent/"
