@@ -2,9 +2,9 @@
 title: User Build Hooks
 ---
 
-Generally, it is the responsibility of the engine to build the application. That said, engines can and should expose hooks to the application developer to run at the beginning and the end of the [build script](/engines/scripts/build/). Nos provides a framework to assist this. The `run_hooks` function accepts a single argument, which is the node in the Boxfile build section, such as "before" or "after".
+Generally, it is the responsibility of the engine to build the application. However, engines can and should expose hooks to the application developer to run at the beginning and/or the end of the [build script](/engines/scripts/build/). Nos provides the `run_hooks` helper which accepts a single argument: the node in the Boxfile build section, such as "before" or "after".
 
-The `run_hooks` function will print a header conforming to the [style guide](/engines/style-guide/), and then will stream the output indented to the header.
+The `run_hooks` function prints a header conforming to the [style guide](/engines/style-guide/) and streams the output under the header.
 
 ## Example
 
@@ -28,7 +28,7 @@ build:
     - 'rake generate_catalog'
 ```
 
-In the [build script](/engines/scripts/build/), those could be executing with the following:
+In the [build script](/engines/scripts/build/), those would be executed with the following:
 
 ```bash
 run_hooks "before"

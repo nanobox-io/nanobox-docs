@@ -12,13 +12,13 @@
       User Build Hooks - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-f8ad495b.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-4b425c60.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-ed5924a1.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
       <a class='left' href='/' id='logo'>
-        <svg enable-background='new 0 0 19 33' id='nanobox-logo' space='preserve' version='1.1' viewbox='0 0 19 33' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+        <svg enable-background='new 0 0 19 33' id='nb-logo-sm' space='preserve' version='1.1' viewbox='0 0 19 33' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
           <g>
             <g>
               <polygon fill='#405C70' points='19,26 9.6,30.9 0,26 9.4,21.1'></polygon>
@@ -339,9 +339,9 @@
       </div>
       <div id='content'>
         <h1>User Build Hooks</h1>
-        <p>Generally, it is the responsibility of the engine to build the application. That said, engines can and should expose hooks to the application developer to run at the beginning and the end of the <a href="/engines/scripts/build/">build script</a>. Nos provides a framework to assist this. The <code>run_hooks</code> function accepts a single argument, which is the node in the Boxfile build section, such as &quot;before&quot; or &quot;after&quot;.</p>
+        <p>Generally, it is the responsibility of the engine to build the application. However, engines can and should expose hooks to the application developer to run at the beginning and/or the end of the <a href="/engines/scripts/build/">build script</a>. Nos provides the <code>run_hooks</code> helper which accepts a single argument: the node in the Boxfile build section, such as &quot;before&quot; or &quot;after&quot;.</p>
         
-        <p>The <code>run_hooks</code> function will print a header conforming to the <a href="/engines/style-guide/">style guide</a>, and then will stream the output indented to the header.</p>
+        <p>The <code>run_hooks</code> function prints a header conforming to the <a href="/engines/style-guide/">style guide</a> and streams the output under the header.</p>
         
         <h2 id="example">Example</h2>
         
@@ -351,7 +351,7 @@
         <p>or:</p>
         <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">before</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">/some/dir'</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">mkdir</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">/some/other/dir'</span>&#x000A;  <span class="s">after</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">touch</span><span class="nv"> </span><span class="s">/some/file'</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">rake</span><span class="nv"> </span><span class="s">generate_catalog'</span>&#x000A;</code></pre>
         
-        <p>In the <a href="/engines/scripts/build/">build script</a>, those could be executing with the following:</p>
+        <p>In the <a href="/engines/scripts/build/">build script</a>, those would be executed with the following:</p>
         <pre class="highlight shell"><code>run_hooks <span class="s2">"before"</span>&#x000A;<span class="c"># ... build script logic ...</span>&#x000A;run_hooks <span class="s2">"after"</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/common-tasks/template-generation/">Configuration Templates</a>
@@ -384,7 +384,7 @@
         </div>
         <div class='right'>
           <a href='#' id='production'>
-            <svg enable-background='new 0 0 56 96.7' id='logo' space='preserve' version='1.1' viewbox='0 0 56 96.7' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+            <svg enable-background='new 0 0 56 96.7' id='nb-logo-md' space='preserve' version='1.1' viewbox='0 0 56 96.7' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
               <g>
                 <polygon fill='#2B3E4B' points='56.4,77.3 28.5,91.7 0,77 27.9,62.7  '></polygon>
                 <polygon fill='#23313C' points='32.5,80.5 22.6,85.7 17.7,83.2 27.5,78   '></polygon>
