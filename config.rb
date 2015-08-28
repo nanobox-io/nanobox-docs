@@ -82,6 +82,9 @@ configure :build do
   # Enable cache buster
   activate :asset_hash
 
+  # Ignore the SVG partials directory
+  activate :ignore, 'svg-partials'
+
   # Use relative URLs
   # activate :relative_assets
 
