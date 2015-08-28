@@ -3,7 +3,7 @@ title: Available Providers
 layout: prod
 ---
 
-Nanobox apps can be deployed on the following cloud infrastructure(s). You will need to create an account on one of these providers in order to deploy onto their service.
+Nanobox apps can be deployed on the following cloud infrastructure(s). You will need to create an account on one of these providers and [link it to your Nanobox account](#linking-your-account-to-a-service-provider) in order to deploy onto their service.
 
 <div id="providers">
   <a href="https://www.digitalocean.com/" target="_blank" id="digital-ocean">
@@ -23,3 +23,5 @@ Nanobox apps can be deployed on the following cloud infrastructure(s). You will 
     Linode
   </a>
 </div>
+
+## Linking Your Account to a Provider

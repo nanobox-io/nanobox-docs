@@ -164,13 +164,13 @@ a                       { @include transition(all .15s); }
     }
   }
   #providers            { 
-    a                   { margin: 1.5em; position: relative; display: inline-block; width: 50%; max-width: 250px; border: none; text-align: center; color: $gblue-8; vertical-align: top;  
+    a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $gblue-8; vertical-align: top;  
       svg               { margin-bottom: .8em;
         .bg-circle      { fill: $gblue-8; @include transition(fill .2s);}
         .icon           { fill: $gblue-4; @include transition(fill .2s);}        
       }
       &.coming          { color: $gblue-4; 
-        &:before        { content: url('/images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 14.5%; }
+        &:before        { content: url('/images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 1.85em; }
         .bg-circle      { fill: $gblue-2; }
         .icon           { fill: $gblue-1; }
       } 
