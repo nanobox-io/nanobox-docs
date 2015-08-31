@@ -38,7 +38,7 @@ nanobox-engine-my_engine/
 
 #### bin
 
-The *bin* directory houses scripts executed at different phases of a deploy. Specific information can be found in the [scripts docs](/engines/scripts/intro).
+The *bin* directory houses scripts executed at different phases of a deploy. Specific information can be found in the [scripts docs](/engines/scripts/).
 
 #### lib
 

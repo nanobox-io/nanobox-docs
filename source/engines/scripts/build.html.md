@@ -16,7 +16,7 @@ The build script is executed at `$ENGINE_ROOT/bin/build`. The build script must 
 
 #### Args
 
-A single argument `$1` is provided, and is a JSON payload. Check [here](/engines/scripts/intro#payload) for a description of the payload.
+A single argument `$1` is provided, and is a JSON payload. Check [here](/engines/scripts/#payload) for a description of the payload.
 
 #### Working Directory
 

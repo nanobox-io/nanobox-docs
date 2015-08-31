@@ -36,4 +36,4 @@ redis1:
   name: queue-and-sessions  
 ```
 
-For the deep dive into the Boxfile, read through the [Boxfile docs](/boxfile/intro).
+For the deep dive into the Boxfile, read through the [Boxfile docs](/boxfile/).

@@ -10,7 +10,7 @@ When an app is deployed to Nanobox local or production, a build container is pro
 
 With a compatible engine selected, the engine has the opportunity to inform Nanobox about the auxiliary requirements of the app, such as a database or cache engine necessary to run the app. Depending on the app and framework, this may be simple and static, or dynamic and involved. For instance, if the engine knows that an app using a particular framework will always need a specific type of database, it can simply return a static definition for that database. Otherwise, the engine may scan the codebase for requirements and dynamically generate the infrastructure definition.
 
-The infrastructure definition is actually just a Boxfile. View the [Boxfile docs](/boxfile/intro) for specifics on how to define specific infrastructure components. Additional information about the "boxfile" script can be found in the [boxfile script doc](/engines/scripts/boxfile).
+The infrastructure definition is actually just a Boxfile. View the [Boxfile docs](/boxfile/) for specifics on how to define specific infrastructure components. Additional information about the "boxfile" script can be found in the [boxfile script doc](/engines/scripts/boxfile).
 
 ## Environment Preparation
 
