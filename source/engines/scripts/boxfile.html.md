@@ -34,7 +34,7 @@ Often an app will need to connect to services such as a database. The boxfile sc
 
 #### Log watches
 
-For each file that the application logs into, a log watch will need to be configured. This ensures that the application's logs are aggregated and piped into the application's centralized logger, which can then be viewed and consumed via the dashboard. More information can be found [here]().
+For each file that the application logs into, a log watch will need to be configured. This ensures that the application's logs are aggregated and piped into the application's centralized logger, which can then be viewed and consumed via the dashboard. More information can be found [here](/getting-started/logs/).
 
 #### Cached libraries
 
