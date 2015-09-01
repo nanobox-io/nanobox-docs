@@ -33,10 +33,6 @@ The current stability of the engine. The value can be either **alpha, beta, or s
 
 License applied to this software. Value can be a title, link, or the actual license.
 
-#### readme
-
-Path to to the README.md file. A readme is required to publish engines, as it contains the necessary documentation to consume the engine.
-
 #### authors
 
 A list of authors and contributors to the engine project.

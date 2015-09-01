@@ -3,7 +3,7 @@ title: NanoAgent
 layout: prod
 ---
 
-Every Nanobox apps includes a 'nanoagent' service. NanoAgent serves many purposes necessary for running your app as well as providing visibility into your app. Below is just a few of the things NanoAgent does:
+Every Nanobox app includes a 'nanoagent' service. NanoAgent serves many purposes necessary for running your app as well as providing visibility into your app. Below is just a few of the things NanoAgent does:
 
 - Resource Usage Aggregation & Reporting
 - Log Aggregation & Historical Log Storage

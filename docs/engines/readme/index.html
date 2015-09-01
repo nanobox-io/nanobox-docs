@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Other - Nanobox Documentation
+      Readme - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-d272526b.css" rel="stylesheet" type="text/css" />
@@ -266,6 +266,9 @@
               <li>
                 <a href="/engines/enginefile/">Enginefile</a>
               </li>
+              <li class='active'>
+                <a href="/engines/readme/">Readme</a>
+              </li>
               <li>
                 <a href="/engines/style-guide/">Style Guide</a>
               </li>
@@ -332,16 +335,30 @@
               </li>
             </ul>
           </li>
-          <li class='active'>
-            <a href="/other/">Other</a>
-          </li>
         </ul>
       </div>
       <div id='content'>
-        <h1>Other</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <h1>Readme</h1>
+        <p>An engine&#39;s Readme information is contained in a <code>README.md</code> file in the root directory of the engine. It should include a summary of what the engine is, document how to use it, and outline what configuration options are available to users. The contents of the Readme are shown on the engine&#39;s landing page on <a href="http://engines.nanobox.io">engines.nanobox.io</a>.</p>
+        
+        <h4 id="github-flavored-markdown">Github Flavored Markdown</h4>
+        
+        <p>All Readme should be written in Github Flavored Markdown (GFM), a variant of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> that introduces helpful functionality such as fenced code blocks and syntax highlighting. Markdown is designed to make writing and publishing content as easy as possible. If you&#39;re new to GFM, the following links provide a great crash course:</p>
+        
+        <p><a href="https://help.github.com/articles/markdown-basics/">Markdown Basics</a><br>
+        <a href="https://help.github.com/articles/github-flavored-markdown/">Github Flavored Markdown</a><br>
+        <a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a> </p>
+        
+        <h4 id="a-readme-is-required-to-publish-an-engine">A Readme is Required to Publish an Engine</h4>
+        
+        <p>In order to <a href="/engines/publish/">publish an engine</a>, it must contain a <code>README.md</code> file in the root directory of the engine. </p>
+        
+        <h2 id="readme-md-content-template">README.md Content Template</h2>
+        
+        <p>For a README.md content template, check out the <a href="https://github.com/pagodabox/nanobox-engine-template/blob/master/README.md"><code>README.md</code> in the engine template project</a>.</p>
         <div id='pagination'>
-          <a class="prev" href="/engines/debugging/">Debugging</a>
+          <a class="prev" href="/engines/enginefile/">Enginefile</a>
+          <a class="next" href="/engines/style-guide/">Style Guide</a>
         </div>
       </div>
     </div>
