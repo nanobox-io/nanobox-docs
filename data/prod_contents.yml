@@ -70,11 +70,11 @@ categories:
     path: "/production/networking-domains/"
     articles:
       - title: "Using Custom Domains"
-        path: "/production/networking/custom-domains/"
+        path: "/production/networking-domains/custom-domains/"
       - title: "Adding SSL"
-        path: "/production/networking/adding-ssl/"
+        path: "/production/networking-domains/adding-ssl/"
       - title: "Inbound IPs"
-        path: "/production/networking/inbound-ips/"
+        path: "/production/networking-domains/inbound-ips/"
 
   - title: "Command Line Interface"
     path: "/production/cli/"

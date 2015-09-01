@@ -12,7 +12,7 @@
       User Build Hooks - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-3a0d8405.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-d272526b.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
@@ -342,6 +342,10 @@
         <p>Generally, it is the responsibility of the engine to build the application. However, engines can and should expose hooks to the application developer to run at the beginning and/or the end of the <a href="/engines/scripts/build/">build script</a>. Nos provides the <code>run_hooks</code> helper which accepts a single argument: the node in the Boxfile build section, such as &quot;before&quot; or &quot;after&quot;.</p>
         
         <p>The <code>run_hooks</code> function prints a header conforming to the <a href="/engines/style-guide/">style guide</a> and streams the output under the header.</p>
+        
+        <h4 id="hook-names">Hook Names</h4>
+        
+        <p>Names of the hooks are defined by the engine and should be documented in your engine&#39;s documentation.</p>
         
         <h2 id="example">Example</h2>
         

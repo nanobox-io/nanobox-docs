@@ -12,7 +12,7 @@
       Configuration Templates - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-3a0d8405.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-d272526b.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
@@ -347,33 +347,46 @@
         
         <h2 id="using-templates">Using Templates</h2>
         
-        <h4 id="template-location">Template location</h4>
+        <h4 id="template-location">Template Location</h4>
         
-        <p>Nos requires that templates live within the /templates directory. You can nest your templates within /templates like /templates/apache/apache.conf.mustache.</p>
+        <p>Nos requires templates to live within the <code>/templates</code> directory. You can nest templates within <code>/templates</code> like <code>/templates/apache/apache.conf.mustache</code>.</p>
         
         <p>It is not required to have a .mustache extension, however it is recommended as it will help your editor identify the file type.</p>
         
         <h4 id="rendering">Rendering</h4>
         
-        <p>To render a template, Nos provides a <code>template</code> helper function. This function accepts 3 arguments: a template source, the destination file, and the payload. Essentially, the <code>template</code> helper will render a mustache template from the /templates directory, writing the result into a destination file.</p>
+        <p>To render a template, Nos provides a <code>template</code> helper function. This function accepts 3 arguments:</p>
         
-        <p>Example:</p>
+        <ul>
+        <li>A template source</li>
+        <li>The destination file</li>
+        <li>The payload</li>
+        </ul>
         
-        <p>/templates/nginx.conf.mustache:</p>
+        <p>Essentially, the <code>template</code> helper will render a mustache template from the <code>/templates</code> directory, writing the result into a destination file.</p>
+        
+        <h6 id="example">Example:</h6>
+        
+        <h4 id="templates-nginx-conf-mustache">/templates/nginx.conf.mustache:</h4>
         <pre class="highlight handlebars"><code>daemon off;&#x000A;worker_processes  1;&#x000A;&#x000A;error_log  <span class="k">{{</span><span class="nv">deploy_dir</span><span class="k">}}</span>/var/log/nginx/error.log;&#x000A;&#x000A;events {&#x000A;    worker_connections  1024;&#x000A;}&#x000A;&#x000A;http {&#x000A;    include       /data/etc/nginx/mime.types;&#x000A;    default_type  application/octet-stream;&#x000A;    keepalive_timeout  65;&#x000A;    gzip  on;&#x000A;&#x000A;    server {&#x000A;        listen       <span class="k">{{</span><span class="nv">port</span><span class="k">}}</span>;&#x000A;        server_name  localhost;&#x000A;&#x000A;        location / {&#x000A;            root   <span class="k">{{</span><span class="nv">live_dir</span><span class="k">}}</span>;&#x000A;            index  index.html;&#x000A;        }&#x000A;    }&#x000A;}&#x000A;&#x000A;</code></pre>
         
-        <p>/bin/prepare</p>
+        <h4 id="bin-prepare">/bin/prepare</h4>
         <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="c"># source the Nos framework</span>&#x000A;. /opt/nos/common.sh&#x000A;&#x000A;<span class="c"># initialize Nos with the original arguments</span>&#x000A;nos_init <span class="nv">$@</span>&#x000A;&#x000A;<span class="c"># store the payload argument to use as the template payload</span>&#x000A;<span class="nv">payload</span><span class="o">=</span><span class="nv">$1</span>&#x000A;&#x000A;<span class="c"># generate nginx config</span>&#x000A;template <span class="se">\</span>&#x000A;  <span class="s2">"nginx.conf.mustache"</span> <span class="se">\</span>&#x000A;  <span class="s2">"</span><span class="k">$(</span>payload <span class="s1">'deploy_dir'</span><span class="k">)</span><span class="s2">/etc/nginx/nginx.conf"</span> <span class="se">\</span>&#x000A;  <span class="nv">$payload</span>&#x000A;&#x000A;&#x000A;</code></pre>
         
         <h2 id="inline-templates">Inline Templates</h2>
         
-        <p>coming soon</p>
+        <p>Coming Soon</p>
         
         <h2 id="files">Files</h2>
         
-        <p>At times a dynamically generated template isn&#39;t required. In such cases, a static file can be copied into the environment. Nos provides a <code>file</code> helper to assist with this common task. To use the <code>file</code> function, files must be place in the /files directory. The function accepts 2 arguments: the source file and the destination file.</p>
+        <p>At times a dynamically generated template isn&#39;t required. In such cases, a static file can be copied into the environment. Nos provides a <code>file</code> helper to assist with this common task. To use the <code>file</code> function, files must be placed in the <code>/files</code> directory. The function accepts 2 arguments:</p>
         
-        <p>Example:</p>
+        <ul>
+        <li>The source file</li>
+        <li>The destination file.</li>
+        </ul>
+        
+        <h6 id="example">Example:</h6>
         <pre class="highlight shell"><code>file <span class="se">\</span>&#x000A;  <span class="s2">"patches/fix-flock.php"</span> <span class="se">\</span>&#x000A;  <span class="s2">"</span><span class="k">$(</span>payload <span class="s1">'code_dir'</span><span class="k">)</span><span class="s2">/lib/framework/flock.php"</span>&#x000A;&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/common-tasks/environment-variables/">Environment Variables</a>
