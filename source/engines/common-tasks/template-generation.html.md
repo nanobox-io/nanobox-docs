@@ -10,19 +10,25 @@ Nos uses [mustache](https://mustache.github.io/mustache.5.html) as the template 
 
 ## Using Templates
 
-#### Template location
+#### Template Location
 
-Nos requires that templates live within the /templates directory. You can nest your templates within /templates like /templates/apache/apache.conf.mustache.
+Nos requires templates to live within the `/templates` directory. You can nest templates within `/templates` like `/templates/apache/apache.conf.mustache`.
 
 It is not required to have a .mustache extension, however it is recommended as it will help your editor identify the file type.
 
 #### Rendering
 
-To render a template, Nos provides a `template` helper function. This function accepts 3 arguments: a template source, the destination file, and the payload. Essentially, the `template` helper will render a mustache template from the /templates directory, writing the result into a destination file.
+To render a template, Nos provides a `template` helper function. This function accepts 3 arguments:
 
-Example:
+- A template source
+- The destination file
+- The payload
 
-/templates/nginx.conf.mustache:
+Essentially, the `template` helper will render a mustache template from the `/templates` directory, writing the result into a destination file.
+
+###### Example:
+
+#### /templates/nginx.conf.mustache:
 
 ```mustache
 daemon off;
@@ -53,7 +59,7 @@ http {
 
 ```
 
-/bin/prepare
+#### /bin/prepare
 
 ```bash
 #!/bin/bash
@@ -78,13 +84,16 @@ template \
 
 ## Inline Templates
 
-coming soon
+Coming Soon
 
 ## Files
 
-At times a dynamically generated template isn't required. In such cases, a static file can be copied into the environment. Nos provides a `file` helper to assist with this common task. To use the `file` function, files must be place in the /files directory. The function accepts 2 arguments: the source file and the destination file.
+At times a dynamically generated template isn't required. In such cases, a static file can be copied into the environment. Nos provides a `file` helper to assist with this common task. To use the `file` function, files must be placed in the `/files` directory. The function accepts 2 arguments:
 
-Example:
+- The source file
+- The destination file.
+
+###### Example:
 
 ```bash
 file \

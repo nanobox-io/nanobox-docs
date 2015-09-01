@@ -153,6 +153,7 @@ a                       { @include transition(all .15s); }
         }
        }
     }
+    a code              { border: none !important;  }
   }
   #pagination           { padding: 3.5em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $gblue-2; }
   ul#os-tabs            { margin: 2.5em 0; padding: 0; list-style: none; font-style: italic;

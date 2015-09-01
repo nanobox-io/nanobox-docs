@@ -6,6 +6,9 @@ Generally, it is the responsibility of the engine to build the application. Howe
 
 The `run_hooks` function prints a header conforming to the [style guide](/engines/style-guide/) and streams the output under the header.
 
+#### Hook Names
+Names of the hooks are defined by the engine and should be documented in your engine's documentation.
+
 ## Example
 
 A user could define before and after hooks in the application's Boxfile, with the following:

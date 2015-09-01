@@ -66,8 +66,8 @@ categories:
       - title: "How & When to Scale"
         path: "/production/scaling/how-when-to-scale/"
 
-  - title: "Networking"
-    path: "/production/networking/"
+  - title: "Networking & Domains"
+    path: "/production/networking-domains/"
     articles:
       - title: "Using Custom Domains"
         path: "/production/networking/custom-domains/"
