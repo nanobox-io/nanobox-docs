@@ -339,7 +339,9 @@
       </div>
       <div id='content'>
         <h1>Debugging</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>By default, deploying an application to Nanobox will only show output relevant to the application developer&#39;s deploy process. Nanobox tries to get out of the way and present information that would be helpful to the application developer, but omitting internal processes and verbose information.</p>
+        
+        <p>The engine developer can toggle verbose output during the deploy output: <code>nanobox deploy -v</code>. The <code>-v</code> option will inform Nanobox to toggle verbose output. This will include Nanobox internal process information as well as engine-specific data like the generated Boxfile content.</p>
         <div id='pagination'>
           <a class="prev" href="/engines/dev-workflow/">Development Workflow</a>
           <a class="next" href="/other/">Other</a>
