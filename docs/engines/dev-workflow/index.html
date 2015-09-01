@@ -343,26 +343,26 @@
         
         <h2 id="the-vision">The Vision</h2>
         
-        <p>Nanobox can mount an engine from your local workstation into an application&#39;s Nanobox environment. Meaning, it is not necessary and not recommended to publish an engine to test functionality. Instead, develop your engine locally and incrementally.</p>
+        <p>Nanobox can mount an engine from your local workstation into an application&#39;s Nanobox environment. Its not necessary and <strong>not recommended to publish an engine to test functionality</strong>. Instead, develop your engine locally and incrementally.</p>
         
         <h2 id="process">Process</h2>
         
-        <h4 id="test-application">Test application</h4>
+        <h3 id="test-application">Test Application</h3>
         
-        <p>In order to iterate and test your engine locally, create a sample application that your engine can deploy. Within that app&#39;s Boxfile, specify the absolute or relative path to your engine in the build section.</p>
+        <p>In order to iterate and test your engine locally, create a sample application your engine can deploy. Within that app&#39;s Boxfile, specify the absolute or relative path to your engine in the build section.</p>
         
-        <p>Example Boxfile:</p>
+        <h4 id="example-local-engine-path-in-the-boxfile">Example Local Engine Path in the Boxfile:</h4>
         <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s1">'</span><span class="s">../nanobox-engine-rails'</span>&#x000A;</code></pre>
         
-        <p>Then launch the app:</p>
-        <pre class="highlight shell"><code>nanobox up&#x000A;</code></pre>
+        <h4 id="then-launch-the-app">Then launch the app:</h4>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox up&#x000A;</code></pre>
         
-        <p>You will see in the deploy output that Nanobox has mounted your engine into the Nanobox vm, and that the engine was selected for the deploy process.</p>
+        <p>You will see in the deploy output that Nanobox has mounted your engine into the Nanobox VM, and the engine was selected for the deploy process.</p>
         
-        <h4 id="iterate">Iterate</h4>
+        <h3 id="iterate">Iterate</h3>
         
         <p>With each change to the engine, simply trigger another deploy from within the sample application&#39;s directory:</p>
-        <pre class="highlight shell"><code>nanobox deploy&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox deploy&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/publish/">Publish</a>
           <a class="next" href="/engines/debugging/">Debugging</a>

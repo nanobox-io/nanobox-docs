@@ -339,7 +339,7 @@
       </div>
       <div id='content'>
         <h1>cleanup</h1>
-        <p>The cleanup script fulfills the <a href="/engines/how-engines-work#cleanup">Cleanup</a> phase of the deploy process. Essentially, the cleanup script allows the engine to remove any particles or cruft that are unnecessary in the final environment. This may consist of build particles, binaries, or anything that will cause a production build to be larger than necessary.</p>
+        <p>The cleanup script fulfills the <a href="/engines/how-engines-work#cleanup">Cleanup</a> phase of the deploy process, removing any particles or cruft that are unnecessary in the live environment. This may consist of build particles, binaries, or anything that will cause a production build to be larger than necessary.</p>
         
         <h4 id="note">Note</h4>
         
@@ -363,7 +363,7 @@
         
         <h4 id="remove-unnecessary-binaries">Remove Unnecessary Binaries</h4>
         
-        <p>If any build-only binaries were installed using the <code>install_build</code> helper, now is the time to remove them using the <code>install_cleanup</code> Nos helper. More details can be found in the <a href="/engines/common-tasks/installing-binaries/#installing-a-build-only-package">Installing Binaries</a> guide.</p>
+        <p>If any build-only binaries were installed using the <code>install_build</code> helper, now is the time to remove them using the <code>install_cleanup</code> Nos helper. More details can be found in the <a href="/engines/common-tasks/installing-binaries/#installing-a-build-only-package">Installing Binaries</a> doc.</p>
         
         <h4 id="remove-cruft">Remove Cruft</h4>
         
