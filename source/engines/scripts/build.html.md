@@ -26,15 +26,15 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 
 #### Apply Patches
 
-At times the underlying framework may need to be modified or fixed. If, for instance, the underlying framework was designed to work only in a LAMP stack and not with distributed microservices, the framework may need a few adjustments. This can be done by replacing entire files, or just modifying a few lines. You can refer to the [Configuration Templates](/engines/common-tasks/template-generation/) guide for details on how to do this.
+At times the underlying framework may need to be modified or fixed. If, for instance, the underlying framework was designed to work only in a LAMP stack and not with distributed microservices, the framework may need a few adjustments. This can be done by replacing entire files, or just modifying a few lines. You can refer to the [Configuration Templates](/engines/common-tasks/template-generation/) doc for details on how to do this.
 
 #### Compile or Build the Codebase
 
-Build the code. If your application runs in a vm like php, node.js, ruby, or python, this step may not be required. For running commands that build your codebase, refer to the [Running Commands](/engines/common-tasks/running-commands/) guide.
+Build the code. If your application runs in a VM like php, node.js, ruby, or python, this step may not be required. For running commands that build your codebase, refer to the [Running Commands](/engines/common-tasks/running-commands/) doc.
 
 #### Generate Application Configuration
 
-Any configuration that your application requires to run will need to be generated. Database drivers, third-party integrations, etc will need to be configured. You can refer to the [Configuration Templates]() guide for details on how to do this.
+Any configuration your application requires to run will need to be generated. Database drivers, third-party integrations, etc., will need to be configured. You can refer to the [Configuration Templates](/engines/common-tasks/template-generation/) doc for details on how to do this.
 
 ##### Tip
 

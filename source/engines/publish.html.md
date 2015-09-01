@@ -10,11 +10,11 @@ Before you can publish an engine to Nanobox, you must first have an account. The
 
 #### Enginefile, Readme
 
-Before you can publish an Engine, you must have created an Enginefile and a Readme. Check out the following guides for more information:
+In order for an Engine to be published, it must contain an Enginefile and a Readme. The following docs provide more information:
 
 - [Enginefile](/engines/enginefile/)
 - [Readme](/engines/readme/)
 
 #### Publish
 
-Finally, to publish the engine, you can simply run `nanobox publish` from within the engine directory. Check the [publish](/cli/publish/) cli guide for specific usage details.
+Finally, to publish the engine, simply run `nanobox publish` from within your local engine directory. Check the [publish](/cli/publish/) CLI doc for specific usage details.

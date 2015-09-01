@@ -4,7 +4,7 @@ title: The Environment
 
 An engine is required to populate the contents of two directories: **deploy** and **live**. These directories are copied into the container in which the application is run.
 
-#### Deploy
+#### deploy
 
 The "deploy" directory contains everything required to run the application. Runtimes, binaries, configuration files, and any other necessary resources are installed here. Essentially, the deploy directory is the environment into which the application is "deployed".
 
@@ -14,7 +14,7 @@ Essentially, the deploy directory is designed to be a fully-contained environmen
 
 Packages can be installed into the deploy directory and do not need to be statically compiled. Packages can contain shared libraries and the default linker will find and resolve dependencies at runtime, just like any other system. As a convenience, Nanobox provides a library of packages that can be installed into the deploy directory during the build process. We *highly recommend* using these packages. More information on finding and installing packages can be found in the [Common Tasks](/engines/common-tasks/installing-binaries/) section.
 
-#### Live
+#### live
 
 The live directory contains the "live" application. For a compiled application like c or golang, this would contain only the compiled binaries of the application. For dynamic runtimes such as perl, python, and ruby, this would contain the source code used by the interpreter. This directory should also contain application-specific configurations like database adapter configurations.
 
@@ -26,27 +26,27 @@ The live environment is a minimal, stripped-down Linux install with a small set 
 
 The build environment contains the build tools necessary to install and configure the environment as well as compile the application. In addition to build tools, the build container contains multiple directories essential to the build process.
 
-#### Code
+#### code
 
 The code directory contains the application's raw source. This is where all transformations, builds, compiles, patches, etc. are accomplished. This is NOT the final location of the application. It is just a staging location where the build occurs. The compiled and prepared application source code is copied into the live directory.
 
-#### Live
+#### live
 
 As mentioned above, the directory contains the final application. This directory is later copied and mounted into the live environment. The application MUST be copied into after any transformations for the application to be able to run.
 
-#### Deploy
+#### deploy
 
-The purpose of the deploy is outlined [above](#deploy). Essentially this directory contains the environment into which the application is deployed.
+The purpose of the deploy directory is outlined [above](#deploy). Essentially this directory contains the environment into which the application is deployed.
 
-#### Cache
+#### cache
 
 The contents of the cache directory persist between deploys. Anything stored here can be extracted on subsequent deploys.
 
-#### Etc
+#### etc
 
 The etc directory houses application configuration files. Special nginx, apache, or any other configuration should be placed here. Apache, nginx, and others will look here by default for configuration.
 
-#### Env
+#### env
 
 The env directory contains environment variables available to the application in the live environment. Environment variables are represented as a file, which is the key, and the file contents, which is the value. Only environment variables stored in this manner in this location will be available to the running application. More information is avaiable in the [Environment Variables](/engines/common-tasks/environment-variables/) doc.
 

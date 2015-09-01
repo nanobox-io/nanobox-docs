@@ -2,7 +2,7 @@
 title: cleanup
 ---
 
-The cleanup script fulfills the [Cleanup](/engines/how-engines-work#cleanup) phase of the deploy process. Essentially, the cleanup script allows the engine to remove any particles or cruft that are unnecessary in the final environment. This may consist of build particles, binaries, or anything that will cause a production build to be larger than necessary.
+The cleanup script fulfills the [Cleanup](/engines/how-engines-work#cleanup) phase of the deploy process, removing any particles or cruft that are unnecessary in the live environment. This may consist of build particles, binaries, or anything that will cause a production build to be larger than necessary.
 
 #### Note
 
@@ -26,7 +26,7 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 
 #### Remove Unnecessary Binaries
 
-If any build-only binaries were installed using the `install_build` helper, now is the time to remove them using the `install_cleanup` Nos helper. More details can be found in the [Installing Binaries](/engines/common-tasks/installing-binaries/#installing-a-build-only-package) guide.
+If any build-only binaries were installed using the `install_build` helper, now is the time to remove them using the `install_cleanup` Nos helper. More details can be found in the [Installing Binaries](/engines/common-tasks/installing-binaries/#installing-a-build-only-package) doc.
 
 #### Remove Cruft
 
