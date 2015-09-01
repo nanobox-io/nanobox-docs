@@ -17,7 +17,7 @@ Before continuing, you should be familiar with:
 
 As mentioned before, the Boxfile is King. Nanobox provides and encourages engine developers to extract values from the Boxfile; specifically the `build` section. Nanobox does not require the engine to read and parse the Boxfile for this. Instead, it provides a convenient payload property `boxfile` which contains the data from the `build` section of the application-provided Boxfile.
 
-As an additional convenience, upon initialization, Nos will unwrap the `boxfile` data, allowing quick access through the [payload](/engines/common-tasks/payload) helper.
+As an additional convenience, upon initialization, Nos will unwrap the `boxfile` data, allowing quick access through the [payload](/engines/common-tasks/using-the-payload/#data-access) helper.
 
 ## Example
 

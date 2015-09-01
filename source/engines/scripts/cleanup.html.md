@@ -24,8 +24,14 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 
 ## Objectives
 
-#### Remove Unecessary Binaries
+#### Remove Unnecessary Binaries
+
+If any build-only binaries were installed using the `install_build` helper, now is the time to remove them using the `install_cleanup` Nos helper. More details can be found in the [Installing Binaries](/engines/common-tasks/installing-binaries/#installing-a-build-only-package) guide.
 
 #### Remove Cruft
 
+Any leftover build particles or cruft that is not required for the app to run should be removed.
+
 ## Example
+
+Coming

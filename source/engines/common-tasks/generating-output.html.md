@@ -78,7 +78,7 @@ print_subtask_fail
 ```
 
 ### Printing a Bullet
-To print a [bullet]() item, Nos provides a `print_bullet` function. This function accepts a single argument, which is the line to print in a bullet style.
+To print a [bullet](/engines/style-guide/#tasks) item, Nos provides a `print_bullet` function. This function accepts a single argument, which is the line to print in a bullet style.
 
 #### Example:
 ```bash
@@ -91,7 +91,7 @@ print_bullet "Language Detected : Ruby"
 ```
 
 ### Printing Bullet Information
-When printing [follow-up]() information to a bullet, Nos provides the `print_bullet_sub` function. This function accepts a single argument, which is the line to print.
+When printing [follow-up](/engines/style-guide/#tasks) information to a bullet, Nos provides the `print_bullet_sub` function. This function accepts a single argument, which is the line to print.
 
 #### Example:
 ```bash
@@ -104,7 +104,7 @@ print_bullet_info "Language Detected : Ruby"
 ```
 
 ### Printing Bullet Sub-Item
-When printing a [sub-item]() to a bullet, Nos provides the `print_bullet_sub` function. This function accepts a single argument, which is the sub item to print in a bullet style.
+When printing a [sub-item](/engines/style-guide/#tasks) to a bullet, Nos provides the `print_bullet_sub` function. This function accepts a single argument, which is the sub item to print in a bullet style.
 
 #### Example:
 ```bash

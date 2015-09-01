@@ -13,7 +13,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-3a0d8405.css" rel="stylesheet" type="text/css" />
-    <script src="/javascripts/all-ed5924a1.js" type="text/javascript"></script>
+    <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
     <div id='header'>
@@ -359,17 +359,42 @@
         
         <h4 id="install-build-runtimes-amp-binaries">Install Build Runtimes &amp; Binaries</h4>
         
+        <p>Determine which runtimes, binaries, or custom build tools will be necessary for the build process, but not required in the live environment. Once this has been determined, follow the <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a> guide on how to install them.</p>
+        
         <h4 id="install-production-runtimes-amp-binaries">Install Production Runtimes &amp; Binaries</h4>
+        
+        <p>Determine which runtimes and binaries are required for the application to run. Once this has been determined, follow the <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a> guide on how to install them.</p>
         
         <h4 id="generate-configuration-files">Generate Configuration Files</h4>
         
+        <p>For any of the binaries or runtimes installed, determine if configuration is required. If Apache and Nginx are required, configuration files must be generated for them to work properly. Once the proper configuration has been determined, follow the <a href="/engines/common-tasks/template-generation/">Configuration Templates</a> guide on how to accomplish this.</p>
+        
         <h4 id="fetch-amp-build-libraries-amp-dependencies">Fetch &amp; Build Libraries &amp; Dependencies</h4>
+        
+        <p>Many applications and frameworks depend on libraries or other dependencies. Most languages have a dependency management solution baked in or available easily. For ruby, this would be rubygems. For node.js, this would be npm. For python, this would be pip. Any so on and so forth. The prepare script should fetch and build these dependencies.</p>
+        
+        <p>After determining the recommended approach to install libraries and dependencies, please refer to the <a href="/engines/common-tasks/running-commands/">Running Commands</a> guide for how to run the command to fetch and build libraries.</p>
         
         <h4 id="update-path">Update $PATH</h4>
         
+        <p>Often times a dependency manager will install tools that the application requires to run. These tools may need to available on the <code>$PATH</code>. Once you have determined which directory needs to be added to the path, the PATH can be manipulated.</p>
+        
+        <h5 id="warning">Warning!</h5>
+        
+        <p>To properly manipulate the <code>$PATH</code>, you will need to consider both the build and live environments. The build environment will have access to the codebase from the <a href="/engines/the-environment/#code">code_dir</a> whereas the live directory will have access to the codebase from the <a href="/engines/the-environment/#live">live_dir</a>. The most likely approach is to simply re-export the <code>$PATH</code> variable in the prepare and build scripts, and persist the path variable for the live environment.</p>
+        
+        <p>Example:</p>
+        <pre class="highlight shell"><code><span class="c"># add node_modules/.bin to our $PATH</span>&#x000A;&#x000A;<span class="c"># re-export for this script</span>&#x000A;<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">$(</span>payload <span class="s1">'code_dir'</span><span class="k">)</span>/node_modules/.bin:<span class="nv">$PATH</span>&#x000A;<span class="c"># persist the new value for the live environment</span>&#x000A;persist_evar <span class="s1">'PATH'</span> <span class="k">$(</span>payload <span class="s1">'live_dir'</span><span class="k">)</span>/node_modules/.bin:<span class="nv">$PATH</span>&#x000A;</code></pre>
+        
+        <p>For more information on how to handle environment variables, please consult the <a href="/engines/common-tasks/environment-variables/">Environment Variables</a> guide.</p>
+        
         <h4 id="persist-environment-variables">Persist Environment Variables</h4>
         
+        <p>Each engine will need to determine how to persist environment variables. An <a href="/engines/common-tasks/environment-variables/">exhaustive guide</a> has been provided to address this concern.</p>
+        
         <h2 id="example">Example</h2>
+        
+        <p>coming</p>
         <div id='pagination'>
           <a class="prev" href="/engines/scripts/boxfile/">boxfile</a>
           <a class="next" href="/engines/scripts/build/">build</a>
