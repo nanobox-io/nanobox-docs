@@ -2,7 +2,7 @@
 title: Boxfile Quick Reference
 ---
 
-This doc is meant to act as a quick reference to all available base Boxfile Settings for code and data services. These settings are those made available by Pagoda Box, but [Engines](/getting-started/engines/) may make more available. Those config options made available by engines should be documented in the engine's documentation.
+This doc is meant to act as a quick reference to all available base Boxfile Settings for code and data services. These settings are those made available by Nanobox, but [Engines](/getting-started/engines/) may make more available. Those config options made available by engines should be documented in the engine's documentation.
 
 ###### Quick Links
 [Env Settings](#env-settings-in-the-boxfile)  

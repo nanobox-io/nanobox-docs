@@ -43,7 +43,7 @@ build:
 The following option allow you to control how dependencies are loaded/preserved during the build process.
 
 ### Library Directories
-The `lib_dirs` config tells Pagoda Box where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are packaged into a “library archive”, which is used on subsequent deploys.
+The `lib_dirs` config tells Nanobox where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are packaged into a “library archive”, which is used on subsequent deploys.
 
 #### lib_dirs
 ```yaml

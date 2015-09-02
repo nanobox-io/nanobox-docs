@@ -115,8 +115,8 @@ Make sure the clone url tied to the remote to which you're pushing matches the c
 #### View Your Remotes' Clone URLs
 ```shell
 $ git remote -v
-nanobox  git@git.pagodabox.io:apps/app-name.git (fetch)
-nanobox  git@git.pagodabox.io:apps/app-name.git (push)
+nanobox  git@git.nanobox.io:apps/app-name.git (fetch)
+nanobox  git@git.nanobox.io:apps/app-name.git (push)
 ```
 
 Ensure the clone url of the remote to which you're trying to push exactly matches the clone url of your app. Your app's clone URL can be found in your dashboard under Admin > App Info.

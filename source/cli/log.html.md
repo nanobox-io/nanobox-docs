@@ -7,7 +7,7 @@ The `log` command provides log output for an application. By default, it will sh
 ### Usage
 ```shell
 # Pattern
-$ pagoda log [-c] [-s] [-l]
+$ nanobox log [-c] [-s] [-l]
 
 # Example
 $ nanobox log -c 100

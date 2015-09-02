@@ -38,7 +38,7 @@ This is **bold**
 
 This is ~~strikethrough~~
 
-This is text with [an inline link](https://pagodabox.io)
+This is text with [an inline link](https://nanobox.io)
 
 1. This is the 1st item in an ordered list
 2. This is the 2nd item in an ordered list

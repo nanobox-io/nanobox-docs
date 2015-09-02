@@ -32,7 +32,7 @@ INSTALLING RUBY-2.2 ------------------------------------------------>
 ```
 NAME :: devo
 KIND :: Tinker App
-URL  :: devo.pagodabox.com
+URL  :: devo.nanobox.io
 ```
 
 #### Tasks :
