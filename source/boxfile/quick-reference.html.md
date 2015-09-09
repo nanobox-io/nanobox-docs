@@ -57,6 +57,11 @@ web1:
   # Exec
   exec: "ruby app.rb"
 
+  # Routing
+  routes:
+    - 'sub:/path/'
+    - '/admin/'
+
   # Network Storage
   network_dirs:
     nfs1:

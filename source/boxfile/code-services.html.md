@@ -21,6 +21,11 @@ web1:
 
   # Exec
   exec: "ruby app.rb"
+
+  # Routing (Webs Only)
+  routes:
+    - 'sub:/path/'
+    - '/admin/'
   
   # Network Storage
   network_dirs:
@@ -76,6 +81,45 @@ The `exec` is the command used to start your web or worker.
 worker1:
   exec: "ruby worker.rb"
 ```
+
+## Routing
+In some cases, you may want or need mutliple web services within a single application. Web service routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both. ***Routes are available only to web services***.
+
+### Syntax
+A routes can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required but a path is. The pattern as follows:
+
+`'subdomain:path'`
+
+The root domain is detected by Nanobox in both your local environent and in Nanobox Production, however Nanobox production does require you to register custom domains in your dashboard. More information is available in the [Production Using Custom Domains](/production/networking-domains/custom-domains/) doc.
+
+Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is "mydomain.com".
+
+#### routes
+```yaml
+web1:
+  routes:
+    - '/'
+# mydomain.com would route to web1
+
+web2:
+  routes:
+    - '/admin'
+# mydomain.com/admin would route to web2
+
+web3:
+  routes:
+    - 'api:/'
+# api.mydomain.com would route to web3
+
+web4:
+  routes:
+    - 'api:/auth/validate'
+# api.mydomain.com/auth/validate would route to web4
+```
+
+#### Things to Know
+- When using multiple webs, each must at least one route specified.
+- Routes must be unique to each web service.
 
 
 ## Network Directories
