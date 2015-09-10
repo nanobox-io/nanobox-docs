@@ -13,7 +13,7 @@ Anybody can build & publish engines. You may be a framework developer who wants 
 For more information on building and publishing engines, read through the detailed [Engine docs](/engines/).
 
 ### View & Search Community Engines
-All published engines can be viewed and searched on [engines.nanobox.io](http://engines.nanobox.io).
+All published engines can be viewed and searched on [engines.nanobox.io](https://engines.nanobox.io).
 
 ### Manage Your Own Engines
 To view and manage your own engines, go to your [Nanobox Dashboard](https://dashboard.nanobox.io).

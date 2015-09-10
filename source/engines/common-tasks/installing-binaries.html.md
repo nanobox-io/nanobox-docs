@@ -14,7 +14,7 @@ Nanobox uses [pkgsrc](https://www.pkgsrc.org/) for providing installable binary 
 
 ## Finding Packages
 
-A full list of packages provided by Nanobox can be found in the [Nanobox pkgsrc repository](http://pkgsrc.nanobox.io/nanobox/base/Linux/). Use this list to you find a package that your engine requires. Once found, copy the package name, and optionally the version.
+A full list of packages provided by Nanobox can be found in the [Nanobox pkgsrc repository](https://pkgsrc.nanobox.io/nanobox/base/Linux/). Use this list to you find a package that your engine requires. Once found, copy the package name, and optionally the version.
 
 For example, from the `python27-2.7.9nb1.tgz` package, you would copy `python27-2.7.9`. If the version requirements aren't strict, you can copy less and less of the package down to the name, like this: `python27`.
 
