@@ -339,7 +339,7 @@
       </div>
       <div id='content'>
         <h1>Nonpersistent Writable Directories</h1>
-        <p>Code services created through nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in <a href="/getting-started/network-storage/">network storage</a>. Nonpersistent writable directories allow you to enable writable permissions on directories in your code instances’ local filesystems. This doc explains how nonpersistent writable directories work and how they’re different from network directories.</p>
+        <p>Code services created through nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in <a href="/getting-started/network-storage/">network storage</a>. Nonpersistent writable directories allow you to enable writable permissions on directories in your code instances’ local filesystems. This doc explains how nonpersistent writable directories work and how they&#39;re different from network directories.</p>
         
         <h3 id="what-is-a-nonpersistent-writable-directory">What is a Nonpersistent Writable Directory</h3>
         
@@ -363,7 +363,7 @@
         
         <h4 id="nested-directories-will-be-ignored">Nested Directories Will Be Ignored</h4>
         
-        <p>When specifying <code>nonpersistent_writable_dirs</code> in your Boxfile, you shouldn’t list “nested” directories. For example: dirA and dirA/nested-dir. While the writable permissions are recursive, only the parent directory will be honored and the nested subdirectories will not be created.</p>
+        <p>When specifying <code>nonpersistent_writable_dirs</code> in your Boxfile, you shouldn&#39;t list “nested” directories. For example: dirA and dirA/nested-dir. While the writable permissions are recursive, only the parent directory will be honored and the nested subdirectories will not be created.</p>
         
         <h4 id="nonpersistent-writable-dirs-can-39-t-be-inside-of-network-dirs">Nonpersistent Writable Dirs Can&#39;t be Inside of Network Dirs</h4>
         
@@ -391,7 +391,7 @@
         
         <h3 id="static-asset-caching">Static Asset Caching</h3>
         
-        <p>Nonpersistent writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there’s no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.</p>
+        <p>Nonpersistent writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there is no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.</p>
         
         <h4 id="priming-caches-on-deploy">Priming Caches on Deploy</h4>
         

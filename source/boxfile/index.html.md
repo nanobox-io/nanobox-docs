@@ -66,7 +66,7 @@ postgresql1: #<--------------- Service ID
 
 #### Things to Note About yaml
 - **Yaml is very picky about indentation**. Indentation is what is used to define the relationship structure of information in your Boxfile.
-- **Tabs are not valid yaml**. All indendation should be done using double spaces.
+- **Tabs are not valid yaml**. All indentation should be done using double spaces.
 
 ## The Boxfile Can Be Used as an Infrastructure "Seed" File
 In many ways, the Boxfile acts as a "seed" file for your infrastructure. It gives you the ability to launch services and add things like environment variables and cron jobs on deploy, simply by including them in the Boxfile. On each deploy, all services and settings defined in the your Boxfile are checked against those already existing in your app. If a service or setting in your Boxfile does not already exist, it will automatically be created.

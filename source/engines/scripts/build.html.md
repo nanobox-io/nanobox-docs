@@ -26,7 +26,7 @@ The working directory is set to `$ENGINE_ROOT/bin`.
 
 #### Apply Patches
 
-At times the underlying framework may need to be modified or fixed. If, for instance, the underlying framework was designed to work only in a LAMP stack and not with distributed microservices, the framework may need a few adjustments. This can be done by replacing entire files, or just modifying a few lines. You can refer to the [Configuration Templates](/engines/common-tasks/template-generation/) doc for details on how to do this.
+At times the underlying framework may need to be modified or fixed. If, for instance, the underlying framework was designed to work only in a LAMP stack and not with distributed micro-services, the framework may need a few adjustments. This can be done by replacing entire files, or just modifying a few lines. You can refer to the [Configuration Templates](/engines/common-tasks/template-generation/) doc for details on how to do this.
 
 #### Compile or Build the Codebase
 

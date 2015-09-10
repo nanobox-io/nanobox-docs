@@ -2,7 +2,7 @@
 title: Nonpersistent Writable Directories
 ---
 
-Code services created through nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in [network storage](/getting-started/network-storage/). Nonpersistent writable directories allow you to enable writable permissions on directories in your code instances’ local filesystems. This doc explains how nonpersistent writable directories work and how they’re different from network directories.
+Code services created through nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in [network storage](/getting-started/network-storage/). Nonpersistent writable directories allow you to enable writable permissions on directories in your code instances’ local filesystems. This doc explains how nonpersistent writable directories work and how they're different from network directories.
 
 ### What is a Nonpersistent Writable Directory
 A nonpersistent writable directory is a directory stored in your instances’ local filesystem with writable permissions. Because they are stored locally in each instance, their contents do not persist when the instance is decommissioned.
@@ -27,7 +27,7 @@ web1:
 ```
 
 #### Nested Directories Will Be Ignored
-When specifying `nonpersistent_writable_dirs` in your Boxfile, you shouldn’t list “nested” directories. For example: dirA and dirA/nested-dir. While the writable permissions are recursive, only the parent directory will be honored and the nested subdirectories will not be created.
+When specifying `nonpersistent_writable_dirs` in your Boxfile, you shouldn't list “nested” directories. For example: dirA and dirA/nested-dir. While the writable permissions are recursive, only the parent directory will be honored and the nested subdirectories will not be created.
 
 #### Nonpersistent Writable Dirs Can't be Inside of Network Dirs
 When defining `nonpersistent_writable_dirs`, be sure the directory you define is not inside of a `network_dir`. All network directories are stored in a storage service and files within them cannot be saved to the local filesystem of instances.
@@ -49,7 +49,7 @@ The amount of code/data that can be stored in nonpersistent network directories 
 ## Recommended Uses
 
 ### Static Asset Caching
-Nonpersistent writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there’s no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.
+Nonpersistent writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there is no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.
 
 #### Priming Caches on Deploy
 If using a `before_deploy` or `after_deploy` hook to prime your cache on deploy, these commands will only run on one of your service’s instances. In services with more than one instance, you should use `before_deploy_all` and `after_deploy_all` hooks to run the command on all instances.

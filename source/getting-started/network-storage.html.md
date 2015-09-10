@@ -9,7 +9,7 @@ In some cases, it may be necessary to store files in your app's filesystem. In a
 In a distributed application architecture, there are multiple isolated filesystems. To ensure consistency across code services, code service filesystems are read-only. This prevents them from writing themselves out of sync, but it poses a problem in the case where an app does need to write to the filesystem.
 
 ### The Problem
-Because each code service has its own isolated filsytem, anything written to the filesystem is inaccessable to other code services.
+Because each code service has its own isolated filsystem, anything written to the filesystem is inaccessible to other code services.
 
 **For example:** An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1's filesystem is isolated, the worker would never be able to access the uploaded images.
 
@@ -21,13 +21,13 @@ Network storage services provide a centralized filesystem shared between code se
 <img alt="Network Storage Solution" src="/images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;">
 
 ## How Network Storage Works
-Network storage services provide centralized writable filesystems sharable between multiple code services. For each code service, `network_dirs` can be specified in the [Boxfile](/getting-started/boxfile). On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across the app's private network to the correpsonding path inside of the storage service. This allows code services to access files stored in network storage using the same filepaths as if in local filesystem.
+Network storage services provide centralized writable filesystems sharable between multiple code services. For each code service, `network_dirs` can be specified in the [Boxfile](/getting-started/boxfile). On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across the app's private network to the corresponding path inside of the storage service. This allows code services to access files stored in network storage using the same filepaths as if in local filesystem.
 
 <h3 id="network-mounts">Network Mounts</h3>
 Network mounts essentially replace those directories in your repo (and their contents) specified as network directories in your Boxfile. Anything inside of a network directory within your repo will not be accessible to your app until uploaded to the matching filepath inside of your storage service.
 
 ## Configuring Network Storage
-Network storage services don't require much configuration. Really the only configurable option is the `name` of the service. Storage services use the <a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">"nfs" file system protocol</a> and can be created/configured using the service ID `nfs1` (incremented up when using mulitple storage services). 
+Network storage services don't require much configuration. Really the only configurable option is the `name` of the service. Storage services use the <a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">"nfs" file system protocol</a> and can be created/configured using the service ID `nfs1` (incremented up when using multiple storage services). 
 
 #### Network Storage Service in the Boxfile
 ```yaml
@@ -58,9 +58,9 @@ nfs1:
 - If a code service includes `network_dirs` but no storage service is included in the Boxfile, a `nfs1` service will automatically be created.
 
 ### Network Directories with Multiple Storage Services
-It's possible to have multilple storage services in an app, with specific network directories stored on each. When using multiple storage services, you can specify which should be used be used by nesting the ID of the desired storage service under `network_dirs` config, then specifying the directory paths.
+It's possible to have multiple storage services in an app, with specific network directories stored on each. When using multiple storage services, you can specify which should be used be used by nesting the ID of the desired storage service under `network_dirs` config, then specifying the directory paths.
 
-#### Network Directories for Mutliple Storage Services
+#### Network Directories for Multiple Storage Services
 ```yaml
 web1:
   network_dirs:
@@ -84,4 +84,4 @@ nfs2:
 ```
 
 ## Managing Network Storage
-Network directories and their contents can be managed through an SSH connection into your storage service. More information is availble in the [Shell Access doc](/getting-started/shell-access).
+Network directories and their contents can be managed through an SSH connection into your storage service. More information is available in the [Shell Access doc](/getting-started/shell-access).

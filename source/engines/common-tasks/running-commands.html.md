@@ -15,7 +15,7 @@ run_process 'bundle install', 'bundle install --deployment'
 
 #### run_subprocess
 
-`run_subprocess` is a Nos helper function that runs a command and provides all of the styling according to the [sub task](/engines/style-guide/#sub-tasks-with-success-failure-status) styleguide. This function accepts two arguments: a title and a command. The title is used to display the header and the command is what actually runs.
+`run_subprocess` is a Nos helper function that runs a command and provides all of the styling according to the [sub task](/engines/style-guide/#sub-tasks-with-success-failure-status) style guide. This function accepts two arguments: a title and a command. The title is used to display the header and the command is what actually runs.
 
 This function also displays the command being run before the command output starts and a footer indicating a success or footer. **We recommend using this helper function for running commands**, as it provides more visibility to the application developer.
 

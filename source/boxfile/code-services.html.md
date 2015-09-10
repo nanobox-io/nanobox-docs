@@ -83,14 +83,14 @@ worker1:
 ```
 
 ## Routing
-In some cases, you may want or need mutliple web services within a single application. Web service routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both. ***Routes are available only to web services***.
+In some cases, you may want or need multiple web services within a single application. Web service routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both. ***Routes are available only to web services***.
 
 ### Syntax
-A routes can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required but a path is. The pattern as follows:
+A routes can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required, but a path is. The pattern is as follows:
 
 `'subdomain:path'`
 
-The root domain is detected by Nanobox in both your local environent and in Nanobox Production, however Nanobox production does require you to register custom domains in your dashboard. More information is available in the [Production Using Custom Domains](/production/networking-domains/custom-domains/) doc.
+The root domain is detected by Nanobox in both your local environment and in Nanobox Production, however Nanobox production does require you to register custom domains in your dashboard. More information is available in the [Production Using Custom Domains](/production/networking-domains/custom-domains/) doc.
 
 Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is "mydomain.com".
 
@@ -182,7 +182,7 @@ web1:
 ```
 
 ## Deploy Hooks
-Deploy Hooks allow you to "hook" into thedeploy process and execute scripts or commands. Each type of hook takes place during a specific stage of the deployment process.
+Deploy Hooks allow you to "hook" into the deploy process and execute scripts or commands. Each type of hook takes place during a specific stage of the deployment process.
 
 ### before_deploy
 `before_deploy` hooks run after code has been deployed to new instances, but before traffic is routed to the new instances. These are ideal for things such as migrations.

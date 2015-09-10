@@ -3,7 +3,7 @@ title: Going from Local to Production
 layout: prod
 ---
 
-Differences between development and production environments has always been a challenge when managing applications. Nanobox provides perfect pairity between local Nanobox environments and Nanobox production environments.
+Differences between development and production environments has always been a challenge when managing applications. Nanobox provides perfect parity between local Nanobox environments and Nanobox production environments.
 
 ### Infrastructure
 Both Nanobox and Nanobox Production provision infrastructures and deploy code using [engines](/getting-started/engines/) and [Boxfile](/getting-started/boxfile/) configuration options. All the information necessary to configure and provision your app's infrastructure is committed to your repo. This means that by simply deploying code developed in a local Nanobox environment to a Nanobox Production app, an identical infrastructure will be provisioned.

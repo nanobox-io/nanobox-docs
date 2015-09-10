@@ -360,9 +360,9 @@
         
         <p>A short, one sentence summary of the engine.</p>
         
-        <h4 id="description">description</h4>
+        <h4 id="language">language</h4>
         
-        <p>A detailed, possibly multi-line description of the engine.</p>
+        <p>The runtime language supported by the engine. Available options can be found on <a href="https://engines.nanobox.com">engines.nanobox.io</a>. Languages are used to categorize engines.</p>
         
         <h4 id="stability">stability</h4>
         
@@ -372,18 +372,16 @@
         
         <p>License applied to this software. Value can be a title, link, or the actual license.</p>
         
+        <h4 id="generic">generic</h4>
+        
+        <p>True/false value that specifies whether or not an engine is &quot;generic&quot;. Some engines provide a basic runtime with flexible configuration options that can be used to run almost any app written in the supported language. This type of engine would be considered generic. Other engines are framework-specific. By default, this is set to false, assuming the engine is specific to a framework.</p>
+        
         <h4 id="authors">authors</h4>
         
         <p>A list of authors and contributors to the engine project.</p>
         
-        <h2 id="release-content">Release Content</h2>
-        
-        <p>When a release is generated, the files to pack within the release need to be explicitly declared. This allows the actual release to be as minimal as possibly, enabling quicker deployments.</p>
-        
-        <p>Files and paths are declared in the <code>project_files</code> node.</p>
-        
         <h2 id="example-enginefile">Example Enginefile</h2>
-        <pre class="highlight yaml"><code><span class="s">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">magento'</span>&#x000A;<span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>&#x000A;<span class="s">summary</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Nanobox</span><span class="nv"> </span><span class="s">engine</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Magento</span><span class="nv"> </span><span class="s">deployments'</span>&#x000A;<span class="s">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Automated</span><span class="nv"> </span><span class="s">Magento</span><span class="nv"> </span><span class="s">deployment</span><span class="nv"> </span><span class="s">via</span><span class="nv"> </span><span class="s">Nanobox.</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">engine</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">provision</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">database,</span><span class="nv"> </span><span class="s">run</span><span class="nv"> </span><span class="s">database</span><span class="nv"> </span><span class="s">migrations,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">configure</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Magento</span><span class="nv"> </span><span class="s">codebase</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">connect</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">database.</span><span class="nv"> </span><span class="s">In</span><span class="nv"> </span><span class="s">addition,</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">engine</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">simulate</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">process.'</span>&#x000A;<span class="s">stability</span><span class="pi">:</span> <span class="s1">'</span><span class="s">stable'</span>&#x000A;<span class="s">license</span><span class="pi">:</span> <span class="s1">'</span><span class="s">MIT'</span>&#x000A;<span class="s">readme</span><span class="pi">:</span> <span class="s1">'</span><span class="s">README.md'</span>&#x000A;&#x000A;<span class="s">authors</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">tyler@nanobox.io</span>&#x000A;&#x000A;<span class="s">release_content</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">bin/*</span>&#x000A;  <span class="pi">-</span> <span class="s">templates/*</span>&#x000A;  <span class="pi">-</span> <span class="s">files/*</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">magento'</span>&#x000A;<span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>&#x000A;<span class="s">summary</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Nanobox</span><span class="nv"> </span><span class="s">engine</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Magento</span><span class="nv"> </span><span class="s">deployments'</span>&#x000A;<span class="s">language</span><span class="pi">:</span> <span class="s">php</span>&#x000A;<span class="s">stability</span><span class="pi">:</span> <span class="s1">'</span><span class="s">stable'</span>&#x000A;<span class="s">license</span><span class="pi">:</span> <span class="s1">'</span><span class="s">MIT'</span>&#x000A;<span class="s">generic</span><span class="pi">:</span> <span class="s">false</span>&#x000A;&#x000A;<span class="s">authors</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">tyler@nanobox.io</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/project-creation/">Project Creation</a>
           <a class="next" href="/engines/readme/">Readme</a>

@@ -38,7 +38,7 @@ For each file to which an application logs, you should configure a "log watch". 
 
 #### Cached Libraries
 
-Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you **can** manage this yourself in the [prepare](/engines/scripts/prepare/) script, Nanobox provides a shortcut for this common scenario: the `lib_dirs` property within the build section of the Boxfile. More detailed information can be found in [Dependency Managment Section of the Boxfile build](/boxfile/build#dependency-management) doc.
+Many languages and frameworks depend on external libraries or dependencies. The process of fetching, resolving, and building dependencies can take some time. To reduce this overhead between subsequent deploys, these directories can be cached and re-used between deploys. While you **can** manage this yourself in the [prepare](/engines/scripts/prepare/) script, Nanobox provides a shortcut for this common scenario: the `lib_dirs` property within the build section of the Boxfile. More detailed information can be found in [Dependency Management Section of the Boxfile build](/boxfile/build#dependency-management) doc.
 
 ## Examples
 

@@ -127,7 +127,7 @@ redis1:
 ```
 
 ### Stop Writes on BGSave Error
-By default Redis will stop accepting writes if RDB snapshots are enabled (at least one save point) and the latest background save failed. This will make the user aware (in an hard way) that data is not persisting on disk properly, otherwise chances are that no one will notice and some distater will happen.
+By default Redis will stop accepting writes if RDB snapshots are enabled (at least one save point) and the latest background save failed. This will make the user aware (in an hard way) that data is not persisting on disk properly, otherwise chances are that no one will notice and some disaster will happen.
 
 If the background saving process will start working again Redis will automatically allow writes again.
 
@@ -429,7 +429,7 @@ redis1:
 ```
 
 ### Redis "hz"
-Redis calls an internal function to perform many background tasks, like closing connections of clients in timeot, purging expired keys that are never requested, and so forth. Not all tasks are perforemd with the same frequency, but Redis checks for tasks to perform accordingly to the specified "hz" value.
+Redis calls an internal function to perform many background tasks, like closing connections of clients in timeout, purging expired keys that are never requested, and so forth. Not all tasks are performed with the same frequency, but Redis checks for tasks to perform accordingly to the specified "hz" value.
 
 By default "hz" is set to 10. Raising the value will use more CPU when Redis is idle, but at the same time will make Redis more responsive when there are many keys expiring at the same time, and timeouts may be handled with more precision.
 

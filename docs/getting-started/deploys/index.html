@@ -347,7 +347,7 @@
         
         <h3 id="build">Build</h3>
         
-        <p>In the build phase of the deploy process, nanobox loads your code&#39;s runtime environment based on settings specified in the generated Boxfile, then prepares your code for deploy. This includes loading project dependenecies, code modifaction specified by the engine, etc. The build is where engines really apply their magic.</p>
+        <p>In the build phase of the deploy process, nanobox loads your code&#39;s runtime environment based on settings specified in the generated Boxfile, then prepares your code for deploy. This includes loading project dependencies, code modification specified by the engine, etc. The build is where engines really apply their magic.</p>
         
         <h3 id="cleanup-amp-package">Cleanup &amp; Package</h3>
         
@@ -355,7 +355,7 @@
         
         <h3 id="provision-services">Provision Services</h3>
         
-        <p>Nanobox then provisions all services included in the generated Boxfile with their specified configuration options. On the first deploy, all code and data services are provisioned. On susequent deploys, only data services (databases, caches, storage, etc.) that are new in the Boxfile are provisioned. All existing data services are unnaffected by deploys once provisioned, unless a configuration change for the data service is detected in the Boxfile. In this case, a new data service is provisioned with the updated configuration and replaces the existing service.</p>
+        <p>Nanobox then provisions all services included in the generated Boxfile with their specified configuration options. On the first deploy, all code and data services are provisioned. On subsequent deploys, only data services (databases, caches, storage, etc.) that are new in the Boxfile are provisioned. All existing data services are unaffected by deploys once provisioned, unless a configuration change for the data service is detected in the Boxfile. In this case, a new data service is provisioned with the updated configuration and replaces the existing service.</p>
         
         <p><strong>Note:</strong> When a new data service is provisioned, all data is wiped, so you&#39;ll either need to re-seed or re-import the data.</p>
         

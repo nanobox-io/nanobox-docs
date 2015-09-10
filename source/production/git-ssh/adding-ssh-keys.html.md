@@ -9,7 +9,7 @@ To add your SSH key to your Nanobox account, go to your user account page by cli
 
 ![Add New SSH Key](/images/ssh-keys-add-key.png)
 
-Go ahead and name your key. The name is abitrary and is meant to help you identify keys in a list of multiple keys.
+Go ahead and name your key. The name is arbitrary and is meant to help you identify keys in a list of multiple keys.
 
 ![Paste in Key](/images/ssh-keys-add-key-paste.png)
 

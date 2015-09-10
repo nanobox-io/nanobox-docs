@@ -4,7 +4,7 @@ title: Log Output Style Guide
 
 ## General Items of note:
 
-- Log output should be clear, conscise and helpful
+- Log output should be clear, concise and helpful
 - Header/meta item line length is 70 columns (characters)
 - Avoid ambiguous / unhelpful logs
 - Include context when necessary
@@ -21,7 +21,7 @@ title: Log Output Style Guide
 
 INSTALLING RUBY-2.2 ------------------------------------------------>
   Child process Initiated XYZ123
-  begining database introspection..
+  beginning database introspection..
   Complete, exiting..
 
 ```

@@ -48,7 +48,7 @@ The etc directory houses application configuration files. Special nginx, apache,
 
 #### env
 
-The env directory contains environment variables available to the application in the live environment. Environment variables are represented as a file, which is the key, and the file contents, which is the value. Only environment variables stored in this manner in this location will be available to the running application. More information is avaiable in the [Environment Variables](/engines/common-tasks/environment-variables/) doc.
+The env directory contains environment variables available to the application in the live environment. Environment variables are represented as a file, which is the key, and the file contents, which is the value. Only environment variables stored in this manner in this location will be available to the running application. More information is available in the [Environment Variables](/engines/common-tasks/environment-variables/) doc.
 
 ## Directory Locations
 

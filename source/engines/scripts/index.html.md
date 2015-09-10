@@ -58,12 +58,14 @@ The JSON payload provided as the first argument to the script contains the follo
 
 - **dns** : A list of dns aliases associated with the app. May be used to generate webserver configurations.
 
-- **port** : The tcp port to which the app should bind in order to recieve traffic from the load balancer.
+- **port** : The tcp port to which the app should bind in order to receive traffic from the load balancer.
 
 - **boxfile** : The build section of the Boxfile provided by the application.
 
 - **platform** : "local" or "production". Can be used to conditionally tailor the deploy for the specified platform.
 
-## Common Tasks and Workflow
+- **newrelic_key** : When deploying to Nanobox Production, users are able to provide their New Relic License Key in their dashboard. This key is required for the New Relic agent to function. `newrelic_key` is the user-provided license key.
+
+## Common Tasks & Workflow
 
 How to use the data from the payload above, as well as common scenarios and workflows are addressed in full in the [Common Tasks](/engines/common-tasks/) docs.

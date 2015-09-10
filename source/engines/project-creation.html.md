@@ -58,4 +58,4 @@ The Engine file is a yaml file which defines the engine. More information can be
 
 #### README.md
 
-A markdown file that contains the content that will utlimately appear on the engine's page at nanobox.io. It should contain documentation on what the engine does, configuration options, etc. **Required to publish an engine.**
+A markdown file that contains the content that will ultimately appear on the engine's page at nanobox.io. It should contain documentation on what the engine does, configuration options, etc. **Required to publish an engine.**

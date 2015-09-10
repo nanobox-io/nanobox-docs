@@ -347,7 +347,7 @@
         
         <h3 id="the-problem">The Problem</h3>
         
-        <p>Because each code service has its own isolated filsytem, anything written to the filesystem is inaccessable to other code services.</p>
+        <p>Because each code service has its own isolated filsystem, anything written to the filesystem is inaccessible to other code services.</p>
         
         <p><strong>For example:</strong> An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1&#39;s filesystem is isolated, the worker would never be able to access the uploaded images.</p>
         
@@ -361,7 +361,7 @@
         
         <h2 id="how-network-storage-works">How Network Storage Works</h2>
         
-        <p>Network storage services provide centralized writable filesystems sharable between multiple code services. For each code service, <code>network_dirs</code> can be specified in the <a href="/getting-started/boxfile">Boxfile</a>. On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across the app&#39;s private network to the correpsonding path inside of the storage service. This allows code services to access files stored in network storage using the same filepaths as if in local filesystem.</p>
+        <p>Network storage services provide centralized writable filesystems sharable between multiple code services. For each code service, <code>network_dirs</code> can be specified in the <a href="/getting-started/boxfile">Boxfile</a>. On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across the app&#39;s private network to the corresponding path inside of the storage service. This allows code services to access files stored in network storage using the same filepaths as if in local filesystem.</p>
         
         <h3 id="network-mounts">Network Mounts</h3>
         
@@ -369,7 +369,7 @@
         
         <h2 id="configuring-network-storage">Configuring Network Storage</h2>
         
-        <p>Network storage services don&#39;t require much configuration. Really the only configurable option is the <code>name</code> of the service. Storage services use the <a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">&quot;nfs&quot; file system protocol</a> and can be created/configured using the service ID <code>nfs1</code> (incremented up when using mulitple storage services). </p>
+        <p>Network storage services don&#39;t require much configuration. Really the only configurable option is the <code>name</code> of the service. Storage services use the <a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">&quot;nfs&quot; file system protocol</a> and can be created/configured using the service ID <code>nfs1</code> (incremented up when using multiple storage services). </p>
         
         <h4 id="network-storage-service-in-the-boxfile">Network Storage Service in the Boxfile</h4>
         <pre class="highlight yaml"><code><span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">file-storage</span>&#x000A;</code></pre>
@@ -391,14 +391,14 @@
         
         <h3 id="network-directories-with-multiple-storage-services">Network Directories with Multiple Storage Services</h3>
         
-        <p>It&#39;s possible to have multilple storage services in an app, with specific network directories stored on each. When using multiple storage services, you can specify which should be used be used by nesting the ID of the desired storage service under <code>network_dirs</code> config, then specifying the directory paths.</p>
+        <p>It&#39;s possible to have multiple storage services in an app, with specific network directories stored on each. When using multiple storage services, you can specify which should be used be used by nesting the ID of the desired storage service under <code>network_dirs</code> config, then specifying the directory paths.</p>
         
-        <h4 id="network-directories-for-mutliple-storage-services">Network Directories for Mutliple Storage Services</h4>
+        <h4 id="network-directories-for-multiple-storage-services">Network Directories for Multiple Storage Services</h4>
         <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">nfs1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/uploads</span>&#x000A;    <span class="s">nfs2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/processed</span>&#x000A;&#x000A;<span class="s">worker1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">nfs1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/uploads</span>&#x000A;    <span class="s">nfs2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">public/processed</span>&#x000A;&#x000A;<span class="s">nfs1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">queued_images</span>&#x000A;&#x000A;<span class="s">nfs2</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">processed_images</span>&#x000A;</code></pre>
         
         <h2 id="managing-network-storage">Managing Network Storage</h2>
         
-        <p>Network directories and their contents can be managed through an SSH connection into your storage service. More information is availble in the <a href="/getting-started/shell-access">Shell Access doc</a>.</p>
+        <p>Network directories and their contents can be managed through an SSH connection into your storage service. More information is available in the <a href="/getting-started/shell-access">Shell Access doc</a>.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/tunneling/">Tunneling</a>
           <a class="next" href="/getting-started/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>

@@ -386,12 +386,13 @@
         <li><p><strong>app</strong> : The name of the app.</p></li>
         <li><p><strong>env</strong> : A list of key/value pairs representing environment variables available to the build or production environment. For more information, see <a href="/engines/common-tasks/environment-variables/">here</a>.</p></li>
         <li><p><strong>dns</strong> : A list of dns aliases associated with the app. May be used to generate webserver configurations.</p></li>
-        <li><p><strong>port</strong> : The tcp port to which the app should bind in order to recieve traffic from the load balancer.</p></li>
+        <li><p><strong>port</strong> : The tcp port to which the app should bind in order to receive traffic from the load balancer.</p></li>
         <li><p><strong>boxfile</strong> : The build section of the Boxfile provided by the application.</p></li>
         <li><p><strong>platform</strong> : &quot;local&quot; or &quot;production&quot;. Can be used to conditionally tailor the deploy for the specified platform.</p></li>
+        <li><p><strong>newrelic_key</strong> : When deploying to Nanobox Production, users are able to provide their New Relic License Key in their dashboard. This key is required for the New Relic agent to function. <code>newrelic_key</code> is the user-provided license key.</p></li>
         </ul>
         
-        <h2 id="common-tasks-and-workflow">Common Tasks and Workflow</h2>
+        <h2 id="common-tasks-amp-workflow">Common Tasks &amp; Workflow</h2>
         
         <p>How to use the data from the payload above, as well as common scenarios and workflows are addressed in full in the <a href="/engines/common-tasks/">Common Tasks</a> docs.</p>
         <div id='pagination'>

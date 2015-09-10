@@ -21,9 +21,9 @@ The current release version. This should follow the [semver](http://semver.org/)
 
 A short, one sentence summary of the engine.
 
-#### description
+#### language
 
-A detailed, possibly multi-line description of the engine.
+The runtime language supported by the engine. Available options can be found on [engines.nanobox.io](https://engines.nanobox.com). Languages are used to categorize engines.
 
 #### stability
 
@@ -33,15 +33,13 @@ The current stability of the engine. The value can be either **alpha, beta, or s
 
 License applied to this software. Value can be a title, link, or the actual license.
 
+#### generic
+
+True/false value that specifies whether or not an engine is "generic". Some engines provide a basic runtime with flexible configuration options that can be used to run almost any app written in the supported language. This type of engine would be considered generic. Other engines are framework-specific. By default, this is set to false, assuming the engine is specific to a framework.
+
 #### authors
 
 A list of authors and contributors to the engine project.
-
-## Release Content
-
-When a release is generated, the files to pack within the release need to be explicitly declared. This allows the actual release to be as minimal as possibly, enabling quicker deployments.
-
-Files and paths are declared in the `project_files` node.
 
 ## Example Enginefile
 
@@ -49,16 +47,11 @@ Files and paths are declared in the `project_files` node.
 name: 'magento'
 version: '0.1.0'
 summary: 'Nanobox engine for Magento deployments'
-description: 'Automated Magento deployment via Nanobox. This engine will provision the database, run database migrations, and configure the Magento codebase to connect to the database. In addition, this engine will simulate the install process.'
+language: php
 stability: 'stable'
 license: 'MIT'
-readme: 'README.md'
+generic: false
 
 authors:
   - tyler@nanobox.io
-
-release_content:
-  - bin/*
-  - templates/*
-  - files/*
 ```
