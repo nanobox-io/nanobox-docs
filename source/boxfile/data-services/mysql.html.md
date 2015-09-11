@@ -67,7 +67,7 @@ mysql1:
 [mysql\_event\_scheduler](#mysql-event-scheduler)  
 [mysql\_max\_connections](#mysql-max-connections)  
 [mysql\_thread\_stack](#mysql-thread-stack)  
-[mysql\_myisam\_recover](#mysql-myisam-recover)  
+[mysql\_myisam\_recover](#myisam-recover)  
 [mysql\_max\_allowed\_packet](#mysql-max-allowed-packet)  
 [mysql\_max\_join\_size](#mysql-max-join-size)  
 [mysql\_table\_open\_cache](#mysql-table-open-cache)  
