@@ -75,6 +75,17 @@ $(function(){
 })
 
 
+/////// REPLACE MISSING IMAGES WITH PLACEHOLDER ///////
+
+$(function(){
+  $('img').attr('onerror', 'this.src="/images/image-coming.png"');
+});
+
+
+
+
+
+
 $(document).ready(function() {
 
   ////////////// ADD LINKS TO ALL HEADINGS //////////////
