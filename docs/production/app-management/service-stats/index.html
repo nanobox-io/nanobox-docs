@@ -12,7 +12,7 @@
       Service Stats - Nanobox Production Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-efd95ca1.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-76fd4e43.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
@@ -219,7 +219,45 @@
       </div>
       <div id='content'>
         <h1>Service Stats</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>With any production application, visibility into your servers&#39; resource usage is incredibly important. They help to identify any possible bottlenecks and/or are a good indicator of what and when to scale. Service resource usage statistics are provided in your Nanobox dashboard.</p>
+        
+        <h3 id="monitored-server-resources">Monitored Server Resources</h3>
+        
+        <p>To provide visibility into the health of your app&#39;s services, <a href="/production/getting-started/nanoagent">NanoAgent</a> collects RAM, CPU, &amp; Disk usage from all services.</p>
+        
+        <h4 id="ram">RAM</h4>
+        
+        <p>The RAM statistic indicates how much of the allotted RAM a service is using. The higher the RAM usage, the more likely your service is to become unresponsive. <em>In multi-instance services, this is an average of RAM usage across all instances in the cluster.</em></p>
+        
+        <h4 id="cpu">CPU</h4>
+        
+        <p>The CPU statistic indicates how much of the available CPU a service is using. CPU provides speed and responsiveness. The higher the CPU usage, the more likely your service is to become slow or completely unresponsive. <em>In multi-instance services, this is an average of CPU usage across all instances in the cluster.</em></p>
+        
+        <h4 id="disk">Disk</h4>
+        
+        <p>The Disk statistic represents how much of your service&#39;s allotted disk space is being used. If your service ever runs out of disk space, it will not function properly. <em>In multi-instance services, this is an average of Disk usage across all instances in the cluster.</em></p>
+        
+        <h3 id="single-node-apps-vs-multi-node-apps">Single-Node Apps vs Multi-Node Apps</h3>
+        
+        <p>In single-node applications, all services run on a single VM shown as a single &quot;service&quot; in your dashboard. Services share resources.</p>
+        
+        <p>In multi-node apps, every service is its own virtual machine or cluster, each with their own server resources. The stats provided in your dashboard are an average of usage across all instances within a service cluster.</p>
+        
+        <p>For more information about the differences between single-node and multi-node apps, view the <a href="/production/scaling/single-vs-multi-node">Single-Node &amp; Multi-Node Apps</a>.</p>
+        
+        <h3 id="summary-view">Summary View</h3>
+        
+        <p>On your app&#39;s dashboard home page, a summary of both hourly historical stats and each services&#39; current resource usage are provided.</p>
+        
+        <p><img alt="Service Resource Usage Summary" src="/images/service-stats-summary.png" /></p>
+        
+        <h3 id="expanded-view">Expanded View</h3>
+        
+        <p>By clicking on the service to expand its options, you&#39;ll see more detailed historical hourly averages.</p>
+        
+        <p><img alt="Expanded Service Resource Usage" src="/images/service-stats-expanded.png" /></p>
+        
+        <p><strong>Note:</strong> Historical averages are provided in hourly blocks. In some cases, a breif period of high resource usage may be lost in the hourly average.</p>
         <div id='pagination'>
           <a class="prev" href="/production/app-management/">App Management</a>
           <a class="next" href="/production/app-management/cron-jobs/">Cron Jobs</a>

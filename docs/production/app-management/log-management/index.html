@@ -12,7 +12,7 @@
       Log Management - Nanobox Production Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-efd95ca1.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-76fd4e43.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
@@ -219,7 +219,41 @@
       </div>
       <div id='content'>
         <h1>Log Management</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>When using Nanobox Production, application logs are available both in your dashboard and from the <a href="/production/cli/">production CLI</a>.</p>
+        
+        <h2 id="unified-log-stream">Unified Log Stream</h2>
+        
+        <p>Just as in Nanobox local, all application logs are aggregated and streamed in a unified log stream. This allows all logs to be viewed in one place. Everything output to stdout and stderr as well as &quot;log_watch&#39;d&quot; files are included in the log stream. For more information read through the <a href="/getting-started/logs/">Logs doc</a>.</p>
+        
+        <h2 id="viewing-logs-in-your-dashboard">Viewing Logs in Your Dashboard</h2>
+        
+        <p>Logs can be accessed in your app dashboard under the &quot;Logs&quot; tab. There are three types of available logs:</p>
+        
+        <ul>
+        <li>Streaming</li>
+        <li>Historical</li>
+        <li>Deploy Logs</li>
+        </ul>
+        
+        <p><img alt="Dashboard Logs" src="/images/log-management-dashboard.png" /></p>
+        
+        <h3 id="streaming-logs">Streaming Logs</h3>
+        
+        <p>Streaming logs display your app&#39;s live log stream. These allow you to see errors in your application as they happen. Each log entry is timestamped and flagged with the service-id and specific log from which it came.</p>
+        
+        <p>With Streaming logs, only logs entries written after the stream is started are viewable. Any log entries written prior can be viewed in Historical logs.</p>
+        
+        <h3 id="historical-logs">Historical Logs</h3>
+        
+        <p>Historical logs contain all of your app&#39;s stored log entries. Each log entry is timestamped and flagged with the service-id and specific log from which it came. When viewing historical logs, the entries are loaded 100 at a time. To load more, click the &quot;View More&quot; button and the next 100 entries will be loaded.</p>
+        
+        <h3 id="deploy-logs">Deploy Logs</h3>
+        
+        <p>Deploy logs are output streams of your app&#39;s deploys and builds. They&#39;re helpful when troubleshooting failed deploys and builds.</p>
+        
+        <h2 id="viewing-logs-through-the-cli">Viewing Logs Through the CLI</h2>
+        
+        <p>To view the production logs through the CLI, use the the <code>nanobox production log</code> command. More information is avaialble in the <a href="/production/cli/log">Production CLI log</a> doc.</p>
         <div id='pagination'>
           <a class="prev" href="/production/app-management/cron-jobs/">Cron Jobs</a>
           <a class="next" href="/production/app-management/deploy-history/">Deploy History</a>

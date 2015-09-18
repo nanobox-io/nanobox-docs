@@ -12,7 +12,7 @@
       Cron Jobs - Nanobox Production Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-efd95ca1.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-76fd4e43.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
@@ -219,7 +219,92 @@
       </div>
       <div id='content'>
         <h1>Cron Jobs</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>Cron Jobs allow you to create schuduled tasks for your Nanobox application. They are commonly used to automate system maintenance or administration, but can also be used for many other things.</p>
+        
+        <h2 id="how-cron-jobs-work">How Cron Jobs Work</h2>
+        
+        <p>Whenever you add a cron job to your application, the job is loaded into the <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?crontab+5">Crontab (Cron Table)</a> of an instance within the service to which the cron job is assigned. For multi-instance services, only one instance will have the job added to its crontab. This prevents the job from running on all instances at the same time.</p>
+        
+        <h2 id="creating-a-cron-job">Creating a Cron Job</h2>
+        
+        <p>Cron Jobs can be created in both your App Dashboard and your Boxfile.</p>
+        
+        <h3 id="through-the-dashboard">Through the Dashboard</h3>
+        
+        <p>To add a cron job in the Dashboard, go to Cron Jobs under your Dev Config tab and click &quot;New Cron Job.&quot;</p>
+        
+        <p><img alt="Adding a Cron Job in the Dashboard" src="/images/cron-jobs-dashboard.png" /></p>
+        
+        <p>The settings for the cron job are covered in detail <a href="#cron-job-configuration">below</a>.</p>
+        
+        <h3 id="in-the-boxfile">In the Boxfile</h3>
+        
+        <p>To configure a cron job using the Boxfile, nest a cron job under the service on which it will run. Include both the <a href="#schedule">cron schedule</a> and the <a href="#command">cron command</a>.</p>
+        
+        <h4 id="cron-jobs-in-the-boxfile">Cron Jobs in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="s">web1</span><span class="pi">:</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="c1"># Pattern</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">schedule'</span><span class="pi">:</span> <span class="s1">'</span><span class="s">command'</span>&#x000A;&#x000A;    <span class="c1"># Examples</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*'</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2'</span><span class="pi">:</span> <span class="s1">'</span><span class="s">sh</span><span class="nv"> </span><span class="s">cron/script.sh'</span>&#x000A;</code></pre>
+        
+        <p>On your next deploy, your cron job(s) will be created.</p>
+        
+        <p><strong>Note:</strong> When you remove a Cron Job from your Boxfile, it will not remove the Cron Job from your production application. Cron jobs can only be removed from production applications in your dashboard. Also, if you make an edit to a Cron Job in your Boxfile, it will not edit the existing job, but create a new Cron Job instead. You will need to delete the previous version of your job in your App Dashboard.</p>
+        
+        <h2 id="cron-job-configuration">Cron Job Configuration</h2>
+        
+        <p>Cron jobs are really simple to configure, but there are some things you should know. With each cron, there are 4 main configuration settings:</p>
+        
+        <h3 id="command">Command</h3>
+        
+        <p>The command is script or process that runs when the cron job fires. Be sure to include the executable in your command or make sure there&#39;s a <a href="http://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> in your script. Filepaths used in commands should be relative to the root of your project.</p>
+        
+        <h3 id="schedule">Schedule</h3>
+        
+        <p>The schedule defines when and how often your cron job should run. Use <a href="http://en.wikipedia.org/wiki/Cron#Predefined_scheduling_definitions">Cron Expressions</a> to define the schedule. Below are some simple examples:</p>
+        
+        <table><thead>
+        <tr>
+        <th style="text-align: left">Interval</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: left">Schedule</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td style="text-align: left">Yearly</td>
+        <td style="text-align: left">Run once a year, midnight, Jan. 1st</td>
+        <td style="text-align: left"><code>0 0 1 1 *</code></td>
+        </tr>
+        <tr>
+        <td style="text-align: left">Monthly</td>
+        <td style="text-align: left">Run once a month, midnight, first of month</td>
+        <td style="text-align: left"><code>0 0 1 * *</code></td>
+        </tr>
+        <tr>
+        <td style="text-align: left">Weekly</td>
+        <td style="text-align: left">Run once a week, midnight on Sunday</td>
+        <td style="text-align: left"><code>0 0 * * 0</code></td>
+        </tr>
+        <tr>
+        <td style="text-align: left">Daily</td>
+        <td style="text-align: left">Run once a day, midnight</td>
+        <td style="text-align: left"><code>0 0 * * *</code></td>
+        </tr>
+        <tr>
+        <td style="text-align: left">Hourly</td>
+        <td style="text-align: left">Run once an hour, beginning of hour</td>
+        <td style="text-align: left"><code>0 * * * *</code></td>
+        </tr>
+        </tbody></table>
+        
+        <p><strong>Note:</strong> Predefined Scheduling Definitions(e.g. @daily, @hourly, etc.) are not available on Nanobox. All schedules must be numeric.</p>
+        
+        <h3 id="service">Service</h3>
+        
+        <p>The Service defines on which of your app&#39;s services the cron job will run. If adding a cron job in the Boxfile, the service under which the cron job is nested is used. When adding a cron job in your dashboard, if your app has more than one code service, you&#39;ll have the option to select which service to use.</p>
+        
+        <h3 id="output-emails">Output Emails</h3>
+        
+        <p>This is pretty self-explanatory. Nanobox allows you to specify email addresses to notify when your Cron Job runs. The email includes the actual output of the script or command. You can specify these email addresses in your App Dashboard when creating a new Cron Job or editing an existing job. Adding notification email addresses cannot be done in the Boxfile.</p>
+        
+        <p>Cron output emails are sent through the SMTP provider you provide in your dashboard. In order to have the output of your cron jobs emailed to you, you must first <a href="/production/app-management/mail">configure SMTP credentials in your dashboard</a>.</p>
         <div id='pagination'>
           <a class="prev" href="/production/app-management/service-stats/">Service Stats</a>
           <a class="next" href="/production/app-management/log-management/">Log Management</a>

@@ -12,7 +12,7 @@
       deploy - Nanobox Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-efd95ca1.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-76fd4e43.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-fb268229.js" type="text/javascript"></script>
   </head>
   <body>
@@ -341,7 +341,7 @@
         <h1>deploy</h1>
         <p>The <code>deploy</code> command issues a deploy to your nanobox. Deploys provision an apps infrastructure and apply changes made to your Boxfile.</p>
         
-        <p><em>If simply making changes to application code, you don&#39;t need to issue a full deploy. A</em> <a href="/cli/build/"><code>build</code></a> <em>will apply your code changes.</em></p>
+        <p><em>If simply making changes to application code, you don&#39;t need to issue a full deploy. A</em> <a href="/cli/build/"><code>build</code></a> <em>will apply your code changes. Changes to your Boxfile config will only apply after a new</em> <code>deploy</code>.</p>
         
         <h3 id="usage">Usage</h3>
         <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;nanobox deploy <span class="o">[</span>-v] <span class="o">[</span>-r] <span class="o">[</span>-s]&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox deploy&#x000A;<span class="gp">$ </span>nanobox deploy -v&#x000A;<span class="gp">$ </span>nanobox deploy -r&#x000A;<span class="gp">$ </span>nanobox deploy --sandbox&#x000A;</code></pre>
