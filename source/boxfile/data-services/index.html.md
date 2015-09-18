@@ -4,14 +4,14 @@ title: Data Services
 
 Data services house your application data. There following data services are currently available, each with their own configuration options.
 
-- MySQL - `mysql`
-- Percona - `percona`
-- MariaDB - `mariadb`
-- PostgreSQL - `postgresql`
-- MongoDB - `mongodb`
-- Redis - `redis`
-- Memcached - `memcached`
-- Network File System (NFS) - `nfs`
+- MySQL - `mysql#`
+- Percona - `percona#`
+- MariaDB - `mariadb#`
+- PostgreSQL - `postgresql#`
+- MongoDB - `mongodb#`
+- Redis - `redis#`
+- Memcached - `memcached#`
+- Network File System (NFS) - `nfs#`
 
 ## Type
 The type of data service is defined by the ID used in the Boxfile. For example, to create a PostgreSQL database, you'd add a `postgresql1` service to your Boxfile.

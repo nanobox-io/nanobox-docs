@@ -9,7 +9,11 @@ To view all of the tunnels available for your running VM as well as the necessar
 ```shell
 $ nanobox tunnel
 
-# Output is currently being refactored
+Service                 | Username, Password     | Ports
+----------------------------------------------------------------------
+postgresql1             | nanobox, password      | [5432             ]
+mysql1                  | nanobox, password      | [3306             ]
+redis1                  | ,                      | [6379             ]
 ```
 
 ### Connecting to a Service Through a Tunnel
@@ -19,7 +23,11 @@ Simply use the credentials provided in the tunnel output to connect to your serv
 ```shell
 $ nanobox tunnel
 
-# Output is currently being refactored
+Service                 | Username, Password     | Ports
+----------------------------------------------------------------------
+postgresql1             | nanobox, password      | [5432             ]
+mysql1                  | nanobox, password      | [3306             ]
+redis1                  | ,                      | [6379             ]
 
 $ redis-cli -h appname.nano.dev -p 6379
 appname.nano.dev:6379>

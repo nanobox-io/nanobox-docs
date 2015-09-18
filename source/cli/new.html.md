@@ -11,3 +11,4 @@ $ nanobox new <name>
 
 # Example
 $ nanobox new my-project
+```

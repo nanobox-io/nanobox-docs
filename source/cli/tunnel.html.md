@@ -6,5 +6,11 @@ The `tunnel`command displays port forward information for your app's running ser
 
 ### Usage
 ```shell
-nanobox tunnel
+$ nanobox tunnel
+
+Service                 | Username, Password     | Ports
+----------------------------------------------------------------------
+postgresql1             | nanobox, password      | [5432             ]
+mysql1                  | nanobox, password      | [3306             ]
+redis1                  | ,                      | [6379             ]
 ```

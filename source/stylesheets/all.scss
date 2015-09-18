@@ -141,7 +141,7 @@ a                       { @include transition(all .15s); }
   blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-3;
     p                   { font-size: 1.25em; font-style: italic; line-height: 1.5em; }
   }
-  table                 { width: 100%; 
+  table                 { width: 100%; margin-bottom: 2em; 
     thead               { background: $gblue-0; }
     th                  { padding: 10px; border: 1px solid $gblue-2; color: $bgreen-0; }
     td                  { padding: 10px; border: 1px solid $gblue-2; }
@@ -153,7 +153,7 @@ a                       { @include transition(all .15s); }
         }
        }
     }
-    a code              { border: none !important;  }
+    code                { border: none !important; font-size: .95em; }
   }
   #pagination           { padding: 3.5em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $gblue-2; }
   ul#os-tabs            { margin: 2.5em 0; padding: 0; list-style: none; font-style: italic;
