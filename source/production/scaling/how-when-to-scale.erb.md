@@ -89,9 +89,9 @@ If you know a service is under load, it's important to understand the nature and
 - Resource-intensive requests or queries
 - Large amounts of data being stored in RAM or written to disk
 
-For code services, highly concurrent requests are best addressed by [scaling horizontally](). Adding instances to your service increases a code service's ability to handle concurrent requests. If a web or worker is running a resource-intensive process, then scaling vertically is the best way to address performance issues.
+For code services, highly concurrent requests are best addressed by [scaling horizontally](#horizontal-scaling). Adding instances to your service increases a code service's ability to handle concurrent requests. If a web or worker is running a resource-intensive process, then scaling vertically is the best way to address performance issues.
 
-The primary means for relieving stress on database services (with a few exceptions) is [scaling vertically](). Adding more resources to a database will address all 3 of the major causes of stress.
+The primary means for relieving stress on database services (with a few exceptions) is [scaling vertically](#vertical-scaling). Adding more resources to a database will address all 3 of the major causes of stress.
 
 With cache services, it really depends on the type of cache you're using. It's normal for Memcached services to use a lot of RAM. Memcached stores all of its data in RAM. As it fills up, it will dump old data to make room for new data. Scaling Memcached will simply increase the amount of data that can be stored and allow data to persist longer. Redis stores data in RAM but also routinely persists to disk. Vertical scaling is the primary means of addressing performance issues in cache services.
 
