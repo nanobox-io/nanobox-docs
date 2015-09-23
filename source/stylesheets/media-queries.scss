@@ -54,6 +54,8 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
   #providers                  { text-align: center; }
 }
 
+.interactive-svg:before       { left: .5em; top: .5em; }
+
 }
 
 @media #{$medium-up} { 

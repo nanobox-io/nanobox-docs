@@ -30,7 +30,7 @@ svg                   {
   &#vertical-scaling  { max-width: 600px; margin: 0 auto; display: block; 
     #sm-top, #lg-top,
     #sm-btm, #lg-btm  { @include transition(all .15s); }
-    &:hover, :focus   {
+    &:hover, :active   {
       #sm-top         { @include transform(translateY(-3em)) ; @include opacity(.05); }
       #lg-top         { @include transform(translateY(-4em)) ; @include opacity(.05); }
       #sm-btm         { @include transform(translateY(1.5em)) ; @include opacity(.05); }
@@ -48,7 +48,7 @@ svg                   {
     #i7               { @include transition-delay(.3s); }
     #i8               { @include transition-delay(.35s); }
     #i9               { @include transition-delay(.4s); }
-    &:hover, :focus   {
+    &:hover, :active   {
       #i2,#i3,#i4,#i5,
       #i6,#i7,#i8,#i9 { @include transform(translateY(0)); @include opacity(1); }
     }

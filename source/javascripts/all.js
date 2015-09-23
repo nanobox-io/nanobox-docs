@@ -84,14 +84,29 @@ $(function(){
 
 ///////// TOUCH-SCREEN SPECIFIC FUNCTIONALITY /////////
 
-function isTouchDevice(){
-  return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
-}
-
-if(isTouchDevice()===true) {
-  $('.interactive-svg').addClass('touch');
-}
-
+//touch/mobile detection
+if (
+  navigator.userAgent.match(/Phone/i) ||
+  navigator.userAgent.match(/DROID/i) ||
+  navigator.userAgent.match(/Android/i) ||
+  navigator.userAgent.match(/webOS/i) ||
+  navigator.userAgent.match(/iPhone/i) ||
+  navigator.userAgent.match(/iPod/i) ||
+  navigator.userAgent.match(/BlackBerry/) || 
+  navigator.userAgent.match(/Windows Phone/i) || 
+  navigator.userAgent.match(/ZuneWP7/i) || 
+  navigator.userAgent.match(/IEMobile/i) ||
+  navigator.userAgent.match(/Tablet/i) ||
+  navigator.userAgent.match(/iPad/i) ||
+  navigator.userAgent.match(/Kindle/i) ||
+  navigator.userAgent.match(/Playbook/i) ||
+  navigator.userAgent.match(/Nexus/i) ||
+  navigator.userAgent.match(/Xoom/i) ||
+  navigator.userAgent.match(/SM-N900T/i) || //Samsung Note 3
+  navigator.userAgent.match(/GT-N7100/i) || //Samsung Note 2
+  navigator.userAgent.match(/SAMSUNG-SGH-I717/i) || //Samsung Note
+  navigator.userAgent.match(/SM-T330NU/i) //Samsung Tab 4
+){ var touch_device = true; }
 
 
 
@@ -156,6 +171,12 @@ $(document).ready(function() {
       }
     }
   })
+
+
+  ////////// CHANGES TEXT FOR INTERACTIVE SVGs //////////
+  if(touch_device){  
+    $(".interactive-svg").addClass("touch");
+  }
 
 })
 
