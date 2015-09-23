@@ -34,6 +34,13 @@ $red: #FC6269;
   transition: $value;
 }
 
+@mixin transition-delay($delay) {
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
+}
+
 @mixin opacity($value){
   $IEValue: $value*100;
   opacity: $value;

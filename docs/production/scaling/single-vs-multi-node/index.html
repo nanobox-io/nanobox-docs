@@ -12,7 +12,7 @@
       Single-Node & Multi-Node Apps - Nanobox Production Documentation
     </title>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/stylesheets/all-76fd4e43.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-60df1b20.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-264fddac.js" type="text/javascript"></script>
   </head>
   <body>
@@ -219,7 +219,44 @@
       </div>
       <div id='content'>
         <h1>Single-Node & Multi-Node Apps</h1>
-        <h4 id="coming-soon">Coming Soon</h4>
+        <p>When deploying an app to a service provider through Nanobox, you have two options for the overall architecture of your application: Single-Node or Multi-Node. </p>
+        
+        <h2 id="single-node-apps">Single-Node Apps</h2>
+        
+        <ul>
+        <li>The entire app lives on a single VM/instance</li>
+        <li>All services share the available RAM, CPU, and Disk</li>
+        <li>Only Vertical Scaling, No Horizontal Scaling</li>
+        <li>No redundancy</li>
+        </ul>
+        
+        <h4 id="benefits">Benefits</h4>
+        
+        <ul>
+        <li>Cost Savings</li>
+        </ul>
+        
+        <h4 id="disadvantages">Disadvantages</h4>
+        
+        <h2 id="multi-node-apps">Multi-Node Apps</h2>
+        
+        <ul>
+        <li>Each service is a unique VM or cluster of VMs</li>
+        <li>Vertical and Horizontal scaling</li>
+        <li>Redundancy in Services with 2+ instance</li>
+        <li>Each VM has its own allotted resource. Services do not share resources with each other </li>
+        </ul>
+        
+        <h4 id="benefits">Benefits</h4>
+        
+        <ul>
+        <li>Redundancy</li>
+        <li>More Scaling Options</li>
+        <li>Services can be scaled individually</li>
+        <li>Both horizontal and vertical scaling</li>
+        </ul>
+        
+        <h4 id="disadvantages">Disadvantages</h4>
         <div id='pagination'>
           <a class="prev" href="/production/scaling/">Scaling</a>
           <a class="next" href="/production/scaling/how-when-to-scale/">How & When to Scale</a>
