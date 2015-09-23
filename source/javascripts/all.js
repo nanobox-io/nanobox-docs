@@ -82,6 +82,15 @@ $(function(){
 });
 
 
+///////// TOUCH-SCREEN SPECIFIC FUNCTIONALITY /////////
+
+function isTouchDevice(){
+  return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+}
+
+if(isTouchDevice()===true) {
+  $('.interactive-svg').addClass('touch');
+}
 
 
 

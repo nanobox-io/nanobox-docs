@@ -12,7 +12,7 @@ Before getting into the specifics of how and when to scale, its important to und
 ***Summary: Scaling Server Resources***  
 Scaling vertically consists of adding more RAM, CPU, and Disk to your instance(s), providing more power or capacity to accomplish their specific tasks.
 
-<div>
+<div class='interactive-svg'>
   <%= partial "svg-partials/scaling-vertical" %>
 </div>
 
@@ -22,7 +22,7 @@ Scaling vertically is extremely effective for services with heavy processing loa
 ***Summary: Scaling for Traffic and/or Redundancy***  
 Horizontal scaling is accomplished by increasing the number of instances inside a service cluster.
 
-<div>
+<div class='interactive-svg'>
   <%= partial "svg-partials/scaling-horizontal" %>
 </div>
 

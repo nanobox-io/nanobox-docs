@@ -22,11 +22,15 @@
   }
 }
 
+.interactive-svg      {
+  &:before            { content: "Hover to Animate"; position: relative; top: 3.5em; left: 2em; display: inline; padding: .5em 1em; background: $gblue-0; font-size: .8em; font-style: italic; @include border-radius(1em);}
+  &.touch:before      { content: "Touch to Animate"; }
+}
 svg                   {
   &#vertical-scaling  { max-width: 600px; margin: 0 auto; display: block; 
     #sm-top, #lg-top,
     #sm-btm, #lg-btm  { @include transition(all .15s); }
-    &:hover           {
+    &:hover, :focus   {
       #sm-top         { @include transform(translateY(-3em)) ; @include opacity(.05); }
       #lg-top         { @include transform(translateY(-4em)) ; @include opacity(.05); }
       #sm-btm         { @include transform(translateY(1.5em)) ; @include opacity(.05); }
@@ -44,7 +48,7 @@ svg                   {
     #i7               { @include transition-delay(.3s); }
     #i8               { @include transition-delay(.35s); }
     #i9               { @include transition-delay(.4s); }
-    &:hover           {
+    &:hover, :focus   {
       #i2,#i3,#i4,#i5,
       #i6,#i7,#i8,#i9 { @include transform(translateY(0)); @include opacity(1); }
     }
