@@ -135,70 +135,34 @@
                 <a href="/cli/bootstrap/">bootstrap</a>
               </li>
               <li>
-                <a href="/cli/build/">build</a>
-              </li>
-              <li>
                 <a href="/cli/console/">console</a>
-              </li>
-              <li>
-                <a href="/cli/create/">create</a>
-              </li>
-              <li>
-                <a href="/cli/deploy/">deploy</a>
               </li>
               <li>
                 <a href="/cli/destroy/">destroy</a>
               </li>
               <li>
+                <a href="/cli/down/">down</a>
+              </li>
+              <li>
                 <a href="/cli/exec/">exec</a>
-              </li>
-              <li>
-                <a href="/cli/fetch/">fetch</a>
-              </li>
-              <li>
-                <a href="/cli/halt/">halt</a>
               </li>
               <li>
                 <a href="/cli/help/">help</a>
               </li>
               <li>
-                <a href="/cli/init/">init</a>
-              </li>
-              <li>
-                <a href="/cli/log/">log</a>
-              </li>
-              <li>
-                <a href="/cli/new/">new</a>
+                <a href="/cli/info/">info</a>
               </li>
               <li>
                 <a href="/cli/publish/">publish</a>
               </li>
               <li>
-                <a href="/cli/reload/">reload</a>
-              </li>
-              <li>
-                <a href="/cli/resume/">resume</a>
-              </li>
-              <li>
-                <a href="/cli/status/">status</a>
-              </li>
-              <li>
-                <a href="/cli/suspend/">suspend</a>
-              </li>
-              <li>
-                <a href="/cli/tunnel/">tunnel</a>
+                <a href="/cli/run/">run</a>
               </li>
               <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
                 <a href="/cli/update/">update</a>
-              </li>
-              <li>
-                <a href="/cli/upgrade/">upgrade</a>
-              </li>
-              <li>
-                <a href="/cli/watch/">watch</a>
               </li>
             </ul>
           </li>
@@ -352,94 +316,56 @@
         <td style="text-align: left">Runs an engine&#39;s bootstrap script - downloads code &amp; launches VM</td>
         </tr>
         <tr>
-        <td style="text-align: left"><a href="/cli/build/"><code>build</code></a></td>
-        <td style="text-align: left">Rebuilds/Compiles your project</td>
-        </tr>
-        <tr>
         <td style="text-align: left"><a href="/cli/console/"><code>console</code></a></td>
         <td style="text-align: left">Opens an interactive terminal inside your app&#39;s context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/create/"><code>create</code></a></td>
-        <td style="text-align: left">Runs &#39;nanobox init&#39; then boots the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/deploy/"><code>deploy</code></a></td>
-        <td style="text-align: left">Deploys to the nanobox VM</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/destroy/"><code>destroy</code></a></td>
         <td style="text-align: left">Destroys the nanobox VM</td>
         </tr>
         <tr>
+        <td style="text-align: left"><a href="/cli/down/"><code>down</code></a></td>
+        <td style="text-align: left">Suspends the nanobox VM</td>
+        </tr>
+        <tr>
         <td style="text-align: left"><a href="/cli/exec/"><code>exec</code></a></td>
         <td style="text-align: left">Runs a command in your apps context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/fetch/"><code>fetch</code></a></td>
-        <td style="text-align: left">Fetches an engine from nanobox.io</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/halt/"><code>halt</code></a></td>
-        <td style="text-align: left">Halts the nanobox VM</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/help/"><code>help</code></a></td>
         <td style="text-align: left">Displays CLI help</td>
         </tr>
         <tr>
-        <td style="text-align: left"><a href="/cli/init/"><code>init</code></a></td>
-        <td style="text-align: left">Creates a nanobox flavored Vagrantfile</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/log/"><code>log</code></a></td>
-        <td style="text-align: left">Shows/Streams nanobox logs</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/new/"><code>new</code></a></td>
-        <td style="text-align: left">Generates a new engine</td>
+        <td style="text-align: left"><a href="/cli/info/"><code>info</code></a></td>
+        <td style="text-align: left">Displays inforamtion about the Nanobox VM &amp; running services</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/publish/"><code>publish</code></a></td>
         <td style="text-align: left">Publishes an engine to nanobox.io</td>
         </tr>
         <tr>
-        <td style="text-align: left"><a href="/cli/reload/"><code>reload</code></a></td>
-        <td style="text-align: left">Reloads the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/resume/"><code>resume</code></a></td>
-        <td style="text-align: left">Resumes the halted/suspended nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/status/"><code>status</code></a></td>
-        <td style="text-align: left">Displays all current nanobox VM&#39;s</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/suspend/"><code>suspend</code></a></td>
-        <td style="text-align: left">Suspends the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/tunnel/"><code>tunnel</code></a></td>
-        <td style="text-align: left">Displays port forward information for your apps running services</td>
+        <td style="text-align: left"><a href="/cli/run/"><code>run</code></a></td>
+        <td style="text-align: left">Starts the Nanobox VM and runs your application</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/up/"><code>up</code></a></td>
-        <td style="text-align: left">Runs &#39;nanobox create&#39; and then &#39;nanobox deploy&#39;</td>
+        <td style="text-align: left">Starts the Nanobox VM &amp; drops you into a console</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/update/"><code>update</code></a></td>
         <td style="text-align: left">Updates the CLI to the newest available version</td>
         </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/upgrade/"><code>upgrade</code></a></td>
-        <td style="text-align: left">Updates the nanobox docker images</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/watch/"><code>watch</code></a></td>
-        <td style="text-align: left">Watches your app for file changes</td>
-        </tr>
         </tbody></table>
+        
+        <h3 id="global-command-options">Global Command Options</h3>
+        
+        <h4 id="v-verbose">-v, --verbose</h4>
+        
+        <p>Increases command output from &#39;info&#39; to &#39;debug&#39;.</p>
+        
+        <h4 id="f-force">-f, --force</h4>
+        
+        <p>Forces the command to run without any confirmation. <strong>Use responsibly!</strong></p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
           <a class="next" href="/cli/bootstrap/">bootstrap</a>

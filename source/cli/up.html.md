@@ -2,13 +2,16 @@
 title: up
 ---
 
-The `up` command runs a [*create*](/cli/create/) and a [*deploy*](/cli/deploy/).
+The `up` command Starts the Nanobox VM & drops you into a console.
 
 ### Usage
 ```shell
-$ nanobox up [-w]
+$ nanobox up [flags]
 ```
 
 ### Options
-#### -w, --watch
-Watches your app for file changes.
+#### --rebuild
+Rebuilds your application as the Nanobox VM comes up.
+
+#### --debug
+Prevents errors from suspending the Nanobox VM.

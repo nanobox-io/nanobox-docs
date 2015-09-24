@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      create - Nanobox Documentation
+      run - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-ff38f05b.css" rel="stylesheet" type="text/css" />
@@ -135,70 +135,34 @@
                 <a href="/cli/bootstrap/">bootstrap</a>
               </li>
               <li>
-                <a href="/cli/build/">build</a>
-              </li>
-              <li>
                 <a href="/cli/console/">console</a>
-              </li>
-              <li class='active'>
-                <a href="/cli/create/">create</a>
-              </li>
-              <li>
-                <a href="/cli/deploy/">deploy</a>
               </li>
               <li>
                 <a href="/cli/destroy/">destroy</a>
               </li>
               <li>
+                <a href="/cli/down/">down</a>
+              </li>
+              <li>
                 <a href="/cli/exec/">exec</a>
-              </li>
-              <li>
-                <a href="/cli/fetch/">fetch</a>
-              </li>
-              <li>
-                <a href="/cli/halt/">halt</a>
               </li>
               <li>
                 <a href="/cli/help/">help</a>
               </li>
               <li>
-                <a href="/cli/init/">init</a>
-              </li>
-              <li>
-                <a href="/cli/log/">log</a>
-              </li>
-              <li>
-                <a href="/cli/new/">new</a>
+                <a href="/cli/info/">info</a>
               </li>
               <li>
                 <a href="/cli/publish/">publish</a>
               </li>
-              <li>
-                <a href="/cli/reload/">reload</a>
-              </li>
-              <li>
-                <a href="/cli/resume/">resume</a>
-              </li>
-              <li>
-                <a href="/cli/status/">status</a>
-              </li>
-              <li>
-                <a href="/cli/suspend/">suspend</a>
-              </li>
-              <li>
-                <a href="/cli/tunnel/">tunnel</a>
+              <li class='active'>
+                <a href="/cli/run/">run</a>
               </li>
               <li>
                 <a href="/cli/up/">up</a>
               </li>
               <li>
                 <a href="/cli/update/">update</a>
-              </li>
-              <li>
-                <a href="/cli/upgrade/">upgrade</a>
-              </li>
-              <li>
-                <a href="/cli/watch/">watch</a>
               </li>
             </ul>
           </li>
@@ -338,14 +302,20 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>create</h1>
-        <p>The <code>create</code> command runs a <a href="/cli/init/"><em>nanobox init</em></a>, then boots the nanobox VM by issuing a &quot;vagrant up&quot;</p>
+        <h1>run</h1>
+        <p>The <code>run</code> command starts the Nanobox VM and runs your application.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight plaintext"><code>$ nanobox create&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox run <span class="o">[</span>flags]&#x000A;</code></pre>
+        
+        <h3 id="options">Options</h3>
+        
+        <h4 id="reset-cache">--reset-cache</h4>
+        
+        <p>Clears the contents of <code>lib_dirs</code> and other cached directories.</p>
         <div id='pagination'>
-          <a class="prev" href="/cli/console/">console</a>
-          <a class="next" href="/cli/deploy/">deploy</a>
+          <a class="prev" href="/cli/publish/">publish</a>
+          <a class="next" href="/cli/up/">up</a>
         </div>
       </div>
     </div>
