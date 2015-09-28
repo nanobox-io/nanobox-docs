@@ -6,7 +6,7 @@ One great thing about nanobox is that very little project setup is required. The
 
 ```shell
 $ cd app-dir
-$ nanobox up
+$ nanobox dev
 ```
 
-Simply by running `nanobox up` inside of your application directory, nanobox will provision your virtual environment, auto-detect engines and services required by your app, then deploy your code into virtualized instances. It's that simple.
+Simply by running `nanobox dev` inside of your application directory, nanobox will provision your virtual environment, auto-detect engines and services required by your app, then deploy your code into virtualized instances. It's that simple.

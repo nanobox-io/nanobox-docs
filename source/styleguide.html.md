@@ -72,7 +72,7 @@ worker1:
 ```
 
 ```bash
-$ nanobox up
+$ nanobox dev
 ```
 
 

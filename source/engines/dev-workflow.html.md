@@ -24,15 +24,7 @@ build:
 #### Then launch the app:
 
 ```bash
-$ nanobox up
+$ nanobox dev
 ```
 
-You will see in the deploy output that Nanobox has mounted your engine into the Nanobox VM, and the engine was selected for the deploy process.
-
-### Iterate
-
-With each change to the engine, simply trigger another deploy from within the sample application's directory:
-
-```bash
-$ nanobox deploy
-```
+You will see in the deploy output that Nanobox has mounted your engine into the Nanobox VM, and the engine was selected for the deploy process. Once provisioned, you'll be dropped into an interactive console.

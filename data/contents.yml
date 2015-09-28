@@ -47,6 +47,8 @@ categories:
         path: "/cli/console/"
       - title: "destroy"
         path: "/cli/destroy/"
+      - title: "dev"
+        path: "/cli/dev/"
       - title: "down"
         path: "/cli/down/"
       - title: "exec"
@@ -59,8 +61,6 @@ categories:
         path: "/cli/publish/"
       - title: "run"
         path: "/cli/run/"
-      - title: "up"
-        path: "/cli/up/"
       - title: "update"
         path: "/cli/update/"
 

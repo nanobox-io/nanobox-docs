@@ -17,4 +17,4 @@ Nanobox provisions and builds both the virtual environment and application-level
 ### Reusable & Customizable
 [Engines](/getting-started/engines) are the beating heart of Nanobox. They provide the runtimes for your app's services, include auto-detection scripts ("[sniff](/engines/scripts/sniff)"), and make available configuration options. Engines can be built, published, and used by anyone.
 
-Provisioning identical local environments across your entire dev team's machines is as simple as installing Nanobox, including a Boxfile in your repo (optional), and running `nanobox up`.
+Provisioning identical local environments across your entire dev team's machines is as simple as installing Nanobox, including a Boxfile in your repo (optional), and running `nanobox dev`.
