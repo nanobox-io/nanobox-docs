@@ -97,6 +97,9 @@
             <a href="/getting-started/">Getting Started</a>
             <ul class='sub'>
               <li>
+                <a href="/getting-started/basic-workflow/">Basic Workflow</a>
+              </li>
+              <li>
                 <a href="/getting-started/project-setup/">Project Setup</a>
               </li>
               <li>
@@ -141,6 +144,9 @@
                 <a href="/cli/destroy/">destroy</a>
               </li>
               <li>
+                <a href="/cli/dev/">dev</a>
+              </li>
+              <li>
                 <a href="/cli/down/">down</a>
               </li>
               <li>
@@ -157,9 +163,6 @@
               </li>
               <li>
                 <a href="/cli/run/">run</a>
-              </li>
-              <li>
-                <a href="/cli/up/">up</a>
               </li>
               <li>
                 <a href="/cli/update/">update</a>
@@ -319,14 +322,9 @@
         <pre class="highlight yaml"><code><span class="s">build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s1">'</span><span class="s">../nanobox-engine-rails'</span>&#x000A;</code></pre>
         
         <h4 id="then-launch-the-app">Then launch the app:</h4>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox up&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev&#x000A;</code></pre>
         
-        <p>You will see in the deploy output that Nanobox has mounted your engine into the Nanobox VM, and the engine was selected for the deploy process.</p>
-        
-        <h3 id="iterate">Iterate</h3>
-        
-        <p>With each change to the engine, simply trigger another deploy from within the sample application&#39;s directory:</p>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox deploy&#x000A;</code></pre>
+        <p>You will see in the deploy output that Nanobox has mounted your engine into the Nanobox VM, and the engine was selected for the deploy process. Once provisioned, you&#39;ll be dropped into an interactive console.</p>
         <div id='pagination'>
           <a class="prev" href="/engines/publish/">Publish</a>
           <a class="next" href="/engines/debugging/">Debugging</a>

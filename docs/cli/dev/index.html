@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Command Line Interface - Nanobox Documentation
+      dev - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-ff38f05b.css" rel="stylesheet" type="text/css" />
@@ -131,7 +131,7 @@
               </li>
             </ul>
           </li>
-          <li class='active'>
+          <li>
             <a href="/cli/">Command Line Interface</a>
             <ul class='sub'>
               <li>
@@ -143,7 +143,7 @@
               <li>
                 <a href="/cli/destroy/">destroy</a>
               </li>
-              <li>
+              <li class='active'>
                 <a href="/cli/dev/">dev</a>
               </li>
               <li>
@@ -305,73 +305,24 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>Command Line Interface</h1>
-        <p>All interaction with Nanobox happens through the <code>nanobox</code> CLI. This section of docs walks through each of the CLI commands, their functionality, and options associated with each. Below is a list with a quick summary of each command:</p>
+        <h1>dev</h1>
+        <p>The <code>dev</code> command Starts the Nanobox VM &amp; drops you into a console.</p>
         
-        <table><thead>
-        <tr>
-        <th style="text-align: left">Command</th>
-        <th style="text-align: left">Summary</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td style="text-align: left"><a href="/cli/bootstrap/"><code>bootstrap</code></a></td>
-        <td style="text-align: left">Runs an engine&#39;s bootstrap script - downloads code &amp; launches VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/console/"><code>console</code></a></td>
-        <td style="text-align: left">Opens an interactive terminal inside your app&#39;s context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/destroy/"><code>destroy</code></a></td>
-        <td style="text-align: left">Destroys the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/"><code>dev</code></a></td>
-        <td style="text-align: left">Starts the Nanobox VM &amp; drops you into a console</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/down/"><code>down</code></a></td>
-        <td style="text-align: left">Suspends the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/exec/"><code>exec</code></a></td>
-        <td style="text-align: left">Runs a command in your apps context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/help/"><code>help</code></a></td>
-        <td style="text-align: left">Displays CLI help</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/info/"><code>info</code></a></td>
-        <td style="text-align: left">Displays inforamtion about the Nanobox VM &amp; running services</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/publish/"><code>publish</code></a></td>
-        <td style="text-align: left">Publishes an engine to nanobox.io</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/run/"><code>run</code></a></td>
-        <td style="text-align: left">Starts the Nanobox VM and runs your application</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/update/"><code>update</code></a></td>
-        <td style="text-align: left">Updates the CLI to the newest available version</td>
-        </tr>
-        </tbody></table>
+        <h3 id="usage">Usage</h3>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev <span class="o">[</span>flags]&#x000A;</code></pre>
         
-        <h3 id="global-command-options">Global Command Options</h3>
+        <h3 id="options">Options</h3>
         
-        <h4 id="v-verbose">-v, --verbose</h4>
+        <h4 id="rebuild">--rebuild</h4>
         
-        <p>Increases command output from &#39;info&#39; to &#39;debug&#39;.</p>
+        <p>Rebuilds your application as the Nanobox VM comes dev.</p>
         
-        <h4 id="f-force">-f, --force</h4>
+        <h4 id="debug">--debug</h4>
         
-        <p>Forces the command to run without any confirmation. <strong>Use responsibly!</strong></p>
+        <p>Prevents errors from suspending the Nanobox VM.</p>
         <div id='pagination'>
-          <a class="prev" href="/getting-started/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
-          <a class="next" href="/cli/bootstrap/">bootstrap</a>
+          <a class="prev" href="/cli/destroy/">destroy</a>
+          <a class="next" href="/cli/down/">down</a>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      up - Nanobox Documentation
+      Basic Workflow - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href="/stylesheets/all-ff38f05b.css" rel="stylesheet" type="text/css" />
@@ -96,6 +96,9 @@
           <li>
             <a href="/getting-started/">Getting Started</a>
             <ul class='sub'>
+              <li class='active'>
+                <a href="/getting-started/basic-workflow/">Basic Workflow</a>
+              </li>
               <li>
                 <a href="/getting-started/project-setup/">Project Setup</a>
               </li>
@@ -141,6 +144,9 @@
                 <a href="/cli/destroy/">destroy</a>
               </li>
               <li>
+                <a href="/cli/dev/">dev</a>
+              </li>
+              <li>
                 <a href="/cli/down/">down</a>
               </li>
               <li>
@@ -157,9 +163,6 @@
               </li>
               <li>
                 <a href="/cli/run/">run</a>
-              </li>
-              <li class='active'>
-                <a href="/cli/up/">up</a>
               </li>
               <li>
                 <a href="/cli/update/">update</a>
@@ -302,24 +305,19 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>up</h1>
-        <p>The <code>up</code> command Starts the Nanobox VM &amp; drops you into a console.</p>
+        <h1>Basic Workflow</h1>
+        <h3 id="development">Development</h3>
         
-        <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox up <span class="o">[</span>flags]&#x000A;</code></pre>
+        <p>Nanobox is designed to make provisioning local, distributed dev environment incredibly simple. To jump right into development, just run <code>nanobox dev</code>.</p>
         
-        <h3 id="options">Options</h3>
+        <p>Nanobox will create a virtual machine, auto-detect your application type and provision the environment necessary to run it. Once provisioned, you&#39;ll be dropped into an interactive console where you can run and/or develop your app.</p>
         
-        <h4 id="rebuild">--rebuild</h4>
+        <h3 id="application-preview">Application Preview</h3>
         
-        <p>Rebuilds your application as the Nanobox VM comes up.</p>
-        
-        <h4 id="debug">--debug</h4>
-        
-        <p>Prevents errors from suspending the Nanobox VM.</p>
+        <p>If you&#39;re looking to preview your app and don&#39;t need an interactive console, you can use the <code>nanobox run</code> command. This will create a VM, provision the necessary infrastructure, then start your app. This method, in some cases, may require you to specify an <a href="/boxfile/code-services/#exec"><code>exec</code> in your Boxfile</a>. For more information about the Boxfile, check out the <a href="/boxfile/">Boxfile</a> docs.</p>
         <div id='pagination'>
-          <a class="prev" href="/cli/run/">run</a>
-          <a class="next" href="/cli/update/">update</a>
+          <a class="prev" href="/getting-started/">Getting Started</a>
+          <a class="next" href="/getting-started/project-setup/">Project Setup</a>
         </div>
       </div>
     </div>

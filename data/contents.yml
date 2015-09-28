@@ -17,6 +17,8 @@ categories:
   - title: "Getting Started"
     path: "/getting-started/"
     articles:
+      - title: "Basic Workflow"
+        path: "/getting-started/basic-workflow/"
       - title: "Project Setup"
         path: "/getting-started/project-setup/"
       - title: ".nanofile"

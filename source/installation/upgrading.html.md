@@ -2,7 +2,7 @@
 title: Upgrading
 ---
 
-Upgrading Nanobox is done through the nanobox CLI's `update` commands.
+Upgrading Nanobox is done through the nanobox CLI's `update` command.
 
 [`nanobox update`](/cli/update/) : Updates the nanobox CLI.
 

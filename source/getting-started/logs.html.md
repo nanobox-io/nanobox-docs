@@ -2,11 +2,7 @@
 title: Logs
 ---
 
-Nanobox pipes all service logs into a unified log stream viewable through the [nanobox CLI's "log" command](/cli/log/).
-
-```shell
-$ nanobox log
-```
+Nanobox pipes all service logs into a unified log stream viewable through in your Nanobox output.
 
 ### Including Custom Logs in the Unified Log Stream
 If using a framework or CMS that logs to a specific file, you can include that file in the unified log stream by adding it as a `log_watch` in your Boxfile.

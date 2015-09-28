@@ -78,7 +78,7 @@ The `exec` is the command used to start your web or worker.
 
 #### exec
 ```yaml
-worker1:
+web1:
   exec: "ruby worker.rb"
 ```
 

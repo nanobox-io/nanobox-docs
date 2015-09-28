@@ -96,6 +96,9 @@
           <li>
             <a href="/getting-started/">Getting Started</a>
             <ul class='sub'>
+              <li>
+                <a href="/getting-started/basic-workflow/">Basic Workflow</a>
+              </li>
               <li class='active'>
                 <a href="/getting-started/project-setup/">Project Setup</a>
               </li>
@@ -141,6 +144,9 @@
                 <a href="/cli/destroy/">destroy</a>
               </li>
               <li>
+                <a href="/cli/dev/">dev</a>
+              </li>
+              <li>
                 <a href="/cli/down/">down</a>
               </li>
               <li>
@@ -157,9 +163,6 @@
               </li>
               <li>
                 <a href="/cli/run/">run</a>
-              </li>
-              <li>
-                <a href="/cli/up/">up</a>
               </li>
               <li>
                 <a href="/cli/update/">update</a>
@@ -304,11 +307,11 @@
       <div id='content'>
         <h1>Project Setup</h1>
         <p>One great thing about nanobox is that very little project setup is required. There&#39;s two config files you can include (<a href="/getting-started/nanofile/">.nanofile</a> &amp; <a href="/getting-started/boxfile/">Boxfile</a>), but they aren&#39;t required. You also have the option of specifying an <a href="/getting-started/engines/">engine</a>, but that too is optional.</p>
-        <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd </span>app-dir&#x000A;<span class="gp">$ </span>nanobox up&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd </span>app-dir&#x000A;<span class="gp">$ </span>nanobox dev&#x000A;</code></pre>
         
-        <p>Simply by running <code>nanobox up</code> inside of your application directory, nanobox will provision your virtual environment, auto-detect engines and services required by your app, then deploy your code into virtualized instances. It&#39;s that simple.</p>
+        <p>Simply by running <code>nanobox dev</code> inside of your application directory, nanobox will provision your virtual environment, auto-detect engines and services required by your app, then deploy your code into virtualized instances. It&#39;s that simple.</p>
         <div id='pagination'>
-          <a class="prev" href="/getting-started/">Getting Started</a>
+          <a class="prev" href="/getting-started/basic-workflow/">Basic Workflow</a>
           <a class="next" href="/getting-started/nanofile/">.nanofile</a>
         </div>
       </div>
