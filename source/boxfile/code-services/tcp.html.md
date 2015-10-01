@@ -1,32 +1,21 @@
 ---
-title: Code Services
+title: TCP
 ---
 
-Code services house and run your application's source code. There are two types of code services - webs and workers.
-
-#### Webs
-Web services come packaged with a web server of some kind which handles incoming traffic through an external network connection.
-
-#### Workers
-Worker services are meant for running background processes and do not connect with the external network.
+TCP services handle incoming traffic through an external network connection over the TCP protocol.
 
 #### Overview of Code Service Settings in the Boxfile
 ```yaml
-# The service ID defines whether the code service
-# is a web or a worker. 'web1' will create a web
-# service. 'worker 1' will create a worker service.
-
-web1:
-  name: app-server
+tcp1:
+  name: mail-server
 
   # Exec
-  exec: "ruby app.rb"
+  exec: "ruby smtp.rb"
 
-  # Routing (Webs Only)
-  routes:
-    - 'sub:/path/'
-    - '/admin/'
-  
+  # Port Mapping
+  ports:
+    - 25:3000
+
   # Network Storage
   network_dirs:
     nfs1:
@@ -62,65 +51,40 @@ web1:
 ```
 
 ## Name
-Adding a custom name to your web or worker service is simply a way to identify/differentiate your service.
+Adding a custom name to your TCP service is simply a way to identify/differentiate your service.
 
 #### name
 ```yaml
-web1:
-  name: public-site
-  
-worker1:
-  name: background-worker
+tcp1:
+  name: mail-server
 ```
 
 ## Exec
-The `exec` is the command used to start your web or worker.
+The `exec` is the command used to start your TCP process.
 
 #### exec
 ```yaml
-web1:
-  exec: "ruby worker.rb"
+tcp1:
+  exec: "ruby smtp.rb"
 ```
 
-## Routing
-In some cases, you may want or need multiple web services within a single application. Web service routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both. ***Routes are available only to web services***.
+## Port Mapping
+Nanobox allows to do define on which ports your TCP service listens. **No default port mapping is provided for TCP services. In order for your TCP service to function properly, you must provide the port mapping.**
 
-### Syntax
-A routes can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required, but a path is. The pattern is as follows:
-
-`'subdomain:path'`
-
-The root domain is detected by Nanobox in both your local environment and in Nanobox Production, however Nanobox production does require you to register custom domains in your dashboard. More information is available in the [Production Using Custom Domains](/production/networking-domains/custom-domains/) doc.
-
-Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is "mydomain.com".
-
-#### routes
+#### ports
 ```yaml
-web1:
-  routes:
-    - '/'
-# mydomain.com would route to web1
+# Pattern
+tcp1:
+  ports:
+    - source:destination
 
-web2:
-  routes:
-    - '/admin'
-# mydomain.com/admin would route to web2
-
-web3:
-  routes:
-    - 'api:/'
-# api.mydomain.com would route to web3
-
-web4:
-  routes:
-    - 'api:/auth/validate'
-# api.mydomain.com/auth/validate would route to web4
+# Example
+tcp1:
+  ports:
+    - 25:3000
 ```
 
-#### Things to Know
-- When using multiple webs, each must at least one route specified.
-- Routes must be unique to each web service.
-
+**Note:** If a single number is provided, Nanobox assumes the source and desination ports are the same. For example, if `25` is specified, it will be interepreted as `25:25`
 
 ## Network Directories
 These directories are read/write accessible to all the code service's instances. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. Filepaths should be relative to the root of your repo.
@@ -131,7 +95,7 @@ For more details, view the [Network Storage doc](/getting-started/network-storag
 
 #### network_dirs
 ```yaml
-web1:
+tcp1:
   network_dirs:
     nfs1:
       - path/to/directoryA
@@ -147,18 +111,18 @@ These directories are read/write accessible and stored in each instance's local 
 
 #### nonpersistent\_writable\_dirs
 ```yaml
-web1:
+tcp1:
   nonpersistent_writable_dirs:
     - path/to/dirA
     - path/to/dirB
 ```
 
 ## Custom Logs
-Many apss and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Logs doc](/getting-started/logs).
+Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Logs doc](/getting-started/logs).
 
 #### log_watch
 ```yaml
-web1:
+tcp1:
   log_watch:
     key: "path/to/log.file"
     app[error]: "app/logs/error.log"
@@ -170,12 +134,12 @@ Cron is a time-based job scheduler that enables you to schedule jobs (commands) 
 #### cron
 ```yaml
 # Pattern
-web1:
+tcp1:
   cron:
     - "cron schedule": "command"
 
 # Examples
-web1:
+tcp1:
   cron:
     - "0 0 * * *": "rm -rf app/cache/*"
     - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
@@ -201,7 +165,7 @@ Deploy Hooks allow you to "hook" into the deploy process and execute scripts or 
 
 #### Deploy Hooks in the Boxfile
 ```yaml
-web1:
+tcp1:
   deploy_hook_timeout: 600
   before_deploy:
     - "scripts/migrate_db.rb"
@@ -212,4 +176,3 @@ web1:
   after_deploy_all:
     - "scripts/local_cache_prime.rb"
 ```
-

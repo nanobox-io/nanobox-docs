@@ -75,6 +75,15 @@ categories:
         path: "/boxfile/build/"
       - title: "Code Services"
         path: "/boxfile/code-services/"
+        sub_articles:
+          - title: "Web"
+            path: "/boxfile/code-services/web/"
+          - title: "Worker"
+            path: "/boxfile/code-services/worker/"
+          - title: "TCP"
+            path: "/boxfile/code-services/tcp/"
+          - title: "UDP"
+            path: "/boxfile/code-services/udp/"
       - title: "Data Services"
         path: "/boxfile/data-services/"
         sub_articles:
