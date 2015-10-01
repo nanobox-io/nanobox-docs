@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      build - Nanobox Documentation
+      TCP - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <script>
@@ -196,7 +196,7 @@
                   <li>
                     <a href="/boxfile/code-services/worker/">Worker</a>
                   </li>
-                  <li>
+                  <li class='active'>
                     <a href="/boxfile/code-services/tcp/">TCP</a>
                   </li>
                   <li>
@@ -274,7 +274,7 @@
                   <li>
                     <a href="/engines/scripts/prepare/">prepare</a>
                   </li>
-                  <li class='active'>
+                  <li>
                     <a href="/engines/scripts/build/">build</a>
                   </li>
                   <li>
@@ -328,56 +328,98 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>build</h1>
-        <p>The build script fulfills the <a href="/engines/how-engines-work#application-build">Application Build</a> phase of the deploy process. The purpose of the build script is to &quot;build&quot; your codebase to be run in an isolated container. Generally, this means compiling the code if necessary, and generating configuration files to allow the application to connect to services.</p>
+        <h1>TCP</h1>
+        <p>TCP services handle incoming traffic through an external network connection over the TCP protocol.</p>
         
-        <h4 id="caution">Caution</h4>
+        <h4 id="overview-of-code-service-settings-in-the-boxfile">Overview of Code Service Settings in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">mail-server</span>&#x000A;&#x000A;  <span class="c1"># Exec</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">smtp.rb"</span>&#x000A;&#x000A;  <span class="c1"># Port Mapping</span>&#x000A;  <span class="s">ports</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">25:3000</span>&#x000A;&#x000A;  <span class="c1"># Network Storage</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">nfs1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">nfs2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;&#x000A;  <span class="c1"># Nonpersistent Writable Dirs</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;&#x000A;  <span class="c1"># Custom Logs</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/error.log"</span>&#x000A;&#x000A;  <span class="c1"># Cron</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*"</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;&#x000A;  <span class="c1"># Deploy Hooks</span>&#x000A;  <span class="s">deploy_hook_timeout</span><span class="pi">:</span> <span class="s">600</span>&#x000A;  <span class="s">before_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/migrate_db.rb"</span>&#x000A;  <span class="s">before_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/cache_prime.rb"</span>&#x000A;  <span class="s">after_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/clear_cache.rb"</span>&#x000A;  <span class="s">after_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/local_cache_prime.rb"</span>&#x000A;</code></pre>
         
-        <p>The build script can be run independent of a full deploy. As such, it is important that the build script not be used to prepare the environment or re-install dependencies. Otherwise, an iterative build may take much longer than necessary.</p>
+        <h2 id="name">Name</h2>
         
-        <h2 id="usage">Usage</h2>
+        <p>Adding a custom name to your TCP service is simply a way to identify/differentiate your service.</p>
         
-        <h4 id="script">Script</h4>
+        <h4 id="name">name</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">name</span><span class="pi">:</span> <span class="s">mail-server</span>&#x000A;</code></pre>
         
-        <p>The build script is executed at <code>$ENGINE_ROOT/bin/build</code>. The build script must exist in this location.</p>
+        <h2 id="exec">Exec</h2>
         
-        <h4 id="args">Args</h4>
+        <p>The <code>exec</code> is the command used to start your TCP process.</p>
         
-        <p>A single argument <code>$1</code> is provided, and is a JSON payload. Check <a href="/engines/scripts/#payload">here</a> for a description of the payload.</p>
+        <h4 id="exec">exec</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">exec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">smtp.rb"</span>&#x000A;</code></pre>
         
-        <h4 id="working-directory">Working Directory</h4>
+        <h2 id="port-mapping">Port Mapping</h2>
         
-        <p>The working directory is set to <code>$ENGINE_ROOT/bin</code>.</p>
+        <p>Nanobox allows to do define on which ports your TCP service listens. <strong>No default port mapping is provided for TCP services. In order for your TCP service to function properly, you must provide the port mapping.</strong></p>
         
-        <h2 id="objectives">Objectives</h2>
+        <h4 id="ports">ports</h4>
+        <pre class="highlight yaml"><code><span class="c1"># Pattern</span>&#x000A;<span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">ports</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">source:destination</span>&#x000A;&#x000A;<span class="c1"># Example</span>&#x000A;<span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">ports</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">25:3000</span>&#x000A;</code></pre>
         
-        <h4 id="apply-patches">Apply Patches</h4>
+        <p><strong>Note:</strong> If a single number is provided, Nanobox assumes the source and desination ports are the same. For example, if <code>25</code> is specified, it will be interepreted as <code>25:25</code></p>
         
-        <p>At times the underlying framework may need to be modified or fixed. If, for instance, the underlying framework was designed to work only in a LAMP stack and not with distributed micro-services, the framework may need a few adjustments. This can be done by replacing entire files, or just modifying a few lines. You can refer to the <a href="/engines/common-tasks/template-generation/">Configuration Templates</a> doc for details on how to do this.</p>
+        <h2 id="network-directories">Network Directories</h2>
         
-        <h4 id="compile-or-build-the-codebase">Compile or Build the Codebase</h4>
+        <p>These directories are read/write accessible to all the code service&#39;s instances. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. Filepaths should be relative to the root of your repo.</p>
         
-        <p>Build the code. If your application runs in a VM like php, node.js, ruby, or python, this step may not be required. For running commands that build your codebase, refer to the <a href="/engines/common-tasks/running-commands/">Running Commands</a> doc.</p>
+        <p>In order to use <code>network_dirs</code>, you must have one or more Network Storage services (NFS) in which to store them. In your Boxfile config, specify which NFS service the directories should be stored on. If no service is specified, we assume nfs1.</p>
         
-        <h4 id="generate-application-configuration">Generate Application Configuration</h4>
+        <p>For more details, view the <a href="/getting-started/network-storage/">Network Storage doc</a>.</p>
         
-        <p>Any configuration your application requires to run will need to be generated. Database drivers, third-party integrations, etc., will need to be configured. You can refer to the <a href="/engines/common-tasks/template-generation/">Configuration Templates</a> doc for details on how to do this.</p>
+        <h4 id="network_dirs">network_dirs</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">nfs1</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">nfs2</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;</code></pre>
         
-        <h5 id="tip">Tip</h5>
+        <p><strong>Note:</strong> On deploy, network directories are replaced with network mounts, which connect code instances to your NFS service(s). These mounts obscure anything committed to your repo inside of those directories. If there are files inside network directories in your repo, your app will not be able to access them unless you manually upload them into your NFS service.</p>
         
-        <p>Environment variables contain the relevant connection data. When generating configuration files from a template, the script payload can be used as the template payload. Doing so will allow the mustache template to use the environment variables provided in the payload without needing to export or persist them.</p>
+        <h2 id="nonpersistent-writable-directories">Nonpersistent Writable Directories</h2>
         
-        <h4 id="move-the-final-build-into-place">Move the Final Build into Place</h4>
+        <p>These directories are read/write accessible and stored in each instance&#39;s local filesystem. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. <strong>Filepaths should be relative to the root of your repo</strong>.</p>
         
-        <p>Finally, the engine must move the compiled code into the <a href="#">live_dir</a>. Here is an example of how to do this:</p>
-        <pre class="highlight shell"><code>print_bullet <span class="s2">"Copying release into live code directory..."</span>&#x000A;rsync -a <span class="k">$(</span>payload <span class="s1">'code_dir'</span><span class="k">)</span>/rel/ <span class="k">$(</span>payload <span class="s1">'live_dir'</span><span class="k">)</span>&#x000A;</code></pre>
+        <h4 id="nonpersistent_writable_dirs">nonpersistent_writable_dirs</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;</code></pre>
         
-        <h2 id="example">Example</h2>
+        <h2 id="custom-logs">Custom Logs</h2>
         
-        <p>Coming</p>
+        <p>Many apps and frameworks log to files stored in the file system. <code>log_watch</code>&#39;s allow you to include any entries written to these log files in your unified log stream. More information is available in the <a href="/getting-started/logs">Logs doc</a>.</p>
+        
+        <h4 id="log_watch">log_watch</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/log.file"</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">app/logs/error.log"</span>&#x000A;</code></pre>
+        
+        <h2 id="cron-jobs">Cron Jobs</h2>
+        
+        <p>Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cronjobs specified in a service&#39;s Boxfile config are loaded into the services crontab.</p>
+        
+        <h4 id="cron">cron</h4>
+        <pre class="highlight yaml"><code><span class="c1"># Pattern</span>&#x000A;<span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">cron</span><span class="nv"> </span><span class="s">schedule"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">command"</span>&#x000A;&#x000A;<span class="c1"># Examples</span>&#x000A;<span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*"</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;</code></pre>
+        
+        <h2 id="deploy-hooks">Deploy Hooks</h2>
+        
+        <p>Deploy Hooks allow you to &quot;hook&quot; into the deploy process and execute scripts or commands. Each type of hook takes place during a specific stage of the deployment process.</p>
+        
+        <h3 id="before_deploy">before_deploy</h3>
+        
+        <p><code>before_deploy</code> hooks run after code has been deployed to new instances, but before traffic is routed to the new instances. These are ideal for things such as migrations.</p>
+        
+        <h3 id="before_deploy_all">before_deploy_all</h3>
+        
+        <p><code>before_deploy_all</code> run at the same time as <code>before_deploy</code> hooks, but run on all instances inside of a multi-instance service, rather than just one. These really come in handy when modifying <a href="/getting-started/nonpersistent-writable-dirs/">nonpersistent writable directories</a> on deploy.</p>
+        
+        <h3 id="after_deploy">after_deploy</h3>
+        
+        <p><code>after_deploy</code> hooks run after the newly deployed instances have begun handling traffic and the old instances have been decommissioned.</p>
+        
+        <h3 id="after_deploy_all">after_deploy_all</h3>
+        
+        <p><code>after_deploy_all</code> run at the same time as <code>after_deploy</code> hooks, but run on all instances inside of a multi-instance service, rather than just one. These really come in handy when modifying <a href="/getting-started/nonpersistent-writable-dirs/">nonpersistent writable directories</a> on deploy.</p>
+        
+        <h3 id="deploy_hook_timeout">deploy_hook_timeout</h3>
+        
+        <p><code>deploy_hook_timeout</code> defines a timeout for deploy hooks in seconds.</p>
+        
+        <h4 id="deploy-hooks-in-the-boxfile">Deploy Hooks in the Boxfile</h4>
+        <pre class="highlight yaml"><code><span class="s">tcp1</span><span class="pi">:</span>&#x000A;  <span class="s">deploy_hook_timeout</span><span class="pi">:</span> <span class="s">600</span>&#x000A;  <span class="s">before_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/migrate_db.rb"</span>&#x000A;  <span class="s">before_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/cache_prime.rb"</span>&#x000A;  <span class="s">after_deploy</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/clear_cache.rb"</span>&#x000A;  <span class="s">after_deploy_all</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s2">"</span><span class="s">scripts/local_cache_prime.rb"</span>&#x000A;</code></pre>
         <div id='pagination'>
-          <a class="prev" href="/engines/scripts/prepare/">prepare</a>
-          <a class="next" href="/engines/scripts/cleanup/">cleanup</a>
+          <a class="prev" href="/boxfile/code-services/worker/">Worker</a>
+          <a class="next" href="/boxfile/code-services/udp/">UDP</a>
         </div>
       </div>
     </div>
