@@ -12,7 +12,7 @@ Nanobox uses Vagrant and Docker to create an isolated virtual environment on you
 Nanobox mounts your code directory from your local machine into the virtual environment. Any changes to your code are reflected in your running Nanobox app.
 
 ### Automated Environment Provisioning & Deploys
-Nanobox provisions and builds both the virtual environment and application-level code & data services automatically and quickly. Nanobox Engines will auto-detect what services are needed, then automatically create them within the app's virtual network.
+Nanobox provisions and builds both the virtual environment and application-level code & data services automatically and quickly. Nanobox Engines can auto-detect what services are needed, then automatically create them within the app's virtual network.
 
 ### Reusable & Customizable
 [Engines](/getting-started/engines) are the beating heart of Nanobox. They provide the runtimes for your app's services, include auto-detection scripts ("[sniff](/engines/scripts/sniff)"), and make available configuration options. Engines can be built, published, and used by anyone.

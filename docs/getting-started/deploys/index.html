@@ -329,19 +329,19 @@
       </div>
       <div id='content'>
         <h1>Deploys</h1>
-        <p>Deploys with nanobox allow you to apply changes to both code and your app&#39;s environment on the fly. When deploying to your nanobox VM, the following happens.</p>
+        <p>Deploys with nanobox allow you to apply changes to both code and your app&#39;s environment on the fly. When deploying to your Nanobox, the following happens.</p>
         
         <h3 id="sniff-amp-prepare">Sniff &amp; Prepare</h3>
         
-        <p>Nanobox &quot;sniffs&quot; your apps code to check if an <a href="/getting-started/engines/">engine</a> has been specified in your <a href="/getting-started/boxfile/">Boxfile</a>. It one hasn&#39;t, it will run through the standard libraries of engines to find the best match (which all happens very quickly). Once the engine is loaded, it will generate a Boxfile by merging the Boxfile included in the project with an engine-generated Boxfile. Nanobox then begins to prepare the environment.</p>
+        <p>Nanobox &quot;sniffs&quot; your apps code to check if an <a href="/getting-started/engines/">engine</a> has been specified in your <a href="/getting-started/boxfile/">Boxfile</a>. If one hasn&#39;t, it will run through the standard libraries of engines to find the best match (which all happens very quickly). Once the engine is loaded, it will generate a Boxfile by merging the Boxfile included in the project with an engine-generated Boxfile. Nanobox then begins to prepare the environment.</p>
         
         <h3 id="build">Build</h3>
         
-        <p>In the build phase of the deploy process, nanobox loads your code&#39;s runtime environment based on settings specified in the generated Boxfile, then prepares your code for deploy. This includes loading project dependencies, code modification specified by the engine, etc. The build is where engines really apply their magic.</p>
+        <p>In the build phase of the deploy process, Nanobox loads your code&#39;s runtime environment based on settings specified in the generated Boxfile, then prepares your code for deploy. This includes loading project dependencies, code modification specified by the engine, etc. The build is where engines really apply their magic.</p>
         
         <h3 id="cleanup-amp-package">Cleanup &amp; Package</h3>
         
-        <p>Once build is complete, nanobox will remove anything from the build runtime not necessary in live runtime (defined by the engine), then package your code into a read-only deployable package.</p>
+        <p>Once build is complete, nanobox will remove anything from the build runtime not necessary in the live runtime (defined by the engine), then package your code into a read-only deployable package.</p>
         
         <h3 id="provision-services">Provision Services</h3>
         
@@ -351,7 +351,7 @@
         
         <h3 id="deploy-packaged-code-to-code-services">Deploy Packaged Code to Code Services</h3>
         
-        <p>Once all services have been provisioned, the packaged code is deployed to code services and any updates to the runtime configuration are applied to the running app.</p>
+        <p>Once all services are provisioned, the packaged code is deployed to code services and any updates to the runtime configuration are applied to the running app.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/logs/">Logs</a>
           <a class="next" href="/getting-started/tunneling/">Tunneling</a>

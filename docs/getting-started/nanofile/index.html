@@ -332,7 +332,7 @@
         <p>The <code>.nanofile</code> is a yaml config file used to define what resources are allocated from your local machine to your nanobox virtual environment. A <code>.nanofile</code> is only necessary when you need/want to deviate from the defaults.</p>
         
         <h4 id="nanofile-defaults">.nanofile Defaults</h4>
-        <pre class="highlight yaml"><code><span class="s">ram</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;<span class="s">cpus</span><span class="pi">:</span> <span class="s">2</span>&#x000A;<span class="s">cpu_cap</span><span class="pi">:</span> <span class="s">50</span>&#x000A;<span class="s">domain</span><span class="pi">:</span> <span class="s2">"</span><span class="s">appname.nano.dev"</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">ram</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;<span class="s">cpus</span><span class="pi">:</span> <span class="s">2</span>&#x000A;<span class="s">cpu_cap</span><span class="pi">:</span> <span class="s">50</span>&#x000A;<span class="s">domain</span><span class="pi">:</span> <span class="s2">"</span><span class="s">appname.dev"</span>&#x000A;</code></pre>
         
         <h4 id="ram">RAM</h4>
         
@@ -348,7 +348,7 @@
         
         <h4 id="domain">Domain</h4>
         
-        <p><code>domain</code> specifies the domain where your locally running app is accessed. During the provisioning process, nanobox writes an entry into your local hosts file using a provided IP (172.16.x.x) and assigns it the domain of <em>appname</em>.nano.dev, or whatever domain is specified.</p>
+        <p><code>domain</code> specifies the domain where your locally running app is accessed. During the provisioning process, nanobox writes an entry into your local hosts file using a provided IP (172.16.x.x) and assigns it the domain of <em>appname</em>.dev, or whatever domain is specified.</p>
         
         <h3 id="nanofile-handling">.nanofile Handling</h3>
         
