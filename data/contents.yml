@@ -151,6 +151,8 @@ categories:
             path: "/engines/common-tasks/running-commands/"
           - title: "Environment Variables"
             path: "/engines/common-tasks/environment-variables/"
+          - title: "Profile.d Scripts"
+            path: "/engines/common-tasks/profile-scripts/"
           - title: "Configuration Templates"
             path: "/engines/common-tasks/template-generation/"
           - title: "User Build Hooks"
