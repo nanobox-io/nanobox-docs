@@ -46,6 +46,6 @@ redis1 :
 
 # In a seperate terminal session
 
-$ redis-cli -h appname.nano.dev -p 6379
+$ redis-cli -h app-name.dev -p 6379
 appname.nano.dev:6379>
 ```
