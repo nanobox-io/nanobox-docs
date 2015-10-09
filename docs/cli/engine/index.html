@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      bootstrap - Nanobox Documentation
+      engine - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <script>
@@ -143,38 +143,49 @@
           <li>
             <a href="/cli/">Command Line Interface</a>
             <ul class='sub'>
-              <li class='active'>
-                <a href="/cli/bootstrap/">bootstrap</a>
-              </li>
-              <li>
-                <a href="/cli/console/">console</a>
-              </li>
-              <li>
-                <a href="/cli/destroy/">destroy</a>
-              </li>
               <li>
                 <a href="/cli/dev/">dev</a>
-              </li>
-              <li>
-                <a href="/cli/down/">down</a>
-              </li>
-              <li>
-                <a href="/cli/exec/">exec</a>
-              </li>
-              <li>
-                <a href="/cli/help/">help</a>
-              </li>
-              <li>
-                <a href="/cli/info/">info</a>
-              </li>
-              <li>
-                <a href="/cli/publish/">publish</a>
               </li>
               <li>
                 <a href="/cli/run/">run</a>
               </li>
               <li>
+                <a href="/cli/info/">info</a>
+              </li>
+              <li>
+                <a href="/cli/console/">console</a>
+              </li>
+              <li>
+                <a href="/cli/exec/">exec</a>
+              </li>
+              <li>
+                <a href="/cli/down/">down</a>
+              </li>
+              <li>
+                <a href="/cli/destroy/">destroy</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/publish/">publish</a>
+              </li>
+              <li>
                 <a href="/cli/update/">update</a>
+              </li>
+              <li>
+                <a href="/cli/update-images/">update-images</a>
+              </li>
+              <li class='active'>
+                <a href="/cli/engine/">engine</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/cli/engine/publish/">publish</a>
+                  </li>
+                  <li>
+                    <a href="/cli/engine/new/">new</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
@@ -331,14 +342,27 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>bootstrap</h1>
-        <p>The <code>bootstrap</code> command runs the specified engine&#39;s bootstrap script, which downloads the necessary code for the app. It then runs an <a href="/cli/create/"><em>create</em></a>.</p>
+        <h1>engine</h1>
+        <p>The <code>engine</code> subcommand provides tools to aid in the creation and management of engines.</p>
         
-        <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox bootstrap &lt;ENGINE&gt;&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>nanobox bootstrap nanobox/ruby-on-rails&#x000A;</code></pre>
+        <table><thead>
+        <tr>
+        <th style="text-align: left">Command</th>
+        <th style="text-align: left">Summary</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td style="text-align: left"><a href="/cli/engine/publish/"><code>publish</code></a></td>
+        <td style="text-align: left">Publishes your engine to nanobox.io</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/engine/new/"><code>new</code></a></td>
+        <td style="text-align: left">Creates an Enginefile] in the current working directory</td>
+        </tr>
+        </tbody></table>
         <div id='pagination'>
-          <a class="prev" href="/cli/">Command Line Interface</a>
-          <a class="next" href="/cli/console/">console</a>
+          <a class="prev" href="/cli/update-images/">update-images</a>
+          <a class="next" href="/cli/engine/publish/">publish</a>
         </div>
       </div>
     </div>
@@ -361,6 +385,9 @@
             </li>
             <li>
               <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
+            </li>
+            <li>
+              <a href='https://blog.nanobox.io'>Blog</a>
             </li>
           </ul>
           <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>

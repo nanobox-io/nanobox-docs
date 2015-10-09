@@ -144,37 +144,48 @@
             <a href="/cli/">Command Line Interface</a>
             <ul class='sub'>
               <li>
-                <a href="/cli/bootstrap/">bootstrap</a>
-              </li>
-              <li>
-                <a href="/cli/console/">console</a>
-              </li>
-              <li>
-                <a href="/cli/destroy/">destroy</a>
-              </li>
-              <li>
                 <a href="/cli/dev/">dev</a>
-              </li>
-              <li>
-                <a href="/cli/down/">down</a>
-              </li>
-              <li>
-                <a href="/cli/exec/">exec</a>
-              </li>
-              <li>
-                <a href="/cli/help/">help</a>
-              </li>
-              <li>
-                <a href="/cli/info/">info</a>
-              </li>
-              <li>
-                <a href="/cli/publish/">publish</a>
               </li>
               <li>
                 <a href="/cli/run/">run</a>
               </li>
               <li>
+                <a href="/cli/info/">info</a>
+              </li>
+              <li>
+                <a href="/cli/console/">console</a>
+              </li>
+              <li>
+                <a href="/cli/exec/">exec</a>
+              </li>
+              <li>
+                <a href="/cli/down/">down</a>
+              </li>
+              <li>
+                <a href="/cli/destroy/">destroy</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/publish/">publish</a>
+              </li>
+              <li>
                 <a href="/cli/update/">update</a>
+              </li>
+              <li>
+                <a href="/cli/update-images/">update-images</a>
+              </li>
+              <li>
+                <a href="/cli/engine/">engine</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/cli/engine/publish/">publish</a>
+                  </li>
+                  <li>
+                    <a href="/cli/engine/new/">new</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
@@ -341,52 +352,68 @@
         </tr>
         </thead><tbody>
         <tr>
-        <td style="text-align: left"><a href="/cli/bootstrap/"><code>bootstrap</code></a></td>
-        <td style="text-align: left">Runs an engine&#39;s bootstrap script - downloads code &amp; launches VM</td>
+        <td style="text-align: left"><a href="/cli/dev/"><code>dev</code></a></td>
+        <td style="text-align: left">Starts the nanobox, provisions app, &amp; opens an interactive terminal</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/run/"><code>run</code></a></td>
+        <td style="text-align: left">Starts a nanobox, provisions the app, &amp; runs the app&#39;s exec</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/info/"><code>info</code></a></td>
+        <td style="text-align: left">Displays information about the nanobox and your app</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/console/"><code>console</code></a></td>
-        <td style="text-align: left">Opens an interactive terminal inside your app&#39;s context</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/destroy/"><code>destroy</code></a></td>
-        <td style="text-align: left">Destroys the nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/"><code>dev</code></a></td>
-        <td style="text-align: left">Starts the Nanobox VM &amp; drops you into a console</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/down/"><code>down</code></a></td>
-        <td style="text-align: left">Suspends the nanobox VM</td>
+        <td style="text-align: left">Opens an interactive terminal from inside your app on the nanobox</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/exec/"><code>exec</code></a></td>
-        <td style="text-align: left">Runs a command in your apps context</td>
+        <td style="text-align: left">Runs a command from inside your app on the nanobox</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/down/"><code>down</code></a></td>
+        <td style="text-align: left">Suspends the nanobox</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/destroy/"><code>destroy</code></a></td>
+        <td style="text-align: left">Destroys the nanobox</td>
         </tr>
         <tr>
         <td style="text-align: left"><a href="/cli/help/"><code>help</code></a></td>
         <td style="text-align: left">Displays CLI help</td>
         </tr>
         <tr>
-        <td style="text-align: left"><a href="/cli/info/"><code>info</code></a></td>
-        <td style="text-align: left">Displays inforamtion about the Nanobox VM &amp; running services</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/publish/"><code>publish</code></a></td>
-        <td style="text-align: left">Publishes an engine to nanobox.io</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/run/"><code>run</code></a></td>
-        <td style="text-align: left">Starts the Nanobox VM and runs your application</td>
-        </tr>
-        <tr>
         <td style="text-align: left"><a href="/cli/update/"><code>update</code></a></td>
         <td style="text-align: left">Updates the CLI to the newest available version</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="/cli/update-images/"><code>update-images</code></a></td>
+        <td style="text-align: left">Updates the nanobox docker images</td>
+        </tr>
+        </tbody></table>
+        
+        <h3 id="subcommands">Subcommands</h3>
+        
+        <p>The Nanobox CLI include subcommands - commands each with their own subset of commands related to a specific task or workflow.</p>
+        
+        <table><thead>
+        <tr>
+        <th style="text-align: left">Subcommand</th>
+        <th style="text-align: left">Summary</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td style="text-align: left"><a href="/cli/engine/"><code>engine</code></a></td>
+        <td style="text-align: left">Provides tools to aid in the creation &amp; management of engines</td>
         </tr>
         </tbody></table>
         
         <h3 id="global-command-options">Global Command Options</h3>
+        
+        <h4 id="background">--background</h4>
+        
+        <p>Stops nanobox from auto-suspending. Only takes affect on commands that require a running nanobox.</p>
         
         <h4 id="v-verbose">-v, --verbose</h4>
         
@@ -395,9 +422,13 @@
         <h4 id="f-force">-f, --force</h4>
         
         <p>Forces the command to run without any confirmation. <strong>Use responsibly!</strong></p>
+        
+        <h4 id="version">--version</h4>
+        
+        <p>Displays the current version of the Nanobox CLI.</p>
         <div id='pagination'>
           <a class="prev" href="/getting-started/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
-          <a class="next" href="/cli/bootstrap/">bootstrap</a>
+          <a class="next" href="/cli/dev/">dev</a>
         </div>
       </div>
     </div>
@@ -420,6 +451,9 @@
             </li>
             <li>
               <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
+            </li>
+            <li>
+              <a href='https://blog.nanobox.io'>Blog</a>
             </li>
           </ul>
           <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>

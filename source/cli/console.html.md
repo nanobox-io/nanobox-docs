@@ -2,7 +2,7 @@
 title: console
 ---
 
-The `console` opens an interactive terminal from inside your app on the nanobox virtual machine.
+The `console` opens an interactive terminal from inside your app on the nanobox.
 
 ### Usage
 ```shell

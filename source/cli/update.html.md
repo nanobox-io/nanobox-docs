@@ -2,7 +2,7 @@
 title: update
 ---
 
-The `update` command checks for and udpates the nanobox CLI.
+The `update` command checks for and udpates the Nanobox CLI.
 
 ### Usage
 ```shell

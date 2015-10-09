@@ -2,7 +2,7 @@
 title: help
 ---
 
-The `help` command provides general help information for the nanobox CLI.
+The `help` command provides general help information for the Nanobox CLI.
 
 ### Usage
 ```shell

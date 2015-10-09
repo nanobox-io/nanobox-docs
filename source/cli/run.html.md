@@ -2,7 +2,7 @@
 title: run
 ---
 
-The `run` command starts the Nanobox VM and runs your application.
+The `run` command starts the nanobox and runs your application.
 
 ### Usage
 ```shell

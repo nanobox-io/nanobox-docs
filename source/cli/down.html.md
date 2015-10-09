@@ -2,7 +2,7 @@
 title: down
 ---
 
-Suspends the currently running Nanobox VM.
+Suspends the currently running anobox.
 
 ### Usage
 ```shell

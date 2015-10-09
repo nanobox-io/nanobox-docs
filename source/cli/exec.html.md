@@ -2,7 +2,7 @@
 title: exec
 ---
 
-The `exec` command Runs a command from inside your app on the nanobox VM.
+The `exec` command Runs a command from inside your app on the nanobox.
 
 ### Usage
 ```shell

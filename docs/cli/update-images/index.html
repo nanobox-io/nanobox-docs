@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <!-- favicon -->
+    <link href='/images/favicon.ico' rel='icon' type='image/png'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+      update-images - Nanobox Documentation
+    </title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-760419-20', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="/stylesheets/all-ff38f05b.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-3a13a9e7.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id='header'>
+      <a class='left' href='/' id='logo'>
+        <svg enable-background='new 0 0 19 33' id='nb-logo-sm' space='preserve' version='1.1' viewbox='0 0 19 33' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <g>
+            <g>
+              <polygon fill='#405C70' points='19,26 9.6,30.9 0,26 9.4,21.1'></polygon>
+              <polygon fill='#2F4352' points='15,24 9.5,26.9 3.9,24 9.4,21.1'></polygon>
+              <polygon fill='#1C2830' points='9.6,30.9 19,26.1 19,27.4 9.6,32.3 '></polygon>
+              <polygon fill='#19242B' points='9.6,30.9 0,26 0,27.3 9.6,32.3 '></polygon>
+            </g>
+            <g>
+              <polygon fill='#1E77A3' points='9.5,23.1 17.2,19.1 17.2,20.3 9.5,24.2 '></polygon>
+              <polygon fill='#175D80' points='9.5,23.1 1.8,19.1 1.8,20.3 9.5,24.2 '></polygon>
+              <polygon fill='#62B1DD' points='17.2,19.1 9.5,23.1 1.8,19.1 9.5,15.2'></polygon>
+              <polygon enable-background='new' fill='#0B194F' opacity='0.42' points='15.1,18.1 9.5,21 3.9,18.1 9.5,15.2 '></polygon>
+            </g>
+            <g>
+              <polygon fill='#43C494' points='9.5,16.9 18.8,12.2 18.8,13.5 9.5,18.3 '></polygon>
+              <polygon fill='#4AAA88' points='9.5,16.9 0.2,12.2 0.2,13.5 9.5,18.3 '></polygon>
+              <polygon fill='#7FE0BF' points='18.8,12.2 9.5,16.9 0.2,12.2 9.5,7.4 '></polygon>
+              <polygon enable-background='new' fill='#43C4A6' opacity='0.76' points='16.3,10.9 9.5,14.4 2.7,10.9 9.5,7.4'></polygon>
+            </g>
+            <g>
+              <polygon fill='#FDE5A6' points='18.8,4.8 9.5,9.6 0.2,4.8 9.5,0'></polygon>
+              <polygon fill='#E9D399' points='9.5,9.6 18.8,4.8 18.8,6.2 9.5,11'></polygon>
+              <polygon fill='#D9BB6F' points='9.5,9.6 0.2,4.8 0.2,6.2 9.5,11'></polygon>
+            </g>
+          </g>
+        </svg>
+        <span id='nb-title'>
+          <span class='drop'>Nanobox</span>
+          Docs
+        </span>
+      </a>
+      <ul class='links'>
+        <li class='text'>
+          <a class='active' href='/'>
+            Local
+          </a>
+        </li>
+        <li class='text'>
+          <a href='/production/'>
+            Production
+          </a>
+        </li>
+        <li>
+          <a href='https://nanobox.io'>
+            <svg enable-background='new 0 0 18 18' id='home-icon' space='preserve' version='1.1' viewbox='0 0 18 18' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+              <polygon fill='none' points='11,13 11,9 9,7 7,9 &#x000A;	7,13 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polygon>
+              <polyline fill='none' points='14,11 14,16 4,16 &#x000A;	4,11 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polyline>
+              <polyline fill='none' points='2,9.1 9.1,2 &#x000A;	16.1,9.1 ' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'></polyline>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id='wrapper'>
+      <div class='open' id='contents-btn'>Contents</div>
+      <div id='navigation'>
+        <ul class='closed' id='contents'>
+          <li>
+            <a href="/">Overview</a>
+          </li>
+          <li>
+            <a href="/why-nanobox/">Why Nanobox?</a>
+          </li>
+          <li>
+            <a href="/installation/">Installation</a>
+            <ul class='sub'>
+              <li>
+                <a href="/installation/upgrading/">Upgrading</a>
+              </li>
+              <li>
+                <a href="/installation/uninstalling/">Uninstalling</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/getting-started/">Getting Started</a>
+            <ul class='sub'>
+              <li>
+                <a href="/getting-started/basic-workflow/">Basic Workflow</a>
+              </li>
+              <li>
+                <a href="/getting-started/project-setup/">Project Setup</a>
+              </li>
+              <li>
+                <a href="/getting-started/nanofile/">.nanofile</a>
+              </li>
+              <li>
+                <a href="/getting-started/boxfile/">Boxfile</a>
+              </li>
+              <li>
+                <a href="/getting-started/engines/">Engines</a>
+              </li>
+              <li>
+                <a href="/getting-started/services/">Services</a>
+              </li>
+              <li>
+                <a href="/getting-started/logs/">Logs</a>
+              </li>
+              <li>
+                <a href="/getting-started/deploys/">Deploys</a>
+              </li>
+              <li>
+                <a href="/getting-started/tunneling/">Tunneling</a>
+              </li>
+              <li>
+                <a href="/getting-started/network-storage/">Network Storage</a>
+              </li>
+              <li>
+                <a href="/getting-started/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/cli/">Command Line Interface</a>
+            <ul class='sub'>
+              <li>
+                <a href="/cli/dev/">dev</a>
+              </li>
+              <li>
+                <a href="/cli/run/">run</a>
+              </li>
+              <li>
+                <a href="/cli/info/">info</a>
+              </li>
+              <li>
+                <a href="/cli/console/">console</a>
+              </li>
+              <li>
+                <a href="/cli/exec/">exec</a>
+              </li>
+              <li>
+                <a href="/cli/down/">down</a>
+              </li>
+              <li>
+                <a href="/cli/destroy/">destroy</a>
+              </li>
+              <li>
+                <a href="/cli/help/">help</a>
+              </li>
+              <li>
+                <a href="/cli/publish/">publish</a>
+              </li>
+              <li>
+                <a href="/cli/update/">update</a>
+              </li>
+              <li class='active'>
+                <a href="/cli/update-images/">update-images</a>
+              </li>
+              <li>
+                <a href="/cli/engine/">engine</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/cli/engine/publish/">publish</a>
+                  </li>
+                  <li>
+                    <a href="/cli/engine/new/">new</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/boxfile/">Boxfile</a>
+            <ul class='sub'>
+              <li>
+                <a href="/boxfile/env/">env</a>
+              </li>
+              <li>
+                <a href="/boxfile/build/">build</a>
+              </li>
+              <li>
+                <a href="/boxfile/code-services/">Code Services</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/boxfile/code-services/web/">Web</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/code-services/worker/">Worker</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/code-services/tcp/">TCP</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/code-services/udp/">UDP</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/boxfile/data-services/">Data Services</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/boxfile/data-services/mysql/">MySQL</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/percona/">Percona</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/mariadb/">MariaDB</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/postgresql/">PostgreSQL</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/mongodb/">MongoDB</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/redis/">Redis</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/memcached/">Memcached</a>
+                  </li>
+                  <li>
+                    <a href="/boxfile/data-services/nfs/">Network File System (NFS)</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/boxfile/quick-reference/">Quick Reference</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/engines/">Engines</a>
+            <ul class='sub'>
+              <li>
+                <a href="/engines/how-engines-work/">How Engines Work</a>
+              </li>
+              <li>
+                <a href="/engines/the-environment/">The Environment</a>
+              </li>
+              <li>
+                <a href="/engines/boxfile-spec/">Generating a Boxfile</a>
+              </li>
+              <li>
+                <a href="/engines/project-creation/">Project Creation</a>
+              </li>
+              <li>
+                <a href="/engines/enginefile/">Enginefile</a>
+              </li>
+              <li>
+                <a href="/engines/readme/">Readme</a>
+              </li>
+              <li>
+                <a href="/engines/style-guide/">Style Guide</a>
+              </li>
+              <li>
+                <a href="/engines/scripts/">Scripts</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/engines/scripts/sniff/">sniff</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/boxfile/">boxfile</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/prepare/">prepare</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/build/">build</a>
+                  </li>
+                  <li>
+                    <a href="/engines/scripts/cleanup/">cleanup</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/engines/common-tasks/">Common Tasks</a>
+                <ul class='sub'>
+                  <li>
+                    <a href="/engines/common-tasks/using-the-payload/">Using the Payload</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/working-with-input/">Working with Input</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/generating-output/">Printing Output</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/installing-binaries/">Installing Binaries</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/running-commands/">Running Commands</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/environment-variables/">Environment Variables</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/profile-scripts/">Profile.d Scripts</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/template-generation/">Configuration Templates</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/build-hooks/">User Build Hooks</a>
+                  </li>
+                  <li>
+                    <a href="/engines/common-tasks/caching/">Caching</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/engines/publish/">Publish</a>
+              </li>
+              <li>
+                <a href="/engines/dev-workflow/">Development Workflow</a>
+              </li>
+              <li>
+                <a href="/engines/debugging/">Debugging</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id='content'>
+        <h1>update-images</h1>
+        <p>The <code>update-images</code> updates the nanobox docker images. We recommend running this command periodically to ensure you have the most up-to-date service images.</p>
+        
+        <h3 id="usage">Usage:</h3>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox update-images&#x000A;</code></pre>
+        <div id='pagination'>
+          <a class="prev" href="/cli/update/">update</a>
+          <a class="next" href="/cli/engine/">engine</a>
+        </div>
+      </div>
+    </div>
+    <div id='footer'>
+      <div id='wrapper'>
+        <div class='left'>
+          <ul>
+            <li class='title'>Nanobox</li>
+            <li>
+              <a href='https://nanobox.io/downloads/'>Download</a>
+            </li>
+            <li>
+              <a href='https://github.com/nanobox-io'>Source Code</a>
+            </li>
+          </ul>
+          <ul>
+            <li class='title'>Community</li>
+            <li>
+              <a href='http://webchat.freenode.net/?channels=nanobox' target='_blank'>#nanobox IRC</a>
+            </li>
+            <li>
+              <a href='http://trello.com/b/4nVFzmNZ/nanobox' target='_blank'>Track Progress on Trello</a>
+            </li>
+            <li>
+              <a href='https://blog.nanobox.io'>Blog</a>
+            </li>
+          </ul>
+          <p>Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em></p>
+        </div>
+        <div class='right'>
+          <a href='#' id='production'>
+            <svg enable-background='new 0 0 56 96.7' id='nb-logo-md' space='preserve' version='1.1' viewbox='0 0 56 96.7' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+              <g>
+                <polygon fill='#2B3E4B' points='56.4,77.3 28.5,91.7 0,77 27.9,62.7  '></polygon>
+                <polygon fill='#23313C' points='32.5,80.5 22.6,85.7 17.7,83.2 27.5,78   '></polygon>
+                <polygon fill='#1A242B' points='17.7,83.1 27.5,78 27.5,81.4 20.9,84.8   '></polygon>
+                <polyline fill='#1C2830' points='27.5,78 27.5,81.4 29.2,82.2 32.5,80.5  '></polyline>
+                <polygon fill='#23313C' points='26.2,77.3 16.4,82.5 11.5,79.9 21.3,74.8   '></polygon>
+                <polygon fill='#1A242B' points='11.5,79.9 21.3,74.7 21.3,78.1 14.7,81.6   '></polygon>
+                <polyline fill='#1C2830' points='21.3,74.7 21.3,78.1 23,79 26.2,77.3  '></polyline>
+                <polygon fill='#23313C' points='20,74 10.1,79.2 5.2,76.7 15.1,71.5  '></polygon>
+                <polygon fill='#1A242B' points='5.2,76.6 15.1,71.5 15.1,74.9 8.5,78.3   '></polygon>
+                <polyline fill='#1C2830' points='15.1,71.5 15.1,74.9 16.7,75.7 20,74  '></polyline>
+                <polygon fill='#1C2830' points='28.5,91.7 56.4,77.3 56.4,81.4 28.5,95.8   '></polygon>
+                <polygon fill='#1A242B' points='28.5,91.7 0,77 0,81.1 28.5,95.8   '></polygon>
+                <polygon fill='#23313C' points='48.2,78.8 35.2,85.5 30.3,83 43.2,76.3   '></polygon>
+                <polygon fill='#1A242B' points='30.3,83 46.5,74.5 46.5,77.9 33.6,84.7   '></polygon>
+                <polygon fill='#23313C' points='45.2,73.8 35.4,79 30.4,76.5 40.3,71.3   '></polygon>
+                <polygon fill='#1A242B' points='30.4,76.4 40.3,71.3 40.3,74.7 33.7,78.1   '></polygon>
+                <polyline fill='#1C2830' points='40.3,71.3 40.3,74.7 41.9,75.5 45.2,73.8  '></polyline>
+                <polygon fill='#23313C' points='39,70.6 29.1,75.8 24.2,73.2 34,68.1   '></polygon>
+                <polygon fill='#1A242B' points='24.2,73.2 34,68 34,71.4 27.4,74.9   '></polygon>
+                <polyline fill='#1C2830' points='34,68 34,71.4 35.7,72.3 39,70.6  '></polyline>
+                <polygon fill='#23313C' points='32.7,67.3 22.9,72.5 18,70 27.8,64.8   '></polygon>
+                <polygon fill='#1A242B' points='18,69.9 27.8,64.8 27.8,68.2 21.2,71.6   '></polygon>
+                <polyline fill='#1C2830' points='27.8,64.8 27.8,68.2 29.5,69 32.7,67.3  '></polyline>
+                <polyline fill='#1C2830' points='46.5,74.5 46.5,77.9 48.2,78.8 51.4,77.1  '></polyline>
+                <polygon fill='#23313C' points='33.7,86.3 28.5,89 23.6,86.5 28.8,83.7   '></polygon>
+                <polygon fill='#1A242B' points='23.6,86.4 28.8,83.7 28.8,87.1 26.9,88.1   '></polygon>
+                <polyline fill='#1C2830' points='28.8,83.7 28.8,87.1 30.4,88 33.7,86.3  '></polyline>
+                <polygon enable-background='new    ' fill='#010101' opacity='0.22' points='48.1,73.1 27.9,83.6 7.6,73.1 27.9,62.7   '></polygon>
+                <polygon fill='#1F78A4' points='28.8,68.5 51.5,56.8 51.5,60.2 28.8,71.9   '></polygon>
+                <polygon fill='#1A5D80' points='28.8,68.5 6.1,56.8 6.1,60.2 28.8,71.9   '></polygon>
+                <polygon fill='#63B1DD' points='51.5,56.8 28.8,68.5 6.1,56.8 28.8,45  '></polygon>
+                <polygon enable-background='new    ' fill='#1A1D4D' opacity='0.42' points='45.5,53.7 28.8,62.3 12.1,53.7 28.8,45.1  '></polygon>
+                <polygon fill='#50BD93' points='28.8,50.3 56.3,36.1 56.3,40.2 28.8,54.4   '></polygon>
+                <polygon fill='#4BAA88' points='28.8,50.3 1.3,36.1 1.3,40.2 28.8,54.4   '></polygon>
+                <polygon fill='#8BCFB8' points='56.3,36.1 28.8,50.3 1.3,36.1 28.8,21.9  '></polygon>
+                <polygon enable-background='new    ' fill='#4EBFA4' opacity='0.76' points='49.1,32.3 28.8,42.8 8.5,32.3 28.8,21.9   '></polygon>
+                <polygon fill='#FFF5AE' points='56.3,14.3 28.6,28.6 0.9,14.3 28.6,0   '></polygon>
+                <polygon fill='#EBE29F' points='28.6,28.6 56.3,14.3 56.3,18.5 28.6,32.7   '></polygon>
+                <polygon fill='#DACE74' points='28.6,28.6 0.9,14.3 0.9,18.5 28.6,32.7   '></polygon>
+              </g>
+            </svg>
+            Use Nanobox in Production
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
