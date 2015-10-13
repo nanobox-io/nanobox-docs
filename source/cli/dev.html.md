@@ -12,3 +12,6 @@ $ nanobox dev [flags]
 ### Options
 #### --rebuild
 Rebuilds your application as the nanobox starts up
+
+#### --background
+Stops nanobox from auto-suspending

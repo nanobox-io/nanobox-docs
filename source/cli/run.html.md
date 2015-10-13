@@ -10,5 +10,8 @@ $ nanobox run [flags]
 ```
 
 ### Options
-####--reset-cache
+#### --reset-cache
 Clears the contents of `lib_dirs` and other cached directories.
+
+#### --background
+Stops nanobox from auto-suspending
