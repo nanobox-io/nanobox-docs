@@ -4,11 +4,18 @@ title: Boxfile Quick Reference
 
 This doc is meant to act as a quick reference to all available base Boxfile Settings for code and data services. These settings are those made available by Nanobox, but [Engines](/getting-started/engines/) may make more available. Those config options made available by engines should be documented in the engine's documentation.
 
-###### Quick Links
+#### Quick Links
 [Env Settings](#env-settings-in-the-boxfile)  
 [Build Settings](#build-settings-in-the-boxfile)  
+[Console Settings](#console-settings-in-the-boxfile)
+
+***Code Services***  
 [Web Settings](#web-settings-in-the-boxfile)  
 [Worker Settings](#worker-settings-in-the-boxfile)  
+[TCP Settings](#tcp-settings-in-the-boxfile)  
+[UDP Settings](#udp-settings-in-the-boxfile)  
+
+***Data Services***  
 [MySQL, Percona, & MariaDB Settings](#mysql-percona-amp-mariadb-boxfile-settings)  
 [PostgreSQL Settings](#postgresql-settings-in-the-boxfile)  
 [MongoDB Settings](#mongodb-settings-in-the-boxfile)  
@@ -18,7 +25,7 @@ This doc is meant to act as a quick reference to all available base Boxfile Sett
 
 ---
 
-#### Env Settings in the Boxfile
+### Env Settings in the Boxfile
 ```yaml
 env:
   ENVIRONMENT: production
@@ -30,7 +37,7 @@ env:
 
 ---
 
-#### Build Settings in the Boxfile
+### Build Settings in the Boxfile
 ```yaml
 build:
   # Engine
@@ -48,6 +55,17 @@ build:
 [Boxfile build](/boxfile/build/)
 
 --- 
+
+### Console Settings in the Boxfile
+```yaml
+console:
+  ignore_lib_dirs: false
+```
+
+###### Full Doc
+[Boxfile console](/boxfile/console/)
+
+---
 
 ### Web Settings in the Boxfile
 ```yaml
@@ -96,7 +114,7 @@ web1:
     - "scripts/local_cache_prime.rb"
 ```
 ###### Full Doc
-[Code Service Boxfile Settings](/boxfile/code-services/) 
+[Web Boxfile Settings](/boxfile/code-services/web) 
 
 --- 
 
@@ -142,7 +160,109 @@ worker1:
     - "scripts/local_cache_prime.rb"
 ```
 ###### Full Doc
-[Code Service Boxfile Settings](/boxfile/code-services/)  
+[Worker Boxfile Settings](/boxfile/code-services/worker)  
+
+---
+
+### TCP Settings in the Boxfile
+```yaml
+tcp1:
+  name: mail-server
+
+  # Exec
+  exec: "ruby smtp.rb"
+
+  # Port Mapping
+  ports:
+    - 25:3000
+
+  # Network Storage
+  network_dirs:
+    nfs1:
+      - path/to/directoryA
+      - path/to/directoryB
+    nfs2:
+      - path/to/directoryC
+
+  # Nonpersistent Writable Dirs
+  nonpersistent_writable_dirs:
+    - path/to/dirA
+    - path/to/dirB
+
+  # Custom Logs
+  log_watch:
+    app[error]: "path/to/error.log"
+
+  # Cron
+  cron:
+    - "0 0 * * *": "rm -rf app/cache/*"
+    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
+
+  # Deploy Hooks
+  deploy_hook_timeout: 600
+  before_deploy:
+    - "scripts/migrate_db.rb"
+  before_deploy_all:
+    - "scripts/cache_prime.rb"
+  after_deploy:
+    - "scripts/clear_cache.rb"
+  after_deploy_all:
+    - "scripts/local_cache_prime.rb"
+```
+
+###### Full Doc
+[TCP Boxfile Settings](/boxfile/code-services/tcp)
+
+---
+
+### UDP Settings in the Boxfile
+```yaml
+udp1:
+  name: dns-server
+
+  # Exec
+  exec: "ruby server.rb"
+
+  # Port Mapping
+  ports:
+    - 53:3000
+
+  # Network Storage
+  network_dirs:
+    nfs1:
+      - path/to/directoryA
+      - path/to/directoryB
+    nfs2:
+      - path/to/directoryC
+
+  # Nonpersistent Writable Dirs
+  nonpersistent_writable_dirs:
+    - path/to/dirA
+    - path/to/dirB
+
+  # Custom Logs
+  log_watch:
+    app[error]: "path/to/error.log"
+
+  # Cron
+  cron:
+    - "0 0 * * *": "rm -rf app/cache/*"
+    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
+
+  # Deploy Hooks
+  deploy_hook_timeout: 600
+  before_deploy:
+    - "scripts/migrate_db.rb"
+  before_deploy_all:
+    - "scripts/cache_prime.rb"
+  after_deploy:
+    - "scripts/clear_cache.rb"
+  after_deploy_all:
+    - "scripts/local_cache_prime.rb"
+```
+
+###### Full Doc
+[UDP Boxfile Settings](/boxfile/code-services/udp)
 
 ---
 

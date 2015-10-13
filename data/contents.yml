@@ -79,7 +79,9 @@ categories:
       - title: "env"
         path: "/boxfile/env/"
       - title: "build"
-        path: "/boxfile/build/"
+        path: "/boxfile/build/"      
+      - title: "console"
+        path: "/boxfile/console/"
       - title: "Code Services"
         path: "/boxfile/code-services/"
         sub_articles:

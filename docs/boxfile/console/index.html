@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Configuration Templates - Nanobox Documentation
+      console - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <script>
@@ -198,7 +198,7 @@
               <li>
                 <a href="/boxfile/build/">build</a>
               </li>
-              <li>
+              <li class='active'>
                 <a href="/boxfile/console/">console</a>
               </li>
               <li>
@@ -320,7 +320,7 @@
                   <li>
                     <a href="/engines/common-tasks/profile-scripts/">Profile.d Scripts</a>
                   </li>
-                  <li class='active'>
+                  <li>
                     <a href="/engines/common-tasks/template-generation/">Configuration Templates</a>
                   </li>
                   <li>
@@ -345,59 +345,20 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>Configuration Templates</h1>
-        <p>Nos provides a template generation framework, which can be used to dynamically generate application configuration from a template file.</p>
+        <h1>console</h1>
+        <p>The <code>console</code> node of the Boxfile allows you to define settings applied to interactive console sessions when using Nanobox locally.</p>
         
-        <h2 id="mustache">Mustache</h2>
+        <h3 id="ignore_lib_dirs">ignore_lib_dirs</h3>
         
-        <p>Nos uses <a href="https://mustache.github.io/mustache.5.html">mustache</a> as the template rendering framework. Mustache is simple, logic-less, and does not require previous knowledge of a particular language or templating engine to use.</p>
+        <p>When running Nanobox locally, directories specified as <a href="/boxfile/build/#library_directories"><code>lib_dirs</code></a> are populated and used inside your nanobox. In some cases, rather than using the library directories in your nanobox VM, you may want to use the contents of lib_dirs on your local filesystem. Setting <code>ignore_lib_dirs</code> to <code>true</code> will mount the lib_dirs on your local filesystem rather than using those in your nanobox.</p>
         
-        <h2 id="using-templates">Using Templates</h2>
+        <p><strong>Note:</strong> This only applies when using an interactive console (<code>nanobox dev</code> or <code>nanobox console</code>). It will not apply when running the app (<code>nanobox run</code>).</p>
         
-        <h4 id="template-location">Template Location</h4>
-        
-        <p>Nos requires templates to live within the <code>/templates</code> directory. You can nest templates within <code>/templates</code> like <code>/templates/apache/apache.conf.mustache</code>.</p>
-        
-        <p>It is not required to have a .mustache extension, however it is recommended as it will help your editor identify the file type.</p>
-        
-        <h4 id="rendering">Rendering</h4>
-        
-        <p>To render a template, Nos provides a <code>template</code> helper function. This function accepts 3 arguments:</p>
-        
-        <ul>
-        <li>A template source</li>
-        <li>The destination file</li>
-        <li>The payload</li>
-        </ul>
-        
-        <p>Essentially, the <code>template</code> helper will render a mustache template from the <code>/templates</code> directory, writing the result into a destination file.</p>
-        
-        <h6 id="example">Example:</h6>
-        
-        <h4 id="templates-nginx-conf-mustache">/templates/nginx.conf.mustache:</h4>
-        <pre class="highlight handlebars"><code>daemon off;&#x000A;worker_processes  1;&#x000A;&#x000A;error_log  <span class="k">{{</span><span class="nv">deploy_dir</span><span class="k">}}</span>/var/log/nginx/error.log;&#x000A;&#x000A;events {&#x000A;    worker_connections  1024;&#x000A;}&#x000A;&#x000A;http {&#x000A;    include       /data/etc/nginx/mime.types;&#x000A;    default_type  application/octet-stream;&#x000A;    keepalive_timeout  65;&#x000A;    gzip  on;&#x000A;&#x000A;    server {&#x000A;        listen       <span class="k">{{</span><span class="nv">port</span><span class="k">}}</span>;&#x000A;        server_name  localhost;&#x000A;&#x000A;        location / {&#x000A;            root   <span class="k">{{</span><span class="nv">live_dir</span><span class="k">}}</span>;&#x000A;            index  index.html;&#x000A;        }&#x000A;    }&#x000A;}&#x000A;&#x000A;</code></pre>
-        
-        <h4 id="bin-prepare">/bin/prepare</h4>
-        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="c"># source the Nos framework</span>&#x000A;. /opt/nos/common.sh&#x000A;&#x000A;<span class="c"># initialize Nos with the original arguments</span>&#x000A;nos_init <span class="nv">$@</span>&#x000A;&#x000A;<span class="c"># store the payload argument to use as the template payload</span>&#x000A;<span class="nv">payload</span><span class="o">=</span><span class="nv">$1</span>&#x000A;&#x000A;<span class="c"># generate nginx config</span>&#x000A;template <span class="se">\</span>&#x000A;  <span class="s2">"nginx.conf.mustache"</span> <span class="se">\</span>&#x000A;  <span class="s2">"</span><span class="k">$(</span>payload <span class="s1">'deploy_dir'</span><span class="k">)</span><span class="s2">/etc/nginx/nginx.conf"</span> <span class="se">\</span>&#x000A;  <span class="nv">$payload</span>&#x000A;&#x000A;&#x000A;</code></pre>
-        
-        <h2 id="inline-templates">Inline Templates</h2>
-        
-        <p>Coming Soon</p>
-        
-        <h2 id="files">Files</h2>
-        
-        <p>At times a dynamically generated template isn&#39;t required. In such cases, a static file can be copied into the environment. Nos provides a <code>file</code> helper to assist with this common task. To use the <code>file</code> function, files must be placed in the <code>/files</code> directory. The function accepts 2 arguments:</p>
-        
-        <ul>
-        <li>The source file</li>
-        <li>The destination file.</li>
-        </ul>
-        
-        <h6 id="example">Example:</h6>
-        <pre class="highlight shell"><code>file <span class="se">\</span>&#x000A;  <span class="s2">"patches/fix-flock.php"</span> <span class="se">\</span>&#x000A;  <span class="s2">"</span><span class="k">$(</span>payload <span class="s1">'code_dir'</span><span class="k">)</span><span class="s2">/lib/framework/flock.php"</span>&#x000A;&#x000A;</code></pre>
+        <h4 id="ignore_lib_dirs">ignore_lib_dirs</h4>
+        <pre class="highlight yaml"><code><span class="c1"># Default Setting</span>&#x000A;<span class="s">console</span><span class="pi">:</span>&#x000A;  <span class="s">ignore_lib_dirs</span><span class="pi">:</span> <span class="s">false</span>&#x000A;</code></pre>
         <div id='pagination'>
-          <a class="prev" href="/engines/common-tasks/profile-scripts/">Profile.d Scripts</a>
-          <a class="next" href="/engines/common-tasks/build-hooks/">User Build Hooks</a>
+          <a class="prev" href="/boxfile/build/">build</a>
+          <a class="next" href="/boxfile/code-services/">Code Services</a>
         </div>
       </div>
     </div>
