@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      down - Nanobox Documentation
+      stop - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <script>
@@ -159,7 +159,7 @@
                 <a href="/cli/exec/">exec</a>
               </li>
               <li class='active'>
-                <a href="/cli/down/">down</a>
+                <a href="/cli/stop/">stop</a>
               </li>
               <li>
                 <a href="/cli/destroy/">destroy</a>
@@ -345,11 +345,11 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>down</h1>
-        <p>Suspends the currently running anobox.</p>
+        <h1>stop</h1>
+        <p>Stops the currently running nanobox and persists the current state to disk. When the nanobox is restored, it will start in the same state in which it was stopped.</p>
         
         <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox down&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox stop&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/cli/exec/">exec</a>
           <a class="next" href="/cli/destroy/">destroy</a>

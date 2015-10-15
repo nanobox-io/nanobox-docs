@@ -11,7 +11,7 @@ All interaction with Nanobox happens through the `nanobox` CLI. This section of 
 | [`info`](/cli/info/)                   | Displays information about the nanobox and your app                 |
 | [`console`](/cli/console/)             | Opens an interactive terminal from inside your app on the nanobox   |
 | [`exec`](/cli/exec/)                   | Runs a command from inside your app on the nanobox                  |
-| [`down`](/cli/down/)                   | Suspends the nanobox                                                |
+| [`stop`](/cli/stop/)                   | Stops the nanobox, preserves the current state                      |
 | [`destroy`](/cli/destroy/)             | Destroys the nanobox                                                |
 | [`help`](/cli/help/)                   | Displays CLI help                                                   |
 | [`update`](/cli/update/)               | Updates the CLI to the newest available version                     |
