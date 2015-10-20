@@ -18,7 +18,7 @@ a                       { @include transition(all .15s); }
   &.small               { padding: 8px 20px;
     a                   { font-size: 1em; }
   }
-  ul.links              { float: right; margin: 0; list-style: none;
+  ul.links              { float: right; margin: 0; padding: 0; list-style: none;
     li                  { display: inline-block;
       &.text            { font-size: .8em; vertical-align: text-top;
         a               { padding: .2em .75em .25em; @include border-radius(1em); font-style: italic; text-transform: none; letter-spacing: 0; border: .15em solid $gblue-2;

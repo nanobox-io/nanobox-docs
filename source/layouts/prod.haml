@@ -28,7 +28,7 @@
     = stylesheet_link_tag "all"
     = javascript_include_tag  "all"
 
-  %body
+  %body.prod
     #header
       %a#logo.left{ :href => '/' }
         = partial 'svg-partials/nb-logo-sm'
@@ -38,7 +38,7 @@
       %ul.links
         %li.text
           %a{ :href => "/" }
-            Local
+            Desktop
         %li.text 
           %a.active{ :href => "/production/" }
             Production
