@@ -15,3 +15,16 @@
   h3 a:before           { margin: .15em 0 0 -1em; padding-right: 1em; }
   h4 a:before           { margin: -.1em 0 0 -1em;; padding-right: 1em; }
 }
+
+body.prod               {
+  #content              { 
+    h2, h3, h4, h5, h6  { 
+      a                 { 
+        &:before        { color: $lt-gblue-6; }
+        &:hover         { 
+          &:before      { color: $lt-gblue-4; }
+        }
+      }
+    }
+  }
+}

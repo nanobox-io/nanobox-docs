@@ -11,7 +11,7 @@ a                       { @include transition(all .15s); }
     &:hover             { color: $gblue-6; }
     &#logo              { margin-top: -.05em;
       span#nb-title     { margin-left: 1.8em;
-        &:after         { content: "alpha"; margin-left: .5em; position: relative; top: -.15em; font-size: .75em; color: $blue-0; text-transform: none; font-style: italic; letter-spacing: 0; font-weight: 700; }
+        &:after         { content: "beta"; margin-left: .3em; position: relative; top: -.05em; font-size: .75em; color: $blue-0; text-transform: none; font-style: italic; letter-spacing: 0; font-weight: 700; }
       }
     }
   }
@@ -165,5 +165,121 @@ a                       { @include transition(all .15s); }
     }
   }
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////// PRODUCTION STYLES ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+body.prod               { background: #fff;
+  #header               { background: $lt-gblue-6;
+    a                   { color: $lt-gblue-4;
+      &:hover           { color: $lt-gblue-2; }
+      &#logo #nb-title  { 
+        &:after         { content: "alpha" !important; color: $lt-green-1; }
+      }
+    }  
+    ul.links            { 
+      li.text a         { border-color: $lt-gblue-6;
+        &:hover         { background: $lt-gblue-3; color: #fff; border-color: $lt-gblue-3; } 
+        &.active        { border-color: $lt-gblue-3;  color: $gblue-6;
+          &:hover       { background: $lt-gblue-6; color: $lt-gblue-3}
+        }
+      }
+    }
+    svg                 {
+      &#nb-logo-prod    { height: 1.5em; width: 1.3em; position: absolute; }
+      &#home-icon       { stroke: $lt-gblue-3;
+        &:hover         { stroke: $lt-gblue-2; }
+      }
+    }
+  }
+  #footer               { background: $lt-gblue-6; color: $lt-gblue-2;
+    a                   { color: $lt-gblue-4;
+      &:hover           { color: $lt-gblue-2; }
+      &#production #nb-logo-md { @include opacity(1); }
+    }
+    .title              { color: $lt-gblue-2; }
+  }
+  #contents-btn         { color: $lt-gblue-3; background: $lt-gblue-5; }
+  #navigation           { border-right: 1px solid $lt-gblue-6; color: $lt-gblue-3;
+    a                   { color: $lt-blue-2;
+      &:hover           { color: $lt-blue-0; }
+    }
+    ul                  { 
+      li                { border-top: 1px solid $lt-gblue-6;
+        &.more > a      {
+          &:after       { color: #fff; background: $lt-gblue-5; border: 1px solid #fff; @include transition(background-color .15s); }
+          &:hover:after { background-color: $lt-gblue-4; }
+        }
+        &.active  > a   { color: $lt-red-2; }
+        &.open  > a     { color: $lt-gblue-1; }
+        &:last-child    { border-bottom: 1px solid #fff; }
+      }
+      &.sub li          { 
+        ul.sub          { border-left: 2px solid $lt-gblue-6; }
+      }
+    }
+  }
+  #content                { color: $lt-gblue-1;
+    h1                    { border-bottom: 1px solid $lt-gblue-5; color: $lt-gblue-1; }
+    h2                    { color: $lt-red-2; }
+    h3                    { color: $lt-gblue-1; }
+    h4                    { color: $lt-red-2; }
+    h5                    { color: $lt-gblue-1; }
+    h6                    { color: $lt-green-0; }
+    h2,h3,h4              {
+      a                   { color: inherit; border: none;
+        &:hover           { color: inherit; }
+      }
+    }
+    a                     { color: $lt-blue-2; border: none; 
+      &:hover             { color: $lt-gblue-1;
+        code              { border: 1px dotted $lt-blue-2; }
+      }
+      &.prev              { color: $gblue-4; background: $lt-gblue-6;
+        &:before          { border-color: transparent $lt-gblue-6 transparent transparent; }
+        &:hover           { color: #FFF; background: $lt-gblue-3;
+          &:before        { border-color: transparent $lt-gblue-3 transparent transparent; }
+        }
+      }
+      &.next              { color: $lt-gblue-1; background: $lt-gblue-6;
+        &:after           { border-color: transparent transparent transparent $lt-gblue-6; }
+        &:hover           { color: #FFF; background: $lt-gblue-3;
+          &:after         { border-color: transparent transparent transparent $lt-gblue-3; }
+        }
+      }
+    }
+    strong                { color: $lt-gblue-1; }
+    code, pre             { border: 1px dotted $lt-gblue-6; }
+    pre                   { background: $lt-gblue-6; }
+    p, ul, li             {
+      code                { color: $lt-gblue-2; background: $lt-gblue-6; }
+    }
+    hr                    { border-top: 1px solid $lt-gblue-5; }
+    blockquote            { border-left: 4px solid $lt-gblue-6; }
+    table                 { 
+      thead               { background: $lt-gblue-5; }
+      th                  { border: 1px solid $lt-gblue-5; color: $lt-gblue-1; }
+      td                  { border: 1px solid $lt-gblue-5; }
+      tr                  {
+        &:nth-child(2n+2) { background: $lt-gblue-6;
+          td              { border-right: 1px solid $lt-gblue-5; }
+        }
+      }
+    }
+    #pagination           { border-top: 1px solid $lt-gblue-5; }
+    ul#os-tabs            { 
+      li                  { border-color: $lt-gblue-6; background-color: $lt-gblue-6;
+        &:hover           { border-color: $lt-red-2; color: $lt-red-2; background-color: #fff; }
+        &.active          { border-color: $lt-red-2; background: $lt-red-2; color: #fff; font-weight: 700;
+          &:hover         { color: #fff; }
+        }
+      }
+    }
+  }
+}
+
 
 @import 'svg-styles', 'media-queries';
