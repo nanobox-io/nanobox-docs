@@ -1,29 +1,29 @@
 @import 'variables-mixins';
 
 #providers            { 
-  a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $gblue-8; vertical-align: top;  
+  a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $bgreen-0; vertical-align: top;  
     svg               { margin-bottom: .8em;
-      .bg-circle      { fill: $gblue-8; @include transition(fill .2s);}
-      .icon           { fill: $gblue-4; @include transition(fill .2s);}        
+      .bg-circle      { fill: $bgreen-0; @include transition(fill .2s);}
+      .icon           { fill: #fff; @include transition(fill .2s);}        
     }
-    &.coming          { color: $gblue-4; 
+    &.coming          { color: $lt-gblue-4; 
       &:before        { content: url('/images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 1.85em; }
-      .bg-circle      { fill: $gblue-2; }
-      .icon           { fill: $gblue-1; }
+      .bg-circle      { fill: $lt-gblue-6; }
+      .icon           { fill: $lt-gblue-5; }
     } 
     &:hover           { color: $bgreen-0;
-      .bg-circle      { fill: $bgreen-0; }
+      .bg-circle      { fill: $lt-blue-2; }
       .icon           { fill: white; } 
       &.coming        { color: $gblue-4;
-        .bg-circle    { fill: $gblue-2; }
-        .icon         { fill: $gblue-1; }
+        .bg-circle    { fill: $lt-gblue-6; }
+        .icon         { fill: $lt-gblue-5; }
       }       
     }         
   }
 }
 
 .interactive-svg      {
-  &:before            { content: "Hover to Animate"; position: relative; top: 3.5em; left: 2em; display: inline; padding: .5em 1em; background: $gblue-0; font-size: .8em; font-style: italic; @include border-radius(1em);}
+  &:before            { content: "Hover to Animate"; position: relative; top: 3.5em; left: 2em; display: inline; padding: .5em 1em; background: $lt-gblue-6; font-size: .8em; font-style: italic; @include border-radius(1em);}
   &.touch:before      { content: "Touch to Animate"; }
 }
 svg                   {
