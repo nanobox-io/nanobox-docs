@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Services - Nanobox Documentation
+      Contributing - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <script>
@@ -120,7 +120,7 @@
               <li>
                 <a href="/getting-started/engines/">Engines</a>
               </li>
-              <li class='active'>
+              <li>
                 <a href="/getting-started/services/">Services</a>
               </li>
               <li>
@@ -342,25 +342,39 @@
               </li>
             </ul>
           </li>
-          <li>
+          <li class='active'>
             <a href="/contributing/">Contributing</a>
           </li>
         </ul>
       </div>
       <div id='content'>
-        <h1>Services</h1>
-        <p>Apps consists of multiple services, virtualized machines each devoted to a specific process/function. Services can be split into to main categories - code services and data services.</p>
+        <h1>Contributing</h1>
+        <p>Nanobox manages a <a href="https://nanobox.io/open-source">collection of open-source projects</a> to which you&#39;re welcome to contribute. Any contributions to Nanobox projects should follow the following process and guidelines.</p>
         
-        <h3 id="code-services">Code Services</h3>
+        <h2 id="contribution-process">Contribution Process</h2>
         
-        <p>Codes services run application code. All code services are connected to data services within the app&#39;s virtualized network. Their runtime configuration is handled by the <a href="/getting-started/engines/">engines</a>, which expose config options through the <a href="/getting-started/boxfile/">Boxfile</a>. Code services include webs, workers, TCP, and UDP. More information is available in the <a href="/boxfile/code-services/">Code Services</a> doc.</p>
+        <ol>
+        <li><p>Fork, then clone the Project</p>
+        <pre class="highlight shell"><code>git clone git@github.com:your-username/project-name.git&#x000A;</code></pre></li>
+        <li><p>Create your feature branch</p>
+        <pre class="highlight shell"><code>git checkout -b my-new-feature&#x000A;</code></pre></li>
+        <li><p>Commit your changes. <strong><em>If you have multiple commits, squash merge them into a single commit (great tutorial <a href="https://ariejan.net/2011/07/05/git-squash-your-latests-commits-into-one/">here</a>)</em></strong>.</p>
+        <pre class="highlight shell"><code>git commit -am <span class="s1">'Added some feature'</span>&#x000A;</code></pre></li>
+        <li><p>Push to the feature branch</p>
+        <pre class="highlight shell"><code>git push origin my-new-feature&#x000A;</code></pre></li>
+        <li><p>Create new Pull Request</p></li>
+        </ol>
         
-        <h3 id="data-services">Data Services</h3>
+        <h2 id="contribution-guidelines">Contribution Guidelines</h2>
         
-        <p>Data services house application data. They include services such as PostgreSQL, MySQL, MongoDB, Redis, Memcached, NFS (network storage), etc. More information is available in the <a href="/boxfile/data-services/">Data Services</a> doc.</p>
+        <p>Pull requests must do the following in order to be merged.</p>
+        
+        <ol>
+        <li>Match the style of code already existing in the project.</li>
+        <li>Include tests for the modifications in your commit.</li>
+        </ol>
         <div id='pagination'>
-          <a class="prev" href="/getting-started/engines/">Engines</a>
-          <a class="next" href="/getting-started/logs/">Logs</a>
+          <a class="prev" href="/engines/debugging/">Debugging</a>
         </div>
       </div>
     </div>

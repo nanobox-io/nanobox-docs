@@ -174,3 +174,5 @@ categories:
         path: "/engines/dev-workflow/"
       - title: "Debugging"
         path: "/engines/debugging/"
+  - title: "Contributing"
+    path: "/contributing/"
