@@ -37,6 +37,10 @@ License applied to this software. Value can be a title, link, or the actual lice
 
 True/false value that specifies whether or not an engine is "generic". Some engines provide a basic runtime with flexible configuration options that can be used to run almost any app written in the supported language. This type of engine would be considered generic. Other engines are framework-specific. By default, this is set to false, assuming the engine is specific to a framework.
 
+#### overlays
+
+Overlays allow you to "overlay" functionality on top of already existing engines. This is an array of engine names. Only engines that have been published to [engines.nanobox.io](https://engines.nanobox.io) can be overlayed. More information is available in the [Overlays](/engines/overlays/) doc.
+
 #### authors
 
 A list of authors and contributors to the engine project.
@@ -51,6 +55,8 @@ language: php
 stability: 'stable'
 license: 'MIT'
 generic: false
+overlays:
+  - php
 
 authors:
   - tyler@nanobox.io
