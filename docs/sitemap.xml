@@ -201,6 +201,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/engines/overlays</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/engines/project-creation</loc>
     <priority>0.7</priority>
   </url>
@@ -377,11 +381,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/production/app-management/service-stats</loc>
+    <loc>https://docs.nanobox.io/production/scaling/single-vs-multi-node</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/production/scaling/single-vs-multi-node</loc>
+    <loc>https://docs.nanobox.io/production/cli</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -465,7 +469,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/production/cli</loc>
+    <loc>https://docs.nanobox.io/production/app-management/service-stats</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

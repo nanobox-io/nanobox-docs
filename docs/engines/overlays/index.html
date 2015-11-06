@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      MySQL Boxfile Settings - Nanobox Documentation
+      Overlays - Nanobox Documentation
     </title>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <script>
@@ -221,7 +221,7 @@
               <li>
                 <a href="/boxfile/data-services/">Data Services</a>
                 <ul class='sub'>
-                  <li class='active'>
+                  <li>
                     <a href="/boxfile/data-services/mysql/">MySQL</a>
                   </li>
                   <li>
@@ -270,7 +270,7 @@
               <li>
                 <a href="/engines/enginefile/">Enginefile</a>
               </li>
-              <li>
+              <li class='active'>
                 <a href="/engines/overlays/">Overlays</a>
               </li>
               <li>
@@ -351,199 +351,11 @@
         </ul>
       </div>
       <div id='content'>
-        <h1>MySQL Boxfile Settings</h1>
-        <h4 id="overview-of-mysql-boxfile-settings">Overview of MySQL Boxfile Settings</h4>
-        <pre class="highlight yaml"><code><span class="s">mysql1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">5.5</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;&#x000A;  <span class="c1"># All settings below apply to MySQL, Percona, &amp; MariaDB services</span>&#x000A;  <span class="s">mysql_plugins</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">federated</span>&#x000A;    <span class="pi">-</span> <span class="s">audit_log</span>&#x000A;  <span class="s">mysql_event_scheduler</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;  <span class="s">mysql_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">mysql_thread_stack</span><span class="pi">:</span> <span class="s1">'</span><span class="s">256K'</span>&#x000A;  <span class="s">mysql_myisam_recover</span><span class="pi">:</span> <span class="s1">'</span><span class="s">DEFAULT'</span>&#x000A;  <span class="s">mysql_max_allowed_packet</span><span class="pi">:</span>  <span class="s1">'</span><span class="s">16M'</span>&#x000A;  <span class="s">mysql_max_join_size</span><span class="pi">:</span> <span class="s">9223372036854775807</span>&#x000A;  <span class="s">mysql_table_open_cache</span><span class="pi">:</span> <span class="s">64</span>&#x000A;  <span class="s">mysql_query_cache_limit</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1M'</span>&#x000A;  <span class="s">mysql_allow_suspicious_udfs</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;  <span class="s">mysql_ansi</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;  <span class="s">mysql_audit_log</span><span class="pi">:</span> <span class="s1">'</span><span class="s">On'</span>&#x000A;  <span class="s">mysql_ft_max_word_len</span><span class="pi">:</span> <span class="s">84</span>&#x000A;  <span class="s">mysql_ft_min_word_len</span><span class="pi">:</span> <span class="s">4</span>&#x000A;  <span class="s">mysql_ft_query_expansion_limit</span><span class="pi">:</span> <span class="s">20</span>&#x000A;  <span class="s">mysql_ft_stopword_file</span><span class="pi">:</span> <span class="s1">'</span><span class="nv"> </span><span class="s">'</span>&#x000A;</code></pre>
-        
-        <h2 id="version-amp-stability">Version &amp; Stability</h2>
-        
-        <h3 id="version">Version</h3>
-        
-        <p>When configuring MySQL in your Boxfile, you can define which of the following versions you&#39;d like to use.</p>
-        
-        <ul>
-        <li>5.5</li>
-        <li>5.6</li>
-        </ul>
-        
-        <p>The specific patch level is determined by the &quot;stability&quot; config.</p>
-        
-        <h4 id="version-defined-on-create">Version Defined on Create</h4>
-        
-        <p>Due to version compatibility constraints, data service versions cannot be changed after the service is created. To use a different version, you&#39;ll have to create a new service and manually migrate data.</p>
-        
-        <h3 id="stability">Stability</h3>
-        
-        <p>The <code>stability</code> config allows you to specify which patch level of your MySQL version you would like to use. There are three stability options:</p>
-        
-        <ul>
-        <li>alpha</li>
-        <li>beta</li>
-        <li>production</li>
-        </ul>
-        
-        <h6 id="alpha-amp-beta-versions">Alpha &amp; Beta Versions</h6>
-        
-        <p>Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
-        
-        <h4 id="version-amp-stability">version &amp; stability</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">mysql1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">5.6</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;</code></pre>
-        
-        <h2 id="mysql-settings">MySQL Settings</h2>
-        
-        <h6 id="quick-links">Quick Links</h6>
-        
-        <p><a href="#mysql-plugins">mysql_plugins</a><br>
-        <a href="#mysql-event-scheduler">mysql_event_scheduler</a><br>
-        <a href="#mysql-max-connections">mysql_max_connections</a><br>
-        <a href="#mysql-thread-stack">mysql_thread_stack</a><br>
-        <a href="#myisam-recover">mysql_myisam_recover</a><br>
-        <a href="#mysql-max-allowed-packet">mysql_max_allowed_packet</a><br>
-        <a href="#mysql-max-join-size">mysql_max_join_size</a><br>
-        <a href="#mysql-table-open-cache">mysql_table_open_cache</a><br>
-        <a href="#mysql-query-cache-limit">mysql_query_cache_limit</a><br>
-        <a href="#allow-suspicious-udfs">mysql_allow_suspicious_udfs</a><br>
-        <a href="#mysql-ansi">mysql_ansi</a><br>
-        <a href="#mysql-audit-log">mysql_audit_log</a><br>
-        <a href="#fulltext-maximum-word-length">mysql_ft_max_word_len</a><br>
-        <a href="##fulltext-minimum-word-length">mysql_ft_min_word_len</a><br>
-        <a href="#fulltext-query-expansion-limit">mysql_ft_query_expansion_limit</a><br>
-        <a href="#fulltext-stopword-file">mysql_ft_stopword_file</a> </p>
-        
-        <h3 id="mysql-plugins">MySQL Plugins</h3>
-        
-        <p>This allows you to specify what MySQL plugins to load into your database service. The following plugins are available:</p>
-        
-        <ul>
-        <li>archive</li>
-        <li>blackhole</li>
-        <li>federated</li>
-        <li>audit_log</li>
-        </ul>
-        
-        <h4 id="mysql_plugins">mysql_plugins</h4>
-        <pre class="highlight yaml"><code><span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_plugins</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">federated</span>&#x000A;</code></pre>
-        
-        <p><strong>Note:</strong> When using the <code>audit_log</code> plugin, you must also specify a <a href="#mysql-audit-log"><code>mysql_audit_log</code></a> setting in your Boxfile.</p>
-        
-        <h3 id="mysql-event-scheduler">MySQL Event Scheduler</h3>
-        
-        <p>This enables or disables <a href="http://dev.mysql.com/doc/refman/5.6/en/events-overview.html">MySQL&#39;s event scheduler</a>.</p>
-        
-        <p><strong>Note:</strong> Even though <code>mysql_event_scheduler</code>&#39;s default is &quot;Off&quot;, it can still be enabled through a SQL query in your database. Setting it to &quot;On&quot; just enables the event scheduler when the database is provisioned.</p>
-        
-        <h4 id="mysql_event_scheduler">mysql_event_scheduler</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_event_scheduler</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-max-connections">MySQL Max Connections</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_connections">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_max_connections">mysql_max_connections</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-thread-stack">MySQL Thread Stack</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_thread_stack">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_thread_stack">mysql_thread_stack</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_thread_stack</span><span class="pi">:</span> <span class="s1">'</span><span class="s">256K'</span>&#x000A;</code></pre>
-        
-        <h3 id="myisam-recover">MyISAM Recover</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.5/en/server-options.html#option_mysqld_myisam-recover-options">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_myisam_recover">mysql_myisam_recover</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_myisam_recover</span><span class="pi">:</span> <span class="s1">'</span><span class="s">DEFAULT'</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-max-allowed-packet">MySQL Max Allowed Packet</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_allowed_packet">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_myisam_recover">mysql_myisam_recover</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_max_allowed_packet</span><span class="pi">:</span>  <span class="s1">'</span><span class="s">16M'</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-max-join-size">MySQL Max Join Size</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_join_size">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_max_join_size">mysql_max_join_size</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_max_join_size</span><span class="pi">:</span> <span class="s">9223372036854775807</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-table-open-cache">MySQL Table Open Cache</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html#sysvar_table_open_cache">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_table_open_cache">mysql_table_open_cache</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_table_open_cache</span><span class="pi">:</span> <span class="s">64</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-query-cache-limit">MySQL Query Cache Limit</h3>
-        
-        <p>View <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_query_cache_limit">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_query_cache_limit">mysql_query_cache_limit</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_query_cache_limit</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1M'</span>&#x000A;</code></pre>
-        
-        <h3 id="allow-suspicious-udfs">Allow Suspicious UDFs</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_allow-suspicious-udfs">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_allow_suspicious_udfs">mysql_allow_suspicious_udfs</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_allow_suspicious_udfs</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-ansi">MySQL ANSI</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_ansi">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_ansi">mysql_ansi</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_ansi</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Off'</span>&#x000A;</code></pre>
-        
-        <h3 id="mysql-audit-log">MySQL Audit Log</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.5/en/audit-log-plugin-installation.html">dev.mysql.com documentation</a> for definition and configuration details. Below are the following options:</p>
-        
-        <ul>
-        <li>on</li>
-        <li>off</li>
-        <li>force</li>
-        <li>force_plus_permanent</li>
-        </ul>
-        
-        <p><strong>Note:</strong> In order to specify a <code>mysql_audit_log</code> setting, you must also include the <a href="#mysql-plugins"><code>audit_log</code> mysql plugin</a> in your Boxfile.</p>
-        
-        <h4 id="mysql_audit_log">mysql_audit_log</h4>
-        <pre class="highlight yaml"><code><span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_audit_log</span><span class="pi">:</span> <span class="s1">'</span><span class="s">On'</span>&#x000A;  <span class="s">mysql_plugins</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">audit_log</span>&#x000A;</code></pre>
-        
-        <h3 id="fulltext-maximum-word-length">FULLTEXT Maximum Word Length</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_ft_max_word_len">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h3 id="mysql_ft_max_word_len">mysql_ft_max_word_len</h3>
-        <pre class="highlight yaml"><code><span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_ft_max_word_len</span><span class="pi">:</span> <span class="s">84</span>&#x000A;</code></pre>
-        
-        <h3 id="fulltext-minimum-word-length">FULLTEXT Minimum Word Length</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_ft_min_word_len">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_ft_min_word_len">mysql_ft_min_word_len</h4>
-        <pre class="highlight yaml"><code><span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_ft_min_word_len</span><span class="pi">:</span> <span class="s">4</span>&#x000A;</code></pre>
-        
-        <h3 id="fulltext-query-expansion-limit">FULLTEXT Query Expansion Limit</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_ft_query_expansion_limit">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_ft_query_expansion_limit">mysql_ft_query_expansion_limit</h4>
-        <pre class="highlight yaml"><code><span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_ft_query_expansion_limit</span><span class="pi">:</span> <span class="s">20</span>&#x000A;</code></pre>
-        
-        <h3 id="fulltext-stopword-file">FULLTEXT Stopword File</h3>
-        
-        <p>View the <a href="http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_ft_stopword_file">dev.mysql.com documentation</a> for definition and configuration options.</p>
-        
-        <h4 id="mysql_ft_stopword_file">mysql_ft_stopword_file</h4>
-        <pre class="highlight yaml"><code><span class="s">database1</span><span class="pi">:</span>&#x000A;  <span class="s">mysql_ft_stopword_file</span><span class="pi">:</span> <span class="s1">'</span><span class="nv"> </span><span class="s">'</span>&#x000A;</code></pre>
+        <h1>Overlays</h1>
+        <p><strong><em>Coming Soon</em></strong></p>
         <div id='pagination'>
-          <a class="prev" href="/boxfile/data-services/">Data Services</a>
-          <a class="next" href="/boxfile/data-services/percona/">Percona</a>
+          <a class="prev" href="/engines/enginefile/">Enginefile</a>
+          <a class="next" href="/engines/readme/">Readme</a>
         </div>
       </div>
     </div>

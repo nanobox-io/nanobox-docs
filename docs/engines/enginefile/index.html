@@ -271,6 +271,9 @@
                 <a href="/engines/enginefile/">Enginefile</a>
               </li>
               <li>
+                <a href="/engines/overlays/">Overlays</a>
+              </li>
+              <li>
                 <a href="/engines/readme/">Readme</a>
               </li>
               <li>
@@ -386,15 +389,19 @@
         
         <p>True/false value that specifies whether or not an engine is &quot;generic&quot;. Some engines provide a basic runtime with flexible configuration options that can be used to run almost any app written in the supported language. This type of engine would be considered generic. Other engines are framework-specific. By default, this is set to false, assuming the engine is specific to a framework.</p>
         
+        <h4 id="overlays">overlays</h4>
+        
+        <p>Overlays allow you to &quot;overlay&quot; functionality on top of already existing engines. This is an array of engine names. Only engines that have been published to <a href="https://engines.nanobox.io">engines.nanobox.io</a> can be overlayed. More information is available in the <a href="/engines/overlays/">Overlays</a> doc.</p>
+        
         <h4 id="authors">authors</h4>
         
         <p>A list of authors and contributors to the engine project.</p>
         
         <h2 id="example-enginefile">Example Enginefile</h2>
-        <pre class="highlight yaml"><code><span class="s">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">magento'</span>&#x000A;<span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>&#x000A;<span class="s">summary</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Nanobox</span><span class="nv"> </span><span class="s">engine</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Magento</span><span class="nv"> </span><span class="s">deployments'</span>&#x000A;<span class="s">language</span><span class="pi">:</span> <span class="s">php</span>&#x000A;<span class="s">stability</span><span class="pi">:</span> <span class="s1">'</span><span class="s">stable'</span>&#x000A;<span class="s">license</span><span class="pi">:</span> <span class="s1">'</span><span class="s">MIT'</span>&#x000A;<span class="s">generic</span><span class="pi">:</span> <span class="s">false</span>&#x000A;&#x000A;<span class="s">authors</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">tyler@nanobox.io</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">magento'</span>&#x000A;<span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>&#x000A;<span class="s">summary</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Nanobox</span><span class="nv"> </span><span class="s">engine</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Magento</span><span class="nv"> </span><span class="s">deployments'</span>&#x000A;<span class="s">language</span><span class="pi">:</span> <span class="s">php</span>&#x000A;<span class="s">stability</span><span class="pi">:</span> <span class="s1">'</span><span class="s">stable'</span>&#x000A;<span class="s">license</span><span class="pi">:</span> <span class="s1">'</span><span class="s">MIT'</span>&#x000A;<span class="s">generic</span><span class="pi">:</span> <span class="s">false</span>&#x000A;<span class="s">overlays</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">php</span>&#x000A;&#x000A;<span class="s">authors</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">tyler@nanobox.io</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a class="prev" href="/engines/project-creation/">Project Creation</a>
-          <a class="next" href="/engines/readme/">Readme</a>
+          <a class="next" href="/engines/overlays/">Overlays</a>
         </div>
       </div>
     </div>
