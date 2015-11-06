@@ -128,6 +128,8 @@ categories:
         path: "/engines/project-creation/"
       - title: "Enginefile"
         path: "/engines/enginefile/"
+      - title: "Overlays"
+        path: "/engines/overlays/"
       - title: "Readme"
         path: "/engines/readme/"
       - title: "Style Guide"
