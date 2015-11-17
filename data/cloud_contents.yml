@@ -5,7 +5,7 @@ categories:
   - title: "Getting Started"
     path: "/cloud/getting-started/"
     articles:
-      - title: "Going from Local to cloud"
+      - title: "Going from Local to Cloud"
         path: "/cloud/getting-started/local-to-cloud/"
       - title: "The Environment"
         path: "/cloud/getting-started/environment/"
