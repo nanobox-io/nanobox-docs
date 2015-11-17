@@ -62,9 +62,9 @@ The JSON payload provided as the first argument to the script contains the follo
 
 - **boxfile** : The build section of the Boxfile provided by the application.
 
-- **platform** : "local" or "production". Can be used to conditionally tailor the deploy for the specified platform.
+- **platform** : "desktop" or "cloud". Can be used to conditionally tailor the deploy for the specified platform.
 
-- **newrelic_key** : When deploying to Nanobox Production, users are able to provide their New Relic License Key in their dashboard. This key is required for the New Relic agent to function. `newrelic_key` is the user-provided license key.
+- **newrelic_key** : When deploying to Nanobox Cloud, users are able to provide their New Relic License Key in their dashboard. This key is required for the New Relic agent to function. `newrelic_key` is the user-provided license key.
 
 ## Common Tasks & Workflow
 

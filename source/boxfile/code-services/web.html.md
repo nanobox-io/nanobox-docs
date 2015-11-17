@@ -82,7 +82,7 @@ A routes can consist of both a subdomain and a path, separated by a colon, `:`. 
 
 `'subdomain:path'`
 
-The root domain is detected by Nanobox in both your local environment and in Nanobox Production, however Nanobox production does require you to register custom domains in your dashboard. More information is available in the [Production Using Custom Domains](/production/networking-domains/custom-domains/) doc.
+The root domain is detected by Nanobox in both your local environment and in Nanobox Cloud, however Nanobox Cloud does require you to register custom domains in your dashboard. More information is available in the [Cloud Using Custom Domains](/cloud/networking-domains/custom-domains/) doc.
 
 Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is "mydomain.com".
 

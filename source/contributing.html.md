@@ -6,13 +6,13 @@ Nanobox manages a [collection of open-source projects](https://nanobox.io/open-s
 
 ## Contribution Process
 
-1. Fork, then clone the Project
+1. Fork, then clone the project.
 
     ```bash
     git clone git@github.com:your-username/project-name.git
     ```
 
-2. Create your feature branch
+2. Create your feature branch.
 
     ```bash
     git checkout -b my-new-feature
@@ -24,16 +24,17 @@ Nanobox manages a [collection of open-source projects](https://nanobox.io/open-s
     git commit -am 'Added some feature'
     ```
 
-5. Push to the feature branch
+5. Push to the feature branch.
 
     ```bash
     git push origin my-new-feature
     ```
 
-6. Create new Pull Request
+6. Create new pull request
 
 ## Contribution Guidelines
 Pull requests must do the following in order to be merged.
 
 1. Match the style of code already existing in the project.
-2. Include tests for the modifications in your commit.
+2. Must not contain any merge conflicts *(Pull and merge master before submitting the pull request)*.
+3. Include tests for the modifications in your commit.

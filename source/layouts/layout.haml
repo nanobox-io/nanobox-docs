@@ -43,8 +43,8 @@
           %a.active{ :href => "/" }
             Desktop
         %li.text 
-          %a{ :href => "/production/" }
-            Production
+          %a{ :href => "/cloud/" }
+            Cloud
         %li 
           %a{ :href => 'https://nanobox.io'}
             %svg#home-icon{"enable-background" => "new 0 0 18 18", :space => "preserve", :version => "1.1", :viewbox => "0 0 18 18", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
@@ -86,21 +86,26 @@
       #wrapper
         .left
           %ul
-            %li.title Nanobox
+            %li.title Nanobox Desktop
             %li
               %a{ :href => "https://desktop.nanobox.io/downloads/"} Download
             %li 
               %a{ :href => "https://github.com/nanobox-io"} Source Code
+            %li
+              %a{ :href => "http://trello.com/b/4nVFzmNZ/nanobox", :target => "_blank" } Track Progress on Trello
           %ul
-            %li.title Community
+            %li.title Nanobox Cloud
+            / %li
+            /   %a{ :href => "#" } Pricing
+            / %li
+            /   %a{ :href => "#" } Support
             %li
               %a{ :href => "http://webchat.freenode.net/?channels=nanobox", :target => "_blank"} #nanobox IRC
             %li
-              %a{ :href => "http://trello.com/b/4nVFzmNZ/nanobox", :target => "_blank" } Track Progress on Trello
-            %li
               %a{ :href => "https://blog.nanobox.io" } Blog
+            
           %p Pagoda Box Inc.  © Copyright 2015 - <em>Nanobox, a <a href="https://pagodabox.io">Pagoda Box</a> Project</em>
         .right
-          %a#production{ :href => "#" }
-            = partial 'svg-partials/nb-logo-md'
-            Use Nanobox in Production
+          %a#cloud{ :href => "https://nanobox.io/cloud/" }
+            = partial 'svg-partials/nb-logo-cloud'
+            Use Nanobox in the Cloud
