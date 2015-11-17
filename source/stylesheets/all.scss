@@ -41,8 +41,9 @@ a                       { @include transition(all .15s); }
 #footer                 { width: 100%; background: $gblue-0; display: inline-block; padding: 4em 2em; font-size: .9em; color: $gblue-4; @include box-sizing; 
   a                     { color: $gblue-5; text-decoration: none;
     &:hover             { color: $gblue-7; }
-    &#production        { display: block; text-align: center;
+    &#cloud             { display: block; text-align: center;
       #nb-logo-md       { height: 6em; display: block; margin: 0 auto .75em; @include opacity(.7); @include transition(opacity .2s); }
+      #nb-logo-cloud    { height: 5em; display: block; margin: 0 auto .75em; @include opacity(.7); @include transition(opacity .2s); }
       &:hover #nb-logo-md { @include opacity(1); }
     }
   }
@@ -169,10 +170,10 @@ a                       { @include transition(all .15s); }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////// PRODUCTION STYLES ////////////////////////////////////
+/////////////////////////////////////// CLOUD STYLES //////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-body.prod               { background: #fff;
+body.cloud              { background: #fff;
   #header               { background: $lt-gblue-6;
     a                   { color: $lt-gblue-4;
       &:hover           { color: $lt-gblue-2; }
@@ -189,7 +190,7 @@ body.prod               { background: #fff;
       }
     }
     svg                 {
-      &#nb-logo-prod    { height: 1.5em; width: 1.3em; position: absolute; }
+      &#nb-logo-cloud    { height: 1.5em; width: 1.3em; position: absolute; }
       &#home-icon       { stroke: $lt-gblue-3;
         &:hover         { stroke: $lt-gblue-2; }
       }
@@ -198,7 +199,7 @@ body.prod               { background: #fff;
   #footer               { background: $lt-gblue-6; color: $lt-gblue-2;
     a                   { color: $lt-gblue-4;
       &:hover           { color: $lt-gblue-2; }
-      &#production #nb-logo-md { @include opacity(1); }
+      &#cloud #nb-logo-md { @include opacity(1); }
     }
     .title              { color: $lt-gblue-2; }
   }
