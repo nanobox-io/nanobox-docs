@@ -367,7 +367,7 @@
         <p>If you haven&#39;t already, you must source and initialize Nos.</p>
         
         <h4 id="source-amp-initialize-nos">Source &amp; Initialize Nos</h4>
-        <pre class="highlight shell"><code><span class="c"># source the Nos framework</span>&#x000A;. /opt/nos/common.sh&#x000A;&#x000A;<span class="c"># initialize Nos with the original arguments</span>&#x000A;nos_init <span class="nv">$@</span>&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="c"># source the Nos framework</span>&#x000A;. /opt/nos/common.sh&#x000A;&#x000A;<span class="c"># initialize Nos with the original arguments</span>&#x000A;nos_init <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>&#x000A;</code></pre>
         
         <p>In the example above, initializing Nos with <code>nos_init</code> and passing the original script arguments will convert the payload into SHON, which can then be accessed from bash.</p>
         

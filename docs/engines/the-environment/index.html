@@ -358,7 +358,7 @@
         
         <p>The &quot;deploy&quot; directory contains everything required to run the application. Runtimes, binaries, configuration files, and any other necessary resources are installed here. Essentially, the deploy directory is the environment into which the application is &quot;deployed&quot;.</p>
         
-        <p>The deploy directory is a full <a href="http://www.pathname.com/fhs/">FHS</a> directory, mirrored after /. In here you will find bin, sbin, usr, var, etc, and all of the same directories you would find at /. In addition, binaries installed to bin and sbin will be on the $PATH by default.</p>
+        <p>The deploy directory is a full <a href="http://www.pathname.com/fhs/">FHS</a> directory, mirrored after <code>/</code>. In here you will find bin, sbin, usr, var, etc, and all of the same directories you would find at /. In addition, binaries installed to bin and sbin will be on the $PATH by default.</p>
         
         <p>Essentially, the deploy directory is designed to be a fully-contained environment and can be likened unto a <a href="https://en.wikipedia.org/wiki/Chroot">chroot</a> without the jailing and security restrictions.</p>
         
@@ -382,7 +382,7 @@
         
         <h4 id="live">live</h4>
         
-        <p>As mentioned above, the directory contains the final application. This directory is later copied and mounted into the live environment. The application MUST be copied into after any transformations for the application to be able to run.</p>
+        <p>As mentioned above, the live directory contains the final application. This directory is later copied and mounted into the live environment. The application MUST be copied into after any transformations for the application to be able to run.</p>
         
         <h4 id="deploy">deploy</h4>
         

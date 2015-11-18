@@ -363,7 +363,7 @@
         <ol>
         <li>Bash is available in every Nanobox image.</li>
         <li>The <a href="/engines/common-tasks/">nos</a> framework is available to bash, and will greatly simplify engine development.</li>
-        <li>Bash is a common language for server scripting, and assistance across engines can be aided with a unified language.</li>
+        <li>Bash is a common language for server scripting; assistance across engines can be aided with a unified language.</li>
         </ol>
         
         <p>While it is possible to write scripts in an alternative language, it is highly discouraged. In addition, an alternative language or runtime will need to be installed prior to executing the scripts. This is possible, but since we don&#39;t recommend it, the processes will not be documented. If you really need to use a different language, hop in the <a href="http://webchat.freenode.net/?channels=nanobox&amp;uio=d4">#nanobox irc</a> to find out how.</p>
@@ -383,15 +383,15 @@
         
         <h4 id="json-in-bash">JSON in bash?</h4>
         
-        <p>Right, bash doesn&#39;t actually handle JSON. In fact, bash doesn&#39;t handle any common structured object notation. The Nanobox team created <a href="https://github.com/nanopack/shon">SHON</a> (&quot;SHell Object Notation&quot;), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you&#39;re interested. Though, it&#39;s unlikely that you&#39;ll need to work with SHON, as the <a href="/engines/common-tasks/">nos</a> framework performs the translation and exposes helpers that access the data for you.</p>
+        <p>Right, bash doesn&#39;t actually handle JSON. In fact, bash doesn&#39;t handle any common structured object notation. The Nanobox team created <a href="https://github.com/nanopack/shon">SHON</a> (&quot;SHell Object Notation&quot;), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you&#39;re interested. Though, it&#39;s unlikely that you&#39;ll need to work with SHON, as the <a href="/engines/common-tasks/#nos">nos</a> framework performs the translation and exposes helpers that access the data for you.</p>
         
         <h4 id="payload-data">Payload Data</h4>
         
-        <p>The JSON payload provided as the first argument to the script contains the following keys:</p>
+        <p>The JSON payload, provided as the first argument to the script, contains the following keys:</p>
         
         <ul>
         <li><p><strong>code_dir</strong> : Path to the code staging directory. This is a copy of the code, where the transformation, build or compile should happen.</p></li>
-        <li><p><strong>deploy_dir</strong> : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.</p></li>
+        <li><p><strong>deploy_dir</strong> : Path to the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.</p></li>
         <li><p><strong>live_dir</strong> : This is the directory into which the final build will be copied. This directory is also available in the production environment.</p></li>
         <li><p><strong>cache_dir</strong> : A cache store that is persistent between deploys.</p></li>
         <li><p><strong>etc_dir</strong> : A sub-directory within the build_dir. This is where runtime configurations should live. (ie: apache.conf, nginx.conf, unicorn.rb etc).</p></li>
