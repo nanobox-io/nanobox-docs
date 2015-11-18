@@ -2,9 +2,9 @@
 title: Using the Payload
 ---
 
-The payload provided to each script is a JSON encoded dataset. Nos provides convenient helpers to access data within the payload. In addition, by initializing Nos, Nos will automatically convert the payload from JSON to [SHON](https://github.com/pagodabox/shon) and access the data without you having to be concerned with the complex details.
+The payload provided to each script is a JSON encoded dataset. Nos provides convenient helpers to access data within the payload. In addition, by initializing Nos, Nos will automatically convert the payload from JSON to [SHON](https://github.com/nanopack/shon) and access the data without you having to be concerned with the complex details.
 
-If you are interested in seeing how Nos converts and accesses payload data, you can review the code [here](https://github.com/pagodabox/nanobox-nos/blob/master/lib/payload.sh#L4-L10).
+If you are interested in seeing how Nos converts and accesses payload data, you can review the code [here](https://github.com/nanobox-io/nanobox-nos/blob/master/lib/payload.sh#L4-L10).
 
 #### Warning!
 
@@ -53,4 +53,4 @@ payload 'boxfile_engine'
 
 ## The code
 
-As an additional reference, the code is available and documented [here](https://github.com/pagodabox/nanobox-nos/blob/master/lib/payload.sh#L12-L20).
+As an additional reference, the code is available and documented [here](https://github.com/nanobox-io/nanobox-nos/blob/master/lib/payload.sh#L12-L20).

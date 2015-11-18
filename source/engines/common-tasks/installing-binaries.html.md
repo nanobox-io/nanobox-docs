@@ -19,7 +19,7 @@ A full list of packages provided by Nanobox can be found in the [Nanobox pkgsrc 
 For example, from the `python27-2.7.9nb1.tgz` package, you would copy `python27-2.7.9`. If the version requirements aren't strict, you can copy less and less of the package down to the name, like this: `python27`.
 
 ### Requesting a Package
-If you cannot find a package you need, submit a [Github issue](https://github.com/pagodabox/nanobox-pkgsrc-base/issues/new) including the requirement and the location where the source can be downloaded. After submitting an issue, please ping a member of our team on the [#nanobox IRC](http://webchat.freenode.net/?channels=nanobox). Most package requests can be fulfilled within 24 hours, depending on the queue and complexity of the compilation.
+If you cannot find a package you need, submit a [Github issue](https://github.com/nanobox-io/nanobox-pkgsrc-base/issues/new) including the requirement and the location where the source can be downloaded. After submitting an issue, please ping a member of our team on the [#nanobox IRC](http://webchat.freenode.net/?channels=nanobox). Most package requests can be fulfilled within 24 hours, depending on the queue and complexity of the compilation.
 
 Please don't try to find it by some other means. While it is possible to download binaries from other sources, doing so will likely break your engine if Nanobox shifts platforms or distributions in the future.
 
