@@ -15,4 +15,4 @@ All Readme should be written in Github Flavored Markdown (GFM), a variant of [Ma
 In order to [publish an engine](/engines/publish/), it must contain a `README.md` file in the root directory of the engine. 
 
 ## README.md Content Template
-For a README.md content template, check out the [`README.md` in the engine template project](https://github.com/pagodabox/nanobox-engine-template/blob/master/README.md).
+For a README.md content template, check out the [`README.md` in the engine template project](https://github.com/nanobox-io/nanobox-engine-template/blob/master/README.md).
