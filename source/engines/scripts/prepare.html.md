@@ -30,7 +30,7 @@ Determine which runtimes and binaries are required for the application to run. O
 
 #### Generate Configuration Files
 
-Determine if configuration files are required for any of the installed binaries or runtimes. For example, both Apache and Nginx requiredconfiguration files to work properly. These config files should be generated and/or provided by the engine. If required, follow the [Configuration Templates](/engines/common-tasks/template-generation/) doc on how to accomplish this. 
+Determine if configuration files are required for any of the installed binaries or runtimes. For example, both Apache and Nginx require configuration files to work properly. These config files should be generated and/or provided by the engine. If required, follow the [Configuration Templates](/engines/common-tasks/template-generation/) doc on how to accomplish this. 
 
 #### Fetch & Build Libraries & Dependencies
 

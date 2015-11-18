@@ -68,7 +68,7 @@ http {
 . /opt/nos/common.sh
 
 # initialize Nos with the original arguments
-nos_init $@
+nos_init "$@"
 
 # store the payload argument to use as the template payload
 payload=$1

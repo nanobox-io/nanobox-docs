@@ -10,7 +10,7 @@ If you are unfamiliar with the role of a Boxfile, you need to read [the Boxfile 
 
 ## The Vision
 
-The Boxfile allows an engine to automate the entire infrastructure for an app. An engine's [boxfile script](/engines/scripts/boxfile/) runs before the [prepare](/engines/scripts/prepare/) and [build](/engines/scripts/build/) scripts, allowing Nanobox to generates the specified services and configuration on which the [prepare](/engines/scripts/prepare) and [build](/engines/scripts/build) scripts may depend.
+The Boxfile allows an engine to automate the entire infrastructure for an app. An engine's [boxfile script](/engines/scripts/boxfile/) runs before the [prepare](/engines/scripts/prepare/) and [build](/engines/scripts/build/) scripts, allowing Nanobox to generate the specified services and configuration on which the [prepare](/engines/scripts/prepare) and [build](/engines/scripts/build) scripts may depend.
 
 The order is important here. Each newly created service also generates environment variables such as `REDIS1_HOST`, `REDIS1_PORT`, `POSTGRESQL1_USER`, and `POSTGRESQL1_PASS` which are available in both the [prepare](/engines/scripts/prepare/) and [build](/engines/scripts/build/) scripts. Ultimately, an engine can tell Nanobox that this app needs a database, and by the time the [build](/engines/scripts/build/) script is called, the environment variables exist which can be used to generate application-specific connection configuration.
 
@@ -18,7 +18,7 @@ The extent of the engine-derived Boxfile can be simple and static or advanced an
 
 On the other hand, consider a more general-purpose framework like rails or django. The requirements change depending on the functionality of the specific application. In this case, the [boxfile](/engines/scripts/boxfile) script may inspect the Gemfile or requirements.txt for a postgres or redis adapter. If such an adapter is required, it's safe to assume the application needs that type of service. Within the [build](/engines/scripts/build) script, the application can be configured to connect to the dynamically-generated services.
 
-A Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks.
+A Boxfile can be dynamically composed to provide an infrastructure for even the most flexible frameworks.
 
 ## Requirements
 

@@ -2,7 +2,7 @@
 title: Boxfile
 ---
 
-The Boxfile is yaml config file housed in the root of your project's repo that defines all configuration related to your app’s deployment and infrastructure. It allows you to custom-configure your app's environment to your project's specific needs.
+The Boxfile is a yaml config file housed in the root of your project's repo that defines all configuration related to your app’s deployment and infrastructure. It allows you to custom-configure your app's environment to your project's specific needs.
 
 #### Important Things to Know About the Boxfile
 - Your Boxfile must be named "Boxfile" (capital B and no file extension) in order to be recognized.

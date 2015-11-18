@@ -19,5 +19,5 @@ Nos is pre-installed in all build containers. To use it, simply source the commo
 . /opt/nos/common.sh
 
 # initialize Nos with the original arguments
-nos_init $@
+nos_init "$@"
 ```

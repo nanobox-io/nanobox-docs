@@ -22,7 +22,7 @@ If you haven't already, you must source and initialize Nos.
 . /opt/nos/common.sh
 
 # initialize Nos with the original arguments
-nos_init $@
+nos_init "$@"
 ```
 
 In the example above, initializing Nos with `nos_init` and passing the original script arguments will convert the payload into SHON, which can then be accessed from bash.

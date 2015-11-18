@@ -2,7 +2,7 @@
 title: boxfile
 ---
 
-The boxfile script fulfills the [Infrastructure Definition](/engines/how-engines-work#infrastructure-definition) phase of the deploy process. The boxfile script should print a valid [Boxfile](/boxfile/) to stdout. The purpose of boxfile script is to inform Nanobox of how to run the app. This includes instructions for how to start the webs, workers, and even data services.
+The boxfile script fulfills the [Infrastructure Definition](/engines/how-engines-work#infrastructure-definition) phase of the deploy process. The boxfile script should print a valid [Boxfile](/boxfile/) to stdout. The purpose of the boxfile script is to inform Nanobox of how to run the app. This includes instructions for how to start the webs, workers, and even data services.
 
 #### Caution
 

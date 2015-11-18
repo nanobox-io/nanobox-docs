@@ -42,11 +42,11 @@ The *bin* directory houses scripts executed at different phases of a deploy. Spe
 
 #### lib
 
-The *lib* houses shared resources or helpers which may be sourced within the *bin* scripts. *This directory is optional.*
+The *lib* directory houses shared resources or helpers which may be sourced within the *bin* scripts. *This directory is optional.*
 
 #### templates
 
-The *templates* houses templates that are used within the render process. More information can be found in the [Template Generation doc](/engines/common-tasks/template-generation). *This directory is optional.*
+The *templates* directory houses templates that are used within the render process. More information can be found in the [Template Generation doc](/engines/common-tasks/template-generation). *This directory is optional.*
 
 #### files
 

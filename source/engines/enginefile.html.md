@@ -23,7 +23,7 @@ A short, one sentence summary of the engine.
 
 #### language
 
-The runtime language supported by the engine. Available options can be found on [engines.nanobox.io](https://engines.nanobox.com). Languages are used to categorize engines.
+The runtime language supported by the engine. Available options can be found on [engines.nanobox.io](https://engines.nanobox.io). Languages are used to categorize engines.
 
 #### stability
 
