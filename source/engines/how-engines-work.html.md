@@ -4,7 +4,7 @@ title: How Engines Work
 
 ## App Recognition
 
-When an app is deployed to Nanobox Local or Cloud, a build container is provisioned and the codebase is dropped inside. If an engine isn't directly specified in the app's Boxfile, the library of engines will sniff the codebase one by one until an engine recognizes the codebase. Additional information about the "sniff" script can be found [sniff script doc](/engines/scripts/sniff).
+When an app is deployed to Nanobox Local or Cloud, a build container is provisioned and the codebase is dropped inside. If an engine isn't directly specified in the app's Boxfile, the library of engines will sniff the codebase one by one until an engine recognizes the codebase. Additional information about the "sniff" script can be found in the [sniff script doc](/engines/scripts/sniff).
 
 ## Infrastructure Definition
 

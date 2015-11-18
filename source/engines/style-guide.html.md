@@ -42,8 +42,8 @@ URL  :: devo.nanobox.io
 +> Detecting Language...
    Language Detected : Ruby
 +> Installing Ruby binary packages
-   - verifying packages
-   - preparing install
+   - Verifying packages
+   - Preparing install
    - Installing
 +> Doing some other task
 +> Verifying checksum

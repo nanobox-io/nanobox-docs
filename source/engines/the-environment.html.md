@@ -8,7 +8,7 @@ An engine is required to populate the contents of two directories: **deploy** an
 
 The "deploy" directory contains everything required to run the application. Runtimes, binaries, configuration files, and any other necessary resources are installed here. Essentially, the deploy directory is the environment into which the application is "deployed".
 
-The deploy directory is a full [FHS](http://www.pathname.com/fhs/) directory, mirrored after /. In here you will find bin, sbin, usr, var, etc, and all of the same directories you would find at /. In addition, binaries installed to bin and sbin will be on the $PATH by default.
+The deploy directory is a full [FHS](http://www.pathname.com/fhs/) directory, mirrored after `/`. In here you will find bin, sbin, usr, var, etc, and all of the same directories you would find at /. In addition, binaries installed to bin and sbin will be on the $PATH by default.
 
 Essentially, the deploy directory is designed to be a fully-contained environment and can be likened unto a [chroot](https://en.wikipedia.org/wiki/Chroot) without the jailing and security restrictions.
 
@@ -32,7 +32,7 @@ The code directory contains the application's raw source. This is where all tran
 
 #### live
 
-As mentioned above, the directory contains the final application. This directory is later copied and mounted into the live environment. The application MUST be copied into after any transformations for the application to be able to run.
+As mentioned above, the live directory contains the final application. This directory is later copied and mounted into the live environment. The application MUST be copied into after any transformations for the application to be able to run.
 
 #### deploy
 

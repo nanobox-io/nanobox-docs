@@ -12,7 +12,7 @@ It is ***highly*** recommended that engine scripts be written in bash. Here are 
 
 1. Bash is available in every Nanobox image.
 2. The [nos](/engines/common-tasks/) framework is available to bash, and will greatly simplify engine development.
-3. Bash is a common language for server scripting, and assistance across engines can be aided with a unified language.
+3. Bash is a common language for server scripting; assistance across engines can be aided with a unified language.
 
 While it is possible to write scripts in an alternative language, it is highly discouraged. In addition, an alternative language or runtime will need to be installed prior to executing the scripts. This is possible, but since we don't recommend it, the processes will not be documented. If you really need to use a different language, hop in the [#nanobox irc](http://webchat.freenode.net/?channels=nanobox&uio=d4) to find out how.
 
@@ -34,15 +34,15 @@ With the exception of the [sniff](/engines/scripts/sniff) script, all engine scr
 
 #### JSON in bash?
 
-Right, bash doesn't actually handle JSON. In fact, bash doesn't handle any common structured object notation. The Nanobox team created [SHON](https://github.com/nanopack/shon) ("SHell Object Notation"), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you're interested. Though, it's unlikely that you'll need to work with SHON, as the [nos](/engines/common-tasks/) framework performs the translation and exposes helpers that access the data for you.
+Right, bash doesn't actually handle JSON. In fact, bash doesn't handle any common structured object notation. The Nanobox team created [SHON](https://github.com/nanopack/shon) ("SHell Object Notation"), a nested data structure that bash can work with, and a tool to convert from JSON to SHON. Check out the project and the documentation if you're interested. Though, it's unlikely that you'll need to work with SHON, as the [nos](/engines/common-tasks/#nos) framework performs the translation and exposes helpers that access the data for you.
 
 #### Payload Data
 
-The JSON payload provided as the first argument to the script contains the following keys:
+The JSON payload, provided as the first argument to the script, contains the following keys:
 
 - **code_dir** : Path to the code staging directory. This is a copy of the code, where the transformation, build or compile should happen.
 
-- **deploy_dir** : Path the the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.
+- **deploy_dir** : Path to the directory where binaries, runtimes, and configuration is stored. (ie: ruby, nginx, apache.conf, etc) This directory is available in the production environment.
 
 - **live_dir** : This is the directory into which the final build will be copied. This directory is also available in the production environment.
 
