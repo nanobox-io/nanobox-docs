@@ -360,7 +360,7 @@
         
         <h2 id="the-vision">The Vision</h2>
         
-        <p>The Boxfile allows an engine to automate the entire infrastructure for an app. An engine&#39;s <a href="/engines/scripts/boxfile/">boxfile script</a> runs before the <a href="/engines/scripts/prepare/">prepare</a> and <a href="/engines/scripts/build/">build</a> scripts, allowing Nanobox to generate the specified services and configuration on which the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts may depend.</p>
+        <p>The Boxfile allows an engine to automate the entire infrastructure for an app. An engine&#39;s <a href="/engines/scripts/boxfile/">boxfile script</a> runs before the <a href="/engines/scripts/prepare/">prepare</a> and <a href="/engines/scripts/build/">build</a> scripts, allowing Nanobox to generates the specified services and configuration on which the <a href="/engines/scripts/prepare">prepare</a> and <a href="/engines/scripts/build">build</a> scripts may depend.</p>
         
         <p>The order is important here. Each newly created service also generates environment variables such as <code>REDIS1_HOST</code>, <code>REDIS1_PORT</code>, <code>POSTGRESQL1_USER</code>, and <code>POSTGRESQL1_PASS</code> which are available in both the <a href="/engines/scripts/prepare/">prepare</a> and <a href="/engines/scripts/build/">build</a> scripts. Ultimately, an engine can tell Nanobox that this app needs a database, and by the time the <a href="/engines/scripts/build/">build</a> script is called, the environment variables exist which can be used to generate application-specific connection configuration.</p>
         
@@ -368,7 +368,7 @@
         
         <p>On the other hand, consider a more general-purpose framework like rails or django. The requirements change depending on the functionality of the specific application. In this case, the <a href="/engines/scripts/boxfile">boxfile</a> script may inspect the Gemfile or requirements.txt for a postgres or redis adapter. If such an adapter is required, it&#39;s safe to assume the application needs that type of service. Within the <a href="/engines/scripts/build">build</a> script, the application can be configured to connect to the dynamically-generated services.</p>
         
-        <p>A Boxfile can be dynamically composed to provide an infrastructure for even the most flexible frameworks.</p>
+        <p>A Boxfile be dynamically composed to provide an infrastructure for even the most flexible frameworks.</p>
         
         <h2 id="requirements">Requirements</h2>
         
