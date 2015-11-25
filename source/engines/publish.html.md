@@ -17,4 +17,4 @@ In order for an Engine to be published, it must contain an Enginefile and a Read
 
 #### Publish
 
-Finally, to publish the engine, simply run `nanobox publish` from within your local engine directory. Check the [publish](/cli/publish/) CLI doc for specific usage details.
+Finally, to publish the engine, simply run `nanobox engine publish` from within your local engine directory. Check the [publish](/cli/engine/publish/) CLI doc for specific usage details.

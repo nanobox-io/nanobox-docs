@@ -59,8 +59,6 @@ categories:
         path: "/cli/destroy/"
       - title: "help"
         path: "/cli/help/"
-      - title: "publish"
-        path: "/cli/publish/"
       - title: "update"
         path: "/cli/update/"
       - title: "update-images"
