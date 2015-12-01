@@ -6,7 +6,7 @@ title: Percona Boxfile Settings
 ```yaml
 percona1:
   version: 5.5
-  stability: production
+  stability: stable
   
   # All settings below apply to MySQL, Percona, & MariaDB services
   mysql_plugins:
@@ -43,21 +43,20 @@ The specific patch level is determined by the "stability" config.
 Due to version compatibility constraints, data service versions cannot be changed after the service is created. To use a different version, you'll have to create a new service and manually migrate data.
 
 ### Stability
-The `stability` config allows you to specify which patch level of your Percona version you would like to use. There are three stability options:
+The `stability` config allows you to specify which patch level of your Percona version you would like to use. There are two stability options:
 
-- alpha
 - beta
-- production
+- stable
 
-###### Alpha & Beta Versions
-Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
+###### Beta Versions
+Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
 
 #### version & stability
 ```yaml
 # default setting
 percona1:
   version: 5.6
-  stability: production
+  stability: stable
 ```
 
 ## Percona MySQL Settings

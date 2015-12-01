@@ -350,7 +350,7 @@
       <div id='content'>
         <h1>Memcached Boxfile Settings</h1>
         <h4 id="overview-of-memcached-boxfile-settings">Overview of Memcached Boxfile Settings</h4>
-        <pre class="highlight yaml"><code><span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">1.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;  <span class="s">memcached_return_error_on_memory_exhausted</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">memcached_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">memcached_chunk_size_growth_factor</span><span class="pi">:</span> <span class="s">1.25</span>&#x000A;  <span class="s">memcached_minimum_allocated_space</span><span class="pi">:</span> <span class="s">48</span>&#x000A;  <span class="s">memcached_maximum_requests_per_event</span><span class="pi">:</span> <span class="s">20</span>&#x000A;  <span class="s">memcached_disable_cas</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">memcached_max_backlog</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">memcached_binding_protocol</span><span class="pi">:</span> <span class="s1">'</span><span class="s">auto'</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">1.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">stable</span>&#x000A;  <span class="s">memcached_return_error_on_memory_exhausted</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">memcached_max_connections</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">memcached_chunk_size_growth_factor</span><span class="pi">:</span> <span class="s">1.25</span>&#x000A;  <span class="s">memcached_minimum_allocated_space</span><span class="pi">:</span> <span class="s">48</span>&#x000A;  <span class="s">memcached_maximum_requests_per_event</span><span class="pi">:</span> <span class="s">20</span>&#x000A;  <span class="s">memcached_disable_cas</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">memcached_max_backlog</span><span class="pi">:</span> <span class="s">1024</span>&#x000A;  <span class="s">memcached_binding_protocol</span><span class="pi">:</span> <span class="s1">'</span><span class="s">auto'</span>&#x000A;</code></pre>
         
         <h2 id="version-amp-stability">Version &amp; Stability</h2>
         
@@ -368,20 +368,19 @@
         
         <h3 id="stability">Stability</h3>
         
-        <p>The <code>stability</code> config allows you to specify which patch level of your Memcached version you would like to use. There are three stability options:</p>
+        <p>The <code>stability</code> config allows you to specify which patch level of your Memcached version you would like to use. There are two stability options:</p>
         
         <ul>
-        <li>alpha</li>
         <li>beta</li>
-        <li>production</li>
+        <li>stable</li>
         </ul>
         
-        <h6 id="alpha-amp-beta-versions">Alpha &amp; Beta Versions</h6>
+        <h6 id="beta-versions">Beta Versions</h6>
         
-        <p>Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
+        <p>Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
         
         <h4 id="version-amp-stability">version &amp; stability</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">type</span><span class="pi">:</span> <span class="s">memcached</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">1.4</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">memcached1</span><span class="pi">:</span>&#x000A;  <span class="s">type</span><span class="pi">:</span> <span class="s">memcached</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">1.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">stable</span>&#x000A;</code></pre>
         
         <h2 id="memcached-configuration-options">Memcached Configuration Options</h2>
         

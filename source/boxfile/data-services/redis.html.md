@@ -6,7 +6,7 @@ title: Redis Boxfile Settings
 ```yaml
 redis1:
   version: 2.8
-  stability: production
+  stability: stable
   redis_tcp_keepalive: 60
   redis_databases: 16
   redis_stop_writes_on_bgsave_error: 'yes'
@@ -51,14 +51,13 @@ The specific patch level is determined by the "stability" config.
 **Note:** Due to version compatibility constraints, Redis versions cannot be changed after the service is created. To use a different version, you'll have to create a new Redis service.
 
 ### Stability
-The `stability` config allows you to specify which patch level of your Redis version you would like to use. There are three stability options:
+The `stability` config allows you to specify which patch level of your Redis version you would like to use. There are two stability options:
 
-- alpha
 - beta
-- production
+- stable
 
-###### Alpha & Beta Versions
-Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
+###### Beta Versions
+Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
 
 #### version & stability
 ```yaml
@@ -66,6 +65,7 @@ Alpha and beta versions are for bleeding edge developers who want nothing but th
 redis1:
   type: redis
   version: 3.0
+  stability: stable
 ```
 
 ## Redis Configuration Options

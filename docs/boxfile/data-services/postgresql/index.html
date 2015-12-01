@@ -350,7 +350,7 @@
       <div id='content'>
         <h1>PostgreSQL Boxfile Settings</h1>
         <h4 id="overview-of-postgresql-boxfile-settings">Overview of PostgreSQL Boxfile Settings</h4>
-        <pre class="highlight yaml"><code><span class="s">postgresql1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">9.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">postgresql1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">9.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">stable</span>&#x000A;</code></pre>
         
         <h2 id="version-amp-stability">Version &amp; Stability</h2>
         
@@ -368,20 +368,19 @@
         
         <h3 id="stability">Stability</h3>
         
-        <p>The <code>stability</code> config allows you to specify which patch level of your Postgres version you would like to use. There are three stability options:</p>
+        <p>The <code>stability</code> config allows you to specify which patch level of your Postgres version you would like to use. There are two stability options:</p>
         
         <ul>
-        <li>alpha</li>
         <li>beta</li>
-        <li>production</li>
+        <li>stable</li>
         </ul>
         
-        <h6 id="alpha-amp-beta-versions">Alpha &amp; Beta Versions</h6>
+        <h6 id="beta-versions">Beta Versions</h6>
         
-        <p>Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
+        <p>Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
         
         <h4 id="version-amp-stability">version &amp; stability</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">postgresql1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">9.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">postgresql1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">9.4</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">stable</span>&#x000A;</code></pre>
         
         <h2 id="request-postgresql-boxfile-configs">Request PostgreSQL Boxfile Configs</h2>
         

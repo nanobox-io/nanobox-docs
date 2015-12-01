@@ -350,7 +350,7 @@
       <div id='content'>
         <h1>MongoDB Boxfile Settings</h1>
         <h4 id="overview-of-mongodb-boxfile-settings">Overview of MongoDB Boxfile Settings</h4>
-        <pre class="highlight yaml"><code><span class="s">mongodb1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">3.0</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;  <span class="s">mongodb_diaglog</span><span class="pi">:</span> <span class="s">0</span>&#x000A;  <span class="s">mongodb_objcheck</span><span class="pi">:</span> <span class="s">true</span>&#x000A;  <span class="s">mongodb_log_verbosity</span><span class="pi">:</span> <span class="s1">'</span><span class="s">v'</span>&#x000A;  <span class="s">mongodb_directoryperdb</span><span class="pi">:</span> <span class="s">true</span>&#x000A;  <span class="s">mongodb_logappend</span><span class="pi">:</span> <span class="s">true</span>&#x000A;  <span class="s">mongodb_nojournal</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">mongodb_noscripting</span><span class="pi">:</span> <span class="s">false</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">mongodb1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">3.0</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">stable</span>&#x000A;  <span class="s">mongodb_diaglog</span><span class="pi">:</span> <span class="s">0</span>&#x000A;  <span class="s">mongodb_objcheck</span><span class="pi">:</span> <span class="s">true</span>&#x000A;  <span class="s">mongodb_log_verbosity</span><span class="pi">:</span> <span class="s1">'</span><span class="s">v'</span>&#x000A;  <span class="s">mongodb_directoryperdb</span><span class="pi">:</span> <span class="s">true</span>&#x000A;  <span class="s">mongodb_logappend</span><span class="pi">:</span> <span class="s">true</span>&#x000A;  <span class="s">mongodb_nojournal</span><span class="pi">:</span> <span class="s">false</span>&#x000A;  <span class="s">mongodb_noscripting</span><span class="pi">:</span> <span class="s">false</span>&#x000A;</code></pre>
         
         <h2 id="version-amp-stability">Version &amp; Stability</h2>
         
@@ -369,20 +369,19 @@
         
         <h3 id="stability">Stability</h3>
         
-        <p>The <code>stability</code> config allows you to specify which patch level of your MongoDB version you would like to use. There are three stability options:</p>
+        <p>The <code>stability</code> config allows you to specify which patch level of your MongoDB version you would like to use. There are two stability options:</p>
         
         <ul>
-        <li>alpha</li>
         <li>beta</li>
-        <li>production</li>
+        <li>stable</li>
         </ul>
         
-        <h6 id="alpha-amp-beta-versions">Alpha &amp; Beta Versions</h6>
+        <h6 id="beta-versions">Beta Versions</h6>
         
-        <p>Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
+        <p>Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are &quot;builds-in-progress,&quot; and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the &quot;image&quot; provided by Nanobox.</p>
         
         <h4 id="mongodb-version-amp-stability">mongodb version &amp; stability</h4>
-        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">mongodb1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">3.0</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">production</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="c1"># default setting</span>&#x000A;<span class="s">mongodb1</span><span class="pi">:</span>&#x000A;  <span class="s">version</span><span class="pi">:</span> <span class="s">3.0</span>&#x000A;  <span class="s">stability</span><span class="pi">:</span> <span class="s">stable</span>&#x000A;</code></pre>
         
         <h2 id="mongodb-configuration-options">MongoDB Configuration Options</h2>
         

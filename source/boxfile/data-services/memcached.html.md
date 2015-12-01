@@ -6,7 +6,7 @@ title: Memcached Boxfile Settings
 ```yaml
 memcached1:
   version: 1.4
-  stability: production
+  stability: stable
   memcached_return_error_on_memory_exhausted: false
   memcached_max_connections: 1024
   memcached_chunk_size_growth_factor: 1.25
@@ -28,14 +28,13 @@ The specific patch level is determined by the "stability" config.
 **Note:** Due to version compatibility constraints, memcached versions cannot be changed after the service is created. To use a different version, you'll have to create a new Memcached service.
 
 ### Stability
-The `stability` config allows you to specify which patch level of your Memcached version you would like to use. There are three stability options:
+The `stability` config allows you to specify which patch level of your Memcached version you would like to use. There are two stability options:
 
-- alpha
 - beta
-- production
+- stable
 
-###### Alpha & Beta Versions
-Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
+###### Beta Versions
+Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
 
 #### version & stability
 ```yaml
@@ -43,6 +42,7 @@ Alpha and beta versions are for bleeding edge developers who want nothing but th
 memcached1:
   type: memcached
   version: 1.4
+  stability: stable
 ```
 
 ## Memcached Configuration Options

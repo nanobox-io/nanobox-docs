@@ -6,7 +6,7 @@ title: PostgreSQL Boxfile Settings
 ```yaml
 postgresql1:
   version: 9.4
-  stability: production
+  stability: stable
 ```
 
 
@@ -22,21 +22,20 @@ The specific patch level is determined by the "stability" config.
 **Note:** PostgreSQL versions cannot be changed after the service is created. To use a different version, you'll have to create a new PostgreSQL service.
 
 ### Stability
-The `stability` config allows you to specify which patch level of your Postgres version you would like to use. There are three stability options:
+The `stability` config allows you to specify which patch level of your Postgres version you would like to use. There are two stability options:
 
-- alpha
 - beta
-- production
+- stable
 
-###### Alpha & Beta Versions
-Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
+###### Beta Versions
+Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
 
 #### version & stability
 ```yaml
 # default setting
 postgresql1:
   version: 9.4
-  stability: production
+  stability: stable
 ```
 
 ## Request PostgreSQL Boxfile Configs

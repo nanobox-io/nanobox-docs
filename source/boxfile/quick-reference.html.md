@@ -275,7 +275,7 @@ udp1:
 
 mysql1:
   version: 5.5
-  stability: production
+  stability: stable
 
   # All settings below apply to MySQL, Percona, & MariaDB services
   mysql_plugins:
@@ -308,7 +308,7 @@ mysql1:
 ```yaml
 postgresql1:
   version: 9.4
-  stability: production
+  stability: stable
 ```
 ###### Full Doc
 [PostgreSQL Boxfile Settings](/boxfile/data-services/postgresql/)  
@@ -319,7 +319,7 @@ postgresql1:
 ```yaml
 mongodb1:
   version: 3.0
-  stability: production
+  stability: stable
   mongodb_diaglog: 0
   mongodb_objcheck: true
   mongodb_log_verbosity: 'v'
@@ -337,7 +337,7 @@ mongodb1:
 ```yaml
 redis1:
   version: 2.8
-  stability: production
+  stability: stable
   redis_tcp_keepalive: 60
   redis_databases: 16
   redis_stop_writes_on_bgsave_error: 'yes'
@@ -378,7 +378,7 @@ redis1:
 ```yaml
 memcached1:
   version: 1.4
-  stability: production
+  stability: stable
   memcached_return_error_on_memory_exhausted: false
   memcached_max_connections: 1024
   memcached_chunk_size_growth_factor: 1.25

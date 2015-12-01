@@ -6,7 +6,7 @@ title: MongoDB Boxfile Settings
 ```yaml
 mongodb1:
   version: 3.0
-  stability: production
+  stability: stable
   mongodb_diaglog: 0
   mongodb_objcheck: true
   mongodb_log_verbosity: 'v'
@@ -28,21 +28,20 @@ The specific patch level is determined by the "stability" config.
 **Note:** Due to version compatibility constraints, MongoDB versions cannot be changed after the service is created. To use a different version, you'll have to create a new MongoDB service and manually migrate data.
 
 ### Stability
-The `stability` config allows you to specify which patch level of your MongoDB version you would like to use. There are three stability options:
+The `stability` config allows you to specify which patch level of your MongoDB version you would like to use. There are two stability options:
 
-- alpha
 - beta
-- production
+- stable
 
-###### Alpha & Beta Versions
-Alpha and beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
+###### Beta Versions
+Beta versions are for bleeding edge developers who want nothing but the latest releases of services. These are "builds-in-progress," and using them is done at your own risk. Stabilities do not represent the stability of the actual project, but rather the "image" provided by Nanobox.
 
 #### mongodb version & stability
 ```yaml
 # default setting
 mongodb1:
   version: 3.0
-  stability: production
+  stability: stable
 ```
 
 ## MongoDB Configuration Options
