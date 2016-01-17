@@ -14,4 +14,4 @@ If you have [Homebrew](http://brew.sh/) and [Homebrew Cask](http://caskroom.io/)
 $ brew cask install nanobox
 ```
 
-<p style="font-size: .85em; font-style: italic;">Special thanks to <a href="https://twitter.com/liljenstolpe">@liljenstolpe</a>, <a href="https://github.com/adityadalal924">adityadalal924</a>, and the devs at Homebrew Cask for building this installer.</p>
+<p style="font-size: .85em; font-style: italic;">Special thanks to <a href="https://twitter.com/liljenstolpe">@liljenstolpe</a>, <a href="https://github.com/adidalal">adidalal</a>, and the devs at Homebrew Cask for building this installer.</p>
