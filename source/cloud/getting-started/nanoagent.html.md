@@ -1,6 +1,6 @@
 ---
 title: NanoAgent
-layout: cloud
+
 ---
 
 Every Nanobox app includes a 'nanoagent' service. NanoAgent serves many purposes necessary for running your app as well as providing visibility into your app. Below is just a few of the things NanoAgent does:

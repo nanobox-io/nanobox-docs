@@ -1,0 +1,117 @@
+// DESKTOP COLORS
+
+$gblue-0: #19242B;
+$gblue-1: #212C33;
+$gblue-2: #2C3A42;
+$gblue-3: #21414F;
+$gblue-4: #496B7F;
+$gblue-5: #5A768A;
+$gblue-6: #7796AA;
+$gblue-7: #9CB7C5;
+$gblue-8: #D0DEE7;
+
+$blue-0: #69A1BE;
+$blue-1: #62B1DD;
+
+$bgreen-0: #3ACFCF;
+$bgreen-1: #7FE0BF;
+
+$yellow-0: #4C4C20;
+$yellow-1: #EFB543;
+$yellow-2: #F5DA81;
+$yellow-3: #FFF5AD;
+
+$red: #FC6269;
+
+// PRODUCTION COLORS
+
+$lt-gblue-0: #414B58;
+$lt-gblue-1: #3A5366;
+$lt-gblue-2: #597080;
+$lt-gblue-3: #7796AA;
+$lt-gblue-4: #7AA0BA;
+$lt-gblue-5: #CCD4D9;
+$lt-gblue-6: #EDF0F2;
+
+$lt-blue-0: #00283D;
+$lt-blue-1: #42799D;
+$lt-blue-2: #179DBF;
+$lt-blue-3: #54E0FF;
+
+$lt-green-0: #4AAA88;
+$lt-green-1: #43C4A6;
+
+$lt-red-0: #423446;
+$lt-red-1: #645769;
+$lt-red-2: #F04A52;
+
+$lt-yellow-0: #DBCE74;
+$lt-yellow-1: #FFF5AD;
+
+// New Colors
+$grey-1: #424242;
+$grey-2: #c6c6c6;
+$grey-3: #d8d8d8;
+$grey-4: #E6E6E6;
+
+$gblue-0: #2b3a42;
+$gblue-1: #5a768a;
+
+$blue-0: #337691;
+$blue-1: #2a8eba;
+$blue-2: #45A8D0;
+
+
+$pink-1: #EF3F65;
+
+
+// MIXINS
+
+@mixin transition($value) {
+  -moz-transition: $value;
+  -o-transition: $value;
+  -ms-transition: $value;
+  -webkit-transition: $value;
+  transition: $value;
+}
+
+@mixin transition-delay($delay) {
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
+}
+
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+@mixin box-sizing($value:border-box) {
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+
+@mixin border-radius ($radius:50%){
+  -webkit-border-radius: $radius $radius $radius $radius;
+  -moz-border-radius: $radius $radius $radius $radius;
+  border-radius: $radius $radius $radius $radius;
+}
+
+@mixin transform ($transforms){
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin user-select ($select:none){
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  -o-user-select: $select;
+  user-select: $select;
+}

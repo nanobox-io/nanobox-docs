@@ -66,6 +66,8 @@ set :images_dir, 'images'
 
 set :build_dir, 'docs'
 
+set :partials_dir, 'partials'
+
 # Using Github Flavored Markdown
 set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :strikethrough => true, :with_toc_data => true

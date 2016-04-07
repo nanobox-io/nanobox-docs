@@ -1,6 +1,6 @@
 ---
 title: Git & SSH Troubleshooting
-layout: cloud
+
 ---
 
 ## Confirm You've Added Your SSH Key to Your User Account

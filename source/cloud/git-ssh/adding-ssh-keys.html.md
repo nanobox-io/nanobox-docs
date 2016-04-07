@@ -1,6 +1,6 @@
 ---
 title: Adding SSH Keys to Nanobox
-layout: cloud
+
 ---
 
 Adding SSH keys to your Nanobox account allows you securely connect to Nanobox apps for things such as Git pushes and pulls as well as remote access to services.

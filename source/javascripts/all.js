@@ -1,15 +1,17 @@
 //= require_tree .
-//= require "jquery-2.1.4.min.js"
+//= require "_jquery-2.1.4.min.js"
 
 
 ////////////////// SHRINKING TOP NAV //////////////////
 
-$(window).scroll(function() {    
+$(window).scroll(function() {
   var scroll = $(window).scrollTop();
   if (scroll >= 50) {
     $("#header").addClass("small");
+    $("#navigation").addClass("shift");
   } else {
     $("#header").removeClass("small");
+    $("#navigation").removeClass("shift");
   }
 });
 
@@ -23,12 +25,30 @@ $(function() {
   })
 })
 
+//////// TOGGLE OPEN / CLOSE CONTENTS SECTIONS ////////
+
+$(function() {
+  $('span.nav-toggle').on('click', function(e) {
+    $(this).closest('li').toggleClass('open')
+  })
+
+  // SHOWS WHEN A DOC IS BURIED IN A CLOSED SECTION
+  $('#navigation li:has(.active)').on('click', function(e) {
+    if (!$(this).hasClass('open')) {
+      $(this).addClass('buried');
+    }
+    else {
+      $(this).removeClass('buried')
+    }
+  })
+})
+
 
 /////////////// HIDE UNUSED NAV SECTIONS ///////////////
 
 $(function(){
   $('ul#contents li:has(ul li.active)').addClass('open');
-  $('ul#contents li ul.sub li:has(ul.sub)').addClass('more');
+  $('ul#contents li ul.sub li:has(ul.sub)');
 });
 
 
@@ -37,7 +57,7 @@ $(function(){
 $(window).on('resize', function() {
   if (document.documentElement.clientWidth > 864) {
     if(!$('#contents').hasClass('closed')) {
-      $('#contents').addClass('closed');      
+      $('#contents').addClass('closed');
       $('#contents-btn').removeClass('open');
     };
   }
@@ -92,9 +112,9 @@ if (
   navigator.userAgent.match(/webOS/i) ||
   navigator.userAgent.match(/iPhone/i) ||
   navigator.userAgent.match(/iPod/i) ||
-  navigator.userAgent.match(/BlackBerry/) || 
-  navigator.userAgent.match(/Windows Phone/i) || 
-  navigator.userAgent.match(/ZuneWP7/i) || 
+  navigator.userAgent.match(/BlackBerry/) ||
+  navigator.userAgent.match(/Windows Phone/i) ||
+  navigator.userAgent.match(/ZuneWP7/i) ||
   navigator.userAgent.match(/IEMobile/i) ||
   navigator.userAgent.match(/Tablet/i) ||
   navigator.userAgent.match(/iPad/i) ||
@@ -119,7 +139,7 @@ $(document).ready(function() {
     $(this).wrapInner( link );
   })
 
-  
+
   //////////////////// SMOOTH SCROLL ////////////////////
 
   $('a[href^="#"]').on('click',function (e) {
@@ -135,9 +155,9 @@ $(document).ready(function() {
     });
   });
 
-  
+
   /////////////// HIDE UNUSED NAV SECTIONS ///////////////
-  // Works in conjuction with lines 
+  // Works in conjuction with lines
 
   if (document.documentElement.clientWidth < 864) {
     if($('#contents').hasClass('closed')) {
@@ -145,14 +165,17 @@ $(document).ready(function() {
     };
   }
 
-  
+
   /////////////////// CONTENT FADE-IN ///////////////////
 
   setTimeout(function() {
     $('#content').addClass('loaded');
-  }, 10); 
+  }, 10);
 
-  
+  //////////////// OPEN ACTIVE CATEGORY ////////////////
+
+  $('#navigation ul > li.active').addClass('open')
+
   ////////////// TOGGLE OS CONTENT ON LOAD //////////////
 
   $(document).ready(function() {
@@ -174,10 +197,8 @@ $(document).ready(function() {
 
 
   ////////// CHANGES TEXT FOR INTERACTIVE SVGs //////////
-  if(touch_device){  
+  if(touch_device){
     $(".interactive-svg").addClass("touch");
   }
 
 })
-
-

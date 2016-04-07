@@ -1,0 +1,17 @@
+@import 'variables-mixins';
+
+// These style the hashes/links on content headings
+
+#content                {
+  h2, h3, h4, h5, h6    { position: relative;
+    a                   { border: none; text-decoration: none; color: inherit;
+      &:before          { content: "#"; position: absolute; color: $grey-3; font-size: 22px; font-weight: normal; font-style: normal; @include transition(color .2s) }
+      &:hover           { color: inherit;
+        &:before        { color: $blue-2; }
+      }
+    }
+  }
+  h2 a:before           { margin: .7em 0 0 -1em; padding-right: 1em; }
+  h3 a:before           { margin: .15em 0 0 -1em; padding-right: 1em; }
+  h4 a:before           { margin: -.1em 0 0 -1em;; padding-right: 1em; }
+}

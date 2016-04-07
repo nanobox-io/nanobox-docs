@@ -1,5 +1,5 @@
 ---
-layout: cloud
+
 ---
 
 # Nanobox Cloud

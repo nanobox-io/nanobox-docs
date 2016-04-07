@@ -1,41 +1,45 @@
 module NavHelpers
-  def articles_in_order
-    articles = []
-    data.contents.categories.each do |category|
-      articles << { title: category.title, path: category.path }
-      next if category.articles.nil?
 
-      category.articles.each do |article|
-        articles << { category: category.title, title: article.title, path: article.path }
-        next if article.sub_articles.nil?
-
-        article.sub_articles.each do |sub_article|
-          articles << { category: category.title, article: article.title, title: sub_article.title, path: sub_article.path }
-        end
+  # Builds the flat array of all articles
+  def getArticles(parent, arr)
+    arr << {title: parent.title, path: parent.path }
+    parent.articles.each do |a|
+      if a.articles
+        getArticles(a, arr)
       end
+      arr << { title: a.title, path: a.path }
     end
-    articles
+
+    arr.flatten.uniq
   end
 
+  # A Nested Nav Tree used to build the left nav
+  # def getNavTree(parent)
+  #   arr = []
+  #   parent.articles.each do |a|
+  #     if a.articles
+  #       getNavTree(a)
+  #     end
+  #     arr << { title: a.title, path: a.path }
+  #   end
+  # end
+
+  # Test the getNavTree Method
+  # def testNavTree
+  #   getNavTree(data.contents)
+  # end
+
+  # Helps to builds the previous article link
   def get_prev_article(current_article_path)
-    articles = articles_in_order
-    index = articles_in_order.find_index { |article| article[:path] == current_article_path }
-
-    if index == 0
-      nil
-    else
-      articles[index - 1]
-    end
+    articles = getArticles(data.contents, [])
+    index = articles.find_index {|a| a[:path] == current_article_path}
+    index == 0 ? nil : articles[index - 1]
   end
 
+  # Helps to builds the next article link
   def get_next_article(current_article_path)
-    articles = articles_in_order
-    index = articles_in_order.find_index { |article| article[:path] == current_article_path }
-
-    if index == articles.count - 1
-      nil
-    else
-      articles[index + 1]
-    end
+    articles = getArticles(data.contents, [])
+    index = articles.find_index {|a| a[:path] == current_article_path}
+    index == articles.count - 1 ? nil : articles[index + 1]
   end
 end

@@ -1,6 +1,6 @@
 ---
 title: Git & SSH
-layout: cloud
+
 ---
 
 SSH keys are what allow you to securely connect to and manage your apps on Nanobox. Everything from pushing and pulling with Git to remotely accessing services requires an SSH Key. The following docs walk through generating SSH keys, adding them to your Nanobox account, and troubleshooting any issues you may run into.

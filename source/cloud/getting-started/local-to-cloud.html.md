@@ -1,6 +1,6 @@
 ---
 title: Going from Local to Cloud
-layout: cloud
+
 ---
 
 Mitigating differences between development and production environments has always been a challenge when managing applications. Nanobox provides perfect parity between local Nanobox Desktop environments and Nanobox Cloud environments.
