@@ -21,3 +21,6 @@ gem 'redcarpet'
 
 # Syntax Highlighting
 gem 'middleman-syntax'
+
+# Breadcrumbs
+gem 'middleman-breadcrumbs'

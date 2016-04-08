@@ -64,12 +64,13 @@ a                       { @include transition(all .15s); }
   &:after               { content: "+"; position: absolute; right: .6em; top: .5em; font-size: 1.5em; }
   &.open:after          { content: "–"; }
 }
+
 #navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; padding: 2.7em 2em; overflow: scroll; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
   &.shift               { margin-top: -2em; }
   #contents             { @include transition(max-height .5s); padding-left: .5em; max-height: 2800px; overflow: hidden; @include user-select;
     &.closed            { max-height: 0px; }
   }
-  a                     { color: $grey-1; text-decoration: none;
+  a                     { color: $grey-0; text-decoration: none;
     &:hover             { color: $blue-1; }
   }
   ul                    { margin: 0; padding: 0; list-style: none;
@@ -100,14 +101,14 @@ a                       { @include transition(all .15s); }
   }
 }
 
-#content                { margin-left: 25%; width: 75%; max-width: 820px; padding: 2.7em; @include box-sizing; color: $grey-1; @include opacity(0); @include transition (opacity .2s);
+#content                { margin-left: 25.5%; width: 75%; max-width: 820px; padding: 2.7em; @include box-sizing; color: $grey-0; @include opacity(0); @include transition (opacity .2s);
   &.loaded              { @include opacity(1); }
-  h1                    { margin: 20px 0 40px; padding-bottom: 30px; border-bottom: 1px solid $grey-2; font-size: 3.9em; color: $blue-0; }
-  h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $grey-1; }
+  h1                    { margin: .35em 0 .7em;; padding-bottom: .5em; border-bottom: 1px solid $grey-2; font-size: 3.9em; color: $blue-0; }
+  h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $grey-0; }
   h3                    { margin: -1em 0 .45em; padding-top: 2.5em; font-size: 1.55em; color: $gblue-1; }
-  h4                    { margin: -1.5em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $grey-1; font-style: italic; }
+  h4                    { margin: -1.5em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $grey-0; font-style: italic; }
   h5                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $blue-0; text-transform: uppercase; }
-  h6                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $grey-1; text-transform: uppercase; font-style: italic; }
+  h6                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }
   p                     { margin: 0 0 1.5em; line-height: 2em; }
   a                     { color: $blue-1; text-decoration: none; border-bottom: 1px dotted;
     code                { border: 1px dotted $blue-1; }
@@ -142,6 +143,14 @@ a                       { @include transition(all .15s); }
     }
     code                { border: none !important; font-size: .95em; }
   }
+
+  #breadcrumb             { font-size: .85em; color: $grey-1; line-height: 1.4em;
+    a                     { margin: 0 .25em; border: none; color: $grey-1; border-bottom: 1px dotted $grey-4;
+      &:hover             { border-bottom: 1px dotted $grey-1; color: $grey-0; }
+      &:first-child       { margin: 0; }
+    }
+  }
+
   #pagination           { padding: 3em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $grey-2;
     a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $gblue-0; border: none; @include border-radius(5px); @include transition(all .15s);
       &:before          { content: attr(name); position: absolute; top: .65em; padding: .5em .65em; background: $gblue-2; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }

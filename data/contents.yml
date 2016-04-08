@@ -209,6 +209,10 @@ articles:
         path: "/scaling/how-when-to-scale/"
       - title: "Application Redundancy"
         path: "/scaling/app-redundancy/"
+      - title: "Single-Node & Multi-Node Apps"
+        path: "/scaling/single-vs-multi-node/"
+      - title: "Auto-Scaling"
+        path: "/scaling/auto-scaling/"
 
   - title: "Networking & Domains"
     path: "/networking-domains/"
