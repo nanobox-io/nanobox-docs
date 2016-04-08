@@ -176,6 +176,14 @@ $(document).ready(function() {
 
   $('#navigation ul > li.active').addClass('open')
 
+  ///////// AUTO-SCROLL NAV TO ACTIVE NAV ITEM /////////
+  
+  var activeNav = $('.active');
+	if(activeNav) {
+    var main = $("#navigation"), t = main.offset().top;
+    main.scrollTop(activeNav.position().top - t);
+	}
+
   ////////////// TOGGLE OS CONTENT ON LOAD //////////////
 
   $(document).ready(function() {

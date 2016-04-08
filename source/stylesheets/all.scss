@@ -1,6 +1,6 @@
 @import 'variables-mixins', 'normalize', 'heading-hash', 'syntaxhighlighter';
 
-body                    { background: $grey-4; height: 100%; position: relative; font-family: 'Proxima Nova', sans-serif; -webkit-font-smoothing: antialiased; }
+body                    { background: $grey-4; height: 100%; position: relative; font-family: "proxima-nova", sans-serif; -webkit-font-smoothing: antialiased; }
 a                       { @include transition(all .15s); }
 .left                   { float: left; }
 .right                  { float: right; }
@@ -51,7 +51,7 @@ a                       { @include transition(all .15s); }
   ul                    { display: inline-block; padding: 0; margin: 0 2em 1em 0; list-style: none; vertical-align: top; }
   li                    { line-height: 1.6em; }
   #wrapper              { margin: 0 auto; position: relative; }
-  .title                { font-weight: bold; color: $gblue-7; }
+  .title                { font-weight: 700; color: $gblue-7; }
   .left                 { max-width: 500px; }
   .right                { position: absolute; right: 0; }
 }
@@ -87,7 +87,7 @@ a                       { @include transition(all .15s); }
       }
       a                 { display: inline-block; margin-left: 1.4em; line-height: 1.4em; padding: .3em 0; }
       &.active          {
-        & > a           { color: $pink-1; font-weight: bold; }
+        & > a           { color: $pink-1; font-weight: 700; }
         & > .nav-toggle .nav-btn-circle * { fill: $pink-1; }
         .nav-bullet rect { fill: $pink-1; height: 8px; width: 8px; x: 6; y: -4; @include transform(rotate(45deg)); }
         ul li .nav-bullet rect { fill: $grey-2; height: 5px; width: 5px; x: 4.5; y: 4.5; @include transform(rotate(0deg)) }
@@ -103,7 +103,7 @@ a                       { @include transition(all .15s); }
 
 #content                { margin-left: 25.5%; width: 75%; max-width: 820px; padding: 2.7em; @include box-sizing; color: $grey-0; @include opacity(0); @include transition (opacity .2s);
   &.loaded              { @include opacity(1); }
-  h1                    { margin: .35em 0 .7em;; padding-bottom: .5em; border-bottom: 1px solid $grey-2; font-size: 3.9em; color: $blue-0; }
+  h1                    { margin: .35em 0 .7em;; padding-bottom: .5em; border-bottom: 1px solid $grey-2; font-size: 3.9em; line-height: 1em; color: $blue-0; }
   h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $grey-0; }
   h3                    { margin: -1em 0 .45em; padding-top: 2.5em; font-size: 1.55em; color: $gblue-1; }
   h4                    { margin: -1.5em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $grey-0; font-style: italic; }
@@ -153,7 +153,7 @@ a                       { @include transition(all .15s); }
 
   #pagination           { padding: 3em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $grey-2;
     a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $gblue-0; border: none; @include border-radius(5px); @include transition(all .15s);
-      &:before          { content: attr(name); position: absolute; top: .65em; padding: .5em .65em; background: $gblue-2; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }
+      &:before          { content: attr(name); position: absolute; top: .65em; padding: 0.4em .65em .5em; background: $gblue-2; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }
       &:after           { content: ''; position: absolute; top: 1em; width: 0; height: 0; z-index: -1; border-style: solid; @include opacity(0); @include transition(all .3s); }
       &.prev            { left: 0;
         &:before        { left: 3em; }

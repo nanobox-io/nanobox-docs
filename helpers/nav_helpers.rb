@@ -10,7 +10,7 @@ module NavHelpers
       arr << { title: a.title, path: a.path }
     end
 
-    arr.flatten.uniq
+    arr.flatten.uniq.delete_if { |h| h[:path].nil? }
   end
 
   # A Nested Nav Tree used to build the left nav
