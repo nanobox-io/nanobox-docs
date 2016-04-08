@@ -13,22 +13,6 @@ module NavHelpers
     arr.flatten.uniq.delete_if { |h| h[:path].nil? }
   end
 
-  # A Nested Nav Tree used to build the left nav
-  # def getNavTree(parent)
-  #   arr = []
-  #   parent.articles.each do |a|
-  #     if a.articles
-  #       getNavTree(a)
-  #     end
-  #     arr << { title: a.title, path: a.path }
-  #   end
-  # end
-
-  # Test the getNavTree Method
-  # def testNavTree
-  #   getNavTree(data.contents)
-  # end
-
   # Helps to builds the previous article link
   def get_prev_article(current_article_path)
     articles = getArticles(data.contents, [])
