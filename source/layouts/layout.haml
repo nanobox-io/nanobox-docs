@@ -56,8 +56,7 @@
           - data.contents.articles.each do |article|
             %li{ nav_article_active( article.path ) }
               - if not article.articles
-                %span
-                  = partial "svgs/nav-bullet"
+                %span= partial "svgs/nav-bullet"
                 = link_to article.title, article.path
               - else
                 %span.nav-toggle
