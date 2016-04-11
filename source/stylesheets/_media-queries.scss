@@ -44,6 +44,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 
   #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; font-size: 1.1em; background: $gblue-0;
     &.shift                     { margin-top: 0; }
+    #contents                   { margin: 0; }
     ul                          {
       &#contents > li:last-child{ margin-bottom: 1.3em; }
       &.sub                     { border-color: $gblue-5; }
@@ -78,6 +79,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 
   #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0; font-size: 1.1em;
     &.shift                     { margin-top: 0; }
+    #contents                   { margin: 0; }
     ul                          {
       &#contents > li:last-child{ margin-bottom: 2em; }
       &.sub                     { border-color: $gblue-5; }

@@ -38,25 +38,7 @@ a                       { @include transition(all .15s); }
   }
 }
 
-#footer                 { width: 100%; background: $gblue-0; display: inline-block; padding: 4em 2em; font-size: .9em; color: $gblue-4; @include box-sizing;
-  a                     { color: $gblue-5; text-decoration: none;
-    &:hover             { color: $gblue-7; }
-    &#cloud             { display: block; text-align: center;
-      #nb-logo-md       { height: 6em; display: block; margin: 0 auto .75em; @include opacity(.7); @include transition(opacity .2s); }
-      #nb-logo-cloud    { height: 5em; display: block; margin: 0 auto .75em; @include opacity(.7); @include transition(opacity .2s); }
-      &:hover #nb-logo-md { @include opacity(1); }
-    }
-  }
-  p                     { display: inline-block; }
-  ul                    { display: inline-block; padding: 0; margin: 0 2em 1em 0; list-style: none; vertical-align: top; }
-  li                    { line-height: 1.6em; }
-  #wrapper              { margin: 0 auto; position: relative; }
-  .title                { font-weight: 700; color: $gblue-7; }
-  .left                 { max-width: 500px; }
-  .right                { position: absolute; right: 0; }
-}
-
-#wrapper                { margin: 3.95em 0;  @include transition(margin-top .2s);
+#wrapper                { margin: 3.95em 0 0;  @include transition(margin-top .2s);
   &.small               { margin-top: 1.4em; }
 }
 
@@ -65,9 +47,9 @@ a                       { @include transition(all .15s); }
   &.open:after          { content: "–"; }
 }
 
-#navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; padding: 2.7em 2em; overflow: scroll; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
+#navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; overflow: scroll; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
   &.shift               { margin-top: -2em; }
-  #contents             { @include transition(max-height .5s); padding-left: .5em; max-height: 2800px; overflow: hidden; @include user-select;
+  #contents             { @include transition(max-height .5s); margin: 2.5em 2em 4.7em; max-height: 2800px; overflow: hidden; @include user-select;
     &.closed            { max-height: 0px; }
   }
   a                     { color: $grey-0; text-decoration: none;
@@ -89,8 +71,8 @@ a                       { @include transition(all .15s); }
       &.active          {
         & > a           { color: $pink-1; font-weight: 700; }
         & > .nav-toggle .nav-btn-circle * { fill: $pink-1; }
-        .nav-bullet rect { fill: $pink-1; height: 8px; width: 8px; x: 6; y: -4; @include transform(rotate(45deg)); }
-        ul li .nav-bullet rect { fill: $grey-2; height: 5px; width: 5px; x: 4.5; y: 4.5; @include transform(rotate(0deg)) }
+        .nav-bullet rect { fill: $pink-1; height: 5px; width: 5px; }
+        ul li .nav-bullet rect { fill: $grey-2; height: 5px; width: 5px; x: 4.5; y: 4.5; }
       }
       &.open            {
         & > ul.sub      { max-height: 2000px; }
@@ -182,6 +164,17 @@ a                       { @include transition(all .15s); }
       &.active          { border-color: $red; background: $red; color: $gblue-1;
         &:hover         { color: $gblue-1; }
       }
+    }
+  }
+}
+
+#footer                 { width: 100%; display: block; margin-top: 6em; font-size: .85em; color: $grey-1; text-align: center; @include box-sizing;
+  a                     { color: $grey-1; border: none; text-decoration: none; font-weight: 700;
+    &:hover             { color: $blue-1; }
+  }
+  #links                { list-style: none; margin: 0; padding: 0;
+    li                  { display: inline-block; padding: 0 1em; border-left: 1px solid $grey-2;
+      &:first-child     { border: none; }
     }
   }
 }
