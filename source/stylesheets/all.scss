@@ -60,7 +60,7 @@ a                       { @include transition(all .15s); }
       li                { margin-left: .6em; }
     }
     li                  { position: relative;
-      span              { position: absolute; margin: .55em 0; height: 14px; width: 14px; display: inline-block;
+      span              { position: absolute; margin: .5em 0; height: 14px; width: 14px; display: inline-block;
         &.nav-toggle    { cursor: pointer;
           .nav-btn-circle { fill: $blue-2; }
           .nav-btn-vert * { stroke-width: 2px; }

@@ -13,12 +13,12 @@ A log_watch conists of the following:
 #### log_watch
 ```yaml
 # Pattern
-web:
+web.site:
   log_watch:
     key: 'path/to/log.file'
 
 # Example
-web:
+web.site:
   log_watch:
     admin[error]: 'app/logs/admin_error.log'
     api[auth]: 'app/logs/api_auth.log'

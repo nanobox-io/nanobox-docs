@@ -33,7 +33,7 @@ env:
 ```
 
 ###### Full Doc
-[Boxfile build](/app-config/boxfile/env/)
+[Boxfile env](/app-config/boxfile/env/)
 
 ---
 
@@ -44,7 +44,7 @@ dev:
 ```
 
 ###### Full Doc
-[Boxfile console](/app-config/boxfile/dev/)
+[Boxfile dev](/app-config/boxfile/dev/)
 
 ---
 
@@ -152,4 +152,4 @@ data:
     version: 9.4
 
 ```
-[Data Component Settings in the Boxfile](/app-config/boxfile/data)
+[Data Component Boxfile Settings](/app-config/boxfile/data)

@@ -10,11 +10,11 @@ The Boxfile is a yaml config file housed in the root of your project's repo that
 - The boxfile must be valid yaml markup. You can brush up on your yaml at [yaml.org](http://yaml.org/start.html) or check your syntax at [yamllint.com](http://www.yamllint.com/).
 - While boxfiles aren't required, without one, Nanobox doesn't know how to build, configure, or run your app.
 
-**VERY IMPORTANT**: Application components are created and destroyed from your Boxfile. By removing a component from your Boxfile, that component will be destroyed on your next deploy.
+**Note**: In a local Nanobox dev app, application components are created and destroyed by adding and removing them from your boxfile. In production, components can only be removed through your dashboard.
 
 ####Sample Boxfile
 ```yaml
-env:
+code.build:
   engine: nanobox-io/ruby
   config:
     ruby_runtime: ruby-2.2
@@ -22,13 +22,17 @@ env:
     - vendor
   reuse_libs: true
 
-web:
+code.deploy:
+  transform:
+    - 'bundle exec rake fix-yaml'
+
+web.site:
   start: 'bundle exec puma -c config/puma.conf'
   network_dirs:
     data.storage:
       - usr/uploads
 
-worker:
+worker.jobs:
   start: 'ruby workers/image_processor.rb'
   network_dirs:
     data.storage:
@@ -53,7 +57,7 @@ Yaml is used in the Boxfile because of its simplicity and clarity when defining 
 #### Boxfile Structure
 
 ```yaml
-web: #<----------------------- Component ID
+web.site: #<------------------ Component ID
   start: 'rails s'        #|
   network-dirs:           #|-- Component Settings
     data.storage:         #|
@@ -74,13 +78,13 @@ data.postgres: #<------------- Component ID
 ### Component IDs
 Every component in your app has a component ID which consists of two parts:
 
-- Component type - ***required***
-- Unique identifier - ***optional but recommended***
+- Component Type - [web, worker, or data](#component-types).
+- Unique identifier - Completely up to you.
 
-Component IDs must be unique, so if you have more than one of a component type, you'll need to include a unique identifier. What identifier you use is completely up to you.
+Component IDs must be unique.
 
 #### IMPORTANT: Component IDs Cannot be Changed
-Component IDs cannot be changed once a Boxfile is deployed and the components are created. If they are changed, they will be recognized as new components.
+Component IDs cannot be changed once a boxfile is deployed and the components are created. If they are changed, they will be recognized as new components.
 
 #### Component IDs
 ```yaml
@@ -88,12 +92,12 @@ Component IDs cannot be changed once a Boxfile is deployed and the components ar
 type.unique-identifer:
 
 # Examples
-web:
+web.site:
 web.api:
-worker:
+worker.jobs:
 worker.image-processor:
-data:
 data.db:
+data.storage:
 ```
 
 ### Component Types
@@ -106,7 +110,9 @@ There are three types of components:
 ## Sections of the Boxfile
 Boxfiles consist of a handful of sections or "nodes": env, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
 
-[`env`](/app-config/boxfile/env/) - Defines the build, environment, and configuration for web and worker components.
+[`code.build`](/app-config/boxfile/code-build/) - Defines the build, environment, and configuration for web and worker components.
+
+[`code.deploy`](/app-config/boxfile/code-deploy/) - Defines deploy hooks and possible code transformations.
 
 [`dev`](/app-config/boxfile/dev) - Defines settings unique to your [local nanobox dev environment](/local-dev/).  
 

@@ -1,12 +1,12 @@
 ---
-title: Worker Components
+title: worker
 ---
 
 Worker components are meant for running background processes and do not connect with the external network.
 
 #### Overview of Worker Component Settings in the Boxfile
 ```yaml
-worker:
+worker.jobs:
   # Start Command
   start: "ruby worker.rb"
 
@@ -49,7 +49,7 @@ The `start` is the command used to start your worker.
 
 #### start
 ```yaml
-worker:
+worker.jobs:
   start: "ruby worker.rb"
 ```
 
@@ -62,7 +62,7 @@ For more details, view the [Network Storage doc](/getting-started/network-storag
 
 #### network_dirs
 ```yaml
-worker:
+worker.jobs:
   network_dirs:
     data.storage1:
       - path/to/directoryA
@@ -78,7 +78,7 @@ These directories are read/write accessible and stored in each instance's local 
 
 #### nonpersistent\_writable\_dirs
 ```yaml
-worker:
+worker.jobs:
   nonpersistent_writable_dirs:
     - path/to/dirA
     - path/to/dirB
@@ -89,7 +89,7 @@ Many apps and frameworks log to files stored in the file system. `log_watch`'s a
 
 #### log_watch
 ```yaml
-worker:
+worker.jobs:
   log_watch:
     key: "path/to/log.file"
     job[error]: "app/logs/error.log"
@@ -101,12 +101,12 @@ Cron is a time-based job scheduler that enables you to schedule jobs (commands) 
 #### cron
 ```yaml
 # Pattern
-worker:
+worker.jobs:
   cron:
     - "cron schedule": "command"
 
 # Examples
-worker:
+worker.jobs:
   cron:
     - "0 0 * * *": "rm -rf app/cache/*"
     - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
@@ -132,7 +132,7 @@ Deploy Hooks allow you to "hook" into the deploy process and execute scripts or 
 
 #### Deploy Hooks in the Boxfile
 ```yaml
-worker:
+worker.jobs:
   deploy_hook_timeout: 600
   before_deploy:
     - "scripts/migrate_db.rb"

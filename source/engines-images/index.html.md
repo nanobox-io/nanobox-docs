@@ -2,12 +2,14 @@
 title: Engines & Images
 ---
 
-Engines are responsible for configuring the app's environment and compiling or building the app's codebase. Nanobox can run any app, assuming a compatible engine exists.
+Engines and images are used to build and configure services on Nanobox. Nanobox can run any app, assuming a appropriate engines and images exists.
 
-Nanobox engines are not proprietary, and the source code is available for public consumption on [Github](https://github.com/nanobox-io?utf8=%E2%9C%93&query=nanobox-engine). In addition to the engines created by the Nanobox team, anybody can create a custom engine to be used on Nanobox.
+### Engines
 
-### What is an Engine?
+Engines build and prepare the runtime environment for code components (webs and workers). They consist of just a handful of scripts that install necessary runtimes, run dependency managers (if applicable), and in some cases, auto-detect the needs of the app.
 
-An engine is just a handful of bash scripts and an Enginefile. The engine will need a corresponding script for each phase of the build process inside the engine's bin directory. Further specifics about each script can be found [here](/engines/scripts/) and additional information regarding the Enginefile can be found in the [Enginefile doc](/engines/enginefile).
+### Images
+Images build and configure supporting data services such as databases, caches, job queues, etc. They are simply Docker images that include scripts unique to Nanobox.
 
-### What is an Image?
+### Finding Engines & Images
+The [Nanobox shelf](https://shelf.nanobox.io) is a registry of publicly available engines and images. In addition to the engines and images created by the Nanobox team, anybody can create a custom engines and images and add them to the shelf, allowing you and others to find and use them on Nanobox.

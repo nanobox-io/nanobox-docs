@@ -1,8 +1,8 @@
 ---
-title: env
+title: code.build
 ---
 
-The `env` section of the Boxfile allows you to configure your runtime environment and how your code is built prepared for deploy. When code is deployed to a nanobox app, a "build" server is provisioned. In the build server, your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.
+The `code.build` section of the boxfile.yml allows you to configure how your code and it's runtime environment are built and prepared for deploy. When code is deployed to a nanobox app, a "build" server is provisioned. In the build server, your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.
 
 The configuration options and final "code-package" are used in web and worker components.
 
@@ -11,7 +11,7 @@ The configuration options and final "code-package" are used in web and worker co
 
 #### Overview of Build Settings in the Boxfile
 ```yaml
-env:
+code.build:
   # Engine
   engine: 'my/engine'
 
@@ -24,14 +24,24 @@ env:
     - vendor
     - packages
   reuse_libs: true
+
+  # Build Hooks
+  before_prepare:
+    - 'echo I am getting ready'
+  after_prepare:
+    - 'echo I am ready'
+  before_build:
+    - 'echo I'm getting ready to build'
+  after_build:
+    - 'echo I'm built and ready to go'
 ```
 
 ## Engine
-The `engine` config allows you to specify which [engine](/getting-started/engines/) to use to build your code's environment. If no engine is provided, nanobox will "sniff" your code and determine the best fit.
+The `engine` config allows you to specify which [engine](/getting-started/engines/) to use to build your code's environment.
 
 #### engine
 ```yaml
-env:
+code.build:
   engine: 'username/engine-name'
 ```
 
@@ -40,7 +50,7 @@ Engines expose configurable options used to tailor your code's environment to yo
 
 #### config
 ```yaml
-env:
+code.build:
   engine:'username/engine-name'
   config:
     runtime_version: 2.2
@@ -54,7 +64,7 @@ The `lib_dirs` config tells Nanobox where your dependency manager stores its dep
 
 #### lib_dirs
 ```yaml
-build:
+code.build:
   lib_dirs:
     - vendor
     - packages
@@ -65,6 +75,22 @@ During the build process, dependencies are downloaded then stored in a "library 
 
 #### reuse_libs
 ```yaml
-build:
+code.build:
   reuse_libs: true
+```
+
+## Build Hooks
+Build hooks allow you to "hook into" specific phases of the build process and run commands. These are covered in detail in the [Build & Deploy Hooks](/app-config/build-deploy-hooks/) doc.
+
+#### Build Hooks in the boxfile.yml
+```yaml
+code.build:
+  before_prepare:
+    - 'curl -sSf https://static.rust-lang.org/rustup.sh | sh'
+  after_prepare:
+    - 'echo good to go'
+  before_build:
+    - 'cargo build --release'
+  after_build:
+    - 'echo built and ready for deploy'
 ```

@@ -20,7 +20,7 @@ Nonpersistent writable directories are available to webs & workers and are confi
 
 #### nonpersistent\_writable\_dirs
 ```yaml
-web:
+web.site:
   nonpersistent_writable_dirs:
     - path/to/dirA
     - path/to/dirB

@@ -1,12 +1,12 @@
 ---
-title: Web Components
+title: web
 ---
 
 Web components have ports exposed to the external network making them publicly accessible. These should be used for any public-facing code component.
 
 #### Overview of Web Component Settings in the Boxfile
 ```yaml
-web:
+web.site:
   # Start Command
   start: "ruby app.rb"
 
@@ -59,7 +59,7 @@ The `start` is the command used to start your web process. **\*\*Required for al
 
 #### start
 ```yaml
-web:
+web.site:
   start: "ruby app.rb"
 ```
 
@@ -109,12 +109,12 @@ Nanobox allows to do define on which ports your web component listens.
 #### ports
 ```yaml
 # Pattern
-web:
+web.site:
   ports:
     - source:destination
 
 # Examples (Default)
-web:
+web.site:
   ports:
     - 80:8080
     - 443:8080
@@ -131,7 +131,7 @@ For more details, view the [Network Storage doc](/app-config/network-storage/).
 
 #### network_dirs
 ```yaml
-web:
+web.site:
   network_dirs:
     data.files:
       - path/to/directoryA
@@ -147,7 +147,7 @@ These directories are read/write accessible and stored in each instance's local 
 
 #### nonpersistent\_writable\_dirs
 ```yaml
-web:
+web.site:
   nonpersistent_writable_dirs:
     - path/to/dirA
     - path/to/dirB
@@ -158,7 +158,7 @@ Many apps and frameworks log to files stored in the file system. `log_watch`'s a
 
 #### log_watch
 ```yaml
-web:
+web.site:
   log_watch:
     key: "path/to/log.file"
     app[error]: "app/logs/error.log"
@@ -170,12 +170,12 @@ Cron is a time-based job scheduler that enables you to schedule jobs (commands) 
 #### cron
 ```yaml
 # Pattern
-web:
+web.site:
   cron:
     - "cron schedule": "command"
 
 # Examples
-web:
+web.site:
   cron:
     - "0 0 * * *": "rm -rf app/cache/*"
     - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
@@ -201,7 +201,7 @@ Deploy Hooks allow you to "hook" into the deploy process and execute scripts or 
 
 #### Deploy Hooks in the Boxfile
 ```yaml
-web:
+web.site:
   deploy_hook_timeout: 600
   before_deploy:
     - "scripts/migrate_db.rb"

@@ -1,12 +1,12 @@
 ---
-title: Data Components
+title: data
 ---
 
 Data components handle application data. They can range anywhere in function from a database to a job queue. Functionality of data services is determined by the [image](#image) with which they're created.
 
 #### Overview of Data Component Settings in the Boxfile
 ```yaml
-data:
+data.db:
   # Image
   image: nanobox/postgresql
 
@@ -21,7 +21,7 @@ The `image` setting defines which [image](/engines-images/) is used to create th
 
 #### image
 ```yaml
-data:
+data.db:
   image: nanobox/postgresql
 ```
 
@@ -30,7 +30,7 @@ Images may provide configuration options. These options are specified in the `co
 
 #### config
 ```yaml
-data:
+data.db:
   image: nanobox/postgresql
   config:
     version: 9.4
