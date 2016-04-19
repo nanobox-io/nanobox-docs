@@ -48,7 +48,7 @@ Many languages and frameworks depend on external libraries or dependencies. The 
 #!/bin/bash
 
 cat <<-END
-web1:
+web.site:
   exec: nginx
 
 END
@@ -60,7 +60,7 @@ END
 #!/bin/bash
 
 cat <<-END
-web1:
+web.site:
   exec: apache
 
 mysql1:
@@ -80,7 +80,7 @@ build:
     - vendor
     - .bundle
 
-web1:
+web.site:
   exec: bundle exec ruby app.rb
 
 END

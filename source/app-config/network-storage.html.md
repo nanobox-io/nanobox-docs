@@ -36,7 +36,9 @@ data.storage:
 ```
 
 ### Network Directories
-In order for a code component to be able to store files in a storage component, network directories must be added to the code component's configuration. Network directories are configured per code service using the `network_dirs` config. In the `network_dirs` config, you must specify the data component on which the directories should be stored by nesting the ID of the desired storage service under `network_dirs` config, then specifying the directory paths.
+In order for a code component to be able to store files in a storage component, network directories must be added to the code component's configuration. Network directories are configured per code service using the `network_dirs` config.
+
+In the `network_dirs` config, you must specify the data component on which the directories should be stored by nesting the ID of the desired storage service under `network_dirs` config, then specifying the directory paths.
 
 #### Network Directories in the Boxfile
 ```yaml

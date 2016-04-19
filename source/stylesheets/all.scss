@@ -103,9 +103,10 @@ a                       { @include transition(all .15s); }
   ul, ol                { padding-left: 1.2em;
     li                  { line-height: 1.8em; }
   }
-  p, ul, li             {
-    code                { padding: 5px 8px 6px; font-size: .82em; color: $pink-1; background: white; white-space: nowrap; @include border-radius(.4em); }
+  :not(pre)             { // Added to preserved code-block formatting for blocks nested in lists
+    & > code            { padding: 5px 8px 6px; font-size: .82em; color: $pink-1; background: white; white-space: nowrap; @include border-radius(.4em); }
   }
+
   img                   { max-width: 100%; }
   hr                    { margin: 3em 0 2em; border: none; border-top: 1px solid $gblue-2; }
   blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-3;

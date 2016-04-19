@@ -17,7 +17,7 @@ This doc is meant to act as a quick reference to all available base Boxfile sett
 
 ### Env Settings in the Boxfile
 ```yaml
-env:
+code.build:
   # Engine
   engine: 'my/engine'
 
@@ -50,7 +50,7 @@ dev:
 
 ### Web Component Settings in the Boxfile
 ```yaml
-web:
+web.site:
   # Start Command
   start: "ruby app.rb"
 
@@ -99,7 +99,7 @@ web:
 
 ### Worker Component Settings in the Boxfile
 ```yaml
-worker:
+worker.jobs:
   # Start Command
   start: "ruby worker.rb"
 

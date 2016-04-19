@@ -15,10 +15,26 @@ articles:
         path: "/getting-started/engines-images/"
       - title: "Creating an App"
         path: "/getting-started/creating-an-app/"
+      - title: "Deploying to an App"
+        path: "/getting-started/deploy/"
       - title: "Hosting Providers"
         path: "/getting-started/providers/"
       - title: "The Nanobox"
         path: "/getting-started/the-nanobox/"
+
+  - title: "Local Development"
+    path: "/local-dev/"
+    articles:
+      - title: "Local Setup"
+        path: "/local-dev/local-setup/"
+      - title: "Basic Workflow"
+        path: "/local-dev/basic-workflow/"
+      - title: "nanobox dev"
+        path: "/local-dev/nanobox-dev/"
+      - title: ".nanofile"
+        path: "/local-dev/nanofile/"
+      - title: "Managing Local Data"
+        path: "/local-dev/managing-local-data/"
 
   - title: "Engines & Images"
     path: "/engines-images/"
@@ -117,7 +133,7 @@ articles:
         path: "/app-config/build-deploy-hooks/"
 
 
-  - title: "Command Line Interface"
+  - title: "Nanobox CLI"
     path: "/cli/"
     articles:
       - title: "Installation"
@@ -150,27 +166,6 @@ articles:
             path: "/cli/commands/update/"
           - title: "update-images"
             path: "/cli/commands/update-images/"
-          - title: "engine"
-            path: "/cli/commands/engine/"
-            articles:
-              - title: "publish"
-                path: "/cli/commands/engine/publish/"
-              - title: "new"
-                path: "/cli/commands/engine/new/"
-
-  - title: "Local Development"
-    path: "/local-dev/"
-    articles:
-      - title: "Basic Workflow"
-        path: "/local-dev/basic-workflow/"
-      - title: "Project Setup"
-        path: "/local-dev/project-setup/"
-      - title: ".nanofile"
-        path: "/local-dev/nanofile/"
-      - title: "nanobox dev"
-        path: "/local-dev/nanobox-dev/"
-      - title: "Managing Services"
-        path: "/local-dev/managing-services/"
 
   - title: "Application Management"
     path: "/app-management/"

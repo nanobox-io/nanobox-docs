@@ -5,12 +5,11 @@ title: The Boxfile
 The Boxfile is a yaml config file housed in the root of your project's repo that defines what components should exist in your app and all configuration related to your app’s deployment and infrastructure. It allows you to custom-configure your app's environment to your project's specific needs.
 
 #### Important Things to Know About the Boxfile
+- Boxfiles are required to use Nanobox.
 - Your boxfile must be named `boxfile.yml` in order to be recognized.
 - The `boxfile.yml` must be placed at the root of your project's repo.
 - The boxfile must be valid yaml markup. You can brush up on your yaml at [yaml.org](http://yaml.org/start.html) or check your syntax at [yamllint.com](http://www.yamllint.com/).
-- While boxfiles aren't required, without one, Nanobox doesn't know how to build, configure, or run your app.
-
-**Note**: In a local Nanobox dev app, application components are created and destroyed by adding and removing them from your boxfile. In production, components can only be removed through your dashboard.
+- In a local Nanobox dev app, application components are created and destroyed by adding and removing them from your boxfile. In production, components can only be removed through your dashboard.
 
 ####Sample Boxfile
 ```yaml
@@ -108,7 +107,7 @@ There are three types of components:
 - **data**: A component that houses data of some sort.
 
 ## Sections of the Boxfile
-Boxfiles consist of a handful of sections or "nodes": env, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
+Boxfiles consist of a handful of sections or "nodes": code.build, code.deploy, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
 
 [`code.build`](/app-config/boxfile/code-build/) - Defines the build, environment, and configuration for web and worker components.
 

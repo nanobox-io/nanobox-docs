@@ -4,22 +4,22 @@ title: Project Setup
 
 Getting a project ready for Nanobox requires very little. There are just a few things to do to get your project ready.
 
-### Create a boxfile.yml
+## Create a boxfile.yml
 The `boxfile.yml` defines what [engine and images](engines-images) to use when provisioning your app's web, worker, and/or data services and how they should be configured. It should be included in the root of your project. For the deep dive into the boxfile, read through the [boxfile documentation](/app-config/boxfile/).
 
-### Use Environment Variables for Service Connections
+## Use Environment Variables for Service Connections
 When using Nanobox, projects are meant to be both portable and secure. In order for your project to be both, you should use environment variables in your data service connections.
 
 When data components are provisioned, we generate unique connection credentials for the service. If the same codebase is used for two separate apps, the database connection credentials will be different for each each app. This encourages the recommended security practices of not hard-coding connection credentials in your codebase.
 
-#### Boxfile & Connection Example
+### Boxfile & Connection Example
 The following `boxfile.yml` specifies a Ruby web service running Ruby on Rails with a Postgres database:
 
 ```yaml
-env:
+code.build:
   engine: nanobox-io/ruby
 
-web:
+web.site:
   start: 'rails -s'
 
 data.db:

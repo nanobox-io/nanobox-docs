@@ -1,12 +1,12 @@
 ---
-title: Managing Services
+title: Managing Local Data
 ---
 
-When data services are provisioned inside of a nanobox VM, port-forwards (tunnels) are established for each service. These allow you to connect to your Nanobox data services from outside of your running VM and provide a way for you to manage them with your local client of choice.
+When data components are provisioned inside of a nanobox VM, each is given its own virtual IP. These allow you to connect to your data services from outside of your running VM and manage them with your client of choice.
 
-To view all of the tunnels available for your running VM as well as the necessary connection credentials, use the nanobox CLI's `info` command. It will provide all of the necessary connection credentials for the services in your app.
+To view the IPs and connection credentials for your data components, use `dev info` command.
 
-```shell
+```bash
 $ nanobox dev info
 
 Local Domain   : app-name.dev
@@ -18,34 +18,34 @@ Nanobox Files  : ~/.nanobox/apps/nanobox-ruby-test
 
 data.redis :
    image : nanobox/redis
-   host : app-name.dev
+   host : 192.168.99.1
    ports : [6379]
 data.db :
    image : nanobox/mysql
-   host : app-name.dev
+   host : 192.168.99.2
    ports : [3306]
    username : nanobox
    password : password
 ```
 
-### Connecting to a Service Through a Tunnel
+### Connecting to a Service
 Simply use the credentials provided in the tunnel output to connect to your services. Below is an example of connecting to a Redis service inside of a nanobox VM using `redis-cli`.
 
 #### Example Connection to Redis Service
-```shell
+```bash
 $ nanobox dev info
 
 ...
 
 data.redis :
    image : nanobox/redis
-   host : app-name.dev
+   host : 192.168.99.1
    ports : [6379]
 
 ...
 
 # In a separate terminal session
 
-$ redis-cli -h app-name.dev -p 6379
+$ redis-cli -h 192.168.99.1 -p 6379
 app-name.dev:6379>
 ```

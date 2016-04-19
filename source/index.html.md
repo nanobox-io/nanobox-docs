@@ -10,7 +10,7 @@ A fundamental problem faced in application development is environment consistenc
 
 The [Nanobox CLI](/cli/) includes a local development tool that creates an isolated virtual environment on your local machine that perfectly matches your production Nanobox environment. [`nanobox dev`](/cli/dev/) uses Docker to create isolated, virtualized containers using settings specified in your [`boxfile.yml`](/app-config/boxfile/). It then mounts your code directory from your local machine into the virtual environment. Any changes to your code are reflected in your locally running app.
 
-Once the code is ready for production, you push deploy it to your production Nanobox servers. Environment configuration is housed in your `boxfile.yml` and committed to your repo. Production servers are provisioned and configured identically to your local dev environment.
+Once the code is ready for production, use the Nanobox CLI to build your code, then deploy your build to your production Nanobox servers. Environment configuration is housed in your `boxfile.yml` and included in your build. Production servers are provisioned and configured identically to your local dev environment.
 
 For the deep dive into developing locally with Nanobox, check out the [Local Development docs](/local-dev/).
 

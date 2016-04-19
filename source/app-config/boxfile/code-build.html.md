@@ -2,7 +2,7 @@
 title: code.build
 ---
 
-The `code.build` section of the boxfile.yml allows you to configure how your code and it's runtime environment are built and prepared for deploy. When code is deployed to a nanobox app, a "build" server is provisioned. In the build server, your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.
+The `code.build` section of the boxfile.yml allows you to configure how your code and its runtime environment are built and prepared for deploy. When code is deployed to a nanobox app, a "build" server is provisioned. In the build server, your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.
 
 The configuration options and final "code-package" are used in web and worker components.
 
