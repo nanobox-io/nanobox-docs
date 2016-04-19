@@ -9,7 +9,7 @@ Engines are specified in the `env` section of your `boxfile.yml` and define the 
 
 #### Specifying an Engine in Your boxfile.yml
 ```yaml
-env:
+code.build:
   engine: nanobox-io/ruby
 ```
 
@@ -20,7 +20,7 @@ Engines often include configuration options allowing you to customize your envir
 
 #### Setting Engine Config Options in Your boxfile.yml
 ```yaml
-env:
+code.build:
   engine: nanobox-io/ruby
   config:
     webserver: 'unicorn'

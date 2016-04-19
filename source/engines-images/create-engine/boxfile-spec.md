@@ -25,7 +25,7 @@ A Boxfile can be dynamically composed to provide an infrastructure for even the 
 At a bare minimum, the [boxfile](/engines/scripts/boxfile) script must generate a Boxfile that will inform Nanobox how to run the app. For example:
 
 ```yaml
-web1:
+web.site:
   exec: bundle exec unicorn -C /path/to/unicorn.conf
 ```
 

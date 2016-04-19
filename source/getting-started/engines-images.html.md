@@ -6,10 +6,10 @@ title: Introduction to Engines & Images
 Engines and Images build and configure the runtimes and supporting services necessary to run your app.
 
 #### Engines
-Engines are simply a collection of scripts that build and prepare your **code's runtime environment**. They install required binaries, are able to run dependency managers, implement configuration options specified in your `boxfile.yml`, even detect the language framework being used.
+Engines are simply a collection of scripts that build and prepare your **code's runtime environment**. They install required binaries, run dependency managers, implement configuration options specified in your `boxfile.yml`, even detect the language framework being used.
 
 #### Images
-Images are used to provision and configure **data components** for your app. They are essentially Docker images that include "hooks" that tell Nanobox how the service should be configured, started, and function.
+Images are used to provision and configure **data components** for your app. They are Docker images that include "hooks" that tell Nanobox how the service should be configured, started, and function.
 
 ### Register, View, Search Engines & Images
 All engines and images can be registered, viewed, and searched on [shelf.nanobox.io](https://shelf.nanobox.io).

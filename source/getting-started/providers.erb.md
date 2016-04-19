@@ -2,7 +2,7 @@
 title: Hosting Providers
 ---
 
-Nanobox Cloud allows you to easily deploy apps developed using Nanobox into a production environment. Apps can be deployed on the following cloud infrastructures:
+Nanobox allows you to easily deploy apps into a production environments on the following cloud infrastructures:
 
 <div id="providers">
   <a href="https://www.digitalocean.com/" target="_blank" id="digital-ocean">

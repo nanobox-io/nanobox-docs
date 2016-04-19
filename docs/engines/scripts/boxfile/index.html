@@ -390,13 +390,13 @@
         <h2 id="examples">Examples</h2>
         
         <h4 id="simple-static-site">Simple Static Site</h4>
-        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web1:&#x000A;  exec: nginx&#x000A;&#x000A;END&#x000A;</span></code></pre>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web.site:&#x000A;  exec: nginx&#x000A;&#x000A;END&#x000A;</span></code></pre>
         
         <h4 id="simple-predictable-framework-with-known-dependencies">Simple, Predictable Framework with Known Dependencies</h4>
-        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web1:&#x000A;  exec: apache&#x000A;&#x000A;mysql1:&#x000A;  name: catalog&#x000A;&#x000A;END&#x000A;</span></code></pre>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;web.site:&#x000A;  exec: apache&#x000A;&#x000A;mysql1:&#x000A;  name: catalog&#x000A;&#x000A;END&#x000A;</span></code></pre>
         
         <h4 id="simple-app-with-cached-libraries">Simple App with Cached Libraries</h4>
-        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;build:&#x000A;  lib_dirs:&#x000A;    - vendor&#x000A;    - .bundle&#x000A;&#x000A;web1:&#x000A;  exec: bundle exec ruby app.rb&#x000A;&#x000A;END&#x000A;</span></code></pre>
+        <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;cat <span class="sh">&lt;&lt;-END&#x000A;build:&#x000A;  lib_dirs:&#x000A;    - vendor&#x000A;    - .bundle&#x000A;&#x000A;web.site:&#x000A;  exec: bundle exec ruby app.rb&#x000A;&#x000A;END&#x000A;</span></code></pre>
         
         <h4 id="general-purpose-framework-with-unknown-requirements">General Purpose Framework with Unknown Requirements</h4>
         <pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="c"># todo: wait for nos render to stdout</span>&#x000A;</code></pre>

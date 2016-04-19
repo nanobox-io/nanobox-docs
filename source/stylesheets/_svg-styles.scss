@@ -1,24 +1,24 @@
 @import 'variables-mixins';
 
-#providers            { 
-  a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $bgreen-0; vertical-align: top;  
+#providers            {
+  a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $blue-0; vertical-align: top;
     svg               { margin-bottom: .8em;
-      .bg-circle      { fill: $bgreen-0; @include transition(fill .2s);}
-      .icon           { fill: #fff; @include transition(fill .2s);}        
+      .bg-circle      { fill: $blue-0; @include transition(fill .2s);}
+      .icon           { fill: #fff; @include transition(fill .2s);}
     }
-    &.coming          { color: $lt-gblue-4; 
+    &.coming          { color: $lt-gblue-4;
       &:before        { content: url('/images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 1.85em; }
       .bg-circle      { fill: $lt-gblue-6; }
       .icon           { fill: $lt-gblue-5; }
-    } 
-    &:hover           { color: $bgreen-0;
+    }
+    &:hover           { color: $blue-1;
       .bg-circle      { fill: $lt-blue-2; }
-      .icon           { fill: white; } 
+      .icon           { fill: white; }
       &.coming        { color: $gblue-4;
         .bg-circle    { fill: $lt-gblue-6; }
         .icon         { fill: $lt-gblue-5; }
-      }       
-    }         
+      }
+    }
   }
 }
 
@@ -27,7 +27,7 @@
   &.touch:before      { content: "Touch to Animate"; }
 }
 svg                   {
-  &#vertical-scaling  { max-width: 600px; margin: 0 auto; display: block; 
+  &#vertical-scaling  { max-width: 600px; margin: 0 auto; display: block;
     #sm-top, #lg-top,
     #sm-btm, #lg-btm  { @include transition(all .15s); }
     &:hover, :active   {

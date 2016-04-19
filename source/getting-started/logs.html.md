@@ -15,12 +15,12 @@ A `log_watch` consists of two things:
 #### Log Watches in the Boxfile
 ```yaml
 # Pattern
-web1:
+web.site:
   log_watch:
     key: "path/to/log.file"
 
 # Example
-web1:
+web.site:
   log_watch:
     app[error]: "app/logs/error.log"
 ```

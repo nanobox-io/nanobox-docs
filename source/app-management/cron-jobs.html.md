@@ -24,7 +24,7 @@ To configure a cron job using the Boxfile, nest a cron job under the service on 
 
 #### Cron Jobs in the Boxfile
 ```yaml
-web1:
+web.site:
   cron:
     # Pattern
     - 'schedule': 'command'
