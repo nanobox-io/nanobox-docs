@@ -3,7 +3,7 @@
 #providers            {
   a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $blue-0; vertical-align: top;
     svg               { margin-bottom: .8em;
-      .bg-circle      { fill: $blue-0; @include transition(fill .2s);}
+      .bg-circle      { fill: $blue-1; @include transition(fill .2s);}
       .icon           { fill: #fff; @include transition(fill .2s);}
     }
     &.coming          { color: $lt-gblue-4;
@@ -14,7 +14,7 @@
     &:hover           { color: $blue-1;
       .bg-circle      { fill: $lt-blue-2; }
       .icon           { fill: white; }
-      &.coming        { color: $gblue-4;
+      &.coming        { color: $lt-gblue-4;
         .bg-circle    { fill: $lt-gblue-6; }
         .icon         { fill: $lt-gblue-5; }
       }
