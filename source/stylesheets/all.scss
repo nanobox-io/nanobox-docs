@@ -62,8 +62,11 @@ a                       { @include transition(all .15s); }
     li                  { position: relative;
       span              { position: absolute; margin: .5em 0; height: 14px; width: 14px; display: inline-block;
         &.nav-toggle    { cursor: pointer;
-          .nav-btn-circle { fill: $blue-2; }
+          .nav-btn-circle { fill: $blue-2; @include transition(fill .2s); }
           .nav-btn-vert * { stroke-width: 2px; }
+          &:hover       {
+            .nav-btn-circle { fill: $blue-1; }
+          }
         }
         .nav-bullet rect { fill: $grey-2; height: 5px; width: 5px; x: 4.5; y: 4.5; }
       }
