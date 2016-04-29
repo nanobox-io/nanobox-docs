@@ -1,0 +1,26 @@
+#deploy-diagram
+  #build-command.bodymovin
+    :javascript
+      svgAnimation('build-command', 'build-command.json')
+
+  - if defined? hooks
+    #build-hooks-anim.bodymovin
+      :javascript
+        svgAnimation('build-hooks-anim', 'build-hooks-anim.json')
+  - else
+    #code-build.bodymovin
+      :javascript
+        svgAnimation('code-build', 'code-build.json')
+
+  #deploy-command.bodymovin
+    :javascript
+      svgAnimation('deploy-command', 'deploy-command.json')
+
+  - if defined? hooks
+    #deploy-hooks-anim.bodymovin
+      :javascript
+        svgAnimation('deploy-hooks-anim', 'deploy-hooks-anim.json')
+  - else
+    #deploy-anim.bodymovin
+      :javascript
+        svgAnimation('deploy-anim', 'deploy-anim.json')

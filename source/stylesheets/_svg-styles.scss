@@ -54,3 +54,12 @@ svg                   {
     }
   }
 }
+
+#deploy-diagram     { max-width: 380px;
+  .bodymovin        { position: relative;
+    a.replay        { height: 1.1em; width: 1.1em; position: absolute; bottom: 1em; right: 0; padding: .3em; display: block; z-index: 1; cursor: pointer; @include border-radius(50%); @include opacity(0); @include transition(all .2s); border: none;
+      &:hover       { background-color: #fff; }
+    }
+    &:hover a.replay{ @include opacity(1); }
+  }
+}

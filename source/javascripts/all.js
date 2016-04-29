@@ -1,5 +1,7 @@
 //= require_tree .
 //= require "_jquery-2.1.4.min.js"
+//= require "_waypoints.min.js"
+//= require "_bodymovin.js"
 
 
 ////////////////// SHRINKING TOP NAV //////////////////
@@ -129,6 +131,38 @@ if (
 ){ var touch_device = true; }
 
 
+////////////////// LOAD ANIMATED SVGs //////////////////
+
+function loadAnimation(name, parent, path) {
+  var animData = {
+    name: name,
+    wrapper: document.getElementById(parent),
+    animType: 'svg',
+    loop: false,
+    prerender: true,
+    autoplay: false,
+    path: path
+  };
+  var anim = bodymovin.loadAnimation(animData);
+}
+
+function svgAnimation(name, filename) {
+  loadAnimation(name, name, '/images/animated-svgs/'+filename);
+  var anim = name
+  $(document.getElementById(name)).waypoint(function(){
+    bodymovin.play(name);
+    // Offset sets the percentage of the viewport that triggers the animation
+  }, {offset: '40%' });
+
+  // Appends the replay button
+  $(document.getElementById(name)).append('<a class="replay" id="'+name+'" title="Replay"><img src="/images/replay-icon.svg"></a>')
+
+  $('#' + name +'.replay').click(function(){
+    bodymovin.stop(name);
+    bodymovin.play(name);
+  })
+}
+
 
 $(document).ready(function() {
 
@@ -177,7 +211,7 @@ $(document).ready(function() {
   $('#navigation ul > li.active').addClass('open')
 
   ///////// AUTO-SCROLL NAV TO ACTIVE NAV ITEM /////////
-  
+
   var activeNav = $('.active');
 	if(activeNav) {
     var main = $("#navigation"), t = main.offset().top;
@@ -202,7 +236,6 @@ $(document).ready(function() {
       }
     }
   })
-
 
   ////////// CHANGES TEXT FOR INTERACTIVE SVGs //////////
   if(touch_device){
