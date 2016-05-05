@@ -170,6 +170,8 @@ articles:
   - title: "Application Management"
     path: "/app-management/"
     articles:
+      - title: "Platform Components"
+        path: "/app-management/platform-components/"
       - title: "Service Stats"
         path: "/app-management/service-stats/"
       - title: "Cron Jobs"
@@ -190,8 +192,8 @@ articles:
     articles:
       - title: "Remotely Managing Data"
         path: "/data-management/remotely-managing-data/"
-      - title: "Snapshots & Backups"
-        path: "/data-management/snapshots-backups/"
+      - title: "Backups"
+        path: "/data-management/backups/"
       - title: "Data Migrations During Scaling & Repairs"
         path: "/data-management/data-migrations-scaling/"
 
@@ -219,15 +221,15 @@ articles:
       - title: "Inbound IPs"
         path: "/networking-domains/inbound-ips/"
 
-  - title: "Organizations & Teams"
-    path: "/orgs-teams/"
-    articles:
-      - title: "Creating an Organization"
-        path: "/orgs-teams/create-an-org/"
-      - title: "Managing Organizations & Teams"
-        path: "/orgs-teams/managing-orgs-teams/"
-      - title: "Access Control"
-        path: "/orgs-teams/access-control/"
+  # - title: "Organizations & Teams"
+  #   path: "/orgs-teams/"
+  #   articles:
+  #     - title: "Creating an Organization"
+  #       path: "/orgs-teams/create-an-org/"
+  #     - title: "Managing Organizations & Teams"
+  #       path: "/orgs-teams/managing-orgs-teams/"
+  #     - title: "Access Control"
+  #       path: "/orgs-teams/access-control/"
 
   - title: "Troubleshooting"
     path: "/troubleshooting/"
