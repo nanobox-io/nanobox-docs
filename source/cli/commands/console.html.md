@@ -2,18 +2,13 @@
 title: console
 ---
 
-The `console` opens an interactive terminal from inside your app on the nanobox.
+The `console` command opens an interactive terminal from inside your app on Nanobox.
 
 ### Usage
 ```shell
 # Pattern
-$ nanobox console [-t 80:8080]
+$ nanobox console -a <app-name> <component>
 
-#Examples
-$ nanobox console
-$ nanobox console -t 80:8080,3306:1234
+#Example
+$ nanobox console -a app-name web.site
 ```
-
-### Options
-#### -t, --tunnel
-Creates port forwards for all comma delimeted port:port combos

@@ -23,5 +23,5 @@ domain: "appname.dev"
 #### Domain
 `domain` specifies the domain where your locally running app is accessed. During the provisioning process, nanobox writes an entry into your local hosts file using a provided IP and assigns it the domain of *appname*.dev, or whatever domain is specified.
 
-### .nanofile Handling
+### .nanofile Version Control
 All users' machines are different and the settings defined in the .nanofile may not work on others' machines. As a general practice, we recommend ignoring the .nanofile in whatever version control tool you use. However, if you have a minimum requirement for your project and/or you're confident all machines used by your team will be able to support the settings defined in your .nanofile, feel free to commit it.

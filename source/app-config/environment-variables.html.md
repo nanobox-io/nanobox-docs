@@ -76,9 +76,6 @@ $ nanobox evar add KEY:VALUE
 # Adding Multiple Environment Variables
 $ nanobox evar add KEY1:VALUE1,KEY2:VALUE2,KEY3:VALUE3
 
-# Batch Adding Environment Variables
-# The batch file must exist on your local machine
-$ nanobox evar add --batch=path/to/evar-file
 ```
 
 #### Adding Environment Variables to a Dev App
@@ -88,21 +85,6 @@ $ nanobox dev evar add KEY:VALUE
 
 # Adding Multiple Environment Variables
 $ nanobox dev evar add KEY1:VALUE1,KEY2:VALUE2,KEY3:VALUE3
-
-# Batch Adding Environment Variables
-# The batch file must exist on your local machine
-$ nanobox dev evar add --batch=path/to/evar-file
 ```
 
-#### Example Batch File
-```yaml
-KEY1: VALUE1
-KEY2: VALUE2
-KEY3: VALUE3
-KEY4: VALUE4
-KEY5: 'MAP:DATA_HOST'
-```
-
-## Mapping Environment Variables
-
-*Coming Soon*
+For more information about the `evar` command, check out the ["evar" documentation](/cli/commands/evar/).

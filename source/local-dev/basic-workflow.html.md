@@ -2,7 +2,7 @@
 title: Basic Workflow
 ---
 
-### Start Your Nanobox
+### Start Your Nanobox VM
 In the root of your project, run the `dev` command to provision your Nanobox virtual machine (VM) and dev environment.
 
 ```bash

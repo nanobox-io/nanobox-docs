@@ -49,7 +49,7 @@ a                       { @include transition(all .15s); }
 
 #navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; overflow: scroll; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
   &.shift               { margin-top: -2em; }
-  #contents             { @include transition(max-height .5s); margin: 2.5em 2em 4.7em; max-height: 2800px; overflow: hidden; @include user-select;
+  #contents             { @include transition(max-height .5s); margin: 2.5em 2em 4.7em; max-height: 3800px; overflow: hidden; @include user-select;
     &.closed            { max-height: 0px; }
   }
   a                     { color: $grey-0; text-decoration: none;
