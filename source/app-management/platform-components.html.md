@@ -2,9 +2,9 @@
 title: Platform Components
 ---
 
-Each app on Nanobox includes "platform components". These services help your app to run and provide specific functionality necessary for your app to run on Nanobox. Below are summaries of the purpose of each platform component.
+Each app on Nanobox includes "platform components". These services provide specific functionality and are necessary for your app to run on Nanobox. Below are summaries of the purpose of each platform component.
 
-*Each component is powered using a [Nanopack](http://nanopack.io) open-source project. While you don't need to worry about knowing these projects, if you want to take a look, you're more than welcome.*
+*Each component is powered using a [Nanopack](http://nanopack.io) open-source project. While you don't need to worry about knowing these projects, you're welcome to take a look.*
 
 ##  Load Balancer
 The load balancer is the public access point for your app that both load balances and routes incoming requests to appropriate web component(s). Because it is the public access point for your app, custom domains are pointed to the IP of the server which houses the load balancer.

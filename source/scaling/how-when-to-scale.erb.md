@@ -1,6 +1,5 @@
 ---
 title: How & When to Scale
-
 ---
 
 Nanobox provides scaling controls in your dashboard that allow you to scale your production apps when necessary. This doc provides information on how to scale apps and when to scale your apps.
@@ -16,7 +15,7 @@ Scaling vertically consists of adding more RAM, CPU, and Disk to your instance(s
   <%= partial "svgs/scaling-vertical" %>
 </div>
 
-Scaling vertically is extremely effective for services with heavy processing loads like databases, caches, and sometimes even webs and workers depending on what they're doing. For [single-node apps](/cloud/scaling/single-vs-multi-node/#single-node-apps), this is the only means of scaling.
+Scaling vertically is extremely effective for services with heavy processing loads like databases, caches, and sometimes even webs and workers depending on what they're doing. For [single-node apps](/scaling/single-vs-multi-node/#single-node-apps), this is the only means of scaling.
 
 ### Horizontal Scaling
 ***Summary: Scaling for Traffic and/or Redundancy***  
