@@ -21,8 +21,6 @@ The `link` command included subcommands to help you manage linked apps and alias
 | Subcommand          | Summary                                     |
 |:--------------------|:--------------------------------------------|
 | [`list`](#list)     | Lists all linked apps and aliases           |
-| [`update`](#update) | Updates the app to which an alias is linked |
-| [`rename`](#rename) | Renames a currently existing alias          |
 | [`remove`](#remove) | Removes the alias and link to an app        |
 
 ### list
@@ -31,30 +29,6 @@ The `link list` command lists all linked apps and aliases.
 #### Usage
 ```bash
 $ nanobox link list
-```
-
-### update
-The `link update` command updates the app to which an alias is linked.
-
-#### Usage
-```bash
-# Pattern
-$ nanobox link update <alias> <app-name>
-
-# Example
-$ nanobox link update production myapp-v2
-```
-
-### rename
-The link `rename` command renames a currently existing alias.
-
-#### Usage
-```bash
-# Pattern
-$ nanobox link rename <current-alias> <new-alias>
-
-# Example
-$ nanobox link rename production prod
 ```
 
 ### remove

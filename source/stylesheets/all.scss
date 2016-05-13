@@ -101,8 +101,12 @@ a                       { @include transition(all .15s); }
       code              { border: 1px dotted $pink-1; }
     }
   }
+  span                  {
+    &.green             { color: $lt-green-0; }
+    &.red               { color: $pink-1; }
+  }
   code, pre             { font-family: Monaco, Consolas,'Andale Mono',monospace; white-space: pre; word-wrap: normal; @include transition(border .15s) }
-  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; }
+  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; @include border-radius(.4em); }
   ul, ol                { padding-left: 1.2em;
     li                  { line-height: 1.8em; }
   }
@@ -115,19 +119,26 @@ a                       { @include transition(all .15s); }
   blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-3;
     p                   { font-size: 1.25em; font-style: italic; line-height: 1.5em; }
   }
-  table                 { width: 100%; margin-bottom: 2em;
+  table                 { width: 100%; margin-bottom: 2em; border-collapse: separate;
     thead               { background: $gblue-0; }
-    th                  { padding: 10px; border: 1px solid $gblue-1; color: $bgreen-0; }
+    th                  { padding: 10px; border-width: 0 1px 0 0; border-color: $gblue-0 $gblue-1 $gblue-0 $gblue-0 ; border-style: solid; color: $bgreen-0;
+      &:first-child     { border-width: 0 1px; border-color: $gblue-0 $gblue-1 $gblue-0 $gblue-0; -webkit-border-radius: .4em 0 0; -moz-border-radius: .4em 0 0; border-radius: .4em 0 0; }
+      &:last-child      { -webkit-border-radius: 0 .4em 0 0; -moz-border-radius: 0 .4em 0 0; border-radius: 0 .4em 0 0; }
+    }
     td                  { padding: 10px; border: 1px solid $grey-2; }
     tr                  {
-      &:first-child td  { border-top: none; }
-      &:nth-child(2n+2) { background: $grey-3;
-        td              { border-right: 1px solid $grey-2;
-          &:last-child  { border-right: 1px solid $grey-2; }
+      td                { border-width: 0 1px 1px 0;
+        &:first-child   { border-width: 0 1px 1px; }
+      }
+      &:nth-child(2n+2) { background: $grey-3; }
+      &:last-child      {
+        td              {
+          &:first-child { -webkit-border-radius: 0 0 0 .4em; -moz-border-radius: 0 0 0 .4em; border-radius: 0 0 0 .4em; }
+          &:last-child  { -webkit-border-radius: 0 0 .4em; -moz-border-radius: 0 0 .4em; border-radius: 0 0 .4em; }
         }
-       }
+      }
     }
-    code                { border: none !important; font-size: .95em; }
+    code                { border: none !important; font-size: .85em; }
   }
 
   #breadcrumb             { font-size: .85em; color: $grey-1; line-height: 1.4em;

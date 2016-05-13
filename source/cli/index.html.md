@@ -2,7 +2,7 @@
 title: CLI Commands
 ---
 
-All interaction with Nanobox happens through the `nanobox` CLI. This section of docs walks through each of the CLI commands, their functionality, and options associated with each. Below is a list with a quick summary of each command:
+All interaction with Nanobox happens through the Nanobox CLI. This section of docs walks through each of the CLI commands, their functionality, and options associated with each. Below is a list with a quick summary of each command:
 
 | Command                                | Summary                                                                  |
 | :------------------------------------- | :----------------------------------------------------------------------- |

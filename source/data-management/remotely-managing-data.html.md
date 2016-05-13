@@ -17,7 +17,7 @@ $ nanobox console -a <app-name> <component>
 $ nanobox console -a myapp data.postgres
 ```
 
-For more information on the `console` command, read through the [console](/cli/commands/console/) doc.
+For more information on the `console` command, read through the [console](/cli/console/) doc.
 
 ## Create a Secure Tunnel
 The `nanobox tunnel` command creates a secure tunnel between your local machine and your production data service. This allows you to use your local client of choice, if managing data from a command line isn't your cup of tea.
@@ -32,4 +32,4 @@ $ nanobox tunnel -a myapp -p 5432 data.postgres
 
 The command will output the credentials necessary to connect to your data service through the secure tunnel. Any local client or GUI can be used to connect through the tunnel.
 
-For more information about the `tunnel` command, read through the [tunnel](/cli/commands/tunnel/) doc.
+For more information about the `tunnel` command, read through the [tunnel](/cli/tunnel/) doc.

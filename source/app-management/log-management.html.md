@@ -28,4 +28,4 @@ Historical logs contain all of your app's stored log entries. Each log entry is 
 Deploy logs are output streams of your app's deploys. They're helpful when troubleshooting failed deploys.
 
 ## Viewing Logs Through the CLI
-To view the application logs through the CLI, use the the `nanobox log` command. More information is available in the [CLI log doc](/cli/commands/log).
+To view the application logs through the CLI, use the the `nanobox log` command. More information is available in the [CLI log doc](/cli/log).
