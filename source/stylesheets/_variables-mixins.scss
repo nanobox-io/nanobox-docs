@@ -95,6 +95,12 @@ $pink-1: #EF3F65;
   box-sizing: $value;
 }
 
+@mixin box-shadow($top, $left, $blur, $color) {
+  -webkit-box-shadow: $top $left $blur $color;
+  -moz-box-shadow: $top $left $blur $color;
+  box-shadow: $top $left $blur $color;
+}
+
 @mixin border-radius ($radius:50%){
   -webkit-border-radius: $radius $radius $radius $radius;
   -moz-border-radius: $radius $radius $radius $radius;

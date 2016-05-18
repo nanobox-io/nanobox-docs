@@ -17,8 +17,8 @@ web.site:
 
   # Port Mapping
   ports:
-    - 80:8080
-    - 443:8080
+    - tcp:21:3420
+    - udp:53:3000
 
   # Network Storage
   network_dirs:
@@ -104,20 +104,22 @@ web.api-auth:
 - Routes only apply to connections over http and https.
 
 ## Port Mapping
-Nanobox allows to do define on which ports your web component listens.
+Nanobox allows to do define on which ports your web component listens for connections over tcp and udp protocols.
+
+*Note:* Custom http/https ports cannot be specified. All http requests connect on port 80 and all https requests on port 443. Both forward to your app on port 8080. **Your app must listen on port 8080 to connect to the public network over http/https.**
 
 #### ports
 ```yaml
 # Pattern
 web.site:
   ports:
-    - source:destination
+    - protocol:source:destination
 
 # Examples (Default)
 web.site:
   ports:
-    - 80:8080
-    - 443:8080
+    - tcp:21:3420
+    - udp:53:3000
 ```
 
 **Note:** If a single number is provided, Nanobox assumes the source and destination ports are the same. For example, if `80` is specified, it will be interpreted as `80:80`

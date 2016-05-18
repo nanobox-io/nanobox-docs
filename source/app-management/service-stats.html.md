@@ -23,7 +23,7 @@ Your Nanobox dashboard provides live stats as well as a summary of hourly histor
 
 
 ### Detailed View
-Click on the "Stats" button under a component/node to view detailed historical hourly averages.
+Click on the "Stats" button under a component/node to view detailed historical hourly averages. In multi-component servers ([bunkouses](/scaling/bunkhouse/)), you'll also see a summary of what each component is using of the available resources.
 
 ![Expanded Service Resource Usage](/images/service-stats-expanded.png)
 

@@ -8,4 +8,4 @@ All web requests that hit your app first go through your app's [load-balancer](/
 To detect the origin IP of a request, use the `X-Forwarded-For` header. Your app's load-balancer sets or appends this header with the origin IP of the request.
 
 ## Detecting Request Protocols
-To detect the protocol of the request (http or https), use the `X-Forwarded-Proto` header. Your app's load-balancer sets this header with the requests origin protocol.
+To detect the protocol of the request (http or https), use the `X-Forwarded-Proto` header. Your app's load-balancer sets this header with the request's origin protocol.

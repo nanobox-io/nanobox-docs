@@ -71,32 +71,6 @@ $(window).on('resize', function() {
 })
 
 
-////////////////// TOGGLE OS CONTENT //////////////////
-
-$(function(){
-  if (!$("#win-tab").hasClass("active")) {
-    $("#win-tab").on("click", function() {
-      $("#win-tab").addClass("active");
-      $("#osx-tab").removeClass("active");
-      $("#osx-content").fadeOut(100);
-      setTimeout(function(){
-        $("#win-content").fadeIn(100);
-      }, 100)
-    })
-  }
-  if (!$("#osx-tab").hasClass("active")) {
-    $("#osx-tab").on("click", function() {
-      $("#osx-tab").addClass("active");
-      $("#win-tab").removeClass("active");
-      $("#win-content").fadeOut(100);
-      setTimeout(function(){
-        $("#osx-content").fadeIn(100);
-      }, 100)
-    })
-  }
-})
-
-
 /////// REPLACE MISSING IMAGES WITH PLACEHOLDER ///////
 
 $(function(){
@@ -217,25 +191,6 @@ $(document).ready(function() {
     var main = $("#navigation"), t = main.offset().top;
     main.scrollTop(activeNav.position().top - t);
 	}
-
-  ////////////// TOGGLE OS CONTENT ON LOAD //////////////
-
-  $(document).ready(function() {
-    if ($("#os-tabs")) {
-      var pretag = window.location.href.slice(window.location.href.indexOf('#'));
-      var tag = "";
-      if (pretag.length > 1) {
-          tag = pretag
-      };
-      if (navigator.appVersion.indexOf("Win") != -1) {
-        $("#win-tab").addClass("active");
-        $("#osx-content").css("display", "none");
-      } else {
-        $("#osx-tab").addClass("active");
-        $("#win-content").css("display", "none");
-      }
-    }
-  })
 
   ////////// CHANGES TEXT FOR INTERACTIVE SVGs //////////
   if(touch_device){

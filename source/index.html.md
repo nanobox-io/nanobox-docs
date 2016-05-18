@@ -1,9 +1,9 @@
 # Nanobox Documentation
 
-Welcome to Nanobox! First off, a little history – We are developers who had to learn infrastructure and knew it could be easier. Nanobox is the result of lessons learned through years of successfully and unsuccessfully building, managing, and scaling production application platforms. Our goal is to help you avoid the pitfalls and time-loss that come with building, managing, and scaling your application platform.
+Welcome to Nanobox! First off, a little history – We are developers who had to learn infrastructure and knew it could be easier. Nanobox is the result of lessons learned through years of successfully (and unsuccessfully) building, managing, and scaling production application platforms. Our goal is to help you avoid the pitfalls and time-loss that come with building, managing, and scaling yours.
 
 ## Why Nanobox?
-Let's face it. Building and managing an application platform can be challenging and tedious. You often find yourself spending way too much time setting up local dev environments, building and configuring production servers, setting up monitoring for those servers, etc. Nanobox systematizes and automates these tasks to let you do what you do best – code.
+Let's face it. Building and managing an app platform can be challenging and tedious. You often find yourself spending way too much time setting up local dev environments, building and configuring production servers, setting up monitoring for those servers, etc. Nanobox systematizes and automates these tasks to let you do what you do best – code.
 
 ### Dev / Production Parity
 A fundamental problem faced in application development is environment consistency. How do you make your local dev environment perfectly match your production environment? An even tougher question - How do you make the environment setup process consistent, repeatable, fast, and most importantly, easy?

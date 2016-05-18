@@ -10,8 +10,6 @@ To split a component out of a bunkhouse, click on on the "Split" button under th
 
 When splitting a component out of a bunkhouse, you have two options:
 
-![Split Options](/images/split-options.png)
-
 ### 1. Horizontal Cluster
 Splitting a component into its own horizontal cluster allows you to scale the component both vertically and horizontally. Web and worker components can have additional nodes, increasing their ability to handle concurrent requests. Data components can be redundant, insuring uptime in case a node goes offline. *(Redundancy depends on the image used for the data component)*
 

@@ -13,7 +13,7 @@ While running in a Bunkhouse may be sufficient for some apps, there are some imp
 Components inside of a bunkhouse server cannot be scaled individually. Only the bunkhouse server itself can be scaled.
 
 ##### Limited Bunkhouse Scalability
-Bunkhouse servers can only be [scaled vertically](#), meaning you can only adjust what resources are available to the server. Bunkhouse servers cannot be redundant.
+Bunkhouse servers can only be [scaled vertically](#), meaning you can only adjust what resources are available to the server.
 
 ##### No Redundancy
 Components on a bunkhouse server and the bunkhouse server itself can not be redundant.
