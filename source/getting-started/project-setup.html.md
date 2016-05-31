@@ -2,6 +2,8 @@
 title: Project Setup
 ---
 
+Getting your app ready to run on Nanobox requires very little. There are just a few things to do to get your project ready.
+
 Getting a project ready for Nanobox requires very little. There are just a few things to do to get your project ready.
 
 ## Create a boxfile.yml
