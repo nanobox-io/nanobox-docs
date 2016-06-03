@@ -15,7 +15,7 @@ Once your Nanobox is running and data services are provisioned, you'll be droppe
 Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment.
 
 ### Create a Build
-Once your code is at a point we're you're ready to fully test it, create a build. This build package can be deployed into both a local and production environments. To generate a build, run the `build` command in the root of your project.
+Once your code is at a point we're you're ready to fully test it, create a build. This build package can be deployed into both your local and production platforms. To generate a build, run the `build` command in the root of your project.
 
 ```bash
 $ nanobox build
@@ -29,4 +29,4 @@ $ nanobox dev deploy
 ```
 
 ### Deploy to Your Production App
-If everything looks good in your local environment, you're ready to deploy the build into your production app. This process is covered in the [Deploying to an App](/getting-started/deploy/) doc.
+If everything looks good in your local environment, you're ready to deploy the build into your production app. This process is covered in the [Deploying Code](/getting-started/deploy-code/) doc.

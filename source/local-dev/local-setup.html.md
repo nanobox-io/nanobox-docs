@@ -2,10 +2,10 @@
 title: Local Setup
 ---
 
-Other than what's outlined in the [Project Setup](/getting-started/project-setup/), there's not much that needs to be done to get your local dev environment ready to go.
+Other than what's outlined in the [Configure Your App doc](/getting-started/configure-app/), there's not much that needs to be done to get your local dev environment ready to go.
 
 ### Install the Nanobox CLI
-If you haven't already, you'll need to install the [Nanobox CLI](/cli/). The CLI uses Docker and Virtual Box to provision and build a local development virtual machine (VM).
+If you haven't already, you'll need to [download and install the Nanobox CLI](/getting-started/install-nanobox/). The CLI uses Docker Toolbox and Virtual Box to provision and build a local development virtual machine (VM).
 
 ### Navigate Into Your Project Directory
 ```shell

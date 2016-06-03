@@ -2,7 +2,7 @@
 title: nanobox dev
 ---
 
-The Nanobox CLI's `dev` command handles all the functionality for working in with your local Nanobox development environment. For the full documentation of the `dev` command, view the ["nanobox dev" documentation](/cli/dev/).
+The Nanobox CLI's `dev` command handles all the functionality for working in with your local Nanobox development environment. For the full documentation of the `dev` command, view the ['nanobox dev' documentation](/cli/dev/).
 
 
 Below are a list of the subcommands available to `dev`. Each link to their detailed doc in the CLI documentation.

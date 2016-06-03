@@ -67,11 +67,11 @@ web.site:
 In some cases, you may want or need multiple web components within a single application. Web component routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both.
 
 ### Syntax
-A routes can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required, but a path is. The pattern is as follows:
+A route can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required, but a path is. The pattern is as follows:
 
 `'subdomain:path'`
 
-The root domain is detected by Nanobox in both your local environment and in production, however to use custom domains in production, they must be registered in your dashboard. More information is available in the [Using Custom Domains](/networking-domains/custom-domains/) doc.
+The root domain is detected by Nanobox in both your local environment and in production, however to use custom domains in production, they must be registered in your dashboard. More information is available in the [Using Custom Domains](/domains-networking/custom-domains/) doc.
 
 Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is "mydomain.com".
 
@@ -106,7 +106,8 @@ web.api-auth:
 ## Port Mapping
 Nanobox allows to do define on which ports your web component listens for connections over tcp and udp protocols.
 
-*Note:* Custom http/https ports cannot be specified. All http requests connect on port 80 and all https requests on port 443. Both forward to your app on port 8080. **Your app must listen on port 8080 to connect to the public network over http/https.**
+#### HTTP/HTTPS Ports
+Custom http/https ports cannot be specified. All http requests connect on port 80 and all https requests on port 443. Both forward to your app on port 8080. **Your app must listen on port 8080 to connect to the public network over http/https.**
 
 #### ports
 ```yaml
@@ -155,8 +156,10 @@ web.site:
     - path/to/dirB
 ```
 
+For more details, view the [Nonpersistent Writable Directories doc](/app-config/nonpersistent-writable-dirs/).
+
 ## Custom Logs
-Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Logs doc](/getting-started/logs).
+Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Application Logs doc](/app-config/app-logs).
 
 #### log_watch
 ```yaml
@@ -167,7 +170,7 @@ web.site:
 ```
 
 ## Cron Jobs
-Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cronjobs specified in a component's Boxfile config are loaded into the component's crontab.
+Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cron jobs specified in a component's Boxfile config are loaded into the component's crontab. More information is available in the [Cron Jobs](/app-config/cron-jobs/) doc.
 
 #### cron
 ```yaml
@@ -190,13 +193,13 @@ Deploy Hooks allow you to "hook" into the deploy process and execute scripts or 
 `before_deploy` hooks run after code has been deployed to new instances, but before traffic is routed to the new instances. These are ideal for things such as migrations.
 
 ### before\_deploy\_all
-`before_deploy_all` run at the same time as `before_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/getting-started/nonpersistent-writable-dirs/) on deploy.
+`before_deploy_all` run at the same time as `before_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/) on deploy.
 
 ### after_deploy
 `after_deploy` hooks run after the newly deployed instances have begun handling traffic and the old instances have been decommissioned.
 
 ### after\_deploy\_all
-`after_deploy_all` run at the same time as `after_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/getting-started/nonpersistent-writable-dirs/) on deploy.
+`after_deploy_all` run at the same time as `after_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/) on deploy.
 
 ### deploy\_hook\_timeout
 `deploy_hook_timeout` defines a timeout for deploy hooks in seconds.

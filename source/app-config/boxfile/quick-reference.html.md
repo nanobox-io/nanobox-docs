@@ -2,10 +2,11 @@
 title: Boxfile Quick Reference
 ---
 
-This doc is meant to act as a quick reference to all available base Boxfile settings for web, worker, and data components. These settings are those made available by Nanobox, but [Engines](/getting-started/engines/) and [Images](/engines-images/) may make more available. Config options made available by engines & images should be outlined in their documentation.
+This doc is meant to act as a quick reference to all available base Boxfile settings for web, worker, and data components. These settings are those made available by Nanobox, but [engines and images](/engines-images/) may make more available. Config options made available by engines & images should be outlined in their documentation.
 
 #### Quick Links
-[Env Settings](#env-settings-in-the-boxfile)  
+[Code Build Settings](#code-build-settings-in-the-boxfile)  
+[Code Deploy Settings](#code-deploy-settings-in-the-boxfile)  
 [Dev Settings](#dev-settings-in-the-boxfile)
 
 ***Component Settings Per Type***  
@@ -15,7 +16,7 @@ This doc is meant to act as a quick reference to all available base Boxfile sett
 
 ---
 
-### Env Settings in the Boxfile
+### Code Build Settings in the Boxfile
 ```yaml
 code.build:
   # Engine
@@ -33,7 +34,26 @@ code.build:
 ```
 
 ###### Full Doc
-[Boxfile env](/app-config/boxfile/env/)
+[Boxfile code.build](/app-config/boxfile/code-build/)
+
+---
+
+### Code Deploy Settings in the boxfile
+```yaml
+code.deploy:
+  web.site:
+    transform:
+      - 'if [ "$ENV" = "prod" ]; then mv config-prod.yml config.yml; fi'
+    before_deploy:
+      - 'bundle exec rake clear-cache'
+    before_deploy_all:
+      - 'bundle exec rake register-nodes'
+    after_deploy:
+      - 'bundle exec rake prime-cache'
+    after_deploy_all:
+      - 'bundle exec rake prime-local-cache'
+```
+[Boxfile code.deploy](/app-config/boxfile/code-deploy/)
 
 ---
 
@@ -59,6 +79,11 @@ web.site:
     - 'sub:/path/'
     - '/admin/'
 
+  # Port Mapping
+  ports:
+    - tcp:21:3420
+    - udp:53:3000
+
   # Network Storage
   network_dirs:
     data.storage1:
@@ -80,17 +105,6 @@ web.site:
   cron:
     - "0 0 * * *": "rm -rf app/cache/*"
     - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
-
-  # Deploy Hooks
-  deploy_hook_timeout: 600
-  before_deploy:
-    - "scripts/migrate_db.rb"
-  before_deploy_all:
-    - "scripts/cache_prime.rb"
-  after_deploy:
-    - "scripts/clear_cache.rb"
-  after_deploy_all:
-    - "scripts/local_cache_prime.rb"
 ```
 ###### Full Doc
 [Web Boxfile Settings](/app-config/boxfile/web)
@@ -124,17 +138,6 @@ worker.jobs:
   cron:
     - "0 0 * * *": "rm -rf app/cache/*"
     - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
-
-  # Deploy Hooks
-  deploy_hook_timeout: 600
-  before_deploy:
-    - "scripts/migrate_db.rb"
-  before_deploy_all:
-    - "scripts/cache_prime.rb"
-  after_deploy:
-    - "scripts/clear_cache.rb"
-  after_deploy_all:
-    - "scripts/local_cache_prime.rb"
 ```
 ###### Full Doc
 [Worker Boxfile Settings](/app-config/boxfile/worker)  

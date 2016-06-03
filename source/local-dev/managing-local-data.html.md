@@ -29,7 +29,7 @@ data.db :
 ```
 
 ### Connecting to a Service
-Simply use the credentials provided in the `dev info` output to connect to your services. Below is an example of connecting to a Redis service inside of a nanobox VM using `redis-cli`.
+Use the credentials provided in the `dev info` output to connect to your services. Below is an example of connecting to a Redis service inside of a nanobox VM using `redis-cli`.
 
 #### Example Connection to Redis Service
 ```bash

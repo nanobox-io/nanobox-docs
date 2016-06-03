@@ -17,4 +17,4 @@ To restore to a backup stored in your warehouse, click the "Restore" button next
 ![Restoring to a Backup](/images/dashboard-backup-restore.png)
 
 ## Automated Backups
-Configuring automated backups is a feature we plan to add in the future, but in the mean time, you can automate backups with a cron job. You can find more information about cron jobs in the [Cron Jobs](/app-management/cron-jobs/) doc.
+Configuring automated backups is a feature we plan to add in the future, but in the mean time, you can automate backups with a cron job. You can find more information about cron jobs in the [Cron Jobs](/app-config/cron-jobs/) doc.

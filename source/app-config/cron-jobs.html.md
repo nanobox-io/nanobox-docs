@@ -6,7 +6,7 @@ Cron Jobs allow you to create scheduled tasks for your Nanobox applications. The
 
 ## How Cron Jobs Work
 
-Whenever you add a cron job to your application, the job is loaded into the [Crontab (Cron Table)](http://unixhelp.ed.ac.uk/CGI/man-cgi?crontab+5) of an node within the component to which the cron job is assigned. For multi-node components, only one node will have the job added to its crontab. This prevents the job from running on all nodes at the same time.
+Whenever you add a cron job to your application, the job is loaded into the [Crontab (Cron Table)](http://www.adminschoice.com/crontab-quick-reference) of an node within the component to which the cron job is assigned. For multi-node components, only one node will have the job added to its crontab. This prevents the job from running on all nodes at the same time.
 
 ## Creating a Cron Job
 

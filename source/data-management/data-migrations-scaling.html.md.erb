@@ -2,14 +2,14 @@
 title: Data Migrations During Scaling & Repairs
 ---
 
-Whenever you scale or repair data components, new nodes are provisioned in parallel to your currently running instances and data is migrated to the new instances. To preserve data integrity and minimize both the time it takes to complete the migration and necessary downtime, data migrations are done in two phases.
+Whenever you scale or repair data components, new nodes are provisioned in parallel to your currently running nodes and data is migrated to the new nodes. To ensure data integrity and minimize both the time it takes to complete the migration and necessary downtime, data migrations are done in two phases.
 
 ### 1. Provisioning & Initial Migration
 
 New node(s) are provisioned in parallel to the live node(s). Once fully provisioned, data is migrated from the live nodes to the new. Live nodes continue to handle requests during and after the initial data migration.
 
 ### 2. Final Data Sync & Decommission
-Since live nodes continue to handle requests after the initial migration, it's likely there are data modifications that need to be synced. To ensure data integrity after switching to the new nodes, live nodes are taken temporarily offline and a final data sync runs to pull over any updates to data. Once the data sync is complete, requests are routed to the new nodes and the old nodes are decommissioned.
+Since live nodes continue to handle requests after the initial migration, there are likely data modifications that need to be synced. To ensure data integrity after switching to the new nodes, live nodes are taken temporarily offline and a final data sync runs to pull over any updates to data. Once the data sync is complete, requests are routed to the new nodes and the old nodes are decommissioned.
 
 The data service will be unavailable during the final data sync, resulting in temporary downtime, but the sync only pulls over the delta which generally only takes a few seconds.
 

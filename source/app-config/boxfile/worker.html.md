@@ -58,7 +58,7 @@ These directories are read/write accessible to all the code component's instance
 
 In order to use `network_dirs`, you must have one or more network storage components (unfs, gluster, etc.) in which to store them. In your Boxfile config, specify which storage component the directories should be stored on.
 
-For more details, view the [Network Storage doc](/getting-started/network-storage/).
+For more details, view the [Network Storage doc](/app-config/network-storage/).
 
 #### network_dirs
 ```yaml
@@ -84,8 +84,10 @@ worker.jobs:
     - path/to/dirB
 ```
 
+For more details, view the [Nonpersistent Writable Directories doc](/app-config/nonpersistent-writable-dirs/).
+
 ## Custom Logs
-Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Logs doc](/getting-started/logs).
+Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Application Logs doc](/app-config/app-logs/).
 
 #### log_watch
 ```yaml
@@ -119,13 +121,13 @@ Deploy Hooks allow you to "hook" into the deploy process and execute scripts or 
 `before_deploy` hooks run after code has been deployed to new instances, but before traffic is routed to the new instances. These are ideal for things such as migrations.
 
 ### before\_deploy\_all
-`before_deploy_all` run at the same time as `before_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/getting-started/nonpersistent-writable-dirs/) on deploy.
+`before_deploy_all` run at the same time as `before_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/) on deploy.
 
 ### after_deploy
 `after_deploy` hooks run after the newly deployed instances have begun handling traffic and the old instances have been decommissioned.
 
 ### after\_deploy\_all
-`after_deploy_all` run at the same time as `after_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/getting-started/nonpersistent-writable-dirs/) on deploy.
+`after_deploy_all` run at the same time as `after_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/) on deploy.
 
 ### deploy\_hook\_timeout
 `deploy_hook_timeout` defines a timeout for deploy hooks in seconds.

@@ -21,13 +21,13 @@ Network storage services provide a centralized filesystem shared between code in
 <img  class="no-shadow" alt="Network Storage Solution" src="/images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;">
 
 ## How Network Storage Works
-Network storage components provide centralized writable filesystems sharable between multiple code services. For each code component, `network_dirs` can be specified in the [Boxfile](/getting-started/boxfile). On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across the app's private network to the corresponding path inside of the storage component. This allows code components to access files stored in network storage using the same filepaths as if in local filesystem.
+Network storage components provide centralized writable filesystems sharable between multiple code services. For each code component, `network_dirs` can be specified in your `boxfile.yml`. On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across your app's private network to the corresponding path inside of the storage component. This allows code components to access files stored in network storage using the same filepaths as if they were in the local filesystem.
 
 ### Network Mounts
 Network mounts essentially replace those directories in your repo (and their contents) specified as network directories in your Boxfile. Anything inside of a network directory within your repo will not be accessible to your app until uploaded to the matching filepath inside of your storage service.
 
 ## Configuring Network Storage
-Network storage components are data components that use a filesystem [image](/engines-images/) such as unfs, gluster, etc.
+Network storage components are data components that use a filesystem [image](/engines-images/#images) such as unfs, gluster, etc.
 
 #### Network Storage Component in the Boxfile
 ```yaml

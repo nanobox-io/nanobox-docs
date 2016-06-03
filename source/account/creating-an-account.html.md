@@ -19,6 +19,6 @@ If you didn't receive the confirmation email, do the following.
 We do our best to keep our emails out of these, but sometimes this is where they end up.
 
 #### 2. Make sure the email address you provided is correct
-Whatever email address you provided will show in your browser after you submit the account creation form. If the email address is incorrect, you can "reset" the account and provide a new email address.
+Whatever email address you provided will show in your browser after you submit the account creation form. If the email address is incorrect, contact [help@nanobox.io](mailto:help@nanobox.io).
 
-![Reset an Account](/images/account-create-reset.png)
+![Sign Up Email Address](/images/account-create-email-address.png)

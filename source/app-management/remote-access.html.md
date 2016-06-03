@@ -14,7 +14,7 @@ $ nanobox console web.site
 
 More information about the `console` command is available in the ['console' documentation](/cli/console/).
 
-For data components, you can also use the `nanobox tunnel` command to create a secure tunnel between your local machine and a production server. More information is available in the [Remotely Managing Data](/data-management/remotely-managing-data/) doc.
+For data components, you can also use the `nanobox tunnel` command to create a secure tunnel between your local machine and a production server. More information is available in the [Remotely Managing Data](/data-management/remotely-managing-data/#create-a-secure-tunnel) doc.
 
 ### User Authentication
 Whenever servers are accessed remotely, there are three levels of authorization the requests goes through:
