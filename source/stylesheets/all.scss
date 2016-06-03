@@ -117,7 +117,7 @@ a                       { @include transition(all .15s); }
   :not(.replay) > img  { max-width: 100%; @include border-radius(.4em); @include box-shadow(1px, 1px, 8px, #9a9a9a);
     &.no-shadow         { @include box-shadow(0, 0, 0, #fff); }
   }
-  hr                    { margin: 3em 0 2em; border: none; border-top: 1px solid $gblue-2; }
+  hr                    { margin: 3em 0 2em; border: none; border-top: 1px solid $grey-2; }
   blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-3;
     p                   { font-size: 1.25em; font-style: italic; line-height: 1.5em; }
   }
