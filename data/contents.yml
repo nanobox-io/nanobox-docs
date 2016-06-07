@@ -191,6 +191,8 @@ articles:
     articles:
       - title: "Using Engines & Images"
         path: "/engines-images/use/"
+      - title: "Finding Engines & Images"
+        path: "/engines-images/finding/"
       - title: "Creating an Engine"
         path: "/engines-images/create-engine/"
         articles:
