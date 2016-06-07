@@ -48,8 +48,6 @@ articles:
             path: "/app-config/boxfile/worker/"
           - title: "data"
             path: "/app-config/boxfile/data/"
-          - title: "Boxfile Quick Reference"
-            path: "/app-config/boxfile/quick-reference/"
       - title: "Environment Variables"
         path: "/app-config/environment-variables/"
       - title: "Application Logs"
