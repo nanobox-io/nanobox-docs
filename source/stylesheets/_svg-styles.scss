@@ -7,7 +7,7 @@
       .icon           { fill: #fff; @include transition(fill .2s);}
     }
     &.coming          { color: $lt-gblue-4;
-      &:before        { content: url('/images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 1.85em; }
+      &:before        { content: url('/src-images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 1.85em; }
       .bg-circle      { fill: $lt-gblue-6; }
       .icon           { fill: $lt-gblue-5; }
     }

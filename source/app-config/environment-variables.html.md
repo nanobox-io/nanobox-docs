@@ -61,7 +61,7 @@ Custom environment variables can be added to your production app through your da
 ### Adding Environment Variables in the Dashboard
 Environment variables can be added in your dashboard under Dev Config > Environment Variables. Simply add a key and a value, then save.
 
-![Adding Environment Variables](/images/evar-add.png)
+![Adding Environment Variables](/src-images/evar-add.png)
 
 **Note:** Newly added or updated environment variables will not apply to the live environment until the next build or deploy.
 

@@ -6,7 +6,7 @@ For many apps, a single Bunkhouse multi-component server works just fine, but as
 
 To split a component out of a bunkhouse, click on on the "Split" button under the component in your dashboard.
 
-![Split](/images/split-button.png)
+![Split](/src-images/split-button.png)
 
 When splitting a component out of a bunkhouse, you have two options:
 

@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <!-- favicon -->
-    <link href='/images/favicon.ico' rel='icon' type='image/png'>
+    <link href='/src-images/favicon.ico' rel='icon' type='image/png'>
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
@@ -361,13 +361,13 @@
         
         <p><strong>For example:</strong> An app allows users to upload images. Images are uploaded through web1, but then processed into smaller sizes by worker1. Because web1&#39;s filesystem is isolated, the worker would never be able to access the uploaded images.</p>
         
-        <p><img alt="Network Storage Problem" src="/images/network-storage-problem-d4c20109.svg" width="430" style="display: block; margin: 0 auto;"></p>
+        <p><img alt="Network Storage Problem" src="/src-images/network-storage-problem-d4c20109.svg" width="430" style="display: block; margin: 0 auto;"></p>
         
         <h3 id="the-solution">The Solution</h3>
         
         <p>Network storage services provide a centralized filesystem shared between code services. Directories inside of code services to which files must be written/read can be specified as &quot;network directories&quot;. These directories are replaced with <a href="#network-mounts">network mounts</a> on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem. </p>
         
-        <p><img alt="Network Storage Solution" src="/images/network-storage-solution-8dfccb37.svg" width="620" style="display: block; margin: 0 auto;"></p>
+        <p><img alt="Network Storage Solution" src="/src-images/network-storage-solution-8dfccb37.svg" width="620" style="display: block; margin: 0 auto;"></p>
         
         <h2 id="how-network-storage-works">How Network Storage Works</h2>
         

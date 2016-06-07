@@ -19,12 +19,12 @@ The Disk statistic represents how much of your component's/node's allotted disk 
 ### Summary View
 Your Nanobox dashboard provides live stats as well as a summary of hourly historical stats.
 
-![Service Resource Usage Summary](/images/service-stats-summary.png)
+![Service Resource Usage Summary](/src-images/service-stats-summary.png)
 
 
 ### Detailed View
 Click on the "Stats" button under a component/node to view detailed historical hourly averages. In multi-component servers ([bunkouses](/scaling/bunkhouse/)), you'll also see a summary of what each component is using of the available resources.
 
-![Expanded Service Resource Usage](/images/service-stats-expanded.png)
+![Expanded Service Resource Usage](/src-images/service-stats-expanded.png)
 
 **Note:** Historical averages are provided in hourly blocks. In some cases, a brief period of high resource usage may be lost in the hourly average.

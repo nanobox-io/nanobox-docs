@@ -7,7 +7,7 @@ Using your own domain on your Nanobox app is really simple and can be done by ei
 ## Using an A-Record
 A-Records are used to point your domain to a specific IP address. If you choose to use this method, you need to point your domain to the IP of the server that houses your [load-balancer](/app-management/platform-components/#load-balancer). This IP can be found in your dashboard under Network > Inbound IPs.
 
-![IP of Your Load-Balancer](/images/inbound_ip.png)
+![IP of Your Load-Balancer](/src-images/inbound_ip.png)
 
 ### Pros of Using an A-Record
 - You're able to use root domains without subdomains (`domain.com` vs `www.domain.com`).

@@ -1,0 +1,3 @@
+---
+title: Advanced Image Creation
+---

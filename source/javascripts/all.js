@@ -74,7 +74,7 @@ $(window).on('resize', function() {
 /////// REPLACE MISSING IMAGES WITH PLACEHOLDER ///////
 
 $(function(){
-  $('img').attr('onerror', 'this.src="/images/image-coming.png"');
+  $('img').attr('onerror', 'this.src="/src-images/image-coming.png"');
 });
 
 
@@ -121,7 +121,7 @@ function loadAnimation(name, parent, path) {
 }
 
 function svgAnimation(name, filename) {
-  loadAnimation(name, name, '/images/animated-svgs/'+filename);
+  loadAnimation(name, name, '/src-images/animated-svgs/'+filename);
   var anim = name
   $(document.getElementById(name)).waypoint(function(){
     bodymovin.play(name);
@@ -129,7 +129,7 @@ function svgAnimation(name, filename) {
   }, {offset: '40%' });
 
   // Appends the replay button
-  $(document.getElementById(name)).append('<a class="replay" id="'+name+'" title="Replay"><img src="/images/replay-icon.svg"></a>')
+  $(document.getElementById(name)).append('<a class="replay" id="'+name+'" title="Replay"><img src="/src-images/replay-icon.svg"></a>')
 
   $('#' + name +'.replay').click(function(){
     bodymovin.stop(name);

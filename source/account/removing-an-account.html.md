@@ -6,4 +6,4 @@ While we hate to see anyone leave Nanobox, we understand that sometimes an accou
 
 To delete your account, go to Account Admin > Account Management. Once your user is no longer associated with any apps, you’ll be given the option to unlock the delete button. Click “Unlock”, “Delete this user”, then type in your username and click “Delete User Forever!”.
 
-![Delete Your User](/images/account-delete.png)
+![Delete Your User](/src-images/account-delete.png)

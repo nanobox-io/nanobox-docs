@@ -6,7 +6,7 @@ title: Launch an App
 
 To get started, click the "Launch New App" button in your dashboard.
 
-![Launch New App](/images/app-launch-button.png)
+![Launch New App](/src-images/app-launch-button.png)
 
 ### Name Your App
 Next, provide a name for your app. If no name is provided, we will generate one for you.
