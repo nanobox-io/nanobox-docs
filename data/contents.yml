@@ -21,12 +21,12 @@ articles:
     articles:
       - title: "Local Setup"
         path: "/local-dev/local-setup/"
-      - title: "Basic Workflow"
-        path: "/local-dev/basic-workflow/"
       - title: "nanobox dev"
         path: "/local-dev/nanobox-dev/"
-      - title: ".nanofile"
-        path: "/local-dev/nanofile/"
+      - title: "Basic Workflow"
+        path: "/local-dev/basic-workflow/"
+      - title: "Nanobox config.yml"
+        path: "/local-dev/nanobox-config-yml/"
       - title: "Managing Local Data"
         path: "/local-dev/managing-local-data/"
 
