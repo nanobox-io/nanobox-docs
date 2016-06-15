@@ -1,5 +1,6 @@
 //= require_tree .
 //= require "_jquery-2.1.4.min.js"
+//= require "_is.min.js"
 //= require "_waypoints.min.js"
 //= require "_bodymovin.js"
 
@@ -17,6 +18,26 @@ $(window).scroll(function() {
   }
 });
 
+////////////////// TOGGLE OS CONTENT //////////////////
+
+$(function(){
+  $('.os-tabs li').click(function(){
+    var oldActive = '#'+$('.os-tabs li.active').attr('id')
+    var newActive = '#'+$(this).attr('id')
+    var oldContent = oldActive+'-content'
+    var newContent = newActive+'-content'
+
+    // Removes and sets active class on the nav buttons
+    $(this).addClass('active');
+    $(oldActive).removeClass('active');
+
+    // Toggles the corresponding content
+    $(oldContent).fadeOut(100);
+    setTimeout(function(){
+      $(newContent).fadeIn(100)
+    }, 50)
+  })
+})
 
 /////////// OPEN / CLOSE RESPONSIVE CONTENTS ///////////
 
@@ -78,33 +99,6 @@ $(function(){
 });
 
 
-///////// TOUCH-SCREEN SPECIFIC FUNCTIONALITY /////////
-
-//touch/mobile detection
-if (
-  navigator.userAgent.match(/Phone/i) ||
-  navigator.userAgent.match(/DROID/i) ||
-  navigator.userAgent.match(/Android/i) ||
-  navigator.userAgent.match(/webOS/i) ||
-  navigator.userAgent.match(/iPhone/i) ||
-  navigator.userAgent.match(/iPod/i) ||
-  navigator.userAgent.match(/BlackBerry/) ||
-  navigator.userAgent.match(/Windows Phone/i) ||
-  navigator.userAgent.match(/ZuneWP7/i) ||
-  navigator.userAgent.match(/IEMobile/i) ||
-  navigator.userAgent.match(/Tablet/i) ||
-  navigator.userAgent.match(/iPad/i) ||
-  navigator.userAgent.match(/Kindle/i) ||
-  navigator.userAgent.match(/Playbook/i) ||
-  navigator.userAgent.match(/Nexus/i) ||
-  navigator.userAgent.match(/Xoom/i) ||
-  navigator.userAgent.match(/SM-N900T/i) || //Samsung Note 3
-  navigator.userAgent.match(/GT-N7100/i) || //Samsung Note 2
-  navigator.userAgent.match(/SAMSUNG-SGH-I717/i) || //Samsung Note
-  navigator.userAgent.match(/SM-T330NU/i) //Samsung Tab 4
-){ var touch_device = true; }
-
-
 ////////////////// LOAD ANIMATED SVGs //////////////////
 
 function loadAnimation(name, parent, path) {
@@ -137,6 +131,12 @@ function svgAnimation(name, filename) {
   })
 }
 
+////// TOUCH-SCREEN TEST FOR SPECIFIC FUNCTIONALITY //////
+
+//touch/mobile detection
+if ( is.touchDevice() ){
+  var touch_device = true;
+}
 
 $(document).ready(function() {
 
@@ -196,5 +196,27 @@ $(document).ready(function() {
   if(touch_device){
     $(".interactive-svg").addClass("touch");
   }
+
+  ////////////// TOGGLE OS CONTENT ON LOAD //////////////
+
+  $(document).ready(function() {
+    if ($(".os-tabs")) {
+      var pretag = window.location.href.slice(window.location.href.indexOf('#'));
+      var tag = "";
+      if (pretag.length > 1) {
+          tag = pretag
+      };
+      if ( is.windows() ){
+        $('.os-tabs li#win').addClass('active');
+        $("#mac-content, #linux-content").css("display", "none");
+      } else if( is.linux() ){
+        $('.os-tabs li#linux').addClass('active');
+        $("#mac-content, #win-content").css("display", "none");
+      } else {
+        $('.os-tabs li#mac').addClass('active');
+        $("#linux-content, #win-content").css("display", "none");
+      }
+    }
+  })
 
 })

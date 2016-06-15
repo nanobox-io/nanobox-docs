@@ -109,6 +109,12 @@ a                       { @include transition(all .15s); }
   pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; @include border-radius(.4em); }
   ul, ol                { padding-left: 1.2em;
     li                  { line-height: 1.8em; }
+    &.os-tabs           { list-style: none; padding: 0;
+      li                { margin-bottom: 2em; display: inline-block; min-width: 15%; padding: .5em 1em; text-align: center; color: $grey-4; background: $gblue-2; cursor: pointer; @include border-radius(.4em); @include transition(all .2s);
+        &.active,
+        &:hover         { background: $blue-2; }
+      }
+    }
   }
   :not(pre)             { // Added to preserved code-block formatting for blocks nested in lists
     & > code            { padding: 5px 8px 6px; font-size: .82em; color: $pink-1; background: white; white-space: nowrap; @include border-radius(.4em); }
