@@ -45,7 +45,7 @@ vm:
 ### Mount
 `mount` specifies which technology to use when mounting code on your local machine into your Nanobox VM. The following options are available:
 
-- `native` - Uses the network file system native to your [provider](#provider)
-- `netfs` - Much better performance, but only available for Nanobox running on OSX.
+- `native` - Uses the network file system native to your [provider](#provider).
+- `netfs` - Much better performance, but only available on OSX.
 
 **We highly recommend anybody using OSX to set their mount to** `netfs`**.**

@@ -15,8 +15,9 @@ The `dev` command includes the following subcommands that allow you to interact 
 | Sub-Command          | Summary                                                        |
 |:---------------------|:---------------------------------------------------------------|
 | [`deploy`](deploy)   | Deploys a generated build package into your Nanobox VM         |
-| [`info`](info)       | Displays information about your dev app                        |
+| [`info`](info)       | Displays information about the running app and its components  |
 | [`console`](console) | Opens an interactive console inside your Nanobox VM            |
-| [`exec`](exec)       | Runs a command in your Nanobox VM without having to console in |
-| [`evar`](evar)       | Manages environment variables in your Nanobox VM               |
-| [`destroy`](destroy) | Destroys the Nanobox VM                                        |
+| [`exec`](exec)       | Executes a command inside your local dev app                   |
+| [`evar`](evar)       | Manages environment variables in your local dev app            |
+| [`destroy`](destroy) | Destroys the docker machines associated with the current app   |
+| [`reset`](reset)     | Resets the dev VM registry                                     |
