@@ -203,9 +203,7 @@ $(document).ready(function() {
     if ($(".os-tabs")) {
       var pretag = window.location.href.slice(window.location.href.indexOf('#'));
       var tag = "";
-      if (pretag.length > 1) {
-          tag = pretag
-      };
+
       if ( is.windows() ){
         $('.os-tabs li#win').addClass('active');
         $("#mac-content, #linux-content").css("display", "none");
@@ -216,6 +214,10 @@ $(document).ready(function() {
         $('.os-tabs li#mac').addClass('active');
         $("#linux-content, #win-content").css("display", "none");
       }
+
+      if (pretag.length > 1) {
+          tag = pretag
+      };
     }
   })
 
