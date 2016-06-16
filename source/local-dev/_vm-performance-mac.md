@@ -3,6 +3,8 @@ If you notice Nanobox and your apps running a little slowly, there are changes y
 ## Use netfs for Filesystem Mounting
 Whenever you run `nanobox dev`, Nanobox mounts the current working directory into your Nanobox VM. This allows changes made to code on your local machine to immediately appear in your VM. The default `native` method used to mount code can be slow. Switching to `netfs` will greatly improve code read/write speeds in your VM.
 
+*"netfs" is a generic term for "network filesystem". The actual technology used in MacOS is [NFS](https://en.wikipedia.org/wiki/Network_File_System).*
+
 ### Using netfs
 To use netfs, you'll need to modify your [`config.yml`](/local-dev/nanobox-config-yml). This file can be found at `~/.nanobox/config.yml`. If it doesn't already exist, you can create it. Update the `mount-type` setting to `netfs`.
 
