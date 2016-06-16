@@ -1,79 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://docs.nanobox.io/boxfile/build</loc>
+    <loc>https://docs.nanobox.io/account/card-management</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/code-services</loc>
+    <loc>https://docs.nanobox.io/account/creating-an-account</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/code-services/tcp</loc>
+    <loc>https://docs.nanobox.io/account/editing-account-details</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/code-services/udp</loc>
+    <loc>https://docs.nanobox.io/account/how-billing-works</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/code-services/web</loc>
+    <loc>https://docs.nanobox.io/account</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/code-services/worker</loc>
+    <loc>https://docs.nanobox.io/account/providers</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/console</loc>
+    <loc>https://docs.nanobox.io/account/removing-an-account</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services</loc>
+    <loc>https://docs.nanobox.io/app-config/app-logs</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/mariadb</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile/code-build</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/memcached</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile/code-deploy</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/mongodb</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile/data</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/mysql</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile/dev</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/nfs</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/percona</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile/web</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/postgresql</loc>
+    <loc>https://docs.nanobox.io/app-config/boxfile/worker</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/data-services/redis</loc>
+    <loc>https://docs.nanobox.io/app-config/build-deploy-hooks</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/env</loc>
+    <loc>https://docs.nanobox.io/app-config/cron-jobs</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile</loc>
+    <loc>https://docs.nanobox.io/app-config/environment-variables</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/boxfile/quick-reference</loc>
+    <loc>https://docs.nanobox.io/app-config</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-config/network-storage</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-config/nonpersistent-writable-dirs</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/app-public-ssh-key</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/dashboard-service-controls</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/delete-app</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/deploy-history</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/deployment-options</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/log-management</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/platform-components</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/remote-access</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/app-management/service-stats</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/build</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -81,7 +133,27 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/destroy</loc>
+    <loc>https://docs.nanobox.io/cli/deploy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/console</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/deploy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/destroy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/evar</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/exec</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -89,23 +161,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/engine</loc>
+    <loc>https://docs.nanobox.io/cli/dev/info</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/engine/new</loc>
+    <loc>https://docs.nanobox.io/cli/dev/reset</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/engine/publish</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cli/exec</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cli/help</loc>
+    <loc>https://docs.nanobox.io/cli/evar</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -113,15 +177,27 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/info</loc>
+    <loc>https://docs.nanobox.io/cli/link</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/run</loc>
+    <loc>https://docs.nanobox.io/cli/log</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/stop</loc>
+    <loc>https://docs.nanobox.io/cli/login</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/logout</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/tunnel</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/uninstall</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -133,223 +209,131 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cloud/account/card-management</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/account/creating-an-account</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/account</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/account/invoicing</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/account/removing-an-account</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/app-public-ssh-key</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/cron-jobs</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/dashboard-service-controls</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/deploy-history</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/deployment-options</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/log-management</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/mail</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/app-management/service-stats</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/cli</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/data-management/data-migrations-scaling</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/data-management</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/data-management/remotely-managing-data</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/data-management/snapshots-backups</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/getting-started/deploy-process</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/getting-started/environment</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/getting-started</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/getting-started/launching-an-app</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/getting-started/local-to-cloud</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/getting-started/nanoagent</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/git-ssh/adding-ssh-keys</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/git-ssh/generating-ssh-keys</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/git-ssh/git-ssh-troubleshooting</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/git-ssh</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/networking-domains/adding-ssl</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/networking-domains/custom-domains</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/networking-domains/inbound-ips</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/networking-domains</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/scaling</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/scaling/single-vs-multi-node</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/team/collaborator-permissions</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/team</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cloud/team/managing-collaborators</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://docs.nanobox.io/contributing</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/build-hooks</loc>
+    <loc>https://docs.nanobox.io/data-management/backups</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/caching</loc>
+    <loc>https://docs.nanobox.io/data-management/data-migrations-scaling</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/environment-variables</loc>
+    <loc>https://docs.nanobox.io/data-management</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/generating-output</loc>
+    <loc>https://docs.nanobox.io/data-management/remotely-managing-data</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks</loc>
+    <loc>https://docs.nanobox.io/domains-networking/custom-domains</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/installing-binaries</loc>
+    <loc>https://docs.nanobox.io/domains-networking</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/profile-scripts</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl/adding-ssl</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/running-commands</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl/indentifying</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/template-generation</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/using-the-payload</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl/managing-ssl</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/common-tasks/working-with-input</loc>
+    <loc>https://docs.nanobox.io/domains-networking/user-ip-and-protocols</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/debugging</loc>
+    <loc>https://docs.nanobox.io/engines/create/advanced/caching</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/dev-workflow</loc>
+    <loc>https://docs.nanobox.io/engines/create/advanced/config-templates</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/enginefile</loc>
+    <loc>https://docs.nanobox.io/engines/create/advanced/environment-variables</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/how-engines-work</loc>
+    <loc>https://docs.nanobox.io/engines/create/advanced/environment</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/how-engines-work</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/installing-binaries</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/nos</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/printing-output</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/profile-d-scripts</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/using-the-payload</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/advanced/working-with-input</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/boxfile</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/cleanup</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/compile</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/prepare</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/release</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/create/setup</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/engines/finding-using</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -357,67 +341,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/overlays</loc>
+    <loc>https://docs.nanobox.io/getting-started/configure-app</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/project-creation</loc>
+    <loc>https://docs.nanobox.io/getting-started/deploy-code</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/engines/publish</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/readme</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/scripts/boxfile</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/scripts/build</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/scripts/cleanup</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/scripts</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/scripts/prepare</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/scripts/sniff</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/style-guide</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/engines/the-environment</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/getting-started/basic-workflow</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/getting-started/boxfile</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/getting-started/deploys</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/installation/uninstalling</loc>
+    <loc>https://docs.nanobox.io/getting-started/dev-workflow</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -425,39 +357,79 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/logs</loc>
+    <loc>https://docs.nanobox.io/getting-started/install-nanobox</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/nanofile</loc>
+    <loc>https://docs.nanobox.io/getting-started/launch-app</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/network-storage</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced/behaviors</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/nonpersistent-writable-dirs</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced/data-backups</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/project-setup</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced/data-migrations</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/services</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced/hookit</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/tunneling</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced/how-images-work</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/why-nanobox</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/installation/upgrading</loc>
+    <loc>https://docs.nanobox.io/images/create/advanced/redundancy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/advanced/user-management</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/advanced/virtual-ips</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/configure</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/docker</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/image-setup</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/plan</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/create/start-stop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images/finding-using</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/images</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -465,11 +437,87 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/installation</loc>
+    <loc>https://docs.nanobox.io/local-dev/basic-workflow</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/getting-started/engines</loc>
+    <loc>https://docs.nanobox.io/local-dev</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/local-dev/local-setup</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/local-dev/managing-local-data</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/local-dev/nanobox-config-yml</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/local-dev/nanobox-dev</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/local-dev/vm-performance</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/orgs-teams/access-control</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/orgs-teams/create-an-org</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/orgs-teams</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/orgs-teams/managing-orgs-teams</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/app-redundancy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/auto-scaling</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/bunkhouse</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/how-to-scale</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/scaling-methods</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/splitting-components-out</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/troubleshooting/broken-exports-file</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/troubleshooting/error-codes</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/troubleshooting</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
