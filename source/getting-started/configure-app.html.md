@@ -20,7 +20,7 @@ code.build:
     ruby_runtime: ruby-2.3
 
 web.site:
-  start: 'rails -s'
+  start: 'rails s'
 
 data.db:
   image: postgresql
@@ -60,7 +60,7 @@ code.build:
   engine: ruby
 
 web.site:
-  start: 'rails -s'
+  start: 'rails s'
 
 data.db:
   image: postgresql

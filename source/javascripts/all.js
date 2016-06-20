@@ -5,6 +5,7 @@
 //= require "_bodymovin.js"
 
 
+
 ////////////////// SHRINKING TOP NAV //////////////////
 
 $(window).scroll(function() {
@@ -201,24 +202,27 @@ $(document).ready(function() {
 
   $(document).ready(function() {
     if ($(".os-tabs")) {
-      var pretag = window.location.href.slice(window.location.href.indexOf('#'));
-      var tag = "";
+
+      function scrollToHash() {
+        var anchor = window.location.hash + ' a'
+        setTimeout(function(){
+          $(anchor).trigger('click')
+        }, 250);
+      }
 
       if ( is.windows() ){
         $('.os-tabs li#win').addClass('active');
         $("#mac-content, #linux-content").css("display", "none");
+        scrollToHash();
       } else if( is.linux() ){
         $('.os-tabs li#linux').addClass('active');
         $("#mac-content, #win-content").css("display", "none");
+        scrollToHash();
       } else {
         $('.os-tabs li#mac').addClass('active');
         $("#linux-content, #win-content").css("display", "none");
       }
 
-      if (pretag.length > 1) {
-          tag = pretag
-      };
     }
   })
-
 })
