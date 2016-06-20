@@ -207,7 +207,7 @@ $(document).ready(function() {
         var anchor = window.location.hash + ' a'
         setTimeout(function(){
           $(anchor).trigger('click')
-        }, 250);
+        }, 500);
       }
 
       if ( is.windows() ){
