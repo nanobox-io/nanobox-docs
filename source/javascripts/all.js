@@ -23,8 +23,8 @@ $(window).scroll(function() {
 
 $(function(){
   $('.os-tabs li').click(function(){
-    var oldActive = '#'+$('.os-tabs li.active').attr('id')
-    var newActive = '#'+$(this).attr('id')
+    var oldActive  = '#'+$('.os-tabs li.active').attr('id')
+    var newActive  = '#'+$(this).attr('id')
     var oldContent = oldActive+'-content'
     var newContent = newActive+'-content'
 
@@ -35,6 +35,7 @@ $(function(){
     // Toggles the corresponding content
     $(oldContent).fadeOut(100);
     setTimeout(function(){
+      $(newContent).insertAfter('.os-tabs');
       $(newContent).fadeIn(100)
     }, 50)
   })
@@ -202,27 +203,18 @@ $(document).ready(function() {
 
   $(document).ready(function() {
     if ($(".os-tabs")) {
-
-      function scrollToHash() {
-        var anchor = window.location.hash + ' a'
-        setTimeout(function(){
-          $(anchor).trigger('click')
-        }, 500);
-      }
-
       if ( is.windows() ){
         $('.os-tabs li#win').addClass('active');
-        $("#mac-content, #linux-content").css("display", "none");
-        scrollToHash();
+        $('#mac-content, #linux-content').css('display', 'none');
+        $('#win-content').insertAfter('.os-tabs');
       } else if( is.linux() ){
         $('.os-tabs li#linux').addClass('active');
-        $("#mac-content, #win-content").css("display", "none");
-        scrollToHash();
+        $('#mac-content, #win-content').css('display', 'none');
+        $('#linux-content').insertAfter('.os-tabs');
       } else {
         $('.os-tabs li#mac').addClass('active');
-        $("#linux-content, #win-content").css("display", "none");
+        $('#linux-content, #win-content').css('display', 'none');
       }
-
     }
   })
 })
