@@ -2,7 +2,7 @@
 title: dev evar
 ---
 
-The `dev evar` command is used to manage environment variables in your local Nanobox VM. It has three subcommands:
+The `dev evar` command is used to manage environment variables in your dev platform. The following subcommands are available:
 
 | Subcommand          | Summary                                                   |
 |:--------------------|:----------------------------------------------------------|
@@ -11,7 +11,7 @@ The `dev evar` command is used to manage environment variables in your local Nan
 | [`list`](#list)     | Lists environment variables added to your VM              |
 
 ## add
-The `add` subcommand is used to add environment variables to your local Nanobox VM. You can add a single key-value pair, a comma-delimited list of key-value pairs.
+The `add` subcommand adds environment variables to your dev platform. You can add a single key-value pair or a comma-delimited list of key-value pairs.
 
 ### add Usage
 ```bash
@@ -25,7 +25,7 @@ $ nanobox dev evar add ENVIRONMENT:local,MY_EVAR:'This is mine'
 ```
 
 ## remove
-The `remove` subcommand is used to remove environment variables from your Nanobox VM. You can remove a single environment variable, or a comma-delimited list of environment variables.
+The `remove` subcommand removes environment variables from your dev platform. You can remove a single environment variable or a comma-delimited list of environment variables.
 
 ### remove Usage
 ```bash
@@ -39,7 +39,7 @@ $ nanobox dev evar remove ENVIRONMENT,MY_EVAR
 ```
 
 ## list
-The `list` subcommand outputs all environment variables registered in your Nanobox VM.
+The `list` subcommand outputs all environment variables registered in your dev platform.
 
 ### list Usage
 ```bash

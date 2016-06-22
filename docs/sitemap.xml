@@ -153,10 +153,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/dev/exec</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://docs.nanobox.io/cli/dev</loc>
     <priority>0.7</priority>
   </url>
@@ -165,7 +161,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/cli/dev/reset</loc>
+    <loc>https://docs.nanobox.io/cli/dev/start</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/up</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -190,6 +190,38 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/cli/logout</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/console</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/deploy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/destroy</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/evar</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/info</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/start</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/up</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -505,10 +537,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/scaling/splitting-components-out</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://docs.nanobox.io/troubleshooting/broken-exports-file</loc>
     <priority>0.7</priority>
   </url>
@@ -518,6 +546,10 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/troubleshooting</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/scaling/splitting-components-out</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

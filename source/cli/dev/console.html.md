@@ -2,7 +2,7 @@
 title: dev console
 ---
 
-The `dev console` command opens an interactive terminal inside your local Nanobox VM.
+The `dev console` command opens an interactive terminal inside your running dev platform.
 
 ### Usage
 ```bash

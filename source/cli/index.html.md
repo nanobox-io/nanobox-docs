@@ -6,7 +6,8 @@ All interaction with Nanobox happens through the Nanobox CLI. This section of do
 
 | Command                                | Summary                                                                  |
 | :------------------------------------- | :----------------------------------------------------------------------- |
-| [`dev`](/cli/dev/)                     | Starts the Nanobox VM, provisions app, & opens an interactive terminal   |
+| [`dev`](/cli/dev/)                     | Creates & manages a dev environment inside your Nanobox VM               |
+| [`sim`](/cli/sim/)                     | Creates & manages a simulated production platform inside your Nanobox VM |
 | [`link`](/cli/link/)                   | Manages links between dev & production apps                              |
 | [`build`](/cli/build/)                 | Generates a deployable build package                                     |
 | [`deploy`](/cli/deploy)                | Deploys your generated build package to a production app                 |

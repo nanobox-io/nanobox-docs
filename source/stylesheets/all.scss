@@ -90,7 +90,7 @@ a                       { @include transition(all .15s); }
   &.loaded              { @include opacity(1); }
   h1                    { margin: .35em 0 .7em;; padding-bottom: .5em; border-bottom: 1px solid $grey-2; font-size: 3.9em; line-height: 1em; color: $blue-0; }
   h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $grey-0; }
-  h3                    { margin: -1em 0 .45em; padding-top: 2.5em; font-size: 1.55em; color: $gblue-1; }
+  h3                    { margin: -1em 0 .45em; padding-top: 2.5em; font-size: 1.55em; color: $gblue-1; z-index: 1; }
   h4                    { margin: -1.5em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $grey-0; font-style: italic; }
   h5                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $blue-0; text-transform: uppercase; }
   h6                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }

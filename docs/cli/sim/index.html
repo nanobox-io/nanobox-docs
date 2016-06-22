@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      dev exec - Nanobox Documentation
+      sim - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-b511fb6a.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-b8a26f49.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -444,7 +444,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/cli/dev/deploy/">dev deploy</a>
+                    <a href="/cli/dev/up/">dev up</a>
                   </li>
                   <li>
                     <span>
@@ -454,7 +454,17 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/cli/dev/info/">dev info</a>
+                    <a href="/cli/dev/start/">dev start</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/dev/deploy/">dev deploy</a>
                   </li>
                   <li>
                     <span>
@@ -466,7 +476,7 @@
                     </span>
                     <a href="/cli/dev/console/">dev console</a>
                   </li>
-                  <li class='active'>
+                  <li>
                     <span>
                       <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
                         <g class='nav-bullet'>
@@ -474,7 +484,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/cli/dev/exec/">dev exec</a>
+                    <a href="/cli/dev/info/">dev info</a>
                   </li>
                   <li>
                     <span>
@@ -496,6 +506,26 @@
                     </span>
                     <a href="/cli/dev/destroy/">dev destroy</a>
                   </li>
+                </ul>
+              </li>
+              <li class='active'>
+                <span class='nav-toggle'>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-btn-circle'>
+                      <path d='M7,14L7,14c-3.9,0-7-3.1-7-7v0c0-3.9,3.1-7,7-7h0c3.9,0,7,3.1,7,7v0C14,10.9,10.9,14,7,14z'></path>
+                    </g>
+                    <g class='nav-btn-horz'>
+                      <line fill='none' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='4' x2='10' y1='7' y2='7'></line>
+                    </g>
+                    <g class='nav-btn-vert'>
+                      <g>
+                        <line fill='none' stroke-linecap='round' stroke-miterlimit='10' stroke='#FFFFFF' x1='7' x2='7' y1='4' y2='10'></line>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/sim/">sim</a>
+                <ul class='sub'>
                   <li>
                     <span>
                       <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
@@ -504,7 +534,67 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/cli/dev/reset/">dev reset</a>
+                    <a href="/cli/sim/up/">sim up</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/start/">sim start</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/deploy/">sim deploy</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/console/">sim console</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/info/">sim info</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/evar/">sim evar</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/destroy/">sim destroy</a>
                   </li>
                 </ul>
               </li>
@@ -1356,46 +1446,6 @@
                 </g>
               </svg>
             </span>
-            <a href="/troubleshooting/">Troubleshooting</a>
-            <ul class='sub'>
-              <li>
-                <span>
-                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                    <g class='nav-bullet'>
-                      <rect x='4.5' y='4.5'></rect>
-                    </g>
-                  </svg>
-                </span>
-                <a href="/troubleshooting/error-codes/">Error Codes</a>
-              </li>
-              <li>
-                <span>
-                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                    <g class='nav-bullet'>
-                      <rect x='4.5' y='4.5'></rect>
-                    </g>
-                  </svg>
-                </span>
-                <a href="/troubleshooting/broken-exports-file/">Broken netfs Exports File</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <span class='nav-toggle'>
-              <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                <g class='nav-btn-circle'>
-                  <path d='M7,14L7,14c-3.9,0-7-3.1-7-7v0c0-3.9,3.1-7,7-7h0c3.9,0,7,3.1,7,7v0C14,10.9,10.9,14,7,14z'></path>
-                </g>
-                <g class='nav-btn-horz'>
-                  <line fill='none' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='4' x2='10' y1='7' y2='7'></line>
-                </g>
-                <g class='nav-btn-vert'>
-                  <g>
-                    <line fill='none' stroke-linecap='round' stroke-miterlimit='10' stroke='#FFFFFF' x1='7' x2='7' y1='4' y2='10'></line>
-                  </g>
-                </g>
-              </svg>
-            </span>
             <a href="/account/">Account Management</a>
             <ul class='sub'>
               <li>
@@ -1441,6 +1491,46 @@
             </ul>
           </li>
           <li>
+            <span class='nav-toggle'>
+              <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                <g class='nav-btn-circle'>
+                  <path d='M7,14L7,14c-3.9,0-7-3.1-7-7v0c0-3.9,3.1-7,7-7h0c3.9,0,7,3.1,7,7v0C14,10.9,10.9,14,7,14z'></path>
+                </g>
+                <g class='nav-btn-horz'>
+                  <line fill='none' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='4' x2='10' y1='7' y2='7'></line>
+                </g>
+                <g class='nav-btn-vert'>
+                  <g>
+                    <line fill='none' stroke-linecap='round' stroke-miterlimit='10' stroke='#FFFFFF' x1='7' x2='7' y1='4' y2='10'></line>
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <a href="/troubleshooting/">Troubleshooting</a>
+            <ul class='sub'>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/troubleshooting/error-codes/">Error Codes</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/troubleshooting/broken-exports-file/">Broken netfs Exports File</a>
+              </li>
+            </ul>
+          </li>
+          <li>
             <span>
               <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
                 <g class='nav-bullet'>
@@ -1454,20 +1544,53 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/cli/">CLI Commands</a>&#x2F;<a href="/cli/dev/">dev</a>&#x2F;<a href="/cli/dev/exec/">dev exec</a>
+          <a href="/"></a>&#x2F;<a href="/cli/">CLI Commands</a>&#x2F;<a href="/cli/sim/">sim</a>
         </div>
-        <h1>dev exec</h1>
-        <p>The <code>dev exec</code> command runs a command from inside your Nanobox VM.</p>
+        <h1>sim</h1>
+        <p>The <code>sim</code> command is used to create and manage a simulated production platform inside your Nanobox VM.</p>
         
-        <h3 id="usage">Usage</h3>
-        <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox dev <span class="nb">exec</span> &lt;<span class="nb">command</span>&gt;&#x000A;&#x000A;<span class="c"># Examples</span>&#x000A;<span class="gp">$ </span>nanobox dev <span class="nb">exec </span>ls -la&#x000A;<span class="gp">$ </span>nanobox dev <span class="nb">exec </span>redis-cli flushall&#x000A;</code></pre>
+        <h2 id="subcommands">Subcommands</h2>
+        
+        <p>The <code>sim</code> command includes the following subcommands that allow you to interact with and manage your sim platform.</p>
+        
+        <table><thead>
+        <tr>
+        <th style="text-align: left">Sub-Command</th>
+        <th style="text-align: left">Summary</th>
+        </tr>
+        </thead><tbody>
+        <tr>
+        <td style="text-align: left"><a href="start"><code>start</code></a></td>
+        <td style="text-align: left">Provisions your sim platform in your Nanobox VM</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="deploy"><code>deploy</code></a></td>
+        <td style="text-align: left">Deploys a generated build package into your sim platform</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="info"><code>info</code></a></td>
+        <td style="text-align: left">Displays information about the running sim app &amp; its components</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="console"><code>console</code></a></td>
+        <td style="text-align: left">Opens an interactive console inside your sim platform</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="evar"><code>evar</code></a></td>
+        <td style="text-align: left">Manages environment variables in your sim platform</td>
+        </tr>
+        <tr>
+        <td style="text-align: left"><a href="destroy"><code>destroy</code></a></td>
+        <td style="text-align: left">Destroys the docker machines associated with the current simulated app</td>
+        </tr>
+        </tbody></table>
         <div id='pagination'>
-          <a name="dev console" class="prev" href="/cli/dev/console/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="dev destroy" class="prev" href="/cli/dev/destroy/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="dev evar" class="next" href="/cli/dev/evar/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="sim up" class="next" href="/cli/sim/up/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>
