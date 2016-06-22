@@ -2,7 +2,7 @@
 title: sim up
 ---
 
-The `sim up` command is the quickest way to get a simulated production platform up and running in your Nanobox VM. It will generate a deployable build package, create and start a sim environment inside your Nanobox VM, deploy your build package into the sim environment, then provision and start code and data services specified in your boxfile.yml.
+The `sim up` command is the quickest way to get a simulated production platform up and running in your Nanobox VM. It will generate a deployable build package, create and start a sim environment inside your Nanobox VM, deploy your build package into the sim environment, then provision and start web, worker, and data services specified in your [boxfile.yml](/app-config/boxfile/).
 
 ### Usage
 ```bash

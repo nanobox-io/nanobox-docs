@@ -1547,12 +1547,14 @@
           <a href="/"></a>&#x2F;<a href="/cli/">CLI Commands</a>&#x2F;<a href="/cli/dev/">dev</a>&#x2F;<a href="/cli/dev/deploy/">dev deploy</a>
         </div>
         <h1>dev deploy</h1>
-        <p>The <code>dev deploy</code> command deploys a <a href="/cli/build/">generated build package</a> into your local Nanobox VM. All data services are provisioned and started. Code services are not automatically started when deploying to a dev environment.</p>
+        <p>The <code>dev deploy</code> command deploys a <a href="/cli/build/">generated build package</a> into your local Nanobox VM. All data services are provisioned and started.</p>
         
         <h3 id="usage">Usage</h3>
         <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev deploy&#x000A;</code></pre>
         
-        <p>Once your dev platform is deployed, you can <a href="/cli/dev/console/">console in</a> and code services by running their start commands.</p>
+        <p>Once your dev platform is deployed, you can <a href="/cli/dev/console/">console in</a> and start web/worker processes by running their start commands.</p>
+        
+        <p><strong>Note:</strong> <a href="/app-config/build-deploy-hooks/#deploy-hooks">Deploy hooks</a> <strong>do not</strong> run when running a <code>dev deploy</code>. If you need these hooks run, you can run them from a console after your dev platform is provisioned.</p>
         <div id='pagination'>
           <a name="dev start" class="prev" href="/cli/dev/start/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>

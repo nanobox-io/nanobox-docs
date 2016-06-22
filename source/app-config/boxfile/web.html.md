@@ -39,19 +39,13 @@ web.site:
 
   # Cron
   cron:
-    - "0 0 * * *": "rm -rf app/cache/*"
-    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
+    - id: flush_cache
+      schedule: '0 0 * * *'
+      command: 'rm -rf app/cache/*'
+    - id: echo_msg
+      schedule: "*/3 */2 1-3 2,6,7 2"
+      command: "echo 'im a little teapot'"
 
-  # Deploy Hooks
-  deploy_hook_timeout: 600
-  before_deploy:
-    - "scripts/migrate_db.rb"
-  before_deploy_all:
-    - "scripts/cache_prime.rb"
-  after_deploy:
-    - "scripts/clear_cache.rb"
-  after_deploy_all:
-    - "scripts/local_cache_prime.rb"
 ```
 
 ## Start Command
@@ -170,18 +164,24 @@ web.site:
 ```
 
 ## Cron Jobs
-Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cron jobs specified in a component's Boxfile config are loaded into the component's crontab. More information is available in the [Cron Jobs](/app-config/cron-jobs/) doc.
+Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cron jobs specified in a component's boxfile config are loaded into the component's crontab. More information is available in the [Cron Jobs](/app-config/cron-jobs/) doc.
 
 #### cron
 ```yaml
 # Pattern
 web.site:
   cron:
-    - "cron schedule": "command"
+    - id: unique-identifier
+      schedule: "cron schedule"
+      command: "command"
 
 # Examples
 web.site:
   cron:
-    - "0 0 * * *": "rm -rf app/cache/*"
-    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
+    - id: flush_cache
+      schedule: '0 0 * * *'
+      command: 'rm -rf app/cache/*'
+    - id: echo_msg
+      schedule: "*/3 */2 1-3 2,6,7 2"
+      command: "echo 'im a little teapot'"
 ```

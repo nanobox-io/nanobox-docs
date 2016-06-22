@@ -29,19 +29,12 @@ worker.jobs:
 
   # Cron
   cron:
-    - "0 0 * * *": "rm -rf app/cache/*"
-    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
-
-  # Deploy Hooks
-  deploy_hook_timeout: 600
-  before_deploy:
-    - "scripts/migrate_db.rb"
-  before_deploy_all:
-    - "scripts/cache_prime.rb"
-  after_deploy:
-    - "scripts/clear_cache.rb"
-  after_deploy_all:
-    - "scripts/local_cache_prime.rb"
+    - id: flush_cache
+      schedule: '0 0 * * *'
+      command: 'rm -rf app/cache/*'
+    - id: echo_msg
+      schedule: "*/3 */2 1-3 2,6,7 2"
+      command: "echo 'im a little teapot'"
 ```
 
 ## Start Command
@@ -98,50 +91,24 @@ worker.jobs:
 ```
 
 ## Cron Jobs
-Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cronjobs specified in a workers's Boxfile config are loaded into the worker's crontab.
+Cron is a time-based job scheduler that enables you to schedule jobs (commands) to run periodically at certain times or dates. Cron jobs specified in a component's boxfile config are loaded into the component's crontab. More information is available in the [Cron Jobs](/app-config/cron-jobs/) doc.
 
 #### cron
 ```yaml
 # Pattern
 worker.jobs:
   cron:
-    - "cron schedule": "command"
+    - id: unique-identifier
+      schedule: "cron schedule"
+      command: "command"
 
 # Examples
 worker.jobs:
   cron:
-    - "0 0 * * *": "rm -rf app/cache/*"
-    - "*/3 */2 1-3 2,6,7 2": "echo 'im a little teapot'"
-```
-
-## Deploy Hooks
-Deploy Hooks allow you to "hook" into the deploy process and execute scripts or commands. Each type of hook takes place during a specific stage of the deployment process.
-
-### before_deploy
-`before_deploy` hooks run after code has been deployed to new instances, but before traffic is routed to the new instances. These are ideal for things such as migrations.
-
-### before\_deploy\_all
-`before_deploy_all` run at the same time as `before_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/) on deploy.
-
-### after_deploy
-`after_deploy` hooks run after the newly deployed instances have begun handling traffic and the old instances have been decommissioned.
-
-### after\_deploy\_all
-`after_deploy_all` run at the same time as `after_deploy` hooks, but run on all instances inside of a multi-instance component, rather than just one. These really come in handy when modifying [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/) on deploy.
-
-### deploy\_hook\_timeout
-`deploy_hook_timeout` defines a timeout for deploy hooks in seconds.
-
-#### Deploy Hooks in the Boxfile
-```yaml
-worker.jobs:
-  deploy_hook_timeout: 600
-  before_deploy:
-    - "scripts/migrate_db.rb"
-  before_deploy_all:
-    - "scripts/cache_prime.rb"
-  after_deploy:
-    - "scripts/clear_cache.rb"
-  after_deploy_all:
-    - "scripts/local_cache_prime.rb"
+    - id: flush_cache
+      schedule: '0 0 * * *'
+      command: 'rm -rf app/cache/*'
+    - id: echo_msg
+      schedule: "*/3 */2 1-3 2,6,7 2"
+      command: "echo 'im a little teapot'"
 ```

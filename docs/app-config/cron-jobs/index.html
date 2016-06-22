@@ -1555,18 +1555,24 @@
         
         <h2 id="creating-a-cron-job">Creating a Cron Job</h2>
         
-        <p>Cron Jobs are created in your <code>boxfile.yml</code>. To configure a cron job, nest a cron job under the component on which it will run. Include both the <a href="#schedule">cron schedule</a> and the <a href="#command">cron command</a>.</p>
+        <p>Cron jobs are created in your <code>boxfile.yml</code>. To configure a cron job, nest a cron job under the component on which it will run.</p>
+        
+        <p>Each cron job needs an ID, a <a href="#schedule">schedule</a>, and a <a href="#command">command</a>.</p>
         
         <h4 id="cron-jobs-in-the-boxfile">Cron Jobs in the Boxfile</h4>
-        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="c1"># Pattern</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">schedule'</span><span class="pi">:</span> <span class="s1">'</span><span class="s">command'</span>&#x000A;&#x000A;    <span class="c1"># Examples</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*'</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2'</span><span class="pi">:</span> <span class="s1">'</span><span class="s">sh</span><span class="nv"> </span><span class="s">cron/script.sh'</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="c1"># Pattern</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">unique-identifier</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s1">'</span><span class="s">schedule'</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s1">'</span><span class="s">command'</span>&#x000A;&#x000A;    <span class="c1"># Examples</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">flush-cache</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*'</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">cron-script</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2'</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s1">'</span><span class="s">sh</span><span class="nv"> </span><span class="s">cron/script.sh'</span>&#x000A;</code></pre>
         
         <p>On your next build and deploy, your cron job(s) will be created.</p>
         
-        <p><strong>Note:</strong> Removing a Cron Job from your <code>boxfile.yml</code>  will remove the cron job from your app on the next deploy.</p>
+        <p><strong>Note:</strong> Removing a Cron Job from your <code>boxfile.yml</code> will remove the cron job from your app on the next deploy.</p>
         
         <h2 id="cron-job-configuration">Cron Job Configuration</h2>
         
-        <p>Cron jobs are really simple to configure. There are 2 required pieces of information:</p>
+        <p>Cron jobs are really simple to configure. There are three required pieces of information:</p>
+        
+        <h3 id="id">ID</h3>
+        
+        <p>The ID is a unique-identifier to help identify the specific cron job that&#39;s running. Your cron&#39;s ID is used to tag log output from the cron job.</p>
         
         <h3 id="schedule">Schedule</h3>
         

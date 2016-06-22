@@ -25,6 +25,15 @@ code.build:
     - packages
   reuse_libs: true
 
+  # Extra Packages
+  extra_packages:
+    - nodejs-6.2
+    - newrelic-6.3
+
+  # Dev Packages
+  dev_packages:
+    - psutils
+
   # Build Hooks
   before_prepare:
     - 'echo I am getting ready'
@@ -78,6 +87,28 @@ During the build process, dependencies are downloaded then stored in a "library 
 code.build:
   reuse_libs: true
 ```
+
+## Extra Packages
+In some cases, you may need a package or runtime that your engine does not make available. The `extra_packages` config allows you to specify additional packages that should be loaded into your build.
+
+```yaml
+code.build:
+  extra_packages:
+    - nodejs-6.2
+    - newrelic-6.3
+```
+
+## Dev Packages
+In some cases, you may need a package or runtime that your engine does not make available, but only while [developing locally](/local-dev/) in your Nanobox VM. The `dev_packages` config allows you to specify additional packages that should be available while working in your [dev environment](/cli/dev/).
+
+```yaml
+code.build:
+  dev_packages:
+    - psutils
+    - pip
+```
+
+**Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `dev_packages`.
 
 ## Build Hooks
 Build hooks allow you to "hook into" specific phases of the build process and run commands. These are covered in detail in the [Build & Deploy Hooks](/app-config/build-deploy-hooks/) doc.

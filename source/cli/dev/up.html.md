@@ -9,7 +9,7 @@ The `dev up` command is the quickest way to get a development platform up and ru
 $ nanobox dev up
 ```
 
-Once the 'up' process completes, all your app's data services will be running and your local codebase will be mounted into your dev platform. You can then [console in](/cli/dev/console/) and start your code services. Because your local codebase is mounted into your dev platform, any changes you make will be reflected in your running dev app.
+Once the 'up' process completes, all your app's data services will be running and your local codebase will be mounted into your dev platform. You can then [console in](/cli/dev/console/) and start your web and worker processes. Because your local codebase is mounted into your dev platform, any changes you make will be reflected in your running dev app.
 
 #### Behind the Scenes
 `dev up` is a shortcut that runs the following commands:
