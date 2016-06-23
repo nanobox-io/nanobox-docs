@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      nanobox dev - Nanobox Documentation
+      Nanobox Dev & Sim - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -196,7 +196,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-dev/">nanobox dev</a>
+                <a href="/local-dev/dev-sim/">Nanobox Dev & Sim</a>
               </li>
               <li>
                 <span>
@@ -216,7 +216,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
+                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
               </li>
               <li>
                 <span>
@@ -226,7 +226,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
+                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
               </li>
               <li>
                 <span>
@@ -606,7 +606,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/link/">link</a>
+                <a href="/cli/build/">build</a>
               </li>
               <li>
                 <span>
@@ -616,7 +616,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/build/">build</a>
+                <a href="/cli/link/">link</a>
               </li>
               <li>
                 <span>
@@ -1544,44 +1544,24 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/local-dev/">Local Development</a>&#x2F;<a href="/local-dev/nanobox-dev/">nanobox dev</a>
+          <a href="/"></a>&#x2F;<a href="/local-dev/">Local Development</a>&#x2F;<a href="/local-dev/dev-sim/">Nanobox Dev & Sim</a>
         </div>
-        <h1>nanobox dev</h1>
-        <p>The Nanobox CLI&#39;s <code>dev</code> command handles all the functionality for working in with your local Nanobox development environment. For the full documentation of the <code>dev</code> command, view the <a href="/cli/dev/">&#39;nanobox dev&#39; documentation</a>.</p>
+        <h1>Nanobox Dev & Sim</h1>
+        <p>Nanobox provides two types of local &quot;environments&quot;, each with a unique purpose and characteristics. One is a development environment designed to streamline active development on a codebase. The other is a simulated production environment that emulates production deploys and functionality.</p>
         
-        <p>Below are a list of the subcommands available to <code>dev</code>. Each link to their detailed doc in the CLI documentation.</p>
+        <h2 id="nanobox-dev">nanobox dev</h2>
         
-        <table><thead>
-        <tr>
-        <th style="text-align: left">Subcommand</th>
-        <th style="text-align: left">Summary</th>
-        </tr>
-        </thead><tbody>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/deploy"><code>deploy</code></a></td>
-        <td style="text-align: left">Deploys a generated build package into your Nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/info"><code>info</code></a></td>
-        <td style="text-align: left">Displays information about your dev app</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/console"><code>console</code></a></td>
-        <td style="text-align: left">Opens an interactive console inside your Nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/exec"><code>exec</code></a></td>
-        <td style="text-align: left">Runs a command in your Nanobox VM without having to console in</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/evar"><code>evar</code></a></td>
-        <td style="text-align: left">Manages environment variables in your Nanobox VM</td>
-        </tr>
-        <tr>
-        <td style="text-align: left"><a href="/cli/dev/destroy"><code>destroy</code></a></td>
-        <td style="text-align: left">Destroys the Nanobox VM</td>
-        </tr>
-        </tbody></table>
+        <p>The CLI&#39;s <code>dev</code> command creates and manages your app&#39;s local development platform. Your local codebase is mounted directly into your Nanobox VM, allowing you to update code and have those changes immediately apply to your running dev app. <code>dev</code> is designed for active development.</p>
+        
+        <p>When you deploy to a dev platform, Nanobox provisions and starts all data services specified in your <a href="/app-config/boxfile.yml/">boxfile.yml</a>. You can then <a href="/cli/dev/console/">console in</a> and start your web and worker processes.</p>
+        
+        <p><code>dev</code> also provides subcommands that allow you to manage your running dev app. More information can be found in the <a href="/cli/dev/">CLI dev docs</a>.</p>
+        
+        <h2 id="nanobox-sim">nanobox sim</h2>
+        
+        <p>The CLI&#39;s <code>sim</code> command creates and manages a simulated production platform for your app inside your Nanobox VM. Deploys into your sim environment emulate production deploys. All web, worker, and data services specified in your boxfile.yml are provisioned and started. How your app deploys to and runs in your sim platform is how it will deploy to and run in your production platform.</p>
+        
+        <p><code>sim</code> also provides subcommands that allow you to manage your running sim app. More information can be found in the <a href="/cli/dev/">CLI sim docs</a>.</p>
         <div id='pagination'>
           <a name="Local Setup" class="prev" href="/local-dev/local-setup/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>

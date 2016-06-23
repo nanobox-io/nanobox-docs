@@ -196,7 +196,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-dev/">nanobox dev</a>
+                <a href="/local-dev/dev-sim/">Nanobox Dev & Sim</a>
               </li>
               <li class='active'>
                 <span>
@@ -216,7 +216,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
+                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
               </li>
               <li>
                 <span>
@@ -226,7 +226,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
+                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
               </li>
               <li>
                 <span>
@@ -606,7 +606,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/link/">link</a>
+                <a href="/cli/build/">build</a>
               </li>
               <li>
                 <span>
@@ -616,7 +616,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/build/">build</a>
+                <a href="/cli/link/">link</a>
               </li>
               <li>
                 <span>
@@ -1547,37 +1547,52 @@
           <a href="/"></a>&#x2F;<a href="/local-dev/">Local Development</a>&#x2F;<a href="/local-dev/basic-workflow/">Basic Workflow</a>
         </div>
         <h1>Basic Workflow</h1>
+        <h2 id="develop">Develop</h2>
+        
+        <p>The Nanobox CLI&#39;s <code>dev</code> command creates and manages a virtual local dev environment identical to what is or what will be your production Nanobox environment. Develop in confidence knowing that if it works locally, it will work in production.</p>
+        
         <h3 id="start-your-nanobox-vm">Start Your Nanobox VM</h3>
         
-        <p>In the root of your project, run the <code>dev</code> command to provision your Nanobox virtual machine (VM) and dev environment.</p>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev&#x000A;</code></pre>
+        <p>In the root of your project, run <code>nanobox dev up</code> command to provision a development platform, create and deploy a build, and start your data components inside your Nanobox (VM).</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev up&#x000A;</code></pre>
         
-        <p>Once your Nanobox is running and data services are provisioned, you&#39;ll be dropped you into an interactive console inside your VM which is mounted to your local codebase. You can then run dependency managers and start your app.</p>
+        <h3 id="console-in">Console In</h3>
+        
+        <p>With the dev platform running, open a new terminal and console in.</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev console&#x000A;</code></pre>
+        
+        <p>Once in, you can run the commands necessary to start your web and worker processes.</p>
         
         <h3 id="craft-some-code">Craft Some Code</h3>
         
         <p>Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment.</p>
         
-        <h3 id="create-a-build">Create a Build</h3>
+        <h4 id="applying-boxfile-yml-changes">Applying boxfile.yml Changes</h4>
         
-        <p>Once your code is at a point we&#39;re you&#39;re ready to fully test it, create a build. This build package can be deployed into both your local and production platforms. To generate a build, run the <code>build</code> command in the root of your project.</p>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox build&#x000A;</code></pre>
+        <p>If you make any changes to your boxfile.yml, you&#39;ll have to create a new build and deploy it into your dev platform. This can all be done while your dev platform is running, by opening another terminal and running:</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox build&#x000A;<span class="gp">$ </span>nanobox dev deploy&#x000A;</code></pre>
         
-        <h3 id="deploy-to-your-local-vm">Deploy to Your Local VM</h3>
+        <h2 id="test">Test</h2>
         
-        <p>With a build created, you&#39;re ready to preview your app locally. The <code>dev deploy</code> command deploys your generated build into your local dev environment then provisions and starts all web, worker, and data components.</p>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev deploy&#x000A;</code></pre>
+        <p>Once your code is at a point we&#39;re you&#39;re ready to fully test it, run <code>nanobox sim up</code>. This will generate a new deployable build package, provision a simulated production environment in your Nanobox VM, deploy the build into simulated environment, then provision and start all of your app&#39;s components. This is a true simulation of a production deploy.</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox sim up&#x000A;</code></pre>
         
-        <h3 id="deploy-to-your-production-app">Deploy to Your Production App</h3>
+        <h4 id="changing-code-in-a-sim-platform">Changing Code in a Sim Platform</h4>
         
-        <p>If everything looks good in your local environment, you&#39;re ready to deploy the build into your production app. This process is covered in the <a href="/getting-started/deploy-code/">Deploying Code</a> doc.</p>
+        <p>If you make any code changes while running a sim environment, you&#39;ll need to create a new build and deploy that build into your sim platform. To do this, open another terminal, and run:</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox build&#x000A;<span class="gp">$ </span>nanobox sim deploy&#x000A;</code></pre>
+        
+        <h2 id="deploy-to-production">Deploy to Production</h2>
+        
+        <p>With your code tested locally and with a build prepared, the <code>deploy</code> command will push and deploy the generated build to your production platform. More information about deploying to Nanobox is available in the <a href="/getting-started/deploy-code/">Deploying Code</a> doc.</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox deploy&#x000A;</code></pre>
         <div id='pagination'>
-          <a name="nanobox dev" class="prev" href="/local-dev/nanobox-dev/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Nanobox Dev &amp; Sim" class="prev" href="/local-dev/dev-sim/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="Nanobox config.yml" class="next" href="/local-dev/nanobox-config-yml/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Managing Local Data" class="next" href="/local-dev/managing-local-data/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

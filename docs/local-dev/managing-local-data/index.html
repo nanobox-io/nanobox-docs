@@ -196,7 +196,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-dev/">nanobox dev</a>
+                <a href="/local-dev/dev-sim/">Nanobox Dev & Sim</a>
               </li>
               <li>
                 <span>
@@ -208,16 +208,6 @@
                 </span>
                 <a href="/local-dev/basic-workflow/">Basic Workflow</a>
               </li>
-              <li>
-                <span>
-                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                    <g class='nav-bullet'>
-                      <rect x='4.5' y='4.5'></rect>
-                    </g>
-                  </svg>
-                </span>
-                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
-              </li>
               <li class='active'>
                 <span>
                   <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
@@ -227,6 +217,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/managing-local-data/">Managing Local Data</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
               </li>
               <li>
                 <span>
@@ -606,7 +606,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/link/">link</a>
+                <a href="/cli/build/">build</a>
               </li>
               <li>
                 <span>
@@ -616,7 +616,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/build/">build</a>
+                <a href="/cli/link/">link</a>
               </li>
               <li>
                 <span>
@@ -1559,12 +1559,12 @@
         <h4 id="example-connection-to-redis-service">Example Connection to Redis Service</h4>
         <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev info&#x000A;&#x000A;...&#x000A;&#x000A;data.redis :&#x000A;   image : nanobox/redis&#x000A;   host : 192.168.99.1&#x000A;   ports : <span class="o">[</span>6379]&#x000A;&#x000A;...&#x000A;&#x000A;<span class="c"># In a separate terminal session</span>&#x000A;&#x000A;<span class="gp">$ </span>redis-cli -h 192.168.99.1 -p 6379&#x000A;app-name.dev:6379&gt;&#x000A;</code></pre>
         <div id='pagination'>
-          <a name="Nanobox config.yml" class="prev" href="/local-dev/nanobox-config-yml/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Basic Workflow" class="prev" href="/local-dev/basic-workflow/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="VM Performance Tuning" class="next" href="/local-dev/vm-performance/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Nanobox config.yml" class="next" href="/local-dev/nanobox-config-yml/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

@@ -12,12 +12,21 @@ If you haven't already, you'll need to [download and install the Nanobox CLI](/g
 $ cd app-dir
 ```
 
-### Run 'nanobox dev'
+### Run 'nanobox dev up'
 ```shell
-$ nanobox dev
+$ nanobox dev up
 ```
 
-Running `nanobox dev` inside of your application directory will provision your virtual environment and drop you into an interactive console where you can run dependency managers, start web and worker processes, etc.
+Running `nanobox dev up` inside of your application directory will generate a deployable build package, provision a virtual dev environment, deploy the package into your dev platform, and provision all of your app's data components specified in your [boxfile.yml](/app-config/boxfile/).
+
+### Console In & Start Your App
+With your dev platform running, open an new terminal and console in.
+
+```bash
+$ nanobox dev console
+```
+
+Once you're consoled in, you can run the commands necessary to start your web and worker processes.
 
 ### .nanobox/config.yml
 Whenever you run `nanobox dev`, Nanobox will look for or create a file at `~/.nanobox/.config.yml`. This config file defines what resources to allocate to your Nanobox VM. **The config.yml is optional** and only necessary when you want anything other than the defaults. More information is available in the [Nanobox config.yml doc](/local-dev/nanobox-config-yml/).

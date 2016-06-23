@@ -473,6 +473,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/local-dev/dev-sim</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/local-dev</loc>
     <priority>0.7</priority>
   </url>
@@ -486,10 +490,6 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/local-dev/nanobox-config-yml</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/local-dev/nanobox-dev</loc>
     <priority>0.7</priority>
   </url>
   <url>

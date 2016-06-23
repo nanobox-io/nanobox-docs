@@ -24,7 +24,7 @@ $ nanobox dev console
 Once in, you can run the commands necessary to start your web and worker processes.
 
 ### Craft Some Code
-Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build` and `nanbox dev deploy` to apply those changes to your dev platform.
+Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build` and `nanobox dev deploy` to apply those changes to your dev platform.
 
 
 ## Test Locally

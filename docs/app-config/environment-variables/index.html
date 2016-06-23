@@ -196,7 +196,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-dev/">nanobox dev</a>
+                <a href="/local-dev/dev-sim/">Nanobox Dev & Sim</a>
               </li>
               <li>
                 <span>
@@ -216,7 +216,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
+                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
               </li>
               <li>
                 <span>
@@ -226,7 +226,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
+                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
               </li>
               <li>
                 <span>
@@ -606,7 +606,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/link/">link</a>
+                <a href="/cli/build/">build</a>
               </li>
               <li>
                 <span>
@@ -616,7 +616,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/build/">build</a>
+                <a href="/cli/link/">link</a>
               </li>
               <li>
                 <span>
@@ -1559,9 +1559,9 @@
         
         <p><code>data.cthulu</code> would generate <code>DATA_CTHULU</code></p>
         
-        <p>The credential name is appended with an underscore. There are 5 possible credentials names:</p>
+        <p>The credential name is appended with an underscore. Below are the possible credential names:</p>
         
-        <p><code>_HOST</code> <code>_PORT</code> <code>_USER</code> <code>_PASS</code> <code>_NAME</code>  </p>
+        <p><code>_HOST</code> <code>_USER</code> <code>_PASS</code> <code>_NAME</code>  </p>
         
         <p><em>Your service&#39;s <a href="/engines-images/#images">image</a> defines what credentials are required and generated.</em></p>
         
@@ -1573,7 +1573,7 @@
         <pre class="highlight yaml"><code><span class="s">data.postgres</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">nanobox/postgresql</span>&#x000A;&#x000A;<span class="s">data.redis</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">nanobox/redis</span>&#x000A;&#x000A;<span class="s">data.cthulu</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">nanobox/mysql</span>&#x000A;</code></pre>
         
         <h4 id="resulting-auto-generated-environment-variables">Resulting Auto-Generated Environment Variables</h4>
-        <pre class="highlight shell"><code><span class="c"># Postres Connection Variables</span>&#x000A;DATA_POSTGRES_HOST&#x000A;DATA_POSTGRES_PORT&#x000A;DATA_POSTGRES_USER&#x000A;DATA_POSTGRES_PASS&#x000A;DATA_POSTGRES_NAME&#x000A;&#x000A;<span class="c"># Redis Connection Variables</span>&#x000A;DATA_REDIS_HOST&#x000A;DATA_REDIS_PORT&#x000A;&#x000A;<span class="c"># Cthulu (MySQL) Connection Variables</span>&#x000A;DATA_CTHULU_HOST&#x000A;DATA_CTHULU_PORT&#x000A;DATA_CTHULU_USER&#x000A;DATA_CTHULU_PASS&#x000A;DATA_CTHULU_NAME&#x000A;</code></pre>
+        <pre class="highlight shell"><code><span class="c"># Postres Connection Variables</span>&#x000A;DATA_POSTGRES_HOST&#x000A;DATA_POSTGRES_USER&#x000A;DATA_POSTGRES_PASS&#x000A;DATA_POSTGRES_NAME&#x000A;&#x000A;<span class="c"># Redis Connection Variables</span>&#x000A;DATA_REDIS_HOST&#x000A;&#x000A;<span class="c"># Cthulu (MySQL) Connection Variables</span>&#x000A;DATA_CTHULU_HOST&#x000A;DATA_CTHULU_USER&#x000A;DATA_CTHULU_PASS&#x000A;DATA_CTHULU_NAME&#x000A;</code></pre>
         
         <h2 id="custom-environment-variables">Custom Environment Variables</h2>
         

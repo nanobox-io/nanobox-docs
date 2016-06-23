@@ -12,7 +12,7 @@ Whenever you add a cron job to your application, the job is loaded into the [Cro
 
 Cron jobs are created in your `boxfile.yml`. To configure a cron job, nest a cron job under the component on which it will run.
 
-Each cron job needs an ID, a [schedule](#schedule), and a [command](#command).
+Each cron job needs an [ID](#id), a [schedule](#schedule), and a [command](#command).
 
 #### Cron Jobs in the Boxfile
 ```yaml
@@ -40,7 +40,11 @@ On your next build and deploy, your cron job(s) will be created.
 Cron jobs are really simple to configure. There are three required pieces of information:
 
 ### ID
-The ID is a unique-identifier to help identify the specific cron job that's running. Your cron's ID is used to tag log output from the cron job.
+The ID is a unique-identifier to help identify the specific cron job that's running. Your cron's ID is used to tag log output from the cron job. For example, the following would appear in your app's log stream:
+
+```txt
+web.site[cron:flush-cache] ...
+```
 
 ### Schedule
 The schedule defines when and how often your cron job should run. Use [Cron Expressions](http://en.wikipedia.org/wiki/Cron#Configuration_file) to define the schedule. Below are some simple examples:

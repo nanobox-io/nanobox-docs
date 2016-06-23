@@ -196,7 +196,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-dev/">nanobox dev</a>
+                <a href="/local-dev/dev-sim/">Nanobox Dev & Sim</a>
               </li>
               <li>
                 <span>
@@ -216,7 +216,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
+                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
               </li>
               <li>
                 <span>
@@ -226,7 +226,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/local-dev/managing-local-data/">Managing Local Data</a>
+                <a href="/local-dev/nanobox-config-yml/">Nanobox config.yml</a>
               </li>
               <li>
                 <span>
@@ -606,7 +606,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/link/">link</a>
+                <a href="/cli/build/">build</a>
               </li>
               <li>
                 <span>
@@ -616,7 +616,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/cli/build/">build</a>
+                <a href="/cli/link/">link</a>
               </li>
               <li>
                 <span>
@@ -1556,10 +1556,17 @@
         <h3 id="navigate-into-your-project-directory">Navigate Into Your Project Directory</h3>
         <pre class="highlight shell"><code><span class="gp">$ </span><span class="nb">cd </span>app-dir&#x000A;</code></pre>
         
-        <h3 id="run-39-nanobox-dev-39">Run &#39;nanobox dev&#39;</h3>
-        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev&#x000A;</code></pre>
+        <h3 id="run-39-nanobox-dev-up-39">Run &#39;nanobox dev up&#39;</h3>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev up&#x000A;</code></pre>
         
-        <p>Running <code>nanobox dev</code> inside of your application directory will provision your virtual environment and drop you into an interactive console where you can run dependency managers, start web and worker processes, etc.</p>
+        <p>Running <code>nanobox dev up</code> inside of your application directory will generate a deployable build package, provision a virtual dev environment, deploy the package into your dev platform, and provision all of your app&#39;s data components specified in your <a href="/app-config/boxfile/">boxfile.yml</a>.</p>
+        
+        <h3 id="console-in-amp-start-your-app">Console In &amp; Start Your App</h3>
+        
+        <p>With your dev platform running, open an new terminal and console in.</p>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox dev console&#x000A;</code></pre>
+        
+        <p>Once you&#39;re consoled in, you can run the commands necessary to start your web and worker processes.</p>
         
         <h3 id="nanobox-config-yml">.nanobox/config.yml</h3>
         
@@ -1570,7 +1577,7 @@
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="nanobox dev" class="next" href="/local-dev/nanobox-dev/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Nanobox Dev &amp; Sim" class="next" href="/local-dev/dev-sim/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

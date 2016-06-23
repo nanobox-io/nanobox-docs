@@ -2,31 +2,54 @@
 title: Basic Workflow
 ---
 
+## Develop
+The Nanobox CLI's `dev` command creates and manages a virtual local dev environment identical to what is or what will be your production Nanobox environment. Develop in confidence knowing that if it works locally, it will work in production.
+
 ### Start Your Nanobox VM
-In the root of your project, run the `dev` command to provision your Nanobox virtual machine (VM) and dev environment.
+In the root of your project, run `nanobox dev up` command to provision a development platform, create and deploy a build, and start your data components inside your Nanobox (VM).
 
 ```bash
-$ nanobox dev
+$ nanobox dev up
 ```
 
-Once your Nanobox is running and data services are provisioned, you'll be dropped you into an interactive console inside your VM which is mounted to your local codebase. You can then run dependency managers and start your app.
+### Console In
+With the dev platform running, open a new terminal and console in.
+
+```bash
+$ nanobox dev console
+```
+
+Once in, you can run the commands necessary to start your web and worker processes.
 
 ### Craft Some Code
 Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment.
 
-### Create a Build
-Once your code is at a point we're you're ready to fully test it, create a build. This build package can be deployed into both your local and production platforms. To generate a build, run the `build` command in the root of your project.
+#### Applying boxfile.yml Changes
+If you make any changes to your boxfile.yml, you'll have to create a new build and deploy it into your dev platform. This can all be done while your dev platform is running, by opening another terminal and running:
 
 ```bash
 $ nanobox build
-```
-
-### Deploy to Your Local VM
-With a build created, you're ready to preview your app locally. The `dev deploy` command deploys your generated build into your local dev environment then provisions and starts all web, worker, and data components.
-
-```bash
 $ nanobox dev deploy
 ```
 
-### Deploy to Your Production App
-If everything looks good in your local environment, you're ready to deploy the build into your production app. This process is covered in the [Deploying Code](/getting-started/deploy-code/) doc.
+## Test
+Once your code is at a point we're you're ready to fully test it, run `nanobox sim up`. This will generate a new deployable build package, provision a simulated production environment in your Nanobox VM, deploy the build into simulated environment, then provision and start all of your app's components. This is a true simulation of a production deploy.
+
+```bash
+$ nanobox sim up
+```
+
+#### Changing Code in a Sim Platform
+If you make any code changes while running a sim environment, you'll need to create a new build and deploy that build into your sim platform. To do this, open another terminal, and run:
+
+```bash
+$ nanobox build
+$ nanobox sim deploy
+```
+
+## Deploy to Production
+With your code tested locally and with a build prepared, the `deploy` command will push and deploy the generated build to your production platform. More information about deploying to Nanobox is available in the [Deploying Code](/getting-started/deploy-code/) doc.
+
+```bash
+$ nanobox deploy
+```

@@ -12,9 +12,9 @@ Environment variable names/keys are generated using the ID of the data component
 
 `data.cthulu` would generate `DATA_CTHULU`
 
-The credential name is appended with an underscore. There are 5 possible credentials names:
+The credential name is appended with an underscore. Below are the possible credential names:
 
-`_HOST` `_PORT` `_USER` `_PASS` `_NAME`  
+`_HOST` `_USER` `_PASS` `_NAME`  
 
 *Your service's [image](/engines-images/#images) defines what credentials are required and generated.*
 
@@ -38,18 +38,15 @@ data.cthulu:
 ```bash
 # Postres Connection Variables
 DATA_POSTGRES_HOST
-DATA_POSTGRES_PORT
 DATA_POSTGRES_USER
 DATA_POSTGRES_PASS
 DATA_POSTGRES_NAME
 
 # Redis Connection Variables
 DATA_REDIS_HOST
-DATA_REDIS_PORT
 
 # Cthulu (MySQL) Connection Variables
 DATA_CTHULU_HOST
-DATA_CTHULU_PORT
 DATA_CTHULU_USER
 DATA_CTHULU_PASS
 DATA_CTHULU_NAME
