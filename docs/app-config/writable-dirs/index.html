@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Nonpersistent Writable Directories - Nanobox Documentation
+      Writable Directories - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-b8a26f49.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-1d07a35b.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -376,7 +376,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/app-config/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
+                <a href="/app-config/writable-dirs/">Writable Directories</a>
               </li>
               <li>
                 <span>
@@ -504,6 +504,26 @@
                         </g>
                       </svg>
                     </span>
+                    <a href="/cli/dev/dns/">dev dns</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/dev/stop/">dev stop</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
                     <a href="/cli/dev/destroy/">dev destroy</a>
                   </li>
                 </ul>
@@ -585,6 +605,26 @@
                       </svg>
                     </span>
                     <a href="/cli/sim/evar/">sim evar</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/dns/">sim dns</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/stop/">sim stop</a>
                   </li>
                   <li>
                     <span>
@@ -697,6 +737,26 @@
                   </svg>
                 </span>
                 <a href="/cli/update/">update</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/start/">start</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/stop/">stop</a>
               </li>
               <li>
                 <span>
@@ -1544,62 +1604,62 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/app-config/">Application Configuration</a>&#x2F;<a href="/app-config/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
+          <a href="/"></a>&#x2F;<a href="/app-config/">Application Configuration</a>&#x2F;<a href="/app-config/writable-dirs/">Writable Directories</a>
         </div>
-        <h1>Nonpersistent Writable Directories</h1>
-        <p>Code components created through Nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in <a href="/app-config/network-storage/">network storage</a>. Nonpersistent writable directories allow you to enable writable permissions on directories in your web and worker instances’ local filesystems. This doc explains how nonpersistent writable directories work and how they&#39;re different from network directories.</p>
+        <h1>Writable Directories</h1>
+        <p>Code components created through Nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in <a href="/app-config/network-storage/">network storage</a>. Writable directories allow you to enable writable permissions on directories in your web and worker instances’ local filesystems. This doc explains how writable directories work and how they&#39;re different from <a href="/app-config/network-storage/#network-directories">network directories</a>.</p>
         
-        <h3 id="what-is-a-nonpersistent-writable-directory">What is a Nonpersistent Writable Directory</h3>
+        <h3 id="what-is-a-writable-directory">What is a Writable Directory</h3>
         
-        <p>A nonpersistent writable directory is a directory stored in your instances’ local filesystem with writable permissions. Because they are stored locally in each instance, their contents do not persist between deploys or when the instance is decommissioned.</p>
+        <p>A writable directory is a directory stored in your instances’ local filesystem with writable permissions. Because they are stored locally in each instance, their contents do not persist between deploys or when the instance is decommissioned.</p>
         
         <h3 id="how-are-they-different-than-network-directories">How Are They Different Than Network Directories?</h3>
         
-        <p>Nonpersistent writable directories and Network Directories are very similar, but have two key differences.</p>
+        <p>Writable directories and Network Directories are very similar, but have two key differences.</p>
         
         <ul>
-        <li><p>Nonpersistent writable directories are stored in your instances’ local filesystems and are unique to each instance. Network directories are stored in a network storage service and shared between all instances.</p></li>
-        <li><p>The contents of nonpersistent writable directories are flushed on each deploy. The contents of network directories persist between deploys.</p></li>
+        <li><p>Writable directories are stored in your instances’ local filesystems and are unique to each instance. Network directories are stored in a network storage service and shared between all instances.</p></li>
+        <li><p>The contents of writable directories are flushed on each deploy. The contents of network directories persist between deploys.</p></li>
         </ul>
         
-        <h2 id="configuring-nonpersistent-writable-directories">Configuring Nonpersistent Writable Directories</h2>
+        <h2 id="configuring-writable-directories">Configuring Writable Directories</h2>
         
-        <p>Nonpersistent writable directories are available to webs &amp; workers and are configured in your Boxfile. On deploy, these directories are replaced with <em>empty</em>, writable directories. Filepaths should be relative to the root of your repo.</p>
+        <p>Writable directories are available to webs &amp; workers and are configured in your Boxfile. On deploy, these directories are replaced with <em>empty</em>, writable directories. Filepaths should be relative to the root of your repo.</p>
         
-        <h4 id="nonpersistent_writable_dirs">nonpersistent_writable_dirs</h4>
-        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;</code></pre>
+        <h4 id="writable_dirs">writable_dirs</h4>
+        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;</code></pre>
         
         <h4 id="nested-directories-will-be-ignored">Nested Directories Will Be Ignored</h4>
         
-        <p>When specifying <code>nonpersistent_writable_dirs</code> in your Boxfile, you shouldn&#39;t list “nested” directories. For example: dirA and dirA/nested-dir. While the writable permissions are recursive, only the parent directory will be honored and the nested subdirectories will not be created.</p>
+        <p>When specifying <code>writable_dirs</code> in your Boxfile, you shouldn&#39;t list “nested” directories. For example: dirA and dirA/nested-dir. While the writable permissions are recursive, only the parent directory will be honored and the nested subdirectories will not be created.</p>
         
-        <h4 id="nonpersistent-writable-dirs-can-39-t-be-inside-of-network-dirs">Nonpersistent Writable Dirs Can&#39;t be Inside of Network Dirs</h4>
+        <h4 id="writable-dirs-can-39-t-be-inside-of-network-dirs">Writable Dirs Can&#39;t be Inside of Network Dirs</h4>
         
-        <p>When defining <code>nonpersistent_writable_dirs</code>, be sure the directory you define is not inside of a <code>network_dir</code>. All network directories are stored in a storage service and files within them cannot be saved to the local filesystem of instances.</p>
+        <p>When defining <code>writable_dirs</code>, be sure the directory you define is not inside of a <code>network_dir</code>. All network directories are stored in a storage service and files within them cannot be saved to the local filesystem of instances.</p>
         
         <h2 id="things-to-know">Things To Know</h2>
         
         <h3 id="do-not-persist-between-deploys">Do Not Persist Between Deploys</h3>
         
-        <p>As the name suggests, nonpersistent writable directories do not persist between deploys. These directories are in each instances’ local filesystem and are decommissioned with the instance. They should only be used for transient data such as cache, temporary files, etc.</p>
+        <p>Writable directories do not persist between deploys. These directories are in each instances’ local filesystem and are decommissioned with the instance. They should only be used for transient data such as cache, temporary files, etc.</p>
         
         <h3 id="faster-than-network-directories">Faster than Network Directories</h3>
         
-        <p>Because nonpersistent network directories are a part of each instance’s local filesystem, they are much faster than network directories. Network directories are housed in an external service and accessed across the network, adding some latency.</p>
+        <p>Because network directories are a part of each instance’s local filesystem, they are much faster than network directories. Network directories are housed in an external service and accessed across the network, adding some latency.</p>
         
         <h3 id="overwrites-the-directory-in-your-repo">Overwrites the Directory in Your Repo</h3>
         
-        <p>Nonpersistent writable directories will not inherit code from your repo. These directories are replaced with empty, writable directories on deploy, overwriting any files inside of them.</p>
+        <p>Writable directories will not inherit code from your repo. These directories are replaced with empty, writable directories on deploy, overwriting any files inside of them.</p>
         
         <h3 id="limited-to-service-s-local-disk-size">Limited to Service’s Local Disk Size</h3>
         
-        <p>The amount of code/data that can be stored in nonpersistent network directories is limited to the disk size of your web or worker instance(s).</p>
+        <p>The amount of code/data that can be stored in writable directories is limited to the disk size of your web or worker instance(s).</p>
         
         <h2 id="recommended-uses">Recommended Uses</h2>
         
         <h3 id="static-asset-caching">Static Asset Caching</h3>
         
-        <p>Nonpersistent writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there is no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.</p>
+        <p>Writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there is no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.</p>
         
         <h4 id="priming-caches-on-deploy">Priming Caches on Deploy</h4>
         

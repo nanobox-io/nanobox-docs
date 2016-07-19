@@ -15,4 +15,5 @@ The `dev` command includes the following subcommands that allow you to interact 
 | [`info`](info)       | Displays information about the running dev app & its components |
 | [`console`](console) | Opens an interactive console inside your dev platform           |
 | [`evar`](evar)       | Manages environment variables in your dev platform              |
+| [`dns`](dns)         | Adds and removes hostname mappings to your dev platform         |
 | [`destroy`](destroy) | Destroys the docker machines associated with the current app    |

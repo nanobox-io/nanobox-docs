@@ -4,11 +4,11 @@ title: evar
 
 The `evar` command is used to manage environment variables in your live app. It has three subcommands:
 
-| Subcommand          | Summary                                                   |
-|:--------------------|:----------------------------------------------------------|
-| [`add`](#add)       | Adds one or more key-value pairs as environment variables |
-| [`remove`](#remove) | Removes one or more environment variables                 |
-| [`list`](#list)     | Lists environment variables added to your VM              |
+| Subcommand          | Summary                                                       |
+|:--------------------|:--------------------------------------------------------------|
+| [`add`](#add)       | Adds one or more key-value pairs as environment variables     |
+| [`remove`](#remove) | Removes one or more environment variables                     |
+| [`list`](#list)     | Lists environment variables added to your production platform |
 
 ### Options
 #### -a, --app
@@ -20,12 +20,12 @@ The `add` subcommand is used to add environment variables to your live app. You 
 ### add Usage
 ```bash
 # Pattern
-$ nanobox evar add -a <app-name or alias> <key>:<value>
-$ nanobox evar add -a <app-name or alias> <key1>:<value1>,<key2>:<value2>
+$ nanobox evar add -a <app-name or alias> <key>=<value>
+$ nanobox evar add -a <app-name or alias> <key1>=<value1>,<key2>=<value2>
 
 # Examples
-$ nanobox evar add -a myapp ENVIRONMENT:local
-$ nanobox evar add -a myapp ENVIRONMENT:local,MY_EVAR:'This is mine'
+$ nanobox evar add -a myapp ENVIRONMENT=local
+$ nanobox evar add -a myapp ENVIRONMENT=local,MY_EVAR='This is mine'
 ```
 
 ## remove

@@ -81,7 +81,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/app-config/nonpersistent-writable-dirs</loc>
+    <loc>https://docs.nanobox.io/app-config/writable-dirs</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -149,6 +149,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/cli/dev/dns</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/cli/dev/evar</loc>
     <priority>0.7</priority>
   </url>
@@ -162,6 +166,10 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/cli/dev/start</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/stop</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -205,6 +213,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/cli/sim/dns</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/cli/sim/evar</loc>
     <priority>0.7</priority>
   </url>
@@ -221,7 +233,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/cli/sim/stop</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/cli/sim/up</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/start</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/stop</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -230,10 +254,6 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/cli/uninstall</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://docs.nanobox.io/cli/update-images</loc>
     <priority>0.7</priority>
   </url>
   <url>

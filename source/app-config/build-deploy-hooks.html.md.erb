@@ -13,7 +13,7 @@ Build and deploy hooks take place at very specific points in both the build and 
 There are two main phases of the build process to consider when defining build hooks. These two phases are handled by your [engine](/engines-images/).
 
 1. **Prepare** - This is the phase where runtime executables are downloaded and installed in the build node.
-2. **Build** - This is when commands are run to build/compile your code. The most common of which is running dependency managers.
+2. **Compile** - This is when commands are run to compile your code. The most common of which is running dependency managers.
 
 Build hooks are configured in the the `code.build` section of your boxfile.yml.
 
@@ -41,22 +41,22 @@ code.build:
     - 'echo "Good to go"'
 ```
 
-### before_build
-`before_build` hooks run after runtime executables are downloaded and installed, but before code is built/compiled.
+### before_compile
+`before_compile` hooks run after runtime executables are downloaded and installed, but before code is built/compiled.
 
 ```yaml
 code.build:
-  before_build:
+  before_compile:
     - 'cargo build --release'
     - 'echo Ready to be built'
 ```
 
-### after_build
-`after_build` hooks run after code is built/compiled.
+### after_compile
+`after_compile` hooks run after code is built/compiled.
 
 ```yaml
 code.build:
-  after_build:
+  after_compile:
     - 'echo Built and ready to go'
 ```
 
@@ -91,7 +91,7 @@ code.deploy:
 ```
 
 ### before\_deploy\_all
-`before_deploy_all` hooks are the same as `before_deploy` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/).
+`before_deploy_all` hooks are the same as `before_deploy` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
 
 ```yaml
 code.deploy:
@@ -115,7 +115,7 @@ code.deploy:
 ```
 
 ### after\_deploy\_all
-`after_deploy_all` hooks are the same as `after_deploy` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [nonpersistent writable directories](/app-config/nonpersistent-writable-dirs/).
+`after_deploy_all` hooks are the same as `after_deploy` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
 
 ```yaml
 code.deploy:

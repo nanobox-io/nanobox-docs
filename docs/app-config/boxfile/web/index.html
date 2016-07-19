@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-b8a26f49.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-1d07a35b.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -376,7 +376,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/app-config/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
+                <a href="/app-config/writable-dirs/">Writable Directories</a>
               </li>
               <li>
                 <span>
@@ -504,6 +504,26 @@
                         </g>
                       </svg>
                     </span>
+                    <a href="/cli/dev/dns/">dev dns</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/dev/stop/">dev stop</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
                     <a href="/cli/dev/destroy/">dev destroy</a>
                   </li>
                 </ul>
@@ -585,6 +605,26 @@
                       </svg>
                     </span>
                     <a href="/cli/sim/evar/">sim evar</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/dns/">sim dns</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/stop/">sim stop</a>
                   </li>
                   <li>
                     <span>
@@ -697,6 +737,26 @@
                   </svg>
                 </span>
                 <a href="/cli/update/">update</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/start/">start</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/stop/">stop</a>
               </li>
               <li>
                 <span>
@@ -1550,7 +1610,7 @@
         <p>Web components have ports exposed to the external network making them publicly accessible. These should be used for any public-facing code component.</p>
         
         <h4 id="overview-of-web-component-settings-in-the-boxfile">Overview of Web Component Settings in the Boxfile</h4>
-        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="c1"># Start Command</span>&#x000A;  <span class="s">start</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">app.rb"</span>&#x000A;&#x000A;  <span class="c1"># Routing</span>&#x000A;  <span class="s">routes</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">sub:/path/'</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">/admin/'</span>&#x000A;&#x000A;  <span class="c1"># Port Mapping</span>&#x000A;  <span class="s">ports</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">tcp:21:3420</span>&#x000A;    <span class="pi">-</span> <span class="s">udp:53:3000</span>&#x000A;&#x000A;  <span class="c1"># Network Storage</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">data.files</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">data.unfs</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;&#x000A;  <span class="c1"># Nonpersistent Writable Dirs</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;&#x000A;  <span class="c1"># Custom Logs</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/error.log"</span>&#x000A;&#x000A;  <span class="c1"># Cron</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">flush_cache</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*'</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">echo_msg</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="c1"># Start Command</span>&#x000A;  <span class="s">start</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ruby</span><span class="nv"> </span><span class="s">app.rb"</span>&#x000A;&#x000A;  <span class="c1"># Routing</span>&#x000A;  <span class="s">routes</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">sub:/path/'</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">/admin/'</span>&#x000A;&#x000A;  <span class="c1"># Port Mapping</span>&#x000A;  <span class="s">ports</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">tcp:21:3420</span>&#x000A;    <span class="pi">-</span> <span class="s">udp:53:3000</span>&#x000A;&#x000A;  <span class="c1"># Network Storage</span>&#x000A;  <span class="s">network_dirs</span><span class="pi">:</span>&#x000A;    <span class="s">data.files</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryA</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryB</span>&#x000A;    <span class="s">data.unfs</span><span class="pi">:</span>&#x000A;      <span class="pi">-</span> <span class="s">path/to/directoryC</span>&#x000A;&#x000A;  <span class="c1"># Writable Dirs</span>&#x000A;  <span class="s">writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;&#x000A;  <span class="c1"># Custom Logs</span>&#x000A;  <span class="s">log_watch</span><span class="pi">:</span>&#x000A;    <span class="s">app[error]</span><span class="pi">:</span> <span class="s2">"</span><span class="s">path/to/error.log"</span>&#x000A;&#x000A;  <span class="c1"># Cron</span>&#x000A;  <span class="s">cron</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">flush_cache</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rm</span><span class="nv"> </span><span class="s">-rf</span><span class="nv"> </span><span class="s">app/cache/*'</span>&#x000A;    <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">echo_msg</span>&#x000A;      <span class="s">schedule</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/3</span><span class="nv"> </span><span class="s">*/2</span><span class="nv"> </span><span class="s">1-3</span><span class="nv"> </span><span class="s">2,6,7</span><span class="nv"> </span><span class="s">2"</span>&#x000A;      <span class="s">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">echo</span><span class="nv"> </span><span class="s">'im</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">little</span><span class="nv"> </span><span class="s">teapot'"</span>&#x000A;&#x000A;</code></pre>
         
         <h2 id="start-command">Start Command</h2>
         
@@ -1610,14 +1670,14 @@
         
         <p><strong>Note:</strong> On deploy, network directories are replaced with network mounts, which connect code instances to your network storage component(s). These mounts obscure anything committed to your repo inside of those directories. If there are files inside network directories in your repo, your app will not be able to access them unless you manually upload them into your storage component.</p>
         
-        <h2 id="nonpersistent-writable-directories">Nonpersistent Writable Directories</h2>
+        <h2 id="writable-directories">Writable Directories</h2>
         
         <p>These directories are read/write accessible and stored in each instance&#39;s local filesystem. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. <strong>Filepaths should be relative to the root of your repo</strong>.</p>
         
-        <h4 id="nonpersistent_writable_dirs">nonpersistent_writable_dirs</h4>
-        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">nonpersistent_writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;</code></pre>
+        <h4 id="writable_dirs">writable_dirs</h4>
+        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">writable_dirs</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirA</span>&#x000A;    <span class="pi">-</span> <span class="s">path/to/dirB</span>&#x000A;</code></pre>
         
-        <p>For more details, view the <a href="/app-config/nonpersistent-writable-dirs/">Nonpersistent Writable Directories doc</a>.</p>
+        <p>For more details, view the <a href="/app-config/writable-dirs/">Writable Directories doc</a>.</p>
         
         <h2 id="custom-logs">Custom Logs</h2>
         

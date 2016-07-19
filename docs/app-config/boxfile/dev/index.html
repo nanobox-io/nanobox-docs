@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-b8a26f49.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-1d07a35b.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -376,7 +376,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/app-config/nonpersistent-writable-dirs/">Nonpersistent Writable Directories</a>
+                <a href="/app-config/writable-dirs/">Writable Directories</a>
               </li>
               <li>
                 <span>
@@ -504,6 +504,26 @@
                         </g>
                       </svg>
                     </span>
+                    <a href="/cli/dev/dns/">dev dns</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/dev/stop/">dev stop</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
                     <a href="/cli/dev/destroy/">dev destroy</a>
                   </li>
                 </ul>
@@ -585,6 +605,26 @@
                       </svg>
                     </span>
                     <a href="/cli/sim/evar/">sim evar</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/dns/">sim dns</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/cli/sim/stop/">sim stop</a>
                   </li>
                   <li>
                     <span>
@@ -697,6 +737,26 @@
                   </svg>
                 </span>
                 <a href="/cli/update/">update</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/start/">start</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/cli/stop/">stop</a>
               </li>
               <li>
                 <span>
@@ -1551,9 +1611,9 @@
         
         <h3 id="ignore_lib_dirs">ignore_lib_dirs</h3>
         
-        <p>When running Nanobox locally, directories specified as <a href="/app-config/boxfile/code-build/#library-directories"><code>lib_dirs</code></a> are populated and used inside your Nanobox VM. In some cases, rather than using the library directories in your nanobox VM, you may want to use the contents of lib_dirs on your local filesystem. Setting <code>ignore_lib_dirs</code> to <code>true</code> will mount the lib_dirs on your local filesystem rather than using those in your Nanobox.</p>
+        <p>When running a Nanobox <a href="/cli/dev/">dev platform</a>, directories specified as <a href="/app-config/boxfile/code-build/#library-directories"><code>lib_dirs</code></a> are populated and used inside your Nanobox VM. In some cases, rather than using the library directories in your nanobox VM, you may want to use the contents of lib_dirs on your local filesystem. Setting <code>ignore_lib_dirs</code> to <code>true</code> will mount the lib_dirs on your local filesystem rather than using those in your VM.</p>
         
-        <p><strong>Note:</strong> This only applies when using an interactive console (<code>nanobox dev</code> or <code>nanobox dev console</code>).</p>
+        <p><strong>Note:</strong> This only applies when using an interactive console (<code>nanobox dev console</code>).</p>
         
         <h4 id="ignore_lib_dirs">ignore_lib_dirs</h4>
         <pre class="highlight yaml"><code><span class="c1"># Default Setting</span>&#x000A;<span class="s">dev</span><span class="pi">:</span>&#x000A;  <span class="s">ignore_lib_dirs</span><span class="pi">:</span> <span class="s">false</span>&#x000A;</code></pre>

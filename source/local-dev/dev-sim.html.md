@@ -14,4 +14,4 @@ When you deploy to a dev platform, Nanobox provisions and starts all data servic
 ## nanobox sim
 The CLI's `sim` command creates and manages a simulated production platform for your app inside your Nanobox VM. Deploys into your sim environment emulate production deploys. All web, worker, and data services specified in your boxfile.yml are provisioned and started. How your app deploys to and runs in your sim platform is how it will deploy to and run in your production platform.
 
-`sim` also provides subcommands that allow you to manage your running sim app. More information can be found in the [CLI sim docs](/cli/dev/).
+`sim` also provides subcommands that allow you to manage your running sim app. More information can be found in the [CLI sim docs](/cli/sim/).

@@ -18,8 +18,8 @@ worker.jobs:
     data.storage2:
       - path/to/directoryC
 
-  # Nonpersistent Writable Dirs
-  nonpersistent_writable_dirs:
+  # Writable Dirs
+  writable_dirs:
     - path/to/dirA
     - path/to/dirB
 
@@ -66,18 +66,18 @@ worker.jobs:
 
 **Note:** On deploy, network directories are replaced with network mounts, which connect code instances to your storage component(s). These mounts obscure anything committed to your repo inside of those directories. If there are files inside network directories in your repo, your app will not be able to access them unless you manually upload them into your storage component.
 
-## Nonpersistent Writable Directories
+## Writable Directories
 These directories are read/write accessible and stored in each instance's local filesystem. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. **Filepaths should be relative to the root of your repo**.
 
-#### nonpersistent\_writable\_dirs
+#### writable\_dirs
 ```yaml
 worker.jobs:
-  nonpersistent_writable_dirs:
+  writable_dirs:
     - path/to/dirA
     - path/to/dirB
 ```
 
-For more details, view the [Nonpersistent Writable Directories doc](/app-config/nonpersistent-writable-dirs/).
+For more details, view the [Writable Directories doc](/app-config/writable-dirs/).
 
 ## Custom Logs
 Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Application Logs doc](/app-config/app-logs/).

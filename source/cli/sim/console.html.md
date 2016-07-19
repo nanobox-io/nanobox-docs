@@ -2,9 +2,13 @@
 title: sim console
 ---
 
-The `sim console` command opens an interactive terminal inside your running sim platform.
+The `sim console` command opens an interactive terminal inside a component running in your sim platform.
 
 ### Usage
 ```bash
-$ nanobox sim console
+# Pattern
+$ nanobox sim console <component>
+
+# Example
+$ nanobox sim console web.site
 ```

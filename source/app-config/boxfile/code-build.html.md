@@ -39,9 +39,9 @@ code.build:
     - 'echo I am getting ready'
   after_prepare:
     - 'echo I am ready'
-  before_build:
+  before_compile:
     - 'echo I'm getting ready to build'
-  after_build:
+  after_compile:
     - 'echo I'm built and ready to go'
 ```
 
@@ -120,8 +120,8 @@ code.build:
     - 'curl -sSf https://static.rust-lang.org/rustup.sh | sh'
   after_prepare:
     - 'echo good to go'
-  before_build:
+  before_compile:
     - 'cargo build --release'
-  after_build:
+  after_compile:
     - 'echo built and ready for deploy'
 ```

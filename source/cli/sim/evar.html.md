@@ -8,7 +8,7 @@ The `sim evar` command is used to manage environment variables in your sim platf
 |:--------------------|:----------------------------------------------------------|
 | [`add`](#add)       | Adds one or more key-value pairs as environment variables |
 | [`remove`](#remove) | Removes one or more environment variables                 |
-| [`list`](#list)     | Lists environment variables added to your VM              |
+| [`list`](#list)     | Lists environment variables added to your sim platform    |
 
 ## add
 The `add` subcommand adds environment variables to your sim platform. You can add a single key-value pair or a comma-delimited list of key-value pairs.
@@ -16,12 +16,12 @@ The `add` subcommand adds environment variables to your sim platform. You can ad
 ### add Usage
 ```bash
 # Pattern
-$ nanobox sim evar add <key>:<value>
-$ nanobox sim evar add <key1>:<value1>,<key2>:<value2>
+$ nanobox sim evar add <key>=<value>
+$ nanobox sim evar add <key1>=<value1>,<key2>=<value2>
 
 # Examples
-$ nanobox sim evar add ENVIRONMENT:local
-$ nanobox sim evar add ENVIRONMENT:local,MY_EVAR:'This is mine'
+$ nanobox sim evar add ENVIRONMENT=local
+$ nanobox sim evar add ENVIRONMENT=local,MY_EVAR='This is mine'
 ```
 
 ## remove

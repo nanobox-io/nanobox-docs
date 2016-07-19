@@ -50,7 +50,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
       &.sub                     { border-color: $gblue-5; }
     }
     a                           { color: $gblue-6; }
-    .nav-bullet rect            { fill: $gblue-6; }
+    .nav-bullet rect            { fill: $gblue-6 !important; }
   }
 
   #content                      { width: 100%; padding: 2em; margin-left: 0; font-size: 16px;
@@ -87,7 +87,7 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
     a                           { color: $gblue-6;
       &:hover                   { color: $grey-4; }
     }
-    g.nav-bullet rect            { fill: $gblue-6; }
+    g.nav-bullet rect            { fill: $gblue-6 !important; }
   }
 
   #content                      { width: 100%; margin-left: 0; }

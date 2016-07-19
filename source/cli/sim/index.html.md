@@ -15,4 +15,5 @@ The `sim` command includes the following subcommands that allow you to interact 
 | [`info`](info)       | Displays information about the running sim app & its components        |
 | [`console`](console) | Opens an interactive console inside your sim platform                  |
 | [`evar`](evar)       | Manages environment variables in your sim platform                     |
+| [`sim`](sim)         | Adds and removes hostname mappings to your sim platform                |
 | [`destroy`](destroy) | Destroys the docker machines associated with the current simulated app |

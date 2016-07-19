@@ -29,4 +29,4 @@ $ nanobox dev console
 Once you're consoled in, you can run the commands necessary to start your web and worker processes.
 
 ### .nanobox/config.yml
-Whenever you run `nanobox dev`, Nanobox will look for or create a file at `~/.nanobox/.config.yml`. This config file defines what resources to allocate to your Nanobox VM. **The config.yml is optional** and only necessary when you want anything other than the defaults. More information is available in the [Nanobox config.yml doc](/local-dev/nanobox-config-yml/).
+Whenever you run `nanobox dev up` or `nanobox dev start`, Nanobox will look for or create a file at `~/.nanobox/.config.yml`. This file houses configuration options for your Nanobox VM. **The config.yml is optional** and only necessary when you want anything other than the defaults. More information is available in the [Nanobox config.yml doc](/local-dev/nanobox-config-yml/).

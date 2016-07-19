@@ -6,12 +6,11 @@ Developing code locally is a staple of the modern development workflow, but even
 
 We set out to simplify this problem.
 
-## nanobox dev
-The Nanobox CLI includes functionality that provisions a virtual machine (VM) on your local machine, that we lovingly refer to as a "nanobox". The environment inside your nanobox is identical to the environment your app will use in production.
+## Local Virtualized Environments
+Nanobox uses Virtual Box and Docker to provision a virtual machine (VM) on your local machine. The [`dev`](/cli/dev/) command creates and manages a development platform inside your Nanobox VM designed for active development. Your local codebase is mounted into your dev platform, so any changes made to your code immediately apply to your dev app running in your VM.
 
-All the runtimes necessary to run your app are installed inside the VM, leaving your local machine clean of any potential cruft. When you're done with the local environment, you can destroy it and everything installed in it goes away.
+The [`sim`](/cli/sim/) commands creates and manages a simulated production environment in your local VM. All your app's web, worker, and data services a provisioned and run just as they would in a production app. Sim is designed for testing [code builds](/cli/build/) before deploying them into production.
 
-Environment configuration is specified in your [`boxfile.yml`](/app-config/boxfile/) and is part of your codebase. To spin up an identical dev environment, all you need to do is run `nanobox dev`. The same goes for any of your team members.
+Both dev and sim platforms provision containers for each of your app's components specified in your [`boxfile.yml`](/app-config/boxfile.yml/). Services are built and configured using the same [engines & images](/engines-images/) used in production Nanobox apps. Engines and images are fully open-source and can be created by anyone.
 
-## Local Virtualization
-Nanobox uses Virtual Box and Docker to provision your nanobox VM and containers for each of your app's components. Services are built and configured using [engines & images](/engines-images/) which are fully open-source and can be created by anyone.
+All the runtimes necessary to run your app are installed inside your app's containers in your VM, leaving your local machine clean of any potential cruft. When you're done with the dev and sim environments, you can destroy them and everything installed in them goes away.

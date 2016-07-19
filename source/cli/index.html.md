@@ -18,6 +18,8 @@ All interaction with Nanobox happens through the Nanobox CLI. This section of do
 | [`logout`](/cli/logout/)               | Removes your nanobox.io api token from your local nanobox client         |
 | [`update`](/cli/update/)               | Updates the Nanobox CLI to the newest available *minor* version          |
 | [`uninstall`](/cli/uninstall/)         | Uninstalls the Nanobox CLI                                               |
+| [`start`](/cli/start/)                 | Starts the Nanobox VM                                                    |
+| [`stop`](/cli/stop/)                   | Stops the Nanobox VM
 
 
 ### Global Command Options
