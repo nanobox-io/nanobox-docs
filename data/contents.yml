@@ -191,15 +191,15 @@ articles:
     articles:
       - title: "Using Custom Domains"
         path: "/domains-networking/custom-domains/"
-      - title: "SSL"
-        path: "/domains-networking/ssl/"
+      - title: "SSL/TLS"
+        path: "/domains-networking/ssl-tls/"
         articles:
-          - title: "Adding SSL"
-            path: "/domains-networking/ssl/adding-ssl/"
-          - title: "Managing SSL Certificates"
-            path: "/domains-networking/ssl/managing-ssl/"
+          - title: "Adding SSL/TLS"
+            path: "/domains-networking/ssl-tls/adding/"
+          - title: "Managing SSL/TLS Certificates"
+            path: "/domains-networking/ssl-tls/managing/"
           - title: "Identifying Certs, CAs, & Intermediate Certs"
-            path: "/domains-networking/ssl/indentifying/"
+            path: "/domains-networking/ssl-tls/indentifying/"
       - title: "Detecting User IPs & Protocols"
         path: "/domains-networking/user-ip-and-protocols/"
 

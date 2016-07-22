@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Managing SSL Certificates - Nanobox Documentation
+      Identifying Certs, CAs, & Intermediate Certs - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -1004,7 +1004,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/domains-networking/ssl/">SSL</a>
+                <a href="/domains-networking/ssl-tls/">SSL/TLS</a>
                 <ul class='sub'>
                   <li>
                     <span>
@@ -1014,17 +1014,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/adding-ssl/">Adding SSL</a>
-                  </li>
-                  <li class='active'>
-                    <span>
-                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                        <g class='nav-bullet'>
-                          <rect x='4.5' y='4.5'></rect>
-                        </g>
-                      </svg>
-                    </span>
-                    <a href="/domains-networking/ssl/managing-ssl/">Managing SSL Certificates</a>
+                    <a href="/domains-networking/ssl-tls/adding/">Adding SSL/TLS</a>
                   </li>
                   <li>
                     <span>
@@ -1034,7 +1024,17 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
+                    <a href="/domains-networking/ssl-tls/managing/">Managing SSL/TLS Certificates</a>
+                  </li>
+                  <li class='active'>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/domains-networking/ssl-tls/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
                   </li>
                 </ul>
               </li>
@@ -1604,39 +1604,59 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/ssl/">SSL</a>&#x2F;<a href="/domains-networking/ssl/managing-ssl/">Managing SSL Certificates</a>
+          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/ssl-tls/">SSL/TLS</a>&#x2F;<a href="/domains-networking/ssl-tls/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
         </div>
-        <h1>Managing SSL Certificates</h1>
-        <p>Once and SSL certificate is installed, there are some simple management options available. Click on your an SSL certificate in your dashboard to see the management options.</p>
+        <h1>Identifying Certs, CAs, & Intermediate Certs</h1>
+        <p>When keying a third-party certificate, your SSL/TLS provider will give you a collection of files that will contain your Certificate, Certificate Authority (CA), and in some cases, Intermediate Certificates. While the formats of these files are standardized, their names are not. Each SSL/TLS provider uses their own naming convention and it can be hard to determine what&#39;s what. Below are just a few tips to help you identify Certificates, CAs, and Intermediate Certificates.</p>
         
-        <h2 id="edit-view-details">Edit/View Details</h2>
+        <h2 id="certificate">Certificate</h2>
         
-        <p>This allows you to view and, if necessary, edit your SSL’s Key, Certificate, and Certificate Authority.</p>
+        <p>Certificates contain a single body of text that begins with <code>BEGIN CERTIFICATE</code> and ends with <code>END CERTIFICATE</code>.</p>
         
-        <p><strong>Warning:</strong> <em>Be very careful about modifying these details. Modifications made in error will prevent the certificate from functioning properly.</em></p>
+        <h4 id="certificate-pattern">Certificate Pattern</h4>
+        <pre class="highlight plaintext"><code>-----BEGIN CERTIFICATE-----&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;-----END CERTIFICATE-----&#x000A;</code></pre>
         
-        <h2 id="renew-rekey-a-certificate">Renew/Rekey a Certificate</h2>
+        <p>Most SSL/TLS certificates make it pretty obvious which file is the certificate through the filename. Generally, if the filename contains your domain in some form, it is likely your certificate. For example, <code>yourdomain-com.crt</code> would likely be your certificate.</p>
         
-        <p>This allows you to renew or rekey and existing certificate. Depending on the the type of certificate installed, this process is different.</p>
+        <p><strong>Note:</strong> When pasting your certificate into your Nanobox dashboard, be sure to include everything in this file. The <code>BEGIN CERTIFICATE</code> And <code>END CERTIFICATE</code> tags are part of your certificate.</p>
         
-        <h3 id="renewing-rekeying-3rd-party-certificates">Renewing/Rekeying 3rd Party Certificates</h3>
+        <h2 id="certificate-authority">Certificate Authority</h2>
         
-        <p>We will generate a new key and Certificate Signing Request (CSR) for you to submit to your SSL provider. They will give you a new Certificate and Certificate authority. Your currently running SSL certificate will not be affected until the renewal/rekeying process is complete.</p>
+        <p>Certificate Authorities establish an authoritative chain of certificates and typically contain two or more bodies of text beginning with <code>BEGIN CERTIFICATE</code> and ending with <code>END CERTIFICATE</code>.</p>
         
-        <h3 id="renewing-rekeying-letsencrypt-certificates">Renewing/Rekeying LetsEncrypt Certificates</h3>
+        <h4 id="certificate-authority-pattern">Certificate Authority Pattern</h4>
+        <pre class="highlight plaintext"><code>-----BEGIN CERTIFICATE-----&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;-----END CERTIFICATE-----&#x000A;-----BEGIN CERTIFICATE-----&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;-----END CERTIFICATE-----&#x000A;</code></pre>
         
-        <p><em>Information Coming Soon</em></p>
+        <p>Note that CAs do not always contain two bodies of text. In some cases they will only contain one. In these cases, it’s likely that a separate file was provided containing <a href="#intermediate-certificates">intermediate certificate(s)</a>.</p>
         
-        <h2 id="delete-your-certificate">Delete Your Certificate</h2>
+        <p>You can typically identify CAs by their filenames as well. CA filenames usually contain the name of the SSL/TLS provider and/or terms like “root,” “ca,” or “bundle.”</p>
         
-        <p>This is self-explanatory. This will delete your SSL certificate. This action cannot be undone without going through the SSL creation process again. Once you delete the certificate, any https requests to the associated domain will throw a warning.</p>
+        <p>Be sure to paste the full contents of the CA in the “Certificate Authority” field in the SSL/TLS creation process.</p>
+        
+        <h2 id="intermediate-certificates">Intermediate Certificates</h2>
+        
+        <p>Intermediate Certificates are not required and are not always provided. They are a part of the certificates authoritative chain and should be pasted in the same field as your CA when building your certificate bundle in your dashboard.</p>
+        
+        <p>Intermediate Certificates can be a little harder to identify since they generally follow the exact format of the CA. Usually you can identify Intermediate Certs through the process of elimination. If it’s not the Certificate or the CA, it’s likely an Intermediate Certificate.</p>
+        
+        <p>They will contain one or more bodies of text beginning with <code>BEGIN CERTIFICATE</code> and ending with <code>END CERTIFICATE</code>.</p>
+        
+        <p>You can also identify Intermediate Certs through filenames, but they aren’t as reliable. Many SSL/TLS providers use the same conventions in naming CAs and Intermediate Certificates, but terms such as “external,” “add trust,” or “chain” are often used.</p>
+        
+        <p>The full contents of the Intermediate Certificate should be pasted into the “Certificate Authority” field during the certificate bundle creation process along with the full contents of the CA.</p>
+        
+        <h2 id="a-general-rule-of-thumb">A General Rule of Thumb</h2>
+        
+        <p>As a general rule of thumb, once you&#39;ve identified which file is your certificate, it&#39;s safe to assume all other files provided by your SSL/TLS provider are required to complete your certificate&#39;s authoritative chain. Everything but your certificate should be pasted into the &quot;Certificate Authority&quot; field.</p>
+        
+        <p>The one caveat to this is any txt files provided by your SSL/TLS provider. Only a few providers include these with your certificate and CA, but if they do, they are not part of your CA and should not be pasted into the CA field.</p>
         <div id='pagination'>
-          <a name="Adding SSL" class="prev" href="/domains-networking/ssl/adding-ssl/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Managing SSL/TLS Certificates" class="prev" href="/domains-networking/ssl-tls/managing/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="Identifying Certs, CAs, &amp; Intermediate Certs" class="next" href="/domains-networking/ssl/indentifying/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Detecting User IPs &amp; Protocols" class="next" href="/domains-networking/user-ip-and-protocols/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

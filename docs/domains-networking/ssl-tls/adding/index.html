@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Adding SSL - Nanobox Documentation
+      Adding SSL/TLS - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -1004,7 +1004,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/domains-networking/ssl/">SSL</a>
+                <a href="/domains-networking/ssl-tls/">SSL/TLS</a>
                 <ul class='sub'>
                   <li class='active'>
                     <span>
@@ -1014,7 +1014,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/adding-ssl/">Adding SSL</a>
+                    <a href="/domains-networking/ssl-tls/adding/">Adding SSL/TLS</a>
                   </li>
                   <li>
                     <span>
@@ -1024,7 +1024,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/managing-ssl/">Managing SSL Certificates</a>
+                    <a href="/domains-networking/ssl-tls/managing/">Managing SSL/TLS Certificates</a>
                   </li>
                   <li>
                     <span>
@@ -1034,7 +1034,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
+                    <a href="/domains-networking/ssl-tls/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
                   </li>
                 </ul>
               </li>
@@ -1604,73 +1604,88 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/ssl/">SSL</a>&#x2F;<a href="/domains-networking/ssl/adding-ssl/">Adding SSL</a>
+          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/ssl-tls/">SSL/TLS</a>&#x2F;<a href="/domains-networking/ssl-tls/adding/">Adding SSL/TLS</a>
         </div>
-        <h1>Adding SSL</h1>
-        <p>Normally the process of adding SSL to your app is tedious complicated, but with Nanobox, we&#39;ve tried to make it as simple as possible. To get started, click on the &quot;Network&quot; tab of your application dashboard and go to &quot;SSL Certificates&quot;. Then click &quot;Add an SSL Certificate&quot;.</p>
+        <h1>Adding SSL/TLS</h1>
+        <p>Normally the process of adding SSL to your app is tedious complicated, but with Nanobox, we&#39;ve tried to make it as simple as possible. To get started, click on the &quot;Network&quot; tab of your application dashboard and go to &quot;SSL/TLS Certificates&quot;. Then click &quot;New SSL/TLS Certificate&quot;.</p>
         
-        <p><img alt="Add an SSL Certificate" src="/src-images/ssl-add.png" /></p>
+        <p><img alt="New SSL/TLS Certificate" src="/src-images/tls-add.png" /></p>
         
-        <p>You have three different options when adding a new certificate:</p>
+        <p>In order to generate a certificate, specific information is required. Provide the necessary information and save.</p>
+        
+        <p><img alt="Certificate Information" src="/src-images/tls-required-info.png" /></p>
+        
+        <h2 id="certificate-bundles">Certificate Bundles</h2>
+        
+        <p>With the information provided, you can now create a certificate &quot;bundle&quot;. A bundle is comprised of a Private Key, a Certificate, and a Certificate Authority (CA) - all the files required to install a certificate on a server. There are different types of bundles and you can have multiple bundles.</p>
+        
+        <p>To create a new bundle, click &quot;New Bundle&quot;.</p>
+        
+        <p><img alt="Create New Bundle" src="/src-images/tls-new-bundle.png" /></p>
+        
+        <p>There are different bundle types to choose from when creating a new bundle:</p>
         
         <ul>
-        <li><a href="#import-an-existing-certificate">Import an Existing Certificate</a></li>
-        <li><a href="#use-letsencrypt">Use LetsEncrypt</a></li>
-        <li><a href="#key-amp-install-a-3rd-party-certificate">Key &amp; Install a 3rd Party Certificate</a></li>
+        <li><a href="#letsencrypt">LetsEncrypt</a><br></li>
+        <li><a href="#self-signed">Self-Signed</a><br></li>
+        <li><a href="#third-party-new">Third-Party New</a><br></li>
+        <li><a href="#third-party-import">Third-Party Import</a></li>
         </ul>
         
-        <h2 id="import-an-existing-certificate">Import an Existing Certificate</h2>
+        <h3 id="letsencrypt">LetsEncrypt</h3>
         
-        <p>If you have a certificate that has already been keyed and used on another host, you can import that certificate into Nanobox. You&#39;ll need your cert&#39;s key, certificate, and certificate authority (CA). These can be obtained from either your SSL provider or where your certificate is currently installed. Paste the full contents of each into the corresponding field in your dashboard and save. The SSL certificate will be installed on all running web nodes.</p>
+        <p><a href="https://letsencrypt.org">LetsEncrypt</a> is is a free, automated, and open certificate authority that provides encryption at no cost. When creating a LetsEncrypt bundle, Nanobox automatically generates the required key, certificate, and CA for you.</p>
         
-        <h2 id="use-letsencrypt">Use LetsEncrypt</h2>
+        <h3 id="self-signed">Self-Signed</h3>
         
-        <p><a href="https://letsencrypt.org">LetsEncrypt</a> is is a free, automated, and open certificate authority that provides encryption at no cost. When using LetsEncrypt, all you need to do is fill out the necessary information about your domain and organization, then save. Nanobox will generate the key, certificate, and CA, and install the certificate on all your web nodes.</p>
+        <p>Self-Signed certificates provide SSL/TLS encryption, but are not signed by a certificate authority and are not trusted by most browsers. Users visiting a site with a self-signed cert will be shown a warning before the site will load. Valid use cases for self-signed certificates include things such as APIs or staging apps.</p>
         
-        <p><img alt="LetsEncrypt Information" src="/src-images/ssl-letsencrypt-info.png" /></p>
+        <p>When creating a self-signed bundle, Nanobox automatically generates the required key, certificate, and CA for you.</p>
         
-        <h2 id="key-amp-install-a-3rd-party-certificate">Key &amp; Install a 3rd Party Certificate</h2>
+        <h3 id="third-party-new">Third-Party New</h3>
         
         <p>If you&#39;ve purchased an SSL certificate from a 3rd Party SSL provider and have not keyed the certificate, this is the option you should go with. This is a multi-step process.</p>
         
-        <h3 id="1-provide-required-information">1. Provide Required Information</h3>
-        
-        <p>When keying a certificate, certain information is required. This information is used to create a secure, private key for your certificate. Fill out all the required fields in your dashboard and click &quot;Next&quot;.</p>
-        
-        <p><img alt="SSL Certificate Information" src="/src-images/ssl-cert-info.png" /></p>
-        
-        <h3 id="2-submit-your-csr-to-your-ssl-provider">2. Submit Your CSR to Your SSL Provider</h3>
+        <h4 id="1-submit-your-csr-to-your-ssl-provider">1. Submit Your CSR to Your SSL Provider</h4>
         
         <p>With your private key generated, we then create and provide a Certificate Signing Request (CSR). Submit your CSR to your SSL provider. They will use it to generate a certificate and certificate authority that matches your private key.</p>
         
-        <p><img alt="Certificate Request" src="/src-images/ssl-cert-request.png" /></p>
+        <p><img alt="Certificate Request" src="/src-images/ssl-tls-cert-request.png" /></p>
         
         <p><em>Be sure to copy the full contents of your Certificate Request.</em></p>
         
-        <h3 id="3-paste-in-your-certificate-amp-certificate-authority">3. Paste in Your Certificate &amp; Certificate Authority</h3>
+        <h4 id="2-paste-in-your-certificate-amp-certificate-authority">2. Paste in Your Certificate &amp; Certificate Authority</h4>
         
-        <p>Your SSL provider will make available files that include your Certificate and Certificate Authority. Paste the full contents of these files into the corresponding fields in your dashboard.</p>
+        <p>Your SSL provider will make available files that include your Certificate and Certificate Authority and possibly <a href="#intermediate-certificates">intermediate certificates</a>. Paste the full contents of these files into the corresponding fields in your dashboard.</p>
         
-        <p><img alt="Cert &amp; CA" src="/src-images/ssl-cert-ca.png" /></p>
+        <p><img alt="Cert &amp; CA" src="/src-images/ssl-tls-cert-ca.png" /></p>
         
         <p><em>Be sure to paste the full contents of your Certificate and Certificate Authority.</em></p>
         
         <p>The naming of these files isn&#39;t standardized so it can be hard to know which is which. The <a href="/domains-networking/ssl/indentifying/">Identifying Certificates, CAs, and Intermediate Certs</a> doc should help.</p>
         
-        <h4 id="intermediate-certificates">Intermediate Certificates</h4>
+        <h5 id="intermediate-certificates">Intermediate Certificates</h5>
         
         <p>Some SSL providers provide intermediate certificates that are part of your certificate&#39;s authoritative chain. Without these, some browsers will not honor the certificate. To install intermediate certificates, include them in the Certificate Authority field with your CA.</p>
         
-        <h3 id="4-save-your-certificate">4. Save Your Certificate</h3>
+        <h3 id="third-party-import">Third-Party Import</h3>
         
-        <p>Once your certificate and CA are in place and saved, we install your certificate on all web nodes.</p>
+        <p>If you have a certificate that has already been keyed and used on another host, you can import that certificate into Nanobox. You&#39;ll need your cert&#39;s key, certificate, and CA. These can be obtained from either your SSL/TLS provider or where your certificate is currently installed. Paste the full contents of each into the corresponding fields to complete your bundle.</p>
+        
+        <h2 id="activate-a-bundle">Activate a Bundle</h2>
+        
+        <p>With a bundle created, it&#39;s ready to be installed. To install a bundle in your running app, click &quot;Active&quot; next to the bundle.</p>
+        
+        <p><img alt="Activate Bundle" src="/src-images/ssl-tls-bundle-activate.png" /></p>
+        
+        <p>When a bundle is activated, the certificate and CA are installed on your app&#39;s web nodes, allowing the secure transfer of data over https.</p>
         <div id='pagination'>
-          <a name="SSL" class="prev" href="/domains-networking/ssl/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="SSL/TLS" class="prev" href="/domains-networking/ssl-tls/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="Managing SSL Certificates" class="next" href="/domains-networking/ssl/managing-ssl/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Managing SSL/TLS Certificates" class="next" href="/domains-networking/ssl-tls/managing/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

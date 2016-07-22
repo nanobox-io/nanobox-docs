@@ -289,19 +289,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/domains-networking/ssl/adding-ssl</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl-tls/adding</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/domains-networking/ssl/indentifying</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl-tls/indentifying</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/domains-networking/ssl</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl-tls</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/domains-networking/ssl/managing-ssl</loc>
+    <loc>https://docs.nanobox.io/domains-networking/ssl-tls/managing</loc>
     <priority>0.7</priority>
   </url>
   <url>

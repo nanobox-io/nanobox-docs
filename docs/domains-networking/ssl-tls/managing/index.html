@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      SSL - Nanobox Documentation
+      Managing SSL Certificates - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -988,7 +988,7 @@
                 </span>
                 <a href="/domains-networking/custom-domains/">Using Custom Domains</a>
               </li>
-              <li class='active'>
+              <li>
                 <span class='nav-toggle'>
                   <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
                     <g class='nav-btn-circle'>
@@ -1004,7 +1004,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/domains-networking/ssl/">SSL</a>
+                <a href="/domains-networking/ssl-tls/">SSL/TLS</a>
                 <ul class='sub'>
                   <li>
                     <span>
@@ -1014,7 +1014,17 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/adding-ssl/">Adding SSL</a>
+                    <a href="/domains-networking/ssl-tls/adding/">Adding SSL/TLS</a>
+                  </li>
+                  <li class='active'>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
+                    <a href="/domains-networking/ssl-tls/managing/">Managing SSL/TLS Certificates</a>
                   </li>
                   <li>
                     <span>
@@ -1024,17 +1034,7 @@
                         </g>
                       </svg>
                     </span>
-                    <a href="/domains-networking/ssl/managing-ssl/">Managing SSL Certificates</a>
-                  </li>
-                  <li>
-                    <span>
-                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                        <g class='nav-bullet'>
-                          <rect x='4.5' y='4.5'></rect>
-                        </g>
-                      </svg>
-                    </span>
-                    <a href="/domains-networking/ssl/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
+                    <a href="/domains-networking/ssl-tls/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
                   </li>
                 </ul>
               </li>
@@ -1604,23 +1604,47 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/ssl/">SSL</a>
+          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/ssl-tls/">SSL/TLS</a>&#x2F;<a href="/domains-networking/ssl-tls/managing/">Managing SSL Certificates</a>
         </div>
-        <h1>SSL</h1>
-        <p>Security and encryption are incredibly important and a must for most apps. Nanobox makes adding and managing SSL certificates as simple as possible. The next few docs walk through how to add and manage SSL certificates with Nanobox.</p>
+        <h1>Managing SSL Certificates</h1>
+        <p>Once you&#39;ve created a SSL/TLS certificate and bundles, managing the certificate is simple. This doc walks through the most common management tasks.</p>
         
-        <h3 id="every-app-gets-a-letsencrypt-certificate">Every App Gets a LetsEncrypt Certificate</h3>
+        <h2 id="renew-rekey-a-certificate">Renew/Rekey a Certificate</h2>
         
-        <p>Every app launched through Nanobox gets a dev url (app-name.gonano.io) with an SSL certificate installed. We use <a href="https://letsencrypt.org">LetsEncrypt</a> generate these SSL certificates.</p>
+        <p>To renew or rekey a certificate, simply <a href="/domains-networking/ssl-tls/adding/#certificate-bundles">generate a new certificate bundle</a>. For third-party certificates, the new bundle will include a new Private Key and Certificate Signing Request (CSR) required in the renewal process.</p>
         
-        <p><em>You can also use LetsEncrypt to generate a certificate for your own custom domain. This is covered in the <a href="/domains-networking/ssl/adding-ssl/">Adding SSL</a> doc.</em></p>
+        <p>Once your bundle is complete, <a href="/domains-networking/ssl-tls/adding/#activate-a-bundle">activate it</a> to replace the existing certificate bundle installed on your running web nodes.</p>
+        
+        <h2 id="view-edit-bundle-details">View/Edit Bundle Details</h2>
+        
+        <p>To view/edit your certificate&#39;s Private Key, Certificate, and Certificate Authority, click on your certificate, then the currently active bundle. Here you can view everything and edit your certificate details.</p>
+        
+        <p><strong>Warning:</strong> <em>Be very careful about modifying these details. Modifications made in error will prevent the certificate from functioning properly.</em></p>
+        
+        <h2 id="update-organization-details">Update Organization Details</h2>
+        
+        <p>If you need to update the organizational details associated with your certificate, you&#39;ll need to create a new certificate. All certificate bundles are generated using the details provided. Edits to organizational details on a certificate with existing bundles would result in mismatched bundles.</p>
+        
+        <p>Creating a new certificate is covered in the <a href="/domains-networking/ssl-tls/adding/">Adding SSL/TLS doc</a>.</p>
+        
+        <h2 id="delete-your-certificate">Delete Your Certificate</h2>
+        
+        <p>To delete a certificate, click on the certificate in your dashboard. Once inside your certificate view, click the &quot;Delete Cert&quot; button to delete the certificate.</p>
+        
+        <p><img alt="Delete Certificate" src="/src-images/ssl-tls-delete-cert.png" /></p>
+        
+        <h2 id="delete-a-bundle">Delete a Bundle</h2>
+        
+        <p>To delete a bundle, click on the certificate in your dashboard, the the bundle you&#39;d like to delete. Once inside your bundle view, click the &quot;Delete Bundle&quot; button to delete the bundle.</p>
+        
+        <p><img alt="Delete Bundle" src="/src-images/ssl-tls-delete-bundle.png" /></p>
         <div id='pagination'>
-          <a name="Using Custom Domains" class="prev" href="/domains-networking/custom-domains/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Adding SSL/TLS" class="prev" href="/domains-networking/ssl-tls/adding/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="Adding SSL" class="next" href="/domains-networking/ssl/adding-ssl/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Identifying Certs, CAs, &amp; Intermediate Certs" class="next" href="/domains-networking/ssl-tls/indentifying/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>
