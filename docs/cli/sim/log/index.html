@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Caching - Nanobox Documentation
+      sim log - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -606,7 +606,7 @@
                     </span>
                     <a href="/cli/sim/info/">sim info</a>
                   </li>
-                  <li>
+                  <li class='active'>
                     <span>
                       <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
                         <g class='nav-bullet'>
@@ -1274,7 +1274,7 @@
                         </span>
                         <a href="/engines/create/advanced/config-templates/">Configuration Templates</a>
                       </li>
-                      <li class='active'>
+                      <li>
                         <span>
                           <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
                             <g class='nav-bullet'>
@@ -1604,17 +1604,20 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/engines/">Engines</a>&#x2F;<a href="/engines/create/">Creating a Custom Engine</a>&#x2F;<a href="/engines/create/advanced/">Advanced Engine Creation</a>&#x2F;<a href="/engines/create/advanced/caching/">Caching</a>
+          <a href="/"></a>&#x2F;<a href="/cli/">CLI Commands</a>&#x2F;<a href="/cli/sim/">sim</a>&#x2F;<a href="/cli/sim/log/">sim log</a>
         </div>
-        <h1>Caching</h1>
+        <h1>sim log</h1>
+        <p>The <code>sim log</code> command streams the log output from your sim app.</p>
         
+        <h3 id="usage">Usage</h3>
+        <pre class="highlight shell"><code><span class="gp">$ </span>nanobox sim log&#x000A;</code></pre>
         <div id='pagination'>
-          <a name="Configuration Templates" class="prev" href="/engines/create/advanced/config-templates/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="sim info" class="prev" href="/cli/sim/info/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="Images" class="next" href="/images/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="sim evar" class="next" href="/cli/sim/evar/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

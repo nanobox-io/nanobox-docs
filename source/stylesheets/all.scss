@@ -11,7 +11,7 @@ a                       { @include transition(all .15s); }
     &:hover             { color: $gblue-6; }
     &#logo              { margin-top: -.05em;
       span#nb-title     { margin-left: 1.8em;
-        &:after         { content: "beta"; margin-left: .3em; position: relative; top: -.05em; font-size: .75em; color: $blue-0; text-transform: none; font-style: italic; letter-spacing: 0; font-weight: 700; }
+        &:after         { content: "/ Private Beta /"; margin-left: .3em; position: relative; top: -.05em; font-size: .65em; color: $blue-2; font-weight: 700; }
       }
     }
   }
@@ -106,18 +106,18 @@ a                       { @include transition(all .15s); }
     &.red               { color: $pink-1; }
   }
   code, pre             { font-family: Monaco, Consolas,'Andale Mono',monospace; white-space: pre; word-wrap: normal; @include transition(border .15s) }
-  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; @include border-radius(.4em); }
+  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; @include border-radius(4px); }
   ul, ol                { padding-left: 1.2em;
     li                  { line-height: 1.8em; }
     &.os-tabs           { list-style: none; padding: 0;
-      li                { margin-bottom: 2em; display: inline-block; min-width: 15%; padding: .5em 1em; text-align: center; color: $grey-4; background: $gblue-2; cursor: pointer; @include border-radius(.4em); @include transition(all .2s);
+      li                { margin-bottom: 2em; display: inline-block; min-width: 12%; padding: .75em 1em; text-align: center; font-size: .75em; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; color: $grey-4; background: $gblue-2; cursor: pointer; @include border-radius(4px); @include transition(all .2s);
         &.active,
         &:hover         { background: $blue-2; }
       }
     }
   }
   :not(pre)             { // Added to preserved code-block formatting for blocks nested in lists
-    & > code            { padding: 5px 8px 6px; font-size: .82em; color: $pink-1; background: white; white-space: nowrap; @include border-radius(.4em); }
+    & > code            { padding: 5px 8px 6px; font-size: .82em; color: $pink-1; background: white; white-space: nowrap; @include border-radius(4px); }
   }
 
   :not(.replay) > img  { max-width: 100%; @include border-radius(.4em); @include box-shadow(1px, 1px, 8px, #9a9a9a);
@@ -157,7 +157,7 @@ a                       { @include transition(all .15s); }
   }
 
   #pagination           { padding: 3em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $grey-2;
-    a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $gblue-0; border: none; @include border-radius(5px); @include transition(all .15s);
+    a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $gblue-0; border: none; @include border-radius(4px); @include transition(all .15s);
       &:before          { content: attr(name); position: absolute; top: .65em; padding: 0.4em .65em .5em; background: $gblue-2; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }
       &:after           { content: ''; position: absolute; top: 1em; width: 0; height: 0; z-index: -1; border-style: solid; @include opacity(0); @include transition(all .3s); }
       &.prev            { left: 0;
@@ -180,23 +180,15 @@ a                       { @include transition(all .15s); }
       }
     }
   }
-
-  ul#os-tabs            { margin: 2.5em 0; padding: 0; list-style: none; font-style: italic;
-    li                  { display: inline-block; margin: 0 .15em; padding: .4em 1em; border-width: 2px 2px 2px 2px; border-color: $gblue-0; border-style: solid; background-color: $gblue-0; cursor: pointer; @include border-radius(1.5em); @include transition(all .15s);
-      &:hover           { border-color: $red; color: $red; }
-      &.active          { border-color: $red; background: $red; color: $gblue-1;
-        &:hover         { color: $gblue-1; }
-      }
-    }
-  }
 }
 
 #footer                 { width: 100%; display: block; margin-top: 6em; font-size: .85em; color: $grey-1; text-align: center; @include box-sizing;
   a                     { color: $grey-1; border: none; text-decoration: none; font-weight: 700;
     &:hover             { color: $blue-1; }
   }
+  p                     { font-size: .9em; }
   #links                { list-style: none; margin: 0; padding: 0;
-    li                  { display: inline-block; padding: 0 1em; border-left: 1px solid $grey-2;
+    li                  { display: inline-block; margin-bottom: .25em; padding: 0 1em; border-left: 1px solid $grey-2; font-size: .85em; text-transform: uppercase; letter-spacing: 1px;
       &:first-child     { border: none; }
     }
   }

@@ -165,6 +165,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/cli/dev/log</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/cli/dev/start</loc>
     <priority>0.7</priority>
   </url>
@@ -226,6 +230,10 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/cli/sim/info</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/sim/log</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -553,7 +561,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/scaling/scaling-methods</loc>
+    <loc>https://docs.nanobox.io/scaling/splitting-components-out</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -569,7 +577,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/scaling/splitting-components-out</loc>
+    <loc>https://docs.nanobox.io/scaling/scaling-methods</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
