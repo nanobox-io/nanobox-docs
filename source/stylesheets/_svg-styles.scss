@@ -1,21 +1,16 @@
 @import 'variables-mixins';
 
 #providers            {
-  a                   { margin: 1.5em; position: relative; display: inline-block; width: 100%; max-width: 185px; border: none; text-align: center; color: $blue-0; vertical-align: top;
-    svg               { margin-bottom: .8em;
-      .bg-circle      { fill: $blue-1; @include transition(fill .2s);}
-      .icon           { fill: #fff; @include transition(fill .2s);}
+  a                   { position: relative; display: inline-block; width: 100%; height: 13em; max-width: 10em; padding: 1em 1.5em 1.5em; border: none; font-weight: bold; font-size: .8em; text-transform: uppercase; letter-spacing: 1px; text-align: center; color: $blue-0; vertical-align: top; @include border-radius(4px);
+    svg               {
+      .icon           { fill: $blue-1; @include transition(fill .2s);}
     }
-    &.coming          { color: $lt-gblue-4;
-      &:before        { content: url('/src-images/coming-soon-cir.svg'); position: absolute; display: block; width: 100%; max-width: 250px; top: 1.85em; }
-      .bg-circle      { fill: $lt-gblue-6; }
+    &.coming          { color: $lt-gblue-5;
+      &:before        { content: 'Coming Soon'; padding: .5em .8em; position: absolute; top: 4.5em; left: 2.65em; color: #fff; background-color: $gblue-5; letter-spacing: 0; text-transform: none; text-align: center; @include border-radius(4px); }
       .icon           { fill: $lt-gblue-5; }
     }
-    &:hover           { color: $blue-1;
-      .bg-circle      { fill: $lt-blue-2; }
-      .icon           { fill: white; }
-      &.coming        { color: $lt-gblue-4;
-        .bg-circle    { fill: $lt-gblue-6; }
+    &:hover           { color: $blue-1; background: #fff;
+      &.coming        { color: $lt-gblue-5; background: none;
         .icon         { fill: $lt-gblue-5; }
       }
     }

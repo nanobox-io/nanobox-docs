@@ -207,16 +207,6 @@ articles:
       - title: "Detecting User IPs & Protocols"
         path: "/domains-networking/user-ip-and-protocols/"
 
-  # - title: "Organizations & Teams"
-  #   path: "/orgs-teams/"
-  #   articles:
-  #     - title: "Creating an Organization"
-  #       path: "/orgs-teams/create-an-org/"
-  #     - title: "Managing Organizations & Teams"
-  #       path: "/orgs-teams/managing-orgs-teams/"
-  #     - title: "Access Control"
-  #       path: "/orgs-teams/access-control/"
-
   - title: "Engines"
     path: "/engines/"
     articles:
@@ -301,6 +291,20 @@ articles:
               - title: "Virtual IPs"
                 path: "/images/create/advanced/virtual-ips/"
 
+  - title: "Teams & Access Control"
+    path: "/teams/"
+    articles:
+      - title: "Adding Team Members"
+        path: "/teams/app-add-member/"
+      - title: "Roles & Permissions"
+        path: "/teams/roles-permissions/"
+      # - title: "Creating an Organization"
+      #   path: "/teams/create-an-org/"
+      # - title: "Managing Organizations & Teams"
+      #   path: "/teams/managing-orgs-teams/"
+      # - title: "Access Control"
+      #   path: "/teams/access-control/"
+
   - title: "Account Management"
     path: "/account/"
     articles:
@@ -310,8 +314,8 @@ articles:
         path: "/account/editing-account-details/"
       - title: "Removing an Account"
         path: "/account/removing-an-account/"
-      - title: "Hosting Providers"
-        path: "/account/providers/"
+      - title: "Hosting Accounts"
+        path: "/account/hosting-accounts/"
       # - title: "Credit Card Management"
       #   path: "/account/card-management/"
       # - title: "How Billing Works"
