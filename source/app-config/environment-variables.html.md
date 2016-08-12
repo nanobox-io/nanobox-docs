@@ -56,11 +56,11 @@ DATA_CTHULU_NAME
 Custom environment variables can be added to your production app through your dashboard, or to both production and local dev apps using the Nanobox CLI's ['evar' command](/cli/evar/).
 
 ### Adding Environment Variables in the Dashboard
-Environment variables can be added in your dashboard under Dev Config > Environment Variables. Simply add a key and a value, then save.
+Environment variables can be added in your dashboard under Config > Environment Variables. Simply add a key and a value, then save.
 
 ![Adding Environment Variables](/src-images/evar-add.png)
 
-**Note:** Newly added or updated environment variables will not apply to the live environment until the next build or deploy.
+**Note:** Newly added or updated environment variables will not apply to the live environment until the next deploy.
 
 ### Adding Environment Variables Through the CLI
 The Nanobox CLI's `evar` command allows you easily manage environment variables.

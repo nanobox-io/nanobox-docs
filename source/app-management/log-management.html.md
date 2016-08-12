@@ -10,13 +10,13 @@ All application logs are aggregated and streamed in a unified log stream. This a
 ## Viewing Logs in Your Dashboard
 Logs can be accessed in your app dashboard under the "Logs" tab. There are two types of available logs:
 
-- Streaming
+- Live Stream
 - Historical
 
 ![Dashboard Logs](/src-images/log-management-dashboard.png)
 
-### Streaming Logs
-Streaming logs display your app's live log stream. These allow you to see errors in your application as they happen. Each log entry is timestamped and flagged with the component-ID and specific log from which it came.
+### Live Stream
+Live Stream streams your app's logs. These allow you to see errors in your application as they happen. Each log entry is timestamped and flagged with the component-ID and specific log from which it came.
 
 With Streaming logs, only logs entries written after the stream is started are viewable. Any log entries written prior can be viewed in Historical logs.
 

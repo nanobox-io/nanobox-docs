@@ -25,6 +25,6 @@ To delete a certificate, click on the certificate in your dashboard. Once inside
 ![Delete Certificate](/src-images/ssl-tls-delete-cert.png)
 
 ## Delete a Bundle
-To delete a bundle, click on the certificate in your dashboard, the the bundle you'd like to delete. Once inside your bundle view, click the "Delete Bundle" button to delete the bundle.
+To delete a bundle, click on the certificate in your dashboard, then "Manage" next to the bundle you'd like to delete. Once inside your bundle view, click the "Delete Bundle" button to delete the bundle.
 
 ![Delete Bundle](/src-images/ssl-tls-delete-bundle.png)

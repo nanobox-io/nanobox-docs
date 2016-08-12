@@ -2,8 +2,8 @@
 title: Creating an Account
 ---
 
-<div style=" padding: 1em 1.35em; margin-bottom: 2em; color: #fff; background: #45A8D0; -webkit-border-radius: .4em; -moz-border-radius: .4em; border-radius: .4em;">
-  <p style="margin: 0; line-height: 1.5em; ">Nanobox is currently in Private Beta. In order to create an account, you must have a Private Beta invitation. You can request access to our Private Beta on <a href="https://nanobox.io" style="color: #fff;">our home page</a>.</p>
+<div style=" padding: 1em 1.35em; margin-bottom: 2em; color: #fff; background: #23aaf4; -webkit-border-radius: .4em; -moz-border-radius: .4em; border-radius: .4em;">
+  <p style="margin: 0; line-height: 1.5em; ">Nanobox is currently in Private Beta. In order to create an account, you must have a Private Beta invitation. To request access to our Private Beta, shoot an email to <a href="mailto:hello@nanobox.io?subject=I want in the Private Beta!" target="\_blank" style="color: #fff;">hello@nanobox.io</a>.</p>
 </div>
 
 To create an account on Nanobox, go to [dashboard.nanobox.io/users/sign_up](https://dashboard.nanobox.io/users/sign_up) and fill out the necessary information.

@@ -4,18 +4,18 @@ title: Adding SSL/TLS
 
 Normally the process of adding SSL to your app is tedious complicated, but with Nanobox, we've tried to make it as simple as possible. To get started, click on the "Network" tab of your application dashboard and go to "SSL/TLS Certificates". Then click "New SSL/TLS Certificate".
 
-![New SSL/TLS Certificate](/src-images/tls-add.png)
+![New SSL/TLS Certificate](/src-images/ssl-tls-add.png)
 
-In order to generate a certificate, specific information is required. Provide the necessary information and save.
+In order to generate a certificate, specific information is required. Provide the necessary information and click "Create Certificate".
 
-![Certificate Information](/src-images/tls-required-info.png)
+![Certificate Information](/src-images/ssl-tls-required-info.png)
 
 ## Certificate Bundles
-With the information provided, you can now create a certificate "bundle". A bundle is comprised of a Private Key, a Certificate, and a Certificate Authority (CA) - all the files required to install a certificate on a server. There are different types of bundles and you can have multiple bundles.
+With the information provided, you can now create a certificate "bundle". A bundle consists of a Private Key, a Certificate, and a Certificate Authority (CA) - all the files required to install a certificate on a server.
 
 To create a new bundle, click "New Bundle".
 
-![Create New Bundle](/src-images/tls-new-bundle.png)
+![Create New Bundle](/src-images/ssl-tls-new-bundle.png)
 
 There are different bundle types to choose from when creating a new bundle:
 
@@ -38,14 +38,12 @@ If you've purchased an SSL certificate from a 3rd Party SSL provider and have no
 #### 1. Submit Your CSR to Your SSL Provider
 With your private key generated, we then create and provide a Certificate Signing Request (CSR). Submit your CSR to your SSL provider. They will use it to generate a certificate and certificate authority that matches your private key.
 
-![Certificate Request](/src-images/ssl-tls-cert-request.png)
+![Certificate Request](/src-images/ssl-tls-csr.png)
 
-*Be sure to copy the full contents of your Certificate Request.*
+*Be sure to copy the full contents of your CSR.*
 
 #### 2. Paste in Your Certificate & Certificate Authority
 Your SSL provider will make available files that include your Certificate and Certificate Authority and possibly [intermediate certificates](#intermediate-certificates). Paste the full contents of these files into the corresponding fields in your dashboard.
-
-![Cert & CA](/src-images/ssl-tls-cert-ca.png)
 
 *Be sure to paste the full contents of your Certificate and Certificate Authority.*
 
@@ -58,7 +56,7 @@ Some SSL providers provide intermediate certificates that are part of your certi
 If you have a certificate that has already been keyed and used on another host, you can import that certificate into Nanobox. You'll need your cert's key, certificate, and CA. These can be obtained from either your SSL/TLS provider or where your certificate is currently installed. Paste the full contents of each into the corresponding fields to complete your bundle.
 
 ## Activate a Bundle
-With a bundle created, it's ready to be installed. To install a bundle in your running app, click "Active" next to the bundle.
+With a bundle created, it's ready to be installed. To install a bundle in your running app, click "Activate" next to the bundle.
 
 ![Activate Bundle](/src-images/ssl-tls-bundle-activate.png)
 
