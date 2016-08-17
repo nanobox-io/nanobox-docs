@@ -521,6 +521,10 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://docs.nanobox.io/local-dev/nanoignore</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://docs.nanobox.io/local-dev/vm-performance</loc>
     <priority>0.7</priority>
   </url>

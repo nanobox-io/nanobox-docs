@@ -16,13 +16,13 @@ A-Records are used to point your domain to a specific IP address. If you choose 
 - If you ever move or scale your load balancer, you'll have to update your A-Record with a new IP. In either case, your load-balancer is moved to a new server with a different IP.
 
 ## Using a CNAME
-CNAMEs are used to define aliases for domains. Essentially they point domains at other domains, but are not redirect. For example, if domain.com has a CNAME for myapp.gonano.io, domain.com acts as a alias for myapp.gonano.io and loads the site without changing the request URI.
+CNAMEs are used to define aliases for domains. Essentially they point domains at other domains, but are not redirect. For example, if domain.com has a CNAME for myapp.nanoapp.io, domain.com acts as a alias for myapp.nanoapp.io and loads the site without changing the request URI.
 
-Every Nanobox app is given a dev url using this pattern: `app-name.gonano.io`. You can add this domain as a CNAME on your own domain.
+Every Nanobox app is given a dev url using this pattern: `app-name.nanoapp.io`. You can add this domain as a CNAME on your own domain.
 
 ### Pros of Using a CNAME
-- If/when you scale or move your load balancer or the server it's on, you don't have to update your DNS record. Nanobox manages DNS routing for gonano.io dev urls.
+- If/when you scale or move your load balancer or the server it's on, you don't have to update your DNS record. Nanobox manages DNS routing for nanoapp.io dev urls.
 
 ### Cons of Using a CNAME
 - You must use a subdomain. You can't CNAME a root domain.
-- Nanobox manages DNS routing for gonano.io domains through our own DNS servers, but we do not guarantee uptime for dev URLs. If for some reason your dev url isn't reachable, your site won't be either.
+- Nanobox manages DNS routing for nanoapp.io domains through our own DNS servers, but we do not guarantee uptime for dev URLs. If for some reason your dev url isn't reachable, your site won't be either.

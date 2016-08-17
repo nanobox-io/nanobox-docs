@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1653,21 +1663,18 @@
         
         <p>Before deploying your code to an app, you must first link your local codebase with your app on Nanobox. This is done using the Nanobox CLI&#39;s <code>link</code> command.</p>
         <pre class="highlight shell"><code><span class="c"># cd into the root of your project</span>&#x000A;<span class="gp">$ </span><span class="nb">cd </span>app-dir&#x000A;&#x000A;<span class="c"># Link the project to your Nanobox app</span>&#x000A;<span class="gp">$ </span>nanobox link app-name&#x000A;</code></pre>
-        
         <p>For more information about the <code>link</code> command, view the <a href="/cli/link">&#39;link&#39; documentation</a>.</p>
         
         <h2 id="build">Build</h2>
         
         <p>In order to deploy code to Nanobox, you must first create a build package. This is done using the CLI&#39;s <code>build</code> command.</p>
         <pre class="highlight shell"><code><span class="gp">$ </span>nanobox build&#x000A;</code></pre>
-        
         <p>This will run everything associated with your app&#39;s <a href="/app-config/boxfile/code-build/">code.build</a> and generate a build package that can be deployed to your Nanobox app.</p>
         
         <h2 id="deploy">Deploy</h2>
         
         <p>The <code>deploy</code> command will push your generated build up to Nanobox and deploy it into your production environment.</p>
         <pre class="highlight shell"><code><span class="gp">$ </span>nanobox deploy&#x000A;</code></pre>
-        
         <h2 id="the-deploy-process">The Deploy Process</h2>
         
         <p>The diagram below shows how the deploy process works.</p>

@@ -13,9 +13,6 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
-# Navigation Builder
-# gem 'middleman-navtree'
-
 # Github Flavored Markdown
 gem 'redcarpet'
 
@@ -24,3 +21,6 @@ gem 'middleman-syntax'
 
 # Breadcrumbs
 gem 'middleman-breadcrumbs'
+
+# Fixed Celluloid Version
+gem 'celluloid', "0.16.0"

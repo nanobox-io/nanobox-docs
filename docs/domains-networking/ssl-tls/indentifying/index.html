@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1655,7 +1665,6 @@
         
         <h4 id="certificate-pattern">Certificate Pattern</h4>
         <pre class="highlight plaintext"><code>-----BEGIN CERTIFICATE-----&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;-----END CERTIFICATE-----&#x000A;</code></pre>
-        
         <p>Most SSL/TLS certificates make it pretty obvious which file is the certificate through the filename. Generally, if the filename contains your domain in some form, it is likely your certificate. For example, <code>yourdomain-com.crt</code> would likely be your certificate.</p>
         
         <p><strong>Note:</strong> When pasting your certificate into your Nanobox dashboard, be sure to include everything in this file. The <code>BEGIN CERTIFICATE</code> And <code>END CERTIFICATE</code> tags are part of your certificate.</p>
@@ -1666,7 +1675,6 @@
         
         <h4 id="certificate-authority-pattern">Certificate Authority Pattern</h4>
         <pre class="highlight plaintext"><code>-----BEGIN CERTIFICATE-----&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;-----END CERTIFICATE-----&#x000A;-----BEGIN CERTIFICATE-----&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#x000A;-----END CERTIFICATE-----&#x000A;</code></pre>
-        
         <p>Note that CAs do not always contain two bodies of text. In some cases they will only contain one. In these cases, it’s likely that a separate file was provided containing <a href="#intermediate-certificates">intermediate certificate(s)</a>.</p>
         
         <p>You can typically identify CAs by their filenames as well. CA filenames usually contain the name of the SSL/TLS provider and/or terms like “root,” “ca,” or “bundle.”</p>

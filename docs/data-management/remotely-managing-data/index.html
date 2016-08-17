@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1655,14 +1665,12 @@
         
         <p>The <code>nanobox console</code> command drops you into a native prompt inside of the specified component. With the native prompt, you can use any binary or client installed with your component&#39;s <a href="/engines-images/#images">image</a>.</p>
         <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox console -a &lt;app-name&gt; &lt;component&gt;&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>nanobox console -a myapp data.postgres&#x000A;</code></pre>
-        
         <p>For more information on the <code>console</code> command, read through the <a href="/cli/console/">console</a> doc.</p>
         
         <h2 id="create-a-secure-tunnel">Create a Secure Tunnel</h2>
         
         <p>The <code>nanobox tunnel</code> command creates a secure tunnel between your local machine and your production data service. This allows you to use your local client of choice if managing data from a command line isn&#39;t your cup of tea.</p>
         <pre class="highlight shell"><code><span class="c"># Pattern</span>&#x000A;<span class="gp">$ </span>nanobox tunnel -a &lt;app-name&gt; -p &lt;<span class="nb">local </span>port&gt; &lt;component&gt;&#x000A;&#x000A;<span class="c"># Example</span>&#x000A;<span class="gp">$ </span>nanobox tunnel -a myapp -p 5432 data.postgres&#x000A;</code></pre>
-        
         <p>The command will output the credentials necessary to connect to your data service through the secure tunnel. Any local client or GUI can be used to connect through the tunnel.</p>
         
         <p>For more information about the <code>tunnel</code> command, read through the <a href="/cli/tunnel/">tunnel</a> doc.</p>

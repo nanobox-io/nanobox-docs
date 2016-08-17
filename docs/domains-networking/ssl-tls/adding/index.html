@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1649,19 +1659,19 @@
         <h1>Adding SSL/TLS</h1>
         <p>Normally the process of adding SSL to your app is tedious complicated, but with Nanobox, we&#39;ve tried to make it as simple as possible. To get started, click on the &quot;Network&quot; tab of your application dashboard and go to &quot;SSL/TLS Certificates&quot;. Then click &quot;New SSL/TLS Certificate&quot;.</p>
         
-        <p><img alt="New SSL/TLS Certificate" src="/src-images/tls-add.png" /></p>
+        <p><img alt="New SSL/TLS Certificate" src="/src-images/ssl-tls-add-ea1a1b78.png" /></p>
         
-        <p>In order to generate a certificate, specific information is required. Provide the necessary information and save.</p>
+        <p>In order to generate a certificate, specific information is required. Provide the necessary information and click &quot;Create Certificate&quot;.</p>
         
-        <p><img alt="Certificate Information" src="/src-images/tls-required-info.png" /></p>
+        <p><img alt="Certificate Information" src="/src-images/ssl-tls-required-info-45196a5d.png" /></p>
         
         <h2 id="certificate-bundles">Certificate Bundles</h2>
         
-        <p>With the information provided, you can now create a certificate &quot;bundle&quot;. A bundle is comprised of a Private Key, a Certificate, and a Certificate Authority (CA) - all the files required to install a certificate on a server. There are different types of bundles and you can have multiple bundles.</p>
+        <p>With the information provided, you can now create a certificate &quot;bundle&quot;. A bundle consists of a Private Key, a Certificate, and a Certificate Authority (CA) - all the files required to install a certificate on a server.</p>
         
         <p>To create a new bundle, click &quot;New Bundle&quot;.</p>
         
-        <p><img alt="Create New Bundle" src="/src-images/tls-new-bundle.png" /></p>
+        <p><img alt="Create New Bundle" src="/src-images/ssl-tls-new-bundle-c56878b2.png" /></p>
         
         <p>There are different bundle types to choose from when creating a new bundle:</p>
         
@@ -1690,15 +1700,13 @@
         
         <p>With your private key generated, we then create and provide a Certificate Signing Request (CSR). Submit your CSR to your SSL provider. They will use it to generate a certificate and certificate authority that matches your private key.</p>
         
-        <p><img alt="Certificate Request" src="/src-images/ssl-tls-cert-request.png" /></p>
+        <p><img alt="Certificate Request" src="/src-images/ssl-tls-csr-acea457d.png" /></p>
         
-        <p><em>Be sure to copy the full contents of your Certificate Request.</em></p>
+        <p><em>Be sure to copy the full contents of your CSR.</em></p>
         
         <h4 id="2-paste-in-your-certificate-amp-certificate-authority">2. Paste in Your Certificate &amp; Certificate Authority</h4>
         
         <p>Your SSL provider will make available files that include your Certificate and Certificate Authority and possibly <a href="#intermediate-certificates">intermediate certificates</a>. Paste the full contents of these files into the corresponding fields in your dashboard.</p>
-        
-        <p><img alt="Cert &amp; CA" src="/src-images/ssl-tls-cert-ca.png" /></p>
         
         <p><em>Be sure to paste the full contents of your Certificate and Certificate Authority.</em></p>
         
@@ -1714,9 +1722,9 @@
         
         <h2 id="activate-a-bundle">Activate a Bundle</h2>
         
-        <p>With a bundle created, it&#39;s ready to be installed. To install a bundle in your running app, click &quot;Active&quot; next to the bundle.</p>
+        <p>With a bundle created, it&#39;s ready to be installed. To install a bundle in your running app, click &quot;Activate&quot; next to the bundle.</p>
         
-        <p><img alt="Activate Bundle" src="/src-images/ssl-tls-bundle-activate.png" /></p>
+        <p><img alt="Activate Bundle" src="/src-images/ssl-tls-bundle-activate-350fac51.png" /></p>
         
         <p>When a bundle is activated, the certificate and CA are installed on your app&#39;s web nodes, allowing the secure transfer of data over https.</p>
         <div id='pagination'>

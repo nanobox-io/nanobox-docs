@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1670,22 +1680,20 @@
         <h3 id="practical-example">Practical Example</h3>
         
         <h4 id="data-services-in-a-boxfile-yml">Data Services in a boxfile.yml</h4>
-        <pre class="highlight yaml"><code><span class="s">data.postgres</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">nanobox/postgresql</span>&#x000A;&#x000A;<span class="s">data.redis</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">nanobox/redis</span>&#x000A;&#x000A;<span class="s">data.cthulu</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">nanobox/mysql</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="s">data.postgres</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">nanobox/postgresql</span>&#x000A;&#x000A;<span class="s">data.redis</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">nanobox/redis</span>&#x000A;&#x000A;<span class="s">data.cthulu</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">nanobox/mysql</span>&#x000A;</code></pre>
         <h4 id="resulting-auto-generated-environment-variables">Resulting Auto-Generated Environment Variables</h4>
         <pre class="highlight shell"><code><span class="c"># Postres Connection Variables</span>&#x000A;DATA_POSTGRES_HOST&#x000A;DATA_POSTGRES_USER&#x000A;DATA_POSTGRES_PASS&#x000A;DATA_POSTGRES_NAME&#x000A;&#x000A;<span class="c"># Redis Connection Variables</span>&#x000A;DATA_REDIS_HOST&#x000A;&#x000A;<span class="c"># Cthulu (MySQL) Connection Variables</span>&#x000A;DATA_CTHULU_HOST&#x000A;DATA_CTHULU_USER&#x000A;DATA_CTHULU_PASS&#x000A;DATA_CTHULU_NAME&#x000A;</code></pre>
-        
         <h2 id="custom-environment-variables">Custom Environment Variables</h2>
         
         <p>Custom environment variables can be added to your production app through your dashboard, or to both production and local dev apps using the Nanobox CLI&#39;s <a href="/cli/evar/">&#39;evar&#39; command</a>.</p>
         
         <h3 id="adding-environment-variables-in-the-dashboard">Adding Environment Variables in the Dashboard</h3>
         
-        <p>Environment variables can be added in your dashboard under Dev Config &gt; Environment Variables. Simply add a key and a value, then save.</p>
+        <p>Environment variables can be added in your dashboard under Config &gt; Environment Variables. Simply add a key and a value, then save.</p>
         
-        <p><img alt="Adding Environment Variables" src="/src-images/evar-add.png" /></p>
+        <p><img alt="Adding Environment Variables" src="/src-images/evar-add-30ff4bf5.png" /></p>
         
-        <p><strong>Note:</strong> Newly added or updated environment variables will not apply to the live environment until the next build or deploy.</p>
+        <p><strong>Note:</strong> Newly added or updated environment variables will not apply to the live environment until the next deploy.</p>
         
         <h3 id="adding-environment-variables-through-the-cli">Adding Environment Variables Through the CLI</h3>
         
@@ -1693,10 +1701,8 @@
         
         <h4 id="adding-environment-variables-to-a-production-app">Adding Environment Variables to a Production App</h4>
         <pre class="highlight shell"><code><span class="c"># Adding a Single Environment Variable</span>&#x000A;<span class="gp">$ </span>nanobox evar add <span class="nv">KEY</span><span class="o">=</span>VALUE&#x000A;&#x000A;<span class="c"># Adding Multiple Environment Variables</span>&#x000A;<span class="gp">$ </span>nanobox evar add <span class="nv">KEY1</span><span class="o">=</span>VALUE1,KEY2<span class="o">=</span>VALUE2,KEY3<span class="o">=</span>VALUE3&#x000A;</code></pre>
-        
         <h4 id="adding-environment-variables-to-a-dev-platform">Adding Environment Variables to a Dev Platform</h4>
         <pre class="highlight shell"><code><span class="c"># Adding a Single Environment Variable</span>&#x000A;<span class="gp">$ </span>nanobox dev evar add <span class="nv">KEY</span><span class="o">=</span>VALUE&#x000A;&#x000A;<span class="c"># Adding Multiple Environment Variables</span>&#x000A;<span class="gp">$ </span>nanobox dev evar add <span class="nv">KEY1</span><span class="o">=</span>VALUE1,KEY2<span class="o">=</span>VALUE2,KEY3<span class="o">=</span>VALUE3&#x000A;</code></pre>
-        
         <p>For more information about the <code>evar</code> command, check out the <a href="/cli/evar/">&#39;evar&#39; documentation</a>.</p>
         <div id='pagination'>
           <a name="data" class="prev" href="/app-config/boxfile/data/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>

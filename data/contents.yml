@@ -31,6 +31,8 @@ articles:
         path: "/local-dev/nanobox-config-yml/"
       - title: "VM Performance Tuning"
         path: /local-dev/vm-performance/
+      - title: ".nanoignore"
+        path: "/local-dev/nanoignore/"
 
   - title: "Application Configuration"
     path: /app-config/

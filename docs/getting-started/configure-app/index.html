@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1661,8 +1671,7 @@
         <p>In many ways, the boxfile acts as a &quot;seed&quot; file for your app. It&#39;s where you specify what components your app needs as well as specific configuration options.</p>
         
         <h4 id="sample-boxfile-yml">Sample boxfile.yml</h4>
-        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;  <span class="s">config</span><span class="pi">:</span>&#x000A;    <span class="s">ruby_runtime</span><span class="pi">:</span> <span class="s">ruby-2.3</span>&#x000A;&#x000A;<span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">start</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rails</span><span class="nv"> </span><span class="s">s'</span>&#x000A;&#x000A;<span class="s">data.db</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="na">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;  <span class="na">config</span><span class="pi">:</span>&#x000A;    <span class="na">ruby_runtime</span><span class="pi">:</span> <span class="s">ruby-2.3</span>&#x000A;&#x000A;<span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="na">start</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rails</span><span class="nv"> </span><span class="s">s'</span>&#x000A;&#x000A;<span class="s">data.db</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;</code></pre>
         <p>The <a href="/app-config/boxfile/">boxfile documentation</a> covers all the options available in the <code>boxfile.yml</code>.</p>
         
         <h3 id="engines-amp-images">Engines &amp; Images</h3>
@@ -1670,8 +1679,7 @@
         <p>Engines and Images define what to use when provisioning your app&#39;s web, worker, and/or data services and how they should be configured. Engines define the runtime for <strong>web and worker components</strong>. Images define the service to use in <strong>data components</strong>.</p>
         
         <h4 id="engines-amp-images-in-the-boxfile-yml">Engines &amp; Images in the boxfile.yml</h4>
-        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;&#x000A;<span class="nn">...</span>&#x000A;&#x000A;<span class="s">data.db</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;&#x000A;<span class="s">data.queue</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">redis</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="na">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;&#x000A;<span class="nn">...</span>&#x000A;&#x000A;<span class="s">data.db</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;&#x000A;<span class="s">data.queue</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">redis</span>&#x000A;</code></pre>
         <p>For the deep dive into engines and images, check out the <a href="/engines-images/">Engines &amp; Images docs</a>.</p>
         
         <h2 id="use-environment-variables-for-service-connections">Use Environment Variables for Service Connections</h2>
@@ -1683,11 +1691,9 @@
         <h3 id="boxfile-amp-connection-example">Boxfile &amp; Connection Example</h3>
         
         <p>The following <code>boxfile.yml</code> specifies a Ruby web service running Ruby on Rails with a Postgres database:</p>
-        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;&#x000A;<span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="s">start</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rails</span><span class="nv"> </span><span class="s">s'</span>&#x000A;&#x000A;<span class="s">data.db</span><span class="pi">:</span>&#x000A;  <span class="s">image</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="na">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;&#x000A;<span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="na">start</span><span class="pi">:</span> <span class="s1">'</span><span class="s">rails</span><span class="nv"> </span><span class="s">s'</span>&#x000A;&#x000A;<span class="s">data.db</span><span class="pi">:</span>&#x000A;  <span class="na">image</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;</code></pre>
         <p>The following <code>config/database.yml</code> uses the <a href="/app-config/environment-variables/#auto-generated-environment-variables">auto-generated environment variables</a> to populate the connection credentials.</p>
-        <pre class="highlight yaml"><code><span class="s">production</span><span class="pi">:</span>&#x000A;  <span class="s">adapter</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;  <span class="s">encoding</span><span class="pi">:</span> <span class="s">unicode</span>&#x000A;  <span class="s">database</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DATA_DB_NAME'] %&gt;</span>&#x000A;  <span class="s">pool</span><span class="pi">:</span> <span class="s">5</span>&#x000A;  <span class="s">username</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DATA_DB_USER'] %&gt;</span>&#x000A;  <span class="s">password</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DATA_DB_PASS'] %&gt;</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="na">production</span><span class="pi">:</span>&#x000A;  <span class="na">adapter</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;  <span class="na">encoding</span><span class="pi">:</span> <span class="s">unicode</span>&#x000A;  <span class="na">database</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DATA_DB_NAME'] %&gt;</span>&#x000A;  <span class="na">pool</span><span class="pi">:</span> <span class="s">5</span>&#x000A;  <span class="na">username</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DATA_DB_USER'] %&gt;</span>&#x000A;  <span class="na">password</span><span class="pi">:</span> <span class="s">&lt;%= ENV['DATA_DB_PASS'] %&gt;</span>&#x000A;</code></pre>
         <p>By using the environment variables to populate connection credentials, this codebase would work out-of-the-box when deployed to a Nanobox app. It also keeps you have having to commit sensitive information to your codebase. For more information about environment variables, view the <a href="/app-config/environment-variables/">Environment Variables documentation</a>.</p>
         <div id='pagination'>
           <a name="Install Nanobox" class="prev" href="/getting-started/install-nanobox/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>

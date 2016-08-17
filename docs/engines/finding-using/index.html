@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-d2e224d8.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-2bbeabad.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -237,6 +237,16 @@
                   </svg>
                 </span>
                 <a href="/local-dev/vm-performance/">VM Performance Tuning</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/local-dev/nanoignore/">.nanoignore</a>
               </li>
             </ul>
           </li>
@@ -1658,11 +1668,9 @@
         <p>Engines are specified in the <code>code.build</code> section of your <code>boxfile.yml</code> and define the runtime environment and configuration for your web and worker components.</p>
         
         <h4 id="specifying-an-engine-in-your-boxfile-yml">Specifying an Engine in Your boxfile.yml</h4>
-        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="na">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;</code></pre>
         <p><strong>Note</strong>: We assume you&#39;re using official Nanobox engines stored on Github. If you are using your own engine stored in Github, use the following pattern:</p>
-        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s">github-username/repo-name</span>&#x000A;</code></pre>
-        
+        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="na">engine</span><span class="pi">:</span> <span class="s">github-username/repo-name</span>&#x000A;</code></pre>
         <p>If hosted elsewhere, use the full git clone url.</p>
         
         <h3 id="setting-engine-configuration-options">Setting Engine Configuration Options</h3>
@@ -1670,7 +1678,7 @@
         <p>Engines often include configuration options that allow you to customize your environment to your specific needs. Each engine should include documentation for available config options. These options are set in the  <code>env &gt; config</code> section of your <code>boxfile.yml</code>.</p>
         
         <h4 id="setting-engine-config-options-in-your-boxfile-yml">Setting Engine Config Options in Your boxfile.yml</h4>
-        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="s">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;  <span class="s">config</span><span class="pi">:</span>&#x000A;    <span class="s">webserver</span><span class="pi">:</span> <span class="s1">'</span><span class="s">unicorn'</span>&#x000A;    <span class="s">ruby_runtime</span><span class="pi">:</span> <span class="s">ruby-2.2</span>&#x000A;    <span class="s">unicorn_timeout</span><span class="pi">:</span> <span class="s">60</span>&#x000A;</code></pre>
+        <pre class="highlight yaml"><code><span class="s">code.build</span><span class="pi">:</span>&#x000A;  <span class="na">engine</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;  <span class="na">config</span><span class="pi">:</span>&#x000A;    <span class="na">webserver</span><span class="pi">:</span> <span class="s1">'</span><span class="s">unicorn'</span>&#x000A;    <span class="na">ruby_runtime</span><span class="pi">:</span> <span class="s">ruby-2.2</span>&#x000A;    <span class="na">unicorn_timeout</span><span class="pi">:</span> <span class="s">60</span>&#x000A;</code></pre>
         <div id='pagination'>
           <a name="Engines" class="prev" href="/engines/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
