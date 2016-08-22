@@ -37,9 +37,10 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
     svg#home-icon               { margin-left: .25em; }
   }
 
-  #footer                       {
-    .right                      { width: 100%; position: relative; margin-top: 2em; padding-top: 3em; border-top: 1px solid $gblue-2; text-align: center; }
-    #production #logo           { @include opacity(1); }
+  #footer                       { margin-top: 3em;
+    ul#links                    { width: 50%; margin: 0 auto 1em;
+      li                        { padding: .25em; display: block; text-align: center; border-top: 1px solid $grey-2; border-left: none; }
+    }
   }
 
   #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; font-size: 1.1em; background: $gblue-0;
