@@ -89,7 +89,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/app-management/dashboard-service-controls</loc>
+    <loc>https://docs.nanobox.io/app-management/component-stats</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -121,7 +121,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/app-management/service-stats</loc>
+    <loc>https://docs.nanobox.io/app-management/server-component-admin</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -166,6 +166,10 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/cli/dev/log</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/cli/dev/run</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -294,6 +298,14 @@
   </url>
   <url>
     <loc>https://docs.nanobox.io/domains-networking</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/domains-networking/port-mapping</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://docs.nanobox.io/domains-networking/routing-web-components</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -549,11 +561,11 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/scaling/scaling-methods</loc>
+    <loc>https://docs.nanobox.io/scaling/moving-components</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://docs.nanobox.io/scaling/splitting-components-out</loc>
+    <loc>https://docs.nanobox.io/scaling/scaling-methods</loc>
     <priority>0.7</priority>
   </url>
   <url>

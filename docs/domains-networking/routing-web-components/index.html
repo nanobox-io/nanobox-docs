@@ -9,7 +9,7 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>
-      Service Stats - Nanobox Documentation
+      Routing to Web Components - Nanobox Documentation
     </title>
     <!-- Typekit -->
     <script src='https://use.typekit.net/cqd5kth.js'></script>
@@ -26,7 +26,7 @@
       ga('create', 'UA-760419-20', 'auto');
       ga('send', 'pageview');
     </script>
-    <link href="/stylesheets/all-99a0979b.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/all-26b85d84.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/all-2216b873.js" type="text/javascript"></script>
   </head>
   <body>
@@ -494,6 +494,16 @@
                         </g>
                       </svg>
                     </span>
+                    <a href="/cli/dev/run/">dev run</a>
+                  </li>
+                  <li>
+                    <span>
+                      <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                        <g class='nav-bullet'>
+                          <rect x='4.5' y='4.5'></rect>
+                        </g>
+                      </svg>
+                    </span>
                     <a href="/cli/dev/info/">dev info</a>
                   </li>
                   <li>
@@ -808,7 +818,7 @@
                 </span>
                 <a href="/app-management/platform-components/">Platform Components</a>
               </li>
-              <li class='active'>
+              <li>
                 <span>
                   <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
                     <g class='nav-bullet'>
@@ -816,7 +826,17 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/app-management/service-stats/">Service Stats</a>
+                <a href="/app-management/component-stats/">Component Stats</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/app-management/server-component-admin/">Server & Component Admin</a>
               </li>
               <li>
                 <span>
@@ -896,7 +916,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/data-management/data-migrations-scaling/">Data Migrations During Scaling & Repairs</a>
+                <a href="/data-management/data-migrations-scaling/">Data Migrations During Scaling & Rebuilds</a>
               </li>
             </ul>
           </li>
@@ -936,7 +956,7 @@
                     </g>
                   </svg>
                 </span>
-                <a href="/scaling/splitting-components-out/">Splitting Components Out of a Bunkhouse</a>
+                <a href="/scaling/moving-components/">Moving Components Out of a Bunkhouse</a>
               </li>
               <li>
                 <span>
@@ -1047,6 +1067,26 @@
                     <a href="/domains-networking/ssl-tls/indentifying/">Identifying Certs, CAs, & Intermediate Certs</a>
                   </li>
                 </ul>
+              </li>
+              <li class='active'>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/domains-networking/routing-web-components/">Routing to Web Components</a>
+              </li>
+              <li>
+                <span>
+                  <svg enable-background='new 0 0 14 14' space='preserve' version='1.1' viewbox='0 0 14 14' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                    <g class='nav-bullet'>
+                      <rect x='4.5' y='4.5'></rect>
+                    </g>
+                  </svg>
+                </span>
+                <a href="/domains-networking/port-mapping/">Port Mapping</a>
               </li>
               <li>
                 <span>
@@ -1654,47 +1694,37 @@
       </div>
       <div id='content'>
         <div id='breadcrumb'>
-          <a href="/"></a>&#x2F;<a href="/app-management/">App Management</a>&#x2F;<a href="/app-management/service-stats/">Service Stats</a>
+          <a href="/"></a>&#x2F;<a href="/domains-networking/">Domains & Networking</a>&#x2F;<a href="/domains-networking/routing-web-components/">Routing to Web Components</a>
         </div>
-        <h1>Service Stats</h1>
-        <p>With any production application, visibility into your servers&#39; resource usage is incredibly important. They help to identify any possible bottlenecks and are a good indicator of what to scale and when to scale it. Service resource usage statistics are provided in your Nanobox dashboard.</p>
+        <h1>Routing to Web Components</h1>
+        <p>In some cases, you may want or need multiple web components within a single application. Web component routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both.</p>
         
-        <h3 id="monitored-server-resources">Monitored Server Resources</h3>
+        <h3 id="syntax">Syntax</h3>
         
-        <p>To provide visibility into the health of your app, Nanobox collects RAM, CPU, &amp; Disk usage from all components and nodes.</p>
+        <p>A route can consist of both a subdomain and a path, separated by a colon, <code>:</code>. Subdomains aren&#39;t required, but a path is. The pattern is as follows:</p>
         
-        <h4 id="ram">RAM</h4>
+        <p><code>&#39;subdomain:path&#39;</code></p>
         
-        <p>The RAM statistic indicates how much of the allotted RAM a component/node is using. The higher the RAM usage, the more likely your service is to become unresponsive. <em>In multi-instance components, this is an average of RAM usage across all nodes in the cluster.</em></p>
+        <p>The root domain is detected by Nanobox in both your local environment and in production.</p>
         
-        <h4 id="cpu">CPU</h4>
+        <p>Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is &quot;mydomain.com&quot;.</p>
         
-        <p>The CPU statistic indicates how much of the available CPU a component/node is using. CPU provides compute time, speed, and responsiveness. The higher the CPU usage, the more likely your service is to become slow or completely unresponsive. <em>In multi-instance components, this is an average of CPU usage across all nodes in the cluster.</em></p>
+        <h4 id="routes">routes</h4>
+        <pre class="highlight yaml"><code><span class="s">web.site</span><span class="pi">:</span>&#x000A;  <span class="na">routes</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">/'</span>&#x000A;<span class="c1"># mydomain.com would route to web.sites</span>&#x000A;&#x000A;<span class="s">web.admin</span><span class="pi">:</span>&#x000A;  <span class="na">routes</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">/admin'</span>&#x000A;<span class="c1"># mydomain.com/admin would route to web.admin</span>&#x000A;&#x000A;<span class="s">web.api</span><span class="pi">:</span>&#x000A;  <span class="na">routes</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">api:/'</span>&#x000A;<span class="c1"># api.mydomain.com would route to web.api</span>&#x000A;&#x000A;<span class="s">web.api-auth</span><span class="pi">:</span>&#x000A;  <span class="na">routes</span><span class="pi">:</span>&#x000A;    <span class="pi">-</span> <span class="s1">'</span><span class="s">api:/auth/validate'</span>&#x000A;<span class="c1"># api.mydomain.com/auth/validate would route to web.api-auth</span>&#x000A;</code></pre>
+        <h4 id="things-to-know">Things to Know</h4>
         
-        <h4 id="disk">Disk</h4>
-        
-        <p>The Disk statistic represents how much of your component&#39;s/node&#39;s allotted disk space is being used. If you run out of disk space, the component/node will not function properly. <em>In multi-instance components, this is an average of Disk usage across all nodes in the cluster.</em></p>
-        
-        <h3 id="summary-view">Summary View</h3>
-        
-        <p>Your Nanobox dashboard provides live stats as well as a summary of hourly historical stats.</p>
-        
-        <p><img alt="Service Resource Usage Summary" src="/src-images/service-stats-summary-310713f7.png" /></p>
-        
-        <h3 id="detailed-view">Detailed View</h3>
-        
-        <p>Click on the &quot;Stats&quot; button under a component/node to view detailed historical hourly averages. In multi-component servers (<a href="/scaling/bunkhouse/">bunkouses</a>), you&#39;ll also see a summary of what each component is using of the available resources.</p>
-        
-        <p><img alt="Expanded Service Resource Usage" src="/src-images/service-stats-expanded-95a9e88b.png" /></p>
-        
-        <p><strong>Note:</strong> Historical averages are provided in hourly blocks. In some cases, a brief period of high resource usage may be lost in the hourly average.</p>
+        <ul>
+        <li>When using multiple webs, each must have at least one route specified.</li>
+        <li>Routes must be unique to each web component.</li>
+        <li>Routes only apply to connections over http and https.</li>
+        </ul>
         <div id='pagination'>
-          <a name="Platform Components" class="prev" href="/app-management/platform-components/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Identifying Certs, CAs, &amp; Intermediate Certs" class="prev" href="/domains-networking/ssl-tls/indentifying/"><svg enable-background='new 0 0 23 23' id='left-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		10.6,20.4 1.7,11.5 10.6,2.6 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='1.7' x2='21.7' y1='11.5' y2='11.5'></line>
           </svg>
           </a>
-          <a name="Log Management" class="next" href="/app-management/log-management/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <a name="Port Mapping" class="next" href="/domains-networking/port-mapping/"><svg enable-background='new 0 0 23 23' id='right-arrow' space='preserve' version='1.1' viewbox='0 0 23 23' x='0px' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
             <polyline fill='none' points='&#x000A;		12.7,2.6 21.7,11.5 12.7,20.4 	' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF'></polyline>
             <line fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' stroke='#FFFFFF' x1='21.7' x2='1.7' y1='11.5' y2='11.5'></line>
           </svg>

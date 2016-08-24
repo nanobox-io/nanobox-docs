@@ -8,7 +8,7 @@ Worker components are meant for running background processes and do not connect 
 ```yaml
 worker.jobs:
   # Start Command
-  start: "ruby worker.rb"
+  start: 'ruby worker.rb'
 
   # Network Storage
   network_dirs:
@@ -25,7 +25,7 @@ worker.jobs:
 
   # Custom Logs
   log_watch:
-    job[error]: "path/to/error.log"
+    job[error]: path/to/error.log
 
   # Cron
   cron:
@@ -33,8 +33,8 @@ worker.jobs:
       schedule: '0 0 * * *'
       command: 'rm -rf app/cache/*'
     - id: echo_msg
-      schedule: "*/3 */2 1-3 2,6,7 2"
-      command: "echo 'im a little teapot'"
+      schedule: '*/3 */2 1-3 2,6,7 2'
+      command: 'echo i\'m a little teapot'
 ```
 
 ## Start Command
@@ -43,7 +43,7 @@ The `start` is the command used to start your worker.
 #### start
 ```yaml
 worker.jobs:
-  start: "ruby worker.rb"
+  start: 'ruby worker.rb'
 ```
 
 ## Network Directories
@@ -86,8 +86,8 @@ Many apps and frameworks log to files stored in the file system. `log_watch`'s a
 ```yaml
 worker.jobs:
   log_watch:
-    key: "path/to/log.file"
-    job[error]: "app/logs/error.log"
+    key: path/to/log.file
+    job[error]: app/logs/error.log
 ```
 
 ## Cron Jobs
@@ -109,6 +109,6 @@ worker.jobs:
       schedule: '0 0 * * *'
       command: 'rm -rf app/cache/*'
     - id: echo_msg
-      schedule: "*/3 */2 1-3 2,6,7 2"
-      command: "echo 'im a little teapot'"
+      schedule: '*/3 */2 1-3 2,6,7 2'
+      command: 'echo i\'m a little teapot'
 ```

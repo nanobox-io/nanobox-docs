@@ -13,10 +13,10 @@ Images are specified in the `data` components sections of your `boxfile.yml`. Im
 #### Specifying an Image in Your boxfile.yml
 ```yaml
 data.db:
-  image: postgresql
+  image: nanobox/postgresql
 ```
 
-**Note**: Only images published on Docker Hub can be used on Nanobox. We assume you are using official Nanobox images, but if you want to use your own, use the following pattern:
+**Note**: Only images published on Docker Hub can be used on Nanobox. If you want to use your own image, use the following pattern:
 
 ```yaml
 data.db:

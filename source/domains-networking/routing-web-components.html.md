@@ -1,0 +1,42 @@
+---
+title: Routing to Web Components
+---
+
+In some cases, you may want or need multiple web components within a single application. Web component routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both.
+
+### Syntax
+A route can consist of both a subdomain and a path, separated by a colon, `:`. Subdomains aren't required, but a path is. The pattern is as follows:
+
+`'subdomain:path'`
+
+The root domain is detected by Nanobox in both your local environment and in production.
+
+Below are few examples of routes and how they would work. In these examples, assume the domain being used on the app is "mydomain.com".
+
+#### routes
+```yaml
+web.site:
+  routes:
+    - '/'
+# mydomain.com would route to web.sites
+
+web.admin:
+  routes:
+    - '/admin'
+# mydomain.com/admin would route to web.admin
+
+web.api:
+  routes:
+    - 'api:/'
+# api.mydomain.com would route to web.api
+
+web.api-auth:
+  routes:
+    - 'api:/auth/validate'
+# api.mydomain.com/auth/validate would route to web.api-auth
+```
+
+#### Things to Know
+- When using multiple webs, each must have at least one route specified.
+- Routes must be unique to each web component.
+- Routes only apply to connections over http and https.

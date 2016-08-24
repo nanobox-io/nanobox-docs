@@ -23,7 +23,7 @@ web.site:
   start: 'rails s'
 
 data.db:
-  image: postgresql
+  image: nanobox/postgresql
 ```
 
 The [boxfile documentation](/app-config/boxfile/) covers all the options available in the `boxfile.yml`.
@@ -39,10 +39,10 @@ code.build:
 ...
 
 data.db:
-  image: postgresql
+  image: nanobox/postgresql
 
 data.queue:
-  image: redis
+  image: nanobox/redis
 ```
 
 For the deep dive into engines and images, check out the [Engines & Images docs](/engines-images/).
@@ -63,7 +63,7 @@ web.site:
   start: 'rails s'
 
 data.db:
-  image: postgresql
+  image: nanobox/postgresql
 ```
 
 The following `config/database.yml` uses the [auto-generated environment variables](/app-config/environment-variables/#auto-generated-environment-variables) to populate the connection credentials.

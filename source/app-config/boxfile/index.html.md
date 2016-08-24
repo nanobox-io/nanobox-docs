@@ -14,7 +14,7 @@ The `boxfile.yml` is a yaml config file housed in the root of your project that 
 ####Sample Boxfile
 ```yaml
 code.build:
-  engine: nanobox-io/ruby
+  engine: ruby
   config:
     ruby_runtime: ruby-2.2
   lib_dirs:
@@ -26,6 +26,7 @@ code.deploy:
     - 'bundle exec rake fix-yaml'
 
 web.site:
+  nickname: front-site
   start: 'bundle exec puma -c config/puma.conf'
   network_dirs:
     data.storage:
@@ -38,13 +39,13 @@ worker.jobs:
       - usr/uploads
 
 data.db:
-  image: nanobox-io/postgresql
+  image: nanobox/postgresql
 
 data.storage:
-  image: nanobox-io/gluster
+  image: nanobox/gluster
 
 data.queue:
-  image: nanobox-io/redis
+  image: nanobox/redis
 ```
 
 ## The Boxfile Structure
@@ -56,18 +57,18 @@ Yaml is used in the Boxfile because of its simplicity and clarity when defining 
 #### Boxfile Structure
 
 ```yaml
-web.site: #<------------------ Component ID
-  start: 'rails s'        #|
-  network-dirs:           #|-- Component Settings
-    data.storage:         #|
-      - usr/uploads       #|
+web.site: #<-------------------- Component ID
+  start: 'rails s'          #|
+  network-dirs:             #|-- Component Settings
+    data.storage:           #|
+      - usr/uploads         #|
 
 
-data.postgres: #<------------- Component ID
-  image: 'postgresql'     #|
-  config:                 #|-- Component Settings
-    pg_version: 9.4       #|
-                          #|
+data.postgres: #<--------------- Component ID
+  image: nanobox/postgresql #|
+  config:                   #|-- Component Settings
+    version: 9.4            #|
+                            #|
 ```
 
 #### Things to Note About yaml
@@ -106,6 +107,28 @@ There are three types of components:
 - **worker**: A backend code component with no publicly accessible ports.
 - **data**: A component that houses data of some sort.
 
+### Component Nicknames
+Each web, worker, and data component can be given a nickname. The nickname is what displays as the component label in your dashboard.
+
+![Nicknames in the Dashboard](boxfile-nicknames.png)
+
+#### nickname
+```yaml
+web.site:
+  nickname: front
+
+data.db:
+  nickname: front-db
+  image: nanobox/postgresql
+```
+
+#### Nickname Restrictions
+The following restrictions apply to component nicknames:
+
+- Can only contain lowercase letters, numbers, and dashes
+- Cannot start or end with a dash
+- Connot contain consecutive dashes
+
 ## Sections of the Boxfile
 Boxfiles consist of a handful of sections or "nodes": code.build, code.deploy, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
 
@@ -119,4 +142,4 @@ Boxfiles consist of a handful of sections or "nodes": code.build, code.deploy, d
 
 [`worker`](/app-config/boxfile/worker/) - Defines settings unique to each worker component.  
 
-[`data`](/app-config/boxfile/data/) - Defines settings unique to a specific data component.  
+[`data`](/app-config/boxfile/data/) - Defines settings unique to a specific data component.

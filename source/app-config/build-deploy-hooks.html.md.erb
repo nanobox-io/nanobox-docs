@@ -28,7 +28,7 @@ Build hooks are configured in the the `code.build` section of your boxfile.yml.
 ```yaml
 code.build:
   before_prepare:
-    - 'echo "I am getting ready"'
+    - 'echo I\'m getting ready'
     - 'curl -sSf https://static.rust-lang.org/rustup.sh | sh'
 ```
 
@@ -38,7 +38,7 @@ code.build:
 ```yaml
 code.build:
   after_prepare:
-    - 'echo "Good to go"'
+    - 'echo Good to go!'
 ```
 
 ### before_compile
@@ -57,7 +57,7 @@ code.build:
 ```yaml
 code.build:
   after_compile:
-    - 'echo Built and ready to go'
+    - 'echo Built and ready to go!'
 ```
 
 ## Deploy Hooks
@@ -85,7 +85,7 @@ code.deploy:
   before_deploy:
     web.site:
       - 'bundle exec rake clear-cache'
-      - 'echo "I am ready to go"'
+      - 'echo I\'am ready to go'
     worker.jobs:
       - 'bundle exec check-queue'
 ```

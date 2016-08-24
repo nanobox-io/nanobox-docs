@@ -1,5 +1,5 @@
 ---
-title: Service Stats
+title: Component Stats
 ---
 
 With any production application, visibility into your servers' resource usage is incredibly important. They help to identify any possible bottlenecks and are a good indicator of what to scale and when to scale it. Service resource usage statistics are provided in your Nanobox dashboard.
@@ -19,12 +19,12 @@ The Disk statistic represents how much of your component's/node's allotted disk 
 ### Summary View
 Your Nanobox dashboard provides live stats as well as a summary of hourly historical stats.
 
-![Service Resource Usage Summary](/src-images/service-stats-summary.png)
+![Component Resource Usage Summary](/src-images/service-stats-summary.png)
 
 
 ### Detailed View
 Click on the "Stats" button under a component/node to view detailed historical hourly averages. In multi-component servers ([bunkouses](/scaling/bunkhouse/)), you'll also see a summary of what each component is using of the available resources.
 
-![Expanded Service Resource Usage](/src-images/service-stats-expanded.png)
+![Expanded Component Resource Usage](/src-images/service-stats-expanded.png)
 
 **Note:** Historical averages are provided in hourly blocks. In some cases, a brief period of high resource usage may be lost in the hourly average.

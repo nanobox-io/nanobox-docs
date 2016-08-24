@@ -103,6 +103,7 @@ a                       { @include transition(all .15s); }
   }
   span                  {
     &.green             { color: $lt-green-0; }
+    &.yellow            { color: $yellow-4;}
     &.red               { color: $pink-1; }
   }
   code, pre             { font-family: Monaco, Consolas,'Andale Mono',monospace; white-space: pre; word-wrap: normal; @include transition(border .15s) }

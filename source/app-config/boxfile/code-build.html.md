@@ -13,11 +13,11 @@ The configuration options and final "code-package" are used in web and worker co
 ```yaml
 code.build:
   # Engine
-  engine: 'my/engine'
+  engine: my/engine
 
   # Config Options Exposed by the Engine
   config:
-    runtime_version: 2.2
+    version: 2.2
 
   # Dependency Management
   lib_dirs:
@@ -51,7 +51,7 @@ The `engine` config allows you to specify which engine to use to build your code
 #### engine
 ```yaml
 code.build:
-  engine: 'username/engine-name'
+  engine: username/engine-name
 ```
 
 ## Config Options
@@ -60,9 +60,9 @@ Engines expose configurable options used to tailor your code's environment to yo
 #### config
 ```yaml
 code.build:
-  engine:'username/engine-name'
+  engine: username/engine-name
   config:
-    runtime_version: 2.2
+    version: 2.2
 ```
 
 ## Dependency Management
