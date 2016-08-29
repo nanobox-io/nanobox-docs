@@ -7,10 +7,10 @@ The `tunnel` command establishes a secure tunnel between your local machine and 
 ### Usage
 ```bash
 # Pattern
-$ nanobox tunnel -a <app-name or alias> -p <local-port> <component>
+$ nanobox tunnel <component> -a <app-name or alias> -p <local-port>
 
 # Example
-$ nanobox tunnel -a prod -p 6379 data.redis
+$ nanobox tunnel data.redis -a prod -p 6379
 ```
 
 ### Options

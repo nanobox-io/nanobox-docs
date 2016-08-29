@@ -7,7 +7,7 @@ The `code.build` section of the boxfile.yml allows you to configure how your cod
 The configuration options and final "code-package" are used in web and worker components.
 
 #### Engines Take Care of Most of the Build
-[Engines](/engines-images/) handle the bulk of the build and configuration process, but engine developers may open up configurable options. These can be specified under [`config`](#config-options).
+[Engines](/engines/) handle the bulk of the build and configuration process, but engine developers may open up configurable options. These can be specified under [`config`](#config-options).
 
 #### Overview of Build Settings in the Boxfile
 ```yaml

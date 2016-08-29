@@ -7,10 +7,10 @@ The `console` command opens an interactive terminal inside a specified component
 ### Usage
 ```shell
 # Pattern
-$ nanobox console -a <app-name or alias> <component>
+$ nanobox console <component> -a <app-name or alias>
 
 #Example
-$ nanobox console -a app-name web.site
+$ nanobox console web.site -a app-name
 ```
 
 ### Options

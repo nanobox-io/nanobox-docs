@@ -45,7 +45,7 @@ data.queue:
   image: nanobox/redis
 ```
 
-For the deep dive into engines and images, check out the [Engines & Images docs](/engines-images/).
+For the deep dive into engines and images, check out the [Engines](/engines) & [Images](/images/) docs.
 
 ## Use Environment Variables for Service Connections
 When using Nanobox, projects are meant to be both portable and secure. In order for your project to be both, you should use environment variables in your data service connections.

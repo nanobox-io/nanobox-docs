@@ -5,7 +5,7 @@ title: Backups
 Data backups can be life-savers in case of emergency and it's always a good idea to run frequent backups. You can trigger backups in your dashboard or through a cron job.
 
 ## Backups Through Your Dashboard *(Coming Soon)*
-A backup option is available in your dashboard for any data component built using an [image that is "backup-able"](/engines-images/creating-an-image/#).
+A backup option is available in your dashboard for any data component built using an [image that is "backup-able"](/images/create/#).
 
 ![Dashboard Backups](/src-images/dashboard-backup.png)
 

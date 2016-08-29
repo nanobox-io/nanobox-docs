@@ -7,7 +7,8 @@ The `sim dns` command allows you add and remove hostname mappings to your sim pl
 | Subcommand          | Summary                                                   |
 |:--------------------|:----------------------------------------------------------|
 | [`add`](#add)       | Adds a hostname map that points to your sim platform      |
-| [`rm`](#rm) | Removes a hostname map that points to your sim platform   |
+| [`rm`](#rm)         | Removes a hostname map that points to your sim platform   |
+| [`ls`](#ls)         | Lists the registered hostnames for your sim platform      |
 
 ## add
 The `add` subcommand adds adds a hostname map to your local hosts file that points to the IP of your sim platform.
@@ -31,4 +32,12 @@ $ nanobox sim dns rm <hostname>
 
 # Example
 $ nanobox sim dns rm myapp.sim
+```
+
+## ls
+The `ls` subcommand lists all the hostnames registered for your sim platform.
+
+### ls Usage
+```bash
+$ nanobox sim dns ls
 ```

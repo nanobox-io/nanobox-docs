@@ -7,7 +7,8 @@ The `dev dns` command allows you add and remove hostname mappings to your dev pl
 | Subcommand          | Summary                                                   |
 |:--------------------|:----------------------------------------------------------|
 | [`add`](#add)       | Adds a hostname map that points to your dev platform      |
-| [`rm`](#rm) | Removes a hostname map that points to your dev platform   |
+| [`rm`](#rm)         | Removes a hostname map that points to your dev platform   |
+| [`ls`](#ls)         | Lists the registered hostnames for your dev platform      |
 
 ## add
 The `add` subcommand adds adds a hostname map to your local hosts file that points to the IP of your dev platform.
@@ -31,4 +32,12 @@ $ nanobox dev dns rm <hostname>
 
 # Example
 $ nanobox dev dns rm myapp.dev
+```
+
+## ls
+The `ls` subcommand lists all the hostnames registered for your dev platform.
+
+### ls Usage
+```bash
+$ nanobox dev dns ls
 ```

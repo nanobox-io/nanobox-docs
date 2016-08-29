@@ -1,2 +1,4 @@
 code.build:
   engine: middleman#refactor/v1
+  config:
+    force_https: 'true'

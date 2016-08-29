@@ -17,10 +17,10 @@ Moving a component into its own redundant cluster allows you to scale the compon
 You can move a component into a new single bunkhouse server, or into an existing bunkhouse server. There are certain limitations to be aware of when using bunkhouse servers. These are outlined in the [Bunkhouse Servers](/scaling/bunkhouse/#things-to-know-about-a-bunkhouse-server) doc.
 
 ### Horizontal Clusters vs. Single, Bunkhouse Servers
-| Feature                                 | Redundant Cluster            | Bunkhouse Server             |
-|:----------------------------------------|:----------------------------:|:----------------------------:|
-| Horizontally Scalable                   | <span class="green">✔</span> | <span class="red">✘</span>   |
-| Vertically Scalable                     | <span class="green">✔</span> | <span class="green">✔</span> |
-| Dedicated RAM, CPU, Disk per Component  | <span class="green">✔</span> | <span class="red">✘</span>   |
-| Individually Scalable Components(s)     | <span class="green">✔</span> | <span class="red">✘</span>   |
-| Redundancy Options                      | <span class="green">✔</span> | <span class="red">✘</span>   |
+| Feature                                 | Redundant Cluster | Bunkhouse Server |
+|:----------------------------------------|:-----------------:|:----------------:|
+| Horizontally Scalable                   | &#9989;           | &#10060;         |
+| Vertically Scalable                     | &#9989;           | &#9989;          |
+| Dedicated RAM, CPU, Disk per Component  | &#9989;           | &#10060;         |
+| Individually Scalable Components(s)     | &#9989;           | &#10060;         |
+| Redundancy Options                      | &#9989;           | &#10060;         |

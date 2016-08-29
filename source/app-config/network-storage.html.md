@@ -27,7 +27,7 @@ Network storage components provide centralized writable filesystems sharable bet
 Network mounts essentially replace those directories in your repo (and their contents) specified as network directories in your Boxfile. Anything inside of a network directory within your repo will not be accessible to your app until uploaded to the matching filepath inside of your storage service.
 
 ## Configuring Network Storage
-Network storage components are data components that use a filesystem [image](/engines-images/#images) such as unfs, gluster, etc.
+Network storage components are data components that use a filesystem [image](/images/) such as unfs, gluster, etc.
 
 #### Network Storage Component in the Boxfile
 ```yaml

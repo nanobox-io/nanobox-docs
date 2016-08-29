@@ -23,10 +23,10 @@ This roles grant a team member access to different functionality within the app.
 
 | Team Management              | Developer | Owner    |
 |:-----------------------------|:---------:|:--------:|
-| Add Team Members             |           | &#9989;  |
-| Remove Team Members          |           | &#9989;  |
+| Add Team Members             | &#10060;  | &#9989;  |
+| Remove Team Members          | &#10060;  | &#9989;  |
 
 | Billing                      | Developer | Owner    |
 |:-----------------------------|:---------:|:--------:|
-| Change App Plan              |           | &#9989;  |
-| Manage Payment Method        |           | &#9989;  |
+| Change App Plan              | &#10060;  | &#9989;  |
+| Manage Payment Method        | &#10060;  | &#9989;  |

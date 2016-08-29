@@ -17,7 +17,7 @@ data.db:
 ```
 
 ## Image
-The `image` setting defines which [image](/engines-images/) is used to create the data component.
+The `image` setting defines which [image](/images/) is used to create the data component.
 
 #### image
 ```yaml

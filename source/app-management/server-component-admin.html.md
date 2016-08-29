@@ -37,3 +37,9 @@ Rebuilding a component will provision entirely new nodes in the background. Once
 
 <strong>Downtime Risk - <span class='green'>Low</span></strong>    
 Web and worker components shouldn't experience any downtime. The switch from old to new nodes is atomic and handled by your app's routing mesh. Data components may experience some downtime as the final data sync runs, but this is generally very minor. More information is available in the [Data Migrations During Scaling & Rebuilds](/data-management/data-migrations-scaling/) doc.
+
+### Update
+Updating a component will update the image used to create the component to the most stable version of the image.
+
+<strong>Downtime Risk - <span class='green'>Low</span></strong>  
+The process of updating a component is essentially the same as rebuilding a component. Web and worker components won't see any downtime, but data components may require brief downtime in order to migrate data.

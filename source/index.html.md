@@ -17,7 +17,7 @@ Once the code is tested and ready for production, use the Nanobox CLI to build y
 For the deep dive into developing locally with Nanobox, check out the [Local Development docs](/local-dev/).
 
 ### Automated Environment Provisioning & Code Deploys
-When deploying your code, Nanobox automatically provisions and builds your production servers along with the supporting services specified in your `boxfile.yml`. Code runtimes and data services are provisioned using [engines and images](/engines-images/). Nanobox then builds, packages, and deploys code into your running platform. You never have to manually provision or configure a server.
+When deploying your code, Nanobox automatically provisions and builds your production servers along with the supporting services specified in your `boxfile.yml`. Code runtimes and data services are provisioned using [engines](/engines/) and [images](/engines/). Nanobox then builds, packages, and deploys code into your running platform. You never have to manually provision or configure a server.
 
 ### Application Management & Visibility
 Once an app is in production and handling real traffic, being able to easily see what's happening to your infrastructure is incredibly important. The Nanobox dashboard provides resource usage statistics for all nodes in your platform, streaming application logs, and other important tools to help you see, diagnose, and fix problems when the happen. The [application management docs](/app-management/) provide more information about the controls provided by the dashboard.

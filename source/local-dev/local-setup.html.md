@@ -26,7 +26,12 @@ With your dev platform running, open an new terminal and console in.
 $ nanobox dev console
 ```
 
-Once you're consoled in, you can run the commands necessary to start your web and worker processes.
+Once you're consoled in, you can run the commands necessary to start your web and worker processes. Or, you can open up a new terminal window and use the [`dev run`](/cli/dev/run/) command to run all your web and worker start commands specified in your boxfile.yml.
 
-### .nanobox/config.yml
-Whenever you run `nanobox dev up` or `nanobox dev start`, Nanobox will look for or create a file at `~/.nanobox/.config.yml`. This file houses configuration options for your Nanobox VM. **The config.yml is optional** and only necessary when you want anything other than the defaults. More information is available in the [Nanobox config.yml doc](/local-dev/nanobox-config-yml/).
+```bash
+# Run outside of a dev console
+$ nanobox dev run
+```
+
+### Optimize Your Nanobox VM <span class='rec'></span>
+Whenever your Nanobox VM is first created, it's configured using default settings that may cause processes running in the VM to be a little slow. Virtual Box allows you to specify what system resources should be made available to the VM and Nanobox allows you to specify which filesystem mounting technology to use when mounting your local codebase. All of the optimizations are covered in the [VM Performance Tuning](/local-dev/vm-performance/) doc.

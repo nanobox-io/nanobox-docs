@@ -16,7 +16,7 @@ The credential name is appended with an underscore. Below are the possible crede
 
 `_HOST` `_USER` `_PASS` `_NAME`  
 
-*Your service's [image](/engines-images/#images) defines what credentials are required and generated.*
+*Your service's [image](/images/) defines what credentials are required and generated.*
 
 Knowing the naming convention of data service connection variables allows you to pre-populate your connection details with environment variables before ever deploying your app locally or in production. It also keeps you from ever having to hard-code connection credentials.
 

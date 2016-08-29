@@ -20,7 +20,7 @@ For data components, you can also use the `nanobox tunnel` command to create a s
 Whenever servers are accessed remotely, there are three levels of authorization the requests goes through:
 
 1. Your are an authorized Nanobox user.
-2. Your are an authorized collaborator on the app.
+2. Your are an authorized team member on the app.
 3. Your are authorized to access the component.
 
 If any of these authorizations fail, the remote connection is rejected.

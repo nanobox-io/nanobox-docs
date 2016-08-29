@@ -10,7 +10,7 @@ Build and deploy hooks take place at very specific points in both the build and 
 <%= partial "deploy-diagram", locals: {:hooks => 'true'} %>
 
 ## Build Hooks
-There are two main phases of the build process to consider when defining build hooks. These two phases are handled by your [engine](/engines-images/).
+There are two main phases of the build process to consider when defining build hooks. These two phases are handled by your [engine](/engines/).
 
 1. **Prepare** - This is the phase where runtime executables are downloaded and installed in the build node.
 2. **Compile** - This is when commands are run to compile your code. The most common of which is running dependency managers.

@@ -27,6 +27,8 @@ There are different bundle types to choose from when creating a new bundle:
 ### LetsEncrypt
 [LetsEncrypt](https://letsencrypt.org) is is a free, automated, and open certificate authority that provides encryption at no cost. When creating a LetsEncrypt bundle, Nanobox automatically generates the required key, certificate, and CA for you.
 
+**Important Note:** In order for a LetsEncrypt certificate to be successfully installed, you must first point the domain to your Nanobox app. Only then will LetsEncrypt be able to verify domain ownership and issue the certificate.
+
 ### Self-Signed
 Self-Signed certificates provide SSL/TLS encryption, but are not signed by a certificate authority and are not trusted by most browsers. Users visiting a site with a self-signed cert will be shown a warning before the site will load. Valid use cases for self-signed certificates include things such as APIs or staging apps.
 

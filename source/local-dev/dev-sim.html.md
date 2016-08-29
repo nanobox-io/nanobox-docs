@@ -7,7 +7,7 @@ Nanobox provides two types of local "environments", each with a unique purpose a
 ## nanobox dev
 The CLI's `dev` command creates and manages your app's local development platform. Your local codebase is mounted directly into your Nanobox VM, allowing you to update code and have those changes immediately apply to your running dev app. `dev` is designed for active development.
 
-When you deploy to a dev platform, Nanobox provisions and starts all data services specified in your [boxfile.yml](/app-config/boxfile.yml/). You can then [console in](/cli/dev/console/) and start your web and worker processes.
+When you deploy to a dev platform, Nanobox provisions and starts all data services specified in your [boxfile.yml](/app-config/boxfile/). You can then [console in](/cli/dev/console/) and start your web and worker processes.
 
 `dev` also provides subcommands that allow you to manage your running dev app. More information can be found in the [CLI dev docs](/cli/dev/).
 
