@@ -25,7 +25,7 @@ svg                   {
   &#vertical-scaling  { max-width: 600px; margin: 0 auto; display: block;
     #sm-top, #lg-top,
     #sm-btm, #lg-btm  { @include transition(all .15s); }
-    &:hover, :active   {
+    &:hover, :active  {
       #sm-top         { @include transform(translateY(-3em)) ; @include opacity(.05); }
       #lg-top         { @include transform(translateY(-4em)) ; @include opacity(.05); }
       #sm-btm         { @include transform(translateY(1.5em)) ; @include opacity(.05); }
@@ -43,18 +43,18 @@ svg                   {
     #i7               { @include transition-delay(.3s); }
     #i8               { @include transition-delay(.35s); }
     #i9               { @include transition-delay(.4s); }
-    &:hover, :active   {
+    &:hover, :active  {
       #i2,#i3,#i4,#i5,
       #i6,#i7,#i8,#i9 { @include transform(translateY(0)); @include opacity(1); }
     }
   }
 }
 
-.svg-anim           { max-width: 380px;
-  .bodymovin        { position: relative;
-    a.replay        { height: 1.1em; width: 1.1em; position: absolute; bottom: 1em; right: 0; padding: .3em; display: block; z-index: 1; cursor: pointer; @include border-radius(50%); @include opacity(0); @include transition(all .2s); border: none !important;
-      &:hover       { background-color: #fff; }
+.svg-anim             { max-width: 380px;
+  .bodymovin          { position: relative;
+    a.replay          { height: 1.1em; width: 1.1em; position: absolute; bottom: 1em; right: 0; padding: .3em; display: block; z-index: 1; cursor: pointer; @include border-radius(50%); @include opacity(0); @include transition(all .2s); border: none !important;
+      &:hover         { background-color: #fff; }
     }
-    &:hover a.replay{ @include opacity(1); }
+    &:hover a.replay  { @include opacity(1); }
   }
 }

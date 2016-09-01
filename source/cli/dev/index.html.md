@@ -9,7 +9,6 @@ The `dev` command includes the following subcommands that allow you to interact 
 
 | Sub-Command          | Summary                                                         |
 |:---------------------|:----------------------------------------------------------------|
-| [`up`](up)           | Shortcut for `build`, `dev start`, `dev deploy`                 |
 | [`start`](start)     | Provisions your dev platform in your Nanobox VM                 |
 | [`deploy`](deploy)   | Deploys a generated build package into your dev platform        |
 | [`console`](console) | Opens an interactive console inside your dev platform           |

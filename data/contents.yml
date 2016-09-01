@@ -72,8 +72,6 @@ articles:
       - title: "dev"
         path: "/cli/dev/"
         articles:
-          - title: "dev up"
-            path: "/cli/dev/up/"
           - title: "dev start"
             path: "/cli/dev/start/"
           - title: "dev deploy"
@@ -97,8 +95,6 @@ articles:
       - title: "sim"
         path: "/cli/sim/"
         articles:
-          - title: "sim up"
-            path: "/cli/sim/up/"
           - title: "sim start"
             path: "/cli/sim/start/"
           - title: "sim deploy"
@@ -334,6 +330,9 @@ articles:
     articles:
       - title: "Error Codes"
         path: "/troubleshooting/error-codes/"
+        articles:
+          - title: "1000"
+            path: "/troubleshooting/error-codes/1000/"
       - title: "Broken netfs Exports File"
         path: "/troubleshooting/broken-exports-file/"
 

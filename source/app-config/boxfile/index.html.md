@@ -16,7 +16,7 @@ The `boxfile.yml` is a yaml config file housed in the root of your project that 
 code.build:
   engine: ruby
   config:
-    ruby_runtime: ruby-2.2
+    runtime: ruby-2.2
   lib_dirs:
     - vendor
   reuse_libs: true

@@ -9,7 +9,6 @@ The `sim` command includes the following subcommands that allow you to interact 
 
 | Sub-Command          | Summary                                                                |
 |:---------------------|:-----------------------------------------------------------------------|
-| [`up`](up)           | Shortcut for `build`, `sim start`, `sim deploy`                        |
 | [`start`](start)     | Provisions your sim platform in your Nanobox VM                        |
 | [`deploy`](deploy)   | Deploys a generated build package into your sim platform               |
 | [`console`](console) | Opens an interactive console inside your sim platform                  |

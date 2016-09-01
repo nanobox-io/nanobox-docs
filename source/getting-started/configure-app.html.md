@@ -17,7 +17,7 @@ In many ways, the boxfile acts as a "seed" file for your app. It's where you spe
 code.build:
   engine: ruby
   config:
-    ruby_runtime: ruby-2.3
+    runtime: ruby-2.3
 
 web.site:
   start: 'rails s'

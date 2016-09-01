@@ -33,7 +33,5 @@ Engines often include configuration options that allow you to customize your env
 code.build:
   engine: ruby
   config:
-    webserver: 'unicorn'
-    ruby_runtime: ruby-2.2
-    unicorn_timeout: 60
+    runtime: ruby-2.2
 ```
