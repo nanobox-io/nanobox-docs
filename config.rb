@@ -38,6 +38,7 @@
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  config[:mixpanel_token] = ENV['MIXPANEL_TOKEN_DEV'] || 'mixpanel_token_placeholder'
 end
 
 # Navigation Builder
@@ -90,6 +91,6 @@ configure :build do
   # Use relative URLs
   # activate :relative_assets
 
-  # Or use a different image path
-  # set :http_prefix, "/Content/src-images/"
+  # Mixpanel Token default
+  config[:mixpanel_token] = 'mixpanel_token_placeholder'
 end
