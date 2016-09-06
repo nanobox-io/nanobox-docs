@@ -160,6 +160,30 @@ a                       { @include transition(all .15s); }
     }
   }
 
+  #feedback             { position: relative; margin-top: 2.5em; padding: 1em; border: 1px dashed $grey-2; color: $grey-1; font-style: italic; @include border-radius(.5em);
+    &:before            { content: 'Was this information helpful?'; }
+    #reach-out          { display: none; margin: .25em 0 0; line-height: 1.5em;
+      &.show            { display: block; }
+    }
+    .options            { position: absolute; right: .5em; top: .5em;
+      a                 { display: inline-block; padding: .75em; min-width: 3em; cursor: pointer; font-size: .85em; text-transform: uppercase; font-style: normal; font-weight: bold; text-align: center; border: none; color: white; background: $blue-1; @include border-radius(3px);
+        &.yes           { color: $lt-green-0; background: $grey-3;
+          &:hover       { color: #fff; background: $lt-green-1; }
+        }
+        &.no            { color: $pink-1; background: $grey-3;
+          &:hover       { color: #fff; background: $pink-1; }
+        }
+      }
+    }
+    &.submitted         {
+      &:before          { content: 'Thank you for your feedback.'; }
+      .options          {
+        a               { display: none; }
+        &:before        { content: '\2713'; display: block; padding: .45em .5em .55em; width: 1em; height: 1em; text-align: center; font-style: normal; color: #fff; background: $lt-green-1; @include border-radius(50%); }
+      }
+    }
+  }
+
   #pagination           { padding: 3em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $grey-2;
     a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $gblue-0; border: none; @include border-radius(4px); @include transition(all .15s);
       &:before          { content: attr(name); position: absolute; top: .65em; padding: 0.4em .65em .5em; background: $gblue-2; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }

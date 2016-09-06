@@ -149,7 +149,6 @@ $(document).ready(function() {
     $(this).wrapInner( link );
   })
 
-
   //////////////////// SMOOTH SCROLL ////////////////////
 
   $('a[href^="#"]').on('click',function (e) {

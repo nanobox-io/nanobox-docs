@@ -12,18 +12,30 @@ If you haven't already, you'll need to [download and install the Nanobox CLI](/g
 $ cd app-dir
 ```
 
-### Run 'nanobox dev console'
+### Run 'nanobox dev deploy'
 ```shell
+$ nanobox dev deploy
+```
+
+Running `nanobox dev deploy` inside of your application directory will start your Nanobox VM, generate a deployable build package, provision a virtual dev environment, deploy the package into your dev platform, and provision all of your app's data components specified in your [boxfile.yml](/app-config/boxfile/).
+
+
+### Start Your App
+With a build deployed to your dev platform, you need to start your app. You have the following two options:
+
+#### Console In & Start Your App
+The `dev console` command will drop you into an interactive console where you can run the commands necessary to start your app. This comes in handy for projects that need to run differently while under active development.
+
+```bash
 $ nanobox dev console
 ```
 
-Running `nanobox dev console` inside of your application directory will start your Nanobox VM, generate a deployable build package, provision a virtual dev environment, deploy the package into your dev platform, provision all of your app's data components specified in your [boxfile.yml](/app-config/boxfile/), then drop you into an interactive console inside your dev platform.
+Once in, you can start your web and worker processes.
 
-Once you're consoled in, you can run the commands necessary to start your web and worker processes. Or, you can open up a new terminal window and use the [`dev run`](/cli/dev/run/) command to run all your web and worker start commands specified in your boxfile.yml.
+#### Run All Start Commands
+The `dev run` command will run all of the start commands specified in your [boxfile.yml](/app-config/boxfile/) for your web and worker components. This is ideal for apps that run the same when in development as they do in production.
 
-#### Optional Run Command
 ```bash
-# Run outside of a dev console
 $ nanobox dev run
 ```
 

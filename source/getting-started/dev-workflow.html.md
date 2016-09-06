@@ -7,14 +7,31 @@ Nanobox facilitates a seamless dev-to-production development cycle by providing 
 ## Develop Locally
 The Nanobox CLI's `dev` command creates and manages a virtual local dev environment identical to what is or what will be your production Nanobox environment. Develop in confidence knowing that if it works locally, it will work in production.
 
-### Start Your Nanobox VM, Dev Platform & Console In
-To get your local dev environment running, your Nanobox VM needs to be started, a build generated, your dev platform provisioned, and a build deployed into your dev platform. Fortunately, the Nanobox CLI will do all of these things AND console you into your dev environment simply by running `nanobox dev console`.
+### Start Your VM & Dev Platform, Deploy to Dev
+To get your local dev environment running, your Nanobox VM needs to be started, a build generated, your dev platform provisioned, and a build deployed into your dev platform. The `dev deploy` command will do all of these things.
+
+```bash
+$ nanobox dev deploy
+```
+
+### Start Your App
+With a build deployed to your dev platform, you need to start your app. You have the following two options:
+
+#### Console In & Start Your App
+The `dev console` command will drop you into an interactive console where you can run the commands necessary to start your app. This comes in handy for projects that need to run differently while under active development.
 
 ```bash
 $ nanobox dev console
 ```
 
-Once in, you can run the commands necessary to start your web and worker processes.
+Once in, you can start your web and worker processes.
+
+#### Run All Start Commands
+The `dev run` command will run all of the start commands specified in your [boxfile.yml](/app-config/boxfile/) for your web and worker components. This is ideal for apps that run the same when in development as they do in production.
+
+```bash
+$ nanobox dev run
+```
 
 ### Craft Some Code
 Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build` and `nanobox dev deploy` to apply those changes to your dev platform.

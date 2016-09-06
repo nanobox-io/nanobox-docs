@@ -5,14 +5,31 @@ title: Basic Workflow
 ## Develop
 The Nanobox CLI's `dev` command creates and manages a virtual local dev environment identical to what is or what will be your production Nanobox environment. Develop in confidence knowing that if it works locally, it will work in production.
 
-### Start Your Nanobox VM
-In the root of your project, run `nanobox dev console` command to provision a development platform, create and deploy a build, start your data components inside your Nanobox VM, then drop you into an interactive console inside your dev platform.
+### Start Your VM & Dev Platform, Deploy to Dev
+In the root of your project, run `nanobox dev deploy` command to provision a development platform, create and deploy a build, and start your data components inside your Nanobox VM.
 
 ```bash
 $ nanobox dev console
 ```
 
-Once in, you can run the commands necessary to start your web and worker processes.
+### Start Your App
+With a build deployed to your dev platform, you can start your app. You have the following two options:
+
+#### Console In & Start Your App
+The `dev console` command will drop you into an interactive console where you can run the commands necessary to start your app. This comes in handy for projects that need to run differently while under active development.
+
+```bash
+$ nanobox dev console
+```
+
+Once in, you can start your web and worker processes.
+
+#### Run All Start Commands
+The `dev run` command will run all of the start commands specified in your [boxfile.yml](/app-config/boxfile/) for your web and worker components. This is ideal for apps that run the same when in development as they do in production.
+
+```bash
+$ nanobox dev run
+```
 
 ### Craft Some Code
 Do what you do best, code. Your local codebase is mounted into your Nanobox VM, so any changes you make will be reflected in your dev environment.
