@@ -16,9 +16,9 @@ All interaction with Nanobox happens through the Nanobox CLI. This section of do
 | [`evar`](/cli/evar/)                   | Manages environment variables on your production platform                |
 | [`login`](/cli/login/)                 | Authenticates your Nanobox client with your nanobox.io account           |
 | [`logout`](/cli/logout/)               | Removes your nanobox.io api token from your local nanobox client         |
-| [`update`](/cli/update/)               | Updates the Nanobox CLI to the newest available *minor* version          |
 | [`start`](/cli/start/)                 | Starts the Nanobox VM                                                    |
-| [`stop`](/cli/stop/)                   | Stops the Nanobox VM
+| [`stop`](/cli/stop/)                   | Stops the Nanobox VM                                                     |
+| [`destroy`](/cli/destroy/)             | Destroys the Nanobox VM, removing all apps & data                        |
 
 
 ### Global Command Options

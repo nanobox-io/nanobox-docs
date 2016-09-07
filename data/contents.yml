@@ -131,14 +131,17 @@ articles:
         path: "/cli/login/"
       - title: "logout"
         path: "/cli/logout/"
-      - title: "update"
-        path: "/cli/update/"
       - title: "start"
         path: "/cli/start/"
       - title: "stop"
         path: "/cli/stop/"
-      # - title: "uninstall"
-      #   path: "/cli/uninstall/"
+      - title: "destroy"
+        path: "/cli/destroy/"
+      - title: "Updating Nanobox"
+        path: "/cli/update/"
+      - title: "Uninstalling Nanobox"
+        path: "/cli/uninstall/"
+
 
 
 

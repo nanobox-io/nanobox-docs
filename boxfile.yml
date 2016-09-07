@@ -2,3 +2,7 @@ code.build:
   engine: middleman#refactor/v1
   config:
     force_https: 'true'
+
+code.deploy:
+  transform:
+    - 'bash insert-mixpanel.sh'

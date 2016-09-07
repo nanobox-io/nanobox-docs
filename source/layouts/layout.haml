@@ -50,9 +50,9 @@
           $target = $(e.currentTarget)
           $target.closest("#feedback").addClass("submitted")
           mixpanel.track "Doc Reviewed",
-            title:    $target.data("title")
-            path:     $target.data("path")
-            helpful:  $target.data("response")
+            title:    $target.data("mp-title")
+            path:     $target.data("mp-path")
+            helpful:  $target.data("mp-response")
         $("a.no").click (e) =>
           $("#reach-out").addClass("show");
 
@@ -87,8 +87,8 @@
 
         #feedback
           .options
-            %a.no{ data: {response: 'no', path: current_page.url, title: current_page.data.title || 'Docs Home' }} No
-            %a.yes{ data: {response: 'yes', path: current_page.url, title: current_page.data.title || 'Docs Home' }} Yes
+            %a.no{ data: {mp_response: 'no', mp_path: current_page.url, mp_title: current_page.data.title || 'Docs Home' }} No
+            %a.yes{ data: {mp_response: 'yes', mp_path: current_page.url, mp_title: current_page.data.title || 'Docs Home' }} Yes
           %p#reach-out Reach out to #{ link_to 'help@nanobox.io', 'mailto:help@nanobox.io' } and we'll try to help.
 
         #pagination
