@@ -1,6 +1,3 @@
 #!/bin/bash
 
-for i in $(find .)
-do
-  sed -i "s/mixpanel_token_placeholder/$MIXPANEL_TOKEN/g"
-done
+LC_ALL=C find ./ -type f -exec sed -i '' -e "s/mixpanel\_token\_placeholder/$MIXPANEL_TOKEN/g" {} \;
