@@ -29,8 +29,5 @@ Once you know where the Nanobox executables are located, you can use the followi
 $ rmdir "C:\Program Files\Nanobox" /s
 ```
 
-### Uninstall Virtual Box & Docker Toolbox
-Nanobox uses Virtual Box and Docker Toolbox to create and provision your local virtual environments. Each of these tools has their own uninstallation process covered in the following links:
-
-[Uninstalling Virtual Box](https://www.virtualbox.org/manual/ch02.html#idm816)  
-[Uninstalling Docker Toolbox](https://docs.docker.com/v1.8/installation/windows/#uninstallation)  
+### Uninstall Virtual Box
+Nanobox uses Virtual Box to create and provision your local virtual environments. Virtual Box provides uninstallation instructions in [their documentation](https://www.virtualbox.org/manual/ch02.html#idm816).

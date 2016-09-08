@@ -30,7 +30,4 @@ $ mv nanobox-update /usr/local/bin/nanobox-update
 ```
 
 ## Install Virtual Box & Docker Toolbox
-Nanobox utilizes [Virtual Box](https://www.virtualbox.org/) & [Docker](https://www.docker.com) to provision virtual environments on your local machine. If you already have these installed locally, you're all set. If not, the following links will help:
-
-[Download & Install Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads)  
-[Download & Install Docker (Select Your Distribution)](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+Nanobox utilizes [Virtual Box](https://www.virtualbox.org/) to provision virtual environments on your local machine. If you already have it installed locally, you're all set. If not, [Download & Install Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads).

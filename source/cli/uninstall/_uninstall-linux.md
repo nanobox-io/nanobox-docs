@@ -24,8 +24,5 @@ $ rm -f /path/to/nanobox
 $ rm -f /path/to/nanobox-update
 ```
 
-### Uninstall Virtual Box & Docker Toolbox
-Nanobox uses Virtual Box and Docker Toolbox to create and provision your local virtual environments. Each of these tools has their own uninstallation process covered in the following links:
-
-[Uninstalling Virtual Box](https://www.virtualbox.org/manual/ch02.html#idm1024)  
-[Uninstalling Docker Toolbox (Select Your Distribution)](https://docs.docker.com/v1.8/installation/)  
+### Uninstall Virtual Box
+Nanobox uses Virtual Box to create and provision your local virtual environments. Virtual Box provides uninstallation instructions in [their documentation](https://www.virtualbox.org/manual/ch02.html#idm1024).
