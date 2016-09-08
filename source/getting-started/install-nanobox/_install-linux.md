@@ -1,12 +1,12 @@
-Because the distributions of Linux are so numerous and varied, there aren't Nanobox installers available for Linux. However, you can download and install all the necessary executables manually.
+To install Nanobox on Linux distributions, you'll need to download the Nanobox executables and install Virtual Box and Docker.
 
 ## Download & Install Nanobox Executables
-Nanobox comes with two executables:
+Nanobox requires two executables:
 
 `nanobox` - The Nanobox CLI  
 `nanobox-update` - The Nanobox CLI update manager
 
-These can be downloaded using the following commands:
+These can be downloaded using `wget`:
 
 ```bash
 $ wget https://s3.amazonaws.com/tools.nanobox.io/nanobox/v1/linux/amd64/nanobox
@@ -14,7 +14,7 @@ $ wget https://s3.amazonaws.com/tools.nanobox.io/nanobox/v1/linux/amd64/nanobox-
 ```
 
 ### Make the Downloaded Files Executable
-In order for these files to be executable, they must have executable permissions. Run to following to give them executable permissions.
+Run the following to grant the downloaded files executable permissions required to run on your system.
 
 ```bash
 $ chmod +x nanobox
@@ -22,7 +22,7 @@ $ chmod +x nanobox-update
 ```
 
 ### Install the Executables on Your $PATH
-To be able to use these executables from the command line, they must be installed on your system $PATH. $PATH's vary by distribution, but below are basic examples.
+Install the Nanobox executables on your system $PATH. $PATH's vary by distribution, but below are basic examples.
 
 ```bash
 $ mv nanobox /usr/local/bin/nanobox
