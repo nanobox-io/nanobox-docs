@@ -2,7 +2,7 @@
 title: Writable Directories
 ---
 
-Code components created through Nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in [network storage](/app-config/network-storage/). Writable directories allow you to enable writable permissions on directories in your web and worker instances’ local filesystems. This doc explains how writable directories work and how they're different from [network directories](/app-config/network-storage/#network-directories).
+Code components created through Nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in [network storage](/app-config/network-storage/). Writable directories allow you to enable writable permissions on directories in your web and worker instances’ local filesystems.
 
 ### What is a Writable Directory
 A writable directory is a directory stored in your instances’ local filesystem with writable permissions. Because they are stored locally in each instance, their contents do not persist between deploys or when the instance is decommissioned.

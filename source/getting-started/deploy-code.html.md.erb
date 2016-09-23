@@ -2,32 +2,33 @@
 title: Deploy Code
 ---
 
-Once you've [launched an app](/getting-started/launch-app/), you're ready to deploy to it.
+With an [app launched](/getting-started/launch-app/), you're ready to deploy to it.
 
 ## Link
-Before deploying your code to an app, you must first link your local codebase with your app on Nanobox. This is done using the Nanobox CLI's `link` command.
+In order to deploy your code to your production environment, you need to link your local codebase to your live app. This is done using the `link` command.
 
 ```bash
-# cd into the root of your project
+# cd into the root of your local project
 $ cd app-dir
 
-# Link the project to your Nanobox app
+# link the project to your live app
 $ nanobox link app-name
 ```
 
 For more information about the `link` command, view the ['link' documentation](/cli/link).
 
-## Build
-In order to deploy code to Nanobox, you must first create a build package. This is done using the CLI's `build` command.
+## Build & Compile
+In order to deploy code with Nanobox, you must first build a runtime and compile your code. Th `compile` command will do both if a runtime has not yet been built.
 
 ```bash
-$ nanobox build
+# build runtime & compile code
+$ nanobox compile
 ```
 
-This will run everything associated with your app's [code.build](/app-config/boxfile/code-build/) and generate a build package that can be deployed to your Nanobox app.
+This will run everything associated with your app's [code.build](/app-config/boxfile/code-build/) and generate a runtime and code package that can be deployed to your app.
 
 ## Deploy
-The `deploy` command will push your generated build up to Nanobox and deploy it into your production environment.
+The `deploy` command will deploy your newly built runtime and compiled code to your live server(s).
 
 ```bash
 $ nanobox deploy

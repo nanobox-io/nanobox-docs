@@ -2,15 +2,13 @@
 title: Configure Your App
 ---
 
-Getting your app ready to run on Nanobox requires very little. There are just a few things to do to get your project ready.
+Getting your app ready to run with Nanobox requires very little. There are just a few things to do to get your project ready.
 
 1. [Create a boxfile.yml](#create-a-boxfile-yml)
 2. [Use Environment Variables for Service Connections](#use-environment-variables-for-service-connections)
 
 ## Create a boxfile.yml
-The `boxfile.yml` is a config file that allows you to custom-build & configure your app's platform to your project's specific needs. It needs to be included in the root of your project.
-
-In many ways, the boxfile acts as a "seed" file for your app. It's where you specify what components your app needs as well as specific configuration options.
+The `boxfile.yml` is a config file that allows you to custom-build & configure your app's platform to your project's specific needs. It's where you specify what components your app needs as well as specific configuration options. Your 'boxfile.yml' must be included in the root of your project.
 
 #### Sample boxfile.yml
 ```yaml
@@ -26,10 +24,10 @@ data.db:
   image: nanobox/postgresql
 ```
 
-The [boxfile documentation](/app-config/boxfile/) covers all the options available in the `boxfile.yml`.
+The [boxfile.yml documentation](/app-config/boxfile/) covers all the options available in the `boxfile.yml`.
 
 ### Engines & Images
-Engines and Images define what to use when provisioning your app's web, worker, and/or data services and how they should be configured. Engines define the runtime for **web and worker components**. Images define the service to use in **data components**.
+Engines and images define what to use when provisioning your app's web, worker, and/or data services and how they should be configured. Engines define the runtime for **web and worker components**. Images define the service to use in **data components**.
 
 #### Engines & Images in the boxfile.yml
 ```yaml
@@ -78,4 +76,4 @@ production:
   password: <%= ENV['DATA_DB_PASS'] %>
 ```
 
-By using the environment variables to populate connection credentials, this codebase would work out-of-the-box when deployed to a Nanobox app. It also keeps you have having to commit sensitive information to your codebase. For more information about environment variables, view the [Environment Variables documentation](/app-config/environment-variables/).
+By using the environment variables to populate connection credentials, this codebase would work out-of-the-box when deployed to an app with Nanobox. It also keeps you have having to commit sensitive information to your codebase. For more information about environment variables, view the [Environment Variables documentation](/app-config/environment-variables/).

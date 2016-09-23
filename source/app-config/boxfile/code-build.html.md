@@ -2,9 +2,9 @@
 title: code.build
 ---
 
-The `code.build` section of the boxfile.yml allows you to configure how your code and its runtime environment are built and prepared for deploy. When code is deployed to a nanobox app, a "build" server is provisioned. In the build server, your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.
+The `code.build` section of the boxfile.yml allows you to configure how your code and its runtime environment are built and prepared for deploy. In the [build process](/cli/build/), your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.
 
-The configuration options and final "code-package" are used in web and worker components.
+The configuration options and final "build-package" are used in web and worker components.
 
 #### Engines Take Care of Most of the Build
 [Engines](/engines/) handle the bulk of the build and configuration process, but engine developers may open up configurable options. These can be specified under [`config`](#config-options).
@@ -35,7 +35,7 @@ code.build:
     - psutils
 
   # Build Hooks
-  before_prepare:
+  before_build:
     - 'echo I am getting ready'
   after_prepare:
     - 'echo I am ready'
@@ -66,7 +66,7 @@ code.build:
 ```
 
 ## Dependency Management
-The following option allow you to control how dependencies are loaded/preserved during the build process.
+The following options allow you to control how dependencies are loaded/preserved during the build process.
 
 ### Library Directories
 The `lib_dirs` config tells Nanobox where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are packaged into a “library archive”, which is used on subsequent deploys.
@@ -116,7 +116,7 @@ Build hooks allow you to "hook into" specific phases of the build process and ru
 #### Build Hooks in the boxfile.yml
 ```yaml
 code.build:
-  before_prepare:
+  before_build:
     - 'curl -sSf https://static.rust-lang.org/rustup.sh | sh'
   after_prepare:
     - 'echo good to go'

@@ -15,6 +15,9 @@ Rebooting a bunkhouse server will power-off the host machine, then power it back
 <strong>Downtime Risk - <span class='red'>High</span></strong>  
 All components housed on the bunkhouse server will be unavailable as server is shut off and brought back online. This will also flush the server's memory, wiping any data stored in memory.
 
+### Delete
+Deleting the bunkhouse server will decommission the server completely. All app and platform components must be moved off a bunkhouse before it can be deleted.
+
 ## Component Options
 Application components provide refresh, reboot, and rebuild options.
 

@@ -9,35 +9,35 @@ Build and deploy hooks take place at very specific points in both the build and 
 
 <%= partial "deploy-diagram", locals: {:hooks => 'true'} %>
 
-## Build Hooks
+## Build & Compile Hooks
 There are two main phases of the build process to consider when defining build hooks. These two phases are handled by your [engine](/engines/).
 
-1. **Prepare** - This is the phase where runtime executables are downloaded and installed in the build node.
-2. **Compile** - This is when commands are run to compile your code. The most common of which is running dependency managers.
+1. **Build** - This is the phase where runtime executables and dependencies are downloaded and installed.
+2. **Compile** - This is when commands are run to compile your code.
 
-Build hooks are configured in the the `code.build` section of your boxfile.yml.
+Build and compile hooks are configured in the the `code.build` section of your boxfile.yml.
 
-#### Important Things to Know About Build Hooks
+#### Important Things to Know About Build & Compile Hooks
 - [Environment variables](/app-config/environment-variables/) are **not** available during the build.
 - Build hooks do not have access to data services.
 - Code is fully writable.
 
-### before_prepare
-`before_prepare` hooks run before runtime executables are downloaded and installed. The most common use for these hooks is to download executables your engine normally doesn't install.
+### before_build
+`before_build` hooks run before runtime executables are downloaded and installed. The most common use for these hooks is to download executables your engine normally doesn't install.
 
 ```yaml
 code.build:
-  before_prepare:
+  before_build:
     - 'echo I\'m getting ready'
     - 'curl -sSf https://static.rust-lang.org/rustup.sh | sh'
 ```
 
-### after_prepare
+### after_build
 `after_prepare` hooks run after runtime executables are downloaded and installed.
 
 ```yaml
 code.build:
-  after_prepare:
+  after_build:
     - 'echo Good to go!'
 ```
 
@@ -61,7 +61,7 @@ code.build:
 ```
 
 ## Deploy Hooks
-Deploy hooks run after your code is built, packaged, and pushed to your new nodes.
+Deploy hooks run as apps are being deployed into sim and production environments.
 
 #### Important Things to Know About Deploy Hooks
 - [Environment variables](/app-config/environment-variables/) are available to deploy hooks.

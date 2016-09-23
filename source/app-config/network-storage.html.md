@@ -2,7 +2,7 @@
 title: Network Storage
 ---
 
-In some cases, it may be necessary to store files in your app's filesystem. In a traditional hosting environment, apps run on a single server with both source code and all auxiliary services using the same server resources and filesystem. In Nanobox however, apps consist of "micro-services" - isolated virtual instances, each with their own resources and filesystems, networked together inside of a virtual machine. In order for written files to be consistent across all services/instances in your app, they must be written to a single filesystem shared with other services. This is where network storage comes in.
+Network storage components provide persistent filestores for apps deployed with Nanobox.
 
 ## Understanding File Consistency in a Distributed Architecture
 
@@ -16,12 +16,12 @@ Because each instance has its own isolated filesystem, anything written to the f
 <img class="no-shadow" alt="Network Storage Problem" src="/src-images/network-storage-problem.svg" width="430" style="display: block; margin: 0 auto;">
 
 ### The Solution
-Network storage services provide a centralized filesystem shared between code instances. Directories inside of instances to which files must be written/read can be specified as "network directories". These directories are replaced with [network mounts](#network-mounts) on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem.
+Network storage components provide a centralized, persistent filesystem shared between code instances. Directories inside of instances to which files must be written/read can be specified as "network directories". These directories are replaced with [network mounts](#network-mounts) on deploy, which route requests to those directories across the network to the filesystem of the network storage service. This allows isolated code services to write to and read from a single writable filesystem.
 
 <img  class="no-shadow" alt="Network Storage Solution" src="/src-images/network-storage-solution.svg" width="620" style="display: block; margin: 0 auto;">
 
 ## How Network Storage Works
-Network storage components provide centralized writable filesystems sharable between multiple code services. For each code component, `network_dirs` can be specified in your `boxfile.yml`. On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across your app's private network to the corresponding path inside of the storage component. This allows code components to access files stored in network storage using the same filepaths as if they were in the local filesystem.
+Network storage components provide centralized, persistent, writable filesystems sharable between multiple code services. For each code component, `network_dirs` can be specified in your `boxfile.yml`. On deploy, these directories are replaced with network mounts which route any requests to the directory or its contents across your app's private network to the corresponding path inside of the storage component. This allows code components to access files stored in network storage using the same filepaths as if they were in the local filesystem.
 
 ### Network Mounts
 Network mounts essentially replace those directories in your repo (and their contents) specified as network directories in your Boxfile. Anything inside of a network directory within your repo will not be accessible to your app until uploaded to the matching filepath inside of your storage service.

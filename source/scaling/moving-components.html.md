@@ -2,7 +2,7 @@
 title: Moving Components Out of a Bunkhouse
 ---
 
-For many apps, a single Bunkhouse multi-component server works just fine, but as your app grows and you need to expand, you can move components out of your bunkhouse into their own scalable clusters or into another bunkhouse server.
+For many apps, a single Bunkhouse multi-component server works just fine, but as your app grows and you need to expand, you can move components out of your bunkhouse into their own scalable clusters or into other bunkhouse servers.
 
 To move a component out of a bunkhouse, click on on the "Move" button under the component in your dashboard.
 
@@ -10,7 +10,7 @@ To move a component out of a bunkhouse, click on on the "Move" button under the 
 
 When moving a component out of a bunkhouse, you have two options:
 
-### 1. Redundant Cluster
+### 1. Horizontal/Redundant Cluster
 Moving a component into its own redundant cluster allows you to scale the component both vertically and horizontally. Web and worker components can have additional nodes, increasing their ability to handle concurrent requests. Data components can be redundant, insuring uptime in case a node goes offline. *(Redundancy depends on the image used for the data component)*
 
 ### 2. Single, Bunkhouse Server

@@ -27,7 +27,7 @@ There are different bundle types to choose from when creating a new bundle:
 ### LetsEncrypt
 [LetsEncrypt](https://letsencrypt.org) is is a free, automated, and open certificate authority that provides encryption at no cost. When creating a LetsEncrypt bundle, Nanobox automatically generates the required key, certificate, and CA for you.
 
-**Important Note:** In order for a LetsEncrypt certificate to be successfully installed, you must first point the domain to your Nanobox app. Only then will LetsEncrypt be able to verify domain ownership and issue the certificate.
+**Important Note:** In order for a LetsEncrypt certificate to be successfully installed, you must first point the domain to [your app's IP](/domains-networking/custom-domains/#using-an-a-record). Only then will LetsEncrypt be able to verify domain ownership and issue the certificate.
 
 ### Self-Signed
 Self-Signed certificates provide SSL/TLS encryption, but are not signed by a certificate authority and are not trusted by most browsers. Users visiting a site with a self-signed cert will be shown a warning before the site will load. Valid use cases for self-signed certificates include things such as APIs or staging apps.
@@ -55,7 +55,7 @@ The naming of these files isn't standardized so it can be hard to know which is 
 Some SSL providers provide intermediate certificates that are part of your certificate's authoritative chain. Without these, some browsers will not honor the certificate. To install intermediate certificates, include them in the Certificate Authority field with your CA.
 
 ### Third-Party Import
-If you have a certificate that has already been keyed and used on another host, you can import that certificate into Nanobox. You'll need your cert's key, certificate, and CA. These can be obtained from either your SSL/TLS provider or where your certificate is currently installed. Paste the full contents of each into the corresponding fields to complete your bundle.
+If you have a certificate that has already been keyed and used on another host, you can import that certificate with Nanobox. You'll need your cert's key, certificate, and CA. These can be obtained from either your SSL/TLS provider or where your certificate is currently installed. Paste the full contents of each into the corresponding fields to complete your bundle.
 
 ## Activate a Bundle
 With a bundle created, it's ready to be installed. To install a bundle in your running app, click "Activate" next to the bundle.

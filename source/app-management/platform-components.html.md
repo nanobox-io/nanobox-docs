@@ -2,7 +2,7 @@
 title: Platform Components
 ---
 
-Each app on Nanobox includes "platform components". These services provide specific functionality necessary for your app to run on Nanobox. Below are summaries of the purpose of each platform component.
+Each app deployed with Nanobox includes "platform components". These services provide specific functionality necessary for your app to run. Below are summaries of the purpose of each platform component.
 
 *Each component is powered using a [Nanopack](http://nanopack.io) open-source project. While you don't need to worry about knowing these projects, you're welcome to take a look.*
 
@@ -27,6 +27,6 @@ The message bus pushes data such as resource usage metrics and logs to the Nanob
 ***Under the Hood:*** [*Mist*](https://github.com/nanopack/mist)
 
 ##  Warehouse
-The warehouse is a storage component that houses files and data required for Nanobox apps. This includes code builds and data backups.
+The warehouse is a storage component that houses files and data required for apps. This includes code builds and data backups.
 
 ***Under the Hood:*** [*Hoarder*](https://github.com/nanopack/hoarder)

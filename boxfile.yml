@@ -3,6 +3,9 @@ code.build:
   config:
     force_https: 'true'
 
+dev:
+  fs_watch: true
+
 code.deploy:
   transform:
     - 'bash insert-mixpanel.sh'

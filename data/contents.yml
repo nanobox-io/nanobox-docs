@@ -2,6 +2,9 @@ articles:
   - title: "Nanobox Documentation"
     path: "/"
 
+  - title: "Why Nanobox?"
+    path: "/why-nanobox/"
+
   - title: "Getting Started"
     path: "/getting-started/"
     articles:
@@ -23,16 +26,16 @@ articles:
         path: "/local-dev/local-setup/"
       - title: "Nanobox Dev & Sim"
         path: "/local-dev/dev-sim/"
-      - title: "Basic Workflow"
-        path: "/local-dev/basic-workflow/"
+      - title: "Modifying Your App"
+        path: "/local-dev/modifying-your-app/"
       - title: "Managing Local Data"
         path: "/local-dev/managing-local-data/"
       - title: "Nanobox config.yml"
         path: "/local-dev/nanobox-config-yml/"
       - title: ".nanoignore"
         path: "/local-dev/nanoignore/"
-      - title: "VM Performance Tuning"
-        path: /local-dev/vm-performance/
+      - title: "Local Performance Tuning"
+        path: /local-dev/local-performance/
 
   - title: "Application Configuration"
     path: /app-config/
@@ -115,6 +118,8 @@ articles:
             path: "/cli/sim/destroy/"
       - title: "build"
         path: "/cli/build/"
+      - title: "compile"
+        path: "/cli/compile/"
       - title: "link"
         path: "/cli/link/"
       - title: "deploy"
@@ -135,6 +140,8 @@ articles:
         path: "/cli/start/"
       - title: "stop"
         path: "/cli/stop/"
+      - title: "clean"
+        path: "/cli/clean/"
       - title: "destroy"
         path: "/cli/destroy/"
       - title: "Updating Nanobox"
@@ -170,8 +177,8 @@ articles:
     articles:
       - title: "Remotely Managing Data"
         path: "/data-management/remotely-managing-data/"
-      - title: "Backups"
-        path: "/data-management/backups/"
+      # - title: "Backups"
+      #   path: "/data-management/backups/"
       - title: "Data Migrations During Scaling & Rebuilds"
         path: "/data-management/data-migrations-scaling/"
 
@@ -217,8 +224,6 @@ articles:
   - title: "Engines"
     path: "/engines/"
     articles:
-      - title: "Finding & Using an Engine"
-        path: "/engines/finding-using/"
       - title: "Creating a Custom Engine"
         path: "/engines/create/"
         # articles:
@@ -263,8 +268,6 @@ articles:
   - title: "Images"
     path: "/images/"
     articles:
-      - title: "Finding & Using Images"
-        path: "/images/finding-using/"
       - title: "Creating a Custom Image"
         path: "/images/create/"
         # articles:

@@ -47,7 +47,7 @@ a                       { @include transition(all .15s); }
   &.open:after          { content: "–"; }
 }
 
-#navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; overflow: scroll; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
+#navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; overflow: auto; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
   &.shift               { margin-top: -2em; }
   #contents             { @include transition(max-height .5s); margin: 2.5em 2em 4.7em; max-height: 3800px; overflow: hidden; @include user-select;
     &.closed            { max-height: 0px; }
@@ -110,7 +110,7 @@ a                       { @include transition(all .15s); }
     &.red               { color: $pink-1; }
   }
   code, pre             { font-family: Monaco, Consolas,'Andale Mono',monospace; white-space: pre; word-wrap: normal; @include transition(border .15s) }
-  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: scroll; @include border-radius(4px); }
+  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: auto; @include border-radius(4px); }
   ul, ol                { padding-left: 1.2em;
     li                  { line-height: 1.8em; }
     &.os-tabs           { list-style: none; padding: 0;

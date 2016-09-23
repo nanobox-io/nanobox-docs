@@ -2,7 +2,7 @@
 title: Cron Jobs
 ---
 
-Cron Jobs allow you to create scheduled tasks for your Nanobox applications. They are commonly used to automate system maintenance or administration, but can also be used for many other things.
+Cron Jobs allow you to create scheduled tasks for your apps. They are commonly used to automate system maintenance or administration, but can also be used for many other things.
 
 ## How Cron Jobs Work
 
@@ -57,7 +57,7 @@ The schedule defines when and how often your cron job should run. Use [Cron Expr
 | Daily    | Run once a day, midnight                   | `0 0 * * *` |
 | Hourly   | Run once an hour, beginning of hour        | `0 * * * *` |
 
-**Note:** Predefined Scheduling Definitions (@daily, @hourly, etc.) are not available on Nanobox. All schedules must be numeric.
+**Note:** Predefined Scheduling Definitions (@daily, @hourly, etc.) are not available. All schedules must be numeric.
 
 ### Command
 The command is script or process that runs when the cron job fires. Be sure to include the executable in your command or make sure there's a [shebang](http://en.wikipedia.org/wiki/Shebang_(Unix)) in your script. Filepaths used in commands should be relative to the root of your project.

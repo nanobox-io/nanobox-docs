@@ -9,7 +9,8 @@ All interaction with Nanobox happens through the Nanobox CLI. This section of do
 | [`dev`](/cli/dev/)                     | Creates & manages a dev environment inside your Nanobox VM               |
 | [`sim`](/cli/sim/)                     | Creates & manages a simulated production platform inside your Nanobox VM |
 | [`link`](/cli/link/)                   | Manages links between dev & production apps                              |
-| [`build`](/cli/build/)                 | Generates a deployable build package                                     |
+| [`build`](/cli/build/)                 | Builds your app's runtime                                                |
+| [`compile`](/cli/compile/)             | Compiles your code into a deployable code package                        |
 | [`deploy`](/cli/deploy)                | Deploys your generated build package to a production app                 |
 | [`console`](/cli/console/)             | Opens an interactive terminal from inside a component in your live app   |
 | [`tunnel`](/cli/tunnel/)               | Establishes a secure tunnel from your local machine to a running service |
@@ -18,6 +19,7 @@ All interaction with Nanobox happens through the Nanobox CLI. This section of do
 | [`logout`](/cli/logout/)               | Removes your nanobox.io api token from your local nanobox client         |
 | [`start`](/cli/start/)                 | Starts the Nanobox VM                                                    |
 | [`stop`](/cli/stop/)                   | Stops the Nanobox VM                                                     |
+| [`clean`](/cli/clean/)                 | Clean out any environments that no longer exist                          |
 | [`destroy`](/cli/destroy/)             | Destroys the Nanobox VM, removing all apps & data                        |
 
 

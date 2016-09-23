@@ -2,7 +2,7 @@
 title: deploy
 ---
 
-The `deploy` command deploys a generated build package to a live app on Nanobox. If no app-name/alias, is provided, the "default" alias is assumed.
+The `deploy` command deploys a generated build package to a live app. If no app-name/alias, is provided, the "default" alias is assumed.
 
 ### Usage
 ```bash

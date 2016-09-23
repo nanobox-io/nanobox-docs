@@ -18,6 +18,9 @@ The `.nanoignore` file allows you to omit specific files and directories from yo
 ### Version Control Histories
 Version control projects such as Git, SVN, Mercurial, etc., all store version histories within your project directory. These can often be very large and are not needed in your build package.
 
+### Library, Vendor, & Package Directories
+Dependency managers run during your apps build process, so its good to ignore the directories where dependencies are stored. These directories are replaced with your cached libraries in the build process, but ignoring their local contents will decrease your build time.
+
 ### Application Logs/Caches in the Filesystem
 When working in a [local dev environment](http://localhost:4567/local-dev/dev-sim/#nanobox-dev), it's possible for your app to write things such as logs and/or caches to your local filesystem. To keep your build small, we recommend ignoring those files/directories.
 
