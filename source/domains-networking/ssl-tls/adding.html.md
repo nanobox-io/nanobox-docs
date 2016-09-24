@@ -38,7 +38,7 @@ When creating a self-signed bundle, Nanobox automatically generates the required
 If you've purchased an SSL certificate from a 3rd Party SSL provider and have not keyed the certificate, this is the option you should go with. This is a multi-step process.
 
 #### 1. Submit Your CSR to Your SSL Provider
-With your private key generated, we then create and provide a Certificate Signing Request (CSR). Submit your CSR to your SSL provider. They will use it to generate a certificate and certificate authority that matches your private key.
+With your private key generated, Nanobox provides a Certificate Signing Request (CSR). Submit your CSR to your SSL provider. They will use it to generate a certificate and certificate authority that matches your private key.
 
 ![Certificate Request](/src-images/ssl-tls-csr.png)
 

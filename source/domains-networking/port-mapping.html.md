@@ -2,10 +2,12 @@
 title: Port Mapping
 ---
 
-Nanobox allows to do define on which ports your web component listens for connections over tcp and udp protocols.
+Nanobox allows you to define on which ports your web components listen for connections over tcp and udp protocols.
 
 #### Listen for HTTP/HTTPS on Port 8080
-Custom http/https ports cannot be specified. All http requests connect on port 80 and all https requests on port 443. Both forward to your app on port 8080. **Your app must listen on port 8080 to connect to the public network over http/https.**
+Custom http/https ports cannot be specified. All http requests connect on port 80 and all https requests on port 443. Both forward to your app on port 8080.
+
+**Your app must listen on** `0.0.0.0:8080` **to connect to the public network over http/https.**
 
 #### ports
 ```yaml

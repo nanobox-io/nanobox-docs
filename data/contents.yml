@@ -334,11 +334,11 @@ articles:
   - title: "Troubleshooting"
     path: "/troubleshooting/"
     articles:
-      - title: "Error Codes"
-        path: "/troubleshooting/error-codes/"
-        articles:
-          - title: "1000"
-            path: "/troubleshooting/error-codes/1000/"
+      # - title: "Error Codes"
+      #   path: "/troubleshooting/error-codes/"
+      #   articles:
+      #     - title: "1000"
+      #       path: "/troubleshooting/error-codes/1000/"
       - title: "Broken netfs Exports File"
         path: "/troubleshooting/broken-exports-file/"
 
