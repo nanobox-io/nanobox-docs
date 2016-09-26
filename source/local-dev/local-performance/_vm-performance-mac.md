@@ -15,7 +15,7 @@ mount-type: netfs
 
 ### Things to Know When Using netfs
 #### netfs Requires Admin Privileges
-netfs does require admin privileges in order to create the mount. When Nanobox detects the `netfs` setting in your `config.yml`, it will prompt you for your administrative password whenever you start a dev platform.
+netfs does require admin privileges in order to create the mount. When Nanobox detects the `netfs` setting in your `config.yml`, it will prompt you for your administrative password whenever you start a dev environment.
 
 #### Exports File Can be Corrupted
 Your OS tracks filesystem mounts and exports in an export file. Sometimes (more frequently than you'd think) your exports file can be corrupted. It won't compromise your app or local environment in any way. It just prevents the mounts from being established correctly. Information about fixing your exports file can be found in the [Broken netfs Exports File](/troubleshooting/broken-exports-file/)

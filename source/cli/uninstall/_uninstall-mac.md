@@ -1,10 +1,10 @@
 To uninstall Nanobox from your local machine, there's a few steps you need to go through.
 
-### 1. Destroy Your Nanobox VM
-The [`nanobox destroy`](/cli/destroy/) command will destroy the Nanobox VM, removing all apps, containers, and all associated Nanobox and application data.
+### 1. Implode Your Nanobox Container
+The [`nanobox implode`](/cli/implode/) command will destroy the Nanobox container, removing all apps, filesystem mounts, and all associated Nanobox data.
 
 ```bash
-$ nanobox destroy
+$ nanobox implode
 ```
 
 ### 2. Remove the Nanobox Executables

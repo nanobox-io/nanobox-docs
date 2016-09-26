@@ -38,7 +38,7 @@ $ nanobox dev run
 ```
 
 ### Craft Some Code
-Do what you do best, code. Your local codebase is mounted into your Nanobox container, so any changes you make will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build` and `nanobox dev deploy` to apply those changes to your dev platform.
+Do what you do best, code. Your local codebase is mounted into your Nanobox container, so any changes you make will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build` and `nanobox dev deploy` to apply those changes to your dev environment.
 
 
 ## Test Locally
@@ -55,7 +55,7 @@ $ nanobox sim deploy
 If you make any code changes while running a sim environment, simply repeat the compile/deploy process to deploy those changes into your sim app.
 
 ## Deploy to Production
-With your code tested locally, the `deploy` command will push and deploy the built runtime and compiled code to your production platform. More information about deploying with Nanobox is available in the [Deploying Code](/getting-started/deploy-code/) doc.
+With your code tested locally, the `deploy` command will push and deploy the built runtime and compiled code to your production environment. More information about deploying with Nanobox is available in the [Deploying Code](/getting-started/deploy-code/) doc.
 
 ```bash
 $ nanobox deploy

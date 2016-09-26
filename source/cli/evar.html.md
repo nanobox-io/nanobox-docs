@@ -4,11 +4,11 @@ title: evar
 
 The `evar` command is used to manage environment variables in your live app. It has three subcommands:
 
-| Subcommand          | Summary                                                       |
-|:--------------------|:--------------------------------------------------------------|
-| [`add`](#add)       | Adds one or more key-value pairs as environment variables     |
-| [`remove`](#remove) | Removes one or more environment variables                     |
-| [`list`](#list)     | Lists environment variables added to your production platform |
+| Subcommand          | Summary                                                           |
+|:--------------------|:------------------------------------------------------------------|
+| [`add`](#add)       | Adds one or more key-value pairs as environment variables         |
+| [`remove`](#remove) | Removes one or more environment variables                         |
+| [`list`](#list)     | Lists environment variables added to your production environment  |
 
 ### Options
 #### -a, --app

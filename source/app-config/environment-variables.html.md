@@ -74,7 +74,7 @@ $ nanobox evar add KEY=VALUE
 $ nanobox evar add KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
 ```
 
-#### Adding Environment Variables to a Dev Platform
+#### Adding Environment Variables to a Dev Environment
 ```bash
 # Adding a Single Environment Variable
 $ nanobox dev evar add KEY=VALUE

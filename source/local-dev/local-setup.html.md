@@ -49,5 +49,5 @@ The `dev run` command will run all of the start commands specified in your [boxf
 $ nanobox dev run
 ```
 
-### Optimize Your Nanobox VM <span class='rec'></span>
-Whenever your Nanobox container is first created, it's configured using default settings which may cause processes running in the container to be a little slow. Virtual Box allows you to specify what system resources should be made available and Nanobox allows you to specify which filesystem mounting technology to use when mounting your local codebase. All of the optimizations are covered in the [VM Performance Tuning](/local-dev/vm-performance/) doc. You'll need to [stop](/cli/stop/) your Nanobox VM in order to make these changes.
+### Optimize Your Nanobox Container <span class='rec'></span>
+Whenever your Nanobox container is first created, it's configured using default settings which may cause processes running in the container to be a little slow. Virtual Box allows you to specify what system resources should be made available and Nanobox allows you to specify which filesystem mounting technology to use when mounting your local codebase. All of the optimizations are covered in the [Local Performance Tuning](/local-dev/local-performance/) doc. You'll need to [stop](/cli/stop/) your Nanobox container in order to make these changes.

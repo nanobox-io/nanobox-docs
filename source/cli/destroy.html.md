@@ -2,7 +2,7 @@
 title: destroy
 ---
 
-The `destroy` command destroys the Nanobox VM, removing all apps, containers, and all associated Nanobox and application data.
+The `destroy` command destroys the current project and removes it from Nanobox, destroying the filesystem mount, associated dns aliases, and local app data.
 
 ### Usage
 ```bash

@@ -8,7 +8,7 @@ Getting your app ready to run with Nanobox requires very little. There are just 
 2. [Use Environment Variables for Service Connections](#use-environment-variables-for-service-connections)
 
 ## Create a boxfile.yml
-The `boxfile.yml` is a config file that allows you to custom-build & configure your app's platform to your project's specific needs. It's where you specify what components your app needs as well as specific configuration options. Your 'boxfile.yml' must be included in the root of your project.
+The `boxfile.yml` is a config file that allows you to custom-build & configure your app's environment to your project's specific needs. It's where you specify what components your app needs as well as specific configuration options. Your 'boxfile.yml' must be included in the root of your project.
 
 #### Sample boxfile.yml
 ```yaml

@@ -2,7 +2,7 @@
 title: sim console
 ---
 
-The `sim console` command opens an interactive terminal inside a component running in your sim platform.
+The `sim console` command opens an interactive terminal inside a component running in your sim environment.
 
 ### Usage
 ```bash

@@ -15,7 +15,7 @@ mount-type: netfs
 
 ### Things to Know When Using netfs
 #### netfs Requires Admin Privileges
-netfs does require admin privileges in order to create the mount. When Nanobox detects the `netfs` setting in your `config.yml`, it will prompt you for your administrative password whenever you start a dev platform.
+netfs does require admin privileges in order to create the mount. When Nanobox detects the `netfs` setting in your `config.yml`, it will prompt you for your administrative password whenever you start a dev environment.
 
 
 ## Virtual Machine Settings

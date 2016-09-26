@@ -144,6 +144,8 @@ articles:
         path: "/cli/clean/"
       - title: "destroy"
         path: "/cli/destroy/"
+      - title: "implode"
+        path: "/cli/implode/"
       - title: "Updating Nanobox"
         path: "/cli/update/"
       - title: "Uninstalling Nanobox"

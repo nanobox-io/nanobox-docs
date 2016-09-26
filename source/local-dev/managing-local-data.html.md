@@ -2,7 +2,7 @@
 title: Managing Local Data
 ---
 
-When data components are provisioned inside of a Nanobox VM, each is given its own virtual IP. These allow you to connect to your data services in your running VM and manage them with your local client of choice.
+When data components are provisioned inside of a Nanobox container, each is given its own virtual IP. These allow you to connect to your data services in your running container and manage them with your local client of choice.
 
 To view the IPs and connection credentials for your data components, use the `dev info` command.
 

@@ -99,7 +99,7 @@ code.build:
 ```
 
 ## Dev Packages
-In some cases, you may need a package or runtime that your engine does not make available, but only while [developing locally](/local-dev/) in your Nanobox VM. The `dev_packages` config allows you to specify additional packages that should be available while working in your [dev environment](/cli/dev/).
+In some cases, you may need a package or runtime that your engine does not make available, but only while [developing locally](/local-dev/) in Nanobox. The `dev_packages` config allows you to specify additional packages that should be available while working in your [dev environment](/cli/dev/).
 
 ```yaml
 code.build:
