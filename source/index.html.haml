@@ -1,0 +1,16 @@
+%h1#home-title
+  Nanobox Doc<span class='shorten'>umentation</span>
+
+%p.center Nanobox takes care of the tedium and makes it easy to develop, deploy, and manage your application both locally and in production.
+
+#home-topics
+  - data.home_links.sections.each do |s|
+    %h3= s.title
+    - if s.caption
+      %p.caption= s.caption
+    - s.topics.each do |t|
+      .topic-group
+        %h5= t.title
+        %ul
+          - t.links.each do |l|
+            %li= link_to l.text, l.link

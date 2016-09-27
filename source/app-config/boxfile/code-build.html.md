@@ -19,12 +19,6 @@ code.build:
   config:
     version: 2.2
 
-  # Dependency Management
-  lib_dirs:
-    - vendor
-    - packages
-  reuse_libs: true
-
   # Extra Packages
   extra_packages:
     - nodejs-6.2
@@ -63,29 +57,6 @@ code.build:
   engine: username/engine-name
   config:
     version: 2.2
-```
-
-## Dependency Management
-The following options allow you to control how dependencies are loaded/preserved during the build process.
-
-### Library Directories
-The `lib_dirs` config tells Nanobox where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are packaged into a “library archive”, which is used on subsequent deploys.
-
-#### lib_dirs
-```yaml
-code.build:
-  lib_dirs:
-    - vendor
-    - packages
-```
-
-### Reuse Libs
-During the build process, dependencies are downloaded then stored in a "library archive". The `reuse_libs` config allows you to specify whether or not you want to use the library archive from the previous deploy. If set to 'false', libraries and packages will be downloaded on all deploys, increasing build/deploy times.
-
-#### reuse_libs
-```yaml
-code.build:
-  reuse_libs: true
 ```
 
 ## Extra Packages

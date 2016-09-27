@@ -55,7 +55,12 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
   }
 
   #content                      { width: 100%; padding: 2em; margin-left: 0; font-size: 16px;
-    h1                          { font-size: 3.2em; }
+    h1                          { font-size: 2.9em;
+      &#home-title              { font-size: 2.7em;
+        &:after                 { content: "s"; display: inline; }
+      }
+      .shorten                  { display: none; }
+    }
     h2                          { font-size: 2.1em; }
     h3                          { font-size: 1.5em; }
     h4                          { font-size: 1.2em; }

@@ -17,9 +17,6 @@ code.build:
   engine: ruby
   config:
     runtime: ruby-2.2
-  lib_dirs:
-    - vendor
-  reuse_libs: true
 
 code.deploy:
   transform:

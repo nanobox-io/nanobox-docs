@@ -91,13 +91,15 @@ a                       { @include transition(all .15s); }
   h1,h2,h3,h4,h5,h6     {
     span.rec:after      { content: '(Recommended)'; margin-left: .25em; font-size: .7em; font-style: italic; color: $lt-green-0; }
   }
-  h1                    { margin: .35em 0 .7em;; padding-bottom: .5em; border-bottom: 1px solid $grey-2; font-size: 3.9em; line-height: 1em; color: $blue-0; }
-  h2                    { margin: 0 0 .65em; padding-top: 1.5em; font-size: 2.5em; color: $grey-0; }
-  h3                    { margin: -1em 0 .45em; padding-top: 2.5em; font-size: 1.55em; color: $gblue-1; z-index: 1; }
-  h4                    { margin: -1.5em 0 .25em; padding-top: 3em; font-size: 1.15em; color: $grey-0; font-style: italic; }
-  h5                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $blue-0; text-transform: uppercase; }
-  h6                    { margin: -2em 0 .25em; padding-top: 3.5em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }
-  p                     { margin: 0 0 1.5em; line-height: 2em; }
+  h1                    { margin: .35em 0 .7em;; padding-bottom: .4em; border-bottom: 1px solid $grey-2; font-size: 3.5em; line-height: 1em; color: $blue-0;
+    &#home-title        { font-size: 3.4em; }
+  }
+  h2                    { margin: 0 0 .65em; padding-top: .9em; font-size: 2.3em; color: $grey-0; }
+  h3                    { margin: 0 0 .45em; padding-top: 1.25em; font-size: 1.55em; color: $gblue-1; z-index: 1; }
+  h4                    { margin: 0 0 .25em; padding-top: 1.65em; font-size: 1.15em; color: $grey-0; font-style: italic; }
+  h5                    { margin: 0 0 .25em; padding-top: 1.65em; font-size: .95em; color: $blue-0; text-transform: uppercase; }
+  h6                    { margin: 0 0 .25em; padding-top: 1.65em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }
+  p                     { margin: 0 0 1.25em; line-height: 2em; }
   a                     { color: $blue-1; text-decoration: none; border-bottom: 1px dotted;
     code                { border: 1px dotted $blue-1; }
     &:hover             { color: $blue-0;
@@ -157,6 +159,19 @@ a                       { @include transition(all .15s); }
     a                   { margin: 0 .25em; border: none; color: $grey-1; border-bottom: 1px dotted $grey-4;
       &:hover           { border-bottom: 1px dotted $grey-1; color: $grey-0; }
       &:first-child     { margin: 0; }
+    }
+  }
+
+  #home-topics            {
+    h3                    { margin-top: .75em; padding-bottom: .25em; color: $grey-0; border-bottom: 1px solid $grey-2; }
+    h5                    { font-size: .9em; letter-spacing: .05em; color: $blue-1; }
+    .caption              { margin: 1.5em 0 0; font-size: .9em; font-style: italic; line-height: 1.5em; color: $grey-1; }
+    .topic-group          { margin-right: 1em; width: 45%; display: inline-block; vertical-align: top;
+      ul                  { list-style: none; padding: 0; margin: 0; }
+      li                  { padding: 0; margin: .5em 0 ; line-height: 1.2em; font-size: .95em; }
+      a                   { color: $grey-0; border: none;
+        &:hover           { color: $blue-2; }
+      }
     }
   }
 

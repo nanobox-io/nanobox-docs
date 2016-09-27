@@ -1,3 +1,0 @@
----
-title: Image Project Setup
----
