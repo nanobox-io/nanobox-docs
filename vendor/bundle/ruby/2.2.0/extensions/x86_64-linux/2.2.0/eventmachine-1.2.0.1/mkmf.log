@@ -1,0 +1,13 @@
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/data/lib -L/data/lib -lruby  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+

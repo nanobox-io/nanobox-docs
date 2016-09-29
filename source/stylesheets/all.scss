@@ -89,7 +89,7 @@ a                       { @include transition(all .15s); }
 #content                { margin-left: 25.5%; width: 75%; max-width: 820px; padding: 2.7em; @include box-sizing; color: $grey-0; @include opacity(0); @include transition (opacity .2s);
   &.loaded              { @include opacity(1); }
   h1,h2,h3,h4,h5,h6     {
-    span.rec:after      { content: '(Recommended)'; margin-left: .25em; font-size: .7em; font-style: italic; color: $lt-green-0; }
+    span.rec:after      { content: '(Recommended)'; margin-left: .25em; font-size: 18px; font-style: italic; color: $lt-green-0; }
   }
   h1                    { margin: .35em 0 .7em;; padding-bottom: .4em; border-bottom: 1px solid $grey-2; font-size: 3.5em; line-height: 1em; color: $blue-0;
     &#home-title        { font-size: 3.4em; }

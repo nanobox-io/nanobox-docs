@@ -1,12 +1,12 @@
 ---
-title: Application Configuration
+title: App Configuration
 ---
 
 Every app is unique and it's important to be able to configure your environment to your app's specific needs. With Nanobox, environment configuration is centralized in a single file - your `boxfile.yml`.
 
 The next few docs walk through the specifics of the boxfile as well as other things to consider when building your app's platform:
 
-[The boxfile.yml](/app-config/boxfile/)  
+[Runtime & Services](/app-config/runtime-services/)  
 [Environment Variables](/app-config/environment-variables/)  
 [Application Logs](/app-config/app-logs/)  
 [Network Storage](/app-config/network-storage/)  

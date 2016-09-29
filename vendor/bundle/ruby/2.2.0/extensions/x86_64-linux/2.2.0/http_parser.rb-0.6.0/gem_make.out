@@ -1,0 +1,12 @@
+/data/bin/ruby -r ./siteconf20160929-474-xbfqot.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+make "DESTDIR=" install
+/data/bin/install-sh -c -m 0755 ruby_http_parser.so ./.gem.20160929-474-14voz8b

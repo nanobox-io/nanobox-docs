@@ -1,0 +1,61 @@
+---
+title: Deploy Code
+---
+
+With an [app launched](/production/launch-app/), you're ready to deploy to it.
+
+## Compile Your Code
+Before deploying to a live app, you need to compile your code. This creates a deployable code package than can be deployed by Nanobox.
+
+```bash
+# compile your code into a deployable package
+$ nanobox compile
+```
+
+**Note:** If your [built runtime](/cli/build/) isn't up to date with your boxfile.yml, this will also build a new runtime.
+
+## Test Locally
+The Nanobox CLI `sim` command provisions a simulated production environment in your local Nanobox container. Deploys into your a sim environment work exactly like a full production deploy. If it works in sim, it will work in production.
+
+```bash
+# Start your sim environment
+$ nanobox sim start
+
+# Add a convenient way to access your sim app from your browser (optional)
+$ nanobox sim dns add app-name.sim
+
+# deploy your built runtime & code package into sim
+$ nanobox sim deploy
+```
+
+Visit and test your app in your browser at `http://app-name.sim`.
+
+*More information about the `sim` command is available in the [`sim` documentation](/cli/sim/).*
+
+## Link
+In order to deploy your code to your production environment, you need to link your local codebase to your live app. This is done using the `link` command.
+
+```bash
+# cd into the root of your local project
+$ cd app-dir
+
+# link the project to your live app
+$ nanobox link app-name
+```
+
+For more information about the `link` command, view the ['link' documentation](/cli/link).
+
+
+## Deploy to Production
+The `deploy` command will deploy your newly built runtime and compiled code to your live server(s).
+
+```bash
+$ nanobox deploy
+```
+
+## The Deploy Process
+The diagram below shows how the deploy process works.
+
+*Scroll down to trigger each step of the process.*
+
+<%= partial "deploy-diagram"  %>

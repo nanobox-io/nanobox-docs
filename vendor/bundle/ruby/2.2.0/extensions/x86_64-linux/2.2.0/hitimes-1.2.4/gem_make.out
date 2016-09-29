@@ -1,0 +1,17 @@
+/data/bin/ruby -r ./siteconf20160929-474-em6euc.rb extconf.rb
+checking for clock_gettime() in -lrt... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling hitimes.c
+compiling hitimes_instant_clock_gettime.c
+compiling hitimes_instant_osx.c
+compiling hitimes_instant_windows.c
+compiling hitimes_interval.c
+compiling hitimes_stats.c
+linking shared-object hitimes/2.2/hitimes.so
+
+make "DESTDIR=" install
+/data/bin/install-sh -c -m 0755 hitimes.so ./.gem.20160929-474-1cwbcvc/hitimes/2.2

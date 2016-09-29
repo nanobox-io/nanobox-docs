@@ -23,7 +23,7 @@ data.db
 ```
 
 #### Database Name
-The name of databases deployed with Nanobox will always be 'gonano'
+The name of databases deployed with Nanobox will always be `gonano`.
 
 #### Port
 The port will always be the default port of the service type.

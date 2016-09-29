@@ -1,0 +1,428 @@
+package configuration for libffi is not found
+have_header: checking for ffi.h... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/data/lib -L/data/lib -lruby  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"cc -E -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+have_library: checking for ffi_call() in -lffi... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ffi.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_call; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_closure()... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘ffi_prep_closure’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_closure; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_closure; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘ffi_prep_closure’ [-Wimplicit-function-declaration]
+ int t(void) { ffi_prep_closure(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ffi_prep_closure(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_raw_call()... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘ffi_raw_call’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘ffi_raw_call’ [-Wimplicit-function-declaration]
+ int t(void) { ffi_raw_call(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ffi_raw_call(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_raw_closure()... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘ffi_prep_raw_closure’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_raw_closure; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_raw_closure; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘ffi_prep_raw_closure’ [-Wimplicit-function-declaration]
+ int t(void) { ffi_prep_raw_closure(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ffi_prep_raw_closure(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_blocking_region()... -------------------- no
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘rb_thread_blocking_region’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘rb_thread_blocking_region’ [-Wimplicit-function-declaration]
+ int t(void) { rb_thread_blocking_region(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/tmp/ccDCVc47.o: In function `t':
+conftest.c:(.text+0x44): undefined reference to `rb_thread_blocking_region'
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_thread_blocking_region(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_with_gvl()... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘rb_thread_call_with_gvl’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘rb_thread_call_with_gvl’ [-Wimplicit-function-declaration]
+ int t(void) { rb_thread_call_with_gvl(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_thread_call_with_gvl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_without_gvl()... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘rb_thread_call_without_gvl’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘rb_thread_call_without_gvl’ [-Wimplicit-function-declaration]
+ int t(void) { rb_thread_call_without_gvl(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_thread_call_without_gvl(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_cif_var()... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘ffi_prep_cif_var’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic    -lffi  -Wl,-R/data/lib -L/data/lib -lruby -lffi  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘ffi_prep_cif_var’ [-Wimplicit-function-declaration]
+ int t(void) { ffi_prep_cif_var(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ffi_prep_cif_var(); return 0; }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+ 1: #ifndef EXTCONF_H
+ 2: #define EXTCONF_H
+ 3: #define HAVE_FFI_H 1
+ 4: #define HAVE_FFI_PREP_CLOSURE 1
+ 5: #define HAVE_FFI_RAW_CALL 1
+ 6: #define HAVE_FFI_PREP_RAW_CLOSURE 1
+ 7: #define HAVE_RAW_API 1
+ 8: #define HAVE_RB_THREAD_CALL_WITH_GVL 1
+ 9: #define HAVE_RB_THREAD_CALL_WITHOUT_GVL 1
+10: #define HAVE_FFI_PREP_CIF_VAR 1
+11: #define RUBY_1_9 1
+12: #endif
+/* end */
+

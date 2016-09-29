@@ -10,51 +10,49 @@ articles:
     articles:
       - title: "Install Nanobox"
         path: "/getting-started/install-nanobox/"
+      - title: "Create a Dev Environment"
+        path: "/getting-started/create-dev-environment/"
       - title: "Configure Your App"
         path: "/getting-started/configure-app/"
-      - title: "Dev Workflow"
-        path: "/getting-started/dev-workflow/"
-      - title: "Launch an App"
-        path: "/getting-started/launch-app/"
-      - title: "Deploy Code"
-        path: "/getting-started/deploy-code/"
+      - title: "Add App Components"
+        path: "/getting-started/add-components/"
+      - title: "Craft Some Code"
+        path: "/getting-started/craft-some-code/"
 
   - title: "Local Development"
     path: "/local-dev/"
     articles:
-      - title: "Local Setup"
-        path: "/local-dev/local-setup/"
-      - title: "Nanobox Dev & Sim"
-        path: "/local-dev/dev-sim/"
+      - title: "Dev Workflow"
+        path: "/local-dev/dev-workflow/"
+      - title: "Dev CLI Commands"
+        path: "/local-dev/dev-cli/"
       - title: "Modifying Your App"
         path: "/local-dev/modifying-your-app/"
       - title: "Managing Local Data"
         path: "/local-dev/managing-local-data/"
-      - title: "Nanobox config.yml"
-        path: "/local-dev/nanobox-config-yml/"
-      - title: ".nanoignore"
-        path: "/local-dev/nanoignore/"
-      - title: "Local Performance Tuning"
-        path: /local-dev/local-performance/
+      - title: "Local Config"
+        path: "/local-dev/local-config/"
+        articles:
+          - title: "Local Performance Tuning"
+            path: /local-dev/local-config/local-performance/
+          - title: "Nanobox config.yml"
+            path: "/local-dev/local-config/nanobox-config-yml/"
+          - title: ".nanoignore"
+            path: "/local-dev/local-config/nanoignore/"
 
-  - title: "Application Configuration"
+  - title: "Deploy to Production"
+    path: "/production/"
+    articles:
+      - title: "Launch an App"
+        path: "/production/launch-app/"
+      - title: "Deploy Code"
+        path: "/production/deploy-code/"
+
+  - title: "App Configuration"
     path: /app-config/
     articles:
-      - title: "boxfile.yml"
-        path: "/app-config/boxfile/"
-        articles:
-          - title: "code.build"
-            path: "/app-config/boxfile/code-build/"
-          - title: "code.deploy"
-            path: "/app-config/boxfile/code-deploy/"
-          - title: "dev"
-            path: "/app-config/boxfile/dev/"
-          - title: "web"
-            path: "/app-config/boxfile/web/"
-          - title: "worker"
-            path: "/app-config/boxfile/worker/"
-          - title: "data"
-            path: "/app-config/boxfile/data/"
+      - title: "Runtime & Services"
+        path: "/app-config/runtime-services/"
       - title: "Environment Variables"
         path: "/app-config/environment-variables/"
       - title: "Application Logs"
@@ -67,6 +65,22 @@ articles:
         path: "/app-config/cron-jobs/"
       - title: "Build & Deploy Hooks"
         path: "/app-config/build-deploy-hooks/"
+
+  - title: "boxfile.yml"
+    path: "/boxfile/"
+    articles:
+      - title: "code.build"
+        path: "/boxfile/code-build/"
+      - title: "code.deploy"
+        path: "/boxfile/code-deploy/"
+      - title: "dev"
+        path: "/boxfile/dev/"
+      - title: "web"
+        path: "/boxfile/web/"
+      - title: "worker"
+        path: "/boxfile/worker/"
+      - title: "data"
+        path: "/boxfile/data/"
 
 
   - title: "Nanobox CLI"
@@ -150,8 +164,6 @@ articles:
         path: "/cli/update/"
       - title: "Uninstalling Nanobox"
         path: "/cli/uninstall/"
-
-
 
 
   - title: "Application Management"

@@ -1,0 +1,64 @@
+have_library: checking for clock_gettime() in -lrt... -------------------- yes
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/data/lib -L/data/lib -lruby  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/data/lib -L/data/lib -lruby -lrt  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘clock_gettime’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))clock_gettime; return 0; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))clock_gettime; return 0; }
+/* end */
+
+"cc -o conftest -I/data/include/ruby-2.2.0/x86_64-linux -I/data/include/ruby-2.2.0/ruby/backward -I/data/include/ruby-2.2.0 -I. -I/data/include -I/usr/include -I/data/include/ncurses   -I/usr/include/x86_64-linux-gnu -pthread -I/data/include -I/usr/include -I/data/include/ncurses -fPIC conftest.c  -L. -L/data/lib -Wl,-R/data/lib -L. -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/data/lib -Wl,-R/data/lib -pthread -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R/data/lib -L/data/lib -lruby -lrt  -lpthread -ldl -lcrypt -lm -lpthread -lrt  -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:15: warning: implicit declaration of function ‘clock_gettime’ [-Wimplicit-function-declaration]
+ int t(void) { clock_gettime(); return 0; }
+               ^
+as: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+/usr/bin/ld: /data/lib/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.26.1-system.so)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { clock_gettime(); return 0; }
+/* end */
+
+--------------------
+

@@ -15,16 +15,6 @@ sections:
         links:
           - text: 'Uploading File Storage'
             link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
-          - text: 'Link Text'
-            link: 'link-href'
-          - text: 'Connecting to a Data Component'
-            link: '#'
-      - title: 'Data Management'
-        links:
-          - text: 'Uploading File Storage'
-            link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
-          - text: 'Link Text'
-            link: 'link-href'
           - text: 'Connecting to a Data Component'
             link: '#'
 
@@ -44,8 +34,6 @@ sections:
         links:
           - text: 'Uploading File Storage'
             link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
-          - text: 'Link Text'
-            link: 'link-href'
           - text: 'Connecting to a Data Component'
             link: '#'
 

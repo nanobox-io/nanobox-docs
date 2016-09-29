@@ -1,0 +1,12 @@
+/data/bin/ruby -r ./siteconf20160929-474-qxdf8e.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+make "DESTDIR=" install
+/data/bin/install-sh -c -m 0755 fastfilereaderext.so ./.gem.20160929-474-k2pdu6
