@@ -23,7 +23,7 @@ provider: docker_machine
 ```
 
 ## Mount Type
-`mount-type` specifies which technology to use when mounting code on your local machine into a [dev environment](/local-dev/dev-sim/#nanobox-dev) in your Nanobox container. The following options are available:
+`mount-type` specifies which technology to use when mounting code on your local machine into a dev environment in your Nanobox container. The following options are available:
 
 - `native` - Uses the network file system native to your [provider](#provider).
 - `netfs` - Uses NFS on OSX and Linux, CIFS on Windows. **Much** better performance, but requires admin permissions.

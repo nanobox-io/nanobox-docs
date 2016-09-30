@@ -2,9 +2,9 @@
 title: .nanoignore
 ---
 
-In many cases, there are files stored in your local codebase that do not need to be included in your app's [build packages](/cli/build/). In fact, these files can add unnecessary bloat leading to larger builds and longer upload times.
+In many cases, there are files stored in your local codebase that do not need to be included in your app's [compiled code package](/cli/compile/). In fact, these files can add unnecessary bloat leading to larger packages and longer upload times.
 
-The `.nanoignore` file allows you to omit specific files and directories from your deployable build. It should be included in the root of your project.
+The `.nanoignore` file allows you to omit specific files and directories from your compiled code. It should be included in the root of your project.
 
 #### Basic .nanoignore Example
 ```txt
@@ -18,11 +18,8 @@ The `.nanoignore` file allows you to omit specific files and directories from yo
 ### Version Control Histories
 Version control projects such as Git, SVN, Mercurial, etc., all store version histories within your project directory. These can often be very large and are not needed in your build package.
 
-### Library, Vendor, & Package Directories
-Dependency managers run during your apps build process, so its good to ignore the directories where dependencies are stored. These directories are replaced with your cached libraries in the build process, but ignoring their local contents will decrease your build time.
-
 ### Application Logs/Caches in the Filesystem
-When working in a [local dev environment](http://localhost:4567/local-dev/dev-sim/#nanobox-dev), it's possible for your app to write things such as logs and/or caches to your local filesystem. To keep your build small, we recommend ignoring those files/directories.
+When working in a local dev environment, it's possible for your app to write things such as logs and/or caches to your local filesystem. To keep your build small, we recommend ignoring those files/directories.
 
 ### Network Directories
 If your app includes [network directories](/app-config/network-storage/#configuring-network-storage), we highly recommend adding those same directories to your `.nanoignore`. The contents of these directories are replaced by network mounts when deployed your production app. Anything contained in these directories doesn't need to be included in the build.

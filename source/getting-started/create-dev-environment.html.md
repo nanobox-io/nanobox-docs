@@ -5,7 +5,7 @@ title: Create a Dev Environment
 ## Create a boxfile.yml
 In the root of your project, create a file named `boxfile.yml`. The boxfile.yml is a yaml config file defines your runtime, infrastructure, and  configuration.
 
-The bare minimum required in the boxfile.yml is an "engine". [Engines](/engines/) are used to create your app's runtime environment and are specified in the [`code.build`](/app-config/boxfile/code-build/) section of your boxfile.yml. You can view [Official Nanobox engines on Github](https://github.com/nanobox-io/?utf8=%E2%9C%93&query=nanobox-engine).
+The bare minimum required in the boxfile.yml is an "engine". [Engines](/engines/) are used to create your app's runtime environment and are specified in the [`code.build`](/boxfile/code-build/) section of your boxfile.yml. You can view [Official Nanobox engines on Github](https://github.com/nanobox-io/?utf8=%E2%9C%93&query=nanobox-engine).
 
 #### Specify an Engine in Your boxfile.yml
 

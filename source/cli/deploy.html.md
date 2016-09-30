@@ -19,4 +19,4 @@ $ nanobox deploy -a production -m 'updated dependencies'
 Specifies the app-name or [alias](/cli/link/). If none is provided, it assumes the "default" alias.
 
 #### -m, --message
-Allows you to append a message to the deploy. These messages appear in your app's [deploy history](/app-management/deploy-history/) in your dashboard.
+Allows you to append a message to the deploy. These messages appear in your app's [deploy history](/production-management/deploy-history/) in your dashboard.

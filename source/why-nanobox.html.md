@@ -9,7 +9,7 @@ Let's face it. Building and managing an app platform can be challenging and tedi
 ### Dev / Production Parity
 A fundamental problem faced in application development is environment consistency. How do you make your local dev environment perfectly match your production environment? An even tougher question - How do you make the environment setup process consistent, repeatable, fast, and most importantly, easy?
 
-The [Nanobox CLI](/cli/) includes a local development tool that creates an isolated virtual environment on your local machine that  matches your production Nanobox environment and allows for active development. The [`nanobox dev`](/cli/dev/) command uses Docker to create isolated, containers inside of a local virtual Nanobox container using settings specified in your [`boxfile.yml`](/app-config/boxfile/). It then mounts your code directory from your local machine into the Nanobox container. Any changes to your code are reflected in your locally running app.
+The [Nanobox CLI](/cli/) includes a local development tool that creates an isolated virtual environment on your local machine that  matches your production Nanobox environment and allows for active development. The [`nanobox dev`](/cli/dev/) command uses Docker to create isolated, containers inside of a local virtual Nanobox container using settings specified in your [`boxfile.yml`](/boxfile/). It then mounts your code directory from your local machine into the Nanobox container. Any changes to your code are reflected in your locally running app.
 
 Once your code is at a point where it's ready for testing, the [`nanobox sim`](/cli/sim/) command provides and manages a simulated production environment inside your Nanobox container that emulates your app's production environment when deployed with Nanobox. Deploys into a sim environment go through the same process as deploys into a production app. If it works here, it will work in production.
 
@@ -18,10 +18,10 @@ Once the code is tested and ready for production, use the Nanobox CLI to build y
 For the deep dive into developing locally with Nanobox, check out the [Local Development docs](/local-dev/).
 
 ### Automated Environment Provisioning & Code Deploys
-When deploying your code, Nanobox automatically provisions and builds your production servers along with the supporting services specified in your `boxfile.yml`. Code runtimes and data services are provisioned using [engines](/engines/) and [images](/engines/). Nanobox then builds, packages, and deploys your runtime and code into your running environment. You never have to manually provision or configure a server.
+When deploying your code, Nanobox automatically provisions and builds your production servers along with the supporting services specified in your `boxfile.yml`. Code runtimes and data services are provisioned using [engines](/engines/) and [images](/images/). Nanobox then builds, packages, and deploys your runtime and code into your running environment. You never have to manually provision or configure a server.
 
 ### Application Management & Visibility
-Once an app is in production and handling real traffic, being able to easily see what's happening to your infrastructure is incredibly important. The Nanobox dashboard provides resource usage statistics for all nodes in your platform, streaming application logs, and other important tools to help you see, diagnose, and fix problems when the happen. The [application management docs](/app-management/) provide more information about the controls provided by the dashboard.
+Once an app is in production and handling real traffic, being able to easily see what's happening to your infrastructure is incredibly important. The Nanobox dashboard provides resource usage statistics for all nodes in your platform, streaming application logs, and other important tools to help you see, diagnose, and fix problems when the happen. The [production management docs](/production-management/) provide more information about the controls provided by the dashboard.
 
 ### Simple Scalability
 Scaling a production infrastructure can be intimidating and stressful. Uptime is critical and so many things can go wrong. Nanobox automates the process of scaling application components based on best practices and years of experience.

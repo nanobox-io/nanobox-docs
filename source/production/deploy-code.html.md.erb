@@ -14,6 +14,9 @@ $ nanobox compile
 
 **Note:** If your [built runtime](/cli/build/) isn't up to date with your boxfile.yml, this will also build a new runtime.
 
+#### .nanoignore
+In order to keep your compiled code package as small as possible and upload times short, we recommend adding a `.nanoignore` file to the root of your project. Here you can specify files to omit from compiled code. More information is available in the [.nanoignore documentation](/local-dev/local-config/nanoignore/).
+
 ## Test Locally
 The Nanobox CLI `sim` command provisions a simulated production environment in your local Nanobox container. Deploys into your a sim environment work exactly like a full production deploy. If it works in sim, it will work in production.
 

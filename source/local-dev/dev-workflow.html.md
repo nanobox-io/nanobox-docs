@@ -28,7 +28,7 @@ $ nanobox dev console
 Once in, you can start your web and worker processes.
 
 #### Run All Start Commands
-The `dev run` command will run all of the start commands specified in your [boxfile.yml](/app-config/boxfile/) for your web and worker components. This is ideal for apps that have web and worker components with multiple start commands.
+The `dev run` command will run all of the start commands specified in your [boxfile.yml](/boxfile/) for your web and worker components. This is ideal for apps that have web and worker components with multiple start commands.
 
 ```bash
 $ nanobox dev run

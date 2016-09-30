@@ -19,6 +19,11 @@ code.build:
   config:
     version: 2.2
 
+  # Dependency Management
+  lib_dirs:
+    - vendor
+    - packages
+
   # Extra Packages
   extra_packages:
     - nodejs-6.2
@@ -58,6 +63,20 @@ code.build:
   config:
     version: 2.2
 ```
+
+## Dependency Management
+The following option allow you to control where dependencies are loaded/preserved in the build process.
+
+### Library Directories
+The `lib_dirs` config tells Nanobox where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are cached and used on subsequent builds.
+
+#### lib_dirs
+```yaml
+code.build:
+  lib_dirs:
+    - vendor
+    - packages
+ ```
 
 ## Extra Packages
 In some cases, you may need a package or runtime that your engine does not make available. The `extra_packages` config allows you to specify additional packages that should be loaded into your build.

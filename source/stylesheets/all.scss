@@ -172,6 +172,7 @@ a                       { @include transition(all .15s); }
       a                   { color: $grey-0; border: none;
         &:hover           { color: $blue-2; }
       }
+      .more               { color: $blue-1; font-size: .825em; text-transform: uppercase; font-weight: bold; letter-spacing: .05em; }
     }
   }
 

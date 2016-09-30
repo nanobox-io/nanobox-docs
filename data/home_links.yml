@@ -6,41 +6,65 @@ sections:
           - text: 'Installing Nanobox'
             link: '/getting-started/install-nanobox/'
           - text: 'The boxfile.yml'
-            link: '/app-config/boxfile/'
+            link: '/boxfile/'
           - text: 'Creating a Local Dev Environment'
-            link: '/local-dev/local-setup/'
+            link: '/local-dev/create-dev-environment/'
           - text: 'Configure Your App for Nanobox'
             link: '/getting-started/configure-app/'
-      - title: 'Data Management'
+          - text: 'Dev CLI Commands'
+            link: '/local-dev/dev-cli/'
+
+      - title: 'Local Workflow'
         links:
-          - text: 'Uploading File Storage'
-            link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
-          - text: 'Connecting to a Data Component'
-            link: '#'
+          - text: 'Dev Workflow'
+            link: '/local-dev/dev-workflow/'
+          - text: 'Managing Local Data'
+            link: '/local-dev/managing-local-data/'
+          - text: 'Local Performance Tuning'
+            link: '/local-dev/local-config/local-performance/'
+
 
   - title: 'Production Management'
     topics:
       - title: 'Getting Started'
         links:
-          - text: 'Installing Nanobox'
-            link: '/getting-started/install-nanobox/'
-          - text: 'The boxfile.yml'
-            link: '/app-config/boxfile/'
-          - text: 'Creating a Local Dev Environment'
-            link: '/local-dev/local-setup/'
-          - text: 'Configure Your App for Nanobox'
-            link: '/getting-started/configure-app/'
+          - text: 'Launch an App'
+            link: '/production/launch-app/'
+          - text: 'Deploy Code'
+            link: '/production/deploy-code/'
+
+      - title: 'Nanobox Dashboard'
+        links:
+          - text: 'Server & Components Admin'
+            link: '/production-management/server-component-admin/'
+          - text: 'Component Stats'
+            link: '/production-management/component-stats/'
+          - text: 'App Logs'
+            link: '/production-management/app-logs/'
+          - text: 'Deploy History'
+            link: '/production-management/deploy-history/'
+
       - title: 'Data Management'
         links:
           - text: 'Uploading File Storage'
             link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
           - text: 'Connecting to a Data Component'
-            link: '#'
+            link: '/production-management/remote-access/'
+
+      - title: 'Domains & SSL'
+        links:
+          - text: 'Using Custom Domains'
+            link: '/domains-networking/custom-domains/'
+          - text: 'Adding SSL/TLS'
+            link: '/domains-networking/ssl-tls/adding/'
+          - text: 'Detecting User IPs & Protocols'
+            link: '/domains-networking/user-ip-and-protocols/'
 
   - title: 'Languages & Frameworks'
     caption: 'Language and framework-specific information is found in the <a href="#">Nanobox Guides</a>. Below are direct links to popular guides.'
     topics:
       - title: 'Ruby Guides'
+        more: 'https://guides.nanobox.io'
         links:
           - text: 'Ruby with Nanobox'
             link: 'https://guides.nanobox.io/ruby/'
@@ -48,7 +72,9 @@ sections:
             link: 'https://guides.nanobox.io/rails/'
           - text: 'Sinatra with Nanobox'
             link: 'https://guides.nanobox.io/sinatra/'
+
       - title: 'PHP Guides'
+        more: 'https://guides.nanobox.io'
         links:
           - text: 'PHP with Nanobox'
             link: 'https://guides.nanobox.io/php/'
@@ -58,7 +84,9 @@ sections:
             link: 'https://guides.nanobox.io/codeigniter/'
           - text: 'Wordpress with Nanobox'
             link: 'https://guides.nanobox.io/wordpress/'
+
       - title: 'Node.js Guides'
+        more: 'https://guides.nanobox.io'
         links:
           - text: 'Node.js with Nanobox'
             link: 'https://guides.nanobox.io/nodejs/'

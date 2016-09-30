@@ -11,6 +11,6 @@ Nanobox uses Virtual Box and Docker to provision a virtual container on your loc
 
 The [`sim`](/cli/sim/) commands creates and manages a simulated production environment in your Nanobox container. All your app's web, worker, and data services a provisioned and run just as they would in a production app. Sim is designed for testing [built runtimes](/cli/build/) before deploying them into production.
 
-Both dev and sim environments provision containers for each of your app's components specified in your [`boxfile.yml`](/app-config/boxfile/). Services are built and configured using the same [engines](/engines/) & [images](/images/) used in production apps deployed with Nanobox. Engines and images are fully open-source and can be created by anyone.
+Both dev and sim environments provision containers for each of your app's components specified in your [`boxfile.yml`](/boxfile/). Services are built and configured using the same [engines](/engines/) & [images](/images/) used in production apps deployed with Nanobox. Engines and images are fully open-source and can be created by anyone.
 
 All the runtimes necessary to run your app are installed inside your app's containers in your Nanobox container, leaving your local machine clean of any potential cruft. When you're done with the dev and sim environments, you can destroy them along with everything installed in them.

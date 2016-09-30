@@ -1,8 +1,8 @@
 ---
-title: Log Management
+title: App Logs
 ---
 
-When using Nanobox, application logs are available both in your dashboard and from the [Nanobox CLI](/cli/).
+Logs for apps deployed with Nanobox are available in your dashboard.
 
 ## Unified Log Stream
 All application logs are aggregated and streamed in a unified log stream. This allows all logs to be viewed in one place. Everything output to stdout and stderr as well as "log_watch'd" files are included in the log stream. For more information read through the [Application Logs doc](/app-config/app-logs/).

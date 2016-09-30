@@ -33,4 +33,4 @@ $ mv nanobox-update /usr/local/bin/nanobox-update
 Nanobox utilizes [Virtual Box](https://www.virtualbox.org/) to provision virtual environments on your local machine. If you already have it installed locally, you're all set. If not, [Download & Install Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads).
 
 ## Optimize Nanobox <span class="rec"></span>
-Once Nanobox is installed, it's recommended that you configure and optimize the Nanobox container. These optimizations are covered in the [Local Performance Tuning](/local-dev/local-performance/) doc.
+Once Nanobox is installed, it's recommended that you configure and optimize the Nanobox container. These optimizations are covered in the [Local Performance Tuning](/local-dev/local-config/local-performance/) doc.

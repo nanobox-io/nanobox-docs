@@ -17,6 +17,8 @@ code.build:
   engine: ruby
   config:
     runtime: ruby-2.2
+  lib_dirs:
+    - vendor
 
 code.deploy:
   transform:
@@ -129,14 +131,14 @@ The following restrictions apply to component nicknames:
 ## Sections of the Boxfile
 Boxfiles consist of a handful of sections or "nodes": code.build, code.deploy, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
 
-[`code.build`](/app-config/boxfile/code-build/) - Defines the build, environment, and configuration for web and worker components.
+[`code.build`](/boxfile/code-build/) - Defines the build, environment, and configuration for web and worker components.
 
-[`code.deploy`](/app-config/boxfile/code-deploy/) - Defines deploy hooks and possible code transformations.
+[`code.deploy`](/boxfile/code-deploy/) - Defines deploy hooks and possible code transformations.
 
-[`dev`](/app-config/boxfile/dev) - Defines settings unique to your [local nanobox dev environment](/local-dev/).  
+[`dev`](/boxfile/dev) - Defines settings unique to your [local nanobox dev environment](/local-dev/).  
 
-[`web`](/app-config/boxfile/web/) - Defines settings unique to each web component.  
+[`web`](/boxfile/web/) - Defines settings unique to each web component.  
 
-[`worker`](/app-config/boxfile/worker/) - Defines settings unique to each worker component.  
+[`worker`](/boxfile/worker/) - Defines settings unique to each worker component.  
 
-[`data`](/app-config/boxfile/data/) - Defines settings unique to a specific data component.
+[`data`](/boxfile/data/) - Defines settings unique to a specific data component.
