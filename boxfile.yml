@@ -2,6 +2,8 @@ code.build:
   engine: middleman
   config:
     force_https: 'true'
+  lib_dirs:
+    - docs
 
 dev:
   fs_watch: true
