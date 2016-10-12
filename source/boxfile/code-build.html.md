@@ -33,6 +33,10 @@ code.build:
   dev_packages:
     - psutils
 
+  # Additions to $PATH
+  paths:
+    - vendor/.bin
+
   # Build Hooks
   before_build:
     - 'echo I am getting ready'
@@ -99,6 +103,15 @@ code.build:
 ```
 
 **Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `dev_packages`.
+
+## Add Directories to the $PATH
+Some tools you may be using include binaries that need to be added to the system $PATH so they can be used from your console. the `paths` config allows you to specify directories that should be included in your $PATH. Directories should be relative to the root of your project.
+
+```yaml
+code.build:
+  paths:
+    - vendor/.bin
+```
 
 ## Build Hooks
 Build hooks allow you to "hook into" specific phases of the build process and run commands. These are covered in detail in the [Build & Deploy Hooks](/app-config/build-deploy-hooks/) doc.
