@@ -58,18 +58,20 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
   #breadcrumb                   { margin: 1em; }
 
   #doc-content                  { width: 100%; padding: 1.5em; margin-left: 0; font-size: 15px;
-    h1                          { font-size: 2.9em; }
-    h2                          { font-size: 2.1em; }
-    h3                          { font-size: 1.5em; }
-    h4                          { font-size: 1.2em; }
+    h1                          { font-size: 2.5em; }
+    h2                          { font-size: 1.9em; }
+    h3                          { font-size: 1.4em; }
+    h4                          { font-size: 1.1em; }
+    span.rec:after              { font-size: 14px !important; }
     .topic-group                { width: 100%; }
     #providers                  { text-align: center; }
-    #feedback             {
-      &:before            { display: block; text-align: center; }
-      #reach-out          { text-align: center;}
-      .options            { position: relative; margin: 0 auto; text-align: center;}
+    #feedback                   {
+      &:before                  { display: block; text-align: center; }
+      #reach-out                { text-align: center;}
+      .options                  { position: relative; margin: 0 auto; text-align: center;}
       &.submitted .options:before { margin: 0 auto .5em; }
     }
+    .topic-group                { width: 100% !important; }
   }
 
   #pagination                   { padding: 2.1em;
