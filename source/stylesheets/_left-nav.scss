@@ -1,0 +1,40 @@
+#navigation             { display: inline-block; width: 30%; padding-top: 1.2em; font-size: 1em; @include box-sizing; color: $gblue-5;
+  #contents             { margin-right: 2em; height: auto; overflow: hidden; @include user-select;
+    // &.closed            { height: 0px;  }
+  }
+  a                     { color: $dblue-0; text-decoration: none; display: inline-block; margin-left: 1.5em; line-height: 1.2em; padding: .3em 0; font-weight: 300;
+    &:hover             { color: $gblue-0; }
+  }
+  ul                    { margin: 0; padding: 0; list-style: none;
+    &.sub               { padding-left: .25em; margin-left: .35em; max-height: 0px; overflow: hidden; border-left: 1px solid $grey-2;
+      li                { margin-left: .6em; }
+    }
+    li                  { position: relative;
+      span              { position: absolute; margin: .4em 0; height: 15px; width: 15px; display: inline-block;
+        &.nav-toggle    { cursor: pointer;
+          .nav-btn-circle { fill: #fff; @include transition(fill .2s); }
+          .nav-btn-vert * { stroke-width: 1px; stroke:$sblue-0; }
+          .nav-btn-horz * { stroke-width: 1px; stroke:$sblue-0; }
+        }
+        .nav-bullet rect { fill: $grey-2; height: 4px; width: 4px; x: 4.5; y: 4.5; }
+      }
+      &.active          {
+        & > a           { color: $pink-1; font-weight: 700; }
+        & > .nav-toggle .nav-btn-circle * { fill: $pink-1; }
+        & > .nav-toggle {
+          .nav-btn-vert *, .nav-btn-horz * { stroke:#fff !important; }
+        }
+        .nav-bullet rect { fill: $pink-1; }
+        ul li .nav-bullet rect { fill: $grey-2; x: 4.5; y: 4.5; }
+      }
+      &.open            {
+        & > ul.sub      { max-height: 2000px; }
+        & > .nav-toggle .nav-btn-vert line { stroke-width: 0px !important; }
+      }
+      &.buried          {
+        .nav-btn-circle * { fill: $pink-1;}
+        .nav-btn-vert *, .nav-btn-horz * { stroke:#fff !important; }
+      }
+    }
+  }
+}

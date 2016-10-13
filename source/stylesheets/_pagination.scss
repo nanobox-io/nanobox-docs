@@ -1,0 +1,24 @@
+#pagination           { padding: 2.5em 1em; position: relative;
+  a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $dblue-0; border: none; @include border-radius(4px); @include transition(all .15s);
+    &:before          { content: attr(name); position: absolute; top: .65em; padding: 0.4em .65em .5em; background: $dblue-0; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }
+    &:after           { content: ''; position: absolute; top: 1em; width: 0; height: 0; z-index: -1; border-style: solid; @include opacity(0); @include transition(all .3s); }
+    &.prev            { left: 0;
+      &:before        { left: 3em; }
+      &:after         { left: 2.3em; border-width: .5em .5em .5em 0; border-color: transparent $dblue-0 transparent transparent; }
+    }
+    &.next            { right: 0;
+      &:before        { right: 3em; }
+      &:after         { right: 2.3em; border-width: .5em 0 .5em .5em; border-color: transparent transparent transparent $dblue-0; }
+    }
+    &:hover           {
+      &.prev          {
+        &:before      { @include opacity(1); left: 4em; }
+        &:after       { @include opacity(1); left: 3.3em; }
+      }
+      &.next          {
+        &:before      { @include opacity(1); right: 4em; }
+        &:after       { @include opacity(1); right: 3.3em}
+      }
+    }
+  }
+}

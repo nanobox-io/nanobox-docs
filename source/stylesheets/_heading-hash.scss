@@ -5,9 +5,9 @@
 #content                {
   h2, h3, h4, h5, h6    { position: relative;
     a                   { border: none; text-decoration: none; color: inherit;
-      &:before          { content: "#"; position: absolute; color: $grey-3; font-size: 22px; font-weight: normal; font-style: normal; @include transition(color .2s) }
+      &:before          { content: "#"; position: absolute; color: #fff; font-size: 22px; font-weight: normal; font-style: normal; @include transition(color .2s) }
       &:hover           { color: inherit;
-        &:before        { color: $blue-2; }
+        &:before        { color: $grey-2; }
       }
     }
   }

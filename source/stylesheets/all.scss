@@ -5,228 +5,47 @@ a                       { @include transition(all .15s); }
 .left                   { float: left; }
 .right                  { float: right; }
 
+.page-wrapper           { width: 100%; max-width: 1055px; margin: 0 auto; }
 
-#header                 { display: block; padding: 20px; position: fixed; top: 0; left: 0; background: $gblue-2; width: 100%; @include box-sizing; @include transition(all .15s); z-index: 100;
-  a                     { color: $gblue-4; text-decoration: none; text-transform: uppercase; font-size: 1.2em; letter-spacing: .06em;
-    &:hover             { color: $gblue-6; }
+#header                 { position: relative; display: block; padding: 20px; margin-bottom: 3.5em; width: 100%; @include box-sizing;
+  a                     { color: $gblue-4; text-decoration: none; text-transform: uppercase; font-size: 1.3em;  @include user-select;
     &#logo              { margin-top: -.05em;
-      span#nb-title     { margin-left: 1.8em;
-        &:after         { content: "/ Private Beta /"; margin-left: .3em; position: relative; top: -.05em; font-size: .65em; color: $blue-2; font-weight: 700; }
+      span#nb-title     { display: inline-block; margin: .65em 0 0 0.5em; vertical-align: top; font-weight: bold; letter-spacing: .1em;
+        &:after         { content: "/ Docs /"; margin-left: 1em; position: relative; top: -.05em; font-size: .6em; color: $gblue-7; font-weight: 700; letter-spacing: .05em; }
       }
     }
   }
   &.small               { padding: 8px 20px;
     a                   { font-size: 1em; }
   }
-  ul.links              { float: right; margin: 0; padding: 0; list-style: none;
+  ul.links              { position: absolute; right: 3em; top: 2em; margin: 0; padding: 0; list-style: none;
     li                  { display: inline-block;
-      &.text            { font-size: .8em; vertical-align: text-top;
-        a               { padding: .2em .75em .25em; @include border-radius(1em); font-style: italic; text-transform: none; letter-spacing: 0; border: .15em solid $gblue-2;
-          &:hover       { background: $gblue-6; color: $gblue-1; border-color: $gblue-6; }
-          &.active      { border-color: $gblue-6;  color: $gblue-6;
-            &:hover     { background: $gblue-2; color: $gblue-6;}
-          }
-        }
+      a                 { font-size: .8em; color: $gblue-7; text-transform: uppercase; letter-spacing: .05em; font-weight: bold;
+        &:hover         { color: $sblue-0; }
       }
     }
   }
   svg                   {
-    &#nb-logo-sm        { height: 1.5em; width: 1.3em; position: absolute; }
-    &#home-icon         { margin-left: .65em; height: 1em; width: 1em; stroke: $gblue-4; @include transition(stroke .15s);
-      &:hover           { stroke: $gblue-6; }
-    }
+    &#nb-logo           { width: 45px; }
   }
 }
 
-#wrapper                { margin: 3.95em 0 0;  @include transition(margin-top .2s);
-  &.small               { margin-top: 1.4em; }
+.content-flex           { display: flex; width: 100%; padding: 0 2em; flex-direction: row; box-sizing: border-box; }
+#content                { width: 70%; @include opacity(0); @include transition (opacity .2s);
+  &.loaded              { @include opacity(1); }
 }
 
-#contents-btn           { display: block; position: relative; padding: 1em; font-size: 1.25em; color: $gblue-7; background: $gblue-0; cursor: pointer;
+#contents-btn           { display: block; position: relative; padding: 1em; font-size: 1.1em; color: $gblue-6; background: $lt-gblue-6; cursor: pointer;
   &:after               { content: "+"; position: absolute; right: .6em; top: .5em; font-size: 1.5em; }
   &.open:after          { content: "–"; }
 }
 
-#navigation             { position: fixed; width: 25%; height: 100%; max-width: 450px; overflow: auto; border-right: 1px solid $grey-2; font-size: 1em; @include box-sizing; color: $gblue-5; @include transition(margin-top .15s);
-  &.shift               { margin-top: -2em; }
-  #contents             { @include transition(max-height .5s); margin: 2.5em 2em 4.7em; max-height: 3800px; overflow: hidden; @include user-select;
-    &.closed            { max-height: 0px; }
-  }
-  a                     { color: $grey-0; text-decoration: none;
-    &:hover             { color: $blue-1; }
-  }
-  ul                    { margin: 0; padding: 0; list-style: none;
-    &.sub               { padding-left: .25em; margin-left: .35em; max-height: 0px; overflow: hidden; border-left: 1px solid $grey-2;
-      li                { margin-left: .6em; }
-    }
-    li                  { position: relative;
-      span              { position: absolute; margin: .5em 0; height: 14px; width: 14px; display: inline-block;
-        &.nav-toggle    { cursor: pointer;
-          .nav-btn-circle { fill: $blue-2; @include transition(fill .2s); }
-          .nav-btn-vert * { stroke-width: 2px; }
-          &:hover       {
-            .nav-btn-circle { fill: $blue-1; }
-          }
-        }
-        .nav-bullet rect { fill: $grey-2; height: 5px; width: 5px; x: 4.5; y: 4.5; }
-      }
-      a                 { display: inline-block; margin-left: 1.4em; line-height: 1.4em; padding: .3em 0; }
-      &.active          {
-        & > a           { color: $pink-1; font-weight: 700; }
-        & > .nav-toggle .nav-btn-circle * { fill: $pink-1; }
-        .nav-bullet rect { fill: $pink-1; height: 5px; width: 5px; }
-        ul li .nav-bullet rect { fill: $grey-2; height: 5px; width: 5px; x: 4.5; y: 4.5; }
-      }
-      &.open            {
-        & > ul.sub      { max-height: 2000px; }
-        & > .nav-toggle .nav-btn-vert line { stroke-width: 0px !important; }
-      }
-      &.buried .nav-btn-circle * { fill: $pink-1 }
-    }
-  }
-}
+@import 'left-nav';
+@import 'doc-content';
+@import 'pagination';
 
-#content                { margin-left: 25.5%; width: 75%; max-width: 820px; padding: 2.7em; @include box-sizing; color: $grey-0; @include opacity(0); @include transition (opacity .2s);
-  &.loaded              { @include opacity(1); }
-  h1,h2,h3,h4,h5,h6     {
-    span.rec:after      { content: '(Recommended)'; margin-left: .25em; font-size: 18px; font-style: italic; color: $lt-green-0; }
-  }
-  h1                    { margin: .35em 0 .7em;; padding-bottom: .4em; border-bottom: 1px solid $grey-2; font-size: 3.5em; line-height: 1em; color: $blue-0;
-    &#home-title        { font-size: 3.4em; }
-  }
-  h2                    { margin: 0 0 .65em; padding-top: .9em; font-size: 2.3em; color: $grey-0; }
-  h3                    { margin: 0 0 .45em; padding-top: 1.25em; font-size: 1.55em; color: $gblue-1; z-index: 1; }
-  h4                    { margin: 0 0 .25em; padding-top: 1.65em; font-size: 1.15em; color: $grey-0; font-style: italic; }
-  h5                    { margin: 0 0 .25em; padding-top: 1.65em; font-size: .95em; color: $blue-0; text-transform: uppercase; }
-  h6                    { margin: 0 0 .25em; padding-top: 1.65em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }
-  p                     { margin: 0 0 1.25em; line-height: 2em; }
-  a                     { color: $blue-1; text-decoration: none; border-bottom: 1px dotted;
-    code                { border: 1px dotted $blue-1; }
-    &:hover             { color: $blue-0;
-      code              { border: 1px dotted $pink-1; }
-    }
-  }
-  span                  {
-    &.green             { color: $lt-green-0; }
-    &.yellow            { color: $yellow-4;}
-    &.red               { color: $pink-1; }
-  }
-  code, pre             { font-family: Monaco, Consolas,'Andale Mono',monospace; white-space: pre; word-wrap: normal; @include transition(border .15s) }
-  pre                   { margin-bottom: 3em; padding: 30px; background: $gblue-0; font-size: .9em; overflow: auto; @include border-radius(4px); }
-  ul, ol                { padding-left: 1.2em;
-    li                  { line-height: 1.8em; }
-    &.os-tabs           { list-style: none; padding: 0;
-      li                { margin-bottom: 2em; display: inline-block; min-width: 12%; padding: .75em 1em; text-align: center; font-size: .75em; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; color: $grey-4; background: $gblue-2; cursor: pointer; @include border-radius(4px); @include transition(all .2s);
-        &.active,
-        &:hover         { background: $blue-2; }
-      }
-    }
-  }
-  :not(pre)             { // Added to preserved code-block formatting for blocks nested in lists
-    & > code            { padding: 5px 8px 6px; font-size: .82em; color: $pink-1; background: white; white-space: nowrap; @include border-radius(4px); }
-  }
 
-  :not(.replay) > img   { max-width: 100%; @include border-radius(.4em); @include box-shadow(1px, 1px, 8px, #9a9a9a);
-    &.no-shadow         { @include box-shadow(0, 0, 0, #fff); }
-  }
-  hr                    { margin: 3em 0 2em; border: none; border-top: 1px solid $grey-2; }
-  blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-3;
-    p                   { font-size: 1.25em; font-style: italic; line-height: 1.5em; }
-  }
-  table                 { width: 100%; margin-bottom: 2em; border-collapse: separate;
-    thead               { background: $gblue-0; }
-    th                  { padding: 10px; border-width: 0 1px 0 0; border-color: $gblue-0 $gblue-1 $gblue-0 $gblue-0 ; border-style: solid; color: $bgreen-0;
-      &:first-child     { border-width: 0 1px; border-color: $gblue-0 $gblue-1 $gblue-0 $gblue-0; -webkit-border-radius: .4em 0 0; -moz-border-radius: .4em 0 0; border-radius: .4em 0 0; }
-      &:last-child      { -webkit-border-radius: 0 .4em 0 0; -moz-border-radius: 0 .4em 0 0; border-radius: 0 .4em 0 0; }
-    }
-    td                  { padding: 10px; border: 1px solid $grey-2; }
-    tr                  {
-      td                { border-width: 0 1px 1px 0;
-        &:first-child   { border-width: 0 1px 1px; }
-      }
-      &:nth-child(2n+2) { background: $grey-3; }
-      &:last-child      {
-        td              {
-          &:first-child { -webkit-border-radius: 0 0 0 .4em; -moz-border-radius: 0 0 0 .4em; border-radius: 0 0 0 .4em; }
-          &:last-child  { -webkit-border-radius: 0 0 .4em; -moz-border-radius: 0 0 .4em; border-radius: 0 0 .4em; }
-        }
-      }
-    }
-    code                { border: none !important; font-size: .85em; }
-  }
-
-  #breadcrumb           { font-size: .85em; color: $grey-1; line-height: 1.4em;
-    a                   { margin: 0 .25em; border: none; color: $grey-1; border-bottom: 1px dotted $grey-4;
-      &:hover           { border-bottom: 1px dotted $grey-1; color: $grey-0; }
-      &:first-child     { margin: 0; }
-    }
-  }
-
-  #home-topics            {
-    h3                    { margin-top: .75em; padding-bottom: .25em; color: $grey-0; border-bottom: 1px solid $grey-2; }
-    h5                    { font-size: .9em; letter-spacing: .05em; color: $blue-1; }
-    .caption              { margin: 1.5em 0 0; font-size: .9em; font-style: italic; line-height: 1.5em; color: $grey-1; }
-    .topic-group          { margin-right: 1em; width: 45%; display: inline-block; vertical-align: top;
-      ul                  { list-style: none; padding: 0; margin: 0; }
-      li                  { padding: 0; margin: .5em 0 ; line-height: 1.2em; font-size: .95em; }
-      a                   { color: $grey-0; border: none;
-        &:hover           { color: $blue-2; }
-      }
-      .more               { color: $blue-1; font-size: .825em; text-transform: uppercase; font-weight: bold; letter-spacing: .05em; }
-    }
-  }
-
-  #feedback             { position: relative; margin-top: 2.5em; padding: 1em; border: 1px dashed $grey-2; color: $grey-1; font-style: italic; @include border-radius(.5em);
-    &:before            { content: 'Was this information helpful?'; }
-    #reach-out          { display: none; margin: .25em 0 0; line-height: 1.5em;
-      &.show            { display: block; }
-    }
-    .options            { position: absolute; right: .5em; top: .5em;
-      a                 { display: inline-block; padding: .75em; min-width: 3em; cursor: pointer; font-size: .85em; text-transform: uppercase; font-style: normal; font-weight: bold; text-align: center; border: none; color: white; background: $blue-1; @include border-radius(3px);
-        &.yes           { color: $lt-green-0; background: $grey-3;
-          &:hover       { color: #fff; background: $lt-green-1; }
-        }
-        &.no            { color: $pink-1; background: $grey-3;
-          &:hover       { color: #fff; background: $pink-1; }
-        }
-      }
-    }
-    &.submitted         {
-      &:before          { content: 'Thank you for your feedback.'; }
-      .options          {
-        a               { display: none; }
-        &:before        { content: '\2713'; display: block; padding: .45em .5em .55em; width: 1em; height: 1em; text-align: center; font-style: normal; color: #fff; background: $lt-green-1; @include border-radius(50%); }
-      }
-    }
-  }
-
-  #pagination           { padding: 3em 0; margin: 3.5em 0 0;  position: relative; border-top: 1px solid $grey-2;
-    a                   { position: absolute; bottom: 0; width: 1.5em; height: 1.5em; padding: .75em; background: $gblue-0; border: none; @include border-radius(4px); @include transition(all .15s);
-      &:before          { content: attr(name); position: absolute; top: .65em; padding: 0.4em .65em .5em; background: $gblue-2; font-size: .9em; white-space: nowrap; z-index: -1; color: #fff; @include opacity(0); @include border-radius(5px); @include transition(all .3s); }
-      &:after           { content: ''; position: absolute; top: 1em; width: 0; height: 0; z-index: -1; border-style: solid; @include opacity(0); @include transition(all .3s); }
-      &.prev            { left: 0;
-        &:before        { left: 3em; }
-        &:after         { left: 2.3em; border-width: .5em .5em .5em 0; border-color: transparent $gblue-0 transparent transparent; }
-      }
-      &.next            { right: 0;
-        &:before        { right: 3em; }
-        &:after         { right: 2.3em; border-width: .5em 0 .5em .5em; border-color: transparent transparent transparent $gblue-0; }
-      }
-      &:hover           {
-        &.prev          {
-          &:before      { @include opacity(1); left: 4em; }
-          &:after       { @include opacity(1); left: 3.3em; }
-        }
-        &.next          {
-          &:before      { @include opacity(1); right: 4em; }
-          &:after       { @include opacity(1); right: 3.3em}
-        }
-      }
-    }
-  }
-}
-
-#footer                 { width: 100%; display: block; margin-top: 6em; font-size: .85em; color: $grey-1; text-align: center; @include box-sizing;
+#footer                 { width: 100%; display: block; margin: 3em 0; font-size: .85em; color: $grey-1; text-align: center; @include box-sizing;
   a                     { color: $grey-1; border: none; text-decoration: none; font-weight: 700;
     &:hover             { color: $blue-1; }
   }

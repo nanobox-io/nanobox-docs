@@ -6,19 +6,6 @@
 
 
 
-////////////////// SHRINKING TOP NAV //////////////////
-
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();
-  if (scroll >= 50) {
-    $("#header").addClass("small");
-    $("#navigation").addClass("shift");
-  } else {
-    $("#header").removeClass("small");
-    $("#navigation").removeClass("shift");
-  }
-});
-
 ////////////////// TOGGLE OS CONTENT //////////////////
 
 $(function(){
@@ -165,7 +152,6 @@ $(document).ready(function() {
     });
   });
 
-
   /////////////// HIDE UNUSED NAV SECTIONS ///////////////
   // Works in conjuction with lines
 
@@ -174,7 +160,6 @@ $(document).ready(function() {
       $('#contents-btn').removeClass('open');
     };
   }
-
 
   /////////////////// CONTENT FADE-IN ///////////////////
 
@@ -186,15 +171,8 @@ $(document).ready(function() {
 
   $('#navigation ul > li.active').addClass('open')
 
-  ///////// AUTO-SCROLL NAV TO ACTIVE NAV ITEM /////////
-
-  var activeNav = $('.active');
-	if(activeNav) {
-    var main = $("#navigation"), t = main.offset().top;
-    main.scrollTop(activeNav.position().top - t);
-	}
-
   ////////// CHANGES TEXT FOR INTERACTIVE SVGs //////////
+
   if(touch_device){
     $(".interactive-svg").addClass("touch");
   }

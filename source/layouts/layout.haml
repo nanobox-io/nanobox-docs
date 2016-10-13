@@ -57,61 +57,54 @@
           $("#reach-out").addClass("show");
 
   %body
-    #header
-      %a#logo.left{ :href => '/' }
-        = partial 'svgs/nb-logo-sm'
-        %span#nb-title
-          %span.drop Nanobox
-          Docs
-      %ul.links
-        %li
-          %a{ :href => 'https://nanobox.io'}
-            %svg#home-icon{"enable-background" => "new 0 0 18 18", :space => "preserve", :version => "1.1", :viewbox => "0 0 18 18", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
-              %polygon{:fill => "none", :points => "11,13 11,9 9,7 7,9 \r\n\t7,13 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
-              %polyline{:fill => "none", :points => "14,11 14,16 4,16 \r\n\t4,11 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
-              %polyline{:fill => "none", :points => "2,9.1 9.1,2 \r\n\t16.1,9.1 ", "stroke-linecap" => "round", "stroke-miterlimit" => "10", "stroke-width" => "2"}
-    #wrapper
-      #contents-btn.open Contents
-      #navigation
-        %ul#contents.closed
-          - data.contents.articles.each do |article|
-            = partial "nav-builder", :locals => { :article => article }
+    .page-wrapper
+      #header
+        %a#logo.left{ :href => '/' }
+          = partial 'svgs/nb-logo'
+          %span#nb-title Nanobox
+        %ul.links
+          %li #{ link_to 'Sign Up', 'https://dashboard.nanobox.io' }
+      .content-flex
+        #contents-btn.open Contents
+        #navigation
+          %ul#contents.closed
+            - data.contents.articles.each do |article|
+              = partial "nav-builder", :locals => { :article => article }
 
-      #content
-        #breadcrumb
-          = breadcrumbs(current_page, separator: '/')
-        - if data.page.title
-          %h1 #{ data.page.title }
-        = find_and_preserve do
-          = yield
+        #content
+          #breadcrumb
+            = breadcrumbs(current_page, separator: '/')
+          #doc-content
+            - if data.page.title
+              %h1 #{ data.page.title }
+            = find_and_preserve do
+              = yield
 
-        #feedback
-          .options
-            %a.no{ data: {mp_response: 'no', mp_path: current_page.url, mp_title: current_page.data.title || 'Docs Home' }} No
-            %a.yes{ data: {mp_response: 'yes', mp_path: current_page.url, mp_title: current_page.data.title || 'Docs Home' }} Yes
-          %p#reach-out Reach out to #{ link_to 'help@nanobox.io', 'mailto:help@nanobox.io' } and we'll try to help.
+            #feedback
+              .options
+                %a.no{ data: {mp_response: 'no', mp_path: current_page.url, mp_title: current_page.data.title || 'Docs Home' }} No
+                %a.yes{ data: {mp_response: 'yes', mp_path: current_page.url, mp_title: current_page.data.title || 'Docs Home' }} Yes
+              %p#reach-out Reach out to #{ link_to 'help@nanobox.io', 'mailto:help@nanobox.io' } and we'll try to help.
 
-        #pagination
-          - prev_article = get_prev_article(current_page.url)
-          - if prev_article
-            = link_to prev_article[:path], name: prev_article[:title], class: "prev" do
-              = partial "svgs/left-arrow"
+          #pagination
+            - prev_article = get_prev_article(current_page.url)
+            - if prev_article
+              = link_to prev_article[:path], name: prev_article[:title], class: "prev" do
+                = partial "svgs/left-arrow"
 
-          - next_article = get_next_article(current_page.url)
-          - if next_article
-            = link_to next_article[:path], name: next_article[:title], class: "next" do
-              = partial "svgs/right-arrow"
+            - next_article = get_next_article(current_page.url)
+            - if next_article
+              = link_to next_article[:path], name: next_article[:title], class: "next" do
+                = partial "svgs/right-arrow"
 
-        #footer
-          %ul#links
-            %li
-              %a{ :href => "https://nanobox.io/download"} Download
-            %li
-              %a{ :href => "https://nanobox.io/pricing" } Pricing
-            %li
-              %a{ :href => "https://guides.nanobox.io" } Guides
-            %li
-              %a{ :href => "https://blog.nanobox.io" } Blog
-            %li
-              %a{ :href => "http://webchat.freenode.net/?channels=nanobox", :target => "_blank"} #nanobox IRC
-          %p Pagoda Box Inc.  © Copyright 2016
+          #footer
+            %ul#links
+              %li
+                %a{ :href => "https://nanobox.io/download"} Download
+              -# %li
+              -#   %a{ :href => "https://nanobox.io/pricing" } Pricing
+              %li
+                %a{ :href => "https://guides.nanobox.io" } Guides
+              %li
+                %a{ :href => "http://webchat.freenode.net/?channels=nanobox", :target => "_blank"} #nanobox IRC
+            %p Pagoda Box Inc.  © Copyright 2016

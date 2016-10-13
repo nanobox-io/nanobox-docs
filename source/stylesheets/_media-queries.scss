@@ -30,11 +30,12 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 @media #{$small-up} { }
 @media #{$small-only} {
 
-  #header                       { border-bottom: 1px solid $gblue-1;
-    &.small                     { border: none; }
+  #header                       { margin-bottom: 2.25em;
     .drop                       { display: none; }
-    span#nb-title:after         { display: none; }
+    span#nb-title               { font-size: .8em; margin: .5em 0 0 .5em !important; }
+    svg#nb-logo                 { width: 30px; }
     svg#home-icon               { margin-left: .25em; }
+    ul.links                    { top: 1.75em; right: 1em; }
   }
 
   #footer                       { margin-top: 3em;
@@ -43,30 +44,37 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
     }
   }
 
-  #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; font-size: 1.1em; background: $gblue-0;
-    &.shift                     { margin-top: 0; }
-    #contents                   { margin: 0; }
+  #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; font-size: 1em; background: $lt-gblue-6;
+    #contents                   { margin: 0;
+      &.closed                  { height: 0; }
+    }
     ul                          {
       &#contents > li:last-child{ margin-bottom: 1.3em; }
-      &.sub                     { border-color: $gblue-5; }
     }
-    a                           { color: $gblue-6; }
-    .nav-bullet rect            { fill: $gblue-6 !important; }
   }
 
-  #content                      { width: 100%; padding: 2em; margin-left: 0; font-size: 16px;
-    h1                          { font-size: 2.9em;
-      &#home-title              { font-size: 2.7em;
-        &:after                 { content: "s"; display: inline; margin-left: -.22em; }
-      }
-      .shorten                  { display: none; }
-    }
+  .content-flex                 { flex-direction: column; padding: 0; }
+
+  #breadcrumb                   { margin: 1em; }
+
+  #doc-content                  { width: 100%; padding: 1.5em; margin-left: 0; font-size: 15px;
+    h1                          { font-size: 2.9em; }
     h2                          { font-size: 2.1em; }
     h3                          { font-size: 1.5em; }
     h4                          { font-size: 1.2em; }
     .topic-group                { width: 100%; }
-    #pagination                 { margin-bottom: 2em; }
     #providers                  { text-align: center; }
+    #feedback             {
+      &:before            { display: block; text-align: center; }
+      #reach-out          { text-align: center;}
+      .options            { position: relative; margin: 0 auto; text-align: center;}
+      &.submitted .options:before { margin: 0 auto .5em; }
+    }
+  }
+
+  #pagination                   { padding: 2.1em;
+    a.prev                      { left: 1em; }
+    a.next                      { right: 1em; }
   }
 
   .interactive-svg:before       { left: .5em; top: .5em; }
@@ -80,33 +88,24 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 }
 @media #{$medium-only} {
 
-  #header                       { border-bottom: 1px solid $gblue-1;
-    &.small                     { border: none; }
-  }
-
-  #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $gblue-0; font-size: 1.1em;
-    &.shift                     { margin-top: 0; }
-    #contents                   { margin: 0; }
+  #navigation                   { position: relative; width: 100%; max-width: 100%; padding: 0 1.2em; border: none; background: $lt-gblue-6; font-size: 1em;
+    #contents                   { margin: 0;
+      &.closed                  { height: 0; }
+    }
     ul                          {
       &#contents > li:last-child{ margin-bottom: 2em; }
-      &.sub                     { border-color: $gblue-5; }
     }
-    a                           { color: $gblue-6;
-      &:hover                   { color: $grey-4; }
-    }
-    g.nav-bullet rect            { fill: $gblue-6 !important; }
   }
 
+  .content-flex                 { flex-direction: column; }
+  #breadcrumb                   { margin-top: 1em; }
   #content                      { width: 100%; margin-left: 0; }
 
 }
 
 @media #{$large-up} {
 
-  #contents-btn               { display: none; }
-  #contents                   {
-    &.closed                  { max-height: 3800px !important; }
-  }
+  #contents-btn               { display: none !important; }
 
 }
 @media #{$large-only} { }

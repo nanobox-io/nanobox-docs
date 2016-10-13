@@ -1,0 +1,108 @@
+#breadcrumb             { margin-bottom: 1em; font-size: .7em; color: $grey-1; font-weight: bold; letter-spacing: .05em; line-height: 1.4em;
+  a                     { margin: 0 .25em; border: none; color: $dblue-0; text-transform: uppercase; text-decoration: none;
+    &:hover             { border-bottom: 1px solid $dblue-0; }
+    &:first-child       { margin: 0; }
+    &:last-child        { font-size: 1.1em; text-transform: none; letter-spacing: 0; font-style: italic; font-weight: normal; }
+  }
+}
+
+#doc-content            { padding: 2.5em; @include box-sizing; color: $grey-5; background: #fff;
+  h1,h2,h3,h4,h5,h6     {
+    span.rec:after      { content: '(Recommended)'; margin-left: .25em; font-size: 18px; font-style: italic; color: $lt-green-0; }
+  }
+  h1                    { margin: 0 0 .7em;; padding-bottom: .4em; border-bottom: 1px solid $grey-2; font-size: 3em; line-height: 1em; color: $blue-0; }
+  h2                    { margin: 1em 0 .35em; font-size: 2.1em; color: $grey-0;
+    & + h3, & + h4      { margin-top: 1.5em; }
+  }
+  h3                    { margin: 1.2em 0 .35em; font-size: 1.5em; color: $gblue-1; z-index: 1;
+    & + h4              { margin-top: 1.5em; }}
+  h4                    { margin: 0 0 .25em; font-size: 1.15em; color: $grey-0; font-style: italic; }
+  h5                    { margin: 0 0 .25em; font-size: .95em; color: $blue-0; text-transform: uppercase; }
+  h6                    { margin: 0 0 .25em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }
+  p                     { margin: 0 0 1.25em; line-height: 2em; }
+  a                     { color: $sblue-1; text-decoration: none;
+    code                { border-bottom: 1px dotted $blue-1; }
+    &:hover             { color: $blue-0;
+      code              { border-bottom: 1px dotted $pink-1; }
+    }
+  }
+  span                  {
+    &.green             { color: $lt-green-0; }
+    &.yellow            { color: $yellow-4;}
+    &.red               { color: $pink-1; }
+  }
+  code, pre             { font-family: Monaco, Consolas,'Andale Mono',monospace; white-space: pre; word-wrap: normal; @include transition(border .15s) }
+  pre                   { margin-bottom: 3em; padding: 1.5em; font-size: .9em; overflow: auto; }
+  ul, ol                { padding-left: 1.2em;
+    li                  { line-height: 1.8em; margin-top: .25em;}
+    &.os-tabs           { list-style: none; padding: 0;
+      li                { margin-bottom: 2em; display: inline-block; min-width: 12%; padding: .75em 1em; text-align: center; font-size: .75em; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; color: #fff; background: $dblue-0; cursor: pointer; @include border-radius(4px); @include transition(all .2s);
+        &.active,
+        &:hover         { background: $sblue-1; }
+      }
+    }
+  }
+  :not(pre)             { // Added to preserved code-block formatting for blocks nested in lists
+    & > code            { padding: 5px 8px 6px; font-size: .82em; color: #07a; font-weight: bold; background: $lt-gblue-6; white-space: nowrap; }
+  }
+
+  :not(.replay) > img   { max-width: 100%; @include border-radius(.4em); @include box-shadow(1px, 1px, 8px, #9a9a9a);
+    &.no-shadow         { @include box-shadow(0, 0, 0, #fff); }
+  }
+  hr                    { margin: 3em 0 2em; border: none; border-top: 1px solid $grey-2; }
+  blockquote            { margin: 3em 0; padding: .35em 2em .15em; border-left: 4px solid $gblue-4;
+    p                   { font-size: 1.25em; font-style: italic; line-height: 1.5em; }
+  }
+  table                 { width: 100%; margin-bottom: 2em; border-collapse: separate;
+    thead               { background: $dblue-0; }
+    th                  { padding: 10px; border-width: 0 1px 0 0; border-color: $dblue-0 $gblue-1 $dblue-0 $dblue-0 ; border-style: solid; color: #fff;
+      &:first-child     { border-width: 0 1px; border-color: $dblue-0 $gblue-1 $dblue-0 $dblue-0; }
+    }
+    td                  { padding: 10px; border: 1px solid $grey-2; }
+    tr                  {
+      td                { border-width: 0 1px 1px 0;
+        &:first-child   { border-width: 0 1px 1px; }
+      }
+      &:nth-child(2n+2) { background: $lt-gblue-6; }
+    }
+    code                { border: none !important; font-size: .85em; }
+  }
+
+  #home-topics            {
+    h3                    { margin-top: .75em; padding-bottom: .25em; color: $grey-0; border-bottom: 1px solid $grey-2; }
+    h5                    { font-size: .9em; letter-spacing: .05em; color: $blue-1; }
+    .caption              { margin: 1.5em 0 0; font-size: .9em; font-style: italic; line-height: 1.5em; color: $grey-1; }
+    .topic-group          { margin-right: 1em; width: 45%; display: inline-block; vertical-align: top;
+      ul                  { list-style: none; padding: 0; margin: 0; }
+      li                  { padding: 0; margin: .5em 0 ; line-height: 1.2em; font-size: .95em; }
+      a                   { color: $grey-0; border: none;
+        &:hover           { color: $blue-2; }
+      }
+      .more               { color: $blue-1; font-size: .825em; text-transform: uppercase; font-weight: bold; letter-spacing: .05em; }
+    }
+  }
+
+  #feedback             { position: relative; margin-top: 2.5em; padding: 1em; border: 1px dashed $grey-2; color: $grey-1; font-style: italic; @include border-radius(.5em);
+    &:before            { content: 'Was this information helpful?'; }
+    #reach-out          { display: none; margin: .25em 0 0; line-height: 1.5em;
+      &.show            { display: block; }
+    }
+    .options            { position: absolute; right: .5em; top: .5em;
+      a                 { display: inline-block; padding: .75em; min-width: 3em; cursor: pointer; font-size: .85em; text-transform: uppercase; font-style: normal; font-weight: bold; text-align: center; border: none; color: white; background: $blue-1; @include border-radius(3px);
+        &.yes           { color: $lt-green-0; background: $lt-gblue-6;
+          &:hover       { color: #fff; background: $lt-green-1; }
+        }
+        &.no            { color: $pink-1; background: $lt-gblue-6;
+          &:hover       { color: #fff; background: $pink-1; }
+        }
+      }
+    }
+    &.submitted         {
+      &:before          { content: 'Thank you for your feedback.'; }
+      .options          {
+        a               { display: none; }
+        &:before        { content: '\2713'; display: block; padding: .45em .5em .55em; width: 1em; height: 1em; text-align: center; font-style: normal; color: #fff; background: $lt-green-1; @include border-radius(50%); }
+      }
+    }
+  }
+}
