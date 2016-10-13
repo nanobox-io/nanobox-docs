@@ -69,8 +69,8 @@
   }
 
   #home-topics            {
-    h3                    { margin-top: .75em; padding-bottom: .25em; color: $grey-0; border-bottom: 1px solid $grey-2; }
-    h5                    { font-size: .9em; letter-spacing: .05em; color: $blue-1; }
+    h3                    { margin-top: 1.5em; padding-bottom: .25em; color: $grey-0; border-bottom: 1px solid $grey-2; }
+    h5                    { margin: 1.5em 0 .75em; font-size: .9em; letter-spacing: .05em; color: $blue-1; }
     .caption              { margin: 1.5em 0 0; font-size: .9em; font-style: italic; line-height: 1.5em; color: $grey-1; }
     .topic-group          { margin-right: 1em; width: 45%; display: inline-block; vertical-align: top;
       ul                  { list-style: none; padding: 0; margin: 0; }
