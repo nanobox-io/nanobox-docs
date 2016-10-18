@@ -19,3 +19,6 @@ Specifies the app-name or [alias](/cli/link/). If no app-name or alias is provid
 
 #### -p, --port
 Specifies the local port through which you'd like to establish the secure tunnel.
+
+### Connecting Through an Established Tunnel
+Instructions for connecting to data services through an established tunnel are provided in the [Remotely Manageing Data doc](/data-management/remotely-managing-data/#create-a-secure-tunnel).
