@@ -38,13 +38,13 @@ worker.jobs:
       - usr/uploads
 
 data.db:
-  image: nanobox/postgresql
+  image: nanobox/postgresql:9.5
 
 data.storage:
-  image: nanobox/gluster
+  image: nanobox/unfs:0.9
 
 data.queue:
-  image: nanobox/redis
+  image: nanobox/redis:3.0
 ```
 
 ## The Boxfile Structure
@@ -63,10 +63,10 @@ web.site: #<-------------------- Component ID
       - usr/uploads         #|
 
 
-data.postgres: #<--------------- Component ID
-  image: nanobox/postgresql #|
+data.mysql: #<------------------ Component ID
+  image: nanobox/mysql:5.6  #|
   config:                   #|-- Component Settings
-    version: 9.4            #|
+    event_scheduler: 'Off'  #|
                             #|
 ```
 
@@ -118,7 +118,7 @@ web.site:
 
 data.db:
   nickname: front-db
-  image: nanobox/postgresql
+  image: nanobox/postgresql:9.5
 ```
 
 #### Nickname Restrictions
@@ -126,7 +126,7 @@ The following restrictions apply to component nicknames:
 
 - Can only contain lowercase letters, numbers, and dashes
 - Cannot start or end with a dash
-- Connot contain consecutive dashes
+- Cannot contain consecutive dashes
 
 ## Sections of the Boxfile
 Boxfiles consist of a handful of sections or "nodes": code.build, code.deploy, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:

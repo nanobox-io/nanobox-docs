@@ -32,7 +32,7 @@ Network storage components are data components that use a filesystem [image](/im
 #### Network Storage Component in the Boxfile
 ```yaml
 data.storage:
-  image: nanobox/unfs
+  image: nanobox/unfs:0.9
 ```
 
 ### Network Directories
@@ -43,17 +43,17 @@ In the `network_dirs` config, you must specify the data component on which the d
 #### Network Directories in the Boxfile
 ```yaml
 web.site:
-  network_dirs:         #| Network Dirs Config
-    data.storage:       #| Storage Component Designation
-      - public/uploads  #| Network Directory
+  network_dirs:           #| Network Dirs Config
+    data.storage:         #| Storage Component Designation
+      - public/uploads    #| Network Directory
 
 worker.images:
-  network_dirs:         #| Network Dirs Config
-    data.storage:       #| Storage Component Designation
-      - public/uploads  #| Network Directory
+  network_dirs:           #| Network Dirs Config
+    data.storage:         #| Storage Component Designation
+      - public/uploads    #| Network Directory
 
-data.storage:           #| Storage Component
-  image: nanobox/unfs   #|
+data.storage:             #| Storage Component
+  image: nanobox/unfs:0.9 #|
 ```
 
 ###### Things to Note:
@@ -80,10 +80,10 @@ worker.images:
       - public/processed
 
 data.uploads:
-  image: nanobox/unfs
+  image: nanobox/unfs:0.9
 
 data.processed:
-  image: nanobox/unfs
+  image: nanobox/unfs:0.9
 ```
 
 ## Managing Network Storage

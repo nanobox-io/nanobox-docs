@@ -10,12 +10,12 @@ Nanobox provides images for many different services and technologies. You can vi
 If you can't find an image to suit your needs, you can [create your own](/images/create/). *In the future, there will be a registry where you can search for and publish images.*
 
 ## Using an Image
-Images are specified in the `data` components sections of your `boxfile.yml`. Images are used to provision and configure your data services.
+Images are specified in the `data` components sections of your `boxfile.yml`. Images are used to provision and configure your data services. Image specifications should also include a version for the service, which is appended to the image path with a colon (`:`). Versions are optional, but recommended.
 
 #### Specifying an Image in Your boxfile.yml
 ```yaml
 data.db:
-  image: nanobox/postgresql
+  image: nanobox/postgresql:9.5
 ```
 
 **Note**: Only images published on Docker Hub can be used with Nanobox. If you want to use your own image, use the following pattern:
@@ -31,9 +31,12 @@ Images often include configuration options allowing you to customize your servic
 #### Setting Engine Config Options in Your boxfile.yml
 ```yaml
 data.db:
-  image: nanobox/postgresql
+  image: nanobox/mysql:5.6
   config:
-    version: 9.4
+    plugins:
+      - federated
+      - audit_log
+    event_scheduler: 'Off'
 ```
 
 ## Creating Images

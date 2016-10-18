@@ -40,14 +40,14 @@ worker.sidekiq:
 ```
 
 ### Data Components
-Data components house data of some sort. These include databases, caches, persistent storage, etc. Each data component needs an [image](/images) - a docker image used to provision the service. You can view the [official Nanobox images on Docker Hub](https://hub.docker.com/r/nanobox/) as well as guides for each in the [Nanobox Service Guides](https://guides.nanobox.io/#services).
+Data components house data of some sort. These include databases, caches, persistent storage, etc. Each data component needs an [image](/images) - a docker image used to provision the service - and version. You can view the [official Nanobox images on Docker Hub](https://hub.docker.com/r/nanobox/) as well as guides for each in the [Nanobox Data Component Guides](https://guides.nanobox.io/components/).
 
 ```yaml
 data.postgres:
-  image: nanobox/postgresql
+  image: nanobox/postgresql:9.5
 
 data.storage:
-  image: nanbox/unfs
+  image: nanbox/unfs:0.9
 ```
 
 ### Build & Deploy to Provision Data Components
@@ -73,10 +73,10 @@ With these two data components in your `boxfile.yml`, the following environment 
 
 ```yaml
 data.db:
-  image: nanobox/postgresql
+  image: nanobox/postgresql:9.5
 
 data.bojangles:
-  image: nanobox/redis
+  image: nanobox/redis:3.0
 ```
 
 ```conf

@@ -25,13 +25,13 @@ Knowing the naming convention of data service connection variables allows you to
 #### Data Services in a boxfile.yml
 ```yaml
 data.postgres:
-  image: nanobox/postgresql
+  image: nanobox/postgresql:9.5
 
 data.redis:
-  image: nanobox/redis
+  image: nanobox/redis:3.0
 
 data.cthulu:
-  image: nanobox/mysql
+  image: nanobox/mysql:5.6
 ```
 
 #### Resulting Auto-Generated Environment Variables
