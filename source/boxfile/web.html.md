@@ -1,5 +1,6 @@
 ---
 title: web
+description: Web components are publicly accessible servers and are configured in your boxfile.yml.
 ---
 
 Web components have ports exposed to the external network making them publicly accessible. These should be used for any public-facing code component.

@@ -1,5 +1,6 @@
 ---
 title: Removing an Account
+description: Removing your Nanobox user account.
 ---
 
 While we hate to see anyone leave Nanobox, we understand that sometimes an account just needs to be removed. In order to remove your account, you must first remove yourself as a team member from all apps or, if you’re the apps’ sole owner, delete the app(s).

@@ -1,5 +1,6 @@
 ---
 title: Server & Component Admin
+description: Each server and component deployed with Nanobox can be refreshed, rebooted, rebuilt, updated, and deleted from the Nanobox dashboard.
 ---
 
 Every [bunkhouse server](/scaling/bunkhouse) and app component has administrative options that allow you to manage host machines and containers. These actions are helpful when either attempting to resolve issues with a server or apply updated config options. These options can be found under the "Admin" tab of each.

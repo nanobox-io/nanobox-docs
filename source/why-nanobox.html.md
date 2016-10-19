@@ -1,9 +1,13 @@
 ---
 title: Why Nanobox?
+description: Developers are expected to be full-stack experts, but you shouldn't have to be. Nanobox lets you focus on code and not worry about everything else.
 ---
+
+These days, developers are expected to be full-stack experts, but you shouldn't have to be. Nanobox lets you focus on the code and not worry about everything else.
 
 First off, a little history – We are developers who had to learn infrastructure and knew it could be easier. Nanobox is the result of lessons learned through years of successfully (and unsuccessfully) building, managing, and scaling production application platforms. Our goal is to help you avoid the pitfalls and time-loss that come with building, managing, and scaling yours.
 
+### Infrastructure is Hard
 Let's face it. Building and managing an app platform can be challenging and tedious. You often find yourself spending way too much time setting up local dev environments, building and configuring production servers, setting up monitoring for those servers, etc. Nanobox systematizes and automates these tasks to let you do what you do best – code.
 
 ### Dev / Production Parity

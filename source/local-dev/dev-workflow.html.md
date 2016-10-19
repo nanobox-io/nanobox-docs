@@ -1,5 +1,6 @@
 ---
 title: Dev Workflow
+description: Nanobox streamlines local development workflow letting you get code into production faster.
 ---
 
 The Nanobox CLI's `dev` command creates and manages a virtual local dev environment identical to what is or what will be your production environment deployed with Nanobox.

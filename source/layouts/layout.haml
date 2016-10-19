@@ -3,19 +3,18 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-
-    / favicon
-    %link{ :rel => "icon", :type => "image/png", :href => "/src-images/favicon.ico" }
-
-    / Always force latest IE rendering engine or request Chrome Frame
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
 
-    / Use title if it's in the page YAML frontmatter
     %title
       - if current_page.data.title
         = current_page.data.title + " - Nanobox Documentation"
       - else
         = "Nanobox Documentation"
+    - if current_page.data.description
+      %meta{:name => "description", :content => current_page.data.description }
+
+    / favicon
+    %link{ :rel => "icon", :type => "image/png", :href => "/src-images/favicon.ico" }
 
     / Typekit
     %script{ :src => "https://use.typekit.net/cqd5kth.js" }

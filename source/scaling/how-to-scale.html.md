@@ -1,5 +1,6 @@
 ---
 title: How to Scale
+description: Nanobox provides scaling controls that allow you to easily and quickly scale your app.
 ---
 
 Nanobox provides scaling controls in your dashboard that allow you to scale your apps when necessary. Scaling controls are exposed by clicking the "Scale" button underneath a scalable server/component.

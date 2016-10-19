@@ -1,8 +1,9 @@
 ---
 title: Adding SSL/TLS
+description: Normally the process of adding SSL/TLS to your app is tedious and complicated. Nanobox simplifies it into a few steps.
 ---
 
-Normally the process of adding SSL to your app is tedious complicated, but with Nanobox, we've tried to make it as simple as possible. To get started, click on the "Network" tab of your application dashboard and go to "SSL/TLS Certificates". Then click "New SSL/TLS Certificate".
+Normally the process of adding SSL to your app is tedious and complicated, but with Nanobox, we've tried to make it as simple as possible. To get started, click on the "Network" tab of your application dashboard and go to "SSL/TLS Certificates". Then click "New SSL/TLS Certificate".
 
 ![New SSL/TLS Certificate](/src-images/ssl-tls-add.png)
 

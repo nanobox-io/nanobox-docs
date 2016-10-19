@@ -1,5 +1,6 @@
 ---
 title: Configure Your App
+description: Getting your app ready to run with Nanobox requires very little. There are just a few things to do to get your project ready.
 ---
 
 Getting your app ready to run with Nanobox requires very little. There are just a few things to do to get your project ready.

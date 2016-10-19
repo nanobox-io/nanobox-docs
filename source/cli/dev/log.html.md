@@ -1,5 +1,6 @@
 ---
 title: dev log
+description: The 'dev log' command streams the log output from your dev app.
 ---
 
 The `dev log` command streams the log output from your dev app.

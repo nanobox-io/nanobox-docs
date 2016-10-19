@@ -1,5 +1,6 @@
 ---
 title: When to Scale
+description: Knowing when and what to scale is key to ensuring the uptime of your app. These few concepts will guide you in your scaling.
 ---
 
 Knowing when and what to scale is key to ensuring the uptime of your application. In the heat of the moment, it's easy to panic and just scale everything, but there's a couple of rules and questions to ask that will help identify what, how, and when something should be scaled.

@@ -1,5 +1,6 @@
 ---
 title: code.build
+description: The code.build section of the boxfile.yml allows you to configure how your code and its runtime environment are built and prepared for deploy.
 ---
 
 The `code.build` section of the boxfile.yml allows you to configure how your code and its runtime environment are built and prepared for deploy. In the [build process](/cli/build/), your [engine](#engine) installs the necessary binaries, loads dependencies/packages, and configures the environment. Engines provide default config settings, but also provide user-definable settings. User specified settings override the defaults.

@@ -1,5 +1,6 @@
 ---
 title: Backups
+description: Data backups can be life-savers in case of emergency. With Nanobox, you have a few options for running backups.
 ---
 
 Data backups can be life-savers in case of emergency and it's always a good idea to run frequent backups. You can trigger backups in your dashboard or through a cron job.

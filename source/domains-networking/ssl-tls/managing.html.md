@@ -1,5 +1,6 @@
 ---
 title: Managing SSL Certificates
+description: For SSL/TLS certificate installed with Nanobox, tasks such as renewing, rekeying, updating, or removing the certificate are handled in your Nanobox dashboard.
 ---
 
 Once you've created a SSL/TLS certificate and bundles, managing the certificate is simple. This doc walks through the most common management tasks.

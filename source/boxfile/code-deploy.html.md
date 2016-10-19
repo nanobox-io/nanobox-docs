@@ -1,5 +1,6 @@
 ---
 title: code.deploy
+description: The code.deploy section of your boxfile.yml allows you to modify code run hooks during the deploy process.
 ---
 
 The `code.deploy` section of your boxfile.yml allows you to transform your code before being being pushed into a live environment, as well as define hooks that run before and after deploy.

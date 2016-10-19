@@ -4,11 +4,11 @@ title: evar
 
 The `evar` command is used to manage environment variables in your live app. It has three subcommands:
 
-| Subcommand          | Summary                                                           |
-|:--------------------|:------------------------------------------------------------------|
-| [`add`](#add)       | Adds one or more key-value pairs as environment variables         |
-| [`remove`](#remove) | Removes one or more environment variables                         |
-| [`list`](#list)     | Lists environment variables added to your production environment  |
+| Subcommand    | Summary                                                           |
+|:--------------|:------------------------------------------------------------------|
+| [`add`](#add) | Adds one or more key-value pairs as environment variables         |
+| [`rm`](#rm)   | Removes one or more environment variables                         |
+| [`ls`](#ls)   | Lists environment variables added to your production environment  |
 
 ### Options
 #### -a, --app
@@ -28,28 +28,28 @@ $ nanobox evar add -a myapp ENVIRONMENT=local
 $ nanobox evar add -a myapp ENVIRONMENT=local,MY_EVAR='This is mine'
 ```
 
-## remove
-The `remove` subcommand is used to remove environment variables from your live app. You can remove a single environment variable, or a comma-delimited list of environment variables.
+## rm
+The `rm` subcommand is used to remove environment variables from your live app. You can remove a single environment variable, or a comma-delimited list of environment variables.
 
-### remove Usage
+### rm Usage
 ```bash
 # Pattern
-$ nanobox evar remove -a <app-name or alias> <key>
-$ nanobox evar remove -a <app-name or alias> <key1>,<key2>
+$ nanobox evar rm -a <app-name or alias> <key>
+$ nanobox evar rm -a <app-name or alias> <key1>,<key2>
 
 # Examples
-$ nanobox evar remove -a myapp ENVIRONMENT
-$ nanobox evar remove -a myapp ENVIRONMENT,MY_EVAR
+$ nanobox evar rm -a myapp ENVIRONMENT
+$ nanobox evar rm -a myapp ENVIRONMENT,MY_EVAR
 ```
 
-## list
-The `list` subcommand outputs all environment variables registered in your live app.
+## ls
+The `ls` subcommand outputs all environment variables registered in your live app.
 
-### list Usage
+### ls Usage
 ```bash
 # Pattern
-$ nanobox evar list -a <app-name or alias>
+$ nanobox evar ls -a <app-name or alias>
 
 # Example
-$ nanobox evar list -a myapp
+$ nanobox evar ls -a myapp
 ```

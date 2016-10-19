@@ -1,5 +1,6 @@
 ---
 title: Contributing
+description: Contributing to the Nanobox documentation and other Nanobox projects is simple. There are just a few guidelines.
 ---
 
 Nanobox manages a [collection of open-source projects](https://nanobox.io/open-source) to which you're welcome to contribute. Any contributions to Nanobox projects should follow the following process and guidelines.

@@ -1,8 +1,9 @@
 ---
 title: link
+description: The 'link' command manages links between your local and production apps.
 ---
 
-The `link` command allows you to manage links between your local and production apps. Links also allow you to create aliases for apps.
+The `link` command manages links between your local and production apps. Links also allow you to create aliases for apps.
 
 A single codebase can be linked to multiple apps, but an alias must be given for each app. If no alias is provided, it assumes the "default" alias.
 

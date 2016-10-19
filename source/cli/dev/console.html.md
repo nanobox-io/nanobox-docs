@@ -1,8 +1,9 @@
 ---
 title: dev console
+description: The 'dev console' command opens an interactive console inside your running dev environment.
 ---
 
-The `dev console` command opens an interactive terminal inside your running dev environment. To console into a data service, you can specify a the specific container to console into.
+The `dev console` command opens an interactive console inside your running dev environment. To console into a data service, you can specify a the specific container to console into.
 
 ### Usage
 ```bash

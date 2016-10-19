@@ -1,5 +1,6 @@
 ---
 title: boxfile.yml
+description: The boxfile.yml is the primary means of configuring apps with Nanobox. It allows you to custom-configure your environment to your project's specific needs.
 ---
 
 The `boxfile.yml` is a yaml config file housed in the root of your project that defines what components should exist in your app and all configuration related to your app’s deployment and infrastructure. It allows you to custom-configure your app's environment to your project's specific needs.

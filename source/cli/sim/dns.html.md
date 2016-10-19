@@ -1,5 +1,6 @@
 ---
 title: sim dns
+description: The 'sim dns' command allows you manage DNS alias and hostname mappings to your local simulated-production environment.
 ---
 
 The `sim dns` command allows you add and remove hostname mappings to your sim environment.

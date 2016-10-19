@@ -1,5 +1,6 @@
 ---
 title: Launch an App
+description: Launching apps to your production platform is incredibly easy with Nanobox.
 ---
 
 Nanobox makes launching apps on your production platform incredibly easy. The following steps will create a new app and provision a [bunkhouse server](/scaling/bunkhouse/) on your hosting provider.

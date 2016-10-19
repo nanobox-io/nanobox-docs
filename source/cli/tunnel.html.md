@@ -1,8 +1,9 @@
 ---
 title: tunnel
+description: The 'tunnel' command establishes a secure tunnel between your local machine and a data component in your live app.
 ---
 
-The `tunnel` command establishes a secure tunnel between your local machine and a component in your live app. It binds to a local port, through which you can connect to your running service.
+The `tunnel` command establishes a secure tunnel between your local machine and a data component in your live app. It binds to a local port, through which you can connect to your running service.
 
 ### Usage
 ```bash

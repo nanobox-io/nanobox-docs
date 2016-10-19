@@ -1,8 +1,9 @@
 ---
 title: Remote Access
+description: There are a few different methods for remotely accessing apps deployed with Nanobox.
 ---
 
-There are a few different methods for remotely connecting to components and services in app managed with Nanobox. Which method you use depends on the type of component to which you're connecting as well as what you're trying to do.
+There are a few different methods for remotely connecting to components and services in apps managed with Nanobox. Which method you use depends on the type of component to which you're connecting as well as what you're trying to do.
 
 ## Nanobox Console
 The `nanobox console` command allows you to securely access your production servers from your local machine. It drops you into an interactive console inside a component or even a specific component node.

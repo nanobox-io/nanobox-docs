@@ -1,5 +1,6 @@
 ---
 title: Modifying Your App
+description: As you're developing your app, changes to your code, runtime, and infrastructure are expected. Nanobox makes applying these changes simple.
 ---
 
 As you're developing your app, changes to your code, runtime, and infrastructure are expected. This doc walks through things you should now, and in some cases, how to apply those changes to your app.

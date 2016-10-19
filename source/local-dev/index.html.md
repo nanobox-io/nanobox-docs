@@ -1,5 +1,6 @@
 ---
 title: Local Development
+description: Nanobox makes streamlines local development letting you focus on the code and taking care of everything else.
 ---
 
 Developing code locally is a staple of the modern development workflow, but even still, creating a local dev environment can be tedious and frustrating. Everything from dealing with system cruft and machine-specific nuances to installing multiple version of runtimes and running into dependency conflicts are all too common problems when setting up a local environment. Throw in team members and the intricacies just multiply.

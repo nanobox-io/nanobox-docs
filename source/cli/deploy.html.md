@@ -1,8 +1,9 @@
 ---
 title: deploy
+description: The 'deploy' command deploys a generated build package and compiled code package a live app.
 ---
 
-The `deploy` command deploys a generated build package to a live app. If no app-name/alias, is provided, the "default" alias is assumed.
+The `deploy` command deploys a generated build package and compiled code package a live app. If no app-name/alias, is provided, the "default" alias is assumed.
 
 ### Usage
 ```bash

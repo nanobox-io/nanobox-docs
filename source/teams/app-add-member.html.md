@@ -1,5 +1,6 @@
 ---
 title: Adding Team Members
+description: Nanobox enables teams to work together on apps by allowing you to add team members to an app.
 ---
 
 Often, you are one of many working on your app. Nanobox enables teams to work together on apps by allowing you to add team members to an app.

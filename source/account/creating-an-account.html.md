@@ -1,5 +1,6 @@
 ---
 title: Creating an Account
+description: Creating a Nanobox account is simple and can be done in just a few minutes.
 ---
 
 <div style=" padding: 1em 1.35em; margin-bottom: 2em; color: #fff; background: #23aaf4; -webkit-border-radius: .4em; -moz-border-radius: .4em; border-radius: .4em;">

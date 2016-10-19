@@ -1,11 +1,12 @@
 ---
 title: Component Stats
+description: Visibility into your app's health is incredibly important. Nanobox provides them RAM, CPU, Swap, & Disk usage of your app's components and nodes.
 ---
 
 With any production application, visibility into your servers' resource usage is incredibly important. They help to identify any possible bottlenecks and are a good indicator of what to scale and when to scale it. Service resource usage statistics are provided in your Nanobox dashboard.
 
 ### Monitored Server Resources
-To provide visibility into the health of your app, Nanobox collects RAM, CPU, & Disk usage from all components and nodes.
+To provide visibility into the health of your app, Nanobox collects RAM, CPU, Swap, & Disk usage from all components and nodes.
 
 #### CPU
 The CPU statistic indicates how much of the available CPU a component/node is using. CPU provides compute time, speed, and responsiveness. The higher the CPU usage, the more likely your service is to become slow or completely unresponsive. *In multi-instance components, this is an average of CPU usage across all nodes in the cluster.*

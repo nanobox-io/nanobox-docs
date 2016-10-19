@@ -1,5 +1,6 @@
 ---
 title: Runtime & Services
+description: Your app's runtime and supporting services are all configured in your boxfile.yml.
 ---
 
 Your app's runtime and services are all configured in your `boxfile.yml`. For the deep dive into all the configuration options available, view the [boxfile.yml documentation](/boxfile/).

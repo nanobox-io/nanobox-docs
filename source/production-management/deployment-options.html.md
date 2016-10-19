@@ -1,5 +1,6 @@
 ---
 title: Deployment Options
+description: Specific deployment options are available in your app dashboard.
 ---
 
 Specific deployment options are available in your app dashboard under Admin > Deploy. These actions only apply when deploying to your live app.

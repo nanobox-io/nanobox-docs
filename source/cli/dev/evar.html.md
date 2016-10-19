@@ -1,5 +1,6 @@
 ---
 title: dev evar
+description: The 'dev evar' command is used to manage environment variables in your dev environment.
 ---
 
 The `dev evar` command is used to manage environment variables in your dev environment. The following subcommands are available:

@@ -1,5 +1,6 @@
 ---
 title: data
+description: Data components handle application data and can vary in function - anything from a database to a job queue.
 ---
 
 Data components handle application data. They can range anywhere in function from a database to a job queue. Functionality of data services is determined by the [image](#image) with which they're created.

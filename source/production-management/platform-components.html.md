@@ -1,5 +1,6 @@
 ---
 title: Platform Components
+description: Each app deployed with Nanobox includes 'platform components' that are necessary for your app to run.
 ---
 
 Each app deployed with Nanobox includes "platform components". These services provide specific functionality necessary for your app to run. Below are summaries of the purpose of each platform component.

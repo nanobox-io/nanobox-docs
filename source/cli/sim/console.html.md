@@ -1,8 +1,9 @@
 ---
 title: sim console
+description: The 'sim console' command opens an interactive console inside a component running in your local simulated-production environment.
 ---
 
-The `sim console` command opens an interactive terminal inside a component running in your sim environment.
+The `sim console` command opens an interactive console inside a component running in your sim environment.
 
 ### Usage
 ```bash

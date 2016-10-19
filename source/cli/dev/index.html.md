@@ -1,8 +1,9 @@
 ---
 title: dev
+description: The 'dev' command is used to create and manage your local Nanobox development environment.
 ---
 
-The `dev` is used to create and manage your local development environment inside your Nanobox container.
+The `dev` command is used to create and manage your local development environment inside your Nanobox container.
 
 ## Subcommands
 The `dev` command includes the following subcommands that allow you to interact with and manage your dev environment.

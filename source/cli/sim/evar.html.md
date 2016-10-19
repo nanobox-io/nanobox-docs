@@ -1,5 +1,6 @@
 ---
 title: sim evar
+description: The 'sim evar' command is used to manage environment variables in your local simulated-production environment.
 ---
 
 The `sim evar` command is used to manage environment variables in your sim environment. The following subcommands are available:

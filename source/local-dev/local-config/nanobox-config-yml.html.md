@@ -1,8 +1,9 @@
 ---
 title: Nanobox config.yml
+description: The config.yml defines configuration options for your local Nanobox container.
 ---
 
-The first time a `nanobox dev` or `nanobox sim` command is run, Nanobox creates a `.nanobox` directory in your user home directory. Inside of this directory, you can either find or create a `config.yml` file.  The `.nanobox/config.yml` configuration options for your Nanobox container.
+The first time a `nanobox dev` or `nanobox sim` command is run, Nanobox creates a `.nanobox` directory in your user home directory. Inside of this directory, you can either find or create a `config.yml` file.  The `.nanobox/config.yml` defines configuration options for your Nanobox container.
 
 #### .nanobox/config.yml
 ```yaml

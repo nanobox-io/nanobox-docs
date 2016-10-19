@@ -1,5 +1,6 @@
 ---
 title: Using Custom Domains
+description: Using your own domain on your app deployed with Nanobox is simple. It can be done by either adding an A-Record or CNAME to your DNS zone file.
 ---
 
 Using your own domain on your app is really simple and can be done by either adding an A-Record or CNAME to your DNS zone file. There are pros and cons to using each method as outlined below. Both are added and managed through your DNS provider.

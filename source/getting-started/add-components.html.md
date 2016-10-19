@@ -1,5 +1,6 @@
 ---
 title: Add App Components
+description: With Nanobox, every app consists of one or more components - supporting services that make your app work. Adding components is done in the boxfile.yml.
 ---
 
 With Nanobox, every app consists of one or more "components" - supporting services that make your app work. These include things such as webservers, databases, caches, etc.

@@ -1,5 +1,6 @@
 ---
 title: App Logs
+destroy: Logs for production apps deployed with Nanobox are available in your Nanobox dashboard.
 ---
 
 Logs for apps deployed with Nanobox are available in your dashboard.

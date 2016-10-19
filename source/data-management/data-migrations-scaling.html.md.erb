@@ -1,5 +1,6 @@
 ---
 title: Data Migrations During Scaling & Rebuilds
+description: Whenever scaling or rebuilding data services with Nanobox, data must be migrated. The migration process is designed ensure data integrity and minimize downtime.
 ---
 
 Whenever you scale or [rebuild](/production-management/server-components-admin/#rebuild) data components, new nodes are provisioned in parallel to your currently running nodes and data is migrated to the new nodes. To ensure data integrity and minimize both the time it takes to complete the migration and necessary downtime, data migrations are done in two phases.

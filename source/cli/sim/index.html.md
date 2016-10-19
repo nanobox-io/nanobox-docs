@@ -1,5 +1,6 @@
 ---
 title: sim
+description: The 'sim' command is used to create and manage a local simulated-production environment inside your Nanobox container.
 ---
 
 The `sim` command is used to create and manage a simulated production environment inside your Nanobox container.

@@ -1,5 +1,6 @@
 ---
 title: Create a Dev Environment
+description: Nanobox creates a local, isolated development environment, avoiding the normal local 'stack of cards'.
 ---
 
 ## Create a boxfile.yml

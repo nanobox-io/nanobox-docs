@@ -1,8 +1,9 @@
 ---
 title: dev deploy
+description: The 'dev deploy' command deploys a built runtime into your local Nanobox container. All data services are provisioned and started.
 ---
 
-The `dev deploy` command deploys a [built runtime](/cli/build/) and/or [compiled code](/cli/compile/) into your local Nanobox container. All data services are provisioned and started.
+The `dev deploy` command deploys a [built runtime](/cli/build/) into your local Nanobox container. All data services are provisioned and started.
 
 ### Usage
 ```bash

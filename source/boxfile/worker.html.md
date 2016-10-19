@@ -1,5 +1,6 @@
 ---
 title: worker
+description: Worker components are meant for running background processes and do not connect with the external network. They are configured in your boxfile.yml.
 ---
 
 Worker components are meant for running background processes and do not connect with the external network.

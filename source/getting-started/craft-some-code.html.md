@@ -1,5 +1,6 @@
 ---
 title: Craft Some Code
+description: With Nanobox dev environments, your code workflow doesn't have to change. It's just done inside of an isolated environment.
 ---
 
 Congratulations! By now you should have a local development environment setup and possibly a running app. What now?

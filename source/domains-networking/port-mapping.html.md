@@ -1,5 +1,6 @@
 ---
 title: Port Mapping
+description: Nanobox allows you to define on which ports your web components listen for connections over tcp and udp protocols.
 ---
 
 Nanobox allows you to define on which ports your web components listen for connections over tcp and udp protocols.

@@ -1,5 +1,6 @@
 ---
 title: dev dns
+description: The 'dev dns' command lets you manage DNS alias and hostname mappings to your dev environment.
 ---
 
 The `dev dns` command allows you add and remove hostname mappings to your dev environment.

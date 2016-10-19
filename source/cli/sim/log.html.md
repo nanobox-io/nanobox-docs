@@ -1,5 +1,6 @@
 ---
 title: sim log
+description: The 'sim log' command streams the log output from your local simulated-production app.
 ---
 
 The `sim log` command streams the log output from your sim app.

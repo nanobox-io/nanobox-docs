@@ -1,10 +1,11 @@
 ---
 title: Remotely Managing Data
+description: Nanobox allows you to securely connect to live data components and manage data using your tool of choice.
 ---
 
 **Note:** *This doc only pertains to managing data on production servers. For information about managing data in your local dev environment, check out the [Managing Local Data](/local-dev/managing-local-data/) doc.*
 
-Nanobox gives allows you to securely connect to your live data component(s) and manage them using your tool of choice. You have two options for remotely managing your data.
+Nanobox allows you to securely connect to your live data component(s) and manage them using your tool of choice. You have two options for remotely managing your data.
 
 ## Console In
 The `nanobox console` command drops you into a native prompt inside of the specified component. With the native prompt, you can use any binary or client installed with your component's [image](/images/).

@@ -1,5 +1,6 @@
 ---
 title: Dev CLI Commands
+description: Then Nanobox CLI 'dev' command is used to create and manage your local development environment.
 ---
 
 Then Nanobox CLI `dev` command is used to create and manage your local development environment. The following subcommands are available and are fully documented in the [Nanobox CLI documentation](/cli/dev/).

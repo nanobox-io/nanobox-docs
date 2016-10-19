@@ -1,5 +1,6 @@
 ---
 title: Bunkhouse Servers
+description: Every app deployed with Nanobox starts out in a single, multi-component server called a 'Bunkhouse'.
 ---
 
 Every app deployed with Nanobox starts out in a single, multi-component server called a "Bunkhouse". Your Bunkhouse houses and runs each of your app's components.

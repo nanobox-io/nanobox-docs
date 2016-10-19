@@ -1,5 +1,6 @@
 ---
 title: Editing Account Details
+description: Updating your Nanobox user account information, such as email address, password, and auth token, is done your your Nanobox dashboard.
 ---
 
 Account details can be edited by clicking your user image in the upper-right corner of your dashboard and going to Account Admin.

@@ -1,5 +1,6 @@
 ---
 title: Identifying Certs, CAs, & Intermediate Certs
+description: Identifying certificate files given to you from your SSL/TLS provider can be a challenge, but here are some hints to help.
 ---
 
 When keying a third-party certificate, your SSL/TLS provider will give you a collection of files that will contain your Certificate, Certificate Authority (CA), and in some cases, Intermediate Certificates. While the formats of these files are standardized, their names are not. Each SSL/TLS provider uses their own naming convention and it can be hard to determine what's what. Below are just a few tips to help you identify Certificates, CAs, and Intermediate Certificates.

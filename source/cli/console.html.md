@@ -1,8 +1,9 @@
 ---
 title: console
+description: The 'console' command opens an interactive console inside a specified live component.
 ---
 
-The `console` command opens an interactive terminal inside a specified component in your live app.
+The `console` command opens an interactive console inside a specified live component.
 
 ### Usage
 ```shell

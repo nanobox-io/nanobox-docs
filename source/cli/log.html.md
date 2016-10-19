@@ -1,5 +1,6 @@
 ---
 title: log
+description: The 'log' command allows you to view logs from your production app.
 ---
 
 The `log` command allows you to view logs from your production app.

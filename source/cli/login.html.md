@@ -1,5 +1,6 @@
 ---
 title: login
+description: The 'login' command authenticates your local Nanobox client with your Nanobox account.
 ---
 
 The `login` command authenticates your local Nanobox client with your Nanobox account and stores your API token.
