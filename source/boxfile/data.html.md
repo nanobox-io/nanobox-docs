@@ -17,7 +17,6 @@ data.db:
       - federated
       - audit_log
     event_scheduler: 'Off'
-
 ```
 
 ## Image

@@ -46,7 +46,6 @@ web.site:
     - id: echo_msg
       schedule: '*/3 */2 1-3 2,6,7 2'
       command: 'echo i\'m a little teapot'
-
 ```
 
 ## Start Command

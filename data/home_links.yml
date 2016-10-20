@@ -61,7 +61,7 @@ sections:
             link: '/domains-networking/user-ip-and-protocols/'
 
   - title: 'Languages & Frameworks'
-    caption: 'Language and framework-specific information is found in the <a href="#">Nanobox Guides</a>. Below are direct links to popular guides.'
+    caption: 'Language and framework-specific information is found in the <a href="https://guides.nanobox.io">Nanobox Guides</a>. Below are direct links to popular guides.'
     topics:
       - title: 'Ruby Guides'
         more: 'https://guides.nanobox.io/ruby/'
