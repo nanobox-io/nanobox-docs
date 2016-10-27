@@ -5,35 +5,41 @@ description: Nanobox streamlines local development workflow letting you get code
 
 The Nanobox CLI's `dev` command creates and manages a virtual local dev environment identical to what is or what will be your production environment deployed with Nanobox.
 
-### Start Your Dev Environment, Deploy to Dev
-To get your local dev environment running, your Nanobox container needs to be started, a runtime built, your dev environment provisioned, and the runtime deployed into your dev environment.
+### Start Your Dev Environment
+To get your local dev environment running, `cd` into the root of your project and run the `dev start` command.
 
 ```bash
-# build your runtime
-$ nanobox build
+# start your dev environment
+nanobox dev start
+```
 
-# start and deploy your runtime to your dev environment
-$ nanobox dev deploy
+### Console into Your Dev Environment
+With your dev environment up and running, you can console into it with the `dev console` command.
+
+```bash
+# console into your dev environment
+nanobox dev console
 ```
 
 ### Start Your App
-With a built runtime deployed to your dev environment, you can start your app. You have the following two options:
+There are two different ways you can start your app inside your dev environment:
 
-#### Console In & Start Your App
-The `dev console` command will drop you into an interactive console where you can run the commands necessary to start your app. This comes in handy for projects that need to run differently while under active development or if you want to see the output of your app's start command.
+#### Start It from the Dev Console
+Inside your dev console, you can simply pass your app's start command.
 
 ```bash
-$ nanobox dev console
+# start command - rails example
+rails s
 ```
 
 Once in, you can start your web and worker processes.
 
 #### Run All Start Commands
-The `dev run` command will run all of the start commands specified in your [boxfile.yml](/boxfile/) for your web and worker components. This is ideal for apps that have web and worker components with multiple start commands.
+Running the `dev run` command in the root of your project (oustide of a dev console) will run all of the start commands specified in your [boxfile.yml](/boxfile/) for your web and worker components. This is ideal for apps that have complex or multiple start commands.
 
 ```bash
-$ nanobox dev run
+nanobox dev run
 ```
 
 ### Craft Some Code & Build Your App
-Do what you do best, code. Your local codebase is mounted into your Nanobox container, so any changes you make will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build` and `nanobox dev deploy` to apply those changes to your dev environment.
+Do what you do best, code. Your local codebase is mounted into your Nanobox container, so any changes will be reflected in your dev environment. If you make any changes to your boxfile.yml, run `nanobox build-runtime` and `nanobox dev deploy` to apply those changes to your dev environment.

@@ -10,7 +10,7 @@ Your boxfile.yml defines your app's runtime, configuration, and architecture and
 
 ```bash
 # build a new runtime based on updated boxfile.yml
-nanobox build
+nanobox build-runtime
 
 # deploy the new runtime
 nanobox dev deploy

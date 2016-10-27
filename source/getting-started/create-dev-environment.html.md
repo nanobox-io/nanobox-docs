@@ -15,21 +15,30 @@ code.build:
   engine: ruby
 ```
 
-## Build Your Runtime
-With your boxfile.yml in place and an engine specified, you're ready to build your runtime.
+## Start Your Dev Environment
+With your boxfile.yml in place and an engine specified, you're ready to start your dev environment.
 
 ```bash
-# build your runtime
-$ nanobox build
+# start your dev environment
+nanobox dev start
 ```
 
-## Start Your Dev Environment, Deploy Your Runtime, & Console Into It
-The Nanobox CLI includes functionality that will run any prerequisite commands for you when running a command. You need to start your dev environment, deploy your built runtime into your dev environment, then console in. Running the `nanobox dev console` command will do all of this for you.
+#### Add a DNS Alias
+While not required, it is recommended that you add a DNS alias to your dev app to provide a convenient way to access your running dev app in your browser.
 
 ```bash
-# create a dev environment, deploy
-# your runtime, and console in
-$ nanobox dev console
+# add a dns alias to your dev app
+nanobox dev dns add appname.nanobox.dev
+```
+
+*More information is available in the* [`dev dns`](/cli/dev/dns/) *documentation.*
+
+## Console Into Your Dev Environment
+Running the `nanobox dev console` command will drop you into an interactive console inside your running dev environment.
+
+```bash
+# console into your dev environment
+nanobox dev console
 ```
 
 ## Develop!
