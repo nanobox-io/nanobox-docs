@@ -248,6 +248,12 @@ articles:
     articles:
       - title: "Creating a Custom Image"
         path: "/images/create/"
+        
+  - title: "Cloud Providers"
+    path: "/providers/"
+    articles:
+      - title: "Custom Integration"
+        path: "/providers/create/"
 
   - title: "Teams & Access Control"
     path: "/teams/"
