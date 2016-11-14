@@ -16,8 +16,8 @@ run.config:
   engine.config:
     version: 2.2
 
-  # Dependency Management
-  lib_dirs:
+  # Contents of these dirs to be cached inside of Nanobox
+  cache_dirs:
     - vendor
     - packages
 
@@ -31,8 +31,8 @@ run.config:
     - psutils
 
   # Additions to $PATH
-  paths:
-    - vendor/.bin
+  extra_path_dirs:
+    - vendor/bin
 
   # Custom commands to prepare the environment
   extra_steps:
@@ -61,18 +61,17 @@ run.config:
     version: 2.2
 ```
 
-## Dependency Management
-The following option allows you to control where dependencies are loaded/preserved in the build process.
+## Cache Directories
+You can choose to cache certain directories inside of Nanobox. This can provide a significant performance increase for generated files like shared libraries and dependencies, static assets, build releases, etc. 
 
-### Library Directories
-The `lib_dirs` config tells Nanobox where your dependency manager stores its dependencies. After the dependencies have been downloaded, the library directories are cached and used on subsequent builds. While this configuration is not required, performance is greatly improved. 
+**HEADS UP**: These directories **are not shared** with your local source code! Be sure that the contents of them are generated automatically (usually part of your build process).
 
-#### lib_dirs
 ```yaml
 run.config:
-  lib_dirs:
+  cache_dirs:
     - vendor
-    - packages
+    - node_modules
+    - public/assets
  ```
 
 ## Extra Packages
@@ -100,12 +99,13 @@ run.config:
 **Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `dev_packages`.
 
 ## Add Directories to the $PATH
-Some tools you may be using include binaries that need to be added to the system $PATH. The `paths` config allows you to specify these directories. Directories should be relative to the root of your project.
+Some tools you may be using include binaries that need to be added to the system $PATH. The `extra_path_dirs` config allows you to specify these directories. Directories should be relative to the root of your project.
 
 ```yaml
 run.config:
-  paths:
-    - vendor/.bin
+  extra_path_dirs:
+    - vendor/bin
+    - node_modules/.bin
 ```
 
 ## Extra Steps
