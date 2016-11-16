@@ -1,26 +1,26 @@
 ---
-title: Create a Dev Environment
+title: Create a Local Environment
 description: Nanobox creates a local, isolated development environment, avoiding the normal local 'stack of cards'.
 ---
 
 ## Create a boxfile.yml
 In the root of your project, create a file named `boxfile.yml`. The boxfile.yml is a yaml config file defines your runtime, infrastructure, and  configuration.
 
-The bare minimum required in the boxfile.yml is an "engine". [Engines](/engines/) are used to create your app's runtime environment and are specified in the [`code.build`](/boxfile/code-build/) section of your boxfile.yml. You can view [Official Nanobox engines on Github](https://github.com/nanobox-io/?utf8=%E2%9C%93&query=nanobox-engine).
+The bare minimum required in the boxfile.yml is an "engine". [Engines](/engines/) are used to create your app's runtime environment and are specified in the [`run.config`](/boxfile/run-config/) section of your boxfile.yml. You can view [Official Nanobox engines on Github](https://github.com/nanobox-io/?utf8=%E2%9C%93&query=nanobox-engine).
 
 #### Specify an Engine in Your boxfile.yml
 
 ```yaml
-code.build:
+run.config:
   engine: ruby
 ```
 
 ## Start Your Dev Environment
-With your boxfile.yml in place and an engine specified, you're ready to start your dev environment.
-
+With your boxfile.yml in place and an engine specified, you're ready to run your app locally. The `nanobox run` command will build a runtime from the settings in your boxfile.yml and create a local environment using that runtime.
+ 
 ```bash
-# start your dev environment
-nanobox dev start
+# run your app locally
+nanobox run
 ```
 
 #### Add a DNS Alias

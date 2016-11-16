@@ -14,14 +14,14 @@ The `boxfile.yml` is a yaml config file housed in the root of your project that 
 
 ####Sample Boxfile
 ```yaml
-code.build:
+run.config:
   engine: ruby
   config:
     runtime: ruby-2.2
   lib_dirs:
     - vendor
 
-code.deploy:
+deploy.config:
   transform:
     - 'bundle exec rake fix-yaml'
 
@@ -130,11 +130,11 @@ The following restrictions apply to component nicknames:
 - Cannot contain consecutive dashes
 
 ## Sections of the Boxfile
-Boxfiles consist of a handful of sections or "nodes": code.build, code.deploy, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
+Boxfiles consist of a handful of sections or "nodes": run.config, deploy.config, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
 
-[`code.build`](/boxfile/code-build/) - Defines the build, environment, and configuration for web and worker components.
+[`run.config`](/boxfile/run-config/) - Defines the build, environment, and configuration for web and worker components.
 
-[`code.deploy`](/boxfile/code-deploy/) - Defines deploy hooks and possible code transformations.
+[`deploy.config`](/boxfile/deploy-config/) - Defines deploy hooks and possible code transformations.
 
 [`dev`](/boxfile/dev) - Defines settings unique to your [local nanobox dev environment](/local-dev/).  
 

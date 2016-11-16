@@ -10,8 +10,8 @@ articles:
     articles:
       - title: "Install Nanobox"
         path: "/getting-started/install-nanobox/"
-      - title: "Create a Dev Environment"
-        path: "/getting-started/create-dev-environment/"
+      - title: "Create a Local Environment"
+        path: "/getting-started/create-local-environment/"
       - title: "Configure Your App"
         path: "/getting-started/configure-app/"
       - title: "Add App Components"
@@ -246,7 +246,7 @@ articles:
     articles:
       - title: "Creating a Custom Image"
         path: "/images/create/"
-        
+
   - title: "Cloud Providers"
     path: "/providers/"
     articles:

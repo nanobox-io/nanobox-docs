@@ -8,10 +8,10 @@ With Nanobox, every app consists of one or more "components" - supporting servic
 There are three different types of components:
 
 #### web
-A code component with publicly accessible ports. Webs use the engine/runtime defined in `code.build` in your boxfile.yml.
+A code component with publicly accessible ports. Webs use the engine/runtime defined in `run.config` in your boxfile.yml.
 
 #### worker
-A backend code component with no publicly accessible ports. Workers use the engine/runtime defined in `code.build` in your boxfile.yml.
+A backend code component with no publicly accessible ports. Workers use the engine/runtime defined in `run.config` in your boxfile.yml.
 
 #### data
 A component that houses data of some sort. These include databases, caches, persistent storage, etc.
@@ -52,15 +52,14 @@ data.storage:
 ```
 
 ### Build & Deploy to Provision Data Components
-In order to provision your data components, you must build a new runtime and deploy it into your dev environment.
+In order to provision your data components, you must build a new runtime and rerun your app.
 
 ```bash
 # build an updated runtime
-$ nanobox build
+$ nanobox build-runtime
 
-# deploy the runtime into dev
-# and provision data components
-$ nanobox dev deploy
+# run and provision data components
+$ nanobox run
 ```
 
 ## Use Environment Variables to Connect to Data Services

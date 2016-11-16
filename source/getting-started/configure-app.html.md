@@ -11,13 +11,13 @@ Getting your app ready to run with Nanobox requires very little. There are just 
 ## Configure Your Runtime
 Engines expose configuration settings in `boxfile.yml`. These settings can include anything from defining a specific runtime version to enabling libraries or packages. What options are available depend on the engine you're using. If using an official Nanobox engine, these options are outlined in the [Language Guides](https://guides.nanobox.io).
 
-All engine config settings are specified in the `code.build > config` section of your boxfile.yml. If you don't need anything than the defaults, you don't need to include config settings.
+All engine config settings are specified in the `run.config > engine.config` section of your boxfile.yml. If you don't need anything than the defaults, you don't need to include config settings.
 
 #### Engine/Runtime Config in the boxfile.yml
 ```yaml
-code.build:
+run.config:
   engine: ruby
-  config:
+  engine.config:
     runtime: ruby-2.3
 ```
 
@@ -25,7 +25,7 @@ If you make changes to your engine config, you'll need to build a new runtime.
 
 ```bash
 # build an updated runtime
-$ nanobox build
+$ nanobox build-runtime
 ```
 
 ## Listen on 0.0.0.0:8080

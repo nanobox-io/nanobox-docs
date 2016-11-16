@@ -1,4 +1,4 @@
-code.build:
+run.config:
   engine: middleman
   config:
     force_https: 'true'
