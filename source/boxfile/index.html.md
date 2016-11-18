@@ -16,9 +16,9 @@ The `boxfile.yml` is a yaml config file housed in the root of your project that 
 ```yaml
 run.config:
   engine: ruby
-  config:
+  engine.config:
     runtime: ruby-2.2
-  lib_dirs:
+  cache_dirs:
     - vendor
 
 deploy.config:
@@ -135,8 +135,6 @@ Boxfiles consist of a handful of sections or "nodes": run.config, deploy.config,
 [`run.config`](/boxfile/run-config/) - Defines the build, environment, and configuration for web and worker components.
 
 [`deploy.config`](/boxfile/deploy-config/) - Defines deploy hooks and possible code transformations.
-
-[`dev`](/boxfile/dev) - Defines settings unique to your [local nanobox dev environment](/local-dev/).  
 
 [`web`](/boxfile/web/) - Defines settings unique to each web component.  
 

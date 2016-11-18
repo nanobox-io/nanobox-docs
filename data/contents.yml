@@ -6,18 +6,7 @@ articles:
     path: "/why-nanobox/"
 
   - title: "Getting Started"
-    path: "/getting-started/"
-    articles:
-      - title: "Install Nanobox"
-        path: "/getting-started/install-nanobox/"
-      - title: "Create a Local Environment"
-        path: "/getting-started/create-local-environment/"
-      - title: "Configure Your App"
-        path: "/getting-started/configure-app/"
-      - title: "Add App Components"
-        path: "/getting-started/add-components/"
-      - title: "Craft Some Code"
-        path: "/getting-started/craft-some-code/"
+    path: "https://guides.nanobox.io"
 
   - title: "Local Development"
     path: "/local-dev/"
