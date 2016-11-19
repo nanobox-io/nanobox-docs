@@ -18,7 +18,7 @@ If you ever remove a directory containing a nanobox project without running a `n
 Open up `/etc/exports` and remove the line associated with the removed directory. Then restart the NFS process. The following is what you'd run in Ubuntu 16.04
 
 ```bash
-$ sudo systemctl start nfs-kernel-server.service
+sudo systemctl start nfs-kernel-server.service
 ```
 
 *This will prompt you for your administrative password.*

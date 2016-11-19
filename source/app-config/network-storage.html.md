@@ -88,4 +88,4 @@ data.processed:
 ```
 
 ## Managing Network Storage
-Network directories and their contents can be managed through an SSH connection into your storage service. More information is available in the [Remote Access doc](/production-management/remote-access).
+Network directories and their contents can be managed through an SSH connection into your storage service. More information is available in the [Remote Access doc](/live-app-management/remote-access).

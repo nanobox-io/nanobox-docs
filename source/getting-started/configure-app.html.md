@@ -25,7 +25,7 @@ If you make changes to your engine config, you'll need to build a new runtime.
 
 ```bash
 # build an updated runtime
-$ nanobox build-runtime
+nanobox build-runtime
 ```
 
 ## Listen on 0.0.0.0:8080

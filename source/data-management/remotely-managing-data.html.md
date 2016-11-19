@@ -12,10 +12,10 @@ The `nanobox console` command drops you into a native prompt inside of the speci
 
 ```bash
 # Pattern
-$ nanobox console -a <app-name> <component>
+nanobox console -a <app-name> <component>
 
 # Example
-$ nanobox console -a myapp data.postgres
+nanobox console -a myapp data.postgres
 ```
 
 For more information on the `console` command, read through the [console](/cli/console/) doc.
@@ -25,10 +25,10 @@ The `nanobox tunnel` command creates a secure tunnel between your local machine 
 
 ```bash
 # Pattern
-$ nanobox tunnel -a <app-name> -p <local port> <component>
+nanobox tunnel -a <app-name> -p <local port> <component>
 
 # Example
-$ nanobox tunnel -a myapp -p 5432 data.postgres
+nanobox tunnel -a myapp -p 5432 data.postgres
 ```
 
 Tunnel connection credentials are provided in your dashboard under the "Connect" section of the component to which you're trying to tunnel.
@@ -48,8 +48,8 @@ Nanobox allows you to provision [network storage components](/app-config/network
 With a tunnel open, you could `scp` files on your local machine to your live storage component.
 
 ```bash
-$ nanobox tunnel data.storage -p 1234
+nanobox tunnel data.storage -p 1234
 
 # In a different terminal
-$ scp -P 1235 -r uploads/* nanobox@127.0.0.1:/app/uploads/
+scp -P 1235 -r uploads/* nanobox@127.0.0.1:/app/uploads/
 ```

@@ -3,18 +3,13 @@ title: console
 description: The 'console' command opens an interactive console inside a specified live component.
 ---
 
-The `console` command opens an interactive console inside a specified live component.
+The `console` command opens an interactive console inside a specified component and context. If no context/remote is provided, the "default" remote will be assumed.
 
 ### Usage
 ```shell
 # Pattern
-$ nanobox console <component> -a <app-name or alias>
+nanobox console <component> <local | dry-run | remote>
 
 #Example
-$ nanobox console web.site -a app-name
+nanobox console web.site production
 ```
-
-### Options
-
-#### -a, --app
-Specifies the app-name or [alias](/cli/link/). If none is provided, it assumes the "default" alias.

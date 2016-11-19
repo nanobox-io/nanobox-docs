@@ -56,10 +56,10 @@ In order to provision your data components, you must build a new runtime and rer
 
 ```bash
 # build an updated runtime
-$ nanobox build-runtime
+nanobox build-runtime
 
 # run and provision data components
-$ nanobox run
+nanobox run
 ```
 
 ## Use Environment Variables to Connect to Data Services

@@ -10,7 +10,7 @@ A backup option is available in your dashboard for any data component built usin
 
 ![Dashboard Backups](/src-images/dashboard-backup.png)
 
-Triggering a backup runs your data component's backup script and stores the exported file(s) in your app's [warehouse](/production-management/platform-components/#warehouse).
+Triggering a backup runs your data component's backup script and stores the exported file(s) in your app's [warehouse](/live-app-management/platform-components/#warehouse).
 
 ### Restore to a Backup
 To restore to a backup stored in your warehouse, click the "Restore" button next to the backup in your list of backups.

@@ -8,7 +8,7 @@ When data components are provisioned inside of a Nanobox container, each is give
 To view the IPs and connection credentials for your data components, use the `dev info` command.
 
 ```bash
-$ nanobox dev info
+nanobox dev info
 
 ----------------------------------------------
 app-name (dev)                    Status: up  
@@ -34,7 +34,7 @@ Use the credentials provided in the `dev info` output to connect to your service
 
 #### Example Connection to Redis Service
 ```bash
-$ nanobox dev info
+nanobox dev info
 
 ...
 
@@ -48,5 +48,5 @@ data.db
 
 # In a separate terminal session
 
-$ psql -h 192.168.99.1 -p 5432 -U nanobox -W NaNopAsS gonano
+psql -h 192.168.99.1 -p 5432 -U nanobox -W NaNopAsS gonano
 ```

@@ -7,5 +7,5 @@ The `stop` command stops the local Nanobox container. This will free up any syst
 
 ### Usage
 ```bash
-$ nanobox stop
+nanobox stop
 ```

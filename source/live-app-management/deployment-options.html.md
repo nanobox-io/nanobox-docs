@@ -13,4 +13,4 @@ To automatically rebuild data components when boxfile.yml config changes are det
 ![Rebuild Data Components on Deploy](/src-images/deploy-options-rebuild-data.png)
 
 #### Alternative
-The alternative method of applying boxfile.yml config changes to a data components is to [manually rebuild the component](/production-management/server-component-admin/#component-options).
+The alternative method of applying boxfile.yml config changes to a data components is to [manually rebuild the component](/live-app-management/server-component-admin/#component-options).

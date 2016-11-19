@@ -13,7 +13,7 @@ The deploy history shows the currently deployed command and allows you to rollba
 Deploy messages are added when using the CLI's `deploy` command with the `-m` flag. More information is available in the [`deploy` command documentation](/cli/deploy/).
 
 ```bash
-$ nanobox deploy -m 'deploy message'
+nanobox deploy -m 'deploy message'
 ```
 
 ## Rollback to a Previous Deploy

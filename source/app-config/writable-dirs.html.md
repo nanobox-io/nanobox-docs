@@ -53,4 +53,4 @@ The amount of code/data that can be stored in writable directories is limited to
 Writable directories are a great solution for caching static assets. The files are local, so reads and writes are fast. Caches are built organically as requests hit each instance. Also, there is no chance of multiple instances trying to write to the same cache file and interrupting network storage connections.
 
 #### Priming Caches on Deploy
-If using a `before_deploy` or `after_deploy` hook to prime your cache on deploy, these commands will only run on one of your service’s instances. In services with more than one instance, you should use `before_deploy_all` and `after_deploy_all` hooks to run the command on all instances.
+If using `before_live` or `after_live` hooks to prime your cache on deploy, these commands will only run on one of your service’s instances. In services with more than one instance, you should use `before_live_all` and `after_live_all` hooks to run the command on all instances.

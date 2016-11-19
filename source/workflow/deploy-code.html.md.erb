@@ -5,31 +5,30 @@ description: The process of deploying code to a production app with Nanobox is s
 
 With an [app launched](/workflow/launch-app/), you're ready to deploy to it.
 
-
-## Test Locally
-The `dry-run` command provisions a virtual environment in Nanobox and simulates a deploy has if it were going to production servers. If it works in a dry-run, it will work when deploying live.
+## Preview Locally
+Nanobox provides "dry-run" functionality that provisions a virtual environment in Nanobox and simulates a deploy has if it were going to production servers. If it works in a dry-run, it will work when deploying live.
 
 ```bash
-# Start your sim environment
-$ nanobox dry-run
+# deploy to a dry-run/staging environment
+nanobox deploy dry-run
 
-# Add a convenient way to access your sim app from your browser (optional)
-$ nanobox dns add app-name.stage dry-run
+# Add a convenient way to access your dry-run
+# app from your browser (optional)
+nanobox dns add dry-run myapp.st
 ```
 
-Visit and test your app in your browser at `http://app-name.stage`.
+Visit and test your app in your browser at `http://myapp.st`.
 
-*More information about the `dry-run` command is available in the [`dry-run` documentation](/cli/dry-run/).*
 
 ## Add Your Live App as a Remote
 In order to deploy your code to your live app, you need to add the app you launched with Nanobox as a remote. This is done using the `remote` command.
 
 ```bash
 # cd into the root of your local project
-$ cd app-dir
+cd app-dir
 
 # link the project to your live app
-$ nanobox remote add app-name
+nanobox remote add app-name
 ```
 
 For more information about the `remote` command, view the ['remote' documentation](/cli/remote/).
@@ -39,7 +38,7 @@ For more information about the `remote` command, view the ['remote' documentatio
 The `deploy` command will deploy your app to your live server(s).
 
 ```bash
-$ nanobox deploy
+nanobox deploy
 ```
 
 <!-- ## The Deploy Process

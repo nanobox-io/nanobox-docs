@@ -7,5 +7,5 @@ The Nanobox CLI is installed with a separate `nanobox-update` executable that ha
 
 ### Usage
 ```shell
-$ nanobox-update
+nanobox-update
 ```

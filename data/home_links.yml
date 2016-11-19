@@ -36,20 +36,20 @@ sections:
       - title: 'Nanobox Dashboard'
         links:
           - text: 'Server & Components Admin'
-            link: '/production-management/server-component-admin/'
+            link: '/live-app-management/server-component-admin/'
           - text: 'Component Stats'
-            link: '/production-management/component-stats/'
+            link: '/live-app-management/component-stats/'
           - text: 'App Logs'
-            link: '/production-management/app-logs/'
+            link: '/live-app-management/app-logs/'
           - text: 'Deploy History'
-            link: '/production-management/deploy-history/'
+            link: '/live-app-management/deploy-history/'
 
       - title: 'Data Management'
         links:
           - text: 'Uploading File Storage'
             link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
           - text: 'Connecting to a Data Component'
-            link: '/production-management/remote-access/'
+            link: '/live-app-management/remote-access/'
 
       - title: 'Domains & SSL'
         links:

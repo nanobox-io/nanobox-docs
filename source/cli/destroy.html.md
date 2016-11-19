@@ -7,5 +7,5 @@ The `destroy` command destroys the current project and removes it from your loca
 
 ### Usage
 ```bash
-$ nanobox destroy
+nanobox destroy
 ```

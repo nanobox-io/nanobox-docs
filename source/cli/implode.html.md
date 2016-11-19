@@ -7,5 +7,5 @@ The `implode` command removes the Nanobox container, all local projects, filesys
 
 ### Usage
 ```bash
-$ nanobox implode
+nanobox implode
 ```

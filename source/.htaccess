@@ -1,5 +1,5 @@
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^nanodocs.gopagoda.io$
-RewriteRule ^(.*)$ https://docs.nanobox.io/$1 [R,L]
+RewriteRule ^(.*)https://docs.nanobox.io/$1 [R,L]
 RewriteCond %{HTTP:X-Forwarded-Proto} =http
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^(.*)https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

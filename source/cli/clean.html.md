@@ -7,5 +7,5 @@ The `clean` command is used to cleanup any remaining projects that have been rem
 
 ### Usage
 ```bash
-$ nanobox clean
+nanobox clean
 ```

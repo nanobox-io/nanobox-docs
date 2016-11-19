@@ -4,7 +4,7 @@ To uninstall Nanobox from your local machine, there's a few steps you need to go
 The [`nanobox implode`](/cli/implode/) command will destroy the Nanobox container, removing all apps, filesystem mounts, and all associated Nanobox data.
 
 ```bash
-$ nanobox implode
+nanobox implode
 ```
 
 ### 2. Remove the Nanobox Executables
@@ -19,14 +19,14 @@ If the Nanobox executables are installed at a non-default location, you can use 
 
 #### Finding the Location of Nanobox Executable
 ```bash
-$ where nanobox
+where nanobox
 ```
 
 Once you know where the Nanobox executables are located, you can use the following command to remove them.
 
 #### Removing Nanobox Executables
 ```txt
-$ rmdir "C:\Program Files\Nanobox" /s
+rmdir "C:\Program Files\Nanobox" /s
 ```
 
 ### Uninstall Virtual Box

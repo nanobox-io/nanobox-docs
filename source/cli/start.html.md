@@ -7,5 +7,5 @@ The `start` command starts the local Nanobox container.
 
 ### Usage
 ```bash
-$ nanobox start
+nanobox start
 ```

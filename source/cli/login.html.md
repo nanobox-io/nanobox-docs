@@ -8,19 +8,19 @@ The `login` command authenticates your local Nanobox client with your Nanobox ac
 ### Usage
 ```bash
 # Simple Usage
-$ nanobox login
+nanobox login
 
 # Short Pattern
-$ nanobox login -u <username> -p <password>
+nanobox login -u <username> -p <password>
 
 # Short Example
-$ nanobox login -u myuser -p PaSSw0rd
+nanobox login -u myuser -p PaSSw0rd
 
 # Verbose Pattern
-$ nanobox login --username=<username> --password=<password>
+nanobox login --username=<username> --password=<password>
 
 # Verbose Example
-$ nanobox login --username=myuser --password=PaSSw0rd
+nanobox login --username=myuser --password=PaSSw0rd
 ```
 
 ### Options

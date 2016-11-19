@@ -20,7 +20,7 @@ If you ever remove a directory containing a nanobox project without running a `n
 Open up `/etc/exports` and remove the line associated with the removed directory. Then restart the NFS process:
 
 ```bash
-$ sudo nfsd start
+sudo nfsd start
 ```
 
 *This will prompt you for your administrative password.*

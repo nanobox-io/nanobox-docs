@@ -10,13 +10,13 @@ The `nanobox console` command allows you to securely access your production serv
 
 ```bash
 # Pattern
-$ nanobox console <component>
+nanobox console <component>
 
 # Examples
-$ nanobox console web.site
+nanobox console web.site
 
 # console into a specific node in web.site
-$ nanobox console web.site.1.3
+nanobox console web.site.1.3
 ```
 
 The console is primarily used for managing and troubleshooting web and worker components. More information about the `console` command is available in the [`console` documentation](/cli/console/).
@@ -25,7 +25,7 @@ The console is primarily used for managing and troubleshooting web and worker co
 The `nanobox tunnel` command creates a secure tunnel between your local machine and a production server. This tunnel allows you to use local clients to remotely manage production services. When creating a tunnel, Nanobox binds to and listens on a local port. Connections to that port are forwarded to your remote server.
 
 ```bash
-$ nanobox tunnel data.db
+nanobox tunnel data.db
 ```
 
 Once the tunnel is open, you can use the tunnel connection credentials provided in your dashboard under the "Connect" section of each component.

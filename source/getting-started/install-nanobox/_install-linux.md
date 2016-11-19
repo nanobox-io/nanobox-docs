@@ -9,24 +9,24 @@ Nanobox requires two executables:
 These can be downloaded using `wget`:
 
 ```bash
-$ wget https://s3.amazonaws.com/tools.nanobox.io/nanobox/v1/linux/amd64/nanobox
-$ wget https://s3.amazonaws.com/tools.nanobox.io/nanobox/v1/linux/amd64/nanobox-update
+wget https://s3.amazonaws.com/tools.nanobox.io/nanobox/v1/linux/amd64/nanobox
+wget https://s3.amazonaws.com/tools.nanobox.io/nanobox/v1/linux/amd64/nanobox-update
 ```
 
 ### Make the Downloaded Files Executable
 Run the following to grant the downloaded files executable permissions required to run on your system.
 
 ```bash
-$ chmod +x nanobox
-$ chmod +x nanobox-update
+chmod +x nanobox
+chmod +x nanobox-update
 ```
 
 ### Install the Executables on Your $PATH
 Install the Nanobox executables on your system $PATH. $PATH's vary by distribution, but below are basic examples.
 
 ```bash
-$ mv nanobox /usr/local/bin/nanobox
-$ mv nanobox-update /usr/local/bin/nanobox-update
+mv nanobox /usr/local/bin/nanobox
+mv nanobox-update /usr/local/bin/nanobox-update
 ```
 
 ## Install Virtual Box

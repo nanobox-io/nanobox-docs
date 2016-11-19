@@ -4,65 +4,35 @@ description: When building runtimes and deploying code with Nanobox, you can 'ho
 ---
 
 ## The Build & Deploy Process
-Build and deploy hooks take place at very specific points in both the build and deploy processes. The diagram below shows the process and at which point each hook type runs. Details about each of the hooks are provided below.
+Build and deploy hooks take place at very specific points in both the build and deploy processes.
+
+<!-- The diagram below shows the process and at which point each hook type runs. Details about each of the hooks are provided below.
 
 *Scroll down to trigger each step of the animation.*
 
-<%= partial "deploy-diagram", locals: {:hooks => 'true'} %>
+<%= partial "deploy-diagram", locals: {:hooks => 'true'} %> -->
 
-## Build & Compile Hooks
-There are two main phases of the build process to consider when defining build hooks. These two phases are handled by your [engine](/engines/).
+## Build Hooks
+Your app's [engine](/engines/) builds and prepares your app's runtime and code. It's possible to include "extra steps" in this process. These are configured in the `run.config` section of your boxfile.yml.
 
-1. **Build** - This is the phase where runtime executables and dependencies are downloaded and installed.
-2. **Compile** - This is when commands are run to compile your code.
+### extra_steps
+`extra_steps` run after your app's runtime is built, but before the runtime is packaged for use.
 
-Build and compile hooks are configured in the the `run.config` section of your boxfile.yml.
+```yaml
+run.config:
+  extra_steps:
+    - 'yarn install'
+    - 'bower install'
+```
 
-#### Important Things to Know About Build & Compile Hooks
-- [Environment variables](/app-config/environment-variables/) are **not** available during the build.
-- Build hooks do not have access to data services.
+#### Important Things to Know About Extra Steps
+- [Environment variables](/app-config/environment-variables/) are **not** available during the build process.
+- `extra_steps` do not have access to data services.
 - Code is fully writable.
 
-### before_build
-`before_build` hooks run before runtime executables are downloaded and installed. The most common use for these hooks is to download executables your engine normally doesn't install.
-
-```yaml
-run.config:
-  before_build:
-    - 'echo I\'m getting ready'
-    - 'curl -sSf https://static.rust-lang.org/rustup.sh | sh'
-```
-
-### after_build
-`after_prepare` hooks run after runtime executables are downloaded and installed.
-
-```yaml
-run.config:
-  after_build:
-    - 'echo Good to go!'
-```
-
-### before_compile
-`before_compile` hooks run after runtime executables are downloaded and installed, but before code is built/compiled.
-
-```yaml
-run.config:
-  before_compile:
-    - 'cargo build --release'
-    - 'echo Ready to be built'
-```
-
-### after_compile
-`after_compile` hooks run after code is built/compiled.
-
-```yaml
-run.config:
-  after_compile:
-    - 'echo Built and ready to go!'
-```
 
 ## Deploy Hooks
-Deploy hooks run as apps are being deployed into sim and production environments.
+Deploy hooks run as apps are being deployed either to a dry-run or live app.
 
 #### Important Things to Know About Deploy Hooks
 - [Environment variables](/app-config/environment-variables/) are available to deploy hooks.
@@ -78,12 +48,12 @@ deploy.config:
     - 'if [ "$ENV" = "prod" ]; then mv config-prod.yml config.yml; fi'
 ```
 
-### before_deploy
-`before_deploy` hooks run on a new node before requests are routed to new nodes. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
+### before_live
+`before_live` hooks run on a new node before it starts accepting live requests. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
 
 ```yaml
 deploy.config:
-  before_deploy:
+  before_live:
     web.site:
       - 'bundle exec rake clear-cache'
       - 'echo I\'am ready to go'
@@ -92,22 +62,22 @@ deploy.config:
 ```
 
 ### before\_deploy\_all
-`before_deploy_all` hooks are the same as `before_deploy` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
+`before_live_all` hooks are the same as `before_live` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
 
 ```yaml
 deploy.config:
-  before_deploy_all:
+  before_live_all:
     web.site:
       - 'bundle exec prime-local-cache'
       - 'bundle exec register-host'
 ```
 
-### after_deploy
-`after_deploy` hooks run on a new node after requests are routed to new nodes. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
+### after_live
+`after_live` hooks run on a new node after it starts accepting live requests. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
 
 ```yaml
 deploy.config:
-  after_deploy:
+  after_live:
     web.site:
       - 'bundle exec rake prime-cache'
       - 'echo "I am working"'
@@ -116,11 +86,11 @@ deploy.config:
 ```
 
 ### after\_deploy\_all
-`after_deploy_all` hooks are the same as `after_deploy` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
+`after_live_all` hooks are the same as `after_live` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
 
 ```yaml
 deploy.config:
-  after_deploy_all:
+  after_live_all:
     web.site:
       - 'bundle exec prime-local-cache'
       - 'bundle exec register-host'
