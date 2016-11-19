@@ -1,13 +1,12 @@
-code.build:
+run.config:
   engine: middleman
-  config:
+  engine.config:
     force_https: 'true'
-  lib_dirs:
+    ruby_runtime: ruby-2.3
+  cache_dirs:
     - docs
-
-dev:
   fs_watch: true
 
-code.deploy:
+deploy.config:
   transform:
     - 'bash insert-mixpanel.sh'

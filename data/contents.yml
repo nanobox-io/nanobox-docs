@@ -8,34 +8,15 @@ articles:
   - title: "Getting Started"
     path: "https://guides.nanobox.io"
 
-  - title: "Local Development"
-    path: "/local-dev/"
+  - title: "Workflow"
+    path: "/workflow/"
     articles:
-      - title: "Dev Workflow"
-        path: "/local-dev/dev-workflow/"
-      - title: "Dev CLI Commands"
-        path: "/local-dev/dev-cli/"
       - title: "Modifying Your App"
-        path: "/local-dev/modifying-your-app/"
-      - title: "Managing Local Data"
-        path: "/local-dev/managing-local-data/"
-      - title: "Local Config"
-        path: "/local-dev/local-config/"
-        articles:
-          - title: "Local Performance Tuning"
-            path: /local-dev/local-config/local-performance/
-          - title: "Nanobox config.yml"
-            path: "/local-dev/local-config/nanobox-config-yml/"
-          - title: ".nanoignore"
-            path: "/local-dev/local-config/nanoignore/"
-
-  - title: "Deploy to Production"
-    path: "/production/"
-    articles:
+        path: "/workflow/modifying-your-app/"
       - title: "Launch an App"
-        path: "/production/launch-app/"
+        path: "/workflow/launch-app/"
       - title: "Deploy Code"
-        path: "/production/deploy-code/"
+        path: "/workflow/deploy-code/"
 
   - title: "App Configuration"
     path: /app-config/
@@ -176,6 +157,8 @@ articles:
   - title: "Data Management"
     path: "/data-management/"
     articles:
+      - title: "Managing Local Data"
+        path: "/data-management/managing-local-data/"
       - title: "Remotely Managing Data"
         path: "/data-management/remotely-managing-data/"
       # - title: "Backups"
@@ -271,6 +254,16 @@ articles:
       #   path: "/account/card-management/"
       # - title: "How Billing Works"
       #   path: "/account/how-billing-works/"
+
+  - title: "Local Config"
+    path: "/local-config/"
+    articles:
+      - title: "Local Performance Tuning"
+        path: /local-config/local-performance/
+      - title: "Nanobox config.yml"
+        path: "/local-config/nanobox-config-yml/"
+      - title: ".nanoignore"
+        path: "/local-config/nanoignore/"
 
   - title: "Troubleshooting"
     path: "/troubleshooting/"

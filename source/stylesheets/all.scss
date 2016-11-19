@@ -43,6 +43,7 @@ a                       { @include transition(all .15s); }
 @import 'left-nav';
 @import 'doc-content';
 @import 'pagination';
+@import 'guides-block';
 
 
 #footer                 { width: 100%; display: block; margin: 3em 0; font-size: .85em; color: $grey-1; text-align: center; @include box-sizing;

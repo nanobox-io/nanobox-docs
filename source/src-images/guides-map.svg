@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 37 31" style="enable-background:new 0 0 37 31;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#26BBFE;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="map_1_">
+	<polyline class="st0" points="12.9,11.9 0.8,17.9 4.1,23 7.4,21.2 10.9,26.4 14.4,24.8 17.8,29.9 35.3,21 32,15.9 28.6,17.6
+		25,12.4 21.9,14.1 	"/>
+	<line class="st0" x1="14.4" y1="24.8" x2="28.5" y2="17.6"/>
+	<line class="st0" x1="7.4" y1="21.2" x2="16.1" y2="17"/>
+	<path class="st0" d="M24.4,7.1C24.4,12.6,18,19,18,19s-6.3-6.3-6.3-11.9c0-3.5,2.8-6.3,6.3-6.3S24.4,3.5,24.4,7.1z"/>
+	<circle class="st0" cx="18" cy="7.1" r="2.6"/>
+</g>
+</svg>
