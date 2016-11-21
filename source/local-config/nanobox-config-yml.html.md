@@ -3,7 +3,7 @@ title: Nanobox config.yml
 description: The config.yml defines configuration options for your local Nanobox container.
 ---
 
-The first time a `nanobox dev` or `nanobox sim` command is run, Nanobox creates a `.nanobox` directory in your user home directory. Inside of this directory, you can either find or create a `config.yml` file.  The `.nanobox/config.yml` defines configuration options for your Nanobox container.
+Nanobox configuration settings are stored inside your user home directory inside of `.nanobox/config.yml`. The first time any `nanobox` command is run, Nanobox will walk through each of these settings.
 
 #### .nanobox/config.yml
 ```yaml
@@ -24,11 +24,25 @@ provider: docker_machine
 ```
 
 ## Mount Type
-`mount-type` specifies which technology to use when mounting code on your local machine into a dev environment in your Nanobox container. The following options are available:
+`mount-type` specifies which technology to use when mounting code on your local machine into Nanobox. The following options are available:
 
 - `native` - Uses the network file system native to your [provider](#provider).
 - `netfs` - Uses NFS on OSX and Linux, CIFS on Windows. **Much** better performance, but requires admin permissions.
 
 ```yaml
 mount-type: native
+```
+
+## CPUs
+The `cpus` setting defines the number of CPU cores to make available to your virtual/local host.
+
+```yaml
+cpus: 2
+```
+
+## RAM
+The `ram` setting defines the amount of RAM in GB to make available to your virutal/local host.
+
+```yaml
+ram: 4
 ```

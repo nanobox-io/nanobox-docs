@@ -20,4 +20,4 @@ nanobox tunnel production data.redis -p 6379
 Specifies the local port through which you'd like to establish the secure tunnel.
 
 ### Connecting Through an Established Tunnel
-Instructions for connecting to data services through an established tunnel are provided in the [Remotely Managing Data doc](/data-management/remotely-managing-data/#create-a-secure-tunnel).
+Instructions for connecting to data services through an established tunnel are provided in the [Managing Live Data doc](/data-management/managing-live-data/#create-a-secure-tunnel).

@@ -10,7 +10,7 @@ The `boxfile.yml` is a yaml config file housed in the root of your project that 
 - Your boxfile must be named `boxfile.yml` in order to be recognized.
 - The `boxfile.yml` must be placed at the root of your project's repo.
 - The boxfile must be valid yaml markup. You can brush up on your yaml at [yaml.org](http://yaml.org/start.html) or check your syntax at [yamllint.com](http://www.yamllint.com/).
-- In a local Nanobox dev app, application components are created and destroyed by adding and removing them from your boxfile. In production, components can only be removed through your dashboard.
+- In a local app, application components are created and destroyed by adding and removing them from your boxfile.yml. In live apps, components can only be removed through your dashboard.
 
 ####Sample Boxfile
 ```yaml

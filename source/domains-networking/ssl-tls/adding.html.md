@@ -50,7 +50,7 @@ Your SSL provider will make available files that include your Certificate and Ce
 
 *Be sure to paste the full contents of your Certificate and Certificate Authority.*
 
-The naming of these files isn't standardized so it can be hard to know which is which. The [Identifying Certificates, CAs, and Intermediate Certs](/domains-networking/ssl/indentifying/) doc should help.
+The naming of these files isn't standardized so it can be hard to know which is which. The [Identifying Certificates, CAs, and Intermediate Certs](/domains-networking/ssl-tls/identifying/) doc should help.
 
 ##### Intermediate Certificates
 Some SSL providers provide intermediate certificates that are part of your certificate's authoritative chain. Without these, some browsers will not honor the certificate. To install intermediate certificates, include them in the Certificate Authority field with your CA.

@@ -75,13 +75,13 @@ nanobox evar add KEY=VALUE
 nanobox evar add KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
 ```
 
-#### Adding Environment Variables to a Dev Environment
+#### Adding Environment Variables to a Local Environment
 ```bash
 # Adding a Single Environment Variable
-nanobox dev evar add KEY=VALUE
+nanobox evar add local KEY=VALUE
 
 # Adding Multiple Environment Variables
-nanobox dev evar add KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
+nanobox evar add local KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
 ```
 
 For more information about the `evar` command, check out the ['evar' documentation](/cli/evar/).

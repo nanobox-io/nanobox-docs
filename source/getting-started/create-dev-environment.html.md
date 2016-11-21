@@ -15,33 +15,31 @@ run.config:
   engine: ruby
 ```
 
-## Start Your Dev Environment
+## Start Your Local Environment & App
 With your boxfile.yml in place and an engine specified, you're ready to run your app locally. The `nanobox run` command will build a runtime from the settings in your boxfile.yml and create a local environment using that runtime.
- 
+
 ```bash
 # run your app locally
-nanobox run
+
+# Pattern
+nanobox run <app start command>
+
+# Example
+nanobox run rails s
 ```
 
+*More information is available in the [`run` documentation](/cli/run/)
+
 #### Add a DNS Alias
-While not required, it is recommended that you add a DNS alias to your dev app to provide a convenient way to access your running dev app in your browser.
+While not required, it is recommended that you add a DNS alias to your dev app to provide a convenient way to access your running local app in your browser. In another terminal, run:
 
 ```bash
 # add a dns alias to your dev app
-nanobox dev dns add appname.nanobox.dev
+nanobox dns add local appname.nanobox.dev
 ```
 
-*More information is available in the* [`dev dns`](/cli/dev/dns/) *documentation.*
+*More information is available in the* [`dns`](/cli/dns/) *documentation.*
 
-## Console Into Your Dev Environment
-Running the `nanobox dev console` command will drop you into an interactive console inside your running dev environment.
-
-```bash
-# console into your dev environment
-nanobox dev console
-```
 
 ## Develop!
-You are now inside of a virtualized isolated development environment with your local codebase mounted in. Any changes to your codebase will be reflected in your dev environment. All the binaries and executables installed by your engine are available. You can inspect the environment, run dependency managers, or start your app. It's up to you.
-
-Before you get too far, there's some things you should do to [configure your app](/getting-started/configure-app/).
+Your local app is now running in a virtualized isolated environment with your local codebase mounted in. Any changes to  codebase will be reflected in your running environment. All the binaries and executables installed by your engine are available. You can inspect the environment, run dependency managers, or start your app. It's up to you.

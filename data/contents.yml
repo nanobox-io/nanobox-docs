@@ -50,7 +50,6 @@ articles:
       - title: "data"
         path: "/boxfile/data/"
 
-
   - title: "Nanobox CLI"
     path: "/cli/"
     articles:
@@ -77,7 +76,7 @@ articles:
       - title: "log"
         path: "/cli/log/"
       - title: "configure"
-        path: "/cli/configure"
+        path: "/cli/configure/"
       - title: "update-images"
         path: "/cli/update-images/"
       - title: "login"
@@ -104,7 +103,7 @@ articles:
         path: "/cli/uninstall/"
 
 
-  - title: "Production Management"
+  - title: "Live App Management"
     path: "/live-app-management/"
     articles:
       - title: "Server & Component Admin"
@@ -127,10 +126,12 @@ articles:
   - title: "Data Management"
     path: "/data-management/"
     articles:
+      - title: "Data Components & Configuration"
+        path: "/data-management/data-components-config/"
       - title: "Managing Local Data"
         path: "/data-management/managing-local-data/"
-      - title: "Remotely Managing Data"
-        path: "/data-management/remotely-managing-data/"
+      - title: "Managing Live Data"
+        path: "/data-management/managing-live-data/"
       # - title: "Backups"
       #   path: "/data-management/backups/"
       - title: "Data Migrations During Scaling & Rebuilds"
@@ -169,7 +170,7 @@ articles:
           - title: "Managing SSL/TLS Certificates"
             path: "/domains-networking/ssl-tls/managing/"
           - title: "Identifying Certs, CAs, & Intermediate Certs"
-            path: "/domains-networking/ssl-tls/indentifying/"
+            path: "/domains-networking/ssl-tls/identifying/"
       - title: "Routing to Web Components"
         path: "/domains-networking/routing-web-components/"
       - title: "Port Mapping"

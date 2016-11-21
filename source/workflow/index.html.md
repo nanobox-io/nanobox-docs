@@ -38,7 +38,7 @@ nanobox deploy dry-run
 ```
 
 ## Launch an App
-Nanobox will launch your app's infrastructure on your hosting provider of choice. The [Launch an App](/workflow/launch-an-app) doc walks through how.
+Nanobox will launch your app's infrastructure on your hosting provider of choice. The [Launch an App](/workflow/launch-app) doc walks through how.
 
 ## Deploy Your App
 With an live app created, you can add it as remote to your local codebase and deploy to it.

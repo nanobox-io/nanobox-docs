@@ -5,7 +5,7 @@ description: Knowing when and what to scale is key to ensuring the uptime of you
 
 Knowing when and what to scale is key to ensuring the uptime of your application. In the heat of the moment, it's easy to panic and just scale everything, but there's a couple of rules and questions to ask that will help identify what, how, and when something should be scaled.
 
-*Most of the concepts outlined in this doc apply to components that have been [split out into horizontal clusters](/scaling/splitting-components-out/). Single, bunkhouse servers have limited scalability.*
+*Most of the concepts outlined in this doc apply to components that have been [moved into horizontal clusters](/scaling/moving-components/). Single, bunkhouse servers have limited scalability.*
 
 ### 1. Check Component Stats & Logs First
 If you notice degraded performance or odd behavior, the first things you should look at are your server/components stats and logs. Each will provide valuable information about what's going on and what actions to take. More information [below](#3-know-how-your-app-uses-resources).

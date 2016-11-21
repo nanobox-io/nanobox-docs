@@ -32,7 +32,7 @@ Once the tunnel is open, you can use the tunnel connection credentials provided 
 
 ![Tunnel Connection Credentials](/src-images/tunnel-connection-creds.png)
 
-Tunnels are primarily used for managing data components. More information is available in the [Remotely Managing Data](/data-management/remotely-managing-data/#create-a-secure-tunnel) and [`tunnel`](/cli/tunnel/) docs.
+Tunnels are primarily used for managing data components. More information is available in the [Managing Live Data](/data-management/managing-live-data/#create-a-secure-tunnel) and [`tunnel`](/cli/tunnel/) docs.
 
 ## Security
 Whenever servers are accessed remotely or tunnels created, there are three levels of authorization each request goes through:

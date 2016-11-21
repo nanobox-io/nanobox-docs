@@ -7,7 +7,7 @@ description: Creating a Nanobox account is simple and can be done in just a few 
   <p style="margin: 0; line-height: 1.5em; ">Nanobox is currently in Private Beta. In order to create an account, you must have a Private Beta invitation. To request access to our Private Beta, shoot an email to <a href="mailto:hello@nanobox.io?subject=I want in the Private Beta!" target="\_blank" style="color: #fff;">hello@nanobox.io</a>.</p>
 </div>
 
-To create an account on Nanobox, go to [dashboard.nanobox.io/users/sign_up](https://dashboard.nanobox.io/users/sign_up) and fill out the necessary information.
+To create an account on Nanobox, go to [dashboard.nanobox.io/users/sign_up](https://dashboard.nanobox.io/users/register) and fill out the necessary information.
 
 ![Create an Account](/src-images/account-create-form.png)
 

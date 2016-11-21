@@ -1,12 +1,12 @@
 If you notice Nanobox and your apps running a little slowly, there are changes you can make that can drastically improve performance.
 
 ## Use netfs for Filesystem Mounting
-Whenever you run `nanobox dev start`, Nanobox mounts the current working directory into your Nanobox container. This allows changes made to code on your local machine to immediately appear in Nanobox container. The default `native` method used to mount code can be slow. Switching to `netfs` will greatly improve code read/write speeds in Nanobox.
+Whenever you run `nanobox run`, Nanobox mounts the current working directory into your Nanobox container. This allows changes made to code on your local machine to immediately appear in Nanobox container. The default `native` method used to mount code can be slow. Switching to `netfs` will greatly improve code read/write speeds in Nanobox.
 
 *"netfs" is a generic term for "network filesystem". The actual technology used in Windows is [CIFS](https://technet.microsoft.com/en-us/library/cc939973.aspx).*
 
 ### Using netfs
-To use netfs, you'll need to modify your [`config.yml`](/local-dev/nanobox-config-yml). This file can be found at `C:\Users\username\.nanobox\config.yml` or `C:\%userprofile%\.nanobox\config.yml` . If it doesn't already exist, you can create it. Update the `mount-type` setting to `netfs`.
+To use netfs, you'll need to modify your [`config.yml`](/local-config/nanobox-config-yml). This file can be found at `C:\Users\username\.nanobox\config.yml` or `C:\%userprofile%\.nanobox\config.yml` . If it doesn't already exist, you can create it. Update the `mount-type` setting to `netfs`.
 
 #### netfs in the config.yml
 ```yaml

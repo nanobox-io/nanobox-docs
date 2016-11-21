@@ -3,9 +3,9 @@ title: .nanoignore
 description: The '.nanoignore' file allows you to omit specific files and directories from your compiled code.
 ---
 
-In many cases, there are files stored in your local codebase that do not need to be included in your app's [compiled code package](/cli/compile/). In fact, these files can add unnecessary bloat leading to larger packages and longer upload times.
+In many cases, there are files stored in your local codebase that do not need to be included in your app's [deploy package](/cli/deploy/). In fact, these files can add unnecessary bloat leading to larger packages and longer upload times.
 
-The `.nanoignore` file allows you to omit specific files and directories from your compiled code. It should be included in the root of your project.
+The `.nanoignore` file allows you to omit specific files and directories from your deployed code. It should be included in the root of your project.
 
 #### Basic .nanoignore Example
 ```txt

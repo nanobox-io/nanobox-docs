@@ -1,9 +1,9 @@
 ---
-title: Remotely Managing Data
+title: Managing Live Data
 description: Nanobox allows you to securely connect to live data components and manage data using your tool of choice.
 ---
 
-**Note:** *This doc only pertains to managing data on production servers. For information about managing data in your local dev environment, check out the [Managing Local Data](/local-dev/managing-local-data/) doc.*
+**Note:** *This doc only pertains to managing data on production servers. For information about managing data in your local dev environment, check out the [Managing Local Data](/data-management/managing-local-data/) doc.*
 
 Nanobox allows you to securely connect to your live data component(s) and manage them using your tool of choice. You have two options for remotely managing your data.
 
@@ -12,10 +12,10 @@ The `nanobox console` command drops you into a native prompt inside of the speci
 
 ```bash
 # Pattern
-nanobox console -a <app-name> <component>
+nanobox console <component>
 
 # Example
-nanobox console -a myapp data.postgres
+nanobox console data.postgres
 ```
 
 For more information on the `console` command, read through the [console](/cli/console/) doc.
@@ -25,10 +25,10 @@ The `nanobox tunnel` command creates a secure tunnel between your local machine 
 
 ```bash
 # Pattern
-nanobox tunnel -a <app-name> -p <local port> <component>
+nanobox tunnel <component> -p <local port>
 
 # Example
-nanobox tunnel -a myapp -p 5432 data.postgres
+nanobox tunnel data.postgres -p 5432
 ```
 
 Tunnel connection credentials are provided in your dashboard under the "Connect" section of the component to which you're trying to tunnel.

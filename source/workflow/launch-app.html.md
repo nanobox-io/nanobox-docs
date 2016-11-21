@@ -22,4 +22,4 @@ Select your provider/hosting account and region. This is the infrastructure on w
 
 ![Select Provider & Region](/src-images/app-launch-provider-region.png)
 
-Once saved, Nanobox will provision an empty app server on your hosting platform. When you're ready, you can [deploy your codebase to your app](/production/deploy-code/).
+Once saved, Nanobox will provision an empty app server on your hosting platform. When you're ready, you can [deploy your codebase to your app](/workflow/deploy-code/).

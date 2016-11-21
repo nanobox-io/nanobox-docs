@@ -34,17 +34,14 @@ All interaction with Nanobox happens through the Nanobox CLI. This section of do
 #### --help
 Displays help information about the CLI and specific commands.
 
-#### --background
-Stops your Nanobox container from auto-suspending. Only takes affect on commands that require a running Nanobox container.
+#### --debug
+In the event of a failure, drop into a debug context.
+
+#### -t, --trace
+Increases display output and sets level to 'trace'.
 
 #### -v, --verbose
-Increases command output from 'info' to 'debug'.
-
-#### -q, --quiet
-Silences command output.
+Increases display output and sets level to 'debug'.
 
 #### -f, --force
 Forces the command to run without any confirmation. **Use responsibly!**
-
-#### --version
-Displays the current version of the Nanobox CLI.

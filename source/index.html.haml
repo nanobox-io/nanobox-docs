@@ -18,7 +18,8 @@ description: Nanobox lets you focus on code rather than configuration, providing
       %p.caption= s.caption
     - s.topics.each do |t|
       .topic-group
-        %h5= t.title
+        - if t.title
+          %h5= t.title
         %ul
           - t.links.each do |l|
             %li= link_to l.text, l.link

@@ -8,7 +8,7 @@ When data components are provisioned inside of a Nanobox container, each is give
 To view the IPs and connection credentials for your data components, use the `dev info` command.
 
 ```bash
-nanobox dev info
+nanobox info local
 
 ----------------------------------------------
 app-name (dev)                    Status: up  
@@ -32,9 +32,9 @@ The port will always be the default port of the service type.
 ### Connecting to a Service
 Use the credentials provided in the `dev info` output to connect to your services. Below is an example of connecting to a PostgreSQL service inside of a dev app using the `psql` cli.
 
-#### Example Connection to Redis Service
+#### Example Connection to Postgres Service
 ```bash
-nanobox dev info
+nanobox info local
 
 ...
 

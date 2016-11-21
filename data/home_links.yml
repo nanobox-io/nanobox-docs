@@ -1,37 +1,30 @@
 sections:
-  - title: 'Local Development'
+  - title: 'The Essentials'
     topics:
-      - title: 'Getting Started'
+      - title: 'Tools & Usage'
         links:
-          - text: 'Installing Nanobox'
-            link: '/getting-started/install-nanobox/'
           - text: 'The boxfile.yml'
             link: '/boxfile/'
-          - text: 'Creating a Local Dev Environment'
-            link: '/local-dev/create-dev-environment/'
-          - text: 'Configure Your App for Nanobox'
-            link: '/getting-started/configure-app/'
-          - text: 'Dev CLI Commands'
-            link: '/local-dev/dev-cli/'
+          - text: 'Workflow'
+            link: '/workflow/'
+          - text: 'Nanobox CLI'
+            link: '/cli/'
 
-      - title: 'Local Workflow'
+      - title: 'Engines & Images'
         links:
-          - text: 'Dev Workflow'
-            link: '/local-dev/dev-workflow/'
-          - text: 'Managing Local Data'
-            link: '/local-dev/managing-local-data/'
-          - text: 'Local Performance Tuning'
-            link: '/local-dev/local-config/local-performance/'
+          - text: 'Engines'
+            link: '/engines/'
+          - text: 'Images'
+            link: '/images/'
 
-
-  - title: 'Production Management'
+  - title: 'Live App Management'
     topics:
-      - title: 'Getting Started'
+      - title: 'Go Live'
         links:
           - text: 'Launch an App'
-            link: '/production/launch-app/'
+            link: '/workflow/launch-app/'
           - text: 'Deploy Code'
-            link: '/production/deploy-code/'
+            link: '/workflow/deploy-code/'
 
       - title: 'Nanobox Dashboard'
         links:
@@ -47,7 +40,7 @@ sections:
       - title: 'Data Management'
         links:
           - text: 'Uploading File Storage'
-            link: '/data-management/remotely-managing-data/#uploading-files-to-a-storage-component'
+            link: '/data-management/managing-live-data/#uploading-files-to-a-storage-component'
           - text: 'Connecting to a Data Component'
             link: '/live-app-management/remote-access/'
 
@@ -85,17 +78,17 @@ sections:
           - text: 'WordPress'
             link: 'https://guides.nanobox.io/php/wordpress/'
 
-      - title: 'Node.js Guides'
+      - title: 'Node.js & JS Guides'
         more: 'https://guides.nanobox.io/nodejs/'
         links:
           - text: 'Node.js (General)'
             link: 'https://guides.nanobox.io/nodejs/'
           - text: 'Angular'
-            link: 'https://guides.nanobox.io/nodejs/angularjs/'
+            link: 'https://guides.nanobox.io/javascript/angular/'
           - text: 'Express'
-            link: 'https://guides.nanobox.io/nodejs/expressjs/'
+            link: 'https://guides.nanobox.io/nodejs/express/'
           - text: 'Ember'
-            link: 'https://guides.nanobox.io/nodejs/emberjs/'
+            link: 'https://guides.nanobox.io/javascript/ember/'
 
       - title: 'Python Guides'
         more: 'https://guides.nanobox.io/python/'
@@ -106,3 +99,21 @@ sections:
             link: 'https://guides.nanobox.io/python/django/'
           - text: 'Flask'
             link: 'https://guides.nanobox.io/python/flask/'
+
+  - title: 'Data Components'
+    caption: 'Information on installing and configuring data componentsis found in the <a href="https://guides.nanobox.io/components/">Nanobox Component Guides</a>. Below are direct links to popular data components.'
+    topics:
+      - title: 'Popular Data Components'
+        links:
+          - text: 'PostgreSQL'
+            link: ''
+          - text: 'MySQL'
+            link: ''
+          - text: 'MongoDB'
+            link: ''
+          - text: 'Redis'
+            link: ''
+          - text: 'Memcached'
+            link: ''
+          - text: 'Network Storage (UNFS)'
+            link: ''
