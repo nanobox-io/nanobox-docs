@@ -2,14 +2,11 @@ When using the "netfs" [mount-type](/local-config/nanobox-config-yml/#mount-type
 
 A clean exports file will looks something like this:
 
-```conf
-"/Users/user/directory/app-dir-1" 192.168.99.100 -alldirs -mapall=501:20
-"/Users/user/directory/app-dir-2" 192.168.99.100 -alldirs -mapall=501:20
-"/Users/user/directory/app-dir-3" 192.168.99.100 -alldirs -mapall=501:20
-"/Users/user/directory/app-dir-4" 192.168.99.100 -alldirs -mapall=501:20
-"/Users/user/directory/app-dir-1" 192.168.99.100 -alldirs -mapall=501:20
-"/Users/user/directory/app-dir-2" 192.168.99.100 -alldirs -mapall=501:20
 ```
+/Users/user/directory/app-dir-1 /Users/user/directory/app-dir-2 /Users/user/directory/app-dir-3 /Users/user/directory/app-dir-4 192.168.99.100 -alldirs -mapall=501:20
+```
+
+*Note that in OSX, all exports are listed on a single line*
 
 Scenarios that could lead to a broken export config file and potential solutions to each scenario are explained below.
 

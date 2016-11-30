@@ -7,8 +7,6 @@ A clean exports file will looks something like this:
 "/home/user/directory/app-dir-2" 192.168.99.100 -alldirs -mapall=501:20
 "/home/user/directory/app-dir-3" 192.168.99.100 -alldirs -mapall=501:20
 "/home/user/directory/app-dir-4" 192.168.99.100 -alldirs -mapall=501:20
-"/home/user/directory/app-dir-1" 192.168.99.100 -alldirs -mapall=501:20
-"/home/user/directory/app-dir-2" 192.168.99.100 -alldirs -mapall=501:20
 ```
 
 ## Mounted Directory No Longer Exists

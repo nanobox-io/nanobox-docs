@@ -240,12 +240,14 @@ articles:
     path: "/troubleshooting/"
     articles:
       # - title: "Error Codes"
-      #   path: "/troubleshooting/error-codes/"
+      #   path: "/troubleshooting/error/"
       #   articles:
       #     - title: "1000"
-      #       path: "/troubleshooting/error-codes/1000/"
+      #       path: "/troubleshooting/error/1000/"
       - title: "Broken netfs Exports File"
         path: "/troubleshooting/broken-exports-file/"
+      - title: "Symlinks in Windows"
+        path: "/troubleshooting/symlinks-in-win/"
 
   - title: "Contributing"
     path: "/contributing/"
