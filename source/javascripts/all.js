@@ -40,7 +40,7 @@ $(function() {
 //////// TOGGLE OPEN / CLOSE CONTENTS SECTIONS ////////
 
 $(function() {
-  $('span.nav-toggle').on('click', function(e) {
+  $('span.nav-toggle, #contents ul li a[href$="#"]').on('click', function(e) {
     $(this).closest('li').toggleClass('open')
   })
 
@@ -84,7 +84,7 @@ $(window).on('resize', function() {
 /////// REPLACE MISSING IMAGES WITH PLACEHOLDER ///////
 
 $(function(){
-  $('img').attr('onerror', 'this.src="/src-images/image-coming.png"');
+  $('img').attr('onerror', 'this.src="/assets/images/image-coming.png"');
 });
 
 
@@ -104,7 +104,7 @@ function loadAnimation(name, parent, path) {
 }
 
 function svgAnimation(name, filename) {
-  loadAnimation(name, name, '/src-images/animated-svgs/'+filename);
+  loadAnimation(name, name, '/assets/images/animated-svgs/'+filename);
   var anim = name
   $(document.getElementById(name)).waypoint(function(){
     bodymovin.play(name);
@@ -112,7 +112,7 @@ function svgAnimation(name, filename) {
   }, {offset: '40%' });
 
   // Appends the replay button
-  $(document.getElementById(name)).append('<a class="replay" id="'+name+'" title="Replay"><img src="/src-images/replay-icon.svg"></a>')
+  $(document.getElementById(name)).append('<a class="replay" id="'+name+'" title="Replay"><img src="/assets/images/replay-icon.svg"></a>')
 
   $('#' + name +'.replay').click(function(){
     bodymovin.stop(name);

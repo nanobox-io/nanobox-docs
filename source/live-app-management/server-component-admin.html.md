@@ -8,7 +8,7 @@ Every [bunkhouse server](/scaling/bunkhouse) and app component has administrativ
 ## Bunkhouse Options
 With a shared host (bunkhouse server), you're able to reboot the host.
 
-![Bunkhouse Admin Options](/src-images/host-component-bunkhouse-btns.png)
+![Bunkhouse Admin Options](/assets/images/host-component-bunkhouse-btns.png)
 
 ### Reboot
 Rebooting a bunkhouse server will power-off the host machine, then power it back on.
@@ -22,7 +22,7 @@ Deleting the bunkhouse server will decommission the server completely. All app a
 ## Component Options
 Application components provide refresh, reboot, and rebuild options.
 
-![Component Admin Options](/src-images/host-component-btns.png)
+![Component Admin Options](/assets/images/host-component-btns.png)
 
 ### Refresh
 Refresh will stop the service's running processes, then restart them.

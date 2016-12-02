@@ -88,3 +88,19 @@ $pink-1: #EF3F65;
   -o-user-select: $select;
   user-select: $select;
 }
+
+// FONTS
+
+$oregon   : "oregon";
+
+@font-face{
+	font-family: "oregon";
+  font-weight: normal;
+  font-style: normal;
+	src: url('/assets/fonts/oregon-webfont.eot');
+	src: url('/assets/fonts/oregon-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('/assets/fonts/oregon-webfont.woff2') format('woff2'),
+	     url('/assets/fonts/oregon-webfont.woff') format('woff'),
+	     url('/assets/fonts/oregon-webfont.ttf') format('truetype'),
+	     url('/assets/fonts/oregon-webfont.svg#webfont') format('svg');
+}

@@ -23,9 +23,9 @@ Creating a new certificate is covered in the [Adding SSL/TLS doc](/domains-netwo
 ## Delete Your Certificate
 To delete a certificate, click on the certificate in your dashboard. Once inside your certificate view, click the "Delete Cert" button to delete the certificate.
 
-![Delete Certificate](/src-images/ssl-tls-delete-cert.png)
+![Delete Certificate](/assets/images/ssl-tls-delete-cert.png)
 
 ## Delete a Bundle
 To delete a bundle, click on the certificate in your dashboard, then "Manage" next to the bundle you'd like to delete. Once inside your bundle view, click the "Delete Bundle" button to delete the bundle.
 
-![Delete Bundle](/src-images/ssl-tls-delete-bundle.png)
+![Delete Bundle](/assets/images/ssl-tls-delete-bundle.png)

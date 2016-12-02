@@ -14,7 +14,7 @@ Logs can be accessed in your app dashboard under the "Logs" tab. There are two t
 - Live Stream
 - Historical
 
-![Dashboard Logs](/src-images/log-management-dashboard.png)
+![Dashboard Logs](/assets/images/log-management-dashboard.png)
 
 ### Live Stream
 Live Stream streams your app's logs. These allow you to see errors in your application as they happen. Each log entry is timestamped and flagged with the component-ID and specific log from which it came.

@@ -12,7 +12,7 @@ To launch an app, Nanobox need access to your hosting account. Linking your Nano
 
 To get started, click the "Launch New App" button in your dashboard.
 
-![Launch New App](/src-images/app-launch-button.png)
+![Launch New App](/assets/images/app-launch-button.png)
 
 ### Name Your App
 Provide a name for your app. If no name is provided, Nanobox will generate one for you.
@@ -20,6 +20,6 @@ Provide a name for your app. If no name is provided, Nanobox will generate one f
 ### Select Your Provider & Region
 Select your provider/hosting account and region. This is the infrastructure on which your app's server(s) will be provisioned.
 
-![Select Provider & Region](/src-images/app-launch-provider-region.png)
+![Select Provider & Region](/assets/images/app-launch-provider-region.png)
 
 Once saved, Nanobox will provision an empty app server on your hosting platform. When you're ready, you can [deploy your codebase to your app](/workflow/deploy-code/).

@@ -9,7 +9,7 @@ description: Creating a Nanobox account is simple and can be done in just a few 
 
 To create an account on Nanobox, go to [dashboard.nanobox.io/users/sign_up](https://dashboard.nanobox.io/users/register) and fill out the necessary information.
 
-![Create an Account](/src-images/account-create-form.png)
+![Create an Account](/assets/images/account-create-form.png)
 
 You will receive an email at the email address you provided with a confirmation link. Click the link to confirm your account. That's it! You've created an account on Nanobox.
 
@@ -22,4 +22,4 @@ We do our best to keep our emails out of these, but sometimes this is where they
 #### 2. Make sure the email address you provided is correct
 Whatever email address you provided will show in your browser after you submit the account creation form. If the email address is incorrect, contact [help@nanobox.io](mailto:help@nanobox.io).
 
-![Sign Up Email Address](/src-images/account-create-email-address.png)
+![Sign Up Email Address](/assets/images/account-create-email-address.png)

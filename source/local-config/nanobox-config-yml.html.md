@@ -50,7 +50,7 @@ ram: 4
 ## NetFS Mount Options
 `netfs_mount_opts` specifies options to include when mounting your local codebase into Nanobox.
 
-- `mfsymlinks` - When running Nanobox in Windows, this option allows symlinks created in Nanobox to function properly with your local filesystem. *There are caveats with this setting that are outlined in the [Symlinks in Windows](/troubleshooting/symlinks-in-win) doc.*
+- `mfsymlinks` - When running Nanobox in Windows, this option allows symlinks created in Nanobox to function properly with your local filesystem. *There are caveats with this setting that are outlined in the [Symlinks in Windows](/trbl/symlinks-in-win) doc.*
 
 ```yaml
 netfs_mount_opts: 'mfsymlinks'

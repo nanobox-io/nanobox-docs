@@ -66,7 +66,7 @@ set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
-set :images_dir, 'src-images'
+set :images_dir, 'assets/images'
 
 set :build_dir, 'docs'
 

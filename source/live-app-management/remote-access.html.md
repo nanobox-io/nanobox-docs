@@ -30,7 +30,7 @@ nanobox tunnel data.db
 
 Once the tunnel is open, you can use the tunnel connection credentials provided in your dashboard under the "Connect" section of each component.
 
-![Tunnel Connection Credentials](/src-images/tunnel-connection-creds.png)
+![Tunnel Connection Credentials](/assets/images/tunnel-connection-creds.png)
 
 Tunnels are primarily used for managing data components. More information is available in the [Managing Live Data](/data-management/managing-live-data/#create-a-secure-tunnel) and [`tunnel`](/cli/tunnel/) docs.
 

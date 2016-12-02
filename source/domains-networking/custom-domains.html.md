@@ -8,7 +8,7 @@ Using your own domain on your app is really simple and can be done by either add
 ## Using an A-Record
 A-Records are used to point your domain to a specific IP address. If you choose to use this method, you need to point your domain to the IP of the server that houses your [load-balancer](/live-app-management/platform-components/#load-balancer). This IP can be found in your dashboard under Network > DNS.
 
-![Load-Balancer IP](/src-images/dns-ip.png)
+![Load-Balancer IP](/assets/images/dns-ip.png)
 
 ### Pros of Using an A-Record
 - You're able to use root domains without subdomains (`domain.com` vs `www.domain.com`).

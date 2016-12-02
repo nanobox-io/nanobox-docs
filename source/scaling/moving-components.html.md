@@ -7,7 +7,7 @@ For many apps, a single Bunkhouse multi-component server works just fine, but as
 
 To move a component out of a bunkhouse, click on on the "Move" button under the component in your dashboard.
 
-![Move](/src-images/move-button.png)
+![Move](/assets/images/move-button.png)
 
 When moving a component out of a bunkhouse, you have two options:
 

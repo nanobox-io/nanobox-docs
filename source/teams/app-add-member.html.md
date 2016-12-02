@@ -8,7 +8,7 @@ Often, you are one of many working on your app. Nanobox enables teams to work to
 ## Adding a Team Member
 To add a team member, create an invitation for them to join the app. This can be done under Admin > Team Members in your app dashboard. Enter their email address and the role in which you'd like them to work on the app.
 
-![Invite a Team Member](/src-images/team-app-invite.png)
+![Invite a Team Member](/assets/images/team-app-invite.png)
 
 #### Things to Note
 - In order for a team member to be added, they must already have a Nanobox account.
@@ -22,4 +22,4 @@ Once an invitation is created, an email is sent to the invited user. The invitat
 ## Revoking an Invitation
 If a invitation is sent in error, it can be revoked by clicking the "Revoke" button next to the pending invitation.
 
-![Revoking an Invitation](/src-images/team-app-invite-revoke.png)
+![Revoking an Invitation](/assets/images/team-app-invite-revoke.png)

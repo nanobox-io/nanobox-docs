@@ -5,7 +5,7 @@ description: Each time you deploy to an app with Nanobox, an entry is created in
 
 Each time you deploy to an app with Nanobox, an entry is created in your app's deploy history. The deploy history is accessed under the "History" tab of your app dashboard.
 
-![Deploy History](/src-images/deploy-history.png)
+![Deploy History](/assets/images/deploy-history.png)
 
 The deploy history shows the currently deployed command and allows you to rollback to any previous deploy.
 

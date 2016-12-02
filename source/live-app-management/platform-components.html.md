@@ -5,7 +5,7 @@ description: Each app deployed with Nanobox includes 'platform components' that 
 
 Each app deployed with Nanobox includes "platform components". These services provide specific functionality necessary for your app to run. Below are summaries of the purpose of each platform component.
 
-![Platform Components](/src-images/platform-components.png)
+![Platform Components](/assets/images/platform-components.png)
 
 *Each component is powered using a [Nanopack](http://nanopack.io) open-source project. While you don't need to worry about knowing these projects, you're welcome to take a look.*
 

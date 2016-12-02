@@ -9,7 +9,7 @@ Data components handle application data. They can range anywhere in function fro
 ```yaml
 data.db:
   # Image
-  image: nanobox/myslq:5.6
+  image: nanobox/mysql:5.6
 
   # Config Options Exposed by the Image
   config:

@@ -5,18 +5,18 @@ description: Normally the process of adding SSL/TLS to your app is tedious and c
 
 Normally the process of adding SSL to your app is tedious and complicated, but with Nanobox, we've tried to make it as simple as possible. To get started, click on the "Network" tab of your application dashboard and go to "SSL/TLS Certificates". Then click "New SSL/TLS Certificate".
 
-![New SSL/TLS Certificate](/src-images/ssl-tls-add.png)
+![New SSL/TLS Certificate](/assets/images/ssl-tls-add.png)
 
 In order to generate a certificate, specific information is required. Provide the necessary information and click "Create Certificate".
 
-![Certificate Information](/src-images/ssl-tls-required-info.png)
+![Certificate Information](/assets/images/ssl-tls-required-info.png)
 
 ## Certificate Bundles
 With the information provided, you can now create a certificate "bundle". A bundle consists of a Private Key, a Certificate, and a Certificate Authority (CA) - all the files required to install a certificate on a server.
 
 To create a new bundle, click "New Bundle".
 
-![Create New Bundle](/src-images/ssl-tls-new-bundle.png)
+![Create New Bundle](/assets/images/ssl-tls-new-bundle.png)
 
 There are different bundle types to choose from when creating a new bundle:
 
@@ -41,7 +41,7 @@ If you've purchased an SSL certificate from a 3rd Party SSL provider and have no
 #### 1. Submit Your CSR to Your SSL Provider
 With your private key generated, Nanobox provides a Certificate Signing Request (CSR). Submit your CSR to your SSL provider. They will use it to generate a certificate and certificate authority that matches your private key.
 
-![Certificate Request](/src-images/ssl-tls-csr.png)
+![Certificate Request](/assets/images/ssl-tls-csr.png)
 
 *Be sure to copy the full contents of your CSR.*
 
@@ -61,6 +61,6 @@ If you have a certificate that has already been keyed and used on another host, 
 ## Activate a Bundle
 With a bundle created, it's ready to be installed. To install a bundle in your running app, click "Activate" next to the bundle.
 
-![Activate Bundle](/src-images/ssl-tls-bundle-activate.png)
+![Activate Bundle](/assets/images/ssl-tls-bundle-activate.png)
 
 When a bundle is activated, the certificate and CA are installed on your app's web nodes, allowing the secure transfer of data over https.

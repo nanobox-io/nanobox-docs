@@ -33,14 +33,14 @@ nanobox tunnel data.postgres -p 5432
 
 Tunnel connection credentials are provided in your dashboard under the "Connect" section of the component to which you're trying to tunnel.
 
-![Tunnel Connection Credentials](/src-images/tunnel-connection-creds.png)
+![Tunnel Connection Credentials](/assets/images/tunnel-connection-creds.png)
 
 For more information about the `tunnel` command, read through the [tunnel](/cli/tunnel/) doc.
 
 ### Connecting with a Local Client
 With a tunnel open, you can then use your local client of choice to connect to your component. For example, with a tunnel open, you could manage a MySQL database with [Sequel Pro](https://www.sequelpro.com/).
 
-![Tunnel Connection with Sequel Pro](/src-images/remote-manage-data-sequel-pro.png)
+![Tunnel Connection with Sequel Pro](/assets/images/remote-manage-data-sequel-pro.png)
 
 ### Uploading Files to a Storage Component
 Nanobox allows you to provision [network storage components](/app-config/network-storage/) that act as centralized, persistent filestores for your app. Opening a tunnel allows you to manage files in your storage components using tools such as `scp` or SFTP GUIs.
