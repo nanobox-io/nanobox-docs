@@ -8,6 +8,21 @@ articles:
   - title: "Getting Started"
     path: "https://guides.nanobox.io"
 
+  - title: "Install Nanobox"
+    path: "/install/"
+    articles:
+      - title: "System Requirements"
+        path: "/install/requirements/"
+        articles:
+          - title: "Using Docker-Machine & VirtualBox"
+            path: "/install/requirements/docker-machine/"
+          - title: "Using Native Docker"
+            path: "/install/requirements/docker/"
+      - title: "Updating Nanobox"
+        path: "/install/update/"
+      - title: "Uninstalling Nanobox"
+        path: "/install/uninstall/"
+
   - title: "Workflow"
     path: "/workflow/"
     articles:
@@ -97,10 +112,6 @@ articles:
         path: "/cli/implode/"
       - title: "version"
         path: "/cli/version/"
-      - title: "Updating Nanobox"
-        path: "/cli/update/"
-      - title: "Uninstalling Nanobox"
-        path: "/cli/uninstall/"
 
 
   - title: "Live App Management"
