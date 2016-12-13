@@ -1,3 +1,5 @@
+*First, make sure all [installation requirements](/install/requirements/) are met.*
+
 To install Nanobox on Linux distributions, you'll need to download the Nanobox executables and install Virtual Box and Docker.
 
 ## Download & Install Nanobox Executables

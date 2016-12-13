@@ -1,3 +1,5 @@
+*First, make sure all [installation requirements](/install/requirements/) are met.*
+
 Nanobox provides a Mac installer to make installation as simple as possible. It can be downloaded from the [Nanobox download page](https://nanobox.io/download).
 
 #### Installer Options
