@@ -15,19 +15,18 @@ mount-type: native
 ## Provider
 The `provider` config defines which technology is used to manage Docker containers in your virtual/local host. The following providers are available:
 
-- `docker_machine`
-
-*More coming soon*
+- `docker_machine` - Uses VirtualBox for virtualization and Docker Machine to create Docker containers in the VM.
+- `native` - Uses native docker containers on your host OS.
 
 ```yaml
-provider: docker_machine
+provider: native
 ```
 
 ## Mount Type
 `mount-type` specifies which technology to use when mounting code on your local machine into Nanobox. The following options are available:
 
 - `native` - Uses the network file system native to your [provider](#provider).
-- `netfs` - Uses NFS on OSX and Linux, CIFS on Windows. **Much** better performance, but requires admin permissions.
+- `netfs` - Uses NFS on OSX and Linux, CIFS on Windows. **Much** better performance, but requires admin permissions. *Netfs is only used with the ["native" provider](#provider).*
 
 ```yaml
 mount-type: native

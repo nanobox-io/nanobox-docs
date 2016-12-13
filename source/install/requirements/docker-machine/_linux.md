@@ -1,3 +1,6 @@
+## Install Virtual Box
+If using the [`docker-machine` provider](/local-config/nanobox-config-yml/#provider), Nanobox utilizes [Virtual Box](https://www.virtualbox.org/) to provision then Nanobox virtual environment on your local machine. If you already have it installed locally, you're all set. If not, [Download & Install Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads).
+
 ## vboxmanage in your $PATH
 The vboxmanage binary needs to be included in your system $PATH. The VirtualBox installation process should do this automatically, but it some cases, it won't install correctly.
 
