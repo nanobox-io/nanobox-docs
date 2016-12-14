@@ -22,7 +22,9 @@ There are only a few requirements that a provider must satisfy to provide a nano
 * [Gathering Metadata](#meta)
 * [Requesting the Catalog](#catalog)
 * [Verify the account credentials](#verify)
-* [Adding SSH Keys](#ssh-keys)
+* [Creating an SSH Key](#create-ssh-key)
+* [Querying an SSH Key](#query-ssh-key)
+* [Deleting an SSH Key](#delete-ssh-key)
 * [Ordering a Server](#order-server)
 * [Querying a Server](#query-server)
 * [Canceling a Server](#cancel-server)
@@ -64,14 +66,14 @@ Example using the Digital Ocean integration:
 
 ```json
 {
-  "id": "do",
-  "name": "Digital Ocean",
-  "server_nick_name": "Droplet",
-  "default_region": "sfo1",
-  "default_size": "512mb",
-  "default_plan": "standard",
-  "can_reboot": true,
-  "can_rename": true,
+  "id":                "do",
+  "name":              "Digital Ocean",
+  "server_nick_name":  "Droplet",
+  "default_region":    "sfo1",
+  "default_size":      "512mb",
+  "default_plan":      "standard",
+  "can_reboot":        true,
+  "can_rename":        true,
   "credential_fields": [
     { "key": "access_token", "label": "Access Token" }
   ],
@@ -120,8 +122,8 @@ Simplified example using a single plan with only 2 server sizes:
 ```json
 [
   {
-    "id": "sfo1",
-    "name": "San Francisco 1",
+    "id":    "sfo1",
+    "name":  "San Francisco 1",
     "plans": [
       {
         "title": "Standard Configuration",
@@ -147,21 +149,16 @@ The `/verify` route is used to verify a user's account credentials. The `credent
 POST
 
 ###### Headers:
-none
-
-###### Body:
-
-* `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
 
 Example:
 
-```json
-{
-  "auth": {
-    "access_token": "123abc"
-  }
-}
 ```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
+
+###### Body:
+empty
 
 ###### Response:
 
@@ -169,7 +166,7 @@ Example:
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
-#### SSH Keys
+#### Create SSH Key
 
 The `/keys` route is used to authorize nanobox with the user's account that will be ordering servers. After ordering a server, nanobox will need to SSH into the server to provision it. Nanobox will pre-generate an SSH key for the user's account and the authorization route allows nanobox to register this key with the user's account on this provider so that nanobox can access the server after it is ordered.
 
@@ -182,23 +179,25 @@ The `/keys` route is used to authorize nanobox with the user's account that will
 POST
 
 ###### Headers:
-none
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
 
 ###### Body:
 
-* `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
-* `name`: the name of this key that will be used as an identifier when ordering a server.
+* `name`: the user-friendly name of the key.
 * `key`: the public key to register with the user's account. It is assumed that this public key will be installed on every server launched by this integration.
 
 Example:
 
 ```json
 {
-  "auth": {
-    "access_token": "123abc"
-  },
   "name": "nanobox-provider-account-ID",
-  "key": "CONTENTS OF PUBLIC KEY"
+  "key":  "CONTENTS OF PUBLIC KEY"
 }
 ```
 
@@ -206,6 +205,66 @@ Example:
 
 **On Success:** should return a `201` code with the following json data:
 * `id`: fingerprint or key identifier to use when ordering servers
+
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
+
+#### Query SSH Key
+
+The `/keys/:id` route is used by nanobox to query the existence of previously created key.
+
+###### Path:
+`/keys/:id`
+
+###### Method:
+GET
+
+###### Headers:
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
+
+###### Body:
+empty
+
+###### Response
+
+**On Success:** should return a `201` code with the following json data:
+
+* `id`: fingerprint or key identifier to use when ordering servers
+* `name`: the user-friendly name of the key.
+* `public_key`: "CONTENTS OF PUBLIC KEY"
+
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
+
+#### Delete SSH Key
+
+The `/keys/:id` route is used to cancel a key that was previously created via nanobox.
+
+###### Path:
+`/keys/:id`
+
+###### Method:
+DELETE
+
+###### Headers:
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
+
+###### Body:
+empty
+
+###### Response
+
+**On Success:** should return an empty body with a status code of `200`
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
@@ -220,11 +279,16 @@ The `/servers` route is how nanobox submits a request to order a new server. Thi
 POST
 
 ###### Headers:
-none
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
 
 ###### Body:
 
-* `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
 * `name`: nanobox-generated name used to identify the machine visually as ordered by nanobox.
 * `region`: the region wherein to launch the server, which will match the region id from the catalog.
 * `size`: the size of server to provision, which will match an `id` provided in the aforementioned catalog.
@@ -234,12 +298,9 @@ Example:
 
 ```json
 {
-  "auth": {
-    "access_token": "123abc"
-  },
-  "name": "nanobox.io-cool-app-do.1.1",
-  "region": "sfo1",
-  "size": "a1",
+  "name":    "nanobox.io-cool-app-do.1.1",
+  "region":  "sfo1",
+  "size":    "a1",
   "ssh_key": "12345"
 }
 ```
@@ -264,20 +325,22 @@ The `/servers/:id` route is used by nanobox to query state about a previously or
 GET
 
 ###### Headers:
-none
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
 
 ###### Body:
 
-* `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
 * `id`: the server id (added here as a convenience)
 
 Example:
 
 ```json
 {
-  "auth": {
-    "access_token": "123abc"
-  },
   "id": "23453-fhghib-45"
 }
 ```
@@ -303,10 +366,16 @@ The `/servers/:id` route is used to cancel a server that was previously ordered 
 `/servers/:id`
 
 ###### Method:
-GET
+DELETE
 
 ###### Headers:
-none
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
 
 ###### Body:
 
@@ -317,9 +386,6 @@ Example:
 
 ```json
 {
-  "auth": {
-    "access_token": "123abc"
-  },
   "id": "23453-fhghib-45"
 }
 ```
@@ -341,20 +407,22 @@ The `/servers/:id/reboot` route is used to reboot a server that was previously o
 PATCH
 
 ###### Headers:
-none
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
 
 ###### Body:
 
-* `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
 * `id`: the server id (added here as a convenience)
 
 Example:
 
 ```json
 {
-  "auth": {
-    "access_token": "123abc"
-  },
   "id": "23453-fhghib-45"
 }
 ```
@@ -376,7 +444,13 @@ The `/servers/:id/rename` route is used to rename a server that was previously o
 PATCH
 
 ###### Headers:
-none
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+
+Example:
+
+```
+HTTP_AUTH_ACCESS_TOKEN: 123abc
+```
 
 ###### Body:
 
@@ -388,10 +462,7 @@ Example:
 
 ```json
 {
-  "auth": {
-    "access_token": "123abc"
-  },
-  "id": "23453-fhghib-45",
+  "id":   "23453-fhghib-45",
   "name": "nanobox.io-cool-app-do.1.1"
 }
 ```
