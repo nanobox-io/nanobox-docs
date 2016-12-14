@@ -3,19 +3,19 @@ title: Custom Provider
 description: Creating a custom cloud provider integration.
 ---
 
-Creating an integration into Nanobox can be done entirely outside of Nanobox. In fact, the entire integration will live outside of Nanobox. Essentially, a provider integration is just an API endpoint that standardizes the interaction with the cloud provider. The API then facilitates the communication with the cloud provider by acting as a bridge or proxy.
+Creating an integration with Nanobox can be done entirely outside of Nanobox. In fact, the entire integration will live outside of Nanobox. Essentially, a provider integration is just an API endpoint that standardizes the interaction between Nanobox and a cloud provider, acting as a bridge or proxy to facilitate communication between the the two.
 
-The integration can be written in any language and run anywhere. As long as the API conforms to the specification as detailed here, the endpoint can be added into nanobox and nanobox users can launch apps on your provider.
+The integration can be written in any language and run anywhere. As long as the API conforms to the specification as detailed here, the endpoint can be added into Nanobox and users can launch apps on your provider.
 
 ###### General Requirements
 
-There are only a few requirements that a provider must satisfy to provide a nanobox integration:
+There are only a few requirements that a provider must satisfy in order to integrate with Nanobox:
 
-1 - Must implement the API spec as outlined here
+1. Must implement the API spec as outlined here
 
-2 - Must be able to launch servers running a base ubuntu OS
+2. Must be able to launch servers running a base ubuntu OS
 
-3 - Servers must have both a public and private network (2 nics).
+3. Servers must have both a public and private network (2 nics).
 
 ## API
 
@@ -34,7 +34,7 @@ There are only a few requirements that a provider must satisfy to provide a nano
 
 ### Meta
 
-The `/meta` route is used to provide Nanobox with various pieces of metadata that will be used for displaying information in the dashboard and for requesting authentication information from the users.
+The `/meta` route provides Nanobox with various pieces of metadata that are used for displaying information in the dashboard and for requesting authentication information from users.
 
 ###### Path:
 `/meta`
@@ -82,7 +82,7 @@ Example using the Digital Ocean integration:
 ```
 
 #### Catalog
-The `/catalog` route is used to provide nanobox with a catalog of server sizes and options, within the available geographic regions.
+The `/catalog` route provides nanobox with a catalog of server sizes and options, within the available geographic regions.
 
 ###### Path:
 `/catalog`
@@ -98,7 +98,7 @@ empty
 
 ###### Response:
 
-The response data should be a list (array) of regions. Each region should contain a list of plans. It is not necessary to have multiple regions, however the structure will be the same regardless. Additionally, your integration may only have one classification of server types, or you may have high-cpu, high-ram, or high-IO options. A plan is a grouping of server sizes within a classification.
+The response data should be a list (array) of regions. Each region should contain a list of plans. It is not necessary to have multiple regions, however the structure is the same regardless. Additionally, your integration may only have one classification of server types, or you may have high-cpu, high-ram, or high-IO options. A plan is a grouping of server sizes within a classification.
 
 Each region in the catalog consists of the following:
 
@@ -140,7 +140,7 @@ Simplified example using a single plan with only 2 server sizes:
 
 #### Verify
 
-The `/verify` route is used to verify a user's account credentials. The `credential_fields` specified in the metadata will be provided in the dashboard and required to be filled before the user can use this provider. After the credentials are provided, nanobox will call this route to verify that the account credentials provided by the user are valid.
+The `/verify` route is used to verify a user's account credentials. The `credential_fields` specified in the metadata will be provided in the dashboard and required to be filled before the user can use this provider. After the credentials are provided, Nanobox will call this route to verify that the account credentials provided by the user are valid.
 
 ###### Path:
 `/verify`
@@ -149,7 +149,7 @@ The `/verify` route is used to verify a user's account credentials. The `credent
 POST
 
 ###### Headers:
-* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This provides the necessary values to authorize the user within the provider.
 
 Example:
 
@@ -162,13 +162,13 @@ empty
 
 ###### Response:
 
-**On Success:** should return an empty body with a `200` response code.
+**On Success:** Should return an empty body with a `200` response code.
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Create SSH Key
 
-The `/keys` route is used to authorize nanobox with the user's account that will be ordering servers. After ordering a server, nanobox will need to SSH into the server to provision it. Nanobox will pre-generate an SSH key for the user's account and the authorization route allows nanobox to register this key with the user's account on this provider so that nanobox can access the server after it is ordered.
+The `/keys` route is used to authorize nanobox with the user's account that will be ordering servers. After ordering a server, nanobox needs to SSH into the server to provision it. Nanobox will pre-generate an SSH key for the user's account and the authorization route allows Nanobox to register the key with the user's account on the provider so Nanobox can access the server after it is ordered.
 
 *NOTE*: This route is **not** required if your provider uses passwords for SSH instead of SSH keys, assuming the password to access the server is returned in the order server payload.
 
@@ -203,14 +203,14 @@ Example:
 
 ###### Response:
 
-**On Success:** should return a `201` code with the following json data:
+**On Success:** Should return a `201` code with the following json data:
 * `id`: fingerprint or key identifier to use when ordering servers
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Query SSH Key
 
-The `/keys/:id` route is used by nanobox to query the existence of previously created key.
+The `/keys/:id` route is used by Nanobox to query the existence of previously created key.
 
 ###### Path:
 `/keys/:id`
@@ -232,7 +232,7 @@ empty
 
 ###### Response
 
-**On Success:** should return a `201` code with the following json data:
+**On Success:** Should return a `201` code with the following json data:
 
 * `id`: fingerprint or key identifier to use when ordering servers
 * `name`: the user-friendly name of the key.
@@ -264,13 +264,13 @@ empty
 
 ###### Response
 
-**On Success:** should return an empty body with a status code of `200`
+**On Success:** Should return an empty body with a status code of `200`
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Order Server
 
-The `/servers` route is how nanobox submits a request to order a new server. This route **SHOULD NOT** hold open the request until the server is ready. The request should return immediately once the order has been submitted with an identifier that nanobox can use to followup on the order status.
+The `/servers` route is how nanobox submits a request to order a new server. This route **SHOULD NOT** hold open the request until the server is ready. The request should return immediately once the order has been submitted with an identifier that Nanobox can use to followup on the order status.
 
 ###### Path:
 `/servers`
@@ -307,7 +307,7 @@ Example:
 
 ##### Response:
 
-**On Success:** should return a `201` code with the following json data:
+**On Success:** Should return a `201` code with the following json data:
 * `id`: unique id of the server
 
 Should return a json body with only `id` and a `201` status code.
@@ -347,7 +347,7 @@ Example:
 
 ###### Response
 
-**On Success:** should return a `201` code with the following json data:
+**On Success:** Should return a `201` code with the following json data:
 
 * `id`: the server id
 * `status`: the status or availability of the server. (active indicates server is ready)
@@ -392,7 +392,7 @@ Example:
 
 ###### Response
 
-**On Success:** should return an empty body with a status code of `200`
+**On Success:** Should return an empty body with a status code of `200`
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
@@ -407,7 +407,7 @@ The `/servers/:id/reboot` route is used to reboot a server that was previously o
 PATCH
 
 ###### Headers:
-* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This provides the necessary values to authorize the user within this provider.
 
 Example:
 
@@ -429,7 +429,7 @@ Example:
 
 ###### Response
 
-**On Success:** should return an empty body with a status code of `200`
+**On Success:** Should return an empty body with a status code of `200`
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
@@ -444,7 +444,7 @@ The `/servers/:id/rename` route is used to rename a server that was previously o
 PATCH
 
 ###### Headers:
-* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
+* `HTTP_AUTH_` prefixed credential field keys and their corresponding values as populated by the user. This provides the necessary values to authorize the user within this provider.
 
 Example:
 
@@ -469,6 +469,6 @@ Example:
 
 ###### Response
 
-**On Success:** should return an empty body with a status code of `200`
+**On Success:** Should return an empty body with a status code of `200`
 
 **On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
