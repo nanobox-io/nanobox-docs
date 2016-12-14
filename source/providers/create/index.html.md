@@ -3,7 +3,7 @@ title: Custom Provider
 description: Creating a custom cloud provider integration.
 ---
 
-Creating an integration into Nanobox can be done entirely outside of Nanobox. In fact, the entire integration will live outside of Nanobox. Essentially, a provider integration is just an API endpoint that standardizes the interaction with the cloud provider. The API then faciliates the communication with the cloud provider by acting as a bridge or proxy. 
+Creating an integration into Nanobox can be done entirely outside of Nanobox. In fact, the entire integration will live outside of Nanobox. Essentially, a provider integration is just an API endpoint that standardizes the interaction with the cloud provider. The API then facilitates the communication with the cloud provider by acting as a bridge or proxy.
 
 The integration can be written in any language and run anywhere. As long as the API conforms to the specification as detailed here, the endpoint can be added into nanobox and nanobox users can launch apps on your provider.
 
@@ -45,18 +45,20 @@ none
 
 ###### Body:
 empty
-  
+
 ###### Response:
 
 * `id`: some unique identifier
 * `name`: display name used in the dashboard
-* `server_nickname`: what this provider calls their servers
-* `default_size`: default server size to use when creating an app
+* `server_nick_name`: what this provider calls their servers
 * `default_region`: the default region to launch servers when not specified
+* `default_size`: default server size to use when creating an app
+* `default_plan`: the [id of the default plan](#catalog) in which the default size is ordered
 * `can_reboot`: boolean to determine if we can reboot the server through the api
 * `can_rename`: boolean to determine if we can rename the server through the api
 * `ssh_auth_method`: will either be key or password
-* `credential_fields`: array of field names that will be submitted with each server action used to validate the user account.
+* `credential_fields`: array of hashes that includes field keys and labels necessary to authenticate with the provider.
+* `instructions`: string that contains instructions for how to setup authentication with the provider.
 
 Example using the Digital Ocean integration:
 
@@ -64,19 +66,21 @@ Example using the Digital Ocean integration:
 {
   "id": "do",
   "name": "Digital Ocean",
-  "server_nickname": "Droplet",
+  "server_nick_name": "Droplet",
   "default_region": "sfo1",
   "default_size": "512mb",
+  "default_plan": "standard",
   "can_reboot": true,
   "can_rename": true,
   "credential_fields": [
-    "access_token"
-  ]
+    { "key": "access_token", "label": "Access Token" }
+  ],
+  "instructions": "<a href='//cloud.digitalocean.com/settings/api/tokens' target='_blank'>Create a Personal Access Token</a> in your Digital Ocean Account that has read/write access, then add the token here or view the <a href='//www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#how-to-generate-a-personal-access-token' target='_blank'>full guide</a>"
 }
 ```
 
 #### Catalog
-The `/catalog` route is used to provide nanobox with a catalog of server sizes and options, within the available geographic regions. 
+The `/catalog` route is used to provide nanobox with a catalog of server sizes and options, within the available geographic regions.
 
 ###### Path:
 `/catalog`
@@ -89,14 +93,14 @@ none
 
 ###### Body:
 empty
-  
+
 ###### Response:
 
-The response data should be a list (array) of regions. Each region should contain a list of plans. It is not necessary to have multiple regions, however the structure will be the same regardless. Additionally, your integration may only have one classification of server types, or you may have high-cpu, high-ram, or high-IO options. A plan is a grouping of server sizes within a classification. 
+The response data should be a list (array) of regions. Each region should contain a list of plans. It is not necessary to have multiple regions, however the structure will be the same regardless. Additionally, your integration may only have one classification of server types, or you may have high-cpu, high-ram, or high-IO options. A plan is a grouping of server sizes within a classification.
 
 Each region in the catalog consists of the following:
 
-* `id`: unique region identifier to be used when ordering a server. 
+* `id`: unique region identifier to be used when ordering a server.
 * `name`: the visual identifier for the customer.
 * `plans`: A grouping of server sizes within a classification. Each plan consists of the following:
 
@@ -110,7 +114,7 @@ Each region in the catalog consists of the following:
     * `transfer`: a visual indication to the user informing the amount of data transfer allowed per month for this server.
     * `dollars_per_hr`: a visual indication to the user informing the cost of running this server per hour.
     * `dollars_per_mo`: a visual indication to the user informing the cost of running this server per month.
-  
+
 Simplified example using a single plan with only 2 server sizes:
 
 ```json
@@ -161,9 +165,9 @@ Example:
 
 ###### Response:
 
-On Success: should return an empty body with a `200` response code.
+**On Success:** should return an empty body with a `200` response code.
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### SSH Keys
 
@@ -197,13 +201,13 @@ Example:
   "key": "CONTENTS OF PUBLIC KEY"
 }
 ```
-  
+
 ###### Response:
 
-On Success: should return a `201` code with the following json data:
+**On Success:** should return a `201` code with the following json data:
 * `id`: fingerprint or key identifier to use when ordering servers
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Order Server
 
@@ -242,12 +246,12 @@ Example:
 
 ##### Response:
 
-On Success: should return a `201` code with the following json data:
+**On Success:** should return a `201` code with the following json data:
 * `id`: unique id of the server
 
 Should return a json body with only `id` and a `201` status code.
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Query Server
 
@@ -280,7 +284,7 @@ Example:
 
 ###### Response
 
-On Success: should return a `201` code with the following json data:
+**On Success:** should return a `201` code with the following json data:
 
 * `id`: the server id
 * `status`: the status or availability of the server. (active indicates server is ready)
@@ -289,7 +293,7 @@ On Success: should return a `201` code with the following json data:
 * `internal_ip`: internal or private IP of the server
 * `password`: the ssh password to use (if ssh_auth_method is password)
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Cancel Server
 
@@ -322,9 +326,9 @@ Example:
 
 ###### Response
 
-On Success: should return an empty body with a status code of `200`
+**On Success:** should return an empty body with a status code of `200`
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Reboot Server
 
@@ -357,9 +361,9 @@ Example:
 
 ###### Response
 
-On Success: should return an empty body with a status code of `200`
+**On Success:** should return an empty body with a status code of `200`
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
 
 #### Rename Server
 
@@ -394,6 +398,6 @@ Example:
 
 ###### Response
 
-On Success: should return an empty body with a status code of `200`
+**On Success:** should return an empty body with a status code of `200`
 
-On Failure: Should return a json body with an `errors` node and a non 2xx status code.
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
