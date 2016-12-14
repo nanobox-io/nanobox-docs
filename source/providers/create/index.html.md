@@ -334,16 +334,7 @@ HTTP_AUTH_ACCESS_TOKEN: 123abc
 ```
 
 ###### Body:
-
-* `id`: the server id (added here as a convenience)
-
-Example:
-
-```json
-{
-  "id": "23453-fhghib-45"
-}
-```
+empty
 
 ###### Response
 
@@ -380,15 +371,6 @@ HTTP_AUTH_ACCESS_TOKEN: 123abc
 ###### Body:
 
 * `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
-* `id`: the server id (added here as a convenience)
-
-Example:
-
-```json
-{
-  "id": "23453-fhghib-45"
-}
-```
 
 ###### Response
 
@@ -416,16 +398,7 @@ HTTP_AUTH_ACCESS_TOKEN: 123abc
 ```
 
 ###### Body:
-
-* `id`: the server id (added here as a convenience)
-
-Example:
-
-```json
-{
-  "id": "23453-fhghib-45"
-}
-```
+empty
 
 ###### Response
 
@@ -454,15 +427,12 @@ HTTP_AUTH_ACCESS_TOKEN: 123abc
 
 ###### Body:
 
-* `auth`: key/value pairs containing the credential_fields and their corresponding values as populated by the user. This will provide the necessary values to authorize the user within this provider.
-* `id`: the server id (added here as a convenience)
 * `name`: the new name of the server
 
 Example:
 
 ```json
 {
-  "id":   "23453-fhghib-45",
   "name": "nanobox.io-cool-app-do.1.1"
 }
 ```
