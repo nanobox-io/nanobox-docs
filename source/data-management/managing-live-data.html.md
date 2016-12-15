@@ -51,5 +51,5 @@ With a tunnel open, you could `scp` files on your local machine to your live sto
 nanobox tunnel data.storage -p 1234
 
 # In a different terminal
-scp -P 1235 -r uploads/* nanobox@127.0.0.1:/app/uploads/
+scp -P 1234 -r uploads/* nanobox@127.0.0.1:/app/uploads/
 ```
