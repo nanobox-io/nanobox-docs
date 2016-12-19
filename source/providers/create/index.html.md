@@ -106,7 +106,8 @@ Each region in the catalog consists of the following:
 * `name`: the visual identifier for the customer.
 * `plans`: A grouping of server sizes within a classification. Each plan consists of the following:
 
-  * `title`: the classification of the server options within this plan.  The title should indicate to the user what kinds of workloads these server options are ideal for. For instance: "Standard" or "High CPU".
+  * `id`: unique plan identifier.
+  * `name`: the classification of the server options within this plan.  The name should indicate to the user what kinds of workloads these server options are ideal for. For instance: "Standard" or "High CPU".
   * `specs`: the list of server options within this plan. Each spec should have the following fields:
 
     * `id`: a unique identifier that will be used when ordering a server
@@ -126,10 +127,11 @@ Simplified example using a single plan with only 2 server sizes:
     "name":  "San Francisco 1",
     "plans": [
       {
-        "title": "Standard Configuration",
+        "id": "standard",
+        "name": "Standard Configuration",
         "specs": [
-          {"id": "a1", "ram": 1000, "cpu": 1, "disk": 24, "transfer": 1, "dollars_per_hr": 0.1, "dollars_per_mo": 10},
-          {"id": "a2", "ram": 2000, "cpu": 2, "disk": 48, "transfer": 1, "dollars_per_hr": 0.1, "dollars_per_mo": 10}
+          {"id": "512mb", "ram": 512, "cpu": 1, "disk": 20, "transfer": 1.0, "dollars_per_hr": 0.00744, "dollars_per_mo": 5.0},
+          {"id": "1gb", "ram": 1024, "cpu": 1, "disk": 30, "transfer": 2.0, "dollars_per_hr": 0.01488, "dollars_per_mo": 10.0}
         ]
       }
     ]
