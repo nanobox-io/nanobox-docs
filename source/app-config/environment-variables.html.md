@@ -19,7 +19,8 @@ The credential name is appended with an underscore. Below are the possible crede
 
 *Your service's [image](/images/) defines what credentials are required and generated.*
 
-**NOTE:** If the image requires a "name" credential, it will always be `gonano`.
+#### Database Name
+If the image requires a "name" credential, it will always be `gonano`.
 
 Knowing the naming convention of data service connection variables allows you to pre-populate your connection details with environment variables before ever deploying your app locally or in production. It also keeps you from ever having to hard-code connection credentials.
 
