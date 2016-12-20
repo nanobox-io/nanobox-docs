@@ -106,17 +106,17 @@ Each region in the catalog consists of the following:
 * `name`: the visual identifier for the customer.
 * `plans`: A grouping of server sizes within a classification. Each plan consists of the following:
 
-  * `id`: unique plan identifier.
-  * `name`: the classification of the server options within this plan.  The name should indicate to the user what kinds of workloads these server options are ideal for. For instance: "Standard" or "High CPU".
-  * `specs`: the list of server options within this plan. Each spec should have the following fields:
+    * `id`: unique plan identifier.
+    * `name`: the classification of the server options within this plan.  The name should indicate to the user what kinds of workloads these server options are ideal for. For instance: "Standard" or "High CPU".
+    * `specs`: the list of server options within this plan. Each spec should have the following fields:
 
-    * `id`: a unique identifier that will be used when ordering a server
-    * `ram`: a visual indication to the user informing the amount of RAM is provided.
-    * `cpu`: a visual indication to the user informing the amount of CPUs or CPU cores.
-    * `disk`: a visual indication to the user informing the amount or size of disk.
-    * `transfer`: a visual indication to the user informing the amount of data transfer allowed per month for this server.
-    * `dollars_per_hr`: a visual indication to the user informing the cost of running this server per hour.
-    * `dollars_per_mo`: a visual indication to the user informing the cost of running this server per month.
+        * `id`: a unique identifier that will be used when ordering a server
+        * `ram`: a visual indication to the user informing the amount of RAM is provided.
+        * `cpu`: a visual indication to the user informing the amount of CPUs or CPU cores.
+        * `disk`: a visual indication to the user informing the amount or size of disk.
+        * `transfer`: a visual indication to the user informing the amount of data transfer allowed per month for this server.
+        * `dollars_per_hr`: a visual indication to the user informing the cost of running this server per hour.
+        * `dollars_per_mo`: a visual indication to the user informing the cost of running this server per month.
 
 Simplified example using a single plan with only 2 server sizes:
 
