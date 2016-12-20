@@ -15,9 +15,11 @@ Environment variable names/keys are generated using the ID of the data component
 
 The credential name is appended with an underscore. Below are the possible credential names:
 
-`_HOST` `_USER` `_PASS` `_NAME`  
+`_HOST` `_USER` `_PASS`
 
 *Your service's [image](/images/) defines what credentials are required and generated.*
+
+**NOTE:** If the image requires a "name" credential, it will always be `gonano`.
 
 Knowing the naming convention of data service connection variables allows you to pre-populate your connection details with environment variables before ever deploying your app locally or in production. It also keeps you from ever having to hard-code connection credentials.
 
@@ -41,7 +43,6 @@ data.cthulu:
 DATA_POSTGRES_HOST
 DATA_POSTGRES_USER
 DATA_POSTGRES_PASS
-DATA_POSTGRES_NAME
 
 # Redis Connection Variables
 DATA_REDIS_HOST
@@ -50,7 +51,6 @@ DATA_REDIS_HOST
 DATA_CTHULU_HOST
 DATA_CTHULU_USER
 DATA_CTHULU_PASS
-DATA_CTHULU_NAME
 ```
 
 ## Custom Environment Variables
