@@ -29,3 +29,13 @@ Allows you to pass your username into the login command. If no username is speci
 
 #### -p, --password
 Allows you to pass your password into the login command. If you do not want to show your password in your bash history, don't pass this flag. The CLI will prompt you for your password.
+
+## Automating the Login Process
+When account authentication is required, Nanobox looks for two environment variables on the host machine:
+
+```txt
+NANOBOX_USERNAME
+NANOBOX_PASSWORD
+```
+
+If these exist, Nanobox will automatically use their values to authenticate the cli with your user account. Having these environment variables set is recommended when using Nanobox in a continuous integration workflow.
