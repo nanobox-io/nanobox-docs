@@ -246,6 +246,8 @@ articles:
         path: "/local-config/nanobox-config-yml/"
       - title: ".nanoignore"
         path: "/local-config/nanoignore/"
+      - title: "Using File-Watchers"
+        path: "/local-config/file-watchers/"
 
   - title: "Troubleshooting"
     path: "/trbl/"

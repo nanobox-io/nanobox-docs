@@ -8,7 +8,7 @@ The `run.config` section allows you to configure the environment your app runs w
 #### Overview of Run Config Settings in the boxfile.yml
 ```yaml
 run.config:
-  
+
   # Engine
   engine: my/engine
 
@@ -37,7 +37,7 @@ run.config:
   # Custom commands to prepare the environment
   extra_steps:
     - npm install
-    
+
   # Enable filesystem watcher
   fs_watch: true
 ```
@@ -62,7 +62,7 @@ run.config:
 ```
 
 ## Cache Directories
-You can choose to cache certain directories inside of Nanobox. This can provide a significant performance increase for generated files like shared libraries and dependencies, static assets, build releases, etc. 
+You can choose to cache certain directories inside of Nanobox. This can provide a significant performance increase for generated files like shared libraries and dependencies, static assets, build releases, etc.
 
 **HEADS UP**: These directories **are not shared** with your local source code! Be sure that the contents of them are generated automatically (usually part of your build process).
 
@@ -117,7 +117,7 @@ run.config:
     - npm install
 ```
 
-## Live Reload
+## Filesystem Watching & Live Reload
 Many front-end development frameworks rely on a filesystem watcher that tells the OS when a file is modified and triggers some type of event (usually a browser refresh). Nanobox includes a file-watcher that is disabled by default. You can enable the file-watcher for the duration of `run` using the `fs_watch` setting your boxfile.yml.
 
 ```yaml
