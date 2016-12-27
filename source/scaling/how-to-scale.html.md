@@ -12,7 +12,7 @@ The resource controller allows to [scale vertically](/scaling/scaling-methods/#v
 
 ![Scaling Server Resources](/assets/images/scale-resource-controller.png)
 
-What resource options are available depend on what options your [hosting provider](/account/hosting-accounts/) has made available. These options are pulled directly from each provider.
+What resource options are available depend on what options your [hosting provider](/providers/hosting-accounts/) has made available. These options are pulled directly from each provider.
 
 ### The Node Controller
 The Node controller allows you to [scale horizontally](/scaling/scaling-methods/#horizontal-scaling) by specifying the number of nodes in a cluster. It comes in two forms depending on the type of component. Web and worker can scale to an infinite number of nodes. In these components, horizontal scaling is controlled through a slider.

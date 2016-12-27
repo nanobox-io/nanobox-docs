@@ -30,6 +30,13 @@ run.config:
   dev_packages:
     - psutils
 
+  # Build Triggers - Changes to these files automatically
+  # trigger a new build the next time a build is required.
+  build_triggers:
+    - Gemfile
+    - Gemfile.lock
+    - package.json
+
   # Additions to $PATH
   extra_path_dirs:
     - vendor/bin
@@ -97,6 +104,18 @@ run.config:
 ```
 
 **Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `dev_packages`.
+
+## Build Triggers
+Changes to these files will trigger a new build the next time a new build is required. In general, it's recommended that any dependency-management files be added as build triggers. That way, you don't have to manually [build a new runtime](/cli/build-runtime/) when you update your dependencies.
+
+```yaml
+build_triggers:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+```
+
+**Note:** Only files can be used as build triggers; directories can not. The path of each build trigger should be relative to the root of your project.
 
 ## Add Directories to the $PATH
 Some tools you may be using include binaries that need to be added to the system $PATH. The `extra_path_dirs` config allows you to specify these directories. Directories should be relative to the root of your project.

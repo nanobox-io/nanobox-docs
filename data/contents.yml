@@ -204,6 +204,8 @@ articles:
   - title: "Cloud Providers"
     path: "/providers/"
     articles:
+      - title: "Hosting Accounts"
+        path: "/providers/hosting-accounts/"
       - title: "Custom Integration"
         path: "/providers/create/"
 
@@ -230,8 +232,6 @@ articles:
         path: "/account/editing-account-details/"
       - title: "Removing an Account"
         path: "/account/removing-an-account/"
-      - title: "Hosting Accounts"
-        path: "/account/hosting-accounts/"
       # - title: "Credit Card Management"
       #   path: "/account/card-management/"
       # - title: "How Billing Works"

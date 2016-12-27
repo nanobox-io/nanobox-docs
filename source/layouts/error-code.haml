@@ -8,8 +8,7 @@
 
     %title
       = current_page.data.title + " Error - " + current_page.data.ename + " - Nanobox Documentation"
-    - if current_page.data.description
-      %meta{:name => "description", :content => current_page.data.description }
+    %meta{:name => "description", :content => "Understanding and resolving a " + current_page.data.title + " error with Nanobox"}
 
     / favicon
     %link{ :rel => "icon", :type => "image/png", :href => "/assets/images/favicon.ico" }

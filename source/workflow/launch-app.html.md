@@ -6,7 +6,7 @@ description: Launching apps to your production platform is incredibly easy with 
 Nanobox makes launching apps on your production platform incredibly easy. The following steps will create a new app and provision a [bunkhouse server](/scaling/bunkhouse/) on your hosting provider.
 
 ### Setup Your Provider Account
-To launch an app, Nanobox need access to your hosting account. Linking your Nanobox account to your hosting provider is covered in the [Hosting Accounts doc](/account/hosting-accounts/).
+To launch an app, Nanobox need access to your hosting account. Linking your Nanobox account to your hosting provider is covered in the [Hosting Accounts doc](/providers/hosting-accounts/).
 
 ## Launch a New App
 

@@ -1,0 +1,36 @@
+---
+title: Hosting Accounts
+description: Nanobox lets you easily deploy production apps onto your hosting provider of choice. This doc walks through linking your account to hosting providers.
+---
+
+Nanobox allows you to easily deploy apps onto servers provided by your hosting provider of choice. Nanobox has official integrations with popular hosting providers, but you can also use a custom provider.
+
+## Linking Your Account to a Provider
+Go to your Account Admin in the upper right corner of your dashboard. Click on "Hosting Accounts" in the left navigation and click the "Add Account" button.
+
+![Add a Hosting Provider to Your Nanobox Account](/assets/images/provider-add.png)
+
+Select from the official providers, or use a custom provider:
+
+### Official Providers
+Official providers are API integrations for popular hosting platforms supported by the Nanbox team.
+
+<%= partial "_providers" %>
+
+Select your preferred provider and click "Proceed"
+
+#### Authentication Credential(s)
+Each provider requires some type of user authentication to allow Nanobox to access their API on your behalf. These are typically an API access token of some sort, but it depends on the provider. Links are provided that instructions for obtaining the required authentication credential(s).
+
+#### Account Name
+This is simply a name that will let you easily identify the account in a list of accounts. It can be whatever you'd like it to be.
+
+#### Default Region
+This is the region that is assumed when a new app is created. You can still select other regions when creating an app, but by default, this region will be selected.
+
+Once all the necessary information is filled in, click "Finalize / Create".
+
+### Custom Provider
+A custom provider is essentially an API endpoint that acts as a bridge between Nanobox and a hosting provider. Anyone can build their own custom provider integration using the API spec outline in the [Custom Provider Integration](https://docs.nanobox.io/providers/create/) doc.
+
+To use a custom provider, enter the publicly accesseble URL of the API endpoint. Every custom provider has its own authentication requirements and region options. Provide the necessary information and click "Finalize / Create".
