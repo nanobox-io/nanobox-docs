@@ -13,9 +13,13 @@ There are only a few requirements that a provider must satisfy in order to integ
 
 1. Must implement the API spec as outlined here.
 
-2. Must be able to launch servers running a base Ubuntu OS.
+2. Must be able to launch servers running a base Ubuntu OS (12.04+ *without Systemd*).
 
-3. Servers must have both a public and private network (2 nics).
+3. Servers must have both a public and private network (2 NICs). NICs can be hardware-backed or virtual as long as the OS is able to see them. Nanobox uses these to build a virtual network (layer 2/3 vxlan) for each app.
+
+4. Servers must have at least of 128MB of RAM, but the recommended minimum is 512MB. Nanobox [platform components](/live-app-management/platform-components/) require approximately 50MB of RAM.
+
+5. Both virtual machines and bare metal machine work as long as the OS isn't sharing a kernel (The host can't be a docker container).
 
 ## API
 
@@ -99,6 +103,8 @@ empty
 ###### Response:
 
 The response data should be a list (array) of regions. Each region should contain a list of plans. It is not necessary to have multiple regions, however the structure is the same regardless. Additionally, your integration may only have one classification of server types, or you may have high-cpu, high-ram, or high-IO options. A plan is a grouping of server sizes within a classification.
+
+**Note:** *For multiple regions with with identical plans/server-sizes, plans/server-sizes must be duplicated for each region.*
 
 Each region in the catalog consists of the following:
 
