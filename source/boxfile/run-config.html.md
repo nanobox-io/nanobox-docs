@@ -14,7 +14,7 @@ run.config:
 
   # Configuration used by the engine
   engine.config:
-    version: 2.2
+    runtime: ruby-2.3
 
   # Contents of these dirs to be cached inside of Nanobox
   cache_dirs:
