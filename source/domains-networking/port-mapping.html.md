@@ -17,7 +17,7 @@ web.site:
   ports:
     - protocol:source:destination
 
-# Examples (Default)
+# Examples
 web.site:
   ports:
     - tcp:21:3420

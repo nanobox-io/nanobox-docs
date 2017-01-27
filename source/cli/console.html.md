@@ -8,8 +8,8 @@ The `console` command opens an interactive console inside a specified component 
 ### Usage
 ```shell
 # Pattern
-nanobox console <component> <local | dry-run | remote>
+nanobox console <local | dry-run | remote> <component>
 
 #Example
-nanobox console web.site production
+nanobox console dry-run web.site
 ```

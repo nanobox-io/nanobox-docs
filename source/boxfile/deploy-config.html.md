@@ -6,16 +6,15 @@ description: The deploy.config section of your boxfile.yml allows you to customi
  The `deploy.config` section of your boxfile.yml allows you to customize deploy process.
 
 ## Transform
-Once your app is in production, environment variables like where and how to connect to data services are available. If your app can't use environment variables, you can define commands that will inject these values into your static configuration files. These commands will be run just before your web or worker is started.
+Once your app is in production, environment variables like where and how to connect to data services are available. If your app can't use environment variables, you can define commands that will inject these values into your static configuration files. These commands will be run just before your web/worker is started.
 
 Additionally, you might also use this phase to shift configuration around for running in production.
 
 ```yaml
 deploy.config:
   transform:
-    web.main:
-      - 'sed -i /HOST/$DATA_DB_HOST/g config/database.xml'
-      - 'if [ "$ENV" = "prod" ]; then mv config-prod.yml config.yml; fi'
+    - 'sed -i /HOST/$DATA_DB_HOST/g config/database.xml'
+    - 'if [ "$ENV" = "prod" ]; then mv config-prod.yml config.yml; fi'
 ```
 
 ## Before & After Live Hooks

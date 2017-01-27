@@ -17,7 +17,7 @@ Each cron job needs an [ID](#id), a [schedule](#schedule), and a [command](#comm
 
 #### Cron Jobs in the Boxfile
 ```yaml
-web.site:
+worker.jobs:
   cron:
     # Pattern
     - id: unique-identifier
