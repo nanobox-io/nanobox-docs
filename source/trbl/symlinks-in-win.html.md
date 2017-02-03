@@ -11,14 +11,14 @@ Windows and Linux/Unix have completely separate implementations for creating sym
 ## The Solution
 In order for symlinks created in Nanobox to work on a Windows host, there needs to be a "translation" layer. The <a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=736a33205969c16f81d747db14ff4c0f133609a6" target="\_blank"><code>mfsymlinks</code></a> option available when creating a CIFS (the mounting technology used in Windows) provides this layer.
 
-### Enable mfsymlinks in Your config.yml
-To enable mfsymlinks, open your [`~/.nanobox/config.yml`](/local-config/nanobox-config-yml/) and add the following:
+### Enable mfsymlinks in Your Nanobox Config
+To enable mfsymlinks, use `nanobox config` to set `netfs_mount_opts` to `mfsymlinks`:
 
-```yaml
-netfs_mount_opts: 'mfsymlinks'
+```bash
+nanobox config set netfs_mount_opts mfsymlinks
 ```
 
-*Information is also available in the [config.yml documentation](/local-config/nanobox-config-yml/#netfs-mount-options).*
+*Information is also available in the [Configuring Nanobox documentation](/local-config/configure-nanobox/#netfs-mount-options).*
 
 ## Caveats with mfsymlinks
 There are important things to know when using `mfsymlinks`.

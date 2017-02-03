@@ -1,4 +1,4 @@
-When using the "netfs" [mount-type](/local-config/nanobox-config-yml/#mount-type), Nanobox mounts your codebase into your Nanobox container using NFS. NFS stores a registry of mounted directories in an exports config file located at `/etc/exports`. It's possible and fairly common for changes to this file to prevent the NFS mounts from working.
+When using the "netfs" [mount-type](/local-config/configure-nanobox/#mount-type), Nanobox mounts your codebase into your Nanobox container using NFS. NFS stores a registry of mounted directories in an exports config file located at `/etc/exports`. It's possible and fairly common for changes to this file to prevent the NFS mounts from working.
 
 A clean exports file will looks something like this:
 

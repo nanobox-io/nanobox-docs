@@ -25,6 +25,9 @@
     &:hover             { color: $blue-0;
       code              { border-bottom: 1px dotted $pink-1; }
     }
+    &.jump              { background-color: $sblue-1; color: #fff; font-size: .65em; font-weight: bold; letter-spacing: .05em; padding: .2em .6em; vertical-align: middle;
+      &:after           { content: "▾"; margin-left: .25em; }
+    }
   }
   span                  {
     &.green             { color: $lt-green-0; }

@@ -1,4 +1,7 @@
-## vboxmanage in your $PATH
+## VirtualBox
+[VirtualBox](https://www.virtualbox.org/) needs to be installed. It can be downloaded and installed with Nanobox.
+
+### vboxmanage in your $PATH
 The vboxmanage binary needs to be included in your system $PATH. The VirtualBox installation process should do this automatically, but it some cases, it won't install correctly.
 
 ## VT-x Enabled in Your BIOS

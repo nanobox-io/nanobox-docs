@@ -240,10 +240,10 @@ articles:
   - title: "Local Config"
     path: "/local-config/"
     articles:
+      - title: "Configure Nanobox"
+        path: "/local-config/configure-nanobox/"
       - title: "Local Performance Tuning"
         path: /local-config/local-performance/
-      - title: "Nanobox config.yml"
-        path: "/local-config/nanobox-config-yml/"
       - title: ".nanoignore"
         path: "/local-config/nanoignore/"
       - title: "Using File-Watchers"
