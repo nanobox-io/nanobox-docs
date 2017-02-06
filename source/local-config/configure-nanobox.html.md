@@ -48,8 +48,8 @@ The `provider` config defines which technology is used to manage Docker containe
 - `native` - Uses the network file system native to your [provider](#provider).
 - `netfs` - Uses NFS on OSX and Linux, CIFS on Windows. **Much** better performance, but requires admin permissions. *Netfs is only used with the ["docker_machine" provider](#provider).*
 
-### CPUs
-The `cpus` setting defines the number of CPU cores to make available to your virtualized environment.
+### CPU
+The `cpu` setting defines the number of CPU cores to make available to your virtualized environment.
 
 
 ### RAM
