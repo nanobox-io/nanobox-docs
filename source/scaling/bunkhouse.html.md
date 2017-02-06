@@ -3,7 +3,7 @@ title: Bunkhouse Servers
 description: Every app deployed with Nanobox starts out in a single, multi-component server called a 'Bunkhouse'.
 ---
 
-Every app deployed with Nanobox starts out in a single, multi-component server called a "Bunkhouse". Your Bunkhouse houses and runs each of your app's components.
+Every app deployed with Nanobox starts out in a single, multi-component server called a "Bunkhouse". Your Bunkhouse houses and runs all of your app's components (webservers, databases, etc.). Each component is built as a virtualized container inside the Bunkhouse server.
 
 Bunkhouse servers do have some limitations, as explained [below](#things-to-know-about-a-bunkhouse-server), and there will likely be a time you need components to be individually scalable. Components can be moved out of a bunkhouse into their own scalable cluster, or even into another bunkhouse server. This process is explained the [Moving Components Out of a Bunkhouse](/scaling/moving-components/) doc.
 
