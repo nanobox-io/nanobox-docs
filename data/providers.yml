@@ -6,12 +6,16 @@ providers:
   - name: "Amazon Web Services (AWS)"
     link: "https://aws.amazon.com/"
     svg_name: prov-aws
-    available: false
-  - name: "Joyent"
-    link: "https://www.joyent.com/"
-    svg_name: prov-joyent
+    available: true
+  - name: "Google Cloud"
+    link: "https://cloud.google.com/"
+    svg_name: prov-google
     available: false
   - name: "Linode"
     link: "https://www.linode.com/"
     svg_name: "prov-linode"
     available: false
+  # - name: "Joyent"
+  #   link: "https://www.joyent.com/"
+  #   svg_name: prov-joyent
+  #   available: false
