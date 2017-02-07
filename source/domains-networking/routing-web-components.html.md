@@ -3,7 +3,7 @@ title: Routing to Web Components
 description: You may want or need multiple web components in an application deployed with Nanobox. You can route to web components based on subdomains, paths, or both.
 ---
 
-In some cases, you may want or need multiple web components within a single application. Web component routing with Nanobox is really flexible, allowing you to route based on subdomains, paths, or both.
+In some cases, you may want or need multiple web components within a single application. This allows you to isolate requests to specific subdomain or path in your application to an individual web component. Web component routing with Nanobox is really flexible, allowing you to route based on subdomains, paths, or both.
 
 ## Routes
 Routes can be configured for each web component in your [boxfile.yml](/boxfile/).
