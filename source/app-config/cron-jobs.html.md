@@ -35,7 +35,7 @@ worker.jobs:
 
 On your next build and deploy, your cron job(s) will be created.
 
-**Note:** Removing a Cron Job from your `boxfile.yml` will remove the cron job from your app on the next deploy.
+**Note:** Removing a Cron Job from a web or worker in your `boxfile.yml` will remove the cron job from your app on the next deploy. For data components, the cron will be remove the next time the database is rebuilt (rebuild, scale, move, etc.).
 
 ## Cron Job Configuration
 Cron jobs are really simple to configure. There are three required pieces of information:
