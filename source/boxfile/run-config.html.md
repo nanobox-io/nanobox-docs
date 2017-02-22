@@ -1,6 +1,8 @@
 ---
 title: run.config
+seo_title: Configure Runtimes with the boxfile.yml
 description: The run.config section of the boxfile.yml allows you to configure the environment in which your app runs.
+keywords: configure runtime, configure environment, app environment
 ---
 
 The `run.config` section allows you to configure the environment your app runs within (this includes local and production). An engine will provide all of the necessary configuration, but you can provide custom configuration as well.

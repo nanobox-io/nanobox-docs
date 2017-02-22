@@ -1,5 +1,6 @@
 ---
 title: Runtime & Services
+seo_title: Configure Runtimes, Services, & Components with the boxfile.yml
 description: Your app's runtime and supporting services are all configured in your boxfile.yml.
 ---
 

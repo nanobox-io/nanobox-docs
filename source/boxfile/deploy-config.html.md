@@ -1,6 +1,8 @@
 ---
 title: deploy.config
+seo_title: Configure Deploys in the boxfile.yml
 description: The deploy.config section of your boxfile.yml allows you to customize the deploy process.
+keywords: deploy config, deploy process, custom deploy process
 ---
 
  The `deploy.config` section of your boxfile.yml allows you to customize deploy process.

@@ -1,6 +1,8 @@
 ---
 title: remote
-description: The 'remote' command manages connections to remote applications.
+seo_title: nanobox remote Command
+description: The 'remote' command manages connections to remote, live applications.
+keywords: connect to app, add remote, deploy to app, connect to app, link to app, deploy to remote
 ---
 
 The `remote` command manages remotes between your local codebase and remote, live apps.

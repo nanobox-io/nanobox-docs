@@ -1,6 +1,8 @@
 ---
 title: Environment Variables
+seo_title: Environment Variables in Local and Production Environments
 description: Environment variables let you to obfuscate sensitive information or define environment-specific options. Managing evars with Nanobox is simple.
+keywords: environment variables, evars, obscuring sensitive information
 ---
 
 Environment variables are helpful when you need to obfuscate sensitive information or define environment-specific options. Nanobox auto-generates environment variables for all data service connection credentials and allows you to define your own custom environment variables.

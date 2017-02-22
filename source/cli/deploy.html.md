@@ -1,6 +1,8 @@
 ---
 title: deploy
+seo_title: nanobox deploy Command
 description: The 'deploy' command deploys a generated build package and compiled code package a live app.
+keywords: php deployment, ruby deployment, elixir deployment, golang deployment, nodejs deployment, python deployment
 ---
 
 The `deploy` command deploys a generated build package and compiled code package a live app. If no remote, is provided, the "default" remote is assumed.

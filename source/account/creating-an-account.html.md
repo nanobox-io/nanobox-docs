@@ -1,5 +1,6 @@
 ---
 title: Creating an Account
+seo_title: Creating a New Account on Nanobox
 description: Creating a Nanobox account is simple and can be done in just a few minutes.
 ---
 

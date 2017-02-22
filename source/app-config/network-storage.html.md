@@ -1,6 +1,8 @@
 ---
 title: Network Storage
+seo_title: Persistent Shared Storage with Network Storage Components
 description: Network storage components provide persistent, writable file-stores for apps deployed with Nanobox.
+keywords: persistent storage, cloud storage, shared storage, network storage, network directories
 ---
 
 Network storage components provide persistent filestores for apps deployed with Nanobox.

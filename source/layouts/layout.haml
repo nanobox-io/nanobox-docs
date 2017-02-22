@@ -7,12 +7,18 @@
     %meta{:content => "index, follow", :name => "robots"}
 
     %title
-      - if current_page.data.title
-        = current_page.data.title + " - Nanobox Documentation"
+      - if current_page.data.seo_title
+        = current_page.data.seo_title + " - Nanobox Docs"
+      - elsif current_page.data.title
+        = current_page.data.title + " - Nanobox Docs"
       - else
         = "Nanobox Documentation"
+
     - if current_page.data.description
       %meta{:name => "description", :content => current_page.data.description }
+
+    - if current_page.data.keywords
+      %meta{:name => "keywords", :content => current_page.data.keywords }
 
     / favicon
     %link{ :rel => "icon", :type => "image/png", :href => "/assets/images/favicon.ico" }

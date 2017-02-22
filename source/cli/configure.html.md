@@ -1,6 +1,8 @@
 ---
 title: configure
+seo_title: nanobox configure Command
 description: The 'configure' command walks prompts that modify your local Nanobox configuration.
+keywords: set VM disk, configure nanobox, virtual disk space, VM memory, virtual machine memory, VM cpu, virtual machine cpu, set config options, show configuration
 ---
 
 The `configure` command walks through a series of question prompts that modify your local Nanobox configuration. This command is automatically run when attempt to run your first nanobox command.

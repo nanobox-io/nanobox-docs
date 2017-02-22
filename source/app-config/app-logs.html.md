@@ -1,5 +1,6 @@
 ---
 title: Application Logs
+seo_title: View and Stream Custom Application Logs
 description: Nanobox lets you pipe custom application logs into your app's log stream using the 'log_watch' config option.
 ---
 

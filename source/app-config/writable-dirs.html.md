@@ -1,6 +1,8 @@
 ---
 title: Writable Directories
+seo_title: Writable Permissions and Writable Directories
 directories: The Nanobox 'writable_dirs' config allows you to specify which directories in your app should have writable permissions.
+keywords: writable permissions, chmod, file permissions, writable file
 ---
 
 Code components created through Nanobox are read-only, but in some cases, it may be necessary to enable writable permissions in a directory without storing that directory in [network storage](/app-config/network-storage/). Writable directories allow you to enable writable permissions on directories in your web and worker instances’ local filesystems.

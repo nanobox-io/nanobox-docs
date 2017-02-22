@@ -1,6 +1,8 @@
 ---
 title: dns
+seo_title: nanobox dns Command
 description: The 'dns' command lets you manage DNS alias and hostname mappings to local apps.
+keywords: dns mapping, dns alias, local dns, modify hosts file, update /etc/hosts
 ---
 
 The `dns` command allows you add and remove hostname mappings to your local apps. It modifies

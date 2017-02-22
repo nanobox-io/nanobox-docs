@@ -1,5 +1,6 @@
 ---
 title: Cloud Providers
+seo_title: Launch on AWS, DigitalOcean, & Others
 description: Launch your app on your preferred cloud provider
 ---
 

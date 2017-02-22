@@ -1,6 +1,8 @@
 ---
 title: Managing Live Data
+seo_title: Managing Live Data & Databases
 description: Nanobox allows you to securely connect to live data components and manage data using your tool of choice.
+keywords: manage live data, manage production data, remotely manage database, remotely manage data
 ---
 
 **Note:** *This doc only pertains to managing data on production servers. For information about managing data in your local dev environment, check out the [Managing Local Data](/data-management/managing-local-data/) doc.*

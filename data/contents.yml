@@ -232,8 +232,8 @@ articles:
         path: "/account/editing-account-details/"
       - title: "Removing an Account"
         path: "/account/removing-an-account/"
-      # - title: "Credit Card Management"
-      #   path: "/account/card-management/"
+      # - title: "Managing Payment Methods"
+      #   path: "/account/payment-method-management/"
       # - title: "How Billing Works"
       #   path: "/account/how-billing-works/"
 

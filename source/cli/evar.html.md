@@ -1,5 +1,8 @@
 ---
 title: evar
+seo_title: nanobox evar Command
+description: The 'evar' command manages environment variables in local and production apps.
+keywords: environment variables, evars, manage environment variables, manage evars
 ---
 
 The `evar` command is used to manage environment variables in your live app. It has three subcommands:

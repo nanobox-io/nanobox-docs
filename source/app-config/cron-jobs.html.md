@@ -1,6 +1,8 @@
 ---
 title: Cron Jobs
+seo_title: Cron Jobs & Scheduled Tasks
 description: Nanobox cron jobs allow you to create scheduled tasks for your apps for things like automated backups, system maintenance, etc.
+keywords: cron, crontab, scheduled tasks
 ---
 
 Cron Jobs allow you to create scheduled tasks for your apps. They are commonly used to automate system maintenance or administration, but can also be used for many other things.

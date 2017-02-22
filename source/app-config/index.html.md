@@ -1,6 +1,8 @@
 ---
 title: App Configuration
+seo_title: Configuring Your App and Its Environment
 description: It's important to be able to configure your app's environment to its specific needs. With Nanobox, app configuration is all handled in the boxfile.yml.
+keywords: boxfile, boxfile.yml, app setup, scalable app config
 ---
 
 Every app is unique and it's important to be able to configure your environment to your app's specific needs. With Nanobox, environment configuration is centralized in a single file - your `boxfile.yml`.

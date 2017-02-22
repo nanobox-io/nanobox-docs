@@ -1,5 +1,6 @@
 ---
 title: web
+seo_title: Create & Configure Web Components in the boxfile.yml
 description: Web components are publicly accessible servers and are configured in your boxfile.yml.
 ---
 
@@ -58,7 +59,7 @@ web.site:
 ```
 
 ## Routing
-In some cases, you may want or need multiple web components within a single application. This allows you to isolate requests to specific subdomain or path in your application to an individual web component. 
+In some cases, you may want or need multiple web components within a single application. This allows you to isolate requests to specific subdomain or path in your application to an individual web component.
 
 Web component routing in Nanobox is really flexible, allowing you to route based on subdomains, paths, or both. This feature is fully documented in the [Routing to Web Components](/domains-networking/routing-web-components/) doc, but examples are shown below.
 
