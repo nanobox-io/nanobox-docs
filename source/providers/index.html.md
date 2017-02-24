@@ -2,6 +2,7 @@
 title: Cloud Providers
 seo_title: Launch on AWS, DigitalOcean, & Others
 description: Launch your app on your preferred cloud provider
+keywords: docker deployment aws, docker deploy digitalocean, docker deployment digital ocean
 ---
 
 Nanobox is provider-agnostic and enables you to launch the same app on any available provider. We encourage you to run your app on multiple providers to determine where your app will be best suited.

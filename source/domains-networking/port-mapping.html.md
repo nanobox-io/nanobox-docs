@@ -1,6 +1,8 @@
 ---
 title: Port Mapping
+seo_title: Configuring UDP & TCP Ports
 description: Nanobox allows you to define on which ports your web components listen for connections over tcp and udp protocols.
+keywords: custom upd port, custom tcp port, udp networking, tcp networking
 ---
 
 Nanobox allows you to define on which ports your web components listen for connections over tcp and udp protocols.

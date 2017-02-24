@@ -1,6 +1,8 @@
 ---
 title: Symlinks in Windows
+seo_title: Using Symlinks in a Virtual Machine with Windows
 description: If running in Windows, creating symlinks in an app running in Nanobox is made possible through the 'mfsymlinks' option.
+keywords: symlinks in windows vm, symlinks in windows, windows symlinks not working
 ---
 
 Nanobox launches your app in a virtualized Linux environment and into which it mounts your local codebase. Creating symlinks in a codebase that mounted into a Linux environment, but actually resides in a Windows host filesystem can be tricky.

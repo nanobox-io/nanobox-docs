@@ -1,6 +1,8 @@
 ---
 title: Remote Access
+seo_title: Remote Access to Production Applications
 description: There are a few different methods for remotely accessing apps deployed with Nanobox.
+keywords: docker remote access, secure remote connection, docker ssh access, docker remote console, docker ssh tunnel
 ---
 
 There are a few different methods for remotely connecting to components and services in apps managed with Nanobox. Which method you use depends on the type of component to which you're connecting as well as what you're trying to do.

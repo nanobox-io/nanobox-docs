@@ -1,5 +1,6 @@
 ---
 title: Routing to Web Components
+seo_title: Creating & Routing to Multiple Web Components
 description: You may want or need multiple web components in an application deployed with Nanobox. You can route to web components based on subdomains, paths, or both.
 ---
 

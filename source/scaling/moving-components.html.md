@@ -1,6 +1,8 @@
 ---
 title: Moving Components Out of a Bunkhouse
+seo_title: Moving Docker Containers Across Servers
 description: As your app grows, you need to expand and move components into their own scalable clusters or into other multi-component servers.
+keywords: scaling docker, shared host, dedicated server, scalable cluster, horizontal cluster
 ---
 
 For many apps, a single Bunkhouse multi-component server works just fine, but as your app grows and you need to expand, you can move components out of your bunkhouse into their own scalable clusters or into other bunkhouse servers.

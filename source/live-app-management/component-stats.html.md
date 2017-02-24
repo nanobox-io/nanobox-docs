@@ -1,6 +1,8 @@
 ---
 title: Component Stats
+seo_title: Server Monitoring & Resources Usage Statistics
 description: Visibility into your app's health is incredibly important. Nanobox provides them RAM, CPU, Swap, & Disk usage of your app's components and nodes.
+keywords: app ram usage, app memory usage, server memory usage, server ram usage
 ---
 
 With any production application, visibility into your servers' resource usage is incredibly important. They help to identify any possible bottlenecks and are a good indicator of what to scale and when to scale it. Service resource usage statistics are provided in your Nanobox dashboard.

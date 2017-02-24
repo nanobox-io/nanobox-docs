@@ -1,6 +1,8 @@
 ---
 title: Protocols & Incoming Requests
+seo_title: Connecting HTTP, UDP, & TCP Ports to the Public Network
 description: Depending on which protocol your app uses, there are different ways to configure it in order to receive incoming requests.
+keywords: http port, https port, udp port, tcp port, listening port, connect to public network
 ---
 
 Depending on which protocol(s) your app uses, there are different ways to configure it in order to receive incoming requests.

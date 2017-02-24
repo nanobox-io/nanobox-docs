@@ -1,6 +1,8 @@
 ---
 title: Deleting an App
+seo_title: Deleting a Live App
 description: Destroying a production app with Nanobox is simple and done through your Nanobox dashboard.
+keywords: delete docker application, remove app, destroy app
 ---
 
 To delete an app, go to the "Admin" tab of or your app dashboard, then click on "Delete App" in the left nav.

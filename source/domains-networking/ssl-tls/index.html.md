@@ -1,5 +1,6 @@
 ---
 title: SSL/TLS
+seo_title: Adding & Managing SSL/TLS Encryption
 description: Security and encryption are incredibly important. Nanobox simplifies the process of managing SSL/TLS certificates.
 ---
 

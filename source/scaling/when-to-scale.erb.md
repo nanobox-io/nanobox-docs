@@ -1,6 +1,8 @@
 ---
 title: When to Scale
+seo_title: When to Scale Production Applications
 description: Knowing when and what to scale is key to ensuring the uptime of your app. These few concepts will guide you in your scaling.
+keyword: vertical scaling, horizontal scaling, knowing when to scale
 ---
 
 Knowing when and what to scale is key to ensuring the uptime of your application. In the heat of the moment, it's easy to panic and just scale everything, but there's a couple of rules and questions to ask that will help identify what, how, and when something should be scaled.

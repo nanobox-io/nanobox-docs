@@ -1,6 +1,8 @@
 ---
 title: Configure Nanobox
+seo_title: Configure Docker & Virtual Machine Settings
 description: The 'configure' command defines configuration options for your local Nanobox container.
+title: set docker ram, set docker cpu, set docker disk, change virtual disk, update virtual disk
 ---
 
 Nanobox configuration settings can be modified using the [`nanobox config` command](/cli/configure/). The first time any `nanobox` command is run, Nanobox will walk automatically walk you through this process.

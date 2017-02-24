@@ -1,6 +1,8 @@
 ---
 title: Scaling
+seo_title: Scaling Applications in Production
 description: Nanobox is designed to make scaling your app's infrastructure quick and easy.
+keywords: production scaling, scaling docker in production, scaling docker
 ---
 
 Nanobox is designed to make scaling your app's infrastructure simple. You have the ability to scale your app in multiple ways, each triggered through your Nanobox dashboard. Nanobox takes care of all the "heavy-lifing" behind the scenes.

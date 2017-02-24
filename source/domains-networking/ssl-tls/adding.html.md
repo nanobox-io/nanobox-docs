@@ -1,6 +1,8 @@
 ---
 title: Adding SSL/TLS
+seo_title: Add SSL/TLS Encryption to Your Production App
 description: Normally the process of adding SSL/TLS to your app is tedious and complicated. Nanobox simplifies it into a few steps.
+keywords: ssl certificates, ssl encryption, letsencrypt integration, simple ssl, easy tls encryption
 ---
 
 Normally the process of adding SSL to your app is tedious and complicated, but with Nanobox, we've tried to make it as simple as possible. To get started, click on the "Network" tab of your application dashboard and go to "SSL/TLS Certificates". Then click "New SSL/TLS Certificate".

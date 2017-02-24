@@ -1,6 +1,8 @@
 ---
 title: Workflow
+seo_title: Streamlined Dev-to-Production Workflow
 description: Nanobox streamlines your development-to-production workflow.
+keywords: dev to production, development workflow, better dev workflow, development strategy
 ---
 
 Developing code locally is a staple of the modern development workflow, but even still, creating a local environment can be tedious and frustrating. Nanobox has simplified this problem by standardizing and automating local environment creation as well as making it easy to deploy an identical production environment to your live servers.

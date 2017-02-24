@@ -1,6 +1,8 @@
 ---
 title: Using File-Watchers
+seo_title: Enabling File-Watching for Live-Reloads
 description: Many front-end dev frameworks use file-watching to tell the OS when a file is modified. Nanobox includes file-watching functionality when running apps locally.
+keywords: system filewatcher, getting livereload to work, livereload with nanobox
 ---
 
 Many front-end development frameworks rely on a filesystem watcher that tells the OS when a file is modified and triggers some type of event (usually a browser refresh). Nanobox includes file-watching functionality that can be enabled when running your app locally.

@@ -1,5 +1,6 @@
 ---
 title: Domains & Networking
+seo_title: Domains, Networking, & Encryption
 description: Information about using your own domains, installing and managing SSL/TLS certificates, and networking information.
 ---
 

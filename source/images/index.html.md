@@ -1,5 +1,7 @@
 ---
 title: Images
+seo_title: Use Docker Images for Data Components
+description: Images build and configure databases, caches, job queues, etc. for use with Nanobox.
 ---
 
 Images build and configure supporting data services such as databases, caches, job queues, etc. They are Docker images that include scripts unique to Nanobox.

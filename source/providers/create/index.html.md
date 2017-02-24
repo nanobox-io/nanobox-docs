@@ -2,6 +2,7 @@
 title: Custom Provider
 seo_title: Integrate with any Cloud Provider
 description: Open specification for creating a integrations with any cloud provider.
+keywords: custom hosting provider, cloud provider integration, integration, using local vm
 ---
 
 Creating an integration with Nanobox can be done entirely outside of Nanobox. In fact, the entire integration will live outside of Nanobox. Essentially, a provider integration is just an API endpoint that standardizes the interaction between Nanobox and a cloud provider, acting as a bridge or proxy to facilitate communication between the the two.

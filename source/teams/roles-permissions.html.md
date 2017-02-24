@@ -1,5 +1,6 @@
 ---
 title: Roles & Permissions
+seo_title: Team Member Roles & Permissions
 description: When adding team members to an app deployed with Nanobox, assigning role will grant them access to specific functionality.
 ---
 

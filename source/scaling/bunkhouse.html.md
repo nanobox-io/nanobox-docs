@@ -1,6 +1,8 @@
 ---
 title: Bunkhouse Servers
+seo_title: Multi-Component Servers with Docker Containers
 description: Every app deployed with Nanobox starts out in a single, multi-component server called a 'Bunkhouse'.
+keywords: shared host, docker containers
 ---
 
 Every app deployed with Nanobox starts out in a single, multi-component server called a "Bunkhouse". Your Bunkhouse houses and runs all of your app's components (webservers, databases, etc.). Each component is built as a virtualized container inside the Bunkhouse server.

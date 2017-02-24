@@ -1,6 +1,8 @@
 ---
 title: Adding Team Members
+seo_title: Managing Team Members & Access Control
 description: Nanobox enables teams to work together on apps by allowing you to add team members to an app.
+description: acl, access control, restrict users, add collaborators, remove collaborators
 ---
 
 Often, you are one of many working on your app. Nanobox enables teams to work together on apps by allowing you to add team members to an app.

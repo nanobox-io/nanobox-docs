@@ -1,6 +1,8 @@
 ---
 title: Platform Components
+seo_title: Production Platform Components Provided by Nanobox
 description: Each app deployed with Nanobox includes 'platform components' that are necessary for your app to run.
+keywords: routing mesh, load-balancer, docker load-balancer, log aggregator, docker health monitoring, docker storage
 ---
 
 Each app deployed with Nanobox includes "platform components". These services provide specific functionality necessary for your app to run. Below are summaries of the purpose of each platform component.
