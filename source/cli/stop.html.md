@@ -1,6 +1,6 @@
 ---
 title: stop
-seo_title: nanobox stop Command
+seo_title: 'nanobox stop' Command
 description: The 'stop' command stops the local Nanobox container and preserves its state.
 keywords: stop nanobox, stop docker containers, stop containers, stop virtual machine, stop VM
 ---

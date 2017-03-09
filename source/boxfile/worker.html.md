@@ -1,10 +1,10 @@
 ---
 title: worker
 seo_title: Create & Configure Worker Components in the boxfile.yml
-description: Worker components are meant for running background processes and do not connect with the external network. They are configured in your boxfile.yml.
+description: Worker components are meant for running background processes and do not have a public endpoint. They are configured in your boxfile.yml.
 ---
 
-Worker components are meant for running background processes and do not connect with the external network.
+Worker components are meant for running background processes and cannot be directly accessed from the external network.
 
 #### Overview of Worker Component Settings in the Boxfile
 ```yaml
@@ -37,6 +37,9 @@ worker.jobs:
     - id: echo_msg
       schedule: '*/3 */2 1-3 2,6,7 2'
       command: 'echo i\'m a little teapot'
+
+  # Only provision component locally
+  local_only: true
 ```
 
 ## Start Command
@@ -113,4 +116,16 @@ worker.jobs:
     - id: echo_msg
       schedule: '*/3 */2 1-3 2,6,7 2'
       command: 'echo i\'m a little teapot'
+```
+
+## Local Only
+In some cases, you may only want to provision a component when developing and testing locally. The `local_only` config will provision the component when working locally (local and dry-run), but not when deploying to a live server.
+
+**Note:** Web components are only provisioned and started locally in a [dry-run envrionment](/workflow/deploy-code/#preview-locally).
+
+#### local_only
+```
+worker.jobs:
+  # ...
+  local_only: true
 ```

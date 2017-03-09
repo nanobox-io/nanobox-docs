@@ -1,6 +1,6 @@
 ---
 title: tunnel
-seo_title: nanobox tunnel Command
+seo_title: 'nanobox tunnel' Command
 description: The 'tunnel' command establishes a secure tunnel between your local machine and a data component in your live app.
 keywords: remote access, manage live database, manage production database, remote access to database, manage live data, manage production data
 ---

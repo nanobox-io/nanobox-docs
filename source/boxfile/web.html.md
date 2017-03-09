@@ -47,6 +47,9 @@ web.site:
     - id: echo_msg
       schedule: '*/3 */2 1-3 2,6,7 2'
       command: 'echo i\'m a little teapot'
+
+  # Only provision component locally
+  local_only: true
 ```
 
 ## Start Command
@@ -171,4 +174,16 @@ web.site:
     - id: echo_msg
       schedule: '*/3 */2 1-3 2,6,7 2'
       command: 'echo i\'m a little teapot'
+```
+
+## Local Only
+In some cases, you may only want to provision a component when developing and testing locally. The `local_only` config will provision the component when working locally (local and dry-run), but not when deploying to a live server.
+
+**Note:** Web components are only provisioned and started locally in a [dry-run envrionment](/workflow/deploy-code/#preview-locally).
+
+#### local_only
+```
+web.site:
+  # ...
+  local_only: true
 ```

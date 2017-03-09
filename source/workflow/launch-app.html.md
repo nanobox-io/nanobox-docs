@@ -1,11 +1,11 @@
 ---
 title: Launch an App
 seo_title: Launch an App in Production
-description: Launching apps to your production platform is incredibly easy with Nanobox.
-keywords: production launch, quick launch, launch docker app, launch docker container
+description: Creating and launching apps on your production platform is incredibly easy with Nanobox.
+keywords: production launch, quick launch, launch docker app, launch docker container, create new app, new app
 ---
 
-Nanobox makes launching apps on your production platform incredibly easy. The following steps will create a new app and provision a [bunkhouse server](/scaling/bunkhouse/) on your hosting provider.
+Nanobox makes creating and launching apps on your production platform incredibly easy. The following steps will create a new app and provision a [bunkhouse server](/scaling/bunkhouse/) on your hosting provider.
 
 ### Setup Your Provider Account
 To launch an app, Nanobox need access to your hosting account. Linking your Nanobox account to your hosting provider is covered in the [Hosting Accounts doc](/providers/hosting-accounts/).

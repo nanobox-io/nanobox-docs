@@ -1,6 +1,6 @@
 ---
 title: log
-seo_title: nanobox log Command
+seo_title: 'nanobox log' Command
 description: The 'log' command allows you to view and stream logs from app.
 keywords: view logs, stream app logs, view app logs, custom application logging
 ---

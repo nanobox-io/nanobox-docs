@@ -1,6 +1,6 @@
 ---
 title: info
-seo_title: nanobox info Command
+seo_title: 'nanobox info' Command
 description: The 'info' command displays information about your app and its components.
 keywords: app information, local database credentials, local connection credentials, local app information, local app info
 ---

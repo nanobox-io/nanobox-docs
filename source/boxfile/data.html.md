@@ -41,6 +41,9 @@ data.db:
   # Custom commands to prepare the environment
   extra_steps:
     - wget -o /path/to/scripts/cron.sh http://example.com/cron.sh
+
+  # Only provision component locally
+  local_only: true
 ```
 
 ## Image
@@ -116,4 +119,14 @@ data.db:
   # ...
   extra_steps:
     - wget -o /path/to/scripts/cron.sh http://example.com/cron.sh
+```
+
+## Local Only
+In some cases, you may only want to provision a component when developing and testing locally. The `local_only` config will provision the component when working locally (local and dry-run), but not when deploying to a live server.
+
+#### local_only
+```
+data.db:
+  # ...
+  local_only: true
 ```

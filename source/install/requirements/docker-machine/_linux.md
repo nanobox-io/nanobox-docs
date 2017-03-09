@@ -10,11 +10,13 @@ Virtualization must be enabled for your machine. This setting is found under ‘
 ## Requirements for netfs
 If using the ['netfs' mount-type](/local-config/configure-nanobox/#mount-type) for filesystem mounting, you will need to make sure the following requirements are met
 
-### nfs
-`nfs` is used to manage the NFS (Network File System) on your local machine. It must be installed and the NFS server must be running in order for your local code to be mounted into the virtual machine. Installing and running nfs depends on your Linux distribution.
+### nfs Installed & Running
+`nfs` is used to manage the NFS (Network File System) on your local machine. It must be installed and the NFS server must be running in order for your local code to be mounted into the virtual machine.
+
+**Installing and running nfs depends on your Linux distribution. Your distribution documentation should provide instructions for installing the nfs package.**
 
 #### NFS Must Listen on Port 2049
 `2049` is the default port for the NFS server, but if it's set to something else, you will need to change it. The process of changing the NFS port depend on your Linux distribution.
 
-### exportfs
+### exportfs Installed
 `exportfs` maintains the table of exported directories for the nfs server. It must be installed in order for your local code to be mounted into the virtual machine. Installation instructions depend your Linux distribution.

@@ -1,6 +1,6 @@
 ---
 title: login
-seo_title: nanobox login Command
+seo_title: 'nanobox login' Command
 description: The 'login' command authenticates your local Nanobox client with your Nanobox account.
 keywords: authenticate user, connect account, account auth, register local user
 ---

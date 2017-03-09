@@ -1,6 +1,6 @@
 ---
 title: update-images
-seo_title: nanobox update-images Command
+seo_title: 'nanobox update-images' Command
 description: The 'update-images' command downloads the most recent versions of Nanobox Docker images.
 keywords: update docker images, update runtime, new docker images, pull docker updates
 ---

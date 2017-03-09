@@ -1,6 +1,6 @@
 ---
 title: console
-seo_title: nanobox console Command
+seo_title: 'nanobox console' Command
 description: The 'console' command opens an interactive console inside a specified live component.
 keywords: console, remote access, command line access, ssh access, remote ssh access
 ---
