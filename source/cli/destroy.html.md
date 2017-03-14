@@ -1,6 +1,6 @@
 ---
 title: destroy
-seo_title: 'nanobox destroy' Command
+seo_title: "'nanobox destroy' Command"
 description: The 'destroy' command destroys the current project and removes it from your local Nanobox container.
 keywords: destroy local environment, remove local environment, remove local app, destroy docker containers
 ---

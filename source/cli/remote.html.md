@@ -1,6 +1,6 @@
 ---
 title: remote
-seo_title: 'nanobox remote' Command
+seo_title: "'nanobox remote' Command"
 description: The 'remote' command manages connections to remote, live applications.
 keywords: connect to app, add remote, deploy to app, connect to app, link to app, deploy to remote
 ---

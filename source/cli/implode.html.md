@@ -1,6 +1,6 @@
 ---
 title: implode
-seo_title: 'nanobox implode' Command
+seo_title: "'nanobox implode' Command"
 description: The 'implode' command removes the Nanobox container, all local projects, filesystem mounts, and local data.
 keywords: remove vm, remove virtual machine, destroy virtual machine, delete nanobox, remove nanobox
 ---

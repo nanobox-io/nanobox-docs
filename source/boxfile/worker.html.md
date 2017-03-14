@@ -51,6 +51,35 @@ worker.jobs:
   start: 'ruby worker.rb'
 ```
 
+Multiple start commands can be provided. The following formats are accepted:
+
+##### A string
+
+```yaml
+worker.jobs:
+  start: 'ruby worker.rb'
+```
+
+##### An array of strings
+
+```yaml
+worker.jobs:
+  start:
+    - 'ruby worker.rb'
+    - 'ruby monitor.rb'
+```
+
+##### An array of hashes
+
+```yaml
+worker.jobs:
+  start:
+    jobs: 'ruby worker.rb'
+    monitor: 'ruby monitor.rb'
+```
+
+When using an array of hashes, the key is appended to the log output of the command, providing helpful context to log output. ***This format is recommended when using multiple start commands***.
+
 ## Network Directories
 These directories are read/write accessible to all the code component's instances. These directories are mounted at runtime, and should not be created at the same location as a directory containing source code in your repo. Filepaths should be relative to the root of your repo.
 

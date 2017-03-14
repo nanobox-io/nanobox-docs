@@ -1,6 +1,6 @@
 ---
 title: build-runtime
-seo_title: 'nanobox build-runtime' Command
+seo_title: "'nanobox build-runtime' Command"
 description: The 'build-runtime' command builds your app's runtime and and packages it into a deployable runtime package.
 keywords: build-runtime, load dependencies, build app
 ---

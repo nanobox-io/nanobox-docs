@@ -61,6 +61,35 @@ web.site:
   start: 'rails s'
 ```
 
+Multiple start commands can be provided. The following formats are accepted:
+
+##### A string
+
+```yaml
+web.site:
+  start: 'rails s'
+```
+
+##### An array of strings
+
+```yaml
+web.site:
+  start:
+    - 'rails s'
+    - 'ruby monitor.rb'
+```
+
+##### An array of hashes
+
+```yaml
+web.site:
+  start:
+    rails: 'rails s'
+    monitor: 'ruby monitor.rb'
+```
+
+When using an array of hashes, the key is appended to the log output of the command, providing helpful context to log output. ***This format is recommended when using multiple start commands***.
+
 ## Routing
 In some cases, you may want or need multiple web components within a single application. This allows you to isolate requests to specific subdomain or path in your application to an individual web component.
 

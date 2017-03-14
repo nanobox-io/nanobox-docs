@@ -1,6 +1,6 @@
 ---
 title: evar
-seo_title: 'nanobox evar' Command
+seo_title: "'nanobox evar' Command"
 description: The 'evar' command manages environment variables in local and production apps.
 keywords: environment variables, evars, manage environment variables, manage evars
 ---

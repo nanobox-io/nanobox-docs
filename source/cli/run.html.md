@@ -1,6 +1,6 @@
 ---
 title: run
-seo_title: 'nanobox run' Command
+seo_title: "'nanobox run' Command"
 description: The 'run' command runs all the web and worker start commands specified in your boxfile.yml.
 keywords: start local environment, start virtual machine, run VM, run virtual machine, run my app locally, development environment
 ---
