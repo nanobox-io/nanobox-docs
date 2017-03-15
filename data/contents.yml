@@ -270,6 +270,8 @@ articles:
                 path: "/trbl/error/1101/"
               - title: "1102"
                 path: "/trbl/error/1102/"
+              - title: "1200"
+                path: "/trbl/error/1200/"
           - title: "2xxx NanoAgent Errors"
             path: "#"
             articles:
