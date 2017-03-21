@@ -24,6 +24,7 @@ Changes to config settings require you to restart your Nanobox VM in order to be
 #### Configuration Example
 ```yaml
 provider: docker-machine
+ci-mode: false
 mount-type: native
 ram: 4
 cpu: 2
@@ -43,6 +44,8 @@ The `provider` config defines which technology is used to manage Docker containe
 - `docker_machine` - Uses VirtualBox for virtualization and Docker Machine to create Docker containers in the VM.
 - `native` - Uses native docker containers on your host OS.
 
+### CI Mode
+Continuous integration (CI) mode disables the Nanobox output summarizer and essentially runs Nanobox in verbose mode. Most CI services include their own output summarizers which can conflict with summarized output of other tools.
 
 ### Mount Type
 `mount-type` specifies which technology to use when mounting code on your local machine into Nanobox. The following options are available:
