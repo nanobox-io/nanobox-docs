@@ -149,6 +149,8 @@ articles:
       #   path: "/data-management/backups/"
       - title: "Data Migrations During Scaling & Rebuilds"
         path: "/data-management/data-migrations-scaling/"
+      - title: "External Databases"
+        path: "/data-management/external/"
 
   - title: "Scaling"
     path: "/scaling/"
