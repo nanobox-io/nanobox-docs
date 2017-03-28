@@ -23,6 +23,10 @@ There are only a few requirements that a provider must satisfy in order to integ
 
 5. Both virtual machines and bare metal machine work as long as the OS isn't sharing a kernel (The host can't be a docker container).
 
+###### OpenAPI Specification
+
+The API documented below is also formalized in [an OpenAPI spec](openapi-spec.json) which you can develop and test against. Note, however, that this document is the authoritative source: if the spec file disagrees with anything below, the spec file is out of date. Please [let us know](https://github.com/nanobox-io/nanobox-docs/issues) if you find any such inconsistencies, though!
+
 ## API
 
 * [Gathering Metadata](#meta)
