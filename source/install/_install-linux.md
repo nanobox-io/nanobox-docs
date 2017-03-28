@@ -7,4 +7,3 @@ The Nanobox installer can be downloaded from the [Nanobox download page in your 
 
 ## Run the Nanobox Installer
 Once you've downloaded the Nanobox installer, run it and it will walk you through the entire installation process.
-```

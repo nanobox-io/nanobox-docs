@@ -32,6 +32,8 @@ articles:
         path: "/workflow/launch-app/"
       - title: "Deploy Code"
         path: "/workflow/deploy-code/"
+      - title: "Continuous Integration"
+        path: "/workflow/ci-cd/"
 
   - title: "App Configuration"
     path: /app-config/

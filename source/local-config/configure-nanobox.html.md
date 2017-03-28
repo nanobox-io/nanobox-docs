@@ -32,9 +32,9 @@ disk: 15360
 netfs_mount_opts: 'mfsymlinks'
 
 # Advanced
-external-network-space: 192.168.99.50/24,
-docker-machine-network-space: 172.19.0.1/16,
-native-network-space: 172.18.0.1/16,
+external-network-space: 192.168.99.50/24
+docker-machine-network-space: 172.19.0.1/16
+native-network-space: 172.18.0.1/16
 lock-port: 12345
 ```
 
@@ -45,7 +45,7 @@ The `provider` config defines which technology is used to manage Docker containe
 - `native` - Uses native docker containers on your host OS.
 
 ### CI Mode
-Continuous integration (CI) mode disables the Nanobox output summarizer and essentially runs Nanobox in verbose mode. Most CI services include their own output summarizers which can conflict with summarized output of other tools.
+Continuous integration (CI) mode disables the Nanobox output summarizer and essentially runs Nanobox in verbose mode. Most CI services include their own output summarizers which can conflict with summarized output from other tools.
 
 ### Mount Type
 `mount-type` specifies which technology to use when mounting code on your local machine into Nanobox. The following options are available:

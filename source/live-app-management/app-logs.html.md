@@ -1,7 +1,7 @@
 ---
 title: App Logs
 seo_title: View Application Logs in Your Dashboard
-destroy: Logs for production apps deployed with Nanobox are available in your Nanobox dashboard.
+description: Logs for production apps deployed with Nanobox are available in your Nanobox dashboard.
 keywords: stream live logs, stream logs, view app logs, view application logs
 ---
 
