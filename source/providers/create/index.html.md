@@ -25,7 +25,28 @@ There are only a few requirements that a provider must satisfy in order to integ
 
 ###### OpenAPI Specification
 
-The API documented below is also formalized in [an OpenAPI spec](openapi-spec.json) which you can develop and test against. Note, however, that this document is the authoritative source: if the spec file disagrees with anything below, the spec file is out of date. Please [let us know](https://github.com/nanobox-io/nanobox-docs/issues) if you find any such inconsistencies, though!
+The API documented below is also formalized in [an OpenAPI spec](openapi-spec.json) which you can develop and test against. There are some things to keep in mind if you decide to use it:
+
+1. *This document* is the authoritative source. If the spec file disagrees with anything below, the *spec file* is out of date. Please [let us know](https://github.com/nanobox-io/nanobox-docs/issues) if you find any inconsistencies!
+
+2. Since an adapter is an API, the spec file was designed so you can host it alongside the adapter itself, as a reference for your specific implementation. This means some parts of the spec file should be updated to reflect your own implementation:
+
+    1. The `info` block. Update everything in this section to match your adapter's actual values for each property.
+
+    2. The `basePath` should contain your adapter's URI, relative to the server root.
+
+    3. If your adapter will not or cannot support SSH keys, you can remove the `/keys` and `/keys/{id}` entries from the `paths` collection. *SSH keys are strongly recommended for security, though.*
+
+    4. If the default [credential field](#meta) (`Auth-Token`) doesn't suit your adapter's needs (you want to use a diffrerent name, or more than one field, etc), update the `parameters` section, using `parameters.Auth-Token` as a base. If you just want to change the name of the header, you can simply adjust the `name` property; you don't have to change the key or update any references. If you have more than one credential field, be sure to also add the new field references to the array in any occurence of:
+        ```json
+        "parameters": [
+            {
+                "$ref": "#/parameters/Auth-Token"
+            }
+        ],
+        ```
+
+    5. Validate your changes using a tool such as the [online Swagger Editor](http://editor.swagger.io/) (use File → Import File... to upload your spec file) before you publish and/or develop/test against it.
 
 ## API
 
