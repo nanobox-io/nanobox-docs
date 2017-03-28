@@ -17,7 +17,7 @@ Before getting into the specifics, it's important to have a high-level understan
 ### General Requirements
 - **The CI/CD server cannot be a Docker container**. Nanobox builds your app using Docker containers and Docker in Docker doesn't work well. The CI/CD server can't share kernel space.
 
-## Install Nanobox in Your CI/CD Server
+## Install Nanobox on Your CI/CD Server
 In your CI/CD server build process, install Nanobox. You can use the Nanobox CI/CD Bootstrap script, or you can install Nanobox manually.
 
 ### Using the Nanobox CI Bootstrap
