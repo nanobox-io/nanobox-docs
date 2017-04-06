@@ -2,7 +2,7 @@
 title: Continuous Integration & Deployment
 seo_title: Continuous Integration & Deployment with Nanobox
 description: How to use Nanobox in your continuous integration and deployment workflow.
-keywords: continuous integration, ci, continuous deployment, cd, ci/cd
+keywords: continuous integration, ci, continuous deployment, cd, ci/cd, continuous delivery
 ---
 
 Nanobox is a micro-platform that can run anywhere including on continuous integration (CI) and/or continuous deployment (CD) servers. This doc walks through installing and using Nanobox in your CI/CD workflow.
@@ -16,6 +16,7 @@ Before getting into the specifics, it's important to have a high-level understan
 
 ### General Requirements
 - **The CI/CD server cannot be a Docker container**. Nanobox builds your app using Docker containers and Docker in Docker doesn't work well. The CI/CD server can't share kernel space.
+- A linux distribution and version that supports Docker.
 
 ## Install Nanobox on Your CI/CD Server
 In your CI/CD server build process, install Nanobox. You can use the Nanobox CI/CD Bootstrap script, or you can install Nanobox manually.
