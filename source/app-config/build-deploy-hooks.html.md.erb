@@ -63,7 +63,7 @@ deploy.config:
       - 'bundle exec check-queue'
 ```
 
-### before\_deploy\_all
+### before\_live\_all
 `before_live_all` hooks are the same as `before_live` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
 
 ```yaml
@@ -87,7 +87,7 @@ deploy.config:
       - 'bundle exec start-queue'
 ```
 
-### after\_deploy\_all
+### after\_live\_all
 `after_live_all` hooks are the same as `after_live` hooks, but they run on all new nodes in a multi-node component. These are useful when you need to modify the contents of [writable directories](/app-config/writable-dirs/).
 
 ```yaml
