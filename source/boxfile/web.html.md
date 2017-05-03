@@ -37,7 +37,7 @@ web.site:
 
   # Custom Logs
   log_watch:
-    app[error]: 'path/to/error.log'
+    app[error]: '/app/path/to/error.log'
 
   # Cron
   cron:
@@ -172,14 +172,14 @@ web.site:
 For more details, view the [Writable Directories doc](/app-config/writable-dirs/).
 
 ## Custom Logs
-Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Application Logs doc](/app-config/app-logs).
+Many apps and frameworks log to files stored in the file system. `log_watch`'s allow you to include any entries written to these log files in your unified log stream. More information is available in the [Application Logs doc](/app-config/app-logs). *You must use the absolute path for the log file. Your app lives in `/app`.*
 
 #### log_watch
 ```yaml
 web.site:
   log_watch:
-    key: path/to/log.file
-    app[error]: app/logs/error.log
+    key: /app/path/to/log.file
+    app[error]: /app/logs/error.log
 ```
 
 ## Cron Jobs

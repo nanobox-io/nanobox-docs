@@ -10,27 +10,27 @@ Most application logs are piped to either stdout or stderr, which automatically 
 A log_watch conists of the following:
 
 - **Key** - This is prepended to log entries originating from the log_watch'd file. Keys must be unique.  
-- **Filepath** - The path to the actual log file.
+- **Filepath** - The absolute path to the log file. *Your app lives in `/app`.*
 
 #### log_watch
 ```yaml
 # Pattern
 web.site:
   log_watch:
-    key: 'path/to/log.file'
+    key: /app/path/to/log.file
 
 # Example
 web.site:
   log_watch:
-    admin[error]: 'app/logs/admin_error.log'
-    api[auth]: 'app/logs/api_auth.log'
+    admin[error]: /app/logs/admin_error.log
+    api[auth]: /app/logs/api_auth.log
 ```
 
 ### You Can Only log_watch Individual Files
 Log watches only work on individual files. You cannot log_watch a directory.
 
-### Log Filepaths Must Be Relative to the Root of Your Repo
-When specifying the path to your log file, the filepath should be relative to the root of your app's repo.
+### Log Filepaths Must Be Absolute
+When specifying the path to your log file, the filepath should be absolute. Your app lives in the `/app` directory, so be sure that's at the beginning of the filepath.
 
 ### Key Naming Restrictions
 Log_watch "keys" cannot contain special characters other than brackets []. For logs captured by Nanobox, we use the following pattern: abc124[abc123], but you're not bound to this.
