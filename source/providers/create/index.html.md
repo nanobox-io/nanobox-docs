@@ -64,7 +64,8 @@ empty
 * `default_plan`: the [id of the default plan](#catalog) in which the default size is ordered
 * `can_reboot`: boolean to determine if we can reboot the server through the api
 * `can_rename`: boolean to determine if we can rename the server through the api
-* `ssh_auth_method`: will either be key or password
+* `ssh_auth_method`: `key` or `password`
+* `ssh_key_method`: `reference` or `object`. When set to "reference", Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to "object", Nanobox will pass the actual public SSH key that should be installed on the server.
 * `credential_fields`: array of hashes that includes field keys and labels necessary to authenticate with the provider.
 * `instructions`: string that contains instructions for how to setup authentication with the provider.
 
