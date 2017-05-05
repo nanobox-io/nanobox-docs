@@ -66,6 +66,7 @@ empty
 * `can_rename`: boolean to determine if we can rename the server through the api
 * `ssh_auth_method`: `key` or `password`
 * `ssh_key_method`: `reference` or `object`. When set to "reference", Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to "object", Nanobox will pass the actual public SSH key that should be installed on the server.
+* `bootstrap_script`: The script that should be used to boostrap the server. e.g. `https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh`
 * `credential_fields`: array of hashes that includes field keys and labels necessary to authenticate with the provider.
 * `instructions`: string that contains instructions for how to setup authentication with the provider.
 
@@ -81,6 +82,9 @@ Example using the Digital Ocean integration:
   "default_plan":      "standard",
   "can_reboot":        true,
   "can_rename":        true,
+  "ssh_auth_method":   "key",
+  "ssh_key_method":    "reference",
+  "bootstrap_script":  "https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh",
   "credential_fields": [
     { "key": "access-token", "label": "Access Token" }
   ],
