@@ -64,6 +64,8 @@ empty
 * `default_plan`: the [id of the default plan](#catalog) in which the default size is ordered
 * `can_reboot`: boolean to determine if we can reboot the server through the api
 * `can_rename`: boolean to determine if we can rename the server through the api
+* `internal_iface`: Internal interface. e.g. `eth1`
+* `external_iface`: External interface. e.g. `eth0`
 * `ssh_auth_method`: `key` or `password`
 * `ssh_key_method`: `reference` or `object`. When set to "reference", Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to "object", Nanobox will pass the actual public SSH key that should be installed on the server.
 * `bootstrap_script`: The script that should be used to boostrap the server. e.g. `https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh`
@@ -82,6 +84,8 @@ Example using the Digital Ocean integration:
   "default_plan":      "standard",
   "can_reboot":        true,
   "can_rename":        true,
+  "internal_iface":    "eth1",
+  "external_iface":    "eth0",
   "ssh_auth_method":   "key",
   "ssh_key_method":    "reference",
   "bootstrap_script":  "https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh",
