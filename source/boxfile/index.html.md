@@ -28,7 +28,6 @@ deploy.config:
     - 'bundle exec rake fix-yaml'
 
 web.site:
-  nickname: front-site
   start: 'bundle exec puma -c config/puma.conf'
   network_dirs:
     data.storage:
@@ -109,13 +108,13 @@ There are three types of components:
 - **worker**: A backend code component with no publicly accessible ports.
 - **data**: A component that houses data of some sort.
 
-### Component Nicknames
+<!-- ### Component Nicknames
 Each web, worker, and data component can be given a nickname. The nickname is what displays as the component label in your dashboard.
 
 ![Nicknames in the Dashboard](boxfile-nicknames.png)
 
 #### nickname
-```yaml
+```
 web.site:
   nickname: front
 
@@ -129,7 +128,7 @@ The following restrictions apply to component nicknames:
 
 - Can only contain lowercase letters, numbers, and dashes
 - Cannot start or end with a dash
-- Cannot contain consecutive dashes
+- Cannot contain consecutive dashes -->
 
 ## Sections of the Boxfile
 Boxfiles consist of a handful of sections or "nodes": run.config, deploy.config, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
