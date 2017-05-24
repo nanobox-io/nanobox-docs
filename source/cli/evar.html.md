@@ -20,7 +20,7 @@ The `add` subcommand is used to add environment variables to your app. You can a
 ```bash
 # Pattern
 nanobox evar add <local | dry-run | remote> <key>=<value>
-nanobox evar add -a <local | dry-run | remote> <key1>=<value1>,<key2>=<value2>
+nanobox evar add <local | dry-run | remote> <key1>=<value1>,<key2>=<value2>
 
 # Examples
 nanobox evar add live ENVIRONMENT=local
@@ -37,8 +37,8 @@ nanobox evar rm <local | dry-run | remote> <key>
 nanobox evar rm <local | dry-run | remote> <key1>,<key2>
 
 # Examples
-nanobox evar rm -a live ENVIRONMENT
-nanobox evar rm -a local ENVIRONMENT,MY_EVAR
+nanobox evar rm live ENVIRONMENT
+nanobox evar rm local ENVIRONMENT,MY_EVAR
 ```
 
 ## ls
