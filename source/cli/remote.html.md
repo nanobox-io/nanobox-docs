@@ -26,9 +26,11 @@ The `remote add` command adds a new remote.
 ```bash
 # Pattern
 nanobox remote add <app-name> <remote-name>
+nanobox remote add <team-name>/<app-name> <remote-name>
 
 # Example
 nanobox remote add my-app-prod production
+nanobox remote add my-team/my-app-prod production
 ```
 
 ### rm

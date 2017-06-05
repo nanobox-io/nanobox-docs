@@ -19,9 +19,9 @@ A-Records are used to point your domain to a specific IP address. If you choose 
 - If you ever move or scale your load balancer, you'll have to update your A-Record with a new IP. In either case, your load-balancer is moved to a new server with a different IP.
 
 ## Using a CNAME
-CNAMEs are used to define aliases for domains. Essentially they point a domain at another domain, but are not a redirect. For example, if domain.com has a CNAME for myapp.nanoapp.io, domain.com acts as a alias for myapp.nanoapp.io and loads the site without changing the request URI.
+CNAMEs are used to define aliases for domains. Essentially they point a domain at another domain, but are not a redirect. For example, if domain.com has a CNAME for username-myapp.nanoapp.io, domain.com acts as a alias for username-myapp.nanoapp.io and loads the site without changing the request URI.
 
-Every app deployed with Nanobox is given a dev url using this pattern: `app-name.nanoapp.io`. You can add this domain as a CNAME on your own domain.
+Every app deployed with Nanobox is given a dev url using this pattern: `username-appname.nanoapp.io` or `teamname-appname.nanoapp.io`. You can add this domain as a CNAME on your own domain.
 
 ### Pros of Using a CNAME
 - If/when you scale or move your load balancer or the server it's on, you don't have to update your DNS record. Nanobox manages DNS routing for nanoapp.io dev urls.
