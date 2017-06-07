@@ -212,6 +212,12 @@
                                 "default_plan":      "standard",
                                 "can_reboot":        true,
                                 "can_rename":        true,
+                                "internal_iface":    "eth1",
+                                "external_iface":    "eth0",
+                                "ssh_user":          "root",
+                                "ssh_auth_method":   "key",
+                                "ssh_key_method":    "reference",
+                                "bootstrap_script":  "https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh",
                                 "credential_fields": [
                                     { "key": "access-token", "label": "Access Token" }
                                 ],
@@ -227,6 +233,12 @@
                                 "default_size",
                                 "can_reboot",
                                 "can_rename",
+                                "internal_iface",
+                                "external_iface",
+                                "ssh_user",
+                                "ssh_auth_method",
+                                "ssh_key_method",
+                                "bootstrap_script",
                                 "credential_fields"
                             ],
                             "properties": {
@@ -262,6 +274,18 @@
                                     "description": "boolean to determine if we can rename the server through the api",
                                     "type": "boolean"
                                 },
+                                "internal_iface": {
+                                    "description": "Internal interface. e.g. eth1",
+                                    "type": "string"
+                                },
+                                "external_iface": {
+                                    "description": "External interface. e.g. eth0",
+                                    "type": "string"
+                                },
+                                "ssh_user": {
+                                    "description": "The ssh user Nanobox can use for ssh access to bootstrap the server. e.g. root",
+                                    "type": "string"
+                                },
                                 "ssh_auth_method": {
                                     "description": "will either be key or password",
                                     "type": "string",
@@ -269,6 +293,18 @@
                                         "key",
                                         "password"
                                     ]
+                                },
+                                "ssh_key_method": {
+                                    "description": "will either be reference or object. Vhen set to 'reference', Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to 'object', Nanobox will pass the actual public SSH key that should be installed on the server.",
+                                    "type": "string",
+                                    "enum": [
+                                        "reference",
+                                        "object"
+                                    ]
+                                },
+                                "bootstrap_script": {
+                                    "description": "The script that should be used to bootstrap the server. e.g. https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh",
+                                    "type": "string"
                                 },
                                 "credential_fields": {
                                     "description": "array of hashes that includes field keys and labels necessary to authenticate with the provider",
