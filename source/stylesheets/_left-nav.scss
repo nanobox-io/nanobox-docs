@@ -2,7 +2,7 @@
   #contents             { margin-right: 2em; height: auto; overflow: hidden; @include user-select;
     // &.closed            { height: 0px;  }
   }
-  a                     { color: $dblue-0; text-decoration: none; display: inline-block; margin-left: 1.5em; line-height: 1.2em; padding: .3em 0; font-weight: 300;
+  a                     { color: $dblue-0; text-decoration: none; display: inline-block; margin-left: 1.5em; line-height: 1.2em; padding: .3em 0; font-weight: 400;
     &:hover             { color: $gblue-0; }
   }
   ul                    { margin: 0; padding: 0; list-style: none;
