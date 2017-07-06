@@ -5,12 +5,21 @@ description: The deploy.config section of your boxfile.yml allows you to customi
 keywords: deploy config, deploy process, custom deploy process
 ---
 
- The `deploy.config` section of your boxfile.yml allows you to customize deploy process.
+The `deploy.config` section of your boxfile.yml allows you to customize deploy process.
+
+## Extra Steps
+`extra_steps` run locally as your app is prepared and compiled for deploy. Everything is writable, but you do not have access to environment variables or data services. File changes are only made inside the deployable package and will not change your local codebase.
+
+```yaml
+deploy.config:
+  extra_steps:
+    - mv config-prod.yml config.yml
+```
 
 ## Transform
-Once your app is in production, environment variables like where and how to connect to data services are available. If your app can't use environment variables, you can define commands that will inject these values into your static configuration files. These commands will be run just before your web/worker is started.
+`transform` hooks run after your code has been deployed to your live app, but before everything is locked down with read-only permissions and distributed into new containers/servers. Your codebase is fully writable and you have access to environment variables associated with your live app. However, you _*cannot*_ access live data components.
 
-Additionally, you might also use this phase to shift configuration around for running in production.
+`transform` hooks should primarily be used to modify config files or other environment-specific filesystem changes that use environment variables.
 
 ```yaml
 deploy.config:
@@ -46,4 +55,14 @@ deploy.config:
   after_live_all:
     worker.mail:
       - 'bundle exec rake prime-local-cache'
+```
+
+## Hook Timeout
+The `hook_timeout` config lets you set a timeout for your deploy hooks. _Hook timeouts are specified in seconds._
+
+If the timeout is reached in a `before_live` or `before_live_all` hook, you will be given the option to cancel or retry. If the timeout is reached in an `after_live` or `after_live_all` hook, you will be given the option to skip the hook in your dashboard.
+
+```yaml
+deploy.config:
+  hook_timeout: 300
 ```

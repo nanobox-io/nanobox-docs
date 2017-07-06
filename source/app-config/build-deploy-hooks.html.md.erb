@@ -36,22 +36,29 @@ run.config:
 ## Deploy Hooks
 Deploy hooks run as apps are being deployed either to a dry-run or live app.
 
-#### Important Things to Know About Deploy Hooks
-- [Environment variables](/app-config/environment-variables/) are available to deploy hooks.
-- Deploy hooks have access to running data services.
-- Code is writable during [transform hooks](#transform), but read-only once transforms are complete.
+### extra_steps
+`extra_steps` run locally as your app is prepared and compiled for deploy. Everything is writable, but you do not have access to environment variables or data services. File changes are only made inside the deployable package and will not change your local codebase.
+
+```yaml
+deploy.config:
+  extra_steps:
+    - mv config-prod.yml config.yml
+```
 
 ### transform
-`transform` hooks run on all web and worker nodes just before their filesystems are locked down and made read-only. Any code modification dependent on environment variables must be run as a transform.
+`transform` hooks run after your code has been deployed to your live app, but before everything is locked down with read-only permissions and distributed into new containers/servers. Your codebase is fully writable and you have access to environment variables associated with your live app. However, you _*cannot*_ access live data components.
+
+`transform` hooks should primarily be used to modify config files or other environment-specific filesystem changes that use environment variables.
 
 ```yaml
 deploy.config:
   transform:
+    - 'sed -i /HOST/$DATA_DB_HOST/g config/database.xml'
     - 'if [ "$ENV" = "prod" ]; then mv config-prod.yml config.yml; fi'
 ```
 
 ### before_live
-`before_live` hooks run on a new node before it starts accepting live requests. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
+`before_live` hooks run on a new container/server before it starts accepting live requests. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
 
 ```yaml
 deploy.config:
@@ -75,7 +82,7 @@ deploy.config:
 ```
 
 ### after_live
-`after_live` hooks run on a new node after it starts accepting live requests. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
+`after_live` hooks run on a new container/server after it starts accepting live requests. These are unique to each component, so Nanobox needs to know on which each will run. In multi-node components, these only run on a single node.
 
 ```yaml
 deploy.config:
