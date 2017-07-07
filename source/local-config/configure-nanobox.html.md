@@ -25,17 +25,20 @@ Changes to config settings require you to restart your Nanobox VM in order to be
 ```yaml
 provider: docker-machine
 ci-mode: false
-mount-type: native
-ram: 4
-cpu: 2
-disk: 15360
-netfs_mount_opts: 'mfsymlinks'
+mount-type: netfs
+cpus: 2
+ram: 2
+disk: 30000
+netfs-mount-opts:
 
 # Advanced
 external-network-space: 192.168.99.50/24
 docker-machine-network-space: 172.19.0.1/16
 native-network-space: 172.18.0.1/16
+ssh-key: default
+anonymous: false
 lock-port: 12345
+ci-sync-verbose: false
 ```
 
 ### Provider
@@ -66,7 +69,6 @@ The `disk` setting specifies the amount of disk space *in MB* to allot to your v
 
 **Note:** The disk available to the VM cannot be changed on the fly. To modify the size of your Nanobox VM, you will need to [implode](/cli/implode/) the existing VM and recreate it after changing the disk setting in your config.
 
-
 ### NetFS Mount Options
 `netfs_mount_opts` specifies options to include when mounting your local codebase into Nanobox.
 
@@ -83,5 +85,14 @@ The `disk` setting specifies the amount of disk space *in MB* to allot to your v
 ### Native Network Space
 `native-network-space` defines the network Nanobox uses to facility communication between Docker containers when using the ["native" provider](#provider).
 
+### SSH Key
+`ssh-key` defines a specific key for Nanobox to use when establishing SSH connections to remote servers. By default, Nanobox copies in all keys in your `~/.ssh` directory.
+
+### Anonymous
+`anonymous` opts out of connecting your Nanobox CLI to your Nanobox account and any error reporting sent to Nanobox. _In order to interact with live apps, you will still need to authenticate your Nanobox account._
+
 ### Lock Port
 `lock-port` defines which port will be locked by tcp. This is necessary to prevent race conditions within Nanobox. If the specified port is already in use, it needs to be updated.
+
+### CI Sync Verbose
+`ci-sync-verbose` defines whether or not `rsync` logs are output when `ci-mode` is set to `true`. Generally `rsync` logs aren't necessary so the this is set to `false` by default, but enabling `rysnc` logs can help when troubleshooting deploys from a continuous integration provider.

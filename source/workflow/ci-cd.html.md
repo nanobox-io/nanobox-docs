@@ -50,6 +50,12 @@ After installing Nanobox manually, be sure to enable Nanobox's `ci-mode`. This w
 nanobox config set ci-mode true
 ```
 
+With `ci-mode` set to `true`, you also have the option to enable `rsync` logs. These are disabled by default, but can be helpful when debugging. If you'd like to include `rsync` logs in your output:
+
+```bash
+nanobox config set ci-sync-verbose true
+```
+
 ## Automate Login
 Some functionality in Nanobox requires authentication with your Nanobox account, such as deploying to a live app. To avoid being prompted for account credentials, add the following environment variables to your CI server.
 
