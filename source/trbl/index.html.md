@@ -21,9 +21,12 @@ Occasionally you may come across an error or issues as you're using Nanobox. The
 [2001 NanoAgent Rejected](/trbl/error/2001/)  
 [2002 NanoAgent Rejected Job](/trbl/error/2002/)  
 [2003 NanoAgent No Such Image](/trbl/error/2003/)  
+[2004 NanoAgent Error](/trbl/error/2004/)  
 
 ### 3xxx Platform Errors
 [3000 Platform](/trbl/error/3000/)  
+[3001 Platform - Resource Removed](/trbl/error/3001/)  
+[3002 Platform - Portal](/trbl/error/3002/)  
 
 ### 4xxx Hook Errors
 [4000 General Hook Failure](/trbl/error/4000/)  
@@ -57,3 +60,4 @@ Occasionally you may come across an error or issues as you're using Nanobox. The
 [5000 SSL](/trbl/error/5000/)  
 [5100 SSL - LetsEncrypt Challenge Pending](/trbl/error/5100/)  
 [5101 SSL - LetsEncrypt Challenge Invalid](/trbl/error/5101/)
+[5101 SSL - LetsEncrypt Client Error](/trbl/error/5102/)
