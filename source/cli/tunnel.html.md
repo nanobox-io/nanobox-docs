@@ -12,8 +12,9 @@ The `tunnel` command establishes a secure tunnel between your local machine and 
 # Pattern
 nanobox tunnel <remote> <component> -p <local-port>
 
-# Example
-nanobox tunnel production data.redis -p 6379
+# Examples
+nanobox tunnel data.db
+nanobox tunnel staging data.redis -p 6379
 ```
 
 ### Options

@@ -213,6 +213,9 @@ articles:
       - title: "Custom Integration"
         path: "/providers/create/"
 
+  - title: "Security"
+    path: "/security/"
+
   - title: "Teams & Access Control"
     path: "/teams/"
     articles:
