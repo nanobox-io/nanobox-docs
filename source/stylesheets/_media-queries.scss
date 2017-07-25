@@ -30,12 +30,13 @@ $large-only: $screen and $lg-lower and $lg-upper !default;
 @media #{$small-up} { }
 @media #{$small-only} {
 
-  #header                       { margin-bottom: 2.25em;
+  #header                       { margin-bottom: .5em;
     .drop                       { display: none; }
     span#nb-title               { font-size: .8em; margin: .5em 0 0 .5em !important; }
     svg#nb-logo                 { width: 30px; }
     svg#home-icon               { margin-left: .25em; }
     ul.links                    { top: 1.75em; right: 1em; }
+    a#docs-tag                  { font-size: .7em ; margin: 1.1em 0 0 .8em;}
   }
 
   #footer                       { margin-top: 3em;

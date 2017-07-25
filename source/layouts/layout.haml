@@ -65,9 +65,11 @@
   %body
     .page-wrapper
       #header
-        %a#logo.left{ :href => '/' }
+        %a#logo.left{ :href => 'https://nanobox.io' }
           = partial 'svgs/nb-logo'
           %span#nb-title Nanobox
+        %a#docs-tag.drop{ href: '/' }
+          \/ Docs /
         %ul.links
           %li #{ link_to 'Sign Up', 'https://dashboard.nanobox.io' }
       .content-flex
