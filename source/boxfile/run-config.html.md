@@ -12,7 +12,7 @@ The `run.config` section allows you to configure the environment your app runs w
 run.config:
 
   # Engine
-  engine: my/engine
+  engine: engine-name
 
   # Configuration used by the engine
   engine.config:
@@ -25,8 +25,8 @@ run.config:
 
   # Extra Packages (in addition to what the engine installs)
   extra_packages:
-    - nodejs-6.2
-    - newrelic-6.3
+    - nodejs
+    - newrelic
 
   # Dev Packages
   dev_packages:
@@ -57,8 +57,22 @@ The `engine` config allows you to specify which engine to use to build your code
 #### engine
 ```yaml
 run.config:
-  engine: username/engine-name
+  engine: engine-name
 ```
+
+##### Using Non-Nanobox Engines
+You can use engines other than official Nanobox engines published on Github with the following patterns:
+
+```yaml
+# Other engines published on Github
+run.config:
+  engine: github-username/repo-name
+
+# An engine on your local machine
+run.config:
+  engine: ../engine-directory
+```
+
 
 ## Config Options
 Engines expose configurable options used to tailor your code's environment to your project's specific needs. What options are available wholly depend on the engine and should be documented in the engine's documentation.
@@ -66,6 +80,7 @@ Engines expose configurable options used to tailor your code's environment to yo
 #### config
 ```yaml
 run.config:
+  engine: engine-name
   engine.config:
     version: 2.2
 ```
@@ -77,6 +92,7 @@ You can choose to cache certain directories inside of Nanobox. This can provide 
 
 ```yaml
 run.config:
+  # ...
   cache_dirs:
     - vendor
     - node_modules
@@ -84,22 +100,24 @@ run.config:
  ```
 
 ## Extra Packages
-In some cases, you may need a package or runtime that your engine does not make available. The `extra_packages` config allows you to specify additional packages that should be loaded into your environment.
+In some cases, you may need a package or runtime that your engine does not make available. The `extra_packages` config allows you to specify additional packages that should be loaded into your environment. More information is available in the [Adding Packages](/app-config/adding-packages/) doc.
 
 ```yaml
 run.config:
+  # ...
   extra_packages:
-    - nodejs-6.2
-    - newrelic-6.3
+    - nodejs
+    - newrelic
 ```
 
 **Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `extra_packages`.
 
 ## Dev Packages
-In some cases, you may need a package or runtime that your engine does not make available, but only during development. The `dev_packages` config allows you to specify additional packages that should be available for local development only.
+In some cases, you may need a package or runtime that your engine does not make available, but only during development. The `dev_packages` config allows you to specify additional packages that should be available for local development only.  More information is available in the [Adding Packages](/app-config/adding-packages/) doc.
 
 ```yaml
 run.config:
+  # ...
   dev_packages:
     - psutils
     - pip
@@ -111,10 +129,12 @@ run.config:
 Changes to these files will trigger a new build the next time a new build is required. In general, it's recommended that any dependency-management files be added as build triggers. That way, you don't have to manually [build a new runtime](/cli/build-runtime/) when you update your dependencies.
 
 ```yaml
-build_triggers:
-  - Gemfile
-  - Gemfile.lock
-  - package.json
+run.config:
+  # ...
+  build_triggers:
+    - Gemfile
+    - Gemfile.lock
+    - package.json
 ```
 
 **Note:** Only files can be used as build triggers; directories can not. The path of each build trigger should be relative to the root of your project.
@@ -124,6 +144,7 @@ Some tools you may be using include binaries that need to be added to the system
 
 ```yaml
 run.config:
+  # ...
   extra_path_dirs:
     - vendor/bin
     - node_modules/.bin
@@ -134,6 +155,7 @@ You can add custom steps to the process of building the environment in which you
 
 ```yaml
 run.config:
+  # ...
   extra_steps:
     - npm install
 ```
@@ -143,5 +165,6 @@ Many front-end development frameworks rely on a filesystem watcher that tells th
 
 ```yaml
 run.config:
+  # ...
   fs_watch: true
 ```

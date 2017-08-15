@@ -42,6 +42,8 @@ articles:
         path: "/app-config/runtime-services/"
       - title: "Environment Variables"
         path: "/app-config/environment-variables/"
+      - title: "Adding Packages"
+        path: "/app-config/adding-packages/"
       - title: "Application Logs"
         path: "/app-config/app-logs/"
       - title: "Network Storage"

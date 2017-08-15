@@ -125,7 +125,7 @@ data.db:
 In some cases, you may only want to provision a component when developing and testing locally. The `local_only` config will provision the component when working locally (local and dry-run), but not when deploying to a live server.
 
 #### local_only
-```
+```yaml
 data.db:
   # ...
   local_only: true

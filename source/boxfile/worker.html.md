@@ -264,7 +264,7 @@ In some cases, you may only want to provision a component when developing and te
 **Note:** Worker components are only provisioned and started locally in a [dry-run envrionment](/workflow/deploy-code/#preview-locally).
 
 #### local_only
-```
+```yaml
 worker.jobs:
   # ...
   local_only: true

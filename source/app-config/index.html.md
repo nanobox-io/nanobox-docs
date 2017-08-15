@@ -11,6 +11,7 @@ The next few docs walk through the specifics of the boxfile as well as other thi
 
 [Runtime & Services](/app-config/runtime-services/)  
 [Environment Variables](/app-config/environment-variables/)  
+[Adding Packages](/app-config/adding-packages/)  
 [Application Logs](/app-config/app-logs/)  
 [Network Storage](/app-config/network-storage/)  
 [Writable Directories](/app-config/writable-dirs/)  
