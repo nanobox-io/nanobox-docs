@@ -15,7 +15,7 @@ Each Nanobox server is provisioned using a bare-bones Ubuntu image. Generally, `
 ## Installing Packages
 The [`extra_packages`](/boxfile/run-config/#extra-packages) and [`dev_packages`](/boxfile/run-config/#dev-packages) options in the `boxfile.yml` allow you to include packages in your app's runtime.
 
-Packages listed as `extra_packages` are installed and will be available in both local development and production environments. Packages listed as `dev_packages` are only installed and available in your local development environment. There are not included in your deployed runtime.
+Packages listed as `extra_packages` are installed and will be available in both local development and production environments. Packages listed as `dev_packages` are only installed and available in your local development environment. They are not included in your deployed runtime.
 
 #### extra_packages
 ```yaml
