@@ -23,7 +23,7 @@ nanobox evar add <local | dry-run | remote> <key>=<value>
 nanobox evar add <local | dry-run | remote> <key1>=<value1>,<key2>=<value2>
 
 # Examples
-nanobox evar add live ENVIRONMENT=local
+nanobox evar add remote ENVIRONMENT=local
 nanobox evar add local ENVIRONMENT=local,MY_EVAR='This is mine'
 ```
 
