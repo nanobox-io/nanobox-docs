@@ -32,10 +32,10 @@ The `rm` subcommand removes a hostname map from your local hosts file. The provi
 ### rm Usage
 ```bash
 # Pattern
-nanobox dns rm <hostname>
+nanobox dns rm <local | dry-run> <hostname>
 
 # Example
-nanobox dns rm myapp.dev
+nanobox dns rm local myapp.dev
 ```
 
 ## ls
