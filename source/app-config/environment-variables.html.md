@@ -75,7 +75,7 @@ The Nanobox CLI's `evar` command allows you easily manage environment variables.
 nanobox evar add KEY=VALUE
 
 # Adding Multiple Environment Variables
-nanobox evar add KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
+nanobox evar add KEY1=VALUE1 KEY2=VALUE2 KEY3=VALUE3
 ```
 
 #### Adding Environment Variables to a Local Environment
@@ -84,7 +84,7 @@ nanobox evar add KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
 nanobox evar add local KEY=VALUE
 
 # Adding Multiple Environment Variables
-nanobox evar add local KEY1=VALUE1,KEY2=VALUE2,KEY3=VALUE3
+nanobox evar add local KEY1=VALUE1 KEY2=VALUE2 KEY3=VALUE3
 ```
 
 For more information about the `evar` command, check out the ['evar' documentation](/cli/evar/).

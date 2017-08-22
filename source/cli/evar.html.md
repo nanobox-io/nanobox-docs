@@ -15,7 +15,7 @@ The `evar` command is used to manage environment variables in your live app. It 
 | [`ls`](#ls)     | Lists environment variables added to your app             |
 
 ## add
-The `add` subcommand is used to add environment variables to your app. You can add a single key-value pair, a comma or space-delimited list of key-value pairs.
+The `add` subcommand is used to add environment variables to your app. You can add a single key-value pair, or a space-delimited list of key-value pairs.
 
 ### add Usage
 ```bash
@@ -25,7 +25,7 @@ nanobox evar add <local | dry-run | remote> <key1>=<value1>,<key2>=<value2>
 
 # Examples
 nanobox evar add remote ENVIRONMENT=local
-nanobox evar add local ENVIRONMENT=local,MY_EVAR='This is mine'
+nanobox evar add local ENVIRONMENT=local MY_EVAR="This is mine"
 ```
 
 ## load

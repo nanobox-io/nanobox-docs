@@ -61,11 +61,11 @@ In dry-run and production, these values will all be empty (since the database is
 # add environment variables to a production app
 # for dry-run, include the `dry-run` context
 
-nanobox evar add DATA_EXTERNAL_HOST='[IP address or hostname]'
-nanobox evar add DATA_EXTERNAL_PORT='[port number]'
-nanobox evar add DATA_EXTERNAL_USER='[user name]'
-nanobox evar add DATA_EXTERNAL_PASS='[password]'
-nanobox evar add DATA_EXTERNAL_NAME='[database name]'
+nanobox evar add DATA_EXTERNAL_HOST="[IP address or hostname]"
+nanobox evar add DATA_EXTERNAL_PORT="[port number]"
+nanobox evar add DATA_EXTERNAL_USER="[user name]"
+nanobox evar add DATA_EXTERNAL_PASS="[password]"
+nanobox evar add DATA_EXTERNAL_NAME="[database name]"
 ```
 
 *__Note:__ These variables can all be added in a single command by passing a comma-separated list of key-value pairs. They're shown as separate commands above for the sake of clarity.*
@@ -80,20 +80,20 @@ This basically consists of setting all the DB environment variables manually in 
 
 #### Add Environment Variables to Local App
 ```sh
-nanobox evar add local DATA_EXTERNAL_HOST='[IP address or hostname]'
-nanobox evar add local DATA_EXTERNAL_PORT='[port number]'
-nanobox evar add local DATA_EXTERNAL_USER='[user name]'
-nanobox evar add local DATA_EXTERNAL_PASS='[password]'
-nanobox evar add local DATA_EXTERNAL_NAME='[database name]'
+nanobox evar add local DATA_EXTERNAL_HOST="[IP address or hostname]"
+nanobox evar add local DATA_EXTERNAL_PORT="[port number]"
+nanobox evar add local DATA_EXTERNAL_USER="[user name]"
+nanobox evar add local DATA_EXTERNAL_PASS="[password]"
+nanobox evar add local DATA_EXTERNAL_NAME="[database name]"
 ```
 
 #### Add Environment Variables to Production App
 ```sh
-nanobox evar add DATA_EXTERNAL_HOST='[IP address or hostname]'
-nanobox evar add DATA_EXTERNAL_PORT='[port number]'
-nanobox evar add DATA_EXTERNAL_USER='[user name]'
-nanobox evar add DATA_EXTERNAL_PASS='[password]'
-nanobox evar add DATA_EXTERNAL_NAME='[database name]'
+nanobox evar add DATA_EXTERNAL_HOST="[IP address or hostname]"
+nanobox evar add DATA_EXTERNAL_PORT="[port number]"
+nanobox evar add DATA_EXTERNAL_USER="[user name]"
+nanobox evar add DATA_EXTERNAL_PASS="[password]"
+nanobox evar add DATA_EXTERNAL_NAME="[database name]"
 ```
 
 *__Note:__ These variables can all be added in a single command by passing a comma-separated list of key-value pairs. They're shown as separate commands above for the sake of clarity.*
