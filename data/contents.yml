@@ -129,6 +129,9 @@ articles:
         path: "/live-app-management/platform-components/"
       - title: "Remote Access"
         path: "/live-app-management/remote-access/"
+        articles:
+          - title: "App SSH Keys"
+            path: "/live-app-management/remote-access/app-ssh-keys/"
       - title: "App Logs"
         path: "/live-app-management/app-logs/"
       - title: "Deployment Options"

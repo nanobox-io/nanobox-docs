@@ -36,11 +36,21 @@ Once the tunnel is open, you can use the tunnel connection credentials provided 
 
 Tunnels are primarily used for managing data components. More information is available in the [Managing Live Data](/data-management/managing-live-data/#create-a-secure-tunnel) and [`tunnel`](/cli/tunnel/) docs.
 
-## Security
-Whenever servers are accessed remotely or tunnels created, there are three levels of authorization each request goes through:
+### Console & Tunnel Security
+Whenever servers are accessed remotely using the `console` or `tunnel` commands, there are three levels of authorization each request goes through:
 
 1. Your are an authorized Nanobox user.
 2. Your are an authorized team member on the app.
 3. Your are authorized to access the component.
 
 If any of these authorizations fail, the remote connection is rejected.
+
+## Direct SSH Access
+For direct SSH access to your app's server(s) and container(s) you can copy and save your [app's private SSH key](/live-app-management/remote-access/app-ssh-keys/) on your local machine and pass it into the `ssh` command with the identity\_file argument (`-i`). The IP(s) and user necessary to SSH in are provided under "Admin" > "Security" in your application dashboard. More information is available in the [App SSH keys](/live-app-management/remote-access/app-ssh-keys/) doc.
+
+```bash
+ssh root@123.45.67.89 -i /path/to/private_key
+```
+
+#### Important Note
+_With SSH access and the user permissions granted, you have the ability to manipulate your live servers and containers. Please know that any damage or dataloss caused in error or with intent is your responsibility and Nanobox will not be held liable._
