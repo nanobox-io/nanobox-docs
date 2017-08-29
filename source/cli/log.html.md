@@ -11,7 +11,7 @@ The `log` command allows you to view logs from your app. If no context/remote is
 ```bash
 # Patterns
 
-# Viewing Historical Stats
+# Viewing Historical Logs
 nanobox log <dry-run | {remote-alias}> -n <number>
 # Streaming Logs
 nanobox log <dry-run | {remote-alias}> -f
