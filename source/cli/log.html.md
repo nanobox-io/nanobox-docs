@@ -21,7 +21,7 @@ nanobox log <dry-run | {remote-alias}> -f
 # Viewing Historical Stats
 nanobox log production -n 1000
 # Streaming Logs
-nanobox log dry-run -l
+nanobox log dry-run -f
 ```
 
 ### Options
