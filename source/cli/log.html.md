@@ -12,24 +12,21 @@ The `log` command allows you to view logs from your app. If no context/remote is
 # Patterns
 
 # Viewing Historical Stats
-nanobox log <local | dry-run | remote> -c <count>
+nanobox log <dry-run | {remote-alias}> -n <number>
 # Streaming Logs
-nanobox log <local | dry-run | remote> -l
+nanobox log <dry-run | {remote-alias}> -f
 
 # Examples
 
 # Viewing Historical Stats
-nanobox log production -c 1000
+nanobox log production -n 1000
 # Streaming Logs
-nanobox log local -l
+nanobox log dry-run -l
 ```
 
 ### Options
-#### -a, --app
-Specifies the app-name or [remote](/cli/remote/). If no app-name or remote is provided, it uses the "default" remote.
-
-#### -c, --count
+#### -n, --number
 Specifies the number of historical log entries to output.
 
-#### -l, --live
-Opens a live output stream of your app's logs.
+#### -f, --follow
+Opens a live output stream of your app's logs and follows them.

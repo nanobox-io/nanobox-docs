@@ -10,7 +10,7 @@ The `deploy` command deploys a generated build package and compiled code package
 ### Usage
 ```bash
 # Pattern
-nanobox deploy <dry-run | remote> -m <message>
+nanobox deploy <dry-run | {remote-alias}> -m <message>
 
 # Examples
 nanobox deploy

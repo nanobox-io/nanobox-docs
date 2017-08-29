@@ -52,7 +52,7 @@ For direct SSH access to your app's server(s) and container(s) you can copy and 
 ssh root@123.45.67.89 -i /path/to/private_key
 ```
 
-_**Note:** You will need to set the permissions of your key file to_ `600` _(owner read/write). More info [here](/live-app-management/remote-access/app-ssh-keys/##private-ssh-key-permissions)._
+_**Note:** You will need to set the permissions of your key file to_ `600` _(owner read/write). More info [here](/live-app-management/remote-access/app-ssh-keys/#private-ssh-key-permissions)._
 
 #### Important Note
 _With SSH access and the user permissions granted, you have the ability to manipulate your live servers and containers. Please know that any damage or dataloss caused in error or with intent is your responsibility and Nanobox will not be held liable._

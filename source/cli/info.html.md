@@ -9,5 +9,5 @@ The `info` command displays information about your app and its components. This 
 
 ### Usage
 ```bash
-nanobox info <local | dry-run | remote>
+nanobox info <local | dry-run | {remote-alias}>
 ```

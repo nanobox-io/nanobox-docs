@@ -25,8 +25,8 @@ The `remote add` command adds a new remote.
 #### Usage
 ```bash
 # Pattern
-nanobox remote add <app-name> <remote-name>
-nanobox remote add <team-name>/<app-name> <remote-name>
+nanobox remote add <app-name> <remote-alias>
+nanobox remote add <team-name>/<app-name> <remote-alias>
 
 # Example
 nanobox remote add my-app-prod production
@@ -39,7 +39,7 @@ The `remote rm` command removes the specified remote.
 #### Usage
 ```bash
 # Pattern
-nanobox remote rm <remote-name>
+nanobox remote rm <remote-alias>
 
 # Example
 nanobox remote rm production
