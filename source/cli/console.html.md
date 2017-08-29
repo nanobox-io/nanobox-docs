@@ -10,7 +10,7 @@ The `console` command opens an interactive console inside a specified component 
 ### Usage
 ```shell
 # Pattern
-nanobox console <local | dry-run | {remote-alias}> <component.id>
+nanobox console [<local | dry-run | {remote-alias}>] <component.id>
 
 #Examples
 nanobox console web.site

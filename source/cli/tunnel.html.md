@@ -10,7 +10,7 @@ The `tunnel` command establishes a secure tunnel between your local machine and 
 ### Usage
 ```bash
 # Pattern
-nanobox tunnel <{remote-alias}> <component.id> -p <local-port>
+nanobox tunnel [<{remote-alias}>] <component.id> [-p <local-port>]
 
 # Examples
 nanobox tunnel data.db

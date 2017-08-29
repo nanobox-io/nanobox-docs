@@ -20,8 +20,8 @@ The `add` subcommand is used to add environment variables to your app. You can a
 ### add Usage
 ```bash
 # Pattern
-nanobox evar add <local | dry-run | {remote-alias}> <key>=<value>
-nanobox evar add <local | dry-run | {remote-alias}> <key1>=<value1> <key2>=<value2>
+nanobox evar add [<local | dry-run | {remote-alias}>] <key>=<value>
+nanobox evar add [<local | dry-run | {remote-alias}>] <key1>=<value1> <key2>=<value2>
 
 # Examples
 nanobox evar add ENVIRONMENT=production
@@ -35,7 +35,7 @@ The `load` subcommand is used to add environment variables to your app from a fi
 ### load Usage
 ```bash
 # Pattern
-nanobox evar load <local | dry-run | {remote-alias}> path/to/file
+nanobox evar load [<local | dry-run | {remote-alias}>] path/to/file
 
 # Examples
 nanobox evar load config/evars
@@ -76,8 +76,8 @@ The `rm` subcommand is used to remove environment variables from app. You can re
 ### rm Usage
 ```bash
 # Pattern
-nanobox evar rm <local | dry-run | {remote-alias}> <key>
-nanobox evar rm <local | dry-run | {remote-alias}> <key1> <key2>
+nanobox evar rm [<local | dry-run | {remote-alias}>] <key>
+nanobox evar rm [<local | dry-run | {remote-alias}>] <key1> <key2>
 
 # Examples
 nanobox evar rm ENVIRONMENT
@@ -91,7 +91,7 @@ The `ls` subcommand outputs all environment variables registered in your app.
 ### ls Usage
 ```bash
 # Pattern
-nanobox evar ls <local | dry-run | {remote-alias}>
+nanobox evar ls [<local | dry-run | {remote-alias}>]
 
 # Example
 nanobox evar ls

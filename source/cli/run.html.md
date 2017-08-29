@@ -12,7 +12,7 @@ You can also pass a command into the `run` command. This will run the specified 
 ### Usage
 ```bash
 # Pattern
-nanobox run <command>
+nanobox run [<command>]
 
 # Example
 nanobox run rails s

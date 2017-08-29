@@ -10,7 +10,7 @@ The `destroy` command destroys the current project/environment and removes it fr
 ### Usage
 ```bash
 # Pattern
-nanobox destroy <local | dry-run>
+nanobox destroy [<local | dry-run>]
 
 # Examples
 nanobox destroy
