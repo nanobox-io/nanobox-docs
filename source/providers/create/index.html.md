@@ -37,11 +37,12 @@ The API documented below is also formalized in [an OpenAPI spec](openapi-spec.js
 
     3. If your adapter will not or cannot support SSH keys, you can remove the `/keys` and `/keys/{id}` entries from the `paths` collection. *SSH keys are strongly recommended for security, though.*
 
-    4. If the default [credential field](#meta) (`Auth-Token`) doesn't suit your adapter's needs (you want to use a diffrerent name, or more than one field, etc), update the `parameters` section, using `parameters.Auth-Token` as a base. If you just want to change the name of the header, you can simply adjust the `name` property; you don't have to change the key or update any references. If you have more than one credential field, be sure to also add the new field references to the array in any occurence of:
+    4. If the default [credential field](#meta) (`Auth-Token`) doesn't suit your adapter's needs (you want to use a diffrerent name, or more than one field, etc), update the `securityDefinitions` section, using `securityDefinitions.Auth-Token` as a base. If you have more than one credential field, be sure to also add the new field references to the object in `security[0]` - for example:
         ```json
-        "parameters": [
+        "security": [
             {
-                "$ref": "#/parameters/Auth-Token"
+                "Auth-Token": [],
+                "Auth-Key": []
             }
         ],
         ```
