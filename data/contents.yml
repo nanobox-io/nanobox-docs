@@ -220,6 +220,9 @@ articles:
 
   - title: "Security"
     path: "/security/"
+    articles:
+      - title: "SSL/TLS Encryption"
+        path: "/security/ssl-tls-encryption/"    
 
   - title: "Teams & Access Control"
     path: "/teams/"
