@@ -50,5 +50,5 @@ data.db
 
 # In a separate terminal session
 
-psql -h 192.168.99.1 -p 5432 -U nanobox -W NaNopAsS gonano
+PGPASSWORD="NaNopAsS" psql -h 192.168.99.64 -p 5432 -U nanobox gonano
 ```
