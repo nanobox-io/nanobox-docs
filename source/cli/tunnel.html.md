@@ -16,13 +16,13 @@ nanobox tunnel [<remote-alias>] <component.id> [-p <local-port>[:[<remote-port>]
 nanobox tunnel data.db
 
 ## Forwards local port 1234 to default component port
-nanobox tunnel staging data.redis -p 1234
+nanobox tunnel data.db -p 1234
 
 ## Forwards local port 1234 to remote port 1234
-nanobox tunnel staging data.redis -p 1234:
+nanobox tunnel data.db -p 1234:
 
-## Forwards local port 1234 to remote port 5678 port
-nanobox tunnel staging data.redis -p 1234:5678
+## Forwards local port 1234 to 'staging' remote port 5678 port
+nanobox tunnel staging data.db -p 1234:5678
 ```
 
 ### Options
