@@ -8,9 +8,9 @@ keywords: remote access, manage live database, manage production database, remot
 The `tunnel` command establishes a secure tunnel between your local machine and a data component in remote app. It binds to a local port, through which you can connect to your running service.
 
 ### Usage
-```yaml
+```bash
 # Pattern
-nanobox tunnel [<remote-alias>] <component.id> [-p <local-port>[:<remote-port>]]
+nanobox tunnel [<remote-alias>] <component.id> [-p <local-port>[:[<remote-port>]]]
 
 # Examples
 nanobox tunnel data.db
