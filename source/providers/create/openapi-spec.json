@@ -45,11 +45,11 @@
             "required": true,
             "schema": {
               "required": [
-                "name",
+                "id",
                 "key"
               ],
               "properties": {
-                "name": {
+                "id": {
                   "description": "the user-friendly name of the key",
                   "type": "string"
                 },

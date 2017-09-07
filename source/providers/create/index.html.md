@@ -236,15 +236,15 @@ Auth-Access-Token: 123abc
 
 ###### Body:
 
-* `name`: the user-friendly name of the key.
+* `id`: the user-friendly name of the key.
 * `key`: the public key to register with the user's account. It is assumed that this public key will be installed on every server launched by this integration.
 
 Example:
 
 ```json
 {
-  "name": "nanobox-provider-account-ID",
-  "key":  "CONTENTS OF PUBLIC KEY"
+  "id":  "nanobox-provider-account-ID",
+  "key": "CONTENTS OF PUBLIC KEY"
 }
 ```
 
