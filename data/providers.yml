@@ -23,6 +23,10 @@ providers:
     link: "https://azure.microsoft.com/"
     svg_name: "prov-azure"
     available: false
+  - name: "Scaleway"
+    link: "https://www.scaleway.com/"
+    svg_name: "prov-scaleway"
+    available: false
   - name: "Packet"
     link: "https://www.packet.net/"
     svg_name: "prov-packet"
