@@ -1,0 +1,13 @@
+@import 'variables-mixins';
+
+#providers            { margin-bottom: 4em; text-align: center;
+  a                   { position: relative; display: inline-block; width: 100%; height: 13em; max-width: 10em; padding: 1em 1.5em 1.5em; font-weight: bold; font-size: .8em; text-transform: uppercase; letter-spacing: 1px; text-align: center; color: $grey-5; vertical-align: top; border: 5px solid #fff;
+    &.coming          { color: $lt-gblue-5;
+      .icon           { @include opacity(.25); filter: saturate(0%); @include transition(all .2s); }
+      .name:after     { content: '(Coming)'; display: block; letter-spacing: .06em; text-transform: uppercase; text-align: center; }
+    }
+    &:hover           { border-color: #e6e6e6; color: $grey-5;
+      .icon           { @include opacity(1); filter: saturate(100%); }
+    }
+  }
+}

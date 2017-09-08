@@ -1,5 +1,5 @@
 providers:
-  - name: "Digital Ocean"
+  - name: "DigitalOcean"
     link: "https://www.digitalocean.com/"
     svg_name: prov-digital-ocean
     available: true
@@ -7,15 +7,31 @@ providers:
     link: "https://aws.amazon.com/"
     svg_name: prov-aws
     available: true
-  - name: "Google Cloud"
+  - name: "Google Compute"
     link: "https://cloud.google.com/"
     svg_name: prov-google
-    available: false
+    available: true
   - name: "Linode"
     link: "https://www.linode.com/"
     svg_name: "prov-linode"
     available: true
-  # - name: "Joyent"
-  #   link: "https://www.joyent.com/"
-  #   svg_name: prov-joyent
-  #   available: false
+  - name: "Vultr"
+    link: "https://www.vultr.com/"
+    svg_name: "prov-vultr"
+    available: true
+  - name: "Microsoft Azure"
+    link: "https://azure.microsoft.com/"
+    svg_name: "prov-azure"
+    available: false
+  - name: "Packet"
+    link: "https://www.packet.net/"
+    svg_name: "prov-packet"
+    available: false
+  - name: "OVH"
+    link: "https://www.ovh.com/"
+    svg_name: "prov-ovh"
+    available: false
+  - name: "Cloudways"
+    link: "https://www.cloudways.com/"
+    svg_name: "prov-cloudways"
+    available: false
