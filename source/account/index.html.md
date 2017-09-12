@@ -6,3 +6,7 @@ keywords: update email address, change email address, change username, update us
 ---
 
 We've tried to make managing user accounts on Nanobox as simple as possible. The next few docs walk through account creation, management, and removal.
+
+[Creating an Account](/account/creating-an-account/)  
+[Editing Account Details](/account/editing-account-details/)  
+[Removing an Account](/account/removing-an-account/)  
