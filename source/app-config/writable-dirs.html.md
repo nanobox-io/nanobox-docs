@@ -43,9 +43,6 @@ Writable directories do not persist between deploys. These directories are in ea
 ### Faster than Network Directories
 Because network directories are a part of each instance’s local filesystem, they are much faster than network directories. Network directories are housed in an external service and accessed across the network, adding some latency.
 
-### Overwrites the Directory in Your Repo
-Writable directories will not inherit code from your repo. These directories are replaced with empty, writable directories on deploy, overwriting any files inside of them.
-
 ### Limited to Service’s Local Disk Size
 The amount of code/data that can be stored in writable directories is limited to the disk size of your web or worker instance(s).
 
