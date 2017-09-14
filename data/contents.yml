@@ -30,6 +30,8 @@ articles:
         path: "/workflow/modifying-your-app/"
       - title: "Launch an App"
         path: "/workflow/launch-app/"
+      - title: "Stage Locally with Dry-Run"
+        path: "/workflow/dry-run/"
       - title: "Deploy Code"
         path: "/workflow/deploy-code/"
       - title: "Continuous Integration"
@@ -222,7 +224,7 @@ articles:
     path: "/security/"
     articles:
       - title: "SSL/TLS Encryption"
-        path: "/security/ssl-tls-encryption/"    
+        path: "/security/ssl-tls-encryption/"
 
   - title: "Teams & Access Control"
     path: "/teams/"

@@ -7,19 +7,8 @@ keywords: docker deployment, production deploys with docker, deployment strategy
 
 With an [app launched](/workflow/launch-app/), you're ready to deploy to it.
 
-## Preview Locally
-Nanobox provides "dry-run" functionality that provisions a virtual environment in Nanobox and simulates a deploy as if it were going to production servers. If it works in a dry-run, it will work when deploying live.
-
-```bash
-# deploy to a dry-run/staging environment
-nanobox deploy dry-run
-
-# Add a convenient way to access your dry-run
-# app from your browser (optional)
-nanobox dns add dry-run myapp.st
-```
-
-Visit and test your app in your browser at `http://myapp.st`.
+## Stage Locally
+Nanobox provides "dry-run" functionality that provisions a virtual environment in Nanobox and simulates a deploy as if it were going to production servers. If it works in a dry-run, it will work when deploying live. More information is available in the [Dry-Run documentation](/workflow/dry-run/).
 
 
 ## Add Your Live App as a Remote

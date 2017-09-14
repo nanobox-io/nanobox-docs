@@ -31,8 +31,8 @@ rails s
 ## Craft Some Code
 Do what you do best, code. Your local codebase is mounted into Nanobox, so any changes will be reflected in your running app. If you make any changes to your boxfile.yml, run `nanobox build-runtime` and `nanobox deploy local` to apply those changes to your local environment.
 
-## Preview Your App
-Once you think you're ready to deploy to live servers, Nanobox let's you "dry-run" a deploy with the `dry-run` command. This will spin up a virtualized environment on your local machine and deploy to it just as it would to live servers. If a dry-run works locally, a deploy to production servers will work.
+## Stage Your App Locally _(Optional)_
+Once you think you're ready to deploy to live servers, Nanobox let's you ["dry-run" a deploy](/workflow/dry-run/) with the `deploy dry-run` command. This will spin up a virtualized environment on your local machine and deploy to it just as it would to live servers. If a dry-run works locally, a deploy to production servers will work.
 
 ```bash
 # preview your app locally
