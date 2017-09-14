@@ -26,5 +26,11 @@ With Streaming logs, only logs entries written after the stream is started are v
 ### Historical Logs
 Historical logs contain all of your app's stored log entries. Each log entry is timestamped and flagged with the component-ID and specific log from which it came. When viewing historical logs, the entries are loaded 100 at a time. To load more, click the "View More" button and the next 100 entries will be loaded.
 
-<!-- ## Viewing Logs Through the CLI
-To view the application logs through the CLI, use the the `nanobox log` command. More information is available in the [CLI log doc](/cli/log). -->
+## Viewing Logs Through the CLI
+To view the application logs through the CLI, use the the `nanobox log` command.
+
+```bash
+nanobox log
+```
+
+More information is available in the [CLI log doc](/cli/log/).
