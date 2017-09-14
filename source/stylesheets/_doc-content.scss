@@ -21,10 +21,7 @@
   h6                    { margin: 0 0 .25em; font-size: .95em; color: $grey-0; text-transform: uppercase; font-style: italic; }
   p                     { margin: 0 0 1.25em; line-height: 2em; }
   a                     { color: $sblue-1; text-decoration: none;
-    code                { border-bottom: 1px dotted $blue-1; }
-    &:hover             { color: $blue-0;
-      code              { border-bottom: 1px dotted $pink-1; }
-    }
+    code                { border-bottom: 1px solid $blue-1; }
     &.jump              { background-color: $sblue-1; color: #fff; font-size: .65em; font-weight: bold; letter-spacing: .05em; padding: .2em .6em; vertical-align: middle;
       &:after           { content: "▾"; margin-left: .25em; }
     }
