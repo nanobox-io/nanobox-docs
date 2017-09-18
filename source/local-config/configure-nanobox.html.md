@@ -36,6 +36,7 @@ external-network-space: 192.168.99.50/24
 docker-machine-network-space: 172.19.0.1/16
 native-network-space: 172.18.0.1/16
 ssh-key: default
+ssh-encrypted-keys: false
 anonymous: false
 lock-port: 12345
 ci-sync-verbose: false
@@ -87,6 +88,9 @@ The `disk` setting specifies the amount of disk space *in MB* to allot to your v
 
 ### SSH Key
 `ssh-key` defines a specific key for Nanobox to use when establishing SSH connections to remote servers. By default, Nanobox copies in all keys in your `~/.ssh` directory.
+
+### SSH Encrypted Keys
+`ssh-encrypted-keys` tells Nanobox whether or not to use password-protected SSH keys. By default, Nanobox will ignore password-protected keys. If enabled, you will be prompted for your SSH key password each time your applications build.
 
 ### Anonymous
 `anonymous` opts out of connecting your Nanobox CLI to your Nanobox account and any error reporting sent to Nanobox. _In order to interact with live apps, you will still need to authenticate your Nanobox account._
