@@ -31,7 +31,7 @@
           "keys"
         ],
         "summary": "Create SSH Key",
-        "description": "<p>The `/keys` route is used to authorize Nanobox with the user's account that will be ordering servers. After ordering a server, Nanobox needs to SSH into the server to provision it. Nanobox will pre-generate an SSH key for the user's account and the authorization route allows Nanobox to register this key with the user's account on this provider so that Nanobox can access the server after it is ordered.</p> <p>NOTE: This route is *not* required if your provider uses passwords for SSH instead of SSH keys, assuming the password to access the server is returned in the order server payload.</p>",
+        "description": "<p>The `/keys` route is used to authorize Nanobox with the user's account that will be ordering servers. After ordering a server, Nanobox needs to SSH into the server to provision it. Nanobox will pre-generate an SSH key for the user's account and the authorization route allows Nanobox to register this key with the user's account on this provider so that Nanobox can access the server after it is ordered.</p> <p>NOTE: This route is *not* required if your provider uses passwords for SSH instead of SSH keys, assuming the Install Server Key endpoint is implemented instead.</p>",
         "externalDocs": {
           "description": "Official documentation here",
           "url": "https://docs.nanobox.io/providers/create/#create-ssh-key"
@@ -95,7 +95,7 @@
           "keys"
         ],
         "summary": "Query SSH Key",
-        "description": "<p>The `GET /keys/{id}` route is used by Nanobox to query the existence of previously created key.</p> <p>NOTE: This route is *not* required if your provider uses passwords for SSH instead of SSH keys, assuming the password to access the server is returned in the order server payload.</p>",
+        "description": "<p>The `GET /keys/{id}` route is used by Nanobox to query the existence of previously created key.</p> <p>NOTE: This route is *not* required if your provider uses passwords for SSH instead of SSH keys, assuming the Install Server Key endpoint is implemented instead.</p>",
         "externalDocs": {
           "description": "Official documentation here",
           "url": "https://docs.nanobox.io/providers/create/#query-ssh-key"
@@ -153,7 +153,7 @@
           "keys"
         ],
         "summary": "Delete SSH Key",
-        "description": "<p>The `DELETE /keys/{id}` route is used to cancel a key that was previously created via Nanobox.</p> <p>NOTE: This route is *not* required if your provider uses passwords for SSH instead of SSH keys, assuming the password to access the server is returned in the order server payload.</p>",
+        "description": "<p>The `DELETE /keys/{id}` route is used to cancel a key that was previously created via Nanobox.</p> <p>NOTE: This route is *not* required if your provider uses passwords for SSH instead of SSH keys, assuming the Install Server Key endpoint is implemented instead.</p>",
         "externalDocs": {
           "description": "Official documentation here",
           "url": "https://docs.nanobox.io/providers/create/#delete-ssh-key"
@@ -279,7 +279,7 @@
                   "type": "string"
                 },
                 "ssh_auth_method": {
-                  "description": "will either be key or password",
+                  "description": "will either be 'key' or 'password'. When set to 'key', Nanobox will behave in accordance with the <code>ssh_key_method</code> value. When set to 'password', Nanobox will use the Install Server Key endpoint to install the SSH key manually via the adapter, instead of passing it in the create server step.",
                   "type": "string",
                   "enum": [
                     "key",
@@ -287,7 +287,7 @@
                   ]
                 },
                 "ssh_key_method": {
-                  "description": "will either be reference or object. Vhen set to 'reference', Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to 'object', Nanobox will pass the actual public SSH key that should be installed on the server.",
+                  "description": "will either be 'reference' or 'object'. When set to 'reference', Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to 'object', Nanobox will pass the actual public SSH key that should be installed on the server.",
                   "type": "string",
                   "enum": [
                     "reference",
@@ -585,8 +585,7 @@
                 "status": "active",
                 "name": "nanobox.io-cool-app-do.1.1",
                 "external_ip": "192.0.2.15",
-                "internal_ip": "192.168.0.15",
-                "password": "d7h%*ttGqY"
+                "internal_ip": "192.168.0.15"
               }
             },
             "schema": {
@@ -617,10 +616,6 @@
                 "internal_ip": {
                   "description": "internal or private IP of the server",
                   "type": "string"
-                },
-                "password": {
-                  "description": "the ssh password to use (if ssh_auth_method is password)",
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -643,6 +638,61 @@
         },
         "operationId": "cancel-server",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "the server id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        }
+      }
+    },
+    "/servers/{id}/keys": {
+      "patch": {
+        "tags": [
+          "keys",
+          "servers"
+        ],
+        "summary": "Install Server Key",
+        "description": "<p>The `/servers/{id}/keys` route is used to authorize Nanobox with a server that was previously ordered via Nanobox. Nanobox will pre-generate an SSH key for the user's account, and this route allows Nanobox to register that key with the server so that Nanobox can access it after it is ordered.</p> <p>NOTE: This route is *only* required if your provider uses passwords for SSH instead of SSH keys.</p>",
+        "externalDocs": {
+          "description": "Official documentation here",
+          "url": "https://docs.nanobox.io/providers/create/#install-ssh-key"
+        },
+        "operationId": "install-server-key",
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "Key ID and contents to save",
+            "required": true,
+            "schema": {
+              "required": [
+                "id",
+                "key"
+              ],
+              "properties": {
+                "id": {
+                  "description": "the user-friendly name of the key",
+                  "type": "string"
+                },
+                "key": {
+                  "description": "The public key to register on the server.",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
           {
             "name": "id",
             "in": "path",
