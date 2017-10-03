@@ -131,7 +131,7 @@ The following restrictions apply to component nicknames:
 - Cannot contain consecutive dashes -->
 
 ## Sections of the Boxfile
-Boxfiles consist of a handful of sections or "nodes": run.config, deploy.config, dev, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
+Boxfiles consist of a handful of sections or "nodes": run.config, deploy.config, web, worker, data. These are covered in detail in the next few docs, but here are some quick descriptions:
 
 [`run.config`](/boxfile/run-config/) - Defines the build, environment, and configuration for web and worker components.
 
