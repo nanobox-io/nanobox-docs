@@ -5,7 +5,7 @@ description: If running in Windows, creating symlinks in an app running in Nanob
 keywords: symlinks in windows vm, symlinks in windows, windows symlinks not working
 ---
 
-Nanobox launches your app in a virtualized Linux environment and into which it mounts your local codebase. Creating symlinks in a codebase that mounted into a Linux environment, but actually resides in a Windows host filesystem can be tricky.
+Nanobox launches your app and mounts your local codebase in a virtualized Linux environment. Creating symlinks in a codebase that mounted into a Linux environment, but actually resides in a Windows host filesystem can be tricky.
 
 ## The Problem
 Windows and Linux/Unix have completely separate implementations for creating symlinks. Symlinks created in a Linux environment will not be honored by Windows and vice versa.
