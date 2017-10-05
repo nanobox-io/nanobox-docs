@@ -106,7 +106,7 @@ sections:
             link: 'https://guides.nanobox.io/elixir/phoenix'
 
   - title: 'Data Components'
-    caption: 'Information on installing and configuring data componentsis found in the <a href="https://guides.nanobox.io/components/">Nanobox Component Guides</a>. Below are direct links to popular data components.'
+    caption: 'Information on installing and configuring data components is present in the <a href="https://guides.nanobox.io/components/">Nanobox Component Guides</a>. Below are direct links to popular data components.'
     topics:
       - title: 'Popular Data Components'
         links:
