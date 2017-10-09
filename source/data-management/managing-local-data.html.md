@@ -7,7 +7,7 @@ keywords: managing local databases, managing local data, managing development da
 
 When data components are provisioned inside of a Nanobox container, each is given its own virtual IP. These allow you to connect to your data services in your running container and manage them with your local client of choice.
 
-To view the IPs and connection credentials for your data components, use the `dev info` command.
+To view the IPs and connection credentials for your data components, use the [`info local` command](/cli/info/).
 
 ```bash
 nanobox info local
