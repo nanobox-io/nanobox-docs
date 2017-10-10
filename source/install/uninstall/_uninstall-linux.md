@@ -13,7 +13,9 @@ Nanobox required two executables installed on your system $PATH - `nanobox` and 
 #### Finding the Location of Nanobox Executables
 ```bash
 which nanobox
+which nanobox-machine
 which nanobox-update
+which nanobox-vpn
 ```
 
 Once you know where the Nanobox executables are located, you can use the following commands to remove them.
@@ -21,7 +23,9 @@ Once you know where the Nanobox executables are located, you can use the followi
 #### Removing Nanobox Executables
 ```bash
 rm -f /path/to/nanobox
+rm -f /path/to/nanobox-machine
 rm -f /path/to/nanobox-update
+rm -f /path/to/nanobox-vpn
 ```
 
 ### Uninstall Virtual Box
