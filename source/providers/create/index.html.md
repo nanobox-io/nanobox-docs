@@ -17,11 +17,15 @@ There are only a few requirements that a provider must satisfy in order to integ
 
 2.  Must be able to launch servers running a base Ubuntu OS (12.04+).
 
-3.  Servers with only one NIC must be reported as having an internal interface, but no external one, regardless of which IP address is assigned to the interface itself. Nanobox uses the internal interface to build a virtual network (layer 2/3 vxlan) for each app. NICs can be hardware-backed or virtual as long as the OS is able to see them.
+3.  The user specified for SSH access (see `ssh_user`, below) must either be `root`, or have access to run commands as `root` via passwordless `sudo`, so that Nanobox can bootstrap the server effectively.
 
-4.  Servers must have at least of 128MB of RAM, but the recommended minimum is 512MB. Nanobox [platform components](/live-app-management/platform-components/) require approximately 50MB of RAM.
+4.  Servers with only one NIC must be reported as having an internal interface, but no external one, regardless of which IP address is assigned to the interface itself. Nanobox uses the internal interface to build a virtual network (layer 2/3 vxlan) for each app. NICs can be hardware-backed or virtual as long as the OS is able to see them.
 
-5.  Both virtual machines and bare metal machines work, as long as the OS isn't sharing a kernel (the host can't be a Docker or LXC container).
+5.  Avoid using the `192.168.0.0/24` network space on the host, as Nanobox uses these addresses for its vxlan.
+
+6.  Servers must have at least of 128MB of RAM, but the recommended minimum is 512MB. Nanobox [platform components](/live-app-management/platform-components/) require approximately 50MB of RAM.
+
+7.  Both virtual machines and bare metal machines work, as long as the OS isn't sharing a kernel (the host can't be a Docker or LXC container).
 
 ## API
 
