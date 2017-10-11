@@ -22,18 +22,18 @@ providers:
   - name: "Microsoft Azure"
     link: "https://azure.microsoft.com/"
     svg_name: "prov-azure"
-    available: false
-  - name: "Scaleway"
-    link: "https://www.scaleway.com/"
-    svg_name: "prov-scaleway"
-    available: false
+    available: true
   - name: "Packet"
     link: "https://www.packet.net/"
     svg_name: "prov-packet"
-    available: false
+    available: true
   - name: "OVH"
     link: "https://www.ovh.com/"
     svg_name: "prov-ovh"
+    available: true
+  - name: "Scaleway"
+    link: "https://www.scaleway.com/"
+    svg_name: "prov-scaleway"
     available: false
   - name: "Cloudways"
     link: "https://www.cloudways.com/"
