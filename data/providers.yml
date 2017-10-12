@@ -22,20 +22,36 @@ providers:
   - name: "Microsoft Azure"
     link: "https://azure.microsoft.com/"
     svg_name: "prov-azure"
-    available: false
+    available: true
   - name: "Scaleway"
     link: "https://www.scaleway.com/"
     svg_name: "prov-scaleway"
-    available: false
+    available: true
   - name: "Packet"
     link: "https://www.packet.net/"
     svg_name: "prov-packet"
-    available: false
+    available: true
   - name: "OVH"
     link: "https://www.ovh.com/"
     svg_name: "prov-ovh"
+    available: true
+  - name: "Exoscale"
+    link: "https://www.exoscale.ch/"
+    svg_name: "prov-exoscale"
     available: false
   - name: "Cloudways"
     link: "https://www.cloudways.com/"
     svg_name: "prov-cloudways"
+    available: false
+  - name: "IBM Bluemix"
+    link: "https://www.ibm.com/cloud-computing/bluemix/"
+    svg_name: "prov-bluemix"
+    available: false
+  - name: "Joyent"
+    link: "https://www.joyent.com/"
+    svg_name: "prov-joyent"
+    available: false
+  - name: "UpCloud"
+    link: "https://www.upcloud.com/"
+    svg_name: "prov-upcloud"
     available: false
