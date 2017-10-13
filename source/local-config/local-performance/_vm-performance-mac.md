@@ -39,7 +39,7 @@ nanobox config set ram 4
 ```
 
 #### Start/Stop Your Nanobox Container
-In order to apply changes to your virtual machine configuration, must be restarted:
+In order to apply changes to your virtual machine configuration, it must be restarted:
 
 ```bash
 # If the Nanobox VM is running, stop it

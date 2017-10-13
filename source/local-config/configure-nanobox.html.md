@@ -5,7 +5,7 @@ description: The 'configure' command defines configuration options for your loca
 keywords: set docker ram, set docker cpu, set docker disk, change virtual disk, update virtual disk
 ---
 
-Nanobox configuration settings can be modified using the [`nanobox config` command](/cli/configure/). The first time any `nanobox` command is run, Nanobox will walk automatically walk you through this process.
+Nanobox configuration settings can be modified using the [`nanobox config` command](/cli/configure/). The first time any `nanobox` command is run, Nanobox will automatically walk you through this process.
 
 ```bash
 # View config settings
@@ -84,7 +84,7 @@ The `disk` setting specifies the amount of disk space *in MB* to allot to your v
 `docker-machine-network-space` defines the network Nanobox uses to facilitate communication between Docker containers when using the ["docker-machine" provider](#provider).
 
 ### Native Network Space
-`native-network-space` defines the network Nanobox uses to facility communication between Docker containers when using the ["native" provider](#provider).
+`native-network-space` defines the network Nanobox uses to facilitate communication between Docker containers when using the ["native" provider](#provider).
 
 ### SSH Key
 `ssh-key` defines a specific key for Nanobox to use when establishing SSH connections to remote servers. By default, Nanobox copies in all keys in your `~/.ssh` directory.
@@ -93,10 +93,10 @@ The `disk` setting specifies the amount of disk space *in MB* to allot to your v
 `ssh-encrypted-keys` tells Nanobox whether or not to use password-protected SSH keys. By default, Nanobox will ignore password-protected keys. If enabled, you will be prompted for your SSH key password each time your applications build.
 
 ### Anonymous
-`anonymous` opts out of connecting your Nanobox CLI to your Nanobox account and any error reporting sent to Nanobox. _In order to interact with live apps, you will still need to authenticate your Nanobox account._
+`anonymous` opts out of connecting your Nanobox CLI to your Nanobox account and have any error report sent to Nanobox. _In order to interact with live apps, you will still need to authenticate your Nanobox account._
 
 ### Lock Port
 `lock-port` defines which port will be locked by tcp. This is necessary to prevent race conditions within Nanobox. If the specified port is already in use, it needs to be updated.
 
 ### CI Sync Verbose
-`ci-sync-verbose` defines whether or not `rsync` logs are output when `ci-mode` is set to `true`. Generally `rsync` logs aren't necessary so the this is set to `false` by default, but enabling `rysnc` logs can help when troubleshooting deploys from a continuous integration provider.
+`ci-sync-verbose` defines whether or not `rsync` logs are output when `ci-mode` is set to `true`. Generally `rsync` logs aren't necessary so the this is set to `false` by default, but enabling `rysnc` logs can help when troubleshooting deployments from a continuous integration provider.

@@ -20,7 +20,7 @@ Nanobox includes two file-watchers - a fast watcher and a slow watcher. If the f
 #### Fast
 The fast file-watcher uses your OS's native file-watcher which holds a file descriptor open for every file in your project directory and gets notified by your OS any time a file changes.
 
-**NOTE:** *The most common cause of the fast file-watcher panicking is exceeding your system's ulimit, which defines how many file can be open at a time. A quick google search will provide instructions on increasing your system's ulimit unique to your OS.*
+**NOTE:** *The most common cause of the fast file-watcher panicking is exceeding your system's ulimit, which defines how many files can be open at a time. A quick google search will provide instructions on increasing your system's ulimit unique to your OS.*
 
 #### Slow
-The slow file-watcher is a "polling" solution that loops through all the files in your project directory and checks if they have been updated. This solution gets slower as the number of file in your project increases, but is still relatively fast. In our benchmarks, a codebase with 1000+ files took about a second to register a modified file with minimal system overhead.
+The slow file-watcher is a "polling" solution that loops through all the files in your project directory and checks if they have been updated. This solution gets slower as the number of files in your project increases, but is still relatively fast. In our benchmarks, a codebase with 1000+ files took about a second to register a modified file with minimal system overhead.

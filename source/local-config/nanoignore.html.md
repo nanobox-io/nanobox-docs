@@ -25,7 +25,7 @@ Version control projects such as Git, SVN, Mercurial, etc., all store version hi
 When working in a local dev environment, it's possible for your app to write things such as logs and/or caches to your local filesystem. To keep your build small, we recommend ignoring those files/directories.
 
 ### Network Directories
-If your app includes [network directories](/app-config/network-storage/#configuring-network-storage), we highly recommend adding those same directories to your `.nanoignore`. The contents of these directories are replaced by network mounts when deployed your production app. Anything contained in these directories doesn't need to be included in the build.
+If your app includes [network directories](/app-config/network-storage/#configuring-network-storage), we highly recommend adding those same directories to your `.nanoignore`. The contents of these directories are replaced by network mounts when your production app is deployed. Anything contained in these directories doesn't need to be included in the build.
 
 ## Syntax
 *The syntax of the .nanoignore is based on rsync's exclude pattern rules*
