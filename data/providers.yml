@@ -1,38 +1,38 @@
 providers:
-  - name: "DigitalOcean"
-    link: "https://www.digitalocean.com/"
-    svg_name: prov-digital-ocean
-    available: true
   - name: "Amazon Web Services (AWS)"
-    link: "https://aws.amazon.com/"
+    link: "/providers/hosting-accounts/aws/"
     svg_name: prov-aws
     available: true
+  - name: "DigitalOcean"
+    link: "/providers/hosting-accounts/digitalocean/"
+    svg_name: prov-digital-ocean
+    available: true
   - name: "Google Compute"
-    link: "https://cloud.google.com/"
+    link: "/providers/hosting-accounts/gcp/"
     svg_name: prov-google
     available: true
   - name: "Linode"
-    link: "https://www.linode.com/"
+    link: "/providers/hosting-accounts/linode/"
     svg_name: "prov-linode"
     available: true
   - name: "Vultr"
-    link: "https://www.vultr.com/"
+    link: "/providers/hosting-accounts/vultr/"
     svg_name: "prov-vultr"
     available: true
   - name: "Microsoft Azure"
-    link: "https://azure.microsoft.com/"
+    link: "/providers/hosting-accounts/azure/"
     svg_name: "prov-azure"
     available: true
   - name: "Packet"
-    link: "https://www.packet.net/"
+    link: "/providers/hosting-accounts/packet/"
     svg_name: "prov-packet"
     available: true
   - name: "Scaleway"
-    link: "https://www.scaleway.com/"
+    link: "/providers/hosting-accounts/scaleway/"
     svg_name: "prov-scaleway"
     available: true
   - name: "OVH"
-    link: "https://www.ovh.com/"
+    link: "/providers/hosting-accounts/ovh/"
     svg_name: "prov-ovh"
     available: true
   - name: "Exoscale"
