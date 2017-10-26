@@ -1,27 +1,30 @@
-*First, make sure all [installation requirements](/install/requirements/) are met.*
+**Note:** _There are known issues with installing and running Nanobox on MacOS 10.13 - High Sierra. Installation instructions are coming. For now, feel free to drop into the [Nanobox Slack Channel](https://nanoboxio.slack.com) and ask._
 
-Nanobox provides a Windows installer to make installation as simple as possible.
+## System Requirements
+System requirements depend on how you're going to run Nanobox. You can either use a lightweight VM (VirtualBox) or Native Docker.
 
-## Download the Nanobox Installer
-The Nanobox installer can be downloaded from the [Nanobox download page in your dashboard](https://dashboard.nanobox.io/download).
+_**For MacOS, we recommend using the lightweight VM option. Docker's MacOS filesystem driver is slow.**_
 
-### Installer Options
-When running Nanobox, you can either use native Docker containers or run containers in a light-weight virtual machine (VM) ([Virtual Box](https://www.virtualbox.org/)). If you plan to use the light-weight VM, you can download Nanobox bundled with Virtual Box. If Virtual Box is already installed on your machine or you plan to use native docker containers, you can just download the Nanobox package.
+### Lightweight VM (VirtualBox)
+- MacOS 10.10+
+- VirtualBox - _A version of the [Nanobox installer](#download-amp-run-nanobox-installer) includes VirtualBox._
 
-**Note:** For MacOS, we recommend using Nanobox with a light-weight VM.
+#### netfs Requirements
+During the intitial setup process, you'll specify how code is mounted into VM. "netfs" is the more performant option.
 
-## Run the Nanobox Installer
-Once you've downloaded the Nanobox installer, run it and it will walk you through the entire installation process.
+- `nfsd` enabled and running
 
-## Configure Nanobox _(Optional)_
-Before you fire up your first project with Nanobox, there are some config options you need or may want to set. The [`nanobox configure`/ `nanobox config`](/cli/configure/) command will walk you through a setup process that gathers required information for your [local Nanobox configuration](/local-config/configure-nanobox/). This process gets triggered automatically the first time you try to start Nanobox.
+### Native Docker
+- MacOS 10.11+
+- [Docker for Mac](https://docs.docker.com/docker-for-mac/)
 
-There are important configuration that aren't part of the required setup steps. One in particular is `disk`, the amount of hard-drive space allotted to your Nanobox VM. The default disk allotment is 15GB. If you want this to be different, use the following command to set the disk allotment (in MB) _before you start Nanobox for the first time_:
+## Download & Run the Nanobox Installer
+Download the Nanobox installer from the [Nanobox downloads page](https://dashboard.nanobox.io/download). Run it and it will walk you through the entire installation process.
 
-```bash
-# set the disk allotment to 20GB
-nanobox config set disk 20480
-```
+_**Note:** If you plan on going with the lightweight VM option and already have VirtualBox installed, you can select the "Use Docker Native" option. This will download an installer that only includes the Nanobox binary._
+
+## Run & Setup Nanobox
+The first time you run any [Nanobox command](/cli/), it will walk you through an initial setup process to configure things like RAM, CPU, and other things related to your local environment.
 
 ## Start Hacking!
-With Nanobox installed, our [Getting Started Guides](https://guides.nanobox.io) walk you through getting popular languages and frameworks up and running with Nanobox. Each provides a [`boxfile.yml`](/boxfile/) that tells Nanobox how to build and prepare your app's runtime. A `boxfile.yml` is required in your project directory in order for Nanobox to start.
+With Nanobox installed, the [Getting Started Guides](https://guides.nanobox.io) walk you through getting popular languages and frameworks up and running with Nanobox.

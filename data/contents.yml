@@ -11,13 +11,6 @@ articles:
   - title: "Install Nanobox"
     path: "/install/"
     articles:
-      - title: "System Requirements"
-        path: "/install/requirements/"
-        articles:
-          - title: "Using Native Docker"
-            path: "/install/requirements/docker/"
-          - title: "Using Docker-Machine & VirtualBox"
-            path: "/install/requirements/docker-machine/"
       - title: "Updating Nanobox"
         path: "/install/update/"
       - title: "Uninstalling Nanobox"

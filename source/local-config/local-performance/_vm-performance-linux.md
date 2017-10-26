@@ -3,7 +3,7 @@ If you notice local apps running a little slowly with Nanobox, there are changes
 Nanobox stores Virtual Machine (VM) settings that are configured using the [`nanobox config` command](/cli/configure). This command is used to make the changes outlined below.
 
 ## Use Native Docker Containers
-Docker is really performant on Linux and we highly recommend using Native docker containers with Nanobox ([view the requirements](/install/requirements/docker/)). To use native docker containers, set your `provider` to `native`:
+Docker is really performant on Linux and we highly recommend using Native docker containers with Nanobox ([view the requirements](/install/)). To use native docker containers, set your `provider` to `native`:
 
 ```bash
 nanobox config set provider native
