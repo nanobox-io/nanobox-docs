@@ -1,4 +1,4 @@
-**Note:** _There are known issues with installing and running Nanobox on MacOS 10.13 - High Sierra. Installation instructions are coming. For now, feel free to drop into the [Nanobox Slack Channel](https://nanoboxio.slack.com) and ask._
+**Note:** _There are known issues with installing and running Nanobox on MacOS 10.13 - High Sierra. For detailed instructions, view the [Installing Nanobox on MacOS High Sierra](https://content.nanobox.io/installing-nanobox-on-macos-high-sierra/) article._
 
 ## System Requirements
 System requirements depend on how you're going to run Nanobox. You can either use a lightweight VM (VirtualBox) or Native Docker.
