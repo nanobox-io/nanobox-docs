@@ -73,6 +73,7 @@ The API documented below is also formalized in [an OpenAPI spec](openapi-spec.js
     *   [Querying a Server](#query-server)
     *   [Canceling a Server](#cancel-server)
     *   [Install Server Key](#install-server-key)
+    *   [Update Server Config](#update-server-config)
     *   [Rebooting a Server](#reboot-server)
     *   [Renaming a Server](#rename-server)
 
@@ -111,6 +112,14 @@ empty
 *   `ssh_key_method`: `reference` or `object`. When set to "reference", Nanobox will first create the SSH key in the user's provider account, then pass a reference to it when servers are created. When set to "object", Nanobox will pass the actual public SSH key that should be installed on the server.
 *   `bootstrap_script`: The script that should be used to boostrap the server. e.g. `https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ubuntu.sh`
 *   `credential_fields`: array of hashes that includes field keys and labels necessary to authenticate with the provider.
+*   `config_fields`: array of hashes that describes fields necessary to configure provider-specific features for a server (required fields marked with an asterisk):
+    *   `key`\*: unique string used to identify each config field
+    *   `label`\*: text to display to the user for each config field
+    *   `description`\*: description and/or instructions for filling each config field
+    *   `type`: type of field being described; currently one of 'text', 'enum', or 'list', with room for additional options as needed
+    *   `values`: array of hashes that includes field values and labels which are allowed for the current field
+    *   `default`: value this field will use until the user supplies a different one
+    *   `rebuild`: true if a change to the value would require a server to be rebuilt; false otherwise
 *   `instructions`: string that contains instructions for how to setup authentication with the provider.
 
 Example using the Digital Ocean adapter:
@@ -134,7 +143,10 @@ Example using the Digital Ocean adapter:
   "credential_fields": [
     { "key": "access-token", "label": "Access Token" }
   ],
-  "instructions": "<a href='//cloud.digitalocean.com/settings/api/tokens' target='_blank'>Create a Personal Access Token</a> in your Digital Ocean Account that has read/write access, then add the token here or view the <a href='//www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#how-to-generate-a-personal-access-token' target='_blank'>full guide</a>"
+  "config_fields": [
+    { "key": "custom_setting", "label": "Custom Setting", "description": "A custom setting!", "rebuild": false }
+  ],
+  "instructions": "<a href=\"//cloud.digitalocean.com/settings/api/tokens\" target=\"_blank\">Create a Personal Access Token</a> in your Digital Ocean Account that has read/write access, then add the token here or view the <a href=\"//www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#how-to-generate-a-personal-access-token\" target=\"_blank\">full guide</a>"
 }
 ```
 
@@ -370,6 +382,7 @@ POST
 *   `region`: the region wherein to launch the server, which will match the region id from the catalog.
 *   `size`: the size of server to provision, which will match an `id` provided in the aforementioned catalog.
 *   `ssh_key`: id of the SSH key created during the `/keys` request.
+*   `config`: provider-specific configuration settings for the server.
 
 Example:
 
@@ -378,7 +391,10 @@ Example:
   "name":    "nanobox.io-cool-app-do.1.1",
   "region":  "sfo1",
   "size":    "a1",
-  "ssh_key": "12345"
+  "ssh_key": "12345",
+  "config":  {
+    "custom_setting": "configured value"
+  }
 }
 ```
 
@@ -420,6 +436,7 @@ empty
 *   `name`: name of the server
 *   `external_ip`: external or public IP of the server
 *   `internal_ip`: internal or private IP of the server
+*   `config`: the current values of the provider-specific settings for the server
 
 Example:
 
@@ -429,7 +446,10 @@ Example:
   "status": "active",
   "name": "nanobox.io-cool-app-do.1.1",
   "external_ip": "192.0.2.15",
-  "internal_ip": "192.168.0.15"
+  "internal_ip": "192.168.0.15",
+  "config": {
+    "custom_setting": "configured value"
+  }
 }
 ```
 
@@ -481,6 +501,35 @@ Example:
 {
   "id":  "nanobox-provider-account-ID",
   "key": "CONTENTS OF PUBLIC KEY"
+}
+```
+
+###### Response:
+**On Success:** Should return an empty body with a status code of `200`
+
+**On Failure:** Should return a json body with an `errors` node and a non 2xx status code.
+
+----
+##### Update Server Config
+The `/servers/:id/config` route is used to update the provider-specific configuration settings for a server.
+
+###### Path:
+`/servers/:id/config`
+
+###### Method:
+PATCH
+
+###### Headers:
+*   `Auth-` prefixed credential field keys and their corresponding values as populated by the user. This provides the necessary values to authorize the user within this provider.
+
+###### Body:
+Key-value pairs for each provider-specific setting.
+
+Example:
+
+```json
+{
+  "custom_setting": "new value"
 }
 ```
 

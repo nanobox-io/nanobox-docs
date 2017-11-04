@@ -11,7 +11,7 @@
       "name": "MIT",
       "url": "http://choosealicense.com/licenses/mit/"
     },
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "externalDocs": {
     "description": "Official documentation here",
@@ -213,6 +213,9 @@
                 "credential_fields": [
                   {"key": "access-token", "label": "Access Token"}
                 ],
+                "config_fields": [
+                  {"key": "custom_setting", "label": "Custom Setting", "description": "A custom setting!", "rebuild": false}
+                ],
                 "instructions": "<a href='//cloud.digitalocean.com/settings/api/tokens' target='_blank'>Create a Personal Access Token</a> in your Digital Ocean Account that has read/write access, then add the token here or view the <a href='//www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2#how-to-generate-a-personal-access-token' target='_blank'>full guide</a>"
               }
             },
@@ -314,6 +317,68 @@
                       "label": {
                         "description": "text to display to the user for each auth field",
                         "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "config_fields": {
+                  "description": "array of hashes that describes fields necessary to configure provider-specific features for a server",
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "key",
+                      "label",
+                      "description"
+                    ],
+                    "properties": {
+                      "key": {
+                        "description": "unique string used to identify each config field",
+                        "type": "string"
+                      },
+                      "label": {
+                        "description": "text to display to the user for each config field",
+                        "type": "string"
+                      },
+                      "description": {
+                        "description": "description and/or instructions for filling each config field",
+                        "type": "string"
+                      },
+                      "default": {
+                        "description": "value this field will use until the user supplies a different one",
+                        "type": "string",
+                        "default": ""
+                      },
+                      "rebuild": {
+                        "description": "true if a change to the value would require a server to be rebuilt; false otherwise",
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "type": {
+                        "description": "type of field being described; currently one of 'text', 'enum', or 'list', with room for additional options as needed",
+                        "type": "string",
+                        "default": "text"
+                      },
+                      "values": {
+                        "description": "array of hashes that includes field values and labels which are allowed for the current field",
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "value",
+                            "label"
+                          ],
+                          "properties": {
+                            "value": {
+                              "description": "the value to store if this option is selected for the current field",
+                              "type": "string"
+                            },
+                            "label": {
+                              "description": "text to display to the user for this option",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
                       }
                     },
                     "type": "object"
@@ -522,6 +587,10 @@
                 "ssh_key": {
                   "description": "id of the SSH key created during the `/keys` request",
                   "type": "string"
+                },
+                "config": {
+                  "description": "provider-specific configuration settings for the server",
+                  "type": "object"
                 }
               },
               "type": "object"
@@ -585,7 +654,10 @@
                 "status": "active",
                 "name": "nanobox.io-cool-app-do.1.1",
                 "external_ip": "192.0.2.15",
-                "internal_ip": "192.168.0.15"
+                "internal_ip": "192.168.0.15",
+                "config": {
+                  "custom_setting": "configured value"
+                }
               }
             },
             "schema": {
@@ -616,6 +688,10 @@
                 "internal_ip": {
                   "description": "internal or private IP of the server",
                   "type": "string"
+                },
+                "config": {
+                  "description": "the current values of the provider-specific settings for the server",
+                  "type": "object"
                 }
               },
               "type": "object"
@@ -666,7 +742,7 @@
         "description": "<p>The `/servers/{id}/keys` route is used to authorize Nanobox with a server that was previously ordered via Nanobox. Nanobox will pre-generate an SSH key for the user's account, and this route allows Nanobox to register that key with the server so that Nanobox can access it after it is ordered.</p> <p>NOTE: This route is *only* required if your provider uses passwords for SSH instead of SSH keys.</p>",
         "externalDocs": {
           "description": "Official documentation here",
-          "url": "https://docs.nanobox.io/providers/create/#install-ssh-key"
+          "url": "https://docs.nanobox.io/providers/create/#install-server-key"
         },
         "operationId": "install-server-key",
         "parameters": [
@@ -690,6 +766,46 @@
                   "type": "string"
                 }
               },
+              "type": "object"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "the server id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        }
+      }
+    },
+    "/servers/{id}/config": {
+      "patch": {
+        "tags": [
+          "servers"
+        ],
+        "summary": "Update Server Config",
+        "description": "<p>The `/servers/:id/config` route is used to update the provider-specific configuration settings for a server.</p>",
+        "externalDocs": {
+          "description": "Official documentation here",
+          "url": "https://docs.nanobox.io/providers/create/#update-server-config"
+        },
+        "operationId": "update-server-config",
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "Key-value pairs for each provider-specific setting.",
+            "required": true,
+            "schema": {
               "type": "object"
             }
           },
