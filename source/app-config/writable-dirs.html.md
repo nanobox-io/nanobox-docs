@@ -41,7 +41,7 @@ When defining `writable_dirs`, be sure the directory you define is not inside of
 Writable directories do not persist between deploys. These directories are in each instances’ local filesystem and are decommissioned with the instance. They should only be used for transient data such as cache, temporary files, etc.
 
 ### Faster than Network Directories
-Because network directories are a part of each instance’s local filesystem, they are much faster than network directories. Network directories are housed in an external service and accessed across the network, adding some latency.
+Because writable directories are a part of each instance’s local filesystem, they are much faster than network directories. Network directories are housed in an external service and accessed across the network, adding some latency.
 
 ### Limited to Service’s Local Disk Size
 The amount of code/data that can be stored in writable directories is limited to the disk size of your web or worker instance(s).
