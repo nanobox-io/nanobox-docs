@@ -23,7 +23,7 @@ The `add` subcommand adds adds a hostname map to your local hosts file that poin
 nanobox dns add <local | dry-run> <hostname>
 
 # Example
-nanobox dns add local myapp.dev
+nanobox dns add local myapp.local
 ```
 
 ## rm
@@ -35,7 +35,7 @@ The `rm` subcommand removes a hostname map from your local hosts file. The provi
 nanobox dns rm <local | dry-run> <hostname>
 
 # Example
-nanobox dns rm local myapp.dev
+nanobox dns rm local myapp.local
 ```
 
 ## ls
