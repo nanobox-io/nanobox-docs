@@ -37,7 +37,7 @@
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload, js_host: 'docs.nanobox.dev'
+  activate :livereload, js_host: 'docs.nanobox.local'
   config[:mixpanel_token] = ENV['MIXPANEL_TOKEN_DEV'] || 'mixpanel_token_placeholder'
 end
 

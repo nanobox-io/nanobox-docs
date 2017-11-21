@@ -36,7 +36,7 @@
   ul, ol                { padding-left: 1.2em;
     li                  { line-height: 1.8em; margin-top: .25em;}
     &.os-tabs           { list-style: none; padding: 0;
-      li                { margin-bottom: 2em; display: inline-block; min-width: 12%; padding: .75em 1em; text-align: center; font-size: .75em; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; color: #fff; background: $dblue-0; cursor: pointer; @include border-radius(4px); @include transition(all .2s);
+      li                { margin-bottom: 2em; display: inline-block; min-width: 12%; padding: .75em 1em; text-align: center; font-size: .75em; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; color: #fff; background: $dblue-0; cursor: pointer; @include transition(all .2s);
         &.active,
         &:hover         { background: $sblue-1; }
       }
