@@ -40,10 +40,10 @@ If you need a specific package version in `dev_packages`, you need to list the e
 `pkgin` isn't able to properly _remove_ packages with partial version numbers. All `dev_packages` get removed before the your app is deployed.
 
 ## Where to Find Packages
-Only packages included in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be installed as `extra_packages` or `dev_packages`. Use the link below to browse avialable packages.
+Only packages included in the [Nanobox pkgsrc](http://packages.nanobox.io/2017/11/base/index.html) can be installed as `extra_packages` or `dev_packages`. Use the link below to browse avialable packages.
 
 <div class="btn">
-  <a href="http://pkgsrc.nanobox.io/nanobox/base/Linux/" target="\_blank">View Nanobox Packages</a>
+  <a href="http://packages.nanobox.io/2017/11/base/index.html" target="\_blank">View Nanobox Packages</a>
 </div>
 
 **Note:** This is currently only a system-generated list of all the available packages, but we do have <a href="https://trello.com/c/psTicIdk/73-searchable-pkgsrc" target="\_blank">plans to provide an easy-to-use, searchable pkgsrc UI</a>.

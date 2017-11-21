@@ -110,7 +110,7 @@ run.config:
     - newrelic
 ```
 
-**Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `extra_packages`.
+**Note:** Only packages available in the [Nanobox pkgsrc](http://packages.nanobox.io/2017/11/base/index.html) can be loaded using `extra_packages`.
 
 ## Dev Packages
 In some cases, you may need a package or runtime that your engine does not make available, but only during development. The `dev_packages` config allows you to specify additional packages that should be available for local development only.  More information is available in the [Adding Packages](/app-config/adding-packages/) doc.
@@ -123,7 +123,7 @@ run.config:
     - pip
 ```
 
-**Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `dev_packages`.
+**Note:** Only packages available in the [Nanobox pkgsrc](http://packages.nanobox.io/2017/11/base/index.html) can be loaded using `dev_packages`.
 
 ## Build Triggers
 Changes to these files will trigger a new build the next time a new build is required. In general, it's recommended that any dependency-management files be added as build triggers. That way, you don't have to manually [build a new runtime](/cli/build-runtime/) when you update your dependencies.

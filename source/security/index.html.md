@@ -24,7 +24,7 @@ After new servers come online and are bootstrapped, Nanobox sends a series of co
 Part of the bootstrap installs a custom, [virtual network driver](https://github.com/nanopack/red). This essentially provides a fully-encapsulated layer 2 network over a peer-to-peer cluster of all of the host nodes of an app.
 
 ## Nanobox-Specific Images & Packages
-In order to reduce the attack plane, Nanobox provides slimmed-down versions of Docker images with extra or unnecessary packages stripped out. We also provide [custom-built packages](http://pkgsrc.nanobox.io/nanobox/base/Linux/) to:
+In order to reduce the attack plane, Nanobox provides slimmed-down versions of Docker images with extra or unnecessary packages stripped out. We also provide [custom-built packages](http://packages.nanobox.io/2017/11/base/index.html) to:
 
 1. Ensure the binaries are safe.
 2. Eliminate unnecessary cruft, reducing the attack plane.

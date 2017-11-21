@@ -97,7 +97,7 @@ data.db:
     - curl
 ```
 
-**Note:** Only packages available in the [Nanobox pkgsrc](http://pkgsrc.nanobox.io/nanobox/base/Linux/) can be loaded using `dev_packages`.
+**Note:** Only packages available in the [Nanobox pkgsrc](http://packages.nanobox.io/2017/11/base/index.html) can be loaded using `dev_packages`.
 
 ## Add Directories to the $PATH
 Some tools you may be using include binaries that need to be added to the system $PATH. The `extra_path_dirs` config allows you to specify these directories. Directory paths should be absolute.
