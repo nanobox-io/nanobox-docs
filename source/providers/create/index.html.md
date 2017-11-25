@@ -27,6 +27,8 @@ There are only a few requirements that a provider must satisfy in order to integ
 
 7.  Both virtual machines and bare metal machines work, as long as the OS isn't sharing a kernel (the host can't be a Docker or LXC container).
 
+8.  For providers that support adding metadata (often called tags) to objects in their infrastructure, adapters **MUST** treat any object with a metadata value of `Nanobox: false` as though it does not exist, refusing to take any action with that object accordingly. These adapters **should** add a metadata value of `Nanobox: true` to any objects they create, to indicate that Nanobox created that object, and is responsible for managing it.
+
 ## API
 
 ### OpenAPI Specification
@@ -245,6 +247,8 @@ Note that this failure response is shared by all endpoints. Further examples wou
 ##### Create SSH Key
 The `/keys` route is used to authorize Nanobox with the user's account that will be ordering servers. After ordering a server, Nanobox needs to SSH into the server to provision it. Nanobox will pre-generate an SSH key for the user's account and the authorization route allows Nanobox to register the key with the user's account on the provider so Nanobox can access the server after it is ordered.
 
+If your provider supports adding metadata to keys, your adapter **should** add a metadata entry (frequently called a tag) of `Nanobox: true` to indicate that Nanobox created the key, and has permission to use and manage it.
+
 *NOTE*: This route is **not** required if your provider uses passwords for SSH instead of SSH keys, assuming the Install Server Key endpoint is implemented instead.
 
 ###### Path:
@@ -285,7 +289,7 @@ Example:
 
 ----
 ##### Query SSH Key
-The `GET /keys/:id` route is used by Nanobox to query the existence of previously created key.
+The `GET /keys/:id` route is used by Nanobox to query the existence of previously created key. If your provider supports adding metadata to keys, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the key does not exist, returning an appropriate error instead of the key's contents.
 
 *NOTE*: This route is **not** required if your provider uses passwords for SSH instead of SSH keys, assuming the Install Server Key endpoint is implemented instead.
 
@@ -322,7 +326,7 @@ Example:
 
 ----
 ##### Delete SSH Key
-The `DELETE /keys/:id` route is used to cancel a key that was previously created via Nanobox.
+The `DELETE /keys/:id` route is used to cancel a key that was previously created via Nanobox. If your provider supports adding metadata to keys, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the key does not exist, returning an appropriate error, and not actually delete the key.
 
 *NOTE*: This route is **not** required if your provider uses passwords for SSH instead of SSH keys, assuming the Install Server Key endpoint is implemented instead.
 
@@ -349,6 +353,8 @@ empty
 ----
 ##### Order Server
 The `/servers` route is how Nanobox submits a request to order a new server. This route **SHOULD NOT** hold open the request until the server is ready. The request should return immediately once the order has been submitted with an identifier that Nanobox can use to followup on the order status.
+
+If your provider supports adding metadata to servers, your adapter **should** add a metadata entry (frequently called a tag) of `Nanobox: true` to indicate that Nanobox created the server, and has permission to use and manage it.
 
 ###### Path:
 `/servers`
@@ -392,7 +398,7 @@ Example:
 
 ----
 ##### Query Server
-The `GET /servers/:id` route is used by Nanobox to query state about a previously ordered server. This state is used to inform Nanobox when the server is ready to be provisioned and also how to connect to the server.
+The `GET /servers/:id` route is used by Nanobox to query state about a previously ordered server. This state is used to inform Nanobox when the server is ready to be provisioned and also how to connect to the server. If your provider supports adding metadata to servers, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the server does not exist, returning an appropriate error instead of the server's info.
 
 ###### Path:
 `/servers/:id`
@@ -431,7 +437,7 @@ Example:
 
 ----
 ##### Cancel Server
-The `DELETE /servers/:id` route is used to cancel a server that was previously ordered via Nanobox. This route **SHOULD NOT** hold open the request until the server is completely canceled. It should return immediately once the order to cancel has been submitted.
+The `DELETE /servers/:id` route is used to cancel a server that was previously ordered via Nanobox. This route **SHOULD NOT** hold open the request until the server is completely canceled. It should return immediately once the order to cancel has been submitted. If your provider supports adding metadata to servers, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the server does not exist, returning an appropriate error, and not actually cancel the server.
 
 ###### Path:
 `/servers/:id`
@@ -452,7 +458,7 @@ empty
 
 ----
 ##### Install Server Key
-The `/servers/:id/keys` route is used to authorize Nanobox with a server that was previously ordered via Nanobox. Nanobox will pre-generate an SSH key for the user's account, and this route allows Nanobox to register that key with the server so that Nanobox can access it after it is ordered.
+The `/servers/:id/keys` route is used to authorize Nanobox with a server that was previously ordered via Nanobox. Nanobox will pre-generate an SSH key for the user's account, and this route allows Nanobox to register that key with the server so that Nanobox can access it after it is ordered. If your provider supports adding metadata to servers, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the server does not exist, returning an appropriate error, and not actually install the key.
 
 *NOTE*: This route is **only** required if your provider uses passwords for SSH instead of SSH keys.
 
@@ -485,7 +491,7 @@ Example:
 
 ----
 ##### Reboot Server
-The `/servers/:id/reboot` route is used to reboot a server that was previously ordered via Nanobox. This route **SHOULD NOT** hold open the request until the server is completely rebooted. It should return immediately once the order to reboot has been submitted.
+The `/servers/:id/reboot` route is used to reboot a server that was previously ordered via Nanobox. This route **SHOULD NOT** hold open the request until the server is completely rebooted. It should return immediately once the order to reboot has been submitted. If your provider supports adding metadata to servers, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the server does not exist, returning an appropriate error, and not actually reboot the server.
 
 ###### Path:
 `/servers/:id/reboot`
@@ -506,7 +512,7 @@ empty
 
 ----
 ##### Rename Server
-The `/servers/:id/rename` route is used to rename a server that was previously ordered via Nanobox. This route **SHOULD NOT** hold open the request until the server is completely renamed. It should return immediately once the order to rename has been submitted.
+The `/servers/:id/rename` route is used to rename a server that was previously ordered via Nanobox. This route **SHOULD NOT** hold open the request until the server is completely renamed. It should return immediately once the order to rename has been submitted. If your provider supports adding metadata to servers, your adapter **MUST** treat a metadata entry (frequently called a tag) of `Nanobox: false` as though the server does not exist, returning an appropriate error, and not actually rename the server.
 
 ###### Path:
 `/servers/:id/rename`
