@@ -51,7 +51,7 @@ worker.jobs:
 ```
 
 ## Start Command
-The `start` is the command used to start your worker.
+The `start` is the command used to start your worker. **\*\*Required for all worker components\*\*** If you need to create a worker component which doesn't have a long-running process to start, here, you can use `sleep 365d` here.
 
 #### start
 ```yaml
