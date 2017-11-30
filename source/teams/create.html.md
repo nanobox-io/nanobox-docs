@@ -8,7 +8,11 @@ Teams let you and your fellow developers collaborate on apps deployed with Nanob
 
 ![Create a New Team](teams-create.png)
 
-Provide a name for your team and save.
+Select your team type, provide a name for your team, and click "Next".
+
+![Create a New Team](teams-select-type.png)
+
+Confirm the charges associated with your team account and "Submit".
 
 ## Switching Between Accounts
 A team account essentially acts as a separate account. In your dashboard, you can switch between your personal account and a team account.

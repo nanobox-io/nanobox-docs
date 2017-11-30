@@ -238,13 +238,15 @@ articles:
       - title: "SSL/TLS Encryption"
         path: "/security/ssl-tls-encryption/"
 
-  - title: "Teams & Access Control"
+  - title: "Collaboration & Teams"
     path: "/teams/"
     articles:
       - title: "Creating a Team"
         path: "/teams/create/"
       - title: "Manage Team Members"
         path: "/teams/manage/"
+      - title: "Creating Groups"
+        path: "/teams/groups/"
       - title: "Roles & Permissions"
         path: "/teams/roles-permissions/"
 
