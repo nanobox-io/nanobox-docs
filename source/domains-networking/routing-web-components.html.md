@@ -23,7 +23,7 @@ Below are few examples of routes and how they would work. In these examples, ass
 web.site:
   routes:
     - '/'
-# mydomain.com would route to web.sites
+# mydomain.com would route to web.site
 
 web.admin:
   routes:
