@@ -7,7 +7,7 @@ description: Nanobox lets you pipe custom application logs into your app's log s
 Most application logs are piped to either stdout or stderr, which automatically get streamed to your app's [unified log stream](/live-app-management/app-logs/). In some cases, your app may log to a file or files. Rather than having to remotely connect to your app to view these logs, Nanobox lets you pipe them into your unified log stream through the use of the `log_watch` boxfile config.
 
 ## log_watch
-A log_watch conists of the following:
+A log_watch consists of the following:
 
 - **Key** - This is prepended to log entries originating from the log_watch'd file. Keys must be unique.  
 - **Filepath** - The absolute path to the log file. *Your app lives in `/app`.*
