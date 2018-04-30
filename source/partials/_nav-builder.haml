@@ -1,12 +1,8 @@
 %li{ nav_article_active( article.path ) }
-  - if not article.articles
-    %span
-      = partial "svgs/nav-bullet"
-    = link_to article.title, article.path
-  - else
-    %span.nav-toggle
-      = partial "svgs/nav-btn"
-    = link_to article.title, article.path
+  %span
+    = partial "svgs/nav-bullet"
+  = link_to article.title, article.path
+  - if (article.articles || []).any?
     %ul.sub
       - article.articles.each do |article|
         = partial "nav-builder", :locals => { :article => article }
