@@ -18,7 +18,7 @@ a                       { @include transition(all .15s); }
   &.small               { padding: 8px 20px;
     a                   { font-size: 1em; }
   }
-  p                     { display: inline-block; font-size: 1.6em; font-weight: 700; letter-spacing: .05em; margin: 0 0 0 2em;
+  p                     { display: inline-block; font-size: 1.4em; font-weight: 700; letter-spacing: .05em; margin: 0 0 0 2em; text-align: center;
     a                   { font-size: 1.0em; }
   }
   ul.links              { position: absolute; right: 3em; top: 2em; margin: 0; padding: 0; list-style: none;
